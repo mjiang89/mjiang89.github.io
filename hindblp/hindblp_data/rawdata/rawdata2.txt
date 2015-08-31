@@ -1,0 +1,60 @@
+Alex Beutel
+CMU,Pittsburgh,student
+Alexander J. Smola
+CMU,Pittsburgh,advisor;Google,Mountain View,employee
+Amr Ahmed
+Google,Mountain View,employee
+B. Aditya Prakash
+CMU,Pittsburgh,student
+Christos Faloutsos
+CMU,Pittsburgh,advisor
+Fei Wang
+IBM,Yorktown Heights,employee;University of Connecticut,Storrs,advisor
+Linyun Yu
+Tsinghua,Beijing,student
+Kenton Murray
+CMU,Pittsburgh,student
+Meng Jiang
+Tsinghua,Beijing,student;CMU,Pittsburgh,student
+Mingdong Ou
+Tsinghua,Beijing,student
+Peng Cui
+Tsinghua,Beijing,advisor
+Neil Shah
+CMU,Pittsburgh,student
+Peng He
+Tencent,Shenzhen,employee
+Rui Liu
+Tsinghua,Beijing,student
+Shiqiang Yang
+Tsinghua,Beijing,advisor
+Tianyang Zhang
+Tsinghua,Beijing,student
+Shaowei Liu
+Tsinghua,Beijing,student
+Shifei Jin
+Tsinghua,Beijing,student
+Wenwu Zhu
+Tsinghua,Beijing,advisor
+Xinran Xu
+Tsinghua,Beijing,student
+Jun Wang
+IBM,Yorktown Heights,employee;Alibaba Group,Seattle,employee
+Wanhong Xu
+Facebook,Menlo Park,employee
+Venkatesan Guruswami
+CMU,Pittsburgh,advisor
+Christopher Palow
+Facebook,London,employee
+Roni Rosenfeld
+CMU,Pittsburgh,advisor
+Brian Gallagher
+Lawrence Livermore Lab,Livermore,employee
+Qiang Yang
+HKUST,Hong Kong,advisor
+Athena Vakali
+Aristotle University of Thessaloniki,Greece,advisor
+Despoina Chatzakou
+Aristotle University of Thessaloniki,Greece,student
+Maria Giatsoglou
+Aristotle University of Thessaloniki,Greece,student

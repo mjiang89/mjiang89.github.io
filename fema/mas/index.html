@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+		<script src="js/d3.v3.min.js" charset="utf-8"></script>
+	</head>
+	<body>
+	<div id="left-wrap">
+		<div id="top-wrap">
+			<div class="title">
+				<h1>
+					A demo for dynamic behavioral pattern discovery using FEMA
+				</h1>
+			</div>
+		</div>
+		<div id="svg-wrap">
+			<svg xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.0" id="main-view" > </svg>
+		</div>
+	</div>
+	<div id="control-wrap">
+		<div >
+			<h2> Year <span id="year-title"> </span> </h2>
+			<input id="year-select" type="range" min="0" max="2" step="1" value="0"/>
+			<br />
+			<small> Press &lt;- / -&gt; or drag the bar to change year.</small>
+		</div>
+		<div class="row">
+			<h2> Node Detail </h2>
+			<div id="explaination-node">
+			</div>
+		</div>
+		<div class="row">
+			<h2> Link Detail </h2>
+			<div id="explaination-link">
+			</div>
+		</div>
+		People always change. Professor Jiawei Han moved from Simon Fraser University
+		to University of Illinois at Urbana Champaign.
+		His excellent students graduated and young students became rising stars.
+		Social networks emerged.
+		How do research topics of his group change and why?
+		<P><FONT color=#0000cc>Blue:</FONT> authors;
+		<FONT color=#ff6600>Orange:</FONT> affiliations;
+		<FONT color=#00cc00>Green:</FONT> keywords.</P>
+	</div>
+	</body>
+	<script src="js/visual.js"> </script>
+</html>

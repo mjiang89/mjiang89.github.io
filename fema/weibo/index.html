@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+		<script src="js/d3.v3.min.js" charset="utf-8"></script>
+	</head>
+	<body>
+	<div id="left-wrap">
+		<div id="top-wrap">
+			<div class="title">
+				<h1>
+					A demo for dynamic behavioral pattern discovery using FEMA
+				</h1>
+			</div>
+		</div>
+		<div id="svg-wrap">
+			<svg xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.0" id="main-view" > </svg>
+		</div>
+	</div>
+	<div id="control-wrap">
+		<div >
+			<h2> Date <span id="year-title"> </span> </h2>
+			<input id="year-select" type="range" min="0" max="2" step="1" value="0"/>
+			<br />
+			<small> Press &lt;- / -&gt; or drag the bar to change date.</small>
+		</div>
+		<div class="row">
+			<h2> Node Detail </h2>
+			<div id="explaination-node">
+			</div>
+		</div>
+		<div class="row">
+			<h2> Link Detail </h2>
+			<div id="explaination-link">
+			</div>
+		</div>
+		In middle November, @liyongbo, the badminton coach of Chinese team,
+		<FONT color=#ff0000>trained</FONT> his players including @superdan, @fuhaifeng and @zhangning1
+		in Dongguan, Guangdong to prepare for a coming <FONT color=#ff0000>match at Hong Kong</FONT> in late November.
+		Then @superdan won the champion and his fans sent congratulations to him.
+		In early December, @superdan and his wife @xiexingfang who is also a famous badminton player
+		celebrated their first <FONT color=#ff0000>marriage anniversary</FONT>.
+		How do Weibo users mention (using "@") their idols (@superdan, etc.) in their tweets?
+		What are the related words?</FONT></P>
+		<P><FONT color=#0000cc>Blue:</FONT> source users (who use "@" to mention);
+		<FONT color=#ff6600>Orange:</FONT> mentioned users;
+		<FONT color=#00cc00>Green:</FONT> words in tweets.</P>
+	</div>
+	</body>
+	<script src="js/visual.js"> </script>
+</html>
