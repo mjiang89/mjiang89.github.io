@@ -1,7 +1,0 @@
-User-agent: *
-Disallow: /blog/
-Disallow: /css/
-Disallow: /fema/
-Disallow: /images/
-Disallow: /js/
-Disallow: /talk/
