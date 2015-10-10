@@ -1,0 +1,24 @@
+ID,NAME,TITLE
+0,ACCAMS,ACCAMS: Additive Co-Clustering to Approximate Matrices Succinctly
+1,OSLOR,Cascading Outbreak Prediction in Networks: A Data-Driven Approach
+2,CatchSync,CatchSync: Catching Synchronized Behavior in Large Directed Graphs
+3,CatchSync+,Catching Synchronized Behaviors in Large Networks: A Graph Mining Approach
+4,CoBaFi,CoBaFi: Collaborative Bayesian Filtering
+5,RaHH,Comparing Apples to Oranges: A Scalable Solution with Heterogeneous Hashing
+6,CopyCatch,CopyCatch: Stopping Group Attacks by Spotting Lockstep Behavior in Social Networks
+7,CatchSync-,Detecting Suspicious Following Behavior in Multimillion-Node Social Networks
+8,FEMA,FEMA: Flexible Evolutionary Multi-faceted Analysis for Dynamic Behavioral Pattern Discovery
+9,LockInfer,Inferring Strange Behavior from Connectivity Pattern in Social Networks
+10,BothSurvive,Interacting Viruses on a Network: Can both survive?
+11,PHF-MF,Item-Level Social Influence Prediction with Probabilistic Hybrid Factor Matrix Factorization
+12,ND-SYNC,ND-SYNC: Detecting Synchronized Fraud Activities
+13,MuCH,Non-transitive Hashing with Latent Similarity Components
+14,REXER,Perceiving Group Themes from Collective Social and Behavioral Information
+15,PAH,Probabilistic Attributed Hashing
+16,ContextMF+,Scalable Recommendation with Social Contextual Information
+17,ContextMF,Social Contextual Recommendation
+18,HRW,Social Recommendation Across Multiple Relational Domains
+19,HRW+,Social Recommendation with Cross-Domain Transferable Knowledge
+20,fBox,Spotting Suspicious Link Behavior with fBox: An Adversarial Perspective
+21,HF-NMF,Who Should Share What? Item-level Social Influence Prediction for Users and Posts Ranking
+22,WinnerTakesAll,Winner-takes-all: Competing Viruses on fair-play networks

@@ -1,0 +1,213 @@
+body{
+font-family: verdana, sans-serif;
+}
+
+a{
+color:#267ed5;
+text-decoration:none;
+}
+
+a:hover{
+text-decoration:underline;
+}
+
+html{
+background-color:#b2b2b2;
+}
+
+#doc{
+width:1000px;
+background-color:#FFFFFF;
+margin-top:15px;
+margin-bottom:15px;
+}
+
+#footer{
+background-color:#444444;
+color:#FFFFFF;
+padding: 5px 10px;
+margin-top: 25px;
+}
+
+#header{
+background-color:#FF9933;
+color:#FFFFFF;
+}
+
+#uiuc-logo{
+margin-left:850px;
+}
+
+#meng-img{
+display:block;
+margin:10px;
+margin-top:20px;
+margin-bottom:30px;
+}
+
+
+#right-column{
+margin-left: 250px;
+padding-right: 30px;
+}
+
+#left-column{
+float:left;
+width: 250px;
+}
+
+#graphgardenmainmenu{
+width: 160px;
+margin: 0px 15px 0px 30px;
+}
+
+#eventsmenu{
+width: 154px;
+margin: 0px 15px 0px 30px;
+border: solid 1px #808080;
+padding: 2px;
+}
+
+#eventsmenufont{
+font-size:17px;
+font-family:Arial, Helvetica, sans-serif;
+line-height:1.2em;
+font-weight:bold;
+text-indent:30px;
+margin: 2px 0px 2px 0px;
+color:#ff8b00;
+}
+
+#links-under-menu{
+width: 160px;
+margin: 20px 0px 20px 50px;
+}
+
+#links-under-menu li {
+list-style-type:none;
+}
+
+h1{
+background-image:url(../images/h1_img.gif);
+background-repeat:no-repeat;
+text-indent:42px;
+font-size:24px;
+font-family:Arial, Helvetica, sans-serif;
+font-weight:bold;
+line-height:1.5em;
+margin: 18px 0px 14px 0px;
+color:#2968d0;
+}
+
+h2{
+background-image:url(../images/h2_img.gif);
+background-repeat:no-repeat;
+text-indent:26px;
+font-size:17px;
+font-family:Arial, Helvetica, sans-serif;
+line-height:1.2em;
+font-weight:bold;
+margin: 16px 0px 12px 0px;
+color:#ff8b00;
+}
+
+p{
+margin: 10px 0px;
+line-height:1.5em;
+}
+
+td{
+padding:3px;
+}
+
+.fixed-width{
+font-family:"Courier New", Courier, monospace;
+white-space:pre;
+}
+
+b,
+strong{
+font-weight:bold;
+}
+
+i,
+em{
+font-style:italic;
+}
+
+
+ul,
+ol{
+margin-left: 25px;
+margin-top: 10px;
+margin-bottom:10px;
+}
+
+ul li{
+list-style-type:disc;
+margin: 5px;
+}
+
+ol li{
+list-style-type: decimal;
+margin: 5px;
+}
+
+ul li.O {
+  margin: 15px;
+  list-style-image : url(../images/arr_r_orange.gif);
+}
+
+/* ===== for menu BEGIN ===== */
+#graphgardenmainmenu {
+position: static;
+}
+
+/*
+For IE 6: trigger "haslayout" for the anchor elements in the root Menu by
+setting the "zoom" property to 1.  This ensures that the selected state of
+MenuItems doesn't get dropped when the user mouses off of the text node of
+the anchor element that represents a MenuItem's text label.
+*/
+
+#graphgardenmainmenu .yuimenuitemlabel {
+_zoom: 1;
+}
+
+#graphgardenmainmenu .yuimenu .yuimenuitemlabel {
+_zoom: normal;
+}
+
+/* ===== for menu END ===== */
+
+
+/* ===== for callout BEGIN ===== */
+.call-out-darkblue, .call-out-green, .call-out-blue, .call-out-orange{
+margin: 20px 0px;
+color:#FFFFFF;
+padding:13px 20px;
+font-size:16px;
+font-family:Arial, Helvetica, sans-serif;
+line-height:1.4em;
+}
+
+.call-out-darkblue{
+background:#003399;
+}
+
+.call-out-green{
+background:#74a743;
+}
+
+.call-out-blue{
+background:#45a3ff;
+}
+
+.call-out-orange{
+background:#ff8b00;
+}
+
+.call-out-green strong, .call-out-blue strong, .call-out-orange strong{
+font-weight:bold;
+}
+/* ===== for callout END ===== */
