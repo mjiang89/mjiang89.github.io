@@ -34,6 +34,10 @@ background-color:#FF9933;
 color:#FFFFFF;
 }
 
+#icdm15-logo{
+margin-left:800px;
+}
+
 #uiuc-logo{
 margin-left:850px;
 }
@@ -44,7 +48,6 @@ margin:10px;
 margin-top:20px;
 margin-bottom:30px;
 }
-
 
 #right-column{
 margin-left: 250px;
@@ -103,12 +106,22 @@ h2{
 background-image:url(../images/h2_img.gif);
 background-repeat:no-repeat;
 text-indent:26px;
-font-size:17px;
+font-size:20px;
 font-family:Arial, Helvetica, sans-serif;
 line-height:1.2em;
 font-weight:bold;
 margin: 16px 0px 12px 0px;
 color:#ff8b00;
+}
+
+h3{
+text-indent:26px;
+font-size:20px;
+font-family:Arial, Helvetica, sans-serif;
+font-weight:bold;
+line-height:1.5em;
+margin: 0px 0px 0px 0px;
+color:#2968d0;
 }
 
 p{
@@ -180,7 +193,6 @@ _zoom: normal;
 
 /* ===== for menu END ===== */
 
-
 /* ===== for callout BEGIN ===== */
 .call-out-darkblue, .call-out-green, .call-out-blue, .call-out-orange{
 margin: 20px 0px;
@@ -211,3 +223,22 @@ background:#ff8b00;
 font-weight:bold;
 }
 /* ===== for callout END ===== */
+
+.carousel-inner {
+max-height: 300px;
+text-align: center;
+}
+
+.carousel .item > img { 
+display: inline-block; 
+}
+
+.carousel {
+background: #FFFFFF;
+}
+
+.carousel-caption {
+font-size:20px;
+font-weight:bold;
+color: #ff8b00;
+}
