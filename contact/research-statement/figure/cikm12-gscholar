@@ -1,0 +1,292 @@
+LogUCB: an explore-exploit algorithm for comments recommendation
+11
+DQR: a probabilistic approach to diversified query recommendation
+7
+Dynamic covering for recommendation systems
+1
+MEET: a generalized framework for reciprocal recommender systems
+14
+Social contextual recommendation
+118
+Mining high utility itemsets without candidate generation
+126
+A general framework to encode heterogeneous information sources for contextual pattern mining
+5
+Incorporating occupancy into frequent pattern mining for high quality pattern recommendation
+7
+PARMA: a parallel randomized algorithm for approximate association rules mining in MapReduce
+67
+Interactive pattern mining on hidden data: a sampling-based solution
+10
+An analysis of systematic judging errors in information retrieval
+14
+On caption bias in interleaving experiments
+15
+Alternative assessor disagreement and retrieval depth
+13
+Incorporating variability in user behavior into systems based evaluation
+15
+Constructing test collections by inferring document relevance via extracted relevant information
+10
+Twevent: segment-based event detection from tweets
+134
+Making your interests follow you on twitter
+28
+Generating event storylines from microblogs
+46
+Social book search: comparing topical relevance judgements and book suggestions for evaluation
+23
+Content-based crowd retrieval on the real-time web
+9
+Graph classification: a diversified discriminative feature selection approach
+24
+Multi-scale link prediction
+25
+An analysis of how ensembles of collective classifiers improve predictions in graphs
+6
+Density index and proximity search in large graphs
+4
+Gelling, and melting, large graphs by edge manipulation
+74
+One seed to find them all: mining opinion features via association
+25
+Topic-driven reader comments summarization
+28
+Visualizing timelines: evolutionary summarization via iterative reinforcement between text and image streams
+12
+Fast multi-task learning for query spelling correction
+2
+Cross-argument inference for implicit discourse relation recognition
+10
+Interpreting keyword queries over web knowledge bases
+36
+RDF pattern matching using sortable views
+5
+Efficient algorithms for generalized subgraph query processing
+8
+G-SPARQL: a hybrid engine for querying large attributed graphs
+32
+A graph-based approach for ontology population with named entities
+15
+Decomposition-by-normalization (DBN): leveraging approximate functional dependencies for efficient tensor decomposition
+12
+A filter-based protocol for continuous queries over imprecise location data
+4
+Leveraging read rates of passive RFID tags for real-time indoor location tracking
+3
+Location-aware instant search
+17
+Indexing uncertain spatio-temporal data
+17
+Local anomaly descriptor: a robust unsupervised algorithm for anomaly detection based on diffusion space
+8
+Fast and reliable anomaly detection in categorical data
+26
+TALMUD: transfer learning for multiple domains
+27
+Utilizing common substructures to speedup tensor factorization for mining dynamic graphs
+4
+Predicting emerging social conventions in online social networks
+19
+Collective intelligence in the online social network of yahoo!answers and its implications
+13
+From face-to-face gathering to social structure
+10
+Delineating social network data anonymization via random edge perturbation
+11
+Multiview hierarchical bayesian regression model andapplication to online advertising
+2
+Visual appearance of display ads and its effect on click through rate
+6
+The wisdom of advertisers: mining subgoals via query clustering
+14
+Sequential selection of correlated ads by POMDPs
+23
+Diversity in blog feed retrieval
+6
+Efficient retrieval of recommendations in a matrix factorization framework
+28
+KORE: keyphrase overlap relatedness for entity disambiguation
+72
+Shard ranking and cutoff estimation for topically partitioned collections
+15
+Daily-deal selection for revenue maximization
+7
+Enabling direct interest-aware audience selection
+1
+Influence propagation in adversarial setting: how to defeat competition with least amount of investment
+16
+Large-scale item categorization for e-commerce
+26
+Matching product titles using web-based enrichment
+4
+Scalable clustering of signed networks using balance normalized cut
+13
+Maximum margin clustering on evolutionary data
+1
+Document-topic hierarchies from document graphs
+11
+Improving document clustering using automated machine translation
+11
+Right-protected data publishing with hierarchical clustering preservation
+0
+Metaphor: a system for related search recommendations
+13
+Exploring personal impact for group recommendation
+28
+The efficient imputation method for neighborhood-based collaborative filtering
+14
+Multi-faceted ranking of news articles using post-read actions
+9
+A decentralized recommender system for effective web credibility assessment
+11
+Towards an effective and unbiased ranking of scientific literature through mutual reinforcement
+19
+A math-aware search engine for math question answering system
+17
+Contextualization using hyperlinks and internal hierarchical structure of Wikipedia documents
+6
+Understanding book search behavior on the web
+9
+Temporal corpus summarization using submodular word coverage
+27
+TCSST: transfer classification of short & sparse text using external data
+8
+The generalized dirichlet distribution in enhanced topic detection
+15
+Modeling topic hierarchies with the recursive chinese restaurant process
+20
+Two-part segmentation of text documents
+2
+On the design of LDA models for aspect-based opinion mining
+63
+Predicting query performance for fusion-based retrieval
+7
+Back to the roots: a probabilistic framework for query-performance prediction
+18
+Learning to rank for robust question answering
+28
+Learning to rank by aggregating expert preferences
+10
+Learning to rank duplicate bug reports
+11
+A model-based approach for RFID data stream cleansing
+11
+What is the IQ of your data transformation system?
+11
+On the foundations of probabilistic information integration
+8
+GPU acceleration of probabilistic frequent itemset mining from uncertain databases
+6
+Completeness of queries over SQL databases
+6
+Being picky: processing top-k queries with set-defined selections
+1
+Finding top k most influential spatial facilities over uncertain objects
+9
+Efficient safe-region construction for moving top-K spatial keyword queries
+24
+Monochromatic and bichromatic reverse nearest neighbor queries on land surfaces
+7
+Pay-as-you-go maintenance of precomputed nearest neighbors in large graphs
+4
+Spatial influence vs. community influence: modeling the global spread of social media
+22
+TUT: a statistical model for detecting trends, topics and user interests in social media
+23
+Predicting aggregate social activities using continuous-time stochastic process
+13
+Acquiring temporal constraints between relations
+32
+Towards optimum query segmentation: in doubt without
+25
+Leaving so soon?: understanding and predicting web search abandonment rationales
+33
+Click patterns: an empirical representation of complex query intents
+5
+Domain dependent query reformulation for web search
+1
+An automatic blocking mechanism for large-scale de-duplication tasks
+19
+Processing continuous text queries featuring non-homogeneous scoring functions
+3
+Comprehension-based result snippets
+4
+An effective rule miner for instance matching in a web of data
+6
+Non-stationary bayesian networks based on perfect simulation
+0
+Active learning for relation type extension with local and global data views
+9
+Segmenting web-domains and hashtags using length specific models
+8
+Crosslingual distant supervision for extracting relations of different complexity
+8
+Labeling by landscaping: classifying tokens in context by pruning and decorating trees
+0
+G-WSTD: a framework for geographic web search topic discovery
+13
+Supporting factual statements with evidence from the web
+7
+Role-explicit query identification and intent role annotation
+11
+Joint topic modeling for event summarization across news and social media streams
+34
+Towards Concept-Based Translation Models Using Search Logs for Query Expansion
+13
+CGStream: continuous correlated graph query for data streams
+5
+Efficient influence-based processing of market research queries
+21
+Deco: declarative crowdsourcing
+65
+Predicting the effectiveness of keyword queries on databases
+14
+You can stop early with COLA: online processing of aggregate queries in the cloud
+17
+A novel local patch framework for fixing supervised learning models
+1
+Automated feature weighting in naive bayes for high-dimensional data classification
+15
+Learning to discover complex mappings from web forms to ontologies
+2
+Modeling semantic relations between visual attributes and object categories via dirichlet forest prior
+1
+CoNet: feature generation for multi-view semi-supervised learning with partially observed views
+1
+Generating facets for phone-based navigation of structured data
+2
+The effect of aggregated search coherence on search behavior
+21
+Improving bag-of-visual-words model with spatial-temporal correlation for video retrieval
+7
+Exploring and predicting search task difficulty
+26
+Iterative relevance feedback with adaptive exploration/exploitation trade-off
+10
+A practical concurrent index for solid-state drives
+6
+Robust distributed indexing for locality-skewed workloads
+3
+Efficient provenance storage for relational queries
+4
+Generically extending anonymization algorithms to deal with successive queries
+3
+Authentication of moving range queries
+6
+Model the complex dependence structures of financial variables by using canonical vine
+3
+A unified learning framework for auto face annotation by mining web facial images
+19
+Efficient jaccard-based diversity analysis of large document collections
+6
+Knowing where and how criminal organizations operate using web content
+37
+Social recommendation across multiple relational domains
+46
+Mining competitive relationships by learning across heterogeneous networks
+11
+Evaluating geo-social influence in location-based social networks
+43
+The walls have ears: optimize sharing for visibility and privacy in online social networks
+9
