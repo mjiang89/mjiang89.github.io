@@ -1,5 +1,5 @@
 all:
-	pdflatex cv_meng.tex
+	pdflatex cv_jiang.tex
 	rm *.log
-	open cv_meng.pdf
+	open cv_jiang.pdf
 

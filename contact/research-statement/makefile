@@ -1,10 +1,10 @@
 paper:
-	pdflatex meng.tex
-	bibtex meng
-	pdflatex meng.tex
-	pdflatex meng.tex
+	pdflatex research_statement_jiang.tex
+	bibtex research_statement_jiang
+	pdflatex research_statement_jiang.tex
+	pdflatex research_statement_jiang.tex
 	make clean
-	open meng.pdf
+	open research_statement_jiang.pdf
 
 clean:
 	\rm -f *.dvi *.ps *.bbl *.aux *.log *.blg *.toc all.tar* uu \
