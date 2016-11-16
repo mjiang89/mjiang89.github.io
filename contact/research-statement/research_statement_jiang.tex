@@ -1,6 +1,6 @@
 \documentclass[10.5pt]{article}
 
-\usepackage{fancyhdr,graphicx,multicol,paralist,times,url,wrapfig}
+\usepackage{fancyhdr,graphicx,multicol,paralist,times,url,wrapfig,xspace}
 
 \setcounter{page}{1}
 
@@ -37,7 +37,16 @@
       \endlist\end{multicols}}
 \makeatother
 
+\newcommand{\lb}{\mbox{$\langle$}}
+\newcommand{\rb}{\mbox{$\rangle$}}
+\newcommand{\pair}[2]{{\lb#1, #2\rb}\xspace}
+\newcommand{\tuple}[3]{{\lb#1, #2, #3\rb}\xspace}
+\newcommand{\eapatterns}{{``$E$-$A$'' patterns}\xspace}
+\newcommand{\saopatterns}{{``$S$-$A$-$O$'' patterns}\xspace}
+
 \begin{document}
+
+\input{hierarchy}
 
 \begin{center}
 {\Large \bf Research Statement: Data-Driven Behavioral Analytics with Networks} \\
@@ -56,13 +65,13 @@
 \vskip -0.12in
 \end{wrapfigure}
 
-Behavior is defined as \textit{interaction} made by individuals in conjunction with themselves or their environment\footnote{Behavior -- Wikipedia, the free encyclopedia: \url{https://en.wikipedia.org/wiki/Behavior}}. Thanks to Information Technologies, the human behaviors are broadly recorded in an unprecedented level. This gives us an opportunity for getting insights of behaviors and our societies from large-scale real data. Dr. Robin Staffin, the Director for Basic Research in the Department of Defense (DoD), listed \textit{Computational Modeling of Human Behavior} as one of the six high-priority topics in DoD Basic Research\footnote{National Defense Industrial Association (NDIA) Conference Proceedings: \url{http://www.dtic.mil/ndia/}}. In order to provide a fundamental understanding and predictive capability of human behavior dynamics from individuals to societies, behavioral analysis has to face the following complexity of behvaior: (1) human behaviors are highly dependent on \textit{social contexts}; (2) only by modeling \textit{spatiotemporal contexts}, can we understand when, where and how the behavior happens; (3) \textit{behavioral intentions} including monetary incentives and other suspicious purposes are a nontrivial part of behavior modeling; (4) user preference on the \textit{content} is an important driving factor. Experience-driven approaches rely on expertise in developing features of intelligent and trustworthy systems (e.g., recommender systems, anti-fraud/anti-spam systems). Taking the advantage of massive, available behavioral data, I have been proposing and promoting data-driven approaches that leverage the methodology of \textit{observation}, \textit{representation} and \textit{models} from real data beyond our eyes and hands. I focus on analyzing behavioral data with network models relying little to none of human annotations for themes including (T1) mining multidimensional behavior networks with social spatiotemporal contexts, (T2) structuring behavioral content into heterogeneous information networks of entities and attributes, and (T3) integrating behavior networks and information networks for in-depth behavioral analysis.
+Behavior is defined as \textit{interaction} made by individuals in conjunction with themselves or their environment\footnote{Behavior -- Wikipedia, the free encyclopedia: \url{https://en.wikipedia.org/wiki/Behavior}}. Thanks to Information Technologies, the human behaviors are broadly recorded in an unprecedented level. This gives us an opportunity for getting insights of behaviors and our societies from large-scale real data. The Department of Defense (DoD) listed \textit{Computational Modeling of Human Behavior} as one of the six high-priority topics in DoD Basic Research\footnote{National Defense Industrial Association (NDIA) Conference Proceedings: \url{http://www.dtic.mil/ndia/}}. In order to provide a fundamental understanding and predictive capability of human behavior dynamics from individuals to societies, behavioral analysis has to face the following complexity of behavior: (1) human behaviors are highly dependent on \textit{social contexts}; (2) only by modeling \textit{spatiotemporal contexts}, can we understand when, where and how the behavior happens; (3) behavioral intentions including monetary incentives and other suspicious purposes are a nontrivial part of behavior modeling; (4) user preferences and sentiments on the \textit{unstructured content} are important driving factors. Experience-driven approaches rely on expertise in developing features of intelligent and trustworthy systems (e.g., recommender systems, anti-fraud/anti-spam systems). Taking the advantage of massive, available behavioral data, I have been proposing and promoting data-driven approaches that leverage the methodology of \textit{observation}, \textit{representation} and \textit{models} from real data beyond our eyes and hands. I focus on analyzing behavioral data with network models and algorithms relying little to none of human annotations for themes including (T1) mining multidimensional behavior networks with social spatiotemporal contexts, (T2) structuring behavioral content into heterogeneous information networks of entities and attributes, and (T3) integrating behavior networks and information networks for accuracy and interpretability.
 
 \vskip 0.10in
 \noindent {\large \bf I. THESIS AND POSTDOCTORAL WORK}
 \vskip 0.01in
 
-My thesis titled ``Modeling Complex Behaviors in Social Media'' focuses on Theme T1 of understanding behaviors under social spatiotemporal contexts, and my two-year postdoctoral research is broken down to T2 and T3 with contributions mostly in in-depth behavioral analysis with unstructured data. The three tasks form the full picture of ``Data-Driven Behavioral Analytics with Networks''.
+My thesis titled ``Modeling Complex Behaviors in Social Media'' focuses on Theme T1 of understanding behaviors under social spatiotemporal contexts, and my two-year postdoctoral research is broken down to T2 and T3 with contributions mostly to in-depth behavioral analysis with unstructured data. The three tasks form the full picture of ``Data-Driven Behavioral Analytics with Networks''.
 
 \vskip 0.05in
 \noindent {\large \bf T1. Mining behavior network with social spatiotemporal contexts}
@@ -84,7 +93,7 @@ During my five-year Ph.D., I feel fortunate joining the long-term collaboration 
 \vskip -0.12in
 \end{wrapfigure}
 
-Weibo suffers from \textit{low} conversion rate: users received too much (interestingless) information from crowds and generated fewer than 6 retweets within every 100 news feed requests. Can we recommend tweets by predicting their behaviors to address the issue of information overload? Although collaborative filtering techniques have been widely used, we know little about why users adopt or reject items, which has been the bottleneck for further improving the recommending performance. How to fully exploit social contextual information from ``who-posts-what'' behavior network and ``who-follows-whom'' social network to reveal the information adoption mechanism, and accordingly propose a method for recommendation, is rather challenging and demanded.
+Weibo suffers from \textit{low} conversion rate: users received too much (less interesting) information from crowds and generated fewer than 6 retweets within every 100 news feed requests. Can we recommend tweets by predicting their behaviors to address the issue of information overload? Although collaborative filtering techniques have been widely used, we know little about why users adopt or reject items, which has been the bottleneck for further improving the recommending performance. How to fully exploit social contextual information from ``who-posts-what'' behavior network and ``who-follows-whom'' social network to reveal the information adoption mechanism, and accordingly propose a method for recommendation, is rather challenging and demanded.
 
 To achieve this goal, we observe from the real network data that personal preference on the content and interpersonal influence from the sender are two significant factors that determine users' decisions (see Figure~\ref{fig:contextmf}). We propose a probabilistic matrix factorization model, \textsc{ContextMF} \cite{jiang2012socialcontextual}, to fuse the behaviors and social contexts. In this model, there are three low-rank latent spaces respectively corresponding to the user space, item space and influence space. They are regularized by the observed preference similarity matrix, content similarity matrix and interaction frequency matrix. The product of the user space and item space corresponds to the preference; the product of influence and preference is proportional to the probability of item adoption. Empirical results on two real social datasets (one from Weibo) demonstrate that \textsc{ContextMF} increases the accuracy of prediction by 21\% and 17\%, respectively.
 
@@ -147,25 +156,26 @@ Essentially, we reconsider the detection problem by revealing the fraudsters' ma
 
 %\cite{gupta2014biperpedia,liu2015mining,ren2015clustype,jiang2016metapad}
 
-\begin{wrapfigure}{R}{0.63\textwidth}
+\begin{wrapfigure}{R}{0.53\textwidth}
 \vskip -0.18in
-\includegraphics[width=0.63\textwidth]{figure/metapad.pdf}
+\includegraphics[width=0.53\textwidth]{figure/metapad.pdf}
 \vskip -0.18in
-\caption{From text to information network: \textsc{MetaPAD} \cite{jiang2016metapad} is a data-driven method that mines and uses meta patterns to discover attribute names and values of entities.}
+\caption{Structuring text into heterogeneous information networks: \textsc{MetaPAD} jointly extracts \tuple{entity type}{attribute name}{value type} tuples and \tuple{entity}{attribute name}{attribute value} tuples for high precision and high recall. It is automated and domain-independent.}
 \label{fig:metapad}
 \vskip -0.12in
 \end{wrapfigure}
 
-In Theme T1, I work on modeling social spatiotemporal contexts in behavioral data: the contexts are naturally well-structured and thus can be represented as multidimensional behavior networks. However, the behavioral content, especially the text corpus in tweets and papers, is information-rich but \textit{unstructured}. Previously the text was represented as bag-of-words or topic models. Only by structuring the text into a rich attributed heterogeneous information network we will deeply understand the behavioral content. For example in Figure~\ref{fig:metapad}, can we automatically discover attribute names and values of different types of entities such as age of a person and prime minister of a country? Google's \textsc{Biperpedia} \cite{gupta2014biperpedia} utilized their petabytes of users' fact-seeking queries (e.g., ``canada prime minister'') to harvest the attribute names. However, we are not able to access such query logs; moreover, we expect to extract the concrete values along with the names. We address this problem from a very different angle: leveraging \textit{distant supervision} and ``\textit{data redundancy}'' to discover \textit{meta patterns} for automatic attribute discovery.
-\begin{compactitem}
-\item Unlike weak supervision that relies on manually-specified entities, distant supervision (DS) aims at reducing expensive human labeling by utilizing information in Knowledge Bases (e.g., Freebase, Wikipedia). Recently, the UIUC data mining group has developed data-driven quality phrase mining \textsc{SegPhrase} \cite{liu2015mining} and entity recognition and typing \textsc{ClusType} \cite{ren2015clustype} based on DS.
-\item Massive text corpus often provides sufficient data redundancy for us to derive informative frequent patterns. With the data-driven entity recognition and typing, the entity mentions can be replaced with their class types, and then attributes will appear frequently together with their corresponding entity classes. For example, by replacing ``US'', ``Russia'' and many other country names with ``\$\textsc{Country}'', the meta pattern ``president of \$\textsc{Country}'' becomes apparent in the text because this segment's frequency significantly deviates from what is expected from the frequencies of the symbol and words. 
-\end{compactitem}
-A \textbf{meta pattern} refers to a segment of class symbols (e.g., \$\textsc{Country}, \$\textsc{Person}), words (e.g., ``wife''), phrases (e.g., ``prime\_minister'') and possibly punctuation marks that appears contiguously and frequently in the text and serves as an integral semantic unit of the classes in certain context. We develop a framework called \underline{Meta} \underline{P}attern-driven \underline{A}ttribute \underline{D}iscovery (\textsc{MetaPAD}) \cite{jiang2016metapad} that integrates the text mining techniques and then mines quality meta-patterns of frequency, completeness, informativeness and appropriate granularity. We take the meta patterns such as ``prime\_minister of \$\textsc{Country} \$\textsc{PrimeMinister}'' and ``\$\textsc{Person} , \$\textsc{Digit} ,'' back to the text to extract who is the prime minister and what is the age. Since we do not have the query data, we use \textsc{Biperpedia}${}^{-q}$ (i.e., no query log) as the baseline taking every sentence of the corpus as ``query'' input. \textsc{MetaPAD} improves the F1 score of detecting attribute names by 48--190\% from three news datasets and as much as 208\% from tweets. We further extend it to PubMed corpus and successfully discover thousands of attributes of biomedical concepts. Moreover, this methodology is language independent.
+In Theme T1, I work on modeling social spatiotemporal contexts in behavioral data: the contexts are naturally well-structured and thus can be represented as multidimensional behavior networks. However, the behavioral content, especially the text corpus in tweets and papers, is information-rich but \textit{unstructured}. Structuring the text into heterogeneous information networks will enables deep understanding of the behavioral content. Given the text data, e.g., a news corpus with sentence~\#1 in Figure~\ref{fig:metapad}, can we extract (1) the \pair{entity type}{attribute name} pair, e.g., \pair{\cscountry}{president} and (2) the \tuple{entity}{attribute name}{attribute value} tuple, e.g., \tuple{Burkina Faso}{president}{Blaise Compaor$\acute{e}$}?
+
+Google mines users' fact-seeking queries (e.g., ``president of united states'') with \eapatterns ($E$ for entity and $A$ for attribute name) such as ``$A$ of $E$'' and ``$E$ 's $A$''. However, query-log word distributions are highly constrained compared with ordinary written language. Thus \eapatterns like ``$E$ $A$'' and ``$A$, $E$'' which lack attribute values may generate noisy attribute name extractions. The state-of-the-art open IE systems learn syntactic and lexical patterns of expressing relationships for extracting entity-level tuples. However, they may generate incorrect or imprecise extractions (e.g., \tuple{President Blaise Compaor$\acute{e}$}{have}{government of Burkina Faso} in which ``have'' is not a good attribute name for the entity by ignoring the type information).
+
+Our idea is to investigate joint extraction of the type-level \tuple{entity type}{attribute name}{attribute value type} tuples (adding ``value type'' into the pair) and the entity-level tuples because these two extraction processes can mutually enhance each other. First, extracting a frequent type-level tuple is easier (due to its higher frequency) than extracting a concrete entity-level tuple. Second, the type distributions of the concrete entities indicate the appropriate level of the entity types in the type-level tuples. This joint extraction helps find the entity-level tuples with low counts to improve recall if the type-level tuples are frequent and attach attribute names to appropriate levels of types to improve precision. Based on this, we propose a novel methodology, \textit{Meta Pattern Mining}, that mines frequent and informative semantic patterns indicating type-level tuples, called \textit{meta patterns}. For sentence~\#3 in Figure~\ref{fig:metapad}, if we replace ``U.S.'' with \cscountry and replace ``Barack Obama'' with \cspolitician, and carefully segment the sentence, we can generate meta pattern ``\cscountry president \cspolitician'' and tuple \tuple{\cscountry}{president}{\cspolitician}. Taking the meta pattern back to the text, we can extract a set of entity-level tuples. It is worth noting that mining meta patterns allows \textit{automatic} and \textit{domain-independent} attribute discovery from massive corpora, relying on \textit{no} linguistic assumptions \textit{nor} query logs \textit{nor} human annotations.
+
+Mining meta patterns has the advantages described above but it is challenging. First, imprecise boundaries of meta patterns may generate incorrect or incomplete extractions. Second, adjusting the level of entity types in a meta pattern is nontrivial. Third, it is necessary to group synonymous meta patterns. We develop a \underline{Meta} \underline{P}attern-driven \underline{A}ttribute \underline{D}iscovery (\textsc{MetaPAD}) framework, which first pre-processes text data to extract entities and their types as input in a data-driven and distantly-supervised manner and then mines the meta patterns with three new techniques to address the challenges for attribute discovery. Experiments on news, tweets and biomedical text data demonstrate that \textsc{MetaPAD} improves the F1 scores over the state-of-the-art by 32--51\% in \pair{entity type}{attribute name} extraction and by 26--35\% in \tuple{entity}{attribute name}{attribute value} extraction.
 
 \noindent {\bf \underline{Impact.}}
 \begin{compactitem}
-\item \textsc{MetaPAD} was collaborated with Dr. Talor Cassidy, Dr. Lance M. Kaplan and Dr. Timothy R. Hanratty from Army Research Lab (ARL). The package is transferring to ARL in the Network Science Collaborative Technology Alliance (NS CTA) project. 
+\item \textsc{MetaPAD} was collaborated with Dr. Taylor Cassidy, Dr. Lance M. Kaplan and Dr. Timothy R. Hanratty from Army Research Lab \cite{jiang2016metapad}. The package is transferring to ARL in the Network Science Collaborative Technology Alliance (NS CTA) project. 
 \end{compactitem}
 
 \vskip 0.05in
@@ -179,25 +189,51 @@ A \textbf{meta pattern} refers to a segment of class symbols (e.g., \$\textsc{Co
 \includegraphics[width=0.3\textwidth]{figure/catchtartan.pdf}
 \vskip -0.18in
 \caption{Each row is a tweet. \cite{jiang2016catchtartan} detects and summaries events by looking for \textit{Tartans} in ``two-level matrix'' which represents every dimension of tweets including time, location and \textit{phrase}.}
-\label{fig:metapad}
+\label{fig:catchtartan}
 \vskip -0.20in
 \end{wrapfigure}
 
-Fusing structured and unstructured data of human behaviors is substantial for in-depth behavioral analysis. Even bringing the quality phrases that were extracted from the unstructured content into behavior modeling has already been valuable and challenging. For example, given phrases and spatiotemporal contexts of tweets, can we automatically detect and summarize events from the multidimensional data? High-order tensor assumes that every behavior has exactly one value in every dimension, for example, a tweet has one user, one phrase and one hashtag. However, the real case is a behavior may have multiple values in a dimension. We propose ``two-level matrix'' that enables representing every single tweet: (1) the first/second level of columns are dimensions/dimensional values, (2) the first/second level of rows are time slices/behaviors. Thus, an event summary can be defined as a set of interesting dimensions and consecutive time slices, a set of interesting values in each selected dimension and a set of behaviors (tweets) in each selected slice, which forms a ``Tartan'' in the matrix. We develop a propagation method \textsc{CatchTartan} \cite{jiang2016catchtartan} to capture the Tartans in a principled and scalable way: it determines the meaningfulness of every operation of updating the Tartan with the Minimum Description Length (MDL) principle. Empirical results show that it outperforms the tensor-based approaches, requires no parameter and provides comprehensive summaries of local events in tweets and research trends in academic data.
+Fusing structured and unstructured data of human behaviors is substantial for in-depth behavioral analysis. Even bringing the quality phrases that were extracted from the unstructured content into behavior modeling has already been valuable and challenging. For example, given phrases and spatiotemporal contexts of tweets, can we automatically detect and summarize events from the multidimensional data? High-order tensor assumes that every behavior has exactly one value in every dimension, for example, a tweet has one user, one phrase and one hashtag. However, the real case is a behavior may have multiple values in a dimension. We propose ``two-level matrix'' that enables representing every single tweet: (1) the first/second level of columns are dimensions/dimensional values, (2) the first/second level of rows are time slices/behaviors. Thus, an event summary can be defined as a set of interesting dimensions and consecutive time slices, a set of interesting values in each selected dimension and a set of behaviors (tweets) in each selected slice, which forms a ``Tartan'' in the matrix (see Figure~\ref{fig:catchtartan}). We develop a propagation method \textsc{CatchTartan} \cite{jiang2016catchtartan} to capture the Tartans in a principled and scalable way: it determines the meaningfulness of every operation of updating the Tartan with the Minimum Description Length (MDL) principle. Empirical results show that it outperforms the tensor-based approaches, requires no parameter and provides comprehensive summaries of local events in tweets and research trends in academic data.
 
 \noindent {\bf \underline{Fun facts.}}
 \begin{compactitem}
+\item ``Tartan'' is the team nickname of CMU: Women's and men's, football and baseball, swimming and tennis.
 \item \textsc{CatchTartan} \cite{jiang2016catchtartan} was accepted as full paper in KDD 2016 (70 from 784 submissions; 8.9\%). It is the $1^{st}$ conference paper that Dr. Han (UIUC) and Dr. Faloutsos (CMU) co-authored, though they have been predicted to be co-authors for long.
-\item This is the \underline{$9^{th}$} paper I have collaborated with Dr. Faloutsos as the $1^{st}$ author after my \underline{$9$}-month visit in CMU. Actually, Tartan is the team nickname of CMU. I watched lots of games, women's and men's, football and baseball, swimming and tennis.
+\item This is the \underline{$9^{th}$} paper I have collaborated with Dr. Faloutsos as the $1^{st}$ author after my \underline{$9$}-month visit in CMU.
 \end{compactitem}
 
-\vskip 0.15in
+\vskip 0.10in
 \noindent {\large \bf II. FUTURE RESEARCH DIRECTIONS}
 \vskip 0.01in
 
 When more real-world applications (e.g., economics, politics, business intelligence) are incorporating data science, the data-driven behavioral analytics should also be incorporating with other field sciences (e.g., behavioral science, psychological science, social science). The need for intelligence, trustworthiness and scalability in user-oriented systems will only increase.
 
 \vskip 0.08in
+\noindent {\large \bf Mid-Term Research Plan }
+\vskip 0.01in
+
+With respect to my shorter term plan (first 3-5 years), I provide a more detailed outline of the thrusts and challenges that I am planning to tackle, both contributing to the data-driven framework of behavioral analysis that support decision-making processes.
+
+\vskip 0.02in
+\noindent {\bf D1. Intelligence: Integrating structured and unstructured data for in-depth behavioral analysis}
+\vskip 0.01in
+
+\noindent {\em 1. Integrating information networks from behavioral content for contextual behavior modeling.}
+In my thesis and postdoctoral research, I have improved the state-of-the-art in modeling user behavior with structured data: predicting behaviors with contexts and catching suspicious behaviors. However, if we don't model the content with structures, big data means big mess. Fortunately, the data-driven meta pattern mining approaches shed light on automatically structuring the content into a rich network of entities and attributes. How to grab this opportunity to develop accurate and interpretable predictive models needs to be investigated.
+
+\noindent {\em 2. Predicting behavioral contexts over predicting contextual behaviors.}
+Suppose we are able to predict with 100\% accuracy if a behavior will happen given full contexts of it. Then given a subset of the contexts, can we predict the set of the rest contexts? For example, if one wants to solve the fraud detection problem on Weibo, which experts, papers and algorithms he/she should find, read and try? Assume that we have represented the applications, datasets and other entities as nodes in an $n$-node heterogeneous network, the complexity of searching for the optimum is too high: the space of solutions is $O(n!)$. How to reduce the complexity into a practical level by pruning impossible permutations with insights from behavioral and psychological sciences is interesting and challenging.
+
+\vskip 0.02in
+\noindent {\bf D2. Trustworthiness: Structuring reliable information networks from behavioral content}
+\vskip 0.01in
+
+Our meta-pattern mining is a general, data-driven methodology to be used across multiple NLP tasks such as entity recognition and typing, attribute/relationship extraction and slot filling in an automated way. However, a portion of the extractions may still be incorrect or imprecise, for example, the text ``McDonald's U.S. President...'' may mistake a McDonald executive as a U.S. president. In order to structure reliable information from behavioral content, it is necessary to enhance mining results with majority voting-based conflict resolution, sentence structure-based entity refinement and conditional functional dependency rule mining.
+
+\vskip 0.02in
+\noindent {\em \large Collaborative research.} I am eager for collaborations with experts of Natural Language Processing, Text Mining, Machine Learning, Artificial Intelligence and Cyber-Physical Security and Systems, towards the ultimate goal of building efficient systems of intelligence and trustworthiness for human beings and our society.
+
+\vskip 0.03in
 \noindent {\large \bf Long-Term Vision: Interdisciplinary Research and Real-World Impact of Behavioral Analytics}
 \vskip 0.01in
 
@@ -206,40 +242,17 @@ The future of behavioral analytics locates at collaboration between data scienti
 \noindent {\em 1. Bringing psychological expertise into data technology.} 
 Data in itself is nothing. We can only create value if we turn it into information. Data expertise alone is not sufficient to truly understand human behaviors. Behavioral scientists know more about the human brain. They are specialized in cognitive psychology. How do people perceive? How do they reach a decision? This kind of knowledge is crucial if we want to intervene users' behavior. Take the social contextual recommendation as an example. When I was struggling in understanding how Weibo users decide to forward or ignore a message, a Science paper \cite{salganik2006experimental} emerged to help. Salganick et al. adopted an experimental approach to the study of social influence in cultural markets, inspired by which I reconsidered the information adoption mechanism of Weibo and proposed that preference and influence were two major contextual factors. Experiments on real large data demonstrated my assumption (see Figure~\ref{fig:contextmf}) and the proposed model \textsc{ContextMF} significantly improved Weibo's recommender systems. It is important to realize that vision if we bring real psychological expertise into our data science.
 
-\noindent {\em 2. Combining psychological discoveries with data science.}
-Data-driven approaches have enormous potential to change the way psychological scientists observe human behavior. Big data leads researchers to a point where they can collect behavioral information without sampling human participants at all. For example, social media, e.g., Facebook, Twitter, are the new ``macroscopes of human behavior''. Technology such as smart phones and wearable sensors can gather information on physical activity, social interactions, and so on. This offers us a clue to understanding basic psychological principles and behavioral theories for experimentation. Psychological scientists and data scientists have a vested interest in working together to yield more explanatory insight that can change the world.
-%Data-driven behavioral analysis has enormous potential to change the way psychological scientists observe human behavior. Big data helps researchers get to a point where they can collect behavioral information without sampling human participants at all. For example, the social media, e.g., Facebook, Twitter and online games, are the new ``macroscopes of human behavior''. Also, technology such as smart phones and wearable sensors can gather information on physical activity, social interactions, geographic location, and so on. The data-driven approaches offer us a potential clue to understanding basic psychological principles and behavioral theories for experimentation. Psychological scientists and data scientists have a vested interest in working together to yield more explanatory insight that can change the world.
+\noindent {\em 2. Facilitating psychological discovery processes with data science.}
+Data-driven approaches have enormous potential to change the way psychological scientists observe human behavior. Big data leads researchers to a point where they can collect behavioral information without sampling human participants at all. Social media, e.g., Facebook, Twitter, are the new ``macroscopes of human behavior''. Technology such as smart phones and wearable sensors can gather information on physical activity, social interactions, and so on. This offers us a clue to understanding basic psychological principles and behavioral theories for experimentation. Psychological scientists and data scientists have a vested interest in working together to yield more explanatory insight that can change the world.
 
 \noindent {\em 3. Deploying scalable behavior modeling for real systems.}
-To scale complex behavior models to the high volume of data, my research efficiently exploits the structure of multidimensional behavior networks and heterogeneous information networks. The ultimate goal is to deploy evolutionary analysis (e.g., \cite{jiang2014scalable,jiang2014fema}) and scalable algorithms (e.g., \cite{jiang2014catchsync,jiang2016catchtartan}) across a wide variety of applications.
-
-\vskip 0.09in
-\noindent {\large \bf Mid-Term Research Plan }
-\vskip 0.01in
-
-With respect to my shorter term plan (first 3-5 years), I provide a more detailed outline of the thrusts and challenges that I am planning to tackle, both contributing to the data-driven framework of behavioral analysis that support decision-making processes.
-
-\vskip 0.02in
-\noindent {\bf D1. Intelligence: Integrating networks for in-depth behavioral analysis}
-\vskip 0.01in
-
-\noindent {\em Integrating unstructured data for accurate and interpretable contextual behavior modeling.}
-In my thesis and postdoctoral research, I have improved the state-of-the-art in modeling user behavior with structured data: predicting behaviors with contexts and catching suspicious behaviors. However, if we don't model the content with structures, big data means big mess. Fortunately, the data-driven meta pattern mining approaches shed light on automatically structuring the content into a rich network of entities and attributes. How to grab this opportunity to develop accurate and interpretable predictive models needs to be investigated.
-
-\noindent {\em Predicting behavioral contexts over predicting contextual behaviors.}
-Suppose we are able to predict with 100\% accuracy if a behavior will happen given full contexts of it. Then given a subset of the contexts, can we predict the set of the rest contexts? For example, if one wants to solve the fraud detection problem on Weibo, which experts, papers and algorithms he/she should find, read and try? Assume that we have represented the applications, datasets and other entities as nodes in an $n$-node heterogeneous network, the complexity of searching for the optimum is too high: the space of solutions is $O(n!)$. How to reduce the complexity into a practical level by pruning impossible permutations with insights from behavioral and psychological sciences is interesting and challenging.
-
-\vskip 0.02in
-\noindent {\bf D2. Trustworthiness: Structuring reliable behavioral content}
-\vskip 0.01in
-
-Our meta-pattern mining is a general, data-driven methodology to be used across multiple NLP tasks such as entity recognition and (fine-grained) typing in an automated way: the attributes are discovered by looking for meta patterns after aggregating typing results, and further the typing module can be improved by correcting the types of entities with features of their attributes. However, the meta-pattern mining still generates some low quality patterns and wrong attribute values (e.g., the text ``McDonald's U.S. President...'' may mistake a McDonald executive as a U.S. president). In order to structure reliable information from behavioral content, it is necessary to enhance mining results with majority voting-based conflict resolution, sentence structure-based entity refinement, conditional functional dependency rule mining, and advanced truth discovery from massive documents.
+To scale complex behavior models to the high volume of data, my research efficiently exploits the structure of multidimensional behavior networks and heterogeneous information networks. It is significantly valuable to deploy evolutionary analysis (e.g., \cite{jiang2014scalable,jiang2014fema}) and scalable algorithms (e.g., \cite{jiang2014catchsync,jiang2016catchtartan}) across a wide variety of applications.
 
 \vskip 0.02in
 \noindent {\em \large Contributing to the community.} I am focused on studying and promoting Data-Driven Behavioral Analytics. I have given two 3-hour tutorials in major conferences (i.e., ICDM 2015 \cite{jiang2015behavior} and CIKM 2016 \cite{jiang2016data}). Each had 50+ audience, and we won the honorium for both. I also have written two book chapters about user behavior modeling \cite{jiang2016mining,jiang2016behavior}.
 
 \vskip 0.02in
-\noindent {\em \large Funding opportunities.} First, based on the idea of \textsc{CatchTartan} \cite{jiang2016catchtartan} (submitted in Feb 2016), I wrote the $2^{nd}$ section taking over 8 from 15 pages of the proposal ``NSF III: Small: Multi-Dimensional Structuring, Summarizing and Mining of Social Media Data'' in Oct 2015. It has been awarded to the PI Dr. Jiawei Han by NSF IIS (08-01-2016 to 07-31-2019, \$500,000). I am the only major supported member\footnote{NSF IIS 16-18481. \url{http://hanj.cs.illinois.edu/projs/social\_media.htm}}. Besides ``Information Integration and Informatics'' (III), ``Secure and Trustworthy Cyberspace'' (SaTC) also encourages the study of behavior analysis. Second, I have extensively collaborated with and visited the Army Research Lab (ALC and APG) in the NS CTA I1 and I4 projects. I significantly contributed in writing the whitepaper for Y8/9 (2016--2018). Third, I have international relations with China's institutes (e.g., Tsinghua, Microsoft Research Asia) and IT companies (e.g., Tencent, Alibaba).
+\noindent {\em \large Funding opportunities.} First, based on the idea of \textsc{CatchTartan} \cite{jiang2016catchtartan}, I contributed significantly to the technical content in the proposal ``NSF III: Small: Multi-Dimensional Structuring, Summarizing and Mining of Social Media Data''. It has been awarded to the PI Dr. Jiawei Han by NSF IIS (08-01-2016 to 07-31-2019, \$500,000). I am the major supported member\footnote{NSF IIS 16-18481. \url{http://hanj.cs.illinois.edu/projs/social\_media.htm}}. Besides ``Information Integration and Informatics'' (III), ``Secure and Trustworthy Cyberspace'' (SaTC) also encourages the study of behavior analysis. Second, I have extensively collaborated with U.S. Army Research Lab (ALC and APG) in the NS CTA projects. Third, I have international relations with China's institutes (e.g., Tsinghua, Microsoft Research Asia) and IT companies (e.g., Tencent, Alibaba).
 
 \vspace{-0.20in}
 \small{
