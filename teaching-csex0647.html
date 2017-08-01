@@ -1,0 +1,352 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+  <title>CS412 Summer 2017 - Introduction to Data Mining</title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="images/favicon.gif" />
+  <!-- Standard reset, fonts and grids -->
+  <link rel="stylesheet" type="text/css" href="styles/reset-fonts-grids.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <!-- styles for the whole website -->
+  <link href="styles/styles.css" rel="stylesheet" type="text/css" />
+  <!-- scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://www.francois-petitjean.com/main.js" type="text/javascript"></script>
+</head>
+
+<body class="yui-skin-sam" id="yahoo-com">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  <div id="doc" class="yui-t1">
+  <div id="hd">
+    <div id="header"><a href="https://www.nd.edu/"><img id="uiuc-logo" src="images/logo_uiuc.png" alt="CSE@NotreDame" /></a></div>
+  </div>
+
+  <h1>Notre Dame CSE 40647/60647 Fall 2017 - Data Science</h1>
+
+    <ul>
+
+    <li class="O"><b>Instructor:</b> <a href="index.html">Dr. Meng Jiang</a></li>
+
+    <li class="O"><b>Time:</b> 2:00 pm - 3:15 pm, Tuesday Thursday, August 22 to December 7, 2017</li>
+
+    <li class="O"><b>Location:</b> DeBartolo Hall 140</li>
+
+    <li class="O"><b>TAs:</b> ??? ??? [<a href="???@nd.edu">???@nd.edu</a>]</li>
+
+    <li class="O"><b>Office hours:</b> Dr. Meng Jiang ??:?? - ??:?? @ 326C Cushing Hall</li>
+
+    <li class="O"><b>TA hours:</b> TA ??:?? - ??:?? @ ???</li>
+
+    <li class="O"><b>Syllabus:</b> <a href="teaching/Syllabus-CSE-DataScience-Fall17.pdf">Download</a></li>
+
+    <li class="O"><b>Piazza:</b> <a href="???">???</a></li>
+
+    <li class="O"><b>Compass:</b> <a href="???">???</a></li>
+
+    <!-- <li class="O"><b>Wiki space:</b> CS 412 Summer 2017, Introduction to Data Mining <a href="https://wiki.illinois.edu/wiki/display/CS412S17/Course+Syllabus+and+Schedule">https://wiki.illinois.edu/wiki/display/CS412S17/Course+Syllabus+and+Schedule</a></li> -->
+
+    <!-- <li class="O"><b>4th credit project page:</b> <a href="https://wiki.illinois.edu/wiki/display/CS412S17/4th+Credit+Project+Page">https://wiki.illinois.edu/wiki/display/CS412S17/4th+Credit+Project+Page</a> [<a href="teaching/CS412Summer17-4th-Credit-Project-Page.pdf">pdf</a>]</li> -->
+
+    <!-- <li class="O"><b>Piazza:</b> CS 412 Summer 2017, Introduction to Data Mining <a href="https://piazza.com/class/j2pkefesw6u67z">https://piazza.com/class/j2pkefesw6u67z</a></li> -->
+
+    <!-- <li class="O"><b>Compass:</b> Summer 2017-CS 412-Introduction to Data Mining-Sections ONL, P3, P4 <a href="https://compass2g.illinois.edu/webapps/blackboard/content/listContentEditable.jsp?content_id=_2629762_1&course_id=_31753_1">https://compass2g.illinois.edu/webapps/blackboard/content/listContentEditable.jsp?content_id=_2629762_1&course_id=_31753_1</a></li> -->
+
+    </ul>
+
+  <div class="row">
+	<table class="table">
+		<thead>
+			<tr class="info">
+				<th>Week#</th>
+				<th>Date (T/R)</th>
+				<th>Lecture#</th>
+				<th>Topic</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>08-22-17 (T)</td>
+				<td>1</td>
+				<td>Introduction
+				[<a href="teaching/CSEx0647Fall17-01-Introduction.pdf">pdf</a>]
+				</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>08-24-17 (R)</td>
+				<td>2</td>
+				<td>Getting to know your data: Data description
+				[<a href="teaching/CSEx0647Fall17-02-DataDescription.pdf">pdf</a>]
+				</td>
+			</tr>
+
+			<tr>
+				<td>2</td>
+				<td>08-29-17 (T)</td>
+				<td>3</td>
+				<td>Getting to know your data: Data visualization 
+				[<a href="teaching/CSEx0647Fall17-03-DataVisualization.pdf">pdf</a>]
+				</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>08-31-17 (R)</td>
+				<td>4</td>
+				<td>Data preprocessing: Data cleaning and data integration
+				[<a href="teaching/CSEx0647Fall17-04-DataCleaning.pdf">pdf</a>]
+				</td>
+			</tr>
+
+			<tr>
+				<td>3</td>
+				<td>09-05-17 (T)</td>
+				<td>5</td>
+				<td>Data preprocessing: Data reduction and dimension reduction
+				[<a href="teaching/CSEx0647Fall17-05-DataReduction.pdf">pdf</a>]
+				</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>09-07-17 (R)</td>
+				<td>6</td>
+				<td>Data cube: Concepts and operations
+				[<a href="teaching/CSEx0647Fall17-06-DataCube.pdf">pdf</a>]
+				</td>
+			</tr>
+
+			<tr>
+				<td>4</td>
+				<td>09-12-17 (T)</td>
+				<td>7</td>
+				<td>Data cube: Cube computation methods
+				[<a href="teaching/CSEx0647Fall17-07-CubeComputation.pdf">pdf</a>]
+				</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>09-14-17 (R)</td>
+				<td>8</td>
+				<td>Data cube: Data warehouse and OLAP
+				[<a href="teaching/CSEx0647Fall17-08-DataWarehouse.pdf">pdf</a>]
+				</td>
+			</tr>
+
+			<tr>
+				<td>5</td>
+				<td>09-19-17 (T)</td>
+				<td>9</td>
+				<td>Frequent pattern mining: Concepts and Apriori
+				[<a href="teaching/CSEx0647Fall17-09-FrequentPatternApriori.pdf">pdf</a>]
+				</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>09-21-17 (R)</td>
+				<td>10</td>
+				<td>Frequent pattern mining: FP-Growth
+				[<a href="teaching/CSEx0647Fall17-10-FPGrowth.pdf">pdf</a>]
+				</td>
+			</tr>
+
+			<tr>
+				<td>6</td>
+				<td>09-26-17 (T)</td>
+				<td>11</td>
+				<td>Frequent pattern mining: Pattern evaluation
+				[<a href="teaching/CSEx0647Fall17-11-PatternEvaluation.pdf">pdf</a>]
+				</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>09-28-17 (R)</td>
+				<td>12</td>
+				<td>Advanced frequent pattern mining: Diverse patterns and constraint-based pattern mining
+				[<a href="teaching/CSEx0647Fall17-12-DiversePattern.pdf">pdf</a>]
+				</td>
+			</tr>
+
+			<tr>
+				<td>7</td>
+				<td>10-03-17 (T)</td>
+				<td>13</td>
+				<td>Advanced frequent pattern mining: Sequential pattern mining and graph pattern mining
+				[<a href="teaching/CSEx0647Fall17-13-SequentialPattern.pdf">pdf</a>]
+				</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>10-05-17 (R)</td>
+				<td>14</td>
+				<td>Classification: Concepts and decision tree induction
+				[<a href="teaching/CSEx0647Fall17-14-DecisionTree.pdf">pdf</a>]
+				</td>
+			</tr>
+
+			<tr>
+				<td>8</td>
+				<td>10-10-17 (T)</td>
+				<td>15</td>
+				<td>Classification: Bayesian classificaiton
+				[<a href="teaching/CSEx0647Fall17-15-NaiveBayes.pdf">pdf</a>]
+				</td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td>10-12-17 (R)</td>
+				<td>16</td>
+				<td>Classification: Evaluation and ensemble methods
+				[<a href="teaching/CSEx0647Fall17-16-ClassificationEvaluation.pdf">pdf</a>]
+				</td>
+			</tr>
+
+			<tr>
+				<td>9</td>
+				<td>10-17-17 (T)</td>
+				<td>-</td>
+				<td>Fall break
+				</td>
+			</tr>
+			<tr>
+				<td>9</td>
+				<td>10-19-17 (T)</td>
+				<td>-</td>
+				<td>Fall break
+				</td>
+			</tr>
+
+			<tr>
+				<td>10</td>
+				<td>10-24-17 (T)</td>
+				<td>-</td>
+				<td>Mid-term exam?
+				</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td>10-26-17 (R)</td>
+				<td>17</td>
+				<td>Advanced classification: Support vector machines
+				[<a href="teaching/CSEx0647Fall17-17-SVM.pdf">pdf</a>]
+				</td>
+			</tr>
+
+			<tr>
+				<td>11</td>
+				<td>10-31-17 (T)</td>
+				<td>18</td>
+				<td>Advanced Classification: Neural networks
+				[<a href="teaching/CSEx0647Fall17-18-NeuralNetwork.pdf">pdf</a>]
+				</td>
+			</tr>
+			<tr>
+				<td>11</td>
+				<td>11-02-17 (R)</td>
+				<td>19</td>
+				<td>Clustering: Concepts
+				[<a href="teaching/CSEx0647Fall17-19-ClusteringIntro.pdf">pdf</a>]
+				</td>
+			</tr>
+
+			<tr>
+				<td>12</td>
+				<td>11-07-17 (T)</td>
+				<td>20</td>
+				<td>Clustering: Partitioning methods
+				[<a href="teaching/CSEx0647Fall17-20-KPartitioning.pdf">pdf</a>]
+				</td>
+			</tr>
+			<tr>
+				<td>12</td>
+				<td>11-09-17 (R)</td>
+				<td>21</td>
+				<td>Clustering: Kernel-based clustering
+				[<a href="teaching/CSEx0647Fall17-21-KernelKMeans.pdf">pdf</a>]
+				</td>
+			</tr>
+
+			<tr>
+				<td>13</td>
+				<td>11-14-17 (T)</td>
+				<td>22</td>
+				<td>Clustering: Density-based clustering
+				[<a href="teaching/CSEx0647Fall17-22-DBSCAN.pdf">pdf</a>]
+				</td>
+			</tr>
+			<tr>
+				<td>13</td>
+				<td>11-16-17 (R)</td>
+				<td>23</td>
+				<td>Clustering: Evaluation methods
+				[<a href="teaching/CSEx0647Fall17-23-ClusteringEvaluation.pdf">pdf</a>]
+				</td>
+			</tr>
+
+			<tr>
+				<td>14</td>
+				<td>11-21-17 (T)</td>
+				<td>24</td>
+				<td>Outlier analysis: Concepts
+				[<a href="teaching/CSEx0647Fall17-24-OutlierConcepts.pdf">pdf</a>]
+				</td>
+			</tr>
+			<tr>
+				<td>14</td>
+				<td>11-23-17 (R)</td>
+				<td>-</td>
+				<td>Thanksgiving break
+				</td>
+			</tr>
+
+			<tr>
+				<td>15</td>
+				<td>11-28-17 (T)</td>
+				<td>25</td>
+				<td>Outlier analysis: Methods
+				[<a href="teaching/CSEx0647Fall17-25-OutlierMethods.pdf">pdf</a>]
+				</td>
+			</tr>
+			<tr>
+				<td>15</td>
+				<td>11-30-17 (R)</td>
+				<td>26</td>
+				<td>Lecture: Mining behavior datasets - Data-driven behavior modeling
+				</td>
+			</tr>
+
+			<tr>
+				<td>16</td>
+				<td>12-05-17 (T)</td>
+				<td>27</td>
+				<td>Lecture: Mining text datasets - Meta pattern-driven information extraction
+				</td>
+			</tr>
+			<tr>
+				<td>15</td>
+				<td>12-07-17 (R)</td>
+				<td>28</td>
+				<td>Course review
+				</td>
+			</tr>
+
+			<tr>
+				<td>16</td>
+				<td>before 12-15-17</td>
+				<td>-</td>
+				<td>Final exam
+				</td>
+			</tr>
+		</tbody>
+	</table>
+  </div>
+
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+
+  </div>
+
+</body>
+

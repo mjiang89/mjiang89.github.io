@@ -3,7 +3,7 @@ font-family: verdana, sans-serif;
 }
 
 a{
-color:#267ed5;
+color:#0058AC;
 text-decoration:none;
 }
 
@@ -30,12 +30,8 @@ margin-top: 25px;
 }
 
 #header{
-background-color:#FF9933;
+background-color:#002A5F;
 color:#FFFFFF;
-}
-
-#icdm15-logo{
-margin-left:800px;
 }
 
 #uiuc-logo{
@@ -78,7 +74,7 @@ line-height:1.2em;
 font-weight:bold;
 text-indent:30px;
 margin: 2px 0px 2px 0px;
-color:#ff8b00;
+color:#E9CC6E;
 }
 
 #links-under-menu{
@@ -99,7 +95,7 @@ font-family:Arial, Helvetica, sans-serif;
 font-weight:bold;
 line-height:1.5em;
 margin: 18px 0px 14px 0px;
-color:#2968d0;
+color:#DEB739;
 }
 
 h2{
@@ -111,7 +107,7 @@ font-family:Arial, Helvetica, sans-serif;
 line-height:1.2em;
 font-weight:bold;
 margin: 16px 0px 12px 0px;
-color:#ff8b00;
+color:#002A5F;
 }
 
 h3{
@@ -121,7 +117,7 @@ font-family:Arial, Helvetica, sans-serif;
 font-weight:bold;
 line-height:1.5em;
 margin: 0px 0px 0px 0px;
-color:#2968d0;
+color:#DEB739;
 }
 
 p{
@@ -216,7 +212,7 @@ background:#45a3ff;
 }
 
 .call-out-orange{
-background:#ff8b00;
+background:#DEB739;
 }
 
 .call-out-green strong, .call-out-blue strong, .call-out-orange strong{
