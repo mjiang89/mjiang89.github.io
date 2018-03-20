@@ -1,0 +1,13 @@
+College	Win_2015	Win_2017	Rank_2015	Rank_2017
+Alabama	12	11	2	4
+Clemson	13	12	1	1
+LSU	8	9	22	16
+Michigan State	12	9	3	18
+Northwestern	10	9	8	14
+Notre Dame	10	9	8	14
+Ohio State	11	11	7	5
+Oklahoma	11	12	4	2
+Oklahoma State	10	9	13	17
+Stanford	11	9	5	15
+TCU	10	10	11	13
+Wisconsin	9	12	23	6
