@@ -1,0 +1,288 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  19 OCT 2018 15:50
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**cv_jiang.tex
+(./cv_jiang.tex
+LaTeX2e <2017-04-15>
+Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
+(./res.cls
+Document Style `res' <26 Sep 89>.
+Document Class: res 2000/05/19 v1.4b Resume class
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+No auxiliary output files.
+
+\tabular@text=\toks14
+\tabular@head=\toks15
+\tabular@tail=\toks16
+\@ta=\toks17
+\undefined@token=\toks18
+\sectionwidth=\dimen103
+\sectionskip=\skip43
+\resumewidth=\dimen104
+\@columnwidth=\dimen105
+\c@numberofcolumns=\count87
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2016/09/06 3.8 Extensive control of page headers and footers
+\fancy@headwidth=\skip44
+\f@ncyO@elh=\skip45
+\f@ncyO@erh=\skip46
+\f@ncyO@olh=\skip47
+\f@ncyO@orh=\skip48
+\f@ncyO@elf=\skip49
+\f@ncyO@erf=\skip50
+\f@ncyO@olf=\skip51
+\f@ncyO@orf=\skip52
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2017/04/11 v1.8q multicolumn formatting (FMi)
+\c@tracingmulticols=\count88
+\mult@box=\box26
+\multicol@leftmargin=\dimen106
+\c@unbalance=\count89
+\c@collectmore=\count90
+\doublecol@number=\count91
+\multicoltolerance=\count92
+\multicolpretolerance=\count93
+\full@width=\dimen107
+\page@free=\dimen108
+\premulticols=\dimen109
+\postmulticols=\dimen110
+\multicolsep=\skip53
+\multicolbaselineskip=\skip54
+\partial@page=\box27
+\last@line=\box28
+\maxbalancingoverflow=\dimen111
+\mult@rightbox=\box29
+\mult@grightbox=\box30
+\mult@gfirstbox=\box31
+\mult@firstbox=\box32
+\@tempa=\box33
+\@tempa=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\c@columnbadness=\count94
+\c@finalcolumnbadness=\count95
+\last@try=\dimen112
+\multicolovershoot=\dimen113
+\multicolundershoot=\dimen114
+\mult@nat@firstbox=\box50
+\colbreak@box=\box51
+\mc@col@check@num=\count96
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/palatino.sty
+Package: palatino 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/paralist/paralist.sty
+Package: paralist 2017/01/22 v2.7 Extended list environments
+\pltopsep=\skip55
+\plpartopsep=\skip56
+\plitemsep=\skip57
+\plparsep=\skip58
+\pl@lab=\toks19
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count97
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+
+LaTeX Warning: Unused global option(s):
+    [9pt].
+
+No file cv_jiang.aux.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 14.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ot1ppl.fd
+File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
+)
+(/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count98
+\scratchdimen=\dimen115
+\scratchbox=\box52
+\nofMPsegments=\count99
+\nofMParguments=\count100
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count101
+\MPscratchDim=\dimen116
+\MPnumerator=\count102
+\makeMPintoPDFobject=\count103
+\everyMPtoPDFconversion=\toks21
+)
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 20.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 26.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 26.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 26.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 43.
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 45.
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omsppl.fd
+File: omsppl.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 45.
+ [1
+
+{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (12.82808pt too wide) in paragraph at lines 153--154
+\OT1/ppl/m/n/10 Rec-om-men-da-tion with So-cial Con-tex-tual In-for-ma-tion'', 
+in IEEE Trans-ac-tions on Knowl-
+ []
+
+
+Overfull \hbox (6.04839pt too wide) in paragraph at lines 171--172
+\OT1/ppl/m/n/10 SIGKDD In-ter-na-tional Con-fer-ence on Knowl-edge Dis-cov-ery 
+and Data Min-ing (\OT1/ppl/b/n/10 KDD\OT1/ppl/m/n/10 ),
+ []
+
+[2]
+Overfull \hbox (6.04839pt too wide) in paragraph at lines 179--180
+\OT1/ppl/m/n/10 SIGKDD In-ter-na-tional Con-fer-ence on Knowl-edge Dis-cov-ery 
+and Data Min-ing (\OT1/ppl/b/n/10 KDD\OT1/ppl/m/n/10 ),
+ []
+
+
+Overfull \hbox (6.04839pt too wide) in paragraph at lines 195--196
+\OT1/ppl/m/n/10 SIGKDD In-ter-na-tional Con-fer-ence on Knowl-edge Dis-cov-ery 
+and Data Min-ing (\OT1/ppl/b/n/10 KDD\OT1/ppl/m/n/10 ),
+ []
+
+[3]
+Overfull \hbox (5.71979pt too wide) in paragraph at lines 205--206
+[]\OT1/ppl/m/n/10 [C2] \OT1/ppl/b/n/10 Meng Jiang\OT1/ppl/m/n/10 , Peng Cui, Ru
+i Liu, Qiang Yang, Fei Wang, Wenwu Zhu and Shiqiang
+ []
+
+Missing character: There is no â in font pplr7t!
+Missing character: There is no € in font pplr7t!
+Missing character: There is no ” in font pplr7t!
+
+Overfull \hbox (5.42918pt too wide) in paragraph at lines 219--220
+\OT1/ppl/m/n/10 In-ter-na-tional Con-fer-ence on In-for-ma-tion and Knowl-edge 
+Man-age-ment (\OT1/ppl/b/n/10 CIKM\OT1/ppl/m/n/10 ), 2016. 
+ []
+
+[4]
+Overfull \hbox (2.57904pt too wide) in paragraph at lines 249--250
+[]\OT1/ppl/m/n/10 [T5] Jingbo Shang, Xi-ang Ren, \OT1/ppl/b/n/10 Meng Jiang\OT1
+/ppl/m/n/10 , and Ji-awei Han. ``Min-ing Entity-Relation-
+ []
+
+[5]
+Overfull \hbox (7.6485pt too wide) in paragraph at lines 301--302
+[]\OT1/ppl/m/n/10 [K6] ``Data-driven Be-hav-ioral An-a-lyt-ics with Net-works''
+, at Uni-ver-sity of Notre Dame,
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 407--409
+
+ []
+
+[7]
+Overfull \hbox (11.11864pt too wide) in paragraph at lines 451--452
+[]\OT1/ppl/m/n/10 IEEE In-ter-na-tional Con-fer-ence on Data Sci-ence and Ad-va
+nced An-a-lyt-ics (\OT1/ppl/b/n/10 DSAA\OT1/ppl/m/n/10 ),
+ []
+
+
+Overfull \hbox (7.39882pt too wide) in paragraph at lines 462--463
+[]\OT1/ppl/m/n/10 International Jour-nal of In-for-ma-tion Tech-nol-ogy and De-
+ci-sion Mak-ing (\OT1/ppl/b/n/10 IJITDM\OT1/ppl/m/n/10 ) 
+ []
+
+[8] [9] ) 
+Here is how much of TeX's memory you used:
+ 1897 strings out of 492995
+ 24046 string characters out of 6132704
+ 93468 words of memory out of 5000000
+ 5481 multiletter control sequences out of 15000+600000
+ 10151 words of font info for 27 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 29i,8n,43p,411b,210s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/
+local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/lo
+cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
+l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/t
+exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
+xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texl
+ive/2017/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/201
+7/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017/texmf
+-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on cv_jiang.pdf (9 pages, 116305 bytes).
+PDF statistics:
+ 67 PDF objects out of 1000 (max. 8388607)
+ 47 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
