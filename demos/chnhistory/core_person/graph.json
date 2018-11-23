@@ -1,0 +1,294 @@
+{
+ "nodes": [
+  {
+   "name": "于定國",
+   "label": "PERSON",
+   "id": 1,
+   "group": 1
+  },
+  {
+   "name": "匡衡",
+   "label": "PERSON",
+   "id": 2,
+   "group": 1
+  },
+  {
+   "name": "后倉",
+   "label": "PERSON",
+   "id": 3,
+   "group": 1
+  },
+  {
+   "name": "嚴延年",
+   "label": "PERSON",
+   "id": 4,
+   "group": 1
+  },
+  {
+   "name": "嚴彭祖",
+   "label": "PERSON",
+   "id": 5,
+   "group": 1
+  },
+  {
+   "name": "夏侯勝",
+   "label": "PERSON",
+   "id": 6,
+   "group": 1
+  },
+  {
+   "name": "嬴公",
+   "label": "PERSON",
+   "id": 7,
+   "group": 1
+  },
+  {
+   "name": "孟卿",
+   "label": "PERSON",
+   "id": 8,
+   "group": 1
+  },
+  {
+   "name": "孟喜",
+   "label": "PERSON",
+   "id": 9,
+   "group": 1
+  },
+  {
+   "name": "張敞",
+   "label": "PERSON",
+   "id": 10,
+   "group": 1
+  },
+  {
+   "name": "田王孫",
+   "label": "PERSON",
+   "id": 11,
+   "group": 1
+  },
+  {
+   "name": "疏受",
+   "label": "PERSON",
+   "id": 12,
+   "group": 1
+  },
+  {
+   "name": "疏廣",
+   "label": "PERSON",
+   "id": 13,
+   "group": 1
+  },
+  {
+   "name": "白光",
+   "label": "PERSON",
+   "id": 14,
+   "group": 1
+  },
+  {
+   "name": "眭孟",
+   "label": "PERSON",
+   "id": 15,
+   "group": 1
+  },
+  {
+   "name": "翼奉",
+   "label": "PERSON",
+   "id": 16,
+   "group": 1
+  },
+  {
+   "name": "蕭奮",
+   "label": "PERSON",
+   "id": 17,
+   "group": 1
+  },
+  {
+   "name": "蕭望之",
+   "label": "PERSON",
+   "id": 18,
+   "group": 1
+  },
+  {
+   "name": "顏安樂",
+   "label": "PERSON",
+   "id": 19,
+   "group": 1
+  }
+ ],
+ "links": [
+  {
+   "source": 4,
+   "target": 5,
+   "type": "BROTHER_BROTHER",
+   "group": 1
+  },
+  {
+   "source": 5,
+   "target": 4,
+   "type": "BROTHER_BROTHER",
+   "group": 1
+  },
+  {
+   "source": 10,
+   "target": 18,
+   "type": "ENEMY",
+   "group": 2
+  },
+  {
+   "source": 18,
+   "target": 10,
+   "type": "ENEMY",
+   "group": 2
+  },
+  {
+   "source": 1,
+   "target": 10,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 2,
+   "target": 16,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 4,
+   "target": 10,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 10,
+   "target": 1,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 10,
+   "target": 4,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 10,
+   "target": 18,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 16,
+   "target": 2,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 18,
+   "target": 10,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 8,
+   "target": 9,
+   "type": "FATHER_SON",
+   "group": 4
+  },
+  {
+   "source": 18,
+   "target": 2,
+   "type": "RECOMMENDATION",
+   "group": 5
+  },
+  {
+   "source": 3,
+   "target": 2,
+   "type": "TEACHER_DISCIPLE",
+   "group": 6
+  },
+  {
+   "source": 3,
+   "target": 16,
+   "type": "TEACHER_DISCIPLE",
+   "group": 6
+  },
+  {
+   "source": 3,
+   "target": 18,
+   "type": "TEACHER_DISCIPLE",
+   "group": 6
+  },
+  {
+   "source": 6,
+   "target": 18,
+   "type": "TEACHER_DISCIPLE",
+   "group": 6
+  },
+  {
+   "source": 7,
+   "target": 8,
+   "type": "TEACHER_DISCIPLE",
+   "group": 6
+  },
+  {
+   "source": 7,
+   "target": 15,
+   "type": "TEACHER_DISCIPLE",
+   "group": 6
+  },
+  {
+   "source": 8,
+   "target": 3,
+   "type": "TEACHER_DISCIPLE",
+   "group": 6
+  },
+  {
+   "source": 8,
+   "target": 9,
+   "type": "TEACHER_DISCIPLE",
+   "group": 6
+  },
+  {
+   "source": 8,
+   "target": 13,
+   "type": "TEACHER_DISCIPLE",
+   "group": 6
+  },
+  {
+   "source": 9,
+   "target": 14,
+   "type": "TEACHER_DISCIPLE",
+   "group": 6
+  },
+  {
+   "source": 11,
+   "target": 9,
+   "type": "TEACHER_DISCIPLE",
+   "group": 6
+  },
+  {
+   "source": 15,
+   "target": 5,
+   "type": "TEACHER_DISCIPLE",
+   "group": 6
+  },
+  {
+   "source": 15,
+   "target": 19,
+   "type": "TEACHER_DISCIPLE",
+   "group": 6
+  },
+  {
+   "source": 17,
+   "target": 8,
+   "type": "TEACHER_DISCIPLE",
+   "group": 6
+  },
+  {
+   "source": 13,
+   "target": 12,
+   "type": "UNCLE_NEPHEW",
+   "group": 7
+  }
+ ]
+}

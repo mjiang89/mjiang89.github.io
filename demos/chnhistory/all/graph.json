@@ -1,0 +1,4134 @@
+{
+ "nodes": [
+  {
+   "name": "丙吉",
+   "label": "PERSON",
+   "id": 1,
+   "group": 1
+  },
+  {
+   "name": "丙顯",
+   "label": "PERSON",
+   "id": 2,
+   "group": 1
+  },
+  {
+   "name": "于定國",
+   "label": "PERSON",
+   "id": 3,
+   "group": 1
+  },
+  {
+   "name": "于永",
+   "label": "PERSON",
+   "id": 4,
+   "group": 1
+  },
+  {
+   "name": "五鹿充宗",
+   "label": "PERSON",
+   "id": 5,
+   "group": 1
+  },
+  {
+   "name": "京房",
+   "label": "PERSON",
+   "id": 6,
+   "group": 1
+  },
+  {
+   "name": "伏理",
+   "label": "PERSON",
+   "id": 7,
+   "group": 1
+  },
+  {
+   "name": "劉向",
+   "label": "PERSON",
+   "id": 8,
+   "group": 1
+  },
+  {
+   "name": "劉更生",
+   "label": "PERSON",
+   "id": 9,
+   "group": 1
+  },
+  {
+   "name": "匡咸",
+   "label": "PERSON",
+   "id": 10,
+   "group": 1
+  },
+  {
+   "name": "匡衡",
+   "label": "PERSON",
+   "id": 11,
+   "group": 1
+  },
+  {
+   "name": "史高",
+   "label": "PERSON",
+   "id": 12,
+   "group": 1
+  },
+  {
+   "name": "后倉",
+   "label": "PERSON",
+   "id": 13,
+   "group": 1
+  },
+  {
+   "name": "周堪",
+   "label": "PERSON",
+   "id": 14,
+   "group": 1
+  },
+  {
+   "name": "嚴延年",
+   "label": "PERSON",
+   "id": 15,
+   "group": 1
+  },
+  {
+   "name": "嚴彭祖",
+   "label": "PERSON",
+   "id": 16,
+   "group": 1
+  },
+  {
+   "name": "夏侯勝",
+   "label": "PERSON",
+   "id": 17,
+   "group": 1
+  },
+  {
+   "name": "夏侯始昌",
+   "label": "PERSON",
+   "id": 18,
+   "group": 1
+  },
+  {
+   "name": "夏侯建",
+   "label": "PERSON",
+   "id": 19,
+   "group": 1
+  },
+  {
+   "name": "嬴公",
+   "label": "PERSON",
+   "id": 20,
+   "group": 1
+  },
+  {
+   "name": "孔光",
+   "label": "PERSON",
+   "id": 21,
+   "group": 1
+  },
+  {
+   "name": "孔霸",
+   "label": "PERSON",
+   "id": 22,
+   "group": 1
+  },
+  {
+   "name": "孟卿",
+   "label": "PERSON",
+   "id": 23,
+   "group": 1
+  },
+  {
+   "name": "孟喜",
+   "label": "PERSON",
+   "id": 24,
+   "group": 1
+  },
+  {
+   "name": "孫寶",
+   "label": "PERSON",
+   "id": 25,
+   "group": 1
+  },
+  {
+   "name": "孫會宗",
+   "label": "PERSON",
+   "id": 26,
+   "group": 1
+  },
+  {
+   "name": "崇子平",
+   "label": "PERSON",
+   "id": 27,
+   "group": 1
+  },
+  {
+   "name": "師丹",
+   "label": "PERSON",
+   "id": 28,
+   "group": 1
+  },
+  {
+   "name": "平晏",
+   "label": "PERSON",
+   "id": 29,
+   "group": 1
+  },
+  {
+   "name": "張敞",
+   "label": "PERSON",
+   "id": 30,
+   "group": 1
+  },
+  {
+   "name": "張武",
+   "label": "PERSON",
+   "id": 31,
+   "group": 1
+  },
+  {
+   "name": "張游卿",
+   "label": "PERSON",
+   "id": 32,
+   "group": 1
+  },
+  {
+   "name": "張禹",
+   "label": "PERSON",
+   "id": 33,
+   "group": 1
+  },
+  {
+   "name": "張竦",
+   "label": "PERSON",
+   "id": 34,
+   "group": 1
+  },
+  {
+   "name": "彭宣",
+   "label": "PERSON",
+   "id": 35,
+   "group": 1
+  },
+  {
+   "name": "慶普",
+   "label": "PERSON",
+   "id": 36,
+   "group": 1
+  },
+  {
+   "name": "戴崇",
+   "label": "PERSON",
+   "id": 37,
+   "group": 1
+  },
+  {
+   "name": "戴德",
+   "label": "PERSON",
+   "id": 38,
+   "group": 1
+  },
+  {
+   "name": "戴聖",
+   "label": "PERSON",
+   "id": 39,
+   "group": 1
+  },
+  {
+   "name": "施讎",
+   "label": "PERSON",
+   "id": 40,
+   "group": 1
+  },
+  {
+   "name": "朱博",
+   "label": "PERSON",
+   "id": 41,
+   "group": 1
+  },
+  {
+   "name": "杜延年",
+   "label": "PERSON",
+   "id": 42,
+   "group": 1
+  },
+  {
+   "name": "梁丘臨",
+   "label": "PERSON",
+   "id": 43,
+   "group": 1
+  },
+  {
+   "name": "梁丘賀",
+   "label": "PERSON",
+   "id": 44,
+   "group": 1
+  },
+  {
+   "name": "楊惲",
+   "label": "PERSON",
+   "id": 45,
+   "group": 1
+  },
+  {
+   "name": "楊興",
+   "label": "PERSON",
+   "id": 46,
+   "group": 1
+  },
+  {
+   "name": "歐陽地餘",
+   "label": "PERSON",
+   "id": 47,
+   "group": 1
+  },
+  {
+   "name": "歐陽高",
+   "label": "PERSON",
+   "id": 48,
+   "group": 1
+  },
+  {
+   "name": "滿昌",
+   "label": "PERSON",
+   "id": 49,
+   "group": 1
+  },
+  {
+   "name": "牟卿",
+   "label": "PERSON",
+   "id": 50,
+   "group": 1
+  },
+  {
+   "name": "王中",
+   "label": "PERSON",
+   "id": 51,
+   "group": 1
+  },
+  {
+   "name": "王仲翁",
+   "label": "PERSON",
+   "id": 52,
+   "group": 1
+  },
+  {
+   "name": "王吉",
+   "label": "PERSON",
+   "id": 53,
+   "group": 1
+  },
+  {
+   "name": "王嘉",
+   "label": "PERSON",
+   "id": 54,
+   "group": 1
+  },
+  {
+   "name": "王崇",
+   "label": "PERSON",
+   "id": 55,
+   "group": 1
+  },
+  {
+   "name": "王式",
+   "label": "PERSON",
+   "id": 56,
+   "group": 1
+  },
+  {
+   "name": "王駿",
+   "label": "PERSON",
+   "id": 57,
+   "group": 1
+  },
+  {
+   "name": "王鳳",
+   "label": "PERSON",
+   "id": 58,
+   "group": 1
+  },
+  {
+   "name": "田王孫",
+   "label": "PERSON",
+   "id": 59,
+   "group": 1
+  },
+  {
+   "name": "疏受",
+   "label": "PERSON",
+   "id": 60,
+   "group": 1
+  },
+  {
+   "name": "疏廣",
+   "label": "PERSON",
+   "id": 61,
+   "group": 1
+  },
+  {
+   "name": "白光",
+   "label": "PERSON",
+   "id": 62,
+   "group": 1
+  },
+  {
+   "name": "白奇",
+   "label": "PERSON",
+   "id": 63,
+   "group": 1
+  },
+  {
+   "name": "眭孟",
+   "label": "PERSON",
+   "id": 64,
+   "group": 1
+  },
+  {
+   "name": "眭弘",
+   "label": "PERSON",
+   "id": 65,
+   "group": 1
+  },
+  {
+   "name": "石顯",
+   "label": "PERSON",
+   "id": 66,
+   "group": 1
+  },
+  {
+   "name": "筦路",
+   "label": "PERSON",
+   "id": 67,
+   "group": 1
+  },
+  {
+   "name": "翟方進",
+   "label": "PERSON",
+   "id": 68,
+   "group": 1
+  },
+  {
+   "name": "翟牧",
+   "label": "PERSON",
+   "id": 69,
+   "group": 1
+  },
+  {
+   "name": "翼奉",
+   "label": "PERSON",
+   "id": 70,
+   "group": 1
+  },
+  {
+   "name": "蔡義",
+   "label": "PERSON",
+   "id": 71,
+   "group": 1
+  },
+  {
+   "name": "蕑卿",
+   "label": "PERSON",
+   "id": 72,
+   "group": 1
+  },
+  {
+   "name": "蕭咸",
+   "label": "PERSON",
+   "id": 73,
+   "group": 1
+  },
+  {
+   "name": "蕭奮",
+   "label": "PERSON",
+   "id": 74,
+   "group": 1
+  },
+  {
+   "name": "蕭望之",
+   "label": "PERSON",
+   "id": 75,
+   "group": 1
+  },
+  {
+   "name": "蕭由",
+   "label": "PERSON",
+   "id": 76,
+   "group": 1
+  },
+  {
+   "name": "蕭育",
+   "label": "PERSON",
+   "id": 77,
+   "group": 1
+  },
+  {
+   "name": "薛廣德",
+   "label": "PERSON",
+   "id": 78,
+   "group": 1
+  },
+  {
+   "name": "許商",
+   "label": "PERSON",
+   "id": 79,
+   "group": 1
+  },
+  {
+   "name": "許延壽",
+   "label": "PERSON",
+   "id": 80,
+   "group": 1
+  },
+  {
+   "name": "貢禹",
+   "label": "PERSON",
+   "id": 81,
+   "group": 1
+  },
+  {
+   "name": "通漢",
+   "label": "PERSON",
+   "id": 82,
+   "group": 1
+  },
+  {
+   "name": "鄭寬中",
+   "label": "PERSON",
+   "id": 83,
+   "group": 1
+  },
+  {
+   "name": "金敞",
+   "label": "PERSON",
+   "id": 84,
+   "group": 1
+  },
+  {
+   "name": "陳咸",
+   "label": "PERSON",
+   "id": 85,
+   "group": 1
+  },
+  {
+   "name": "陳萬年",
+   "label": "PERSON",
+   "id": 86,
+   "group": 1
+  },
+  {
+   "name": "韋玄成",
+   "label": "PERSON",
+   "id": 87,
+   "group": 1
+  },
+  {
+   "name": "韋賞",
+   "label": "PERSON",
+   "id": 88,
+   "group": 1
+  },
+  {
+   "name": "韋賢",
+   "label": "PERSON",
+   "id": 89,
+   "group": 1
+  },
+  {
+   "name": "韓延壽",
+   "label": "PERSON",
+   "id": 90,
+   "group": 1
+  },
+  {
+   "name": "顏安樂",
+   "label": "PERSON",
+   "id": 91,
+   "group": 1
+  },
+  {
+   "name": "馬宮",
+   "label": "PERSON",
+   "id": 92,
+   "group": 1
+  },
+  {
+   "name": "馮奉世",
+   "label": "PERSON",
+   "id": 93,
+   "group": 1
+  },
+  {
+   "name": "馮逡",
+   "label": "PERSON",
+   "id": 94,
+   "group": 1
+  },
+  {
+   "name": "魏相",
+   "label": "PERSON",
+   "id": 95,
+   "group": 1
+  },
+  {
+   "name": "魯伯",
+   "label": "PERSON",
+   "id": 96,
+   "group": 1
+  },
+  {
+   "name": "黃霸",
+   "label": "PERSON",
+   "id": 97,
+   "group": 1
+  },
+  {
+   "name": "龔勝",
+   "label": "PERSON",
+   "id": 98,
+   "group": 1
+  },
+  {
+   "name": "下阫",
+   "label": "LOCATION",
+   "id": 99,
+   "group": 2
+  },
+  {
+   "name": "定陶",
+   "label": "LOCATION",
+   "id": 100,
+   "group": 2
+  },
+  {
+   "name": "平陽",
+   "label": "LOCATION",
+   "id": 101,
+   "group": 2
+  },
+  {
+   "name": "戚",
+   "label": "LOCATION",
+   "id": 102,
+   "group": 2
+  },
+  {
+   "name": "承人",
+   "label": "LOCATION",
+   "id": 103,
+   "group": 2
+  },
+  {
+   "name": "新桃",
+   "label": "LOCATION",
+   "id": 104,
+   "group": 2
+  },
+  {
+   "name": "東平",
+   "label": "LOCATION",
+   "id": 105,
+   "group": 2
+  },
+  {
+   "name": "東平人",
+   "label": "LOCATION",
+   "id": 106,
+   "group": 2
+  },
+  {
+   "name": "東武",
+   "label": "LOCATION",
+   "id": 107,
+   "group": 2
+  },
+  {
+   "name": "東海",
+   "label": "LOCATION",
+   "id": 108,
+   "group": 2
+  },
+  {
+   "name": "梁",
+   "label": "LOCATION",
+   "id": 109,
+   "group": 2
+  },
+  {
+   "name": "沛",
+   "label": "LOCATION",
+   "id": 110,
+   "group": 2
+  },
+  {
+   "name": "沛郡",
+   "label": "LOCATION",
+   "id": 111,
+   "group": 2
+  },
+  {
+   "name": "河東",
+   "label": "LOCATION",
+   "id": 112,
+   "group": 2
+  },
+  {
+   "name": "濟南",
+   "label": "LOCATION",
+   "id": 113,
+   "group": 2
+  },
+  {
+   "name": "濟陰",
+   "label": "LOCATION",
+   "id": 114,
+   "group": 2
+  },
+  {
+   "name": "燕人",
+   "label": "LOCATION",
+   "id": 115,
+   "group": 2
+  },
+  {
+   "name": "琅玡",
+   "label": "LOCATION",
+   "id": 116,
+   "group": 2
+  },
+  {
+   "name": "琅邪",
+   "label": "LOCATION",
+   "id": 117,
+   "group": 2
+  },
+  {
+   "name": "皋虞",
+   "label": "LOCATION",
+   "id": 118,
+   "group": 2
+  },
+  {
+   "name": "相",
+   "label": "LOCATION",
+   "id": 119,
+   "group": 2
+  },
+  {
+   "name": "碭",
+   "label": "LOCATION",
+   "id": 120,
+   "group": 2
+  },
+  {
+   "name": "聞人",
+   "label": "LOCATION",
+   "id": 121,
+   "group": 2
+  },
+  {
+   "name": "蕃人",
+   "label": "LOCATION",
+   "id": 122,
+   "group": 2
+  },
+  {
+   "name": "蘭陵",
+   "label": "LOCATION",
+   "id": 123,
+   "group": 2
+  },
+  {
+   "name": "郯",
+   "label": "LOCATION",
+   "id": 124,
+   "group": 2
+  },
+  {
+   "name": "長安",
+   "label": "LOCATION",
+   "id": 125,
+   "group": 2
+  },
+  {
+   "name": "魯人",
+   "label": "LOCATION",
+   "id": 126,
+   "group": 2
+  },
+  {
+   "name": "魯國",
+   "label": "LOCATION",
+   "id": 127,
+   "group": 2
+  },
+  {
+   "name": "齊人",
+   "label": "LOCATION",
+   "id": 128,
+   "group": 2
+  },
+  {
+   "name": "下相廷尉獄",
+   "label": "TITLE",
+   "id": 129,
+   "group": 3
+  },
+  {
+   "name": "丞相",
+   "label": "TITLE",
+   "id": 130,
+   "group": 3
+  },
+  {
+   "name": "丞相司直",
+   "label": "TITLE",
+   "id": 131,
+   "group": 3
+  },
+  {
+   "name": "丞相掾",
+   "label": "TITLE",
+   "id": 132,
+   "group": 3
+  },
+  {
+   "name": "中山中尉",
+   "label": "TITLE",
+   "id": 133,
+   "group": 3
+  },
+  {
+   "name": "中郎",
+   "label": "TITLE",
+   "id": 134,
+   "group": 3
+  },
+  {
+   "name": "九江太守",
+   "label": "TITLE",
+   "id": 135,
+   "group": 3
+  },
+  {
+   "name": "京兆尹",
+   "label": "TITLE",
+   "id": 136,
+   "group": 3
+  },
+  {
+   "name": "以高第為尚書",
+   "label": "TITLE",
+   "id": 137,
+   "group": 3
+  },
+  {
+   "name": "使匈奴副校尉",
+   "label": "TITLE",
+   "id": 138,
+   "group": 3
+  },
+  {
+   "name": "侍中",
+   "label": "TITLE",
+   "id": 139,
+   "group": 3
+  },
+  {
+   "name": "侍中中郎將",
+   "label": "TITLE",
+   "id": 140,
+   "group": 3
+  },
+  {
+   "name": "侍中光祿大夫",
+   "label": "TITLE",
+   "id": 141,
+   "group": 3
+  },
+  {
+   "name": "信都太傅",
+   "label": "TITLE",
+   "id": 142,
+   "group": 3
+  },
+  {
+   "name": "光祿勳",
+   "label": "TITLE",
+   "id": 143,
+   "group": 3
+  },
+  {
+   "name": "光祿勳、",
+   "label": "TITLE",
+   "id": 144,
+   "group": 3
+  },
+  {
+   "name": "光祿大夫",
+   "label": "TITLE",
+   "id": 145,
+   "group": 3
+  },
+  {
+   "name": "光祿大夫、太子少傅",
+   "label": "TITLE",
+   "id": 146,
+   "group": 3
+  },
+  {
+   "name": "光祿大夫給事中",
+   "label": "TITLE",
+   "id": 147,
+   "group": 3
+  },
+  {
+   "name": "光祿大夫，平尚書事",
+   "label": "TITLE",
+   "id": 148,
+   "group": 3
+  },
+  {
+   "name": "免",
+   "label": "TITLE",
+   "id": 149,
+   "group": 3
+  },
+  {
+   "name": "免官",
+   "label": "TITLE",
+   "id": 150,
+   "group": 3
+  },
+  {
+   "name": "免官歸",
+   "label": "TITLE",
+   "id": 151,
+   "group": 3
+  },
+  {
+   "name": "冀州刺史",
+   "label": "TITLE",
+   "id": 152,
+   "group": 3
+  },
+  {
+   "name": "函谷關都尉",
+   "label": "TITLE",
+   "id": 153,
+   "group": 3
+  },
+  {
+   "name": "刺史",
+   "label": "TITLE",
+   "id": 154,
+   "group": 3
+  },
+  {
+   "name": "博士",
+   "label": "TITLE",
+   "id": 155,
+   "group": 3
+  },
+  {
+   "name": "博士、光祿大夫",
+   "label": "TITLE",
+   "id": 156,
+   "group": 3
+  },
+  {
+   "name": "博士、諫大夫",
+   "label": "TITLE",
+   "id": 157,
+   "group": 3
+  },
+  {
+   "name": "博士太中大夫",
+   "label": "TITLE",
+   "id": 158,
+   "group": 3
+  },
+  {
+   "name": "博士諫大夫",
+   "label": "TITLE",
+   "id": 159,
+   "group": 3
+  },
+  {
+   "name": "博士，給事中",
+   "label": "TITLE",
+   "id": 160,
+   "group": 3
+  },
+  {
+   "name": "司隸校尉",
+   "label": "TITLE",
+   "id": 161,
+   "group": 3
+  },
+  {
+   "name": "哀帝為定陶王時，賞為太傅",
+   "label": "TITLE",
+   "id": 162,
+   "group": 3
+  },
+  {
+   "name": "坐法失官，",
+   "label": "TITLE",
+   "id": 163,
+   "group": 3
+  },
+  {
+   "name": "坐與光祿勳楊惲厚善",
+   "label": "TITLE",
+   "id": 164,
+   "group": 3
+  },
+  {
+   "name": "大司空",
+   "label": "TITLE",
+   "id": 165,
+   "group": 3
+  },
+  {
+   "name": "大司農",
+   "label": "TITLE",
+   "id": 166,
+   "group": 3
+  },
+  {
+   "name": "大司馬車騎將軍",
+   "label": "TITLE",
+   "id": 167,
+   "group": 3
+  },
+  {
+   "name": "大行治禮丞",
+   "label": "TITLE",
+   "id": 168,
+   "group": 3
+  },
+  {
+   "name": "大鴻臚",
+   "label": "TITLE",
+   "id": 169,
+   "group": 3
+  },
+  {
+   "name": "太中大夫",
+   "label": "TITLE",
+   "id": 170,
+   "group": 3
+  },
+  {
+   "name": "太中大夫，以選授皇太子經，",
+   "label": "TITLE",
+   "id": 171,
+   "group": 3
+  },
+  {
+   "name": "太中大夫，給事中，至少府",
+   "label": "TITLE",
+   "id": 172,
+   "group": 3
+  },
+  {
+   "name": "太傅",
+   "label": "TITLE",
+   "id": 173,
+   "group": 3
+  },
+  {
+   "name": "太僕丞",
+   "label": "TITLE",
+   "id": 174,
+   "group": 3
+  },
+  {
+   "name": "太子中庶子",
+   "label": "TITLE",
+   "id": 175,
+   "group": 3
+  },
+  {
+   "name": "太子太傅",
+   "label": "TITLE",
+   "id": 176,
+   "group": 3
+  },
+  {
+   "name": "太子太傅，",
+   "label": "TITLE",
+   "id": 177,
+   "group": 3
+  },
+  {
+   "name": "太子家令",
+   "label": "TITLE",
+   "id": 178,
+   "group": 3
+  },
+  {
+   "name": "太子少傅",
+   "label": "TITLE",
+   "id": 179,
+   "group": 3
+  },
+  {
+   "name": "太子庶子",
+   "label": "TITLE",
+   "id": 180,
+   "group": 3
+  },
+  {
+   "name": "太子舍人",
+   "label": "TITLE",
+   "id": 181,
+   "group": 3
+  },
+  {
+   "name": "太守",
+   "label": "TITLE",
+   "id": 182,
+   "group": 3
+  },
+  {
+   "name": "太守卒史",
+   "label": "TITLE",
+   "id": 183,
+   "group": 3
+  },
+  {
+   "name": "奏免丞相匡衡，遷少府",
+   "label": "TITLE",
+   "id": 184,
+   "group": 3
+  },
+  {
+   "name": "好畤令",
+   "label": "TITLE",
+   "id": 185,
+   "group": 3
+  },
+  {
+   "name": "封侯",
+   "label": "TITLE",
+   "id": 186,
+   "group": 3
+  },
+  {
+   "name": "小苑東門候",
+   "label": "TITLE",
+   "id": 187,
+   "group": 3
+  },
+  {
+   "name": "少傅",
+   "label": "TITLE",
+   "id": 188,
+   "group": 3
+  },
+  {
+   "name": "少府",
+   "label": "TITLE",
+   "id": 189,
+   "group": 3
+  },
+  {
+   "name": "山陽太守",
+   "label": "TITLE",
+   "id": 190,
+   "group": 3
+  },
+  {
+   "name": "左遷虹長，自免歸教授",
+   "label": "TITLE",
+   "id": 191,
+   "group": 3
+  },
+  {
+   "name": "左馮翊",
+   "label": "TITLE",
+   "id": 192,
+   "group": 3
+  },
+  {
+   "name": "帝太傅",
+   "label": "TITLE",
+   "id": 193,
+   "group": 3
+  },
+  {
+   "name": "平原太守",
+   "label": "TITLE",
+   "id": 194,
+   "group": 3
+  },
+  {
+   "name": "平原文學卒史",
+   "label": "TITLE",
+   "id": 195,
+   "group": 3
+  },
+  {
+   "name": "平陵令",
+   "label": "TITLE",
+   "id": 196,
+   "group": 3
+  },
+  {
+   "name": "年",
+   "label": "TITLE",
+   "id": 197,
+   "group": 3
+  },
+  {
+   "name": "幽州刺史",
+   "label": "TITLE",
+   "id": 198,
+   "group": 3
+  },
+  {
+   "name": "廷尉",
+   "label": "TITLE",
+   "id": 199,
+   "group": 3
+  },
+  {
+   "name": "廷尉右監",
+   "label": "TITLE",
+   "id": 200,
+   "group": 3
+  },
+  {
+   "name": "待詔黃門數入說教侍中",
+   "label": "TITLE",
+   "id": 201,
+   "group": 3
+  },
+  {
+   "name": "御史",
+   "label": "TITLE",
+   "id": 202,
+   "group": 3
+  },
+  {
+   "name": "御史中丞",
+   "label": "TITLE",
+   "id": 203,
+   "group": 3
+  },
+  {
+   "name": "御史大夫",
+   "label": "TITLE",
+   "id": 204,
+   "group": 3
+  },
+  {
+   "name": "御史大夫屬",
+   "label": "TITLE",
+   "id": 205,
+   "group": 3
+  },
+  {
+   "name": "御史掾",
+   "label": "TITLE",
+   "id": 206,
+   "group": 3
+  },
+  {
+   "name": "昌邑中尉",
+   "label": "TITLE",
+   "id": 207,
+   "group": 3
+  },
+  {
+   "name": "昌邑王太傅",
+   "label": "TITLE",
+   "id": 208,
+   "group": 3
+  },
+  {
+   "name": "昌邑王師",
+   "label": "TITLE",
+   "id": 209,
+   "group": 3
+  },
+  {
+   "name": "昌邑群臣坐",
+   "label": "TITLE",
+   "id": 210,
+   "group": 3
+  },
+  {
+   "name": "曲臺署長，",
+   "label": "TITLE",
+   "id": 211,
+   "group": 3
+  },
+  {
+   "name": "東平太傅",
+   "label": "TITLE",
+   "id": 212,
+   "group": 3
+  },
+  {
+   "name": "東平王太傅",
+   "label": "TITLE",
+   "id": 213,
+   "group": 3
+  },
+  {
+   "name": "梁相",
+   "label": "TITLE",
+   "id": 214,
+   "group": 3
+  },
+  {
+   "name": "楊州刺史",
+   "label": "TITLE",
+   "id": 215,
+   "group": 3
+  },
+  {
+   "name": "樂陵安侯",
+   "label": "TITLE",
+   "id": 216,
+   "group": 3
+  },
+  {
+   "name": "武騎",
+   "label": "TITLE",
+   "id": 217,
+   "group": 3
+  },
+  {
+   "name": "歷冀州、青州兩郡刺史，長水校尉，泰山太守，入守大鴻臚",
+   "label": "TITLE",
+   "id": 218,
+   "group": 3
+  },
+  {
+   "name": "歸為州從事",
+   "label": "TITLE",
+   "id": 219,
+   "group": 3
+  },
+  {
+   "name": "水衡都尉",
+   "label": "TITLE",
+   "id": 220,
+   "group": 3
+  },
+  {
+   "name": "河南、東郡太守",
+   "label": "TITLE",
+   "id": 221,
+   "group": 3
+  },
+  {
+   "name": "河南太守",
+   "label": "TITLE",
+   "id": 222,
+   "group": 3
+  },
+  {
+   "name": "河隄都尉",
+   "label": "TITLE",
+   "id": 223,
+   "group": 3
+  },
+  {
+   "name": "涼州刺史",
+   "label": "TITLE",
+   "id": 224,
+   "group": 3
+  },
+  {
+   "name": "涿郡太守",
+   "label": "TITLE",
+   "id": 225,
+   "group": 3
+  },
+  {
+   "name": "淮陽太守",
+   "label": "TITLE",
+   "id": 226,
+   "group": 3
+  },
+  {
+   "name": "潁川太守",
+   "label": "TITLE",
+   "id": 227,
+   "group": 3
+  },
+  {
+   "name": "獄史，郡決曹，補廷尉史",
+   "label": "TITLE",
+   "id": 228,
+   "group": 3
+  },
+  {
+   "name": "甘泉倉長",
+   "label": "TITLE",
+   "id": 229,
+   "group": 3
+  },
+  {
+   "name": "病去官",
+   "label": "TITLE",
+   "id": 230,
+   "group": 3
+  },
+  {
+   "name": "益州刺史",
+   "label": "TITLE",
+   "id": 231,
+   "group": 3
+  },
+  {
+   "name": "符節令",
+   "label": "TITLE",
+   "id": 232,
+   "group": 3
+  },
+  {
+   "name": "膠東相，",
+   "label": "TITLE",
+   "id": 233,
+   "group": 3
+  },
+  {
+   "name": "若盧右丞",
+   "label": "TITLE",
+   "id": 234,
+   "group": 3
+  },
+  {
+   "name": "茂陵令",
+   "label": "TITLE",
+   "id": 235,
+   "group": 3
+  },
+  {
+   "name": "衛尉太僕",
+   "label": "TITLE",
+   "id": 236,
+   "group": 3
+  },
+  {
+   "name": "諫大夫",
+   "label": "TITLE",
+   "id": 237,
+   "group": 3
+  },
+  {
+   "name": "諫大夫給事中",
+   "label": "TITLE",
+   "id": 238,
+   "group": 3
+  },
+  {
+   "name": "諸吏光祿大夫",
+   "label": "TITLE",
+   "id": 239,
+   "group": 3
+  },
+  {
+   "name": "謁者",
+   "label": "TITLE",
+   "id": 240,
+   "group": 3
+  },
+  {
+   "name": "譯官令",
+   "label": "TITLE",
+   "id": 241,
+   "group": 3
+  },
+  {
+   "name": "議曹史",
+   "label": "TITLE",
+   "id": 242,
+   "group": 3
+  },
+  {
+   "name": "議郎",
+   "label": "TITLE",
+   "id": 243,
+   "group": 3
+  },
+  {
+   "name": "議郎博士",
+   "label": "TITLE",
+   "id": 244,
+   "group": 3
+  },
+  {
+   "name": "豫州刺史",
+   "label": "TITLE",
+   "id": 245,
+   "group": 3
+  },
+  {
+   "name": "趙內史",
+   "label": "TITLE",
+   "id": 246,
+   "group": 3
+  },
+  {
+   "name": "遷廷尉平，青州刺史，汝南、九江太守，所在見稱。徵為詹事，光祿勳，右將軍，代孔光為大司徒，封扶德侯。光為太師薨，宮復代光為太師，兼司徒官。",
+   "label": "TITLE",
+   "id": 247,
+   "group": 3
+  },
+  {
+   "name": "遷詹事，高密相。",
+   "label": "TITLE",
+   "id": 248,
+   "group": 3
+  },
+  {
+   "name": "遷雲陽令",
+   "label": "TITLE",
+   "id": 249,
+   "group": 3
+  },
+  {
+   "name": "郎",
+   "label": "TITLE",
+   "id": 250,
+   "group": 3
+  },
+  {
+   "name": "郎中",
+   "label": "TITLE",
+   "id": 251,
+   "group": 3
+  },
+  {
+   "name": "郎，遷楚長史，免官。後為丞相史司直",
+   "label": "TITLE",
+   "id": 252,
+   "group": 3
+  },
+  {
+   "name": "郡卒史",
+   "label": "TITLE",
+   "id": 253,
+   "group": 3
+  },
+  {
+   "name": "郡吏",
+   "label": "TITLE",
+   "id": 254,
+   "group": 3
+  },
+  {
+   "name": "郡守",
+   "label": "TITLE",
+   "id": 255,
+   "group": 3
+  },
+  {
+   "name": "都司空令",
+   "label": "TITLE",
+   "id": 256,
+   "group": 3
+  },
+  {
+   "name": "長信少府",
+   "label": "TITLE",
+   "id": 257,
+   "group": 3
+  },
+  {
+   "name": "長水校尉",
+   "label": "TITLE",
+   "id": 258,
+   "group": 3
+  },
+  {
+   "name": "魯獄史",
+   "label": "TITLE",
+   "id": 259,
+   "group": 3
+  },
+  {
+   "name": "黃門郎",
+   "label": "TITLE",
+   "id": 260,
+   "group": 3
+  },
+  {
+   "name": "，坐事，論免為庶人",
+   "label": "TITLE",
+   "id": 261,
+   "group": 3
+  },
+  {
+   "name": "，遷淮陽、泗水內史，張掖、弘農、河東太守",
+   "label": "TITLE",
+   "id": 262,
+   "group": 3
+  }
+ ],
+ "links": [
+  {
+   "source": 15,
+   "target": 16,
+   "type": "BROTHER_BROTHER",
+   "group": 1
+  },
+  {
+   "source": 16,
+   "target": 15,
+   "type": "BROTHER_BROTHER",
+   "group": 1
+  },
+  {
+   "source": 9,
+   "target": 81,
+   "type": "ENEMY",
+   "group": 2
+  },
+  {
+   "source": 9,
+   "target": 87,
+   "type": "ENEMY",
+   "group": 2
+  },
+  {
+   "source": 11,
+   "target": 57,
+   "type": "ENEMY",
+   "group": 2
+  },
+  {
+   "source": 15,
+   "target": 44,
+   "type": "ENEMY",
+   "group": 2
+  },
+  {
+   "source": 30,
+   "target": 75,
+   "type": "ENEMY",
+   "group": 2
+  },
+  {
+   "source": 44,
+   "target": 15,
+   "type": "ENEMY",
+   "group": 2
+  },
+  {
+   "source": 57,
+   "target": 11,
+   "type": "ENEMY",
+   "group": 2
+  },
+  {
+   "source": 66,
+   "target": 75,
+   "type": "ENEMY",
+   "group": 2
+  },
+  {
+   "source": 75,
+   "target": 30,
+   "type": "ENEMY",
+   "group": 2
+  },
+  {
+   "source": 75,
+   "target": 66,
+   "type": "ENEMY",
+   "group": 2
+  },
+  {
+   "source": 75,
+   "target": 90,
+   "type": "ENEMY",
+   "group": 2
+  },
+  {
+   "source": 75,
+   "target": 93,
+   "type": "ENEMY",
+   "group": 2
+  },
+  {
+   "source": 81,
+   "target": 9,
+   "type": "ENEMY",
+   "group": 2
+  },
+  {
+   "source": 87,
+   "target": 9,
+   "type": "ENEMY",
+   "group": 2
+  },
+  {
+   "source": 90,
+   "target": 75,
+   "type": "ENEMY",
+   "group": 2
+  },
+  {
+   "source": 93,
+   "target": 75,
+   "type": "ENEMY",
+   "group": 2
+  },
+  {
+   "source": 1,
+   "target": 95,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 3,
+   "target": 30,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 5,
+   "target": 66,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 8,
+   "target": 14,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 8,
+   "target": 75,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 8,
+   "target": 84,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 11,
+   "target": 70,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 11,
+   "target": 81,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 14,
+   "target": 8,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 14,
+   "target": 75,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 14,
+   "target": 84,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 15,
+   "target": 30,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 26,
+   "target": 45,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 28,
+   "target": 68,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 30,
+   "target": 3,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 30,
+   "target": 15,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 30,
+   "target": 45,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 30,
+   "target": 75,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 41,
+   "target": 77,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 45,
+   "target": 26,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 45,
+   "target": 30,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 45,
+   "target": 87,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 53,
+   "target": 81,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 66,
+   "target": 5,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 68,
+   "target": 28,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 70,
+   "target": 11,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 75,
+   "target": 8,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 75,
+   "target": 14,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 75,
+   "target": 30,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 75,
+   "target": 84,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 77,
+   "target": 41,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 77,
+   "target": 85,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 81,
+   "target": 11,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 81,
+   "target": 53,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 84,
+   "target": 8,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 84,
+   "target": 14,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 84,
+   "target": 75,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 85,
+   "target": 77,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 87,
+   "target": 45,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 95,
+   "target": 1,
+   "type": "FRIENDS",
+   "group": 3
+  },
+  {
+   "source": 1,
+   "target": 127,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 3,
+   "target": 108,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 3,
+   "target": 124,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 11,
+   "target": 103,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 11,
+   "target": 108,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 13,
+   "target": 108,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 13,
+   "target": 123,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 14,
+   "target": 128,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 15,
+   "target": 99,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 15,
+   "target": 108,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 16,
+   "target": 99,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 16,
+   "target": 108,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 17,
+   "target": 106,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 18,
+   "target": 126,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 23,
+   "target": 108,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 23,
+   "target": 123,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 24,
+   "target": 108,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 24,
+   "target": 123,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 28,
+   "target": 107,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 28,
+   "target": 117,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 30,
+   "target": 101,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 30,
+   "target": 112,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 36,
+   "target": 110,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 38,
+   "target": 109,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 39,
+   "target": 109,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 40,
+   "target": 110,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 44,
+   "target": 117,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 53,
+   "target": 116,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 53,
+   "target": 118,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 56,
+   "target": 104,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 56,
+   "target": 105,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 59,
+   "target": 120,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 60,
+   "target": 108,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 60,
+   "target": 123,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 61,
+   "target": 108,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 61,
+   "target": 123,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 62,
+   "target": 108,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 62,
+   "target": 123,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 65,
+   "target": 122,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 65,
+   "target": 127,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 66,
+   "target": 113,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 69,
+   "target": 110,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 70,
+   "target": 99,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 70,
+   "target": 108,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 75,
+   "target": 108,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 75,
+   "target": 123,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 78,
+   "target": 111,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 78,
+   "target": 119,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 79,
+   "target": 125,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 81,
+   "target": 117,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 82,
+   "target": 110,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 82,
+   "target": 121,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 90,
+   "target": 115,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 92,
+   "target": 102,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 92,
+   "target": 108,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 95,
+   "target": 100,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 95,
+   "target": 114,
+   "type": "HOMETOWN",
+   "group": 4
+  },
+  {
+   "source": 4,
+   "target": 54,
+   "type": "MENTOR",
+   "group": 5
+  },
+  {
+   "source": 12,
+   "target": 11,
+   "type": "MENTOR",
+   "group": 5
+  },
+  {
+   "source": 58,
+   "target": 41,
+   "type": "MENTOR",
+   "group": 5
+  },
+  {
+   "source": 58,
+   "target": 77,
+   "type": "MENTOR",
+   "group": 5
+  },
+  {
+   "source": 58,
+   "target": 85,
+   "type": "MENTOR",
+   "group": 5
+  },
+  {
+   "source": 75,
+   "target": 78,
+   "type": "MENTOR",
+   "group": 5
+  },
+  {
+   "source": 80,
+   "target": 15,
+   "type": "MENTOR",
+   "group": 5
+  },
+  {
+   "source": 95,
+   "target": 75,
+   "type": "MENTOR",
+   "group": 5
+  },
+  {
+   "source": 1,
+   "target": 2,
+   "type": "FATHER_SON",
+   "group": 6
+  },
+  {
+   "source": 3,
+   "target": 4,
+   "type": "FATHER_SON",
+   "group": 6
+  },
+  {
+   "source": 11,
+   "target": 10,
+   "type": "FATHER_SON",
+   "group": 6
+  },
+  {
+   "source": 23,
+   "target": 24,
+   "type": "FATHER_SON",
+   "group": 6
+  },
+  {
+   "source": 44,
+   "target": 43,
+   "type": "FATHER_SON",
+   "group": 6
+  },
+  {
+   "source": 53,
+   "target": 57,
+   "type": "FATHER_SON",
+   "group": 6
+  },
+  {
+   "source": 75,
+   "target": 73,
+   "type": "FATHER_SON",
+   "group": 6
+  },
+  {
+   "source": 75,
+   "target": 76,
+   "type": "FATHER_SON",
+   "group": 6
+  },
+  {
+   "source": 75,
+   "target": 77,
+   "type": "FATHER_SON",
+   "group": 6
+  },
+  {
+   "source": 89,
+   "target": 87,
+   "type": "FATHER_SON",
+   "group": 6
+  },
+  {
+   "source": 89,
+   "target": 88,
+   "type": "FATHER_SON",
+   "group": 6
+  },
+  {
+   "source": 1,
+   "target": 130,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 1,
+   "target": 163,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 1,
+   "target": 177,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 1,
+   "target": 200,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 1,
+   "target": 204,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 1,
+   "target": 219,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 1,
+   "target": 259,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 2,
+   "target": 236,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 3,
+   "target": 130,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 3,
+   "target": 148,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 3,
+   "target": 199,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 3,
+   "target": 203,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 3,
+   "target": 204,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 3,
+   "target": 220,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 3,
+   "target": 228,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 4,
+   "target": 140,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 4,
+   "target": 143,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 4,
+   "target": 204,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 4,
+   "target": 258,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 10,
+   "target": 192,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 11,
+   "target": 130,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 11,
+   "target": 144,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 11,
+   "target": 146,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 11,
+   "target": 160,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 11,
+   "target": 195,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 11,
+   "target": 204,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 11,
+   "target": 242,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 11,
+   "target": 251,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 12,
+   "target": 139,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 12,
+   "target": 167,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 12,
+   "target": 216,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 13,
+   "target": 155,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 13,
+   "target": 189,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 14,
+   "target": 143,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 14,
+   "target": 145,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 14,
+   "target": 150,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 14,
+   "target": 179,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 14,
+   "target": 241,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 15,
+   "target": 132,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 15,
+   "target": 182,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 15,
+   "target": 196,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 15,
+   "target": 206,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 15,
+   "target": 222,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 15,
+   "target": 225,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 15,
+   "target": 254,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 16,
+   "target": 155,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 16,
+   "target": 176,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 16,
+   "target": 192,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 16,
+   "target": 221,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 17,
+   "target": 156,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 17,
+   "target": 176,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 17,
+   "target": 238,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 17,
+   "target": 257,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 18,
+   "target": 208,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 19,
+   "target": 179,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 19,
+   "target": 244,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 20,
+   "target": 237,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 21,
+   "target": 137,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 21,
+   "target": 191,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 21,
+   "target": 193,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 21,
+   "target": 237,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 21,
+   "target": 239,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 21,
+   "target": 243,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 22,
+   "target": 155,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 22,
+   "target": 170,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 22,
+   "target": 171,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 22,
+   "target": 248,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 24,
+   "target": 132,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 24,
+   "target": 211,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 24,
+   "target": 250,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 28,
+   "target": 131,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 28,
+   "target": 143,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 28,
+   "target": 145,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 28,
+   "target": 147,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 28,
+   "target": 149,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 28,
+   "target": 155,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 28,
+   "target": 165,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 28,
+   "target": 173,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 28,
+   "target": 189,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 28,
+   "target": 213,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 28,
+   "target": 250,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 29,
+   "target": 173,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 30,
+   "target": 136,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 30,
+   "target": 152,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 30,
+   "target": 153,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 30,
+   "target": 164,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 30,
+   "target": 170,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 30,
+   "target": 174,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 30,
+   "target": 183,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 30,
+   "target": 190,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 30,
+   "target": 229,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 30,
+   "target": 233,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 30,
+   "target": 245,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 31,
+   "target": 214,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 32,
+   "target": 237,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 33,
+   "target": 145,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 34,
+   "target": 186,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 34,
+   "target": 255,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 36,
+   "target": 212,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 38,
+   "target": 142,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 39,
+   "target": 135,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 39,
+   "target": 155,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 40,
+   "target": 155,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 40,
+   "target": 189,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 43,
+   "target": 260,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 44,
+   "target": 172,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 44,
+   "target": 201,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 44,
+   "target": 217,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 44,
+   "target": 250,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 44,
+   "target": 256,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 44,
+   "target": 261,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 47,
+   "target": 175,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 50,
+   "target": 155,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 53,
+   "target": 159,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 53,
+   "target": 207,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 53,
+   "target": 210,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 53,
+   "target": 231,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 53,
+   "target": 234,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 53,
+   "target": 249,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 53,
+   "target": 250,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 53,
+   "target": 254,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 55,
+   "target": 154,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 55,
+   "target": 165,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 55,
+   "target": 166,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 55,
+   "target": 204,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 55,
+   "target": 250,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 55,
+   "target": 255,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 56,
+   "target": 209,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 57,
+   "target": 136,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 57,
+   "target": 151,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 57,
+   "target": 161,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 57,
+   "target": 184,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 57,
+   "target": 198,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 57,
+   "target": 204,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 57,
+   "target": 237,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 57,
+   "target": 246,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 57,
+   "target": 250,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 59,
+   "target": 155,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 60,
+   "target": 178,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 60,
+   "target": 188,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 61,
+   "target": 158,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 61,
+   "target": 173,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 61,
+   "target": 188,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 62,
+   "target": 155,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 64,
+   "target": 232,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 65,
+   "target": 232,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 65,
+   "target": 243,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 69,
+   "target": 155,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 70,
+   "target": 134,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 70,
+   "target": 155,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 70,
+   "target": 157,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 71,
+   "target": 147,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 73,
+   "target": 166,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 73,
+   "target": 185,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 73,
+   "target": 262,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 75,
+   "target": 131,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 75,
+   "target": 168,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 75,
+   "target": 169,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 75,
+   "target": 187,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 75,
+   "target": 192,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 75,
+   "target": 194,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 75,
+   "target": 204,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 75,
+   "target": 205,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 75,
+   "target": 237,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 75,
+   "target": 240,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 75,
+   "target": 250,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 75,
+   "target": 254,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 77,
+   "target": 138,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 77,
+   "target": 161,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 77,
+   "target": 180,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 77,
+   "target": 202,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 77,
+   "target": 218,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 77,
+   "target": 235,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 77,
+   "target": 240,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 77,
+   "target": 250,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 78,
+   "target": 155,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 78,
+   "target": 197,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 78,
+   "target": 204,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 78,
+   "target": 237,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 78,
+   "target": 257,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 79,
+   "target": 141,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 79,
+   "target": 143,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 79,
+   "target": 166,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 79,
+   "target": 223,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 81,
+   "target": 155,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 81,
+   "target": 204,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 81,
+   "target": 224,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 81,
+   "target": 230,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 81,
+   "target": 237,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 81,
+   "target": 257,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 82,
+   "target": 133,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 82,
+   "target": 181,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 83,
+   "target": 155,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 88,
+   "target": 162,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 89,
+   "target": 155,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 90,
+   "target": 192,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 90,
+   "target": 226,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 90,
+   "target": 227,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 90,
+   "target": 237,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 92,
+   "target": 247,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 92,
+   "target": 252,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 95,
+   "target": 129,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 95,
+   "target": 166,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 95,
+   "target": 204,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 95,
+   "target": 215,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 95,
+   "target": 222,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 95,
+   "target": 235,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 95,
+   "target": 237,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 95,
+   "target": 253,
+   "type": "POSITION",
+   "group": 7
+  },
+  {
+   "source": 1,
+   "target": 3,
+   "type": "RECOMMENDATION",
+   "group": 8
+  },
+  {
+   "source": 1,
+   "target": 42,
+   "type": "RECOMMENDATION",
+   "group": 8
+  },
+  {
+   "source": 1,
+   "target": 52,
+   "type": "RECOMMENDATION",
+   "group": 8
+  },
+  {
+   "source": 1,
+   "target": 75,
+   "type": "RECOMMENDATION",
+   "group": 8
+  },
+  {
+   "source": 1,
+   "target": 86,
+   "type": "RECOMMENDATION",
+   "group": 8
+  },
+  {
+   "source": 4,
+   "target": 94,
+   "type": "RECOMMENDATION",
+   "group": 8
+  },
+  {
+   "source": 11,
+   "target": 57,
+   "type": "RECOMMENDATION",
+   "group": 8
+  },
+  {
+   "source": 12,
+   "target": 11,
+   "type": "RECOMMENDATION",
+   "group": 8
+  },
+  {
+   "source": 21,
+   "target": 28,
+   "type": "RECOMMENDATION",
+   "group": 8
+  },
+  {
+   "source": 28,
+   "target": 92,
+   "type": "RECOMMENDATION",
+   "group": 8
+  },
+  {
+   "source": 46,
+   "target": 11,
+   "type": "RECOMMENDATION",
+   "group": 8
+  },
+  {
+   "source": 58,
+   "target": 41,
+   "type": "RECOMMENDATION",
+   "group": 8
+  },
+  {
+   "source": 66,
+   "target": 81,
+   "type": "RECOMMENDATION",
+   "group": 8
+  },
+  {
+   "source": 68,
+   "target": 28,
+   "type": "RECOMMENDATION",
+   "group": 8
+  },
+  {
+   "source": 75,
+   "target": 9,
+   "type": "RECOMMENDATION",
+   "group": 8
+  },
+  {
+   "source": 75,
+   "target": 11,
+   "type": "RECOMMENDATION",
+   "group": 8
+  },
+  {
+   "source": 75,
+   "target": 33,
+   "type": "RECOMMENDATION",
+   "group": 8
+  },
+  {
+   "source": 75,
+   "target": 78,
+   "type": "RECOMMENDATION",
+   "group": 8
+  },
+  {
+   "source": 85,
+   "target": 41,
+   "type": "RECOMMENDATION",
+   "group": 8
+  },
+  {
+   "source": 85,
+   "target": 57,
+   "type": "RECOMMENDATION",
+   "group": 8
+  },
+  {
+   "source": 85,
+   "target": 77,
+   "type": "RECOMMENDATION",
+   "group": 8
+  },
+  {
+   "source": 95,
+   "target": 75,
+   "type": "RECOMMENDATION",
+   "group": 8
+  },
+  {
+   "source": 95,
+   "target": 90,
+   "type": "RECOMMENDATION",
+   "group": 8
+  },
+  {
+   "source": 6,
+   "target": 44,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 11,
+   "target": 7,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 11,
+   "target": 10,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 11,
+   "target": 28,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 11,
+   "target": 49,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 13,
+   "target": 11,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 13,
+   "target": 36,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 13,
+   "target": 38,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 13,
+   "target": 39,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 13,
+   "target": 70,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 13,
+   "target": 75,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 13,
+   "target": 82,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 14,
+   "target": 50,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 14,
+   "target": 79,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 16,
+   "target": 51,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 17,
+   "target": 14,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 17,
+   "target": 19,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 17,
+   "target": 22,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 17,
+   "target": 75,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 17,
+   "target": 97,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 18,
+   "target": 13,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 18,
+   "target": 17,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 20,
+   "target": 23,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 20,
+   "target": 64,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 20,
+   "target": 81,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 23,
+   "target": 13,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 23,
+   "target": 24,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 23,
+   "target": 61,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 24,
+   "target": 62,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 24,
+   "target": 69,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 33,
+   "target": 27,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 33,
+   "target": 35,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 33,
+   "target": 37,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 40,
+   "target": 33,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 40,
+   "target": 43,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 40,
+   "target": 96,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 43,
+   "target": 57,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 44,
+   "target": 5,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 44,
+   "target": 33,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 44,
+   "target": 43,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 44,
+   "target": 57,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 48,
+   "target": 19,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 50,
+   "target": 21,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 53,
+   "target": 33,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 53,
+   "target": 57,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 56,
+   "target": 78,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 59,
+   "target": 24,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 59,
+   "target": 40,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 59,
+   "target": 44,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 61,
+   "target": 67,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 63,
+   "target": 75,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 64,
+   "target": 16,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 64,
+   "target": 91,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 67,
+   "target": 25,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 72,
+   "target": 17,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 74,
+   "target": 23,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 78,
+   "target": 98,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 89,
+   "target": 87,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 89,
+   "target": 88,
+   "type": "TEACHER_DISCIPLE",
+   "group": 9
+  },
+  {
+   "source": 61,
+   "target": 60,
+   "type": "UNCLE_NEPHEW",
+   "group": 10
+  }
+ ]
+}
