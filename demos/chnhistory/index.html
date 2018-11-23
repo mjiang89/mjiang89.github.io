@@ -11,7 +11,7 @@
     </style>
 </head>
 <body>
-<svg width="1800" height="1000"></svg>
+<svg width="1440" height="960"></svg>
 
 <script src="http://d3js.org/d3.v4.min.js" type="text/javascript"></script>
 <script src="http://d3js.org/d3-selection-multi.v1.js"></script>
@@ -40,7 +40,7 @@
         .style('stroke','none');
 
     var simulation = d3.forceSimulation()
-        .force("link", d3.forceLink().id(function (d) {return d.id;}).distance(50).strength(0.1))
+        .force("link", d3.forceLink().id(function (d) {return d.id;}).distance(120).strength(1.2))
         .force("charge", d3.forceManyBody())
         .force("center", d3.forceCenter(width / 2, height / 2));
 
