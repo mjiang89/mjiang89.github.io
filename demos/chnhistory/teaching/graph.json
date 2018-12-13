@@ -1,0 +1,834 @@
+{
+ "nodes": [
+  {
+   "name": "Bai Guang",
+   "label": "PERSON",
+   "id": 1,
+   "group": 1
+  },
+  {
+   "name": "Bai Qi",
+   "label": "PERSON",
+   "id": 2,
+   "group": 1
+  },
+  {
+   "name": "Chong Ziping",
+   "label": "PERSON",
+   "id": 3,
+   "group": 1
+  },
+  {
+   "name": "Dai Chong",
+   "label": "PERSON",
+   "id": 4,
+   "group": 1
+  },
+  {
+   "name": "Dai De",
+   "label": "PERSON",
+   "id": 5,
+   "group": 1
+  },
+  {
+   "name": "Dai Sheng",
+   "label": "PERSON",
+   "id": 6,
+   "group": 1
+  },
+  {
+   "name": "Fu Li",
+   "label": "PERSON",
+   "id": 7,
+   "group": 1
+  },
+  {
+   "name": "Gai Kuanrao",
+   "label": "PERSON",
+   "id": 8,
+   "group": 1
+  },
+  {
+   "name": "Gong Sheng",
+   "label": "PERSON",
+   "id": 9,
+   "group": 1
+  },
+  {
+   "name": "Gong Yu",
+   "label": "PERSON",
+   "id": 10,
+   "group": 1
+  },
+  {
+   "name": "Guan Lu",
+   "label": "PERSON",
+   "id": 11,
+   "group": 1
+  },
+  {
+   "name": "Hou Cang",
+   "label": "PERSON",
+   "id": 12,
+   "group": 1
+  },
+  {
+   "name": "Huang Ba",
+   "label": "PERSON",
+   "id": 13,
+   "group": 1
+  },
+  {
+   "name": "Jian Qing",
+   "label": "PERSON",
+   "id": 14,
+   "group": 1
+  },
+  {
+   "name": "Jiao Yanshou",
+   "label": "PERSON",
+   "id": 15,
+   "group": 1
+  },
+  {
+   "name": "Jing Fang",
+   "label": "PERSON",
+   "id": 16,
+   "group": 1
+  },
+  {
+   "name": "Kong Ba",
+   "label": "PERSON",
+   "id": 17,
+   "group": 1
+  },
+  {
+   "name": "Kong Guang",
+   "label": "PERSON",
+   "id": 18,
+   "group": 1
+  },
+  {
+   "name": "Kuang Heng",
+   "label": "PERSON",
+   "id": 19,
+   "group": 1
+  },
+  {
+   "name": "Kuang Xian",
+   "label": "PERSON",
+   "id": 20,
+   "group": 1
+  },
+  {
+   "name": "Leng Feng",
+   "label": "PERSON",
+   "id": 21,
+   "group": 1
+  },
+  {
+   "name": "Liangqiu He",
+   "label": "PERSON",
+   "id": 22,
+   "group": 1
+  },
+  {
+   "name": "Liangqiu Lin",
+   "label": "PERSON",
+   "id": 23,
+   "group": 1
+  },
+  {
+   "name": "Lu Bo",
+   "label": "PERSON",
+   "id": 24,
+   "group": 1
+  },
+  {
+   "name": "Ma Gong",
+   "label": "PERSON",
+   "id": 25,
+   "group": 1
+  },
+  {
+   "name": "Man Chang",
+   "label": "PERSON",
+   "id": 26,
+   "group": 1
+  },
+  {
+   "name": "Meng Qing",
+   "label": "PERSON",
+   "id": 27,
+   "group": 1
+  },
+  {
+   "name": "Meng Xi",
+   "label": "PERSON",
+   "id": 28,
+   "group": 1
+  },
+  {
+   "name": "Mou Qing",
+   "label": "PERSON",
+   "id": 29,
+   "group": 1
+  },
+  {
+   "name": "Ouyang Gao",
+   "label": "PERSON",
+   "id": 30,
+   "group": 1
+  },
+  {
+   "name": "Peng Xuan",
+   "label": "PERSON",
+   "id": 31,
+   "group": 1
+  },
+  {
+   "name": "Qiao Ren",
+   "label": "PERSON",
+   "id": 32,
+   "group": 1
+  },
+  {
+   "name": "Qing Pu",
+   "label": "PERSON",
+   "id": 33,
+   "group": 1
+  },
+  {
+   "name": "Qing Xian",
+   "label": "PERSON",
+   "id": 34,
+   "group": 1
+  },
+  {
+   "name": "Shi Chou",
+   "label": "PERSON",
+   "id": 35,
+   "group": 1
+  },
+  {
+   "name": "Shi Dan",
+   "label": "PERSON",
+   "id": 36,
+   "group": 1
+  },
+  {
+   "name": "Shu Guang",
+   "label": "PERSON",
+   "id": 37,
+   "group": 1
+  },
+  {
+   "name": "Sui Meng",
+   "label": "PERSON",
+   "id": 38,
+   "group": 1
+  },
+  {
+   "name": "Sun Bao",
+   "label": "PERSON",
+   "id": 39,
+   "group": 1
+  },
+  {
+   "name": "Tian Wangsun",
+   "label": "PERSON",
+   "id": 40,
+   "group": 1
+  },
+  {
+   "name": "Tong Han",
+   "label": "PERSON",
+   "id": 41,
+   "group": 1
+  },
+  {
+   "name": "Wang Ji",
+   "label": "PERSON",
+   "id": 42,
+   "group": 1
+  },
+  {
+   "name": "Wang Jun",
+   "label": "PERSON",
+   "id": 43,
+   "group": 1
+  },
+  {
+   "name": "Wang Shi",
+   "label": "PERSON",
+   "id": 44,
+   "group": 1
+  },
+  {
+   "name": "Wang Zhong",
+   "label": "PERSON",
+   "id": 45,
+   "group": 1
+  },
+  {
+   "name": "Wei Shang",
+   "label": "PERSON",
+   "id": 46,
+   "group": 1
+  },
+  {
+   "name": "Wei Xian",
+   "label": "PERSON",
+   "id": 47,
+   "group": 1
+  },
+  {
+   "name": "Wei Xuancheng",
+   "label": "PERSON",
+   "id": 48,
+   "group": 1
+  },
+  {
+   "name": "Wulu Chongzong",
+   "label": "PERSON",
+   "id": 49,
+   "group": 1
+  },
+  {
+   "name": "Xiahou Jian",
+   "label": "PERSON",
+   "id": 50,
+   "group": 1
+  },
+  {
+   "name": "Xiahou Jing",
+   "label": "PERSON",
+   "id": 51,
+   "group": 1
+  },
+  {
+   "name": "Xiahou Sheng",
+   "label": "PERSON",
+   "id": 52,
+   "group": 1
+  },
+  {
+   "name": "Xiahou Shichang",
+   "label": "PERSON",
+   "id": 53,
+   "group": 1
+  },
+  {
+   "name": "Xiao Feng",
+   "label": "PERSON",
+   "id": 54,
+   "group": 1
+  },
+  {
+   "name": "Xiao Wangzhi",
+   "label": "PERSON",
+   "id": 55,
+   "group": 1
+  },
+  {
+   "name": "Xu Liang",
+   "label": "PERSON",
+   "id": 56,
+   "group": 1
+  },
+  {
+   "name": "Xu Shang",
+   "label": "PERSON",
+   "id": 57,
+   "group": 1
+  },
+  {
+   "name": "Xue Guangde",
+   "label": "PERSON",
+   "id": 58,
+   "group": 1
+  },
+  {
+   "name": "Yan Anle",
+   "label": "PERSON",
+   "id": 59,
+   "group": 1
+  },
+  {
+   "name": "Yan Pengzu",
+   "label": "PERSON",
+   "id": 60,
+   "group": 1
+  },
+  {
+   "name": "Yang Rong",
+   "label": "PERSON",
+   "id": 61,
+   "group": 1
+  },
+  {
+   "name": "Yi Feng",
+   "label": "PERSON",
+   "id": 62,
+   "group": 1
+  },
+  {
+   "name": "Ying Gong",
+   "label": "PERSON",
+   "id": 63,
+   "group": 1
+  },
+  {
+   "name": "Zhai Mu",
+   "label": "PERSON",
+   "id": 64,
+   "group": 1
+  },
+  {
+   "name": "Zhang Yu",
+   "label": "PERSON",
+   "id": 65,
+   "group": 1
+  },
+  {
+   "name": "Zhou Kan",
+   "label": "PERSON",
+   "id": 66,
+   "group": 1
+  },
+  {
+   "name": "Zhu Yun",
+   "label": "PERSON",
+   "id": 67,
+   "group": 1
+  }
+ ],
+ "links": [
+  {
+   "source": 14,
+   "target": 52,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 17,
+   "target": 18,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 47,
+   "target": 46,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 47,
+   "target": 48,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 19,
+   "target": 36,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 19,
+   "target": 26,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 19,
+   "target": 7,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 19,
+   "target": 20,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 38,
+   "target": 10,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 38,
+   "target": 59,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 38,
+   "target": 60,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 54,
+   "target": 27,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 65,
+   "target": 31,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 65,
+   "target": 3,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 65,
+   "target": 4,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 60,
+   "target": 45,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 33,
+   "target": 34,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 33,
+   "target": 51,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 28,
+   "target": 8,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 28,
+   "target": 1,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 28,
+   "target": 15,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 28,
+   "target": 64,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 58,
+   "target": 9,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 30,
+   "target": 50,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 6,
+   "target": 32,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 6,
+   "target": 61,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 53,
+   "target": 12,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 53,
+   "target": 52,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 35,
+   "target": 24,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 35,
+   "target": 65,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 35,
+   "target": 23,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 59,
+   "target": 21,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 10,
+   "target": 42,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 2,
+   "target": 55,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 37,
+   "target": 11,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 29,
+   "target": 18,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 5,
+   "target": 56,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 21,
+   "target": 25,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 27,
+   "target": 28,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 27,
+   "target": 37,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 27,
+   "target": 12,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 16,
+   "target": 22,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 66,
+   "target": 29,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 66,
+   "target": 57,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 11,
+   "target": 39,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 40,
+   "target": 28,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 40,
+   "target": 22,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 40,
+   "target": 35,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 42,
+   "target": 43,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 42,
+   "target": 65,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 55,
+   "target": 67,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 44,
+   "target": 58,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 52,
+   "target": 66,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 52,
+   "target": 55,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 52,
+   "target": 13,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 52,
+   "target": 50,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 52,
+   "target": 17,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 63,
+   "target": 10,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 63,
+   "target": 27,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 63,
+   "target": 38,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 22,
+   "target": 49,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 22,
+   "target": 65,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 22,
+   "target": 43,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 22,
+   "target": 23,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 12,
+   "target": 41,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 12,
+   "target": 6,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 12,
+   "target": 5,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 12,
+   "target": 62,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 12,
+   "target": 55,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 12,
+   "target": 19,
+   "type": "",
+   "group": 1
+  },
+  {
+   "source": 12,
+   "target": 33,
+   "type": "",
+   "group": 1
+  }
+ ]
+}
