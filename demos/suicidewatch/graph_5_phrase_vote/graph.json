@@ -1,0 +1,206 @@
+{
+ "nodes": [
+  {
+   "name": "[sad] i_want_to_die other_way take_it_anymore so_many_things i_do_not_want_to_kill_myself else_to_do only_option hello is_the_only_thing not_see not_something please_help lot_of_people few_hours",
+   "id": 1,
+   "group": 1
+  },
+  {
+   "name": "everything_is_my_fault i_am_not_sure_if_i_want get_my_life_back_on_track logical_reason guess_it_is_just are_my_only_friends very_existence thanks my_sister better_off change_his_mind as_much_as_i_do off_chance keep_my_sanity stop_crying",
+   "id": 2,
+   "group": 1
+  },
+  {
+   "name": "fucking_mess sub_reddit crisis_line notice_i_am_gone i_am_so_tired_of_everything hurtful_things do_not_know_if_i few_other_things i_want_to_make said_i_was_going fucking_pain is_not_worth_living letting_them_know everything_in_my_life_is help_with_my_depression",
+   "id": 3,
+   "group": 1
+  },
+  {
+   "name": "[?] [!] high_school other_people best_friend first_time long_time not_have suicidal_thoughts last_year [huge] few_months last_time last_night [smile]",
+   "id": 4,
+   "group": 1
+  },
+  {
+   "name": "i_just_want_to_die i_do_not_want_to_die right_place i_want_to_kill_myself so_much_pain right_thing permanent_solution is_the_right_place temporary_problem bad_person i_do_not_want_to_go i_continue_to_live wish_i_had go_to_sleep reason_for_me",
+   "id": 5,
+   "group": 1
+  },
+  {
+   "name": "[!] [smile] thank thanks thank_you_so_much good_luck kind_words [hug] best_of_luck [hugs] it_is last_night talk lot_to_me good_person",
+   "id": 6,
+   "group": 2
+  },
+  {
+   "name": "no_problem glad everyone nothing just_something thanks_man things nope phone_call are_a_strong_person almost_everyone is_just_something my_mom cry_for_help hey_buddy",
+   "id": 7,
+   "group": 2
+  },
+  {
+   "name": "[?] other_people [sad] hey high_school [huge] not_have only_thing long_time do_you_think do_you_have many_people you_want_to_talk same_way most_people",
+   "id": 8,
+   "group": 2
+  },
+  {
+   "name": "yeah please yea always_something talking_to_me no_one kind_of_thing is_always_something hope_you_get late_reply thank_you_for_talking makes_me_want i_had meeting_new_people good_place_to_start",
+   "id": 9,
+   "group": 2
+  },
+  {
+   "name": "you_are fuck best_part hang makes_you_feel_better my_parents you_want_it_to_be private_message listen i_know_that_i let_him_know the_problem i_want_to_be_able is_a_good_chance have_you_ever_thought",
+   "id": 10,
+   "group": 2
+  }
+ ],
+ "links": [
+  {
+   "source": "6",
+   "target": "1",
+   "type": "+1.17",
+   "group": 1
+  },
+  {
+   "source": "7",
+   "target": "1",
+   "type": "+0.86",
+   "group": 1
+  },
+  {
+   "source": "8",
+   "target": "1",
+   "type": "+1.28",
+   "group": 1
+  },
+  {
+   "source": "10",
+   "target": "1",
+   "type": "+0.89",
+   "group": 1
+  },
+  {
+   "source": "9",
+   "target": "1",
+   "type": "+1.34",
+   "group": 2
+  },
+  {
+   "source": "6",
+   "target": "2",
+   "type": "+1.0",
+   "group": 1
+  },
+  {
+   "source": "8",
+   "target": "2",
+   "type": "+1.12",
+   "group": 1
+  },
+  {
+   "source": "9",
+   "target": "2",
+   "type": "+1.48",
+   "group": 1
+  },
+  {
+   "source": "10",
+   "target": "2",
+   "type": "+0.5",
+   "group": 1
+  },
+  {
+   "source": "7",
+   "target": "2",
+   "type": "+1.5",
+   "group": 2
+  },
+  {
+   "source": "6",
+   "target": "3",
+   "type": "+1.33",
+   "group": 1
+  },
+  {
+   "source": "7",
+   "target": "3",
+   "type": "+1.19",
+   "group": 1
+  },
+  {
+   "source": "8",
+   "target": "3",
+   "type": "+1.31",
+   "group": 1
+  },
+  {
+   "source": "9",
+   "target": "3",
+   "type": "+1.28",
+   "group": 1
+  },
+  {
+   "source": "10",
+   "target": "3",
+   "type": "+1.47",
+   "group": 2
+  },
+  {
+   "source": "6",
+   "target": "4",
+   "type": "+1.24",
+   "group": 1
+  },
+  {
+   "source": "8",
+   "target": "4",
+   "type": "+1.22",
+   "group": 1
+  },
+  {
+   "source": "9",
+   "target": "4",
+   "type": "+1.21",
+   "group": 1
+  },
+  {
+   "source": "10",
+   "target": "4",
+   "type": "+1.42",
+   "group": 1
+  },
+  {
+   "source": "7",
+   "target": "4",
+   "type": "+1.96",
+   "group": 2
+  },
+  {
+   "source": "6",
+   "target": "5",
+   "type": "+0.96",
+   "group": 1
+  },
+  {
+   "source": "7",
+   "target": "5",
+   "type": "+0.33",
+   "group": 1
+  },
+  {
+   "source": "8",
+   "target": "5",
+   "type": "+1.53",
+   "group": 1
+  },
+  {
+   "source": "9",
+   "target": "5",
+   "type": "+1.32",
+   "group": 1
+  },
+  {
+   "source": "10",
+   "target": "5",
+   "type": "+1.54",
+   "group": 2
+  }
+ ]
+}

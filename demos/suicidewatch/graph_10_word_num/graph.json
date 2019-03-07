@@ -1,0 +1,706 @@
+{
+ "nodes": [
+  {
+   "name": "told started money come came leave stupid decided room",
+   "id": 1,
+   "group": 1
+  },
+  {
+   "name": "friend best girl gone talking phone saying happened moved called advice",
+   "id": 2,
+   "group": 1
+  },
+  {
+   "name": "going friends fucking long fuck tired sleep hard boyfriend relationship ready fucked",
+   "id": 3,
+   "group": 1
+  },
+  {
+   "name": "college mind university story stuff grades social failed",
+   "id": 4,
+   "group": 1
+  },
+  {
+   "name": "know think help dont sorry tell kill wish guess stop post hurt hope past probably",
+   "id": 5,
+   "group": 1
+  },
+  {
+   "name": "depression having high anxiety days hours working pretty week weeks taking hospital classes killing recently",
+   "id": 6,
+   "group": 1
+  },
+  {
+   "name": "anymore live better shit hate love care thing maybe alive worth matter deal body worthless",
+   "id": 7,
+   "group": 1
+  },
+  {
+   "name": "night house actually brother pills close kids later honestly birthday read",
+   "id": 8,
+   "group": 1
+  },
+  {
+   "name": "suicide tried worse hang finally thank wants different situation commit",
+   "id": 9,
+   "group": 1
+  },
+  {
+   "name": "life pain person understand looking human feelings experience completely problem existence lives mental deserve suffering",
+   "id": 10,
+   "group": 1
+  },
+  {
+   "name": "good stuff great music pretty idea nice enjoy start play sleep write writing look days",
+   "id": 11,
+   "group": 2
+  },
+  {
+   "name": "care suicide thanks support mental read post health reddit internet suicidal state comment helpful offer",
+   "id": 12,
+   "group": 2
+  },
+  {
+   "name": "help need tell best friend therapist glad therapy doctor luck seeing step able hospital medication",
+   "id": 13,
+   "group": 2
+  },
+  {
+   "name": "love depression pain hurt depressed worse strong fuck long anxiety gone deal heart lost cause",
+   "id": 14,
+   "group": 2
+  },
+  {
+   "name": "school work year college years dont high working happened week degree grades worked months jobs",
+   "id": 15,
+   "group": 2
+  },
+  {
+   "name": "want know talk going hope sorry smile listen hear okay maybe wish sure gets tough",
+   "id": 16,
+   "group": 2
+  },
+  {
+   "name": "think person happy change thoughts world mind makes believe true fact matter deserve sense difficult",
+   "id": 17,
+   "group": 2
+  },
+  {
+   "name": "life people live away living worth money place wrong leave future point chance lives alive",
+   "id": 18,
+   "group": 2
+  },
+  {
+   "name": "friends thank family said guess told anymore tried shit talking yeah girl wanted thought close",
+   "id": 19,
+   "group": 2
+  },
+  {
+   "name": "like feel better things trying feeling hard situation making sounds feels felt times similar answer",
+   "id": 20,
+   "group": 2
+  }
+ ],
+ "links": [
+  {
+   "source": "12",
+   "target": "1",
+   "type": "6.8%",
+   "group": 1
+  },
+  {
+   "source": "13",
+   "target": "1",
+   "type": "7.2%",
+   "group": 1
+  },
+  {
+   "source": "14",
+   "target": "1",
+   "type": "7.2%",
+   "group": 1
+  },
+  {
+   "source": "15",
+   "target": "1",
+   "type": "9.9%",
+   "group": 1
+  },
+  {
+   "source": "16",
+   "target": "1",
+   "type": "10.6%",
+   "group": 1
+  },
+  {
+   "source": "17",
+   "target": "1",
+   "type": "10.1%",
+   "group": 1
+  },
+  {
+   "source": "18",
+   "target": "1",
+   "type": "8.9%",
+   "group": 1
+  },
+  {
+   "source": "19",
+   "target": "1",
+   "type": "9.3%",
+   "group": 1
+  },
+  {
+   "source": "20",
+   "target": "1",
+   "type": "9.9%",
+   "group": 1
+  },
+  {
+   "source": "11",
+   "target": "1",
+   "type": "20.1%",
+   "group": 2
+  },
+  {
+   "source": "11",
+   "target": "2",
+   "type": "8.6%",
+   "group": 1
+  },
+  {
+   "source": "13",
+   "target": "2",
+   "type": "9.5%",
+   "group": 1
+  },
+  {
+   "source": "14",
+   "target": "2",
+   "type": "8.0%",
+   "group": 1
+  },
+  {
+   "source": "15",
+   "target": "2",
+   "type": "9.8%",
+   "group": 1
+  },
+  {
+   "source": "16",
+   "target": "2",
+   "type": "11.4%",
+   "group": 1
+  },
+  {
+   "source": "17",
+   "target": "2",
+   "type": "10.0%",
+   "group": 1
+  },
+  {
+   "source": "18",
+   "target": "2",
+   "type": "9.3%",
+   "group": 1
+  },
+  {
+   "source": "19",
+   "target": "2",
+   "type": "10.3%",
+   "group": 1
+  },
+  {
+   "source": "20",
+   "target": "2",
+   "type": "10.4%",
+   "group": 1
+  },
+  {
+   "source": "12",
+   "target": "2",
+   "type": "12.9%",
+   "group": 2
+  },
+  {
+   "source": "11",
+   "target": "3",
+   "type": "9.2%",
+   "group": 1
+  },
+  {
+   "source": "12",
+   "target": "3",
+   "type": "8.4%",
+   "group": 1
+  },
+  {
+   "source": "14",
+   "target": "3",
+   "type": "8.2%",
+   "group": 1
+  },
+  {
+   "source": "15",
+   "target": "3",
+   "type": "9.0%",
+   "group": 1
+  },
+  {
+   "source": "16",
+   "target": "3",
+   "type": "12.3%",
+   "group": 1
+  },
+  {
+   "source": "17",
+   "target": "3",
+   "type": "10.2%",
+   "group": 1
+  },
+  {
+   "source": "18",
+   "target": "3",
+   "type": "8.7%",
+   "group": 1
+  },
+  {
+   "source": "19",
+   "target": "3",
+   "type": "10.6%",
+   "group": 1
+  },
+  {
+   "source": "20",
+   "target": "3",
+   "type": "10.1%",
+   "group": 1
+  },
+  {
+   "source": "13",
+   "target": "3",
+   "type": "13.4%",
+   "group": 2
+  },
+  {
+   "source": "11",
+   "target": "4",
+   "type": "8.5%",
+   "group": 1
+  },
+  {
+   "source": "12",
+   "target": "4",
+   "type": "6.7%",
+   "group": 1
+  },
+  {
+   "source": "13",
+   "target": "4",
+   "type": "9.2%",
+   "group": 1
+  },
+  {
+   "source": "15",
+   "target": "4",
+   "type": "9.1%",
+   "group": 1
+  },
+  {
+   "source": "16",
+   "target": "4",
+   "type": "11.1%",
+   "group": 1
+  },
+  {
+   "source": "17",
+   "target": "4",
+   "type": "11.4%",
+   "group": 1
+  },
+  {
+   "source": "18",
+   "target": "4",
+   "type": "10.2%",
+   "group": 1
+  },
+  {
+   "source": "19",
+   "target": "4",
+   "type": "10.3%",
+   "group": 1
+  },
+  {
+   "source": "20",
+   "target": "4",
+   "type": "10.6%",
+   "group": 1
+  },
+  {
+   "source": "14",
+   "target": "4",
+   "type": "13.0%",
+   "group": 2
+  },
+  {
+   "source": "11",
+   "target": "5",
+   "type": "8.5%",
+   "group": 1
+  },
+  {
+   "source": "12",
+   "target": "5",
+   "type": "7.7%",
+   "group": 1
+  },
+  {
+   "source": "13",
+   "target": "5",
+   "type": "7.4%",
+   "group": 1
+  },
+  {
+   "source": "14",
+   "target": "5",
+   "type": "8.8%",
+   "group": 1
+  },
+  {
+   "source": "16",
+   "target": "5",
+   "type": "11.6%",
+   "group": 1
+  },
+  {
+   "source": "17",
+   "target": "5",
+   "type": "10.3%",
+   "group": 1
+  },
+  {
+   "source": "18",
+   "target": "5",
+   "type": "9.6%",
+   "group": 1
+  },
+  {
+   "source": "19",
+   "target": "5",
+   "type": "8.9%",
+   "group": 1
+  },
+  {
+   "source": "20",
+   "target": "5",
+   "type": "10.8%",
+   "group": 1
+  },
+  {
+   "source": "15",
+   "target": "5",
+   "type": "16.4%",
+   "group": 2
+  },
+  {
+   "source": "11",
+   "target": "6",
+   "type": "9.6%",
+   "group": 1
+  },
+  {
+   "source": "12",
+   "target": "6",
+   "type": "6.9%",
+   "group": 1
+  },
+  {
+   "source": "13",
+   "target": "6",
+   "type": "9.6%",
+   "group": 1
+  },
+  {
+   "source": "14",
+   "target": "6",
+   "type": "8.3%",
+   "group": 1
+  },
+  {
+   "source": "15",
+   "target": "6",
+   "type": "8.5%",
+   "group": 1
+  },
+  {
+   "source": "17",
+   "target": "6",
+   "type": "10.4%",
+   "group": 1
+  },
+  {
+   "source": "18",
+   "target": "6",
+   "type": "8.7%",
+   "group": 1
+  },
+  {
+   "source": "19",
+   "target": "6",
+   "type": "12.0%",
+   "group": 1
+  },
+  {
+   "source": "20",
+   "target": "6",
+   "type": "11.1%",
+   "group": 1
+  },
+  {
+   "source": "16",
+   "target": "6",
+   "type": "14.9%",
+   "group": 2
+  },
+  {
+   "source": "11",
+   "target": "7",
+   "type": "8.1%",
+   "group": 1
+  },
+  {
+   "source": "12",
+   "target": "7",
+   "type": "6.4%",
+   "group": 1
+  },
+  {
+   "source": "13",
+   "target": "7",
+   "type": "8.0%",
+   "group": 1
+  },
+  {
+   "source": "14",
+   "target": "7",
+   "type": "8.9%",
+   "group": 1
+  },
+  {
+   "source": "15",
+   "target": "7",
+   "type": "8.9%",
+   "group": 1
+  },
+  {
+   "source": "16",
+   "target": "7",
+   "type": "11.2%",
+   "group": 1
+  },
+  {
+   "source": "18",
+   "target": "7",
+   "type": "10.3%",
+   "group": 1
+  },
+  {
+   "source": "19",
+   "target": "7",
+   "type": "10.4%",
+   "group": 1
+  },
+  {
+   "source": "20",
+   "target": "7",
+   "type": "11.7%",
+   "group": 1
+  },
+  {
+   "source": "17",
+   "target": "7",
+   "type": "16.2%",
+   "group": 2
+  },
+  {
+   "source": "11",
+   "target": "8",
+   "type": "9.1%",
+   "group": 1
+  },
+  {
+   "source": "12",
+   "target": "8",
+   "type": "6.8%",
+   "group": 1
+  },
+  {
+   "source": "13",
+   "target": "8",
+   "type": "8.7%",
+   "group": 1
+  },
+  {
+   "source": "14",
+   "target": "8",
+   "type": "8.5%",
+   "group": 1
+  },
+  {
+   "source": "15",
+   "target": "8",
+   "type": "8.8%",
+   "group": 1
+  },
+  {
+   "source": "16",
+   "target": "8",
+   "type": "10.4%",
+   "group": 1
+  },
+  {
+   "source": "17",
+   "target": "8",
+   "type": "11.6%",
+   "group": 1
+  },
+  {
+   "source": "19",
+   "target": "8",
+   "type": "11.6%",
+   "group": 1
+  },
+  {
+   "source": "20",
+   "target": "8",
+   "type": "10.8%",
+   "group": 1
+  },
+  {
+   "source": "18",
+   "target": "8",
+   "type": "13.6%",
+   "group": 2
+  },
+  {
+   "source": "11",
+   "target": "9",
+   "type": "10.2%",
+   "group": 1
+  },
+  {
+   "source": "12",
+   "target": "9",
+   "type": "7.3%",
+   "group": 1
+  },
+  {
+   "source": "13",
+   "target": "9",
+   "type": "9.1%",
+   "group": 1
+  },
+  {
+   "source": "14",
+   "target": "9",
+   "type": "9.2%",
+   "group": 1
+  },
+  {
+   "source": "15",
+   "target": "9",
+   "type": "8.8%",
+   "group": 1
+  },
+  {
+   "source": "17",
+   "target": "9",
+   "type": "10.4%",
+   "group": 1
+  },
+  {
+   "source": "18",
+   "target": "9",
+   "type": "9.0%",
+   "group": 1
+  },
+  {
+   "source": "19",
+   "target": "9",
+   "type": "12.4%",
+   "group": 1
+  },
+  {
+   "source": "20",
+   "target": "9",
+   "type": "10.5%",
+   "group": 1
+  },
+  {
+   "source": "16",
+   "target": "9",
+   "type": "13.0%",
+   "group": 2
+  },
+  {
+   "source": "11",
+   "target": "10",
+   "type": "9.5%",
+   "group": 1
+  },
+  {
+   "source": "12",
+   "target": "10",
+   "type": "6.7%",
+   "group": 1
+  },
+  {
+   "source": "13",
+   "target": "10",
+   "type": "9.7%",
+   "group": 1
+  },
+  {
+   "source": "14",
+   "target": "10",
+   "type": "8.6%",
+   "group": 1
+  },
+  {
+   "source": "15",
+   "target": "10",
+   "type": "8.5%",
+   "group": 1
+  },
+  {
+   "source": "16",
+   "target": "10",
+   "type": "11.6%",
+   "group": 1
+  },
+  {
+   "source": "17",
+   "target": "10",
+   "type": "12.1%",
+   "group": 1
+  },
+  {
+   "source": "18",
+   "target": "10",
+   "type": "9.8%",
+   "group": 1
+  },
+  {
+   "source": "19",
+   "target": "10",
+   "type": "10.5%",
+   "group": 1
+  },
+  {
+   "source": "20",
+   "target": "10",
+   "type": "13.1%",
+   "group": 2
+  }
+ ]
+}
