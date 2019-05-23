@@ -1,531 +1,691 @@
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
 
-\documentclass[margin, 9pt]{res}
+\documentclass[10pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{graphicx}%
+\usepackage{fancyhdr}
+\usepackage{fullpage}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage[top=4cm, bottom=4cm]{geometry}
 
-\usepackage{fancyhdr,multicol,palatino,paralist,xcolor}
+% Alter some LaTeX defaults for better treatment of figures:
+    % See p.105 of "TeX Unbound" for suggested values.
+    % See pp. 199-200 of Lamport's "LaTeX" book for details.
+    %   General parameters, for ALL pages:
+    \renewcommand{\topfraction}{0.9}	% max fraction of floats at top
+    \renewcommand{\bottomfraction}{0.8}	% max fraction of floats at bottom
+    %   Parameters for TEXT pages (not float pages):
+    \setcounter{topnumber}{2}
+    \setcounter{bottomnumber}{2}
+    \setcounter{totalnumber}{4}     % 2 may work better
+    \setcounter{dbltopnumber}{2}    % for 2-column pages
+    \renewcommand{\dbltopfraction}{0.9}	% fit big float above 2-col. text
+    \renewcommand{\textfraction}{0.07}	% allow minimal text w. figs
+    %   Parameters for FLOAT pages (not text pages):
+    \renewcommand{\floatpagefraction}{0.7}	% require fuller float pages
+	% N.B.: floatpagefraction MUST be less than topfraction !!
+    \renewcommand{\dblfloatpagefraction}{0.7}	% require fuller float pages
 
-\pagestyle{plain}
-\setlength{\textwidth}{5.1in}
-\setlength{\textheight}{9.5in}
-\setlength{\topmargin}{-0.3in}
+\newenvironment{myindentpar}[1]%
+{\begin{list}{}%
+         {\setlength{\leftmargin}{#1}}%
+         \item[]%
+}
+{\end{list}}
+
+\renewcommand\refname{\vspace{-0.4in}}
+
+\textwidth5in
+
+%\setlength{\topmargin}{-0in} \addtolength{\topmargin}{-\headheight}
+\addtolength{\topmargin}{-\headsep}
+
+\setlength{\oddsidemargin}{0in}
+
+\oddsidemargin 0.75in \evensidemargin 0.75in
+
+\setlength{\parindent}{0pt}
+
+\newcounter{list}
+
+\fancypagestyle{firststyle}
+{
+   \fancyhf{}
+   \renewcommand{\headrulewidth}{0pt}
+   \fancyhead[R]{\vspace{-2cm}\footnotesize Last updated May 23, 2019}
+}
+
+\newcommand{\hide}[1]{}
 
 \begin{document}
 
-%----------------------------------------------------------------------------------------
-%	NAME AND ADDRESS SECTION
-%----------------------------------------------------------------------------------------
-
-\moveleft.5\hoffset\centerline{\LARGE\textbf{Meng Jiang}}
-
-\moveleft\hoffset\vbox{\hrule width\resumewidth height 1pt}
-
-%----------------------------------------------------------------------------------------
-
-\begin{resume}
-
-\vspace{-0.2in}
-%----------------------------------------------------------------------------------------
-%	CONTACT INFORMATION SECTION
-%----------------------------------------------------------------------------------------
-
-\section{Contact \\ Information}
-
-%{Office 2130, Siebel Center for Computer Science} \hfill{Mobile:} {(+1) (217) 418-6072} \\
-%{University of Illinois at Urbana-Champaign} \hfill{E-mail:} {mjiang89@gmail.com} \\
-%{201 N Goodwin Ave, Urbana, IL 61801, USA} \hfill{http://www.meng-jiang.com} \\
-
-{326C Cushing Hall} \hfill{Phone:} {(+1) (574) 631-7454} \\
-{Department of Computer Science and Engineering, College of Engineering} \\
-{University of Notre Dame} \hfill{E-mail:} {mjiang2@nd.edu} \\
-{Notre Dame, IN 46556, USA} \hfill{http://www.meng-jiang.com} \\
-{Google Scholar: \#citation = \textbf{1394}, H-index = \textbf{17}}
-\begin{itemize}
-	\item {https://scholar.google.com/citations?user=LZIPfCkAAAAJ}
-\end{itemize}
-%\vspace{-0.1in}
-%{\color{blue}{I am recruiting Ph.D. students and visiting scholars. Send me an e-mail!}}
-%{\color{blue}{I feel excited to join the Computer Science and Engineering Department
-%	at the \textbf{University of Notre Dame} in Fall 2017!}} \\
-%{\color{blue}{I am going to teach \textit{\textbf{Notre Dame CSE 40647/60647 Fall 2017:} Data Science} from August 22 to December 15, 2017!}} \\
-%{\color{blue}{I am teaching \textit{\textbf{UIUC CS412 Summer Class 2017:} An Introduction to Data Warehousing and Data Mining} from May 30 to August 3, 2017!}}
-
-%----------------------------------------------------------------------------------------
-%	RESEARCH INTERESTS SECTION
-%----------------------------------------------------------------------------------------
-
-\section{Research \\ Interests}
-
-Research Topics on \textit{Computational Behavior Modeling}
-\vspace{0.03in}
-\begin{itemize}
-\item Content: Text data mining and information extraction		
-\item Context: Spatiotemporal data mining and social network analysis
-\item Intention: Graph anomaly detection 
-\item Modeling: Representation learning and graph neural networks
-\end{itemize}
-\vspace{-0.1in}
-Applications on \textit{Computational Behavior Modeling}
-\vspace{-0.12in}
-\begin{multicols}{2}
-\begin{itemize}
-\item Future behavior prediction
-\item Fraud and spam detection
-\item Social recommender systems
-\item Effective planning
-\end{itemize}
-\end{multicols}
+\setcounter{secnumdepth}{0}
+%\raisebox{1.5cm}
+
+\thispagestyle{firststyle}
+
+\section{\LARGE{\sc Meng Jiang, Ph.D.}}
+University of Notre Dame \hfill \url{http://www.meng-jiang.com/} \\
+326C Cushing Hall \hfill \url{mjiang2@nd.edu}\\
+Notre Dame, IN 46656 \hfill +1-574-631-7454
+
+%\subsection{\sc Research}
+%\vspace{-0.4cm} \line(1,0){370} \vspace{0.1cm}
 
-%----------------------------------------------------------------------------------------
-%	WORK EXPERIENCE SECTION
-%----------------------------------------------------------------------------------------
+%{\bf Data mining}, machine learning, artificial intelligence, natural language processing, behavior modeling, recommender system, fraud detection, social media analysis, text mining, information extraction, and knowledge graph construction
 
-\section{Work \\ Experience}
+\subsection{\sc Experience}
+\vspace{-0.4cm} \line(1,0){370} \vspace{0.1cm}
 
-{University of Notre Dame, IN, US} \hfill{since August 2017}
-\begin{itemize}
-	\item Tenure-track assistant professor, Department of Computer Science and Engineering, College of Engineering
-\end{itemize}
-\vspace{-0.1in}
-{University of Illinois at Urbana-Champaign, IL, US} \hfill{August 2015 -- August 2017}
-\begin{itemize}
-	\item Postdoctoral Research Associate in Data Mining Group, Computer Science
-	%\item Advisor: Abel Bliss Professor Jiawei Han
-\end{itemize}
-\vspace{-0.1in}
-{University of Maryland, College Park, MD, US} \hfill{June 2016 -- July 2016}
-\begin{itemize}
-	\item Visiting Researcher in Institute for Advanced Computer Studies
-	%\item Advisor: Professor VS Subrahmanian
-\end{itemize}
+\begin{table}[h!]
+\begin{tabular*}{12.7cm}{p{6.5cm}p{1.25cm}r}
+\bf{Assistant Professor}&~&~~2017 -- \emph{present}\\
+ \multicolumn{2}{l}{~{University of Notre Dame}}\\
+ \multicolumn{2}{l}{~{Department of Computer Science and Engineering}}\\
+ \multicolumn{2}{l}{~{Interdisciplinary Center for Network Science and Applications}}\\
+\\
+\bf{Postdoctoral Research Associate}&~&~~2015 -- 2017\\
+ \multicolumn{2}{l}{~{University of Illinois at Urbana-Champaigin}}\\
+ \multicolumn{2}{l}{~{Department of Computer Science}}\\
+ \multicolumn{2}{l}{~{The Data and Information Systems Laboratory}}
+\end{tabular*}
+\end{table}
+\vspace{-0.4cm}
 
-%----------------------------------------------------------------------------------------
-%	EDUCATION SECTION
-%----------------------------------------------------------------------------------------
+\vspace{-0.2cm}
+\subsection{\sc Education}
+\vspace{-0.4cm} \line(1,0){370} \vspace{-0.1cm}
 
-\section{Education Experience}
+\begin{table}[h!]
+\begin{tabular*}{12.7cm}{p{1.15cm}p{8.25cm}r}
+\bf{Ph.D.}&Tsinghua University, Computer Science&2015\\
+ &\multicolumn{2}{l}{\small Title: \emph{Modeling Complex User Behaviors in Social Media}}\\
+ &\multicolumn{2}{l}{\small Committee: Shiqiang Yang (chair), Xindong Wu, Philip S. Yu, Peng Cui\vspace{0.2cm}}\\
+% &\multicolumn{2}{l}{\small\hspace{1.95cm}Xipeng Shen, Peter Kemper\vspace{0.1cm}}\\
+\bf{B.S.}&Tsinghua University, Computer Science&2010\\
 
-{Tsinghua University, Beijing, China} \hfill{August 2010 -- July 2015}
-\begin{itemize}
-\item Ph.D. of Engineering in Computer Science with \textit{Dissertation Award}
-%\item Advisor: Professor Shiqiang Yang
-\item Thesis: Modeling complex behaviors in social media
-\end{itemize}
-\vspace{-0.1in}
-{Carnegie Mellon University, Pittsburgh, PA, US} \hfill{August 2012 -- May 2013}
-\begin{itemize}
-\item Visiting Ph.D. Student in Database Group, Computer Science
-%\item Advisor: Professor Christos Faloutsos
-\end{itemize}
-\vspace{-0.1in}
-{Tsinghua University, Beijing, China} \hfill{August 2006 -- July 2010}
-\begin{itemize}
-\item Bachelor of Engineering in Computer Science with \textit{Excellent Thesis Award}
-%\item Thesis: Reranking news feeds in social recommender systems
-\end{itemize}
+\end{tabular*}
+\end{table}
 
-%----------------------------------------------------------------------------------------
-%	JOURNAL PAPERS SECTION
-%----------------------------------------------------------------------------------------
+\vspace{-0.6cm}
+\subsection{\sc Honors and Awards}
+\vspace{-0.4cm} \line(1,0){370} \vspace{-0.1cm}
 
-\section{Refereed \\ Journal \\ Publications}
+\begin{table}[h!]
+\begin{tabular*}{12.7cm}{p{11.65cm}r}
+Global Gateway Faculty Research Award&2019 \\
+Tutorial Honorarium, ACM CIKM&2016 \\
+Tutorial Honorarium, IEEE ICDM&2015 \\
+Best Paper Finalist, ACM SIGKDD&2014 \\
+Travel Award, ACM SIGKDD&2014 \\
+Travel Award, PAKDD&2014 \\
+National Graduate Research Fellowship of China&2014 \\
+Sohu Graduate Research Fellowship&2013 \\
+\end{tabular*}
+\end{table}
 
-[J11] Jingbo Shang, Jialu Liu, \textbf{Meng Jiang}, Xiang Ren, Clare R. Voss and Jiawei Han. ``Automated Phrase Mining from Massive Text Corpora'', in IEEE Transactions on Knowledge and Data Engineering (\textbf{TKDE}), vol. 30, no. 10, pp. 1825-1837, 2018. (Impact Factor = 2.476)
+\vspace{-0.6cm}
+\subsection{\sc Scholar Pages}
+\vspace{-0.4cm} \line(1,0){370} \vspace{-0.1cm}
 
-[J10] Jingbo Shang, \textbf{Meng Jiang}, Wenzhu Tong, Jinfeng Xiao, Jian Peng and Jiawei Han. ``DPPred: An Effective Prediction Framework with Concise Discriminative Patterns'', in IEEE Transactions on Knowledge and Data Engineering (\textbf{TKDE}), vol. 30, no. 7, pp. 1225-1239, 2018. (Impact Factor = 2.476)
+\begin{table}[h!]
+\begin{tabular*}{12.7cm}{p{11.65cm}r}
+\multicolumn{2}{l}{Google Scholar: \url{https://scholar.google.com/citations?user=LZIPfCkAAAAJ}} \\
+~~~~~Citations&1420 \\
+~~~~~h-index&17 \\
+~~~~~i10-index&19 \\
+\multicolumn{2}{l}{DBLP: \url{https://dblp.org/pers/hd/j/Jiang\_0001:Meng}} \\
+\end{tabular*}
+\end{table}
 
-[J9] Kun Kuang, \textbf{Meng Jiang}, Peng Cui, Jiashen Sun and Shiqiang Yang. ``Effective Promotional Strategies Selection in Social Media: A Data-Driven Approach'', in IEEE Transactions on Big Data (\textbf{TBD}), vol. 4, no. 4, pp. 487-501, 2018.
+\vspace{-0.6cm}
+\subsection{\sc {\small \emph{(@ indicate supervised graduate students. * indicate supervised undergraduate students.)}}}
+\subsection{\sc Publications}
+\vspace{-0.4cm} \line(1,0){370} \vspace{-0.1cm}
 
-[J8] Huan Gui, Jialu Liu, Fangbo Tao, \textbf{Meng Jiang}, Brandon Norick, Lance Kaplan and Jiawei Han. ``Embedding Learning with Events in Heterogeneous Information Networks'', in IEEE Transactions on Knowledge and Data Engineering (\textbf{TKDE}), vol. 29, no. 11, pp. 2428-2441, 2017. (Impact Factor = 2.476)
+\begin{myindentpar}{0.00cm}
 
-[J7] \textbf{Meng Jiang}, Alex Beutel, Peng Cui, Bryan Hooi, Shiqiang Yang and Christos Faloutsos. ``Spotting Suspicious Behaviors in Multimodal Data: A General Metric and Algorithms'', in IEEE Transactions on Knowledge and Data Engineering (\textbf{TKDE}), vol. 28, no. 8, pp. 2187-2200, 2016. (Impact Factor = 2.476)
+\hspace{-0.25cm}\emph{Book Chapters}
 
-[J6] \textbf{Meng Jiang}, Peng Cui and Christos Faloutsos. ``Suspicious Behavior Detection: Current Trends and Future Directions'', Special Issue on Online Behavioral Analysis and Modeling, in \textbf{IEEE Intelligent Systems}, vol. 31, no. 1, pp. 31-39, 2016. (Survey, Impact Factor = 3.532)
+\begin{enumerate}[leftmargin=.5cm]
 
-[J5] \textbf{Meng Jiang}, Peng Cui, Alex Beutel, Christos Faloutsos and Shiqiang Yang. ``Catching Synchronized Behaviors in Large Networks: A Graph Mining Approach'', Special Issue on the Best of SIGKDD 2014, in ACM Transactions on Knowledge Discovery from Data (\textbf{TKDD}), vol. 10, no. 4, article no. 35, 2016. (\textbf{3 among 146 accepted SIGKDD 2014 papers and 1,036 submissions}, Impact Factor = 1.000)
+\item[BC2] Jiang, M. ``Behavior Modeling in Social Networks'' Encyclopedia of Social Network Analysis and Mining, Springer, New York, NY, 2017.
+		
+\item[BC1] Jiang, M., Cui, P. ``Mining User Behaviors in Large Social Networks'' Chapter 4, Big Data in Complex and Social Networks, Chapman \& Hall/CRC Big Data Series, 2016.
 
-[J4] \textbf{Meng Jiang}, Peng Cui, Alex Beutel, Christos Faloutsos and Shiqiang Yang. ``Inferring Lockstep Behavior from Connectivity Pattern in Large Graphs'', in Knowledge and Information Systems (\textbf{KAIS}), vol. 48, no. 2, pp. 399-428, 2015. (Impact Factor = 1.702)
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I conceived the idea and wrote the paper.}}
 
-[J3] \textbf{Meng Jiang}, Peng Cui, Xumin Chen, Fei Wang, Wenwu Zhu and Shiqiang Yang. ``Social Recommendation with Cross-Domain Transferable Knowledge'', in IEEE Transactions on Knowledge and Data Engineering (\textbf{TKDE}), vol. 27, no. 11, pp. 3084-3097, 2015. (Impact Factor = 2.476)
+\end{enumerate}
 
-[J2] \textbf{Meng Jiang}, Peng Cui, Fei Wang, Wenwu Zhu and Shiqiang Yang. ``Scalable Recommendation with Social Contextual Information'', in IEEE Transactions on Knowledge and Data Engineering (\textbf{TKDE}), vol. 26, no. 11, pp. 2789-2802, 2014. (Impact Factor = 2.476)
+\hspace{-0.25cm}\emph{Refereed Journal Papers} (6 TKDEs, etc.)
 
-[J1] Lu Liu, Feida Zhu, \textbf{Meng Jiang}, Jiawei Han, Lifeng Sun and Shiqiang Yang. ``Mining Diversity on Social Media Networks'', in Multimedia Tools and Applications (\textbf{MTA}), vol. 56, no. 1, pp. 179-205, 2012. (Impact Factor = 1.331)
+\begin{enumerate}[leftmargin=.5cm]
 
-%----------------------------------------------------------------------------------------
-%	CONFERENCE PAPERS SECTION
-%----------------------------------------------------------------------------------------
+\item[J12] Zhou, S., Hu, Z., Gu, W., Jiang, M., Zhang, X.P. ``Artificial Intelligence based Smart Energy Community Management: A Reinforcement Learning Approach'' CSEE Journal of Power and Energy Systems. 5:1, 1-10, March 2019. (IF=[new journal])
 
-\section{Refereed \\ Conference \\ Publications}
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{Dr. Zhou conceived the idea, implemented the system, and completed the experiments. I joined the discussion and edited the paper.}}
 
+\item[J11] Kuang, K., Jiang, M., Cui, P., Luo, H., Yang, S. ``Effective Promotional Strategies Selection in Social Media: A Data-Driven Approach'' IEEE Transactions on Big Data. 4:4, 487-501, December 2018. (IF=[new journal])
 
-[C26] Daheng Wang${}^{+}$, Tianwen Jiang${}^{+}$, Nitesh Chawla and \textbf{Meng Jiang}. ``TUBE: Embedding Behavior Outcomes for Predicting Success'', in ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (\textbf{KDD}), 2019. (Research track, oral presentation, acceptance rate = 9.2\%; ${}^{+}$ for advisees)
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I conceived the idea. Mr. Kun implemented the system and completed the experiments. Mr. Kun and I wrote the paper.}}
 
-[C25] Tianwen Jiang${}^{+}$, Tong Zhao${}^{+}$, Bing Qin, Ting Liu, Nitesh Chawla and \textbf{Meng Jiang}. ``The Role of 'Condition': A Novel Scientific Knowledge Graph Representation and Construction Model'', in ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (\textbf{KDD}), 2019. (Research track, acceptance rate = 14.1\%; ${}^{+}$ for advisees)
+\item[J10] Shang, J., Liu, J., Jiang, M., Ren, X., Voss, C.R., Han, J. ``Automated Phrase Mining from Massive Text Corpora'' IEEE Transactions on Knowledge and Data Engineering. 30:10, 1825-1837, October 2018. (IF=2.775)
 
-[C24] Xueying Wang${}^{+}$, Haiqiao Zhang${}^{+}$, Qi Li${}^{+}$, Yiyu Shi and \textbf{Meng Jiang}. ``A Novel Unsupervised Approach for Precise Temporal Slot Filling from Incomplete and Noisy Temporal Contexts'', in the International Web Conference (\textbf{TheWebConf}), 2019. (${}^{+}$ for advisees)
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{Mr. Shang conceived the idea in consultation with myself. Mr. Shang implemented the system, completed the experiments, and wrote the paper. I edited the paper.}}
 
-[C23] Tong Zhao${}^{+}$, Matthew Malir${}^{+}$ and \textbf{Meng Jiang}. ``Actionable Objective Optimization for Suspicious Behavior Detection on Large Bipartite Graphs'', in IEEE International Conference on Big Data (\textbf{BigData}), 2018. (${}^{+}$ for advisees)
+\item[J9] Shang, J., Jiang, M., Tong, W., Xiao, J., Peng, J., Han, J. ``DPPred: An Effective Prediction Framework with Concise Discriminative Patterns'' IEEE Transactions on Knowledge and Data Engineering. 30:7, 1226-1239, July 2018. (IF=2.775)
 
-[C22] Fangbo Tao, Chao Zhang, Xiusi Chen, \textbf{Meng Jiang}, Tim Hanratty, Lance Kaplan and Jiawei Han. ``Doc2Cube: Allocating Documents to Text Cube without Labeled Data'', in IEEE International Conference on Data Mining (\textbf{ICDM}), 2018.
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{Mr. Shang conceived the idea in consultation with myself. Mr. Shang implemented the system, completed the experiments, and wrote the paper. I edited the paper.}}
 
-[C21] Yukun Ding, Jinglan Liu, Jinjun Xiong, \textbf{Meng Jiang} and Yiyu Shi. ``Optimizing Boiler Control in Real-Time with Machine Learning for Sustainability'', in ACM International Conference on Information and Knowledge Management (\textbf{CIKM}), 2018.
+\item[J8] Gui, H., Liu, J., Tao, F., Jiang, M., Norick, B., Kaplan, L., Han, J. ``Embedding Learning with Events in Heterogeneous Information Networks'' IEEE Transactions on Knowledge and Data Engineering. 29:11, 2428-2441, July 2017. (IF=2.775)
 
-[C20] Sendong Zhao, \textbf{Meng Jiang}, Ming Liu, Bing Qin and Ting Liu. ``CausalTriad: Toward Pseudo Causal Relation Discovery and Hypotheses Generation from Medical Text Data'', in ACM International Conference on Bioinformatics, Computational Biology, and Health Informatics (\textbf{BCB}), 2018. (Regular paper with oral presentation)
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{Ms. Gui conceived the idea in consultation with myself. Ms. Gui, her colleague Dr. Liu, and I implemented the system and completed the experiments. Ms. Gui wrote the paper. I edited the paper.}}
 
-[C19] Daheng Wang${}^{+}$, \textbf{Meng Jiang}, Qingkai Zeng${}^{+}$, Zachary Eberhart and Nitesh Chawla. ``Multi-Type Itemset Embedding for Learning Behavior Success'', in ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (\textbf{KDD}), 2018. (Long presentation, acceptance rate = 10.9\%; ${}^{+}$ for advisees)
+\item[J7] Jiang, M., Cui, P., Beutel, A., Faloutsos, C., Yang, S. ``Inferring Lockstep Behavior from Connectivity Pattern in Large Graphs'' Knowledge and Information Systems. 48:2, 399-428, August 2016. (IF=2.247)
 
-[C18] \textbf{Meng Jiang}${}^{*}$, Qi Li${}^{*}$, Xikun Zhang, Meng Qu, Timothy Hanratty, Jing Gao and Jiawei Han. ``TruePIE: Discovering Reliable Patterns in Pattern-Based Information Extraction'', in ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (\textbf{KDD}), 2018. (Long presentation, acceptance rate = 10.9\%; ${}^{*}$ for equal contribution)
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I conceived the idea in consultation with Dr. Faloutsos. I designed the study, completed the experiments, and wrote the paper.}}
 
-[C17] Chao Zhang, Fangbo Tao, Xiusi Chen, Jiaming Shen, \textbf{Meng Jiang}, Brian Sadler, Michelle Vanni and Jiawei Han. ``TaxoGen: Constructing Topical Concept Taxonomy by Adaptive Term Embedding and Clustering'', in ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (\textbf{KDD}), 2018. (Long presentation, acceptance rate = 10.9\%)
+\item[J6] Jiang, M., Cui, P., Beutel, A., Faloutsos, C., Yang, S. ``Catching Synchronized Behaviors in Large Networks: A Graph Mining Approach'' ACM Transactions on Knowledge Discovery from Data - Special Issue on SIGKDD 2014. 10:4, 35:1-35:27, July 2016. (IF=1.000)
 
-[C16] \textbf{Meng Jiang}, Jingbo Shang, Taylor Cassidy, Xiang Ren, Lance Kaplan, Timothy Hanratty and Jiawei Han. ``MetaPAD: Meta Pattern Discovery from Massive Text Corpora'', in ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (\textbf{KDD}), 2017.
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I conceived the idea in consultation with Dr. Faloutsos. I designed the study, completed the experiments, and wrote the paper.}}
 
-[C15] Kun Kuang, Peng Cui, Bo Li, \textbf{Meng Jiang} and Shiqiang Yang. ``Estimating Treatment Effect in the Wild via Differentiated Confounder Balancing'', in ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (\textbf{KDD}), 2017. (Oral)
+\item[J5] Jiang, M., Beutel, A., Cui, P., Hooi, B., Yang, S., Faloutsos, C. ``Spotting Suspicious Behaviors in Multimodal Data: A General Metric and Algorithms'' IEEE Transactions on Knowledge and Data Engineering. 28:8, 2187-2200, April 2016. (IF=2.775)
 
-[C14] Sendong Zhao, \textbf{Meng Jiang}, Quan Yuan, Bing Qin, Ting Liu and ChengXiang Zhai. ``ContextCare: Incorporating Contextual Information Networks to Representation Learning in Medical Forum Data'', in International Joint Conference on Artificial Intelligence (\textbf{IJCAI}), 2017.
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I conceived the idea in consultation with Dr. Faloutsos. I designed the study, completed the experiments, and wrote the paper.}}
 
-[C13] Kun Kuang, Peng Cui, Bo Li, \textbf{Meng Jiang}, Shiqiang Yang and Fei Wang. ``Treatment Effect Estimation with Data-Driven Variable Decomposition'', in AAAI Conference on Artificial Intelligence (\textbf{AAAI}), 2017.
+\item[J4] Jiang, M., Cui, P., Yang, S. ``Suspicious Behavior Detection: Current Trends and Future Directions'' IEEE Intelligent Systems. 31:1, 31-39, January-February 2016. (IF=2.596)
 
-[C12] Kun Kuang, \textbf{Meng Jiang}, Peng Cui, Shiqiang Yang. ``Steering Social Media Promotions with Effective Strategies'', in IEEE International Conference on Data Mining (\textbf{ICDM}), 2016.
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I conceived the idea in consultation with Dr. Cui. I designed the survey and wrote the paper. Dr. Cui edited the paper.}}
 
-[C11] Huan Gui, Jialu Liu, Fangbo Tao, \textbf{Meng Jiang}, Brandon Norick, Jiawei Han. ``Large-Scale Embedding Learning in Heterogeneous Event Data'', in IEEE International Conference on Data Mining (\textbf{ICDM}), 2016.
+\item[J3] Jiang, M., Cui, P., Chen, X., Wang, F., Zhu, W., Yang, S. ``Social Recommendation with Cross-Domain Transferable Knowledge'' IEEE Transactions on Knowledge and Data Engineering. 27:11, 3084-3097, November 2015. (IF=2.775)
 
-[C10] \textbf{Meng Jiang}, Christos Faloutsos and Jiawei Han. ``CatchTartan: Representing and Summarizing Dynamic Multicontextual Behaviors'', in ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (\textbf{KDD}), 2016. (Oral)
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I conceived the idea in consultation with Dr. Cui. I designed the study, completed the experiments, and wrote the paper. Mr. Chen helped the experiments.}}
+\vspace{0.15cm}
 
-[C9] \textbf{Meng Jiang}, Peng Cui, Nicholas Jing Yuan, Xing Xie and Shiqiang Yang. ``Little is Much: Bridging Cross-Platform Behaviors through Overlapped Crowds'', in AAAI Conference on Artificial Intelligence (\textbf{AAAI}), 2016.
+\item[J2] Jiang, M., Cui, P., Wang, F., Zhu, W., Yang, S. ``Scalable Recommendation with Social Contextual Information'' IEEE Transactions on Knowledge and Data Engineering. 26:11, 2789-2802, November 2014. (IF=2.775)
 
-[C8] \textbf{Meng Jiang}, Alex Beutel, Peng Cui, Bryan Hooi, Shiqiang Yang and Christos Faloutsos. ``A General Suspiciousness Metric for Dense Blocks in Multimodal Data'', in IEEE International Conference on Data Mining (\textbf{ICDM}), 2015.
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I conceived the idea in consultation with Dr. Cui. I designed the study, completed the experiments, and wrote the paper. Dr. Cui edited the paper.}}
+\vspace{0.15cm}
 
-[C7] \textbf{Meng Jiang}, Peng Cui, Alex Beutel, Christos Faloutsos and Shiqiang Yang. ``CatchSync: Catching Synchronized Behavior in Large Directed Graphs'', in ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (\textbf{KDD}), 2014. (\textbf{Best Paper Finalist})
+\item[J1] Liu, L., Zhu, F., Jiang, M., Han, J., Sun, L., Yang, S. ``Mining Diversity on Social Media Networks'' Multimedia Tools and Applications. 56:1, 179-205, January 2012. (IF=1.541)
 
-[C6] \textbf{Meng Jiang}, Peng Cui, Fei Wang, Xinran Xu, Wenwu Zhu and Shiqiang Yang. ``FEMA: Flexible Evolutionary Multi-faceted Analysis for Dynamic Behavioral Pattern Discovery'', in ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (\textbf{KDD}), 2014.
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{Ms. Liu conceived the idea in consultation with myself. Ms. Liu, her colleague Dr. Zhu, and I implemented the system and completed the experiments.}}
 
-[C5] \textbf{Meng Jiang}, Peng Cui, Alex Beutel, Christos Faloutsos and Shiqiang Yang. ``Inferring Strange Behavior from Connectivity Pattern in Social Networks'', in Pacific-Asia Conference on Knowledge Discovery and Data Mining (\textbf{PAKDD}), 2014. (Oral)
+\end{enumerate}
 
-[C4] \textbf{Meng Jiang}, Peng Cui, Alex Beutel, Christos Faloutsos and Shiqiang Yang. ``Detecting Suspicious Following Behavior in Multimillion-Node Social Networks'', in International Conference on World Wide Web Companion (\textbf{WWW}), 2014. (Poster)
+\hspace{-0.25cm}\emph{Refereed Conference Papers} (9 KDDs research track, etc.)
 
-[C3] \textbf{Meng Jiang}, Peng Cui, Fei Wang, Qiang Yang, Wenwu Zhu and Shiqiang Yang. ``Social Recommendation across Multiple Relational Domains'', in ACM International Conference on Information and Knowledge Management (\textbf{CIKM}), 2012.
+\begin{enumerate}[leftmargin=.5cm]
 
-[C2] \textbf{Meng Jiang}, Peng Cui, Rui Liu, Qiang Yang, Fei Wang, Wenwu Zhu and Shiqiang Yang. ``Social Contextual Recommendation'', in ACM International Conference on Information and Knowledge Management (\textbf{CIKM}), 2012.
 
-[C1] Lu Liu, Jie Tang, Jiawei Han, \textbf{Meng Jiang} and Shiqiang Yang. ``Mining Topic-Level Influence in Heterogeneous Networks'', in ACM International Conference on Information and Knowledge Management (\textbf{CIKM}), 2010.
+\item[C29] @Wang, D., @Jiang, T., Chawla, N.V., Jiang, M. ``TUBE: Embedding Behavior Outcomes for Predicting Success'' in Proceedings of \emph{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2019. (in press, research track with oral presentation, acceptance rate 9.2\%=110/1200)
 
-%----------------------------------------------------------------------------------------
-%	DEMONSTRATION SECTION
-%----------------------------------------------------------------------------------------
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I conceived the idea and designed the study. Mr. Wang implemented the system and did the experiments. I wrote the introduction and methodology sections. Mr. Wang wrote the rest of the paper.}}
 
-\section{Refereed \\ Demonstration \\ Publications }
+\item[C28] @Jiang, T., @Zhao, T., Qin, B., Liu, T., Chawla, N.V., Jiang, M. ``The Role of Condition: A Novel Scientific Knowledge Graph Representation and Construction Model'' in Proceedings of \emph{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2019. (in press, research track with poster presentation, acceptance rate 14.2\%=170/1200)
 
-[D3] Wenhao Yu${}^{+}$, Zongze Li, Qingkai Zeng${}^{+}$ and \textbf{Meng Jiang}. ``Tablepedia: Automating PDF Table Reading in an Experimental Evidence Exploration and Analytic System'', in the Demonstration Track of the International Web Conference (\textbf{TheWebConf}), 2019. (${}^{+}$ for advisees)
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I conceived the idea. Mr. Jiang designed the study, implemented the system, and did the experiments. I wrote the introduction. Mr. Jiang wrote the rest of the paper.}}
 
+\item[C27] @Wang, X., @Zhang, H., @Li, Q., Shi, Y., Jiang, M. ``A Novel Unsupervised Approach for Precise Temporal Slot Filling from Incomplete and Noisy Temporal Contexts'' in Proceedings of \emph{The Web Conference } (TheWebConf), May 2019. (acceptance rate 18.0\%=225/1247)
 
-[D2] Daheng Wang${}^{+}$, \textbf{Meng Jiang}, Xueying Wang${}^{+}$, Tong Zhao${}^{+}$, Qingkai Zeng${}^{+}$ and Nitesh Chawla. ``A Project Showcase for Planning Research Work towards Publishable Success'', in the Project Showcase Track of ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (\textbf{KDD}), 2018. (${}^{+}$ for advisees)
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I conceived the idea, designed the study, and implemented the system. Ms. Wang did the experiments. Ms. Wang and I wrote the paper.}}
 
-[D1] Xiang Ren, Jiaming Shen, Meng Qu, Xuan Wang, Zeqiu Wu, Qi Zhu, \textbf{Meng Jiang}, Fangbo Tao, Saurabh Sinha, David Liem, Peipei Ping, Richard Weinshilboum and Jiawei Han. ``LifeNet: A Structured Network-Based Knowledge Exploration and Analytics System for Life Sciences'', in the Annual Meeting of the Association for Computational Linguistics (\textbf{ACL}), 2017.
+\item[C26] *Yu, W., Li, Z., @Zeng, Q., Jiang, M. ``Tablepedia: Automating PDF Table Reading in an Experimental Evidence Exploration and Analytic System'' in Proceedings of \emph{The Web Conference } (TheWebConf), May 2019. (acceptance rate 44.8\%=26/58)
 
-%----------------------------------------------------------------------------------------
-%	WORKSHOP SECTION
-%----------------------------------------------------------------------------------------
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I conceived the idea and designed the study. Mr. Yu (junior) implemented the system and did the experiments. Mr. Yu and I wrote the paper.}}
 
-\section{Refereed \\ Workshop \\ Publications}
+\item[C25] @Zhao, T., *Malir, M., Jiang, M. ``Actionable Objective Optimization for Suspicious Behavior Detection on Large Bipartite Graphs'' in Proceedings of \emph{IEEE International Conference on Big Data} (BigData), December 2018. (acceptance rate 18.9\%=98/518)
 
-[W3] Daheng Wang, \textbf{Meng Jiang}, Xueying Wang, Nitesh Chawla, and Paul Brunts. ``Multifaceted Event Analysis on Cross-Media Network Data'', in the International Workshop on Heterogeneous Networks Analysis and Mining (\textbf{HeteroNAM}), with ACM Conference on Web Search and Data Mining (\textbf{WSDM}), 2018.
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I conceived the idea and designed the study. Mr. Zhao implemented the system. Mr. Malir (sophomore) did the experiments. Mr. Zhao and I wrote the paper.}}
 
-[W2] Liang-Wei Chen, Bhargav Mangipudi, Jayachandu Bandlamudi, Richa Sehgal, Yun Hao, \textbf{Meng Jiang}, and Huan Gui. ``Integrating Knowledge from Latent and Explicit Features for Triple Scoring—Team Radicchio's Triple Scorer at WSDM Cup 2017'', in the 10th ACM Conference on Web Search and Data Mining (\textbf{WSDM}) Cup Notebook Papers, 2017.
+\item[C24] Tao, F., Zhang, C., Chen, X., Jiang, M., Hanratty, T., Kaplan, L., Han, J. ``Doc2Cube: Allocating Documents to Text Cube without Labeled Data'' in Proceedings of \emph{IEEE International Conference on Data Mining } (ICDM), November 2018. (acceptance rate 11.1\%=105/948)
 
-[W1] \textbf{Meng Jiang}. ``Catching Social Media Advertisers with Strategy Analysis'', in the International Workshop on Computational Methods for \textbf{CyberSafety}, with ACM International Conference on Information and Knowledge Management (\textbf{CIKM}), 2016.
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{Mr. Tao conceived the idea in consultation with myself. Mr. Tao implemented the system, did the experiments, and wrote the paper. I edited the paper.}}
 
-%----------------------------------------------------------------------------------------
-%	BOOK CHAPTER SECTION
-%----------------------------------------------------------------------------------------
+\item[C23] Ding, Y., Liu, J., Xiong, J., Jiang, M., Shi, Y. ``Optimizing Boiler Control in Real-Time with Machine Learning for Sustainability'' in Proceedings of \emph{ACM International Conference on Information and Knowledge Management} (CIKM), October 2018. (industry track, acceptance rate 26.0\%=34/130)
 
-\section{Book Chapters}
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{Mr. Ding conceived the idea in consultation with myself. Mr. Ding implemented the system, completed the experiments, and wrote the paper. I edited the paper.}}
 
-[B2] \textbf{Meng Jiang}. ``Behavior Modeling in Social Networks'', in ``Encyclopedia of Social Network Analysis and Mining'', 2nd edition, Springer, 2018.
+\item[C22] Zhao, S., Jiang, M., Liu, M., Qin, B., Liu, T. ``CausalTriad: Toward Pseudo Causal Relation Discovery and Hypotheses Generation from Medical Text Data'' in Proceedings of \emph{ACM International Conference on Bioinformatics, Computational Biology, and Health Informatics} (BCB), August-September 2018. (acceptance rate 31.1\%=46/148)
 
-[B1] \textbf{Meng Jiang} and Peng Cui. ``Mining User Behaviors in Large Social Networks'', in ``Big Data in Complex and Social Networks'', Chapman and Hall/CRC Big Data Series, 2016.
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{Mr. Zhao conceived the idea in consultation with myself. Mr. Zhao implemented the system, completed the experiments, and wrote the paper. I edited the paper.}}
 
-%----------------------------------------------------------------------------------------
-%	TUTORIAL SECTION
-%----------------------------------------------------------------------------------------
+\item[C21] @Wang, D., Jiang, M., @Wang, X., @Zhao, T., @Zeng, Q., Chawla, N.V. ``A Project Showcase for Planning Research Work towards Publishable Success'' in Proceedings of \emph{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2018. (demo track)
 
-\section{Tutorials}
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I conceived the idea. Mr. Wang implemented the system, did the experiments, and wrote the paper. I edited the paper.}}
 
-[T6] \textbf{Meng Jiang}, Srijan Kumar, VS Subrahmanian, and Christos Faloutsos. ``Data-Driven Approaches towards Malicious Behavior Modeling'', in ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (\textbf{KDD}), 2017.
+\item[C20] @Wang, D., Jiang, M., @Zeng, Q., @Eberhart, Z., Chawla, N.V. ``Multi-Type Itemset Embedding for Learning Behavior Success'' in Proceedings of \emph{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2018. (acceptance rate 10.9\%=107/983)
 
-[T5] Jingbo Shang, Xiang Ren, \textbf{Meng Jiang}, and Jiawei Han. ``Mining Entity-Relation-Attribute Structures from Massive Text Data'', in ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (\textbf{KDD}), 2017.
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I conceived the idea and designed the study. Mr. Wang implemented the system and did the experiments. I wrote the paper.}}
 
-[T4] Xiang Ren, \textbf{Meng Jiang}, Jingbo Shang, and Jiawei Han. ``Building Structured Databases of Factual Knowledge from Massive Text Data'', in ACM SIGMOD International Conference on Management of Data (\textbf{SIGMOD}), 2017.
+\item[C19] Jiang, M., Li, Q., Zhang, X., Qu, M., Hanratty, T., Gao, J., Han, J. ``TruePIE: Discovering Reliable Patterns in Pattern-Based Information Extraction'' in Proceedings of \emph{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2018. (acceptance rate 10.9\%=107/983)
 
-[T3] Xiang Ren, \textbf{Meng Jiang}, Jingbo Shang, and Jiawei Han. ``Constructing Structured Information Networks from Massive Text Corpora'', in International World Wide Web Conference (\textbf{WWW}), 2017.
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{Dr. Li and I are co-first authors. I conceived the idea. Dr. Li implemented the system, did the experiments, and wrote the paper. I edited the paper.}}
 
-[T2] \textbf{Meng Jiang}, Peng Cui and Jiawei Han. ``Data-Driven Behavioral Analytics: Observations, Representations and Models'', in ACM International Conference on Information and Knowledge Management (\textbf{CIKM}), 2016. (Taught 2 of 3 hours, 70+ audience and \$360 honorarium)
+\item[C18] Zhang, C., Tao, F., Chen, X., Shen, J., Jiang, M., Sadler, B., Vanni, M., Han, J. ``TaxoGen: Constructing Topical Concept Taxonomy by Adaptive Term Embedding and Clustering'' in Proceedings of \emph{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2018. (acceptance rate 10.9\%=107/983)
 
-[T1] \textbf{Meng Jiang} and Peng Cui. ``Behavior Modeling in Social Networks: From Micro to Macro'', in IEEE International Conference on Data Mining (\textbf{ICDM}), 2015. (Taught all 3 hours, 50+ audience and \$700 honorarium)
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{Mr. Zhang conceived the idea in consultation with myself. Mr. Zhang implemented the system, did the experiments, and wrote the paper. I edited the paper.}}
 
-%----------------------------------------------------------------------------------------
-%	GRANT SECTION
-%----------------------------------------------------------------------------------------
+\item[C17] Zhao, S., Jiang, M., Yuan, Q., Qin, B., Liu, T., Zhai, C.X. ``ContextCare: Incorporating Contextual Information Networks to Representation Learning in Medical Forum Data'' in Proceedings of \emph{International Joint Conference on Artificial Intelligence} (IJCAI), August 2017. (acceptance rate 26.0\%=660/2540)
 
-%\section{Grant \\ Experience}
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{Mr. Zhao conceived the idea in consultation with myself. Mr. Zhao implemented the system and completed the experiments. I wrote the introduction section. Mr. Zhao wrote the rest of the paper.}}
 
-%[G4] ``NSF III: Medium: Collaborative Research: StructNet: Constructing and Mining Structure-Rich Information Networks for Scientific Research'', National Science Foundation Award Number: NSF IIS 17-04001 (07-01-2017 -- 06-30-2021). \textbf{Meng Jiang} contributed significantly to the technical content based on his later-published paper [C16].
+\item[C16] Jiang, M., Shang, J., Cassidy, T., Ren, X., Kaplan, L., Hanratty, T., Han, J. ``MetaPAD: Meta Patten Discovery from Massive Text Corpora'' in Proceedings of \emph{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2017. (acceptance rate 13.7\%=130/748)
 
-%[G3] ``NSF III: Small: Multi-Dimensional Structuring, Summarizing and Mining of Social Media Data'', National Science Foundation Award Number: NSF IIS 16-18481 (08-01-2016 -- 07-31-2019). \textbf{Meng Jiang} contributed significantly to the technical content based on his later-published paper [C10] and led a team of 5 PhD students in this project at UIUC.
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I conceived the idea, designed the study, did the experiments, and wrote the paper. Dr. Han edited the paper.}}
 
-%[G2] ``IPAN I2: Distributed, User-Oriented Multi-Scale Network Summarization and Online Analytical Processing'', Network Science Collaborative Technology Alliance (NS CTA) at the US Army Research Laboratory (ARL). \textbf{Meng Jiang} visited Aberdeen Proving Ground, Maryland, and collaborated with Dr. Timothy P. Hanratty in 2016 and led a team of 8 MS/PhD students at UIUC.
+\item[C15] Kuang, K., Cui, P., Li, B., Jiang, M., Yang, S., Wang, F. ``Estimating Treatment Effect in the Wild via Differentiated Confounder Balancing'' in Proceedings of \emph{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2017. (acceptance rate 13.7\%=130/748)
 
-%[G1] ``IPAN I1: Constructing Unified, Structured Knowledge Networks by Integrating Text, Social Media and Multi-Genre Networks'', Network Science Collaborative Technology Alliance (NS CTA) at the US Army Research Laboratory (ARL). \textbf{Meng Jiang} visited Adelphi Laboratory Center, Maryland, and collaborated with Dr. Lance M. Kaplan in 2016.
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{Mr. Kun conceived the idea in consultation with myself. Mr. Kun implemented the system and completed the experiments. Mr. Kun wrote the paper. I edited the paper.}}
 
-%----------------------------------------------------------------------------------------
-%	INVITED TALK SECTION
-%----------------------------------------------------------------------------------------
+\item[C14] Ren, X., Shen, J., Qu, M., Wang, X., Wu, Z., Zhu, Q., Jiang, M., Tao, F., Sinha, S., Liem, D., Ping, P., Weinshilboum, R., Han, J. ``LifeNet: A Structured Network-Based Knowledge Exploration and Analytics System for Life Sciences'' in Proceedings of \emph{Annual Meeting of the Association for Computational Linguistics} (ACL), July-August 2017. (demo track)
 
-%\section{Invited Talks}
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{Mr. Ren conceived the idea. Mr. Shen implemented the system and completed the experiments. Mr. Ren wrote the paper. I edited the paper.}}
 
-%[K16] ``Making AI Research Explainable to AI'', at the ND-IBM AI Ethics workshop, IBM T.J. Watson Center, October 18, 2018.
+\item[C13] Kun, K., Cui, P., Li, B., Jiang, M., Yang, S., Wang, F. ``Treatment Effect Estimation with Data-Driven Variable Decomposition'' in Proceedings of \emph{AAAI Conference on Artificial Intelligence} (AAAI), February 2017. (acceptance rate 24.6\%=638/2590)
 
-%[K15] ``Data Mining towards Decision Making in Academia'', in Seminar at the Department of Psychology in the University of Notre Dame, Notre Dame, October 4, 2018. (Host by Professor Johnny Zhang)
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{Mr. Kun conceived the idea in consultation with myself. Mr. Kun implemented the system and completed the experiments. Mr. Kun wrote the paper. I edited the paper.}}
 
-%[K14] ``Behavior Modeling and Text Mining'', at Nanjing University Xianlin Campus, Nanjing, December 19, 2017. (Host by Professor Zhihua Zhou and Lijun Zhang)
+\item[C12] Kun, K., Jiang, M., Cui, P., Yang, S. ``Steering Social Media Promotions with Effective Strategies'' in Proceedings of \emph{IEEE International Conference on Data Mining} (ICDM), November 2016. (acceptance rate 19.6\%=177/904)
 
-%[K13] ``My Post-PhD Transitions: Behavior Modeling and Text Mining'', at University of Electronic Science and Technology of China, Chengdu, December 3, 2017. (Host by Professor Shi Gu)
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I conceived the idea. Mr. Kun implemented the system and completed the experiments. Mr. Kun and I wrote the paper.}}
 
-%[K12] ``My Post-PhD Transitions: Behavior Modeling and Text Mining'', at Zhejiang University, Hangzhou November 30, 2017. (Host by Professor Yang Yang)
+\item[C11] Gui, H., Liu, J., Tao, F., Jiang, M., Norick, B., Han, J. ``Large-Scale Embedding Learning in Heterogeneous Event Data'' in Proceedings of \emph{IEEE International Conference on Data Mining} (ICDM), November 2016. (acceptance rate 19.6\%=177/904)
 
-%[K12] ``My Post-PhD Transitions: Behavior Modeling and Text Mining'', at Tsinghua University, Beijing, November 20, 2017. (Host by Professor Peng Cui)
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{Ms. Gui conceived the idea in consultation with myself. Ms. Gui, her colleague Dr. Liu, and I implemented the system and completed the experiments. Ms. Gui wrote the paper. I edited the paper.}}
 
-%[K11] ``Data-driven Behavioral Analytics with Networks'', at Binghamton University, March 13, 2017. (Host by Professor Weiyi Meng)
+\item[C10] Jiang, M., Faloutsos, C., Han, J. ``CatchTartan: Representing and Summarizing Dynamic Multicontextual Behaviors'' in Proceedings of \emph{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2016. (acceptance rate 8.9\%=70/784)
 
-%[K10] ``Data-driven Behavioral Analytics with Networks'', at Georgia State University, March 9, 2017. (Host by Professor Xiaojun Cao)
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I conceived the idea, designed the study, did the experiments, and wrote the paper.}}
 
-%[K9] ``Data-driven Behavioral Analytics with Networks'', at University of Oregon, March 2, 2017. (Host by Professor Dejing Dou)
+\item[C9] Jiang, M., Cui, P., Yuan, N.J., Xie, X., Yang, S. ``Little is Much: Bridging Cross-Platform Behaviors through Overlapped Crowds'' in Proceedings of \emph{AAAI Conference on Artificial Intelligence} (AAAI), February 2016. (acceptance rate 25.8\%=550/2132)
 
-%[K8] ``Data-driven Behavioral Analytics with Networks'', at Rensselaer Polytechnic Institute, February 21, 2017. (Host by Professor Boleslaw K. Szymanski)
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I conceived the idea in consultation with Dr. Cui. I designed the study, completed the experiments, and wrote the paper.}}
 
-%[K7] ``Data-driven Behavioral Analytics with Networks'', at University of Maryland, Baltimore County, February 2, 2017. (Host by Professor George Karabatis)
+\item[C8] Jiang, M., Beutel, A., Cui, P., Hooi, B., Yang, S., Faloutsos, C. ``A General Suspiciousness Metric for Dense Blocks in Multimodal Data'' in Proceedings of \emph{IEEE International Conference on Data Mining} (ICDM), November 2015. (acceptance rate 18.1\%=146/807)
 
-%[K6] ``Data-driven Behavioral Analytics with Networks'', at University of Notre Dame, January 26, 2017. (Host by Professor Nitesh Chawla)
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I conceived the idea in consultation with Dr. Beutel. I designed the study, completed the experiments, and wrote the paper. Dr. Beutel edited the paper.}}
 
-%[K5] ``Data-driven Behavioral Analytics with Networks'', at Temple University, January 19, 2017. (Host by Professor Zoran Obradovic)
+\item[C7] Jiang, M., Cui, P., Beutel, A., Faloutsos, C., Yang, S. ``Detecting Suspicious Following Behavior in Multimillion-Node Social Networks'' in Proceedings of \emph{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2014. (selected as \textbf{best paper finalist}, acceptance rate 14.6\%=151/1036)
 
-%[K4] ``Data-driven Behavioral Analytics with Networks'', at The Ohio State University, October 25, 2016. (Invited by Professor Huan Sun)
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I conceived the idea in consultation with Dr. Faloutsos. I designed the study, did the experiments, and wrote the paper. Drs. Beutel and Faloutsos edited the paper.}}
 
-%[K3] ``Modeling Complex Behavior in Social Media'', at University of Massachusetts Boston, November 23, 2015. (Invited by Professor Wei Ding)
+\item[C6] Jiang, M., Cui, P., Wang, F., Xu, X., Zhu, W., Yang, S. ``FEMA: Flexible Evolutionary Multi-Faceted Analysis for Dynamic Behavioral Pattern Discovery'' in Proceedings of \emph{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2014. (acceptance rate 14.6\%=151/1036)
 
-%[K2] ``Prediction and Anomaly Detection in Large-Scale Social Networks'', at Tencent Big Data Seminar, July 25, 2014. (Invited by Tencent Inc.)
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I conceived the idea in consultation with Drs. Cui and Wang. I designed the study, completed the experiments, and wrote the paper.}}
 
-%[K1] ``User Behavior Analysis in Social Networks: Pattern Discovery, Prediction and Anomaly Detection'', at Microsoft Research Asia, July 14, 2014. (Invited by Senior Research Manager Dr. Xing Xie)
+\item[C5] Jiang, M., Cui, P., Beutel, A., Faloutsos, C., Yang, S. ``Inferring Strange Behavior from Connectivity Pattern in Social Networks'' in Proceedings of \emph{Pacific-Asia Conference on Knowledge Discovery and Data Mining } (PAKDD), April 2014. (oral long, acceptance rate 10.8\%=40/371)
 
-%----------------------------------------------------------------------------------------
-%	TEACHING EXPERIENCE SECTION
-%----------------------------------------------------------------------------------------
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I conceived the idea, designed the study, did the experiments, and wrote the paper.}}
 
-\section{Teaching \\ Experience}
+\item[C4] Jiang, M., Cui, P., Beutel, A., Faloutsos, C., Yang, S. ``Detecting Suspicious Following Behavior in Multimillion-Node Social Networks'' in Proceedings of \emph{International Conference on World Wide Web} (WWW), April 2014. (poster track, acceptance rate 48.7\%=110/226)
 
-{{Notre Dame CSE 40647/60647:} Data Science} \hfill{Fall 2019} \\
-{{Notre Dame CSE 40647/60647:} Data Science} \hfill{Fall 2018} \\
-{{Notre Dame CSE 40647/60647:} Data Science} \hfill{Spring 2018} \\
-{{Notre Dame CSE 40647/60647:} Data Science} \hfill{Fall 2017} \\
-{{UIUC CS412:} Intro to Data Warehousing and Data Mining} \hfill{Summer 2017}
-%{\textbf{UIUC CS512:} Data Mining: Principles and Algorithms} \hfill{Spring 2017}
-%\begin{itemize}
-%\item Guest lecture on behavioral analytics. Invited by Professor Jiawei Han.
-%\end{itemize}
-%\vspace{-0.1in}
-%{\textbf{UIUC CS412:} An Introduction to Data Warehousing and Data Mining} \hfill{Fall 2016}
-%\begin{itemize}
-%\item Taught the Chapter of Data Warehousing, OLAP, and Data Cube.
-%\item Supervised three teams in WSDM CUP 2017 ``triple scoring'' competition.
-%\end{itemize}
-%\vspace{-0.1in}
-%{\textbf{UIUC CS598:} Advanced Topics in Information Retrieval} \hfill{Fall 2016}
-%\begin{itemize}
-%\item Guest lecture on attribute discovery. Invited by Professor ChengXiang Zhai.
-%\end{itemize}
-%\vspace{-0.1in}
-%{\textbf{UIUC CS512:} Data Mining: Principles and Algorithms} \hfill{Spring 2016}
-%\begin{itemize}
-%\item Supervised three teams in the ``relationship prediction'' course project.
-%\end{itemize}
-%\vspace{-0.1in}
-%{\textbf{THU CS-SMT:} Streaming Media Technology} \hfill{Fall 2013}
-%\begin{itemize}
-%\item Teaching assistant for Professor Lifeng Sun.
-%\end{itemize}
-%\vspace{-0.1in}
-%{\textbf{THU CS-MFA:} Multimedia Fundamentals and Applications} \hfill{Spring 2013}
-%\begin{itemize}
-%\item Teaching assistant for Professor Lifeng Sun.
-%\end{itemize}
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I conceived the idea, designed the study, did the experiments, and wrote the paper.}}
 
-%----------------------------------------------------------------------------------------
-%	HONORS SECTION
-%----------------------------------------------------------------------------------------
+\item[C3] Jiang, M., Cui, P., Wang, F., Yang, Q., Zhu, W., Yang, S. ``Social Recommendation across Multiple Relational Domains'' in Proceedings of \emph{ACM International Conference on Information and Knowledge Management} (CIKM), October 2012. (acceptance rate 13.4\%=146/1088)
 
-\section{Honors and Awards}
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I conceived the idea in consultation with Dr. Wang. I designed the study, completed the experiments, and wrote the paper. Dr. Cui edited the paper.}}
 
-{The $3^{rd}$ place in WSDM CUP Competition} \hfill{2017} \\
-{KDD 2016 Rising Stars, Microsoft Academic Search} \hfill{2016} \\
-{Tutorial Honorarium, ACM CIKM} \hfill{2016} \\
-{Tutorial Honorarium, IEEE ICDM} \hfill{2015} \\
-{Dissertation Award, Tsinghua University} \hfill{2015} \\
-{Excellent PhD Graduate, Beijing City} \hfill{2015} \\
-{SIGKDD Best Paper Finalist} \hfill{2014} \\
-{National Scholarship, China} \hfill{2014} \\
-{Award of Excellence in MSRA Internship Program} \hfill{2014} \\
-{KDD Student Travel Award} \hfill{2014} \\
-{PAKDD Student Travel Grant Award} \hfill{2014} \\
-{Sohu Research Fellowship} \hfill{2013}
+\item[C2] Jiang, M., Cui, P., Liu, R., Yang, Q., Wang, F., Zhu, W., Yang, S. ``Social Contextual Recommendation'' in Proceedings of \emph{ACM International Conference on Information and Knowledge Management} (CIKM), October 2012. (acceptance rate 13.4\%=146/1088)
 
-\section{Students' \\ Honors}
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I conceived the idea in consultation with Dr. Cui. I designed the study, completed the experiments, and wrote the paper. Dr. Cui edited the paper.}}
 
-{Mr. Tong Zhao, the Honorable Mention Outstanding TA Award} \hfill{2019} \\
-{Ms. Xueying Wang, NSF Travel Grant Scholarship for TheWebConf} \hfill{2019} \\
-{Ms. Xueying Wang, the Outstanding Research Poster Award -- Faculty Choice} \hfill{2018}
+\item[C1] Liu, L., Tang, J., Han, J., Jiang, M., Yang, S. ``Mining Topic-Level Influence in Heterogeneous Networks'' in Proceedings of \emph{ACM International Conference on Information and Knowledge Management} (CIKM), October 2010. (acceptance rate 13.3\%=126/945)
 
-%----------------------------------------------------------------------------------------
-%	SERVICE SECTION
-%----------------------------------------------------------------------------------------
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{Ms. Liu conceived the idea in consultation with myself. Ms. Liu and I implemented the system and completed the experiments.}}
 
-\section{Current Graduate Students}
+\end{enumerate}
 
-{Mr. Wenhao Yu, PhD student (2019 -- )} \\
-{Mr. Qingkai Zeng, PhD student (2018 -- )} \\
-{Mr. Tong Zhao, Master student (2017 -- 2018), PhD student (2018 -- )} \\
-{Ms. Xueying Wang, PhD student (2016 -- )} \\
-{Ms. Haiqiao Zhang, PhD student (2016 -- ), coadvised with Prof. Yiyu Shi} \\
-{Mr. Daheng Wang, PhD student (2016 -- ), coadvised with Prof. Nitesh Chawla}
+\hspace{-0.25cm}\emph{Refereed Workshop Papers}
 
-\section{Undergraduate Researchers}
+\begin{enumerate}[leftmargin=.5cm]
 
-{Ms. Tina Wu}, Junior (Spring 2019) \\
-{Mr. Matthew Malir}, Sophomore, published in IEEE BigData 2018 (Spring 2018) \\
-{Mr. Sebastian Miner}, Sophomore (Spring 2018)
+\item[W3] @Wang, D., Jiang, M., @Wang, X., Chawla, N.V., Brunts, P. ``Multifaceted Event Analysis on Cross-Media Network Data'' in the International Workshop on Heterogeneous Networks Analysis and Mining (HeteroNAM) at ACM Conference on Web Search and Data Mining, February 2018.
 
-\section{Visiting \\ Graduate \\ Students}
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I conceived the idea in consultation with Mr. Wang. Mr. Wang designed the study, completed the experiments, and wrote the paper. I edited the paper.}}
 
-{Mr. Tianwen Jiang, Harbin Institute of Technology (Advisor: Prof. Bing Qin)} (Aug. 2018 -- Sept. 2019) \\
-{Mr. Guoqiang Liu, Biology, University of Notre Dame} (Jan. 2019 -- May 2019) \\
-{Mr. Zijian Hu, Southeat University, China} (June 2019 -- Aug. 2019)
+\item[W2] Chen, L.W., Mangipudi, B., Bandlamudi, J., Sehgal, R., Hao, Y., Jiang, M. ``Integrating Knowledge from Latent and Explicit Features for Triple Scoring—Team Radicchio's Triple Scorer at WSDM Cup 2017'' in the 10th ACM Conference on Web Search and Data Mining (WSDM) Notebook Papers, February 2017.
 
-\section{Visiting \\ Undergraduate \\ Students}
+\vspace{-0.1cm}\hspace{0.5cm}{\small \emph{I joined the discussion and edited the paper.}}
 
-{Mr. Zhihan Zhang, Peking University} (Summer 2019) \\
-{Ms. Mengxia Yu, Peking University} (Summer 2019) \\
-{Mr. Xin Liu, Zhejiang University} (Summer 2019) \\
-{Mr. Wei Peng, Zhejiang University} (Summer 2019) \\
-{Mr. Kaifeng Yu, Tsinghua University} (Summer 2019) \\
-{Ms. Yang Zhou, Wuhan University} (Summer 2019) \\
-{Mr. Wenhao Yu, Sichuan University} (Summer 2018) \\
-{Mr. Rui Liu, Dalian University of Technology} (Summer 2018)
+\item[W1] Jiang, M. ``Catching Social Media Advertisers with Strategy Analysis'' in the 1st International Workshop on Computational Methods for CyberSafety at ACM International Conference on Information and Knowledge Management, 2016.
 
-\section{Professional Services}
+\end{enumerate}
 
-{Ph.D. Committee Member}
-\begin{itemize}
-\item Maria Glenski, University of Notre Dame (Advisor: Prof. Timothy Weninger)
-\item Kaitlynn Meis, University of Notre Dame (Advisor: Prof. Michael Ferdig)
-\item Kenton Murray, University of Notre Dame (Advisor: Prof. David Chiang)	
-\item Chao Huang, University of Notre Dame (Advisor: Prof. Nitesh Chawla)
-\item Shenglong Zhu, University of Notre Dame (Advisor: Profs. Danny Chen and Scott Emrich)
-\item Yuan Gong, University of Notre Dame (Advisor: Prof. Christian Poellabauer)
-\item Chuxu Zhang, University of Notre Dame (Advisor: Prof. Nitesh Chawla)
-\item Zhiyu Liu, University of Notre Dame (Advisor: Prof. Hai Lin)
-\item Xian Wu, University of Notre Dame (Advisor: Prof. Nitesh Chawla)
-\end{itemize}
-\vspace{-0.1in}
+\hspace{-0.25cm}\emph{Refereed Tutorials}
 
-{Workshop/Special Session Organizer}
-\begin{itemize}
-\item Workshop on Misinformation and Misbehavior Mining on the Web (\textbf{MIS2}), 2018
-\item Special session on Big Behavioral Data Analytics (\textbf{BBDA})
-	in IEEE International Conference on Data Science and Advanced Analytics (\textbf{DSAA}), 2016
-\end{itemize}
-\vspace{-0.1in}
+\begin{enumerate}[leftmargin=.5cm]
 
-{Senior Program Committee Member}
-\begin{itemize}
-\item {Publication Chair}, ACM International Conference on Information and Knowledge Management (\textbf{CIKM}), 2019
-\item {Publicity Chair}, International Conference on Computational Data and Social Networks (\textbf{CSoNet}), 2019
-\end{itemize}
-\vspace{-0.1in}
+\item[T6] Jiang, M., Kumar, S., Subrahmanian, V.S., Faloutsos, C. ``Data-Driven Approaches towards Malicious Behavior Modeling'' at the ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD), August 2017.
 
-{Program Committee Member}
-\begin{itemize}
-\item ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (\textbf{KDD}), 2018, 2019
-\item International World Wide Web Conference (\textbf{WWW}), 2018, 2019
-\item Conference on Empirical Methods in Natural Language Processing (\textbf{EMNLP}), 2018, 2019
-\item AAAI Conference on Artificial Intelligence (\textbf{AAAI}), 2017, 2018, 2019
-\item International Joint Conference on Artificial Intelligence (\textbf{IJCAI}), 2019
-\item ACM International Conference on Web Search and Data Mining (\textbf{WSDM}), 2018, 2019
-\item ACM International Conference on Information and Knowledge Management (\textbf{CIKM}), 2017, 2018, 2019
-\item SIAM Data Mining Conference (\textbf{SDM}), 2018, 2019
-\item ACM International Conference on Multimedia (\textbf{MM}), 2017, 2018	
-\item Pacific-Asia Conference on Knowledge Discovery and Data Mining (\textbf{PAKDD}), 2017, 2018, 2019
-\item International Conference Series on Advances in Social Network Analysis and Mining (\textbf{ASONAM}), 2019
-\item Workshop on Graph Techniques for Adversarial Activity Analytics (\textbf{GTA3}), 2018
-\item The Joint International Workshop on Social Influence Analysis and Mining Actionable Insights from Social Networks (\textbf{SocInf+MAISoN}), 2018
-\item IEEE International Conference on Data Science in Cyberspace (\textbf{DSC}), 2016, 2018
-\item IEEE International Conference on Big Knowledge (\textbf{ICBK}), 2017
-\item IEEE International Conference on Data Science and Advanced Analytics (\textbf{DSAA}), 2015
-\end{itemize}
-\vspace{-0.1in}
+\item[T5] Shang, J., Jiang, M., Ren, X., Han, J. ``Mining Entity-Relation-Attribute Structures from Massive Text Data'' at the ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD), August 2017.
 
-{Journal Reviewer}
-\begin{itemize}
-\item IEEE Access (\textbf{Access})
-\item Artificial Intelligence Journal (\textbf{AI Journal})	
-\item Data Mining and Knowledge Discovery (\textbf{DMKD}, \textbf{DAMI})
-\item Decision Sciences Journal (\textbf{DSJ})
-\item Frontiers of Computer Science (\textbf{FCS})
-\item International Journal of Information Technology and Decision Making (\textbf{IJITDM})
-\item Information Sciences (\textbf{INS})
-\item Information Systems (\textbf{InfoSys})
-\item Information Processing and Management (\textbf{IPM})
-\item IEEE Intelligent Systems (\textbf{IS})
-\item Journal of Computers (\textbf{JCP})
-\item Journal of Machine Learning Research (\textbf{JMLR})
-\item INFORMS Journal on Computing (\textbf{JOC})
-\item Knowledge and Information Systems (\textbf{KAIS})
-\item Neurocomputing (\textbf{NEUCOM})
-\item Pattern Recognition (\textbf{PR})
-\item IEEE Transactions on Big Data (\textbf{TBD})
-\item IEEE Transactions on Information Forensics and Security (\textbf{TIFS})
-\item KSII Transactions on Internet and Information Systems (\textbf{TIIS})
-\item ACM Transactions on Intelligent Systems and Technology (\textbf{TIST})
-\item ACM Transactions on Knowledge Discovery from Data (\textbf{TKDD})
-\item IEEE Transactions on Knowledge and Data Engineering (\textbf{TKDE})
-\item ACM Transactions on Multimedia Computing Communications and Applications (\textbf{TOMCCAP})
-\item IEEE Transactions on Neural Networks and Learning Systems (\textbf{TNNLS})	
-\item World Wide Web Journal (\textbf{WWWJ})
-\end{itemize}
+\item[T4] Ren, X., Jiang, M., Shang, J., Han, J. ``Building Structured Databases of Factual Knowledge from Massive Text Data'' at the ACM SIGMOD International Conference on Management of Data (SIGMOD), May 2017.
+		
+\item[T3] Ren, X., Jiang, M., Shang, J., Han, J. ``Constructing Structured Information Networks from Massive Text Corpora'' at the International World Wide Web Conference  (WWW), April 2017.
 
-%{Conference Reviewer}
-%\vspace{-0.15in}
-%\begin{multicols}{3}
-%\begin{itemize}
-%\item NIPS 2016
-%\item PKDD 2016
-%\item EDBT 2016
-%\item AAAI 2016
-%\item KDD 2015
-%\item IJCAI 2015
-%\item AAAI 2015
-%\item WSDM 2015
-%\item ICDM 2014
-%\item CIKM 2014
-%\item KDD 2014
-%\item Globecom 2014
-%\end{itemize}
-%\end{multicols}
+\item[T2] Jiang, M., Cui, P., Han, J. ``Data-Driven Behavioral Analytics: Observations, Representations and Models'' at the ACM International Conference on Information and Knowledge Management (CIKM), October 2016.
+		
+\item[T1] Jiang, M., Cui, P. ``Behavior Modeling in Social Networks: From Micro to Macro'' at the IEEE International Conference on Data Mining (ICDM), November 2015.
 
+\end{enumerate}
 
-\vspace{0.2in}
+\end{myindentpar}
 
-(Last updated on May 2, 2019)
-\end{resume}
+\subsection{\sc Publications Under Review}
+\vspace{-0.4cm} \line(1,0){370} \vspace{-0.1cm}
+
+\begin{myindentpar}{0.00cm}
+
+\hspace{-0.25cm}\emph{Refereed Journal Papers}
+
+\begin{enumerate}[leftmargin=.5cm]
+
+\item[JR4] @Wang, D., @Zeng, Q., Chawla, N.V., Jiang, M. ``Modeling Complementarity in Behavior Data with Multi-Type Itemset Embedding'' under review at Transactions on Intelligent Systems and Technology. (IF=3.190)
+
+\item[JR3] @Wang, X., Jiang, M. ``Precise Temporal Slot Filling via Truth Finding with Data-Driven Commonsense'' under review at Knowledge and Information Systems. (IF=2.247)
+
+\item[JR2] Zhao, S., Jiang, M., Qin, B., Liu, T., Zhai, C.X., Wang, F. ``Structural and Textual Information Fusion for Symptom and Disease Representation Learning'' under review at IEEE Transactions on Knowledge and Data Engineering. (IF=2.775)
+
+\item[JR1] Kuang, K., Cui, P., Li, B., Jiang, M., Yang, S. ``Treatment Effect Estimation via Differentiated Confounder Balancing and Regression'' under review at Transactions on Knowledge Discovery from Data. (minor revision, IF=1.000)
+
+\end{enumerate}
+
+\vspace{.2cm}\hspace{-0.25cm}\emph{Refereed Conference Papers}
+
+\begin{enumerate}[leftmargin=.5cm]
+
+\item[CR6] @Wang, D., @Zhao, T., @Jiang, T., Chawla, N.V., Jiang, M. ``Evolutionary Graph Neural Networks'', under review at Annual Conference on Neural Information Processing Systems (NeurIPS), 2019.
+
+\item[CR5] Yao, H., Zhang, C., Wei, Y., Jiang, M., Wang, S., Chawla, N.V., Li, Z. ``Graph Few-shot Learning via Knowledge Transfer'', under review at Annual Conference on Neural Information Processing Systems (NeurIPS), 2019.
+
+\item[CR4] @Jiang, T., @Zhao, T., Qin, B., Liu, T., Chawla, N.V., Jiang, M. ``Canonicalizing Open Knowledge Bases with Multi-layered Meta-graph Neural Network'', under review at Conference on Empirical Methods in Natural Language Processing (EMNLP), 2019.
+
+\item[CR3] @Jiang, T., @Zhao, T., Qin, B., Liu, T., Chawla, N.V., Jiang, M. ``Multi-input Multi-output Sequence Labeling for Joint Extraction of Fact and Condition Tuples from Scientific Text'', under review at Conference on Empirical Methods in Natural Language Processing (EMNLP), 2019.
+	
+\item[CR2] Zhang, C., Yao, H., Jiang, M., Li, Z., Chawla, N.V. ``Few-Shot Knowledge Base Completion'', under review at Conference on Empirical Methods in Natural Language Processing (EMNLP), 2019.
+
+\item[CR1] Wang, T., Xu, X., Xiong, J., Jiang, M., Shi, Y. ``MSU-Net: Multiscale Statistical U-Net forReal-time 3D Cardiac MRI Video Segmentation'', under review at International Conference on Medical Image Computing and Computer Assisted Intervention (MICCAI), 2019.
+
+\end{enumerate}
+
+\vspace{.2cm}\hspace{-0.25cm}\emph{Refereed Workshop Papers}
+
+\begin{enumerate}[leftmargin=.5cm]
+
+\item[WR1] @Jiang, T., @Zhao, T., Qin, B., Liu, T., Chawla, N.V., Jiang, M. ``Constructing Information-Lossless Biological Knowledge Graphs from Conditional Statements'', under review in the 18th International Workshop on Data Mining in Bioinformatics (BioKDD) at the ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 2019. (abstract track)
+
+\end{enumerate}
+
+\end{myindentpar}
+
+\hide{
+\subsection{\sc Ongoing Work}
+\vspace{-0.4cm} \line(1,0){370} \vspace{-0.1cm}
+
+\begin{myindentpar}{0.00cm}
+
+\hspace{-0.25cm}\emph{Journal Papers}
+
+\begin{enumerate}[leftmargin=.5cm]
+
+\item @Wang, D., \textit{et al.} ``Evolutionary Graph Neural Network: Model and Applications.''
+
+\item @Wang, X. \textit{et al.} ``A Review of Methods and Benchmarks for Slot Filling Tasks.''
+
+\item Jiang, M., Ammerman, B., @Zeng, Q., Jacobucci, R. ``What Constitutes a Helpful Response to Suicide Disclosures?: Findings from Posts and Comments on Reddit SuicideWatch.''
+
+\end{enumerate}
+
+\vspace{.2cm}\hspace{-0.25cm}\emph{Conference Papers}
+
+\begin{enumerate}[leftmargin=.5cm]
+
+\item @Wang, D., \textit{et al.} ``Learning Spatiotemporal Mobile App Behavior Log with Calendar Graph Neural Network.''
+
+\item @Zeng, Q., \textit{et al.} ``Distantly Supervised Science IE from Corpus to Corpus.''
+
+\item @Zeng, Q., \textit{et al.} ``Joint Learning of Hierarchical Relations in Hyperbolic Spaces.''
+
+\item @Zeng, Q., \textit{et al.} ``A Scientific Concept Hierarchy Growth Algorithm with Three Types of Hierarchical Relationships.''
+
+\item @Zhao, T., \textit{et al.} ``Learning with Bipartite Graph Anomaly Losses.''
+
+\item @Zhao, T., \textit{et al.} ``A Reinforcement Learning Approach for Graph Attack and Anomaly Detection.''
+
+\item @Zhao, T., \textit{et al.} ``Biographical and Social Information Extraction from Chinese History Books.''
+
+\item @Yu, W., \textit{et al.} ``An Experimental Evidence Extraction System for Data Science Education and Research.''
+
+\item *Wu, T., \textit{et al.} ``Automating Corpus-Specific Stopword Removal for Topic Models.''
+
+\item *Schoenbauer, M., \textit{et al.} ``Powering High-Order Suspiciousness Metric with Power-Law Distribution.''
+
+\item @Ding, Y., \textit{et al.} ``Learning Nonnegative Integer Representations from Ordering and Similarity Relationships.''
+	
+\item @Ding, Y., \textit{et al.} ``Preserving Composition and Crystal Structure Information of Chemical Compounds in Atomic Embedding.''
+	
+\item @Jiang, T., \textit{et al.} ``A Biological Academic Search and Knowledge Exploration System.''
+
+\item @Jiang, T., \textit{et al.} ``Towards Time-Aware Distant Supervision for Relation Extraction.''
+
+\item @Jiang, T., \textit{et al.} ``Attribute Acquisition in Ontology based on Representation Learning of Hierarchical Classes and Attributes.''
+	
+\item Tang, P., \textit{et al.} ``Hierarchical Multi-Label Document Representation Learning for Patent Categorization.''
+	
+\item Kumar, S., \textit{et al.} ``Graph Generators with Graphlet Distributions.''
+
+\end{enumerate}
+
+\end{myindentpar}
+}
+
+\subsection{\sc Sponsored Program}
+\vspace{-0.4cm} \line(1,0){370} \vspace{-0.1cm}
+
+\begin{myindentpar}{0.75cm}
+
+\hspace{-0.75cm}``Digital Empires: Structured Biographical and Social Network Analysis of Early Chinese Empires''\\
+May 1, 2019 - August 31, 2020 \\
+Funding Vehicle: Notre Dame RGG \\
+Amount: \$43,811 \\
+Role: Co-P.I. with ND Prof. Cai (History)
+
+\end{myindentpar}
+
+\subsection{\sc Invited Talks}
+\vspace{-0.4cm} \line(1,0){370} \vspace{-0.1cm}
+
+\begin{myindentpar}{0.75cm}
+
+\hspace{-0.75cm} IBM TJ Watson Laboratory, Yorktown Heights, New York, October 2018
+	
+\hspace{-0.75cm} Nanjing University, Nanjing, Jiangsu, December 2017
+
+%\hspace{-0.75cm} University of Electronic Science and Technology of China, Chengdu, Sichuan, December 2017
+
+\hspace{-0.75cm} Zhejiang University, Hangzhou, Zhejiang, November 2017
+
+\hspace{-0.75cm} Tsinghua University, Beijing, November 2017
+
+\hspace{-0.75cm} Binghamton University, Binghamton, New York, March 2017
+
+\hspace{-0.75cm} Georgia State University, Atlanta, Georgia, March 2017
+
+\hspace{-0.75cm} University of Oregon, Eugene, Oregon, March 2017
+
+\hspace{-0.75cm} Rensselaer Polytechnic Institute, Troy, New York, February 2017
+
+\hspace{-0.75cm} University of Maryland, Baltimore County, Baltimore, Maryland, February 2017
+
+\hspace{-0.75cm} Temple University, Philadelphia, Pennsylvania, January 2017
+
+\hspace{-0.75cm} The Ohio State University, Columbus, Ohio, October 2016
+
+\hspace{-0.75cm} University of Massachusetts Boston, Boston, Massachusetts, November 2015
+
+\end{myindentpar}
+
+\hide{
+\subsection{\sc Notre Dame Invited Presentations}
+\vspace{-0.4cm} \line(1,0){370} \vspace{-0.1cm}
+
+\begin{myindentpar}{0.75cm}
+
+\hspace{-0.75cm} Graduate Seminar, Department of Psychology, October 2018
+
+\end{myindentpar}
+}
+
+\subsection{\sc Master Student Graduated}
+\vspace{-0.4cm} \line(1,0){370} \vspace{-0.1cm}
+
+\begin{myindentpar}{0.75cm}
+
+\hspace{-0.75cm}{\bf Xueying Wang}, \emph{Graduated May 2019} %\\
+%\hspace{1cm} Placement: ???
+
+\end{myindentpar}
+
+\subsection{\sc Current Student Supervision}
+\vspace{-0.4cm} \line(1,0){370} \vspace{-0.1cm}
+
+\begin{myindentpar}{0.75cm}
+
+\hspace{-0.75cm}{\bf Daheng Wang}, \emph{Ph.D. Student} (since September 2017), co-ad. with Prof. Chawla
+
+\hspace{-0.75cm}{\bf Qingkai Zeng}, \emph{Ph.D. Student} (since January 2018)
+
+\hspace{-0.75cm}{\bf Tong Zhao}, \emph{Ph.D. Student} (since September 2018)
+
+\hspace{-0.75cm}{\bf Tianwen Jiang}, \emph{Visiting Ph.D. Student} (since September 2018), one-year program
+
+\hspace{-0.75cm}{\bf Wenhao Yu}, \emph{Ph.D. Student} (since September 2019)
+
+\hspace{-0.75cm}{\bf Yifan Ding}, \emph{Master Student} (since September 2018)
+
+\hspace{-0.75cm}{\bf Jiaming Li}, \emph{Master Student} (since September 2019)
+
+\hspace{-0.75cm}{\bf Tina Wu}, \emph{Undergraduate Student} (since September 2018)
+
+\end{myindentpar}
+
+\hide{
+\subsection{\sc Media Coverage}
+\vspace{-0.4cm} \line(1,0){370} \vspace{-0.1cm}
+
+\begin{myindentpar}{0.75cm}
+{\em With modern media, press coverage sometimes spreads far and wide. There are often more outlets reporting than can be captured. This section therefore lists only a representative article (or two) of the total press coverage.}
+
+\hspace{-0.75cm} XXX (XXX 2019) 
+\hspace{0.75cm}{\em XXX}
+
+\hspace{-0.75cm} XXX (XXX 2019) 
+
+\url{https://www.XXX.com/}
+
+\end{myindentpar}
+}
+
+\subsection{\sc Professional Activities}
+\vspace{-0.4cm} \line(1,0){370} \vspace{-0.1cm}
+
+\begin{myindentpar}{0.75cm}
+
+%\hspace{-0.75cm}{\bf Editorial Board} \\
+% XXXX
+
+\hspace{-0.75cm}{\bf Organizing Committee}
+
+{\small
+
+\hspace{-0.75cm}\emph{2019}\textcolor{white}{.}Publication Chair, ACM International Conference on Knowledge Management (CIKM) \\
+\textcolor{white}{.}Publicity Chair, Int'l Conf. on Computational Data and Social Networks (CSoNet)
+
+\hspace{-0.75cm}\emph{2018}\textcolor{white}{.}Co-Chair, Workshop on Misinformation and Misbehavior Mining on the Web at International Conference on Web Search and Data Mining (WSDM)
+
+\hspace{-0.75cm}\emph{2016}\textcolor{white}{.}Co-Chair, Special session on Big Behavioral Data Analytics at IEEE International Conference on Data Science and Advanced Analytics (DSAA)
+
+}
+
+%\hspace{-0.75cm}{\bf Senior Program Committee} \\
+%2019 XXX
+
+\hspace{-0.75cm}{\bf Program Committee}
+
+{\small
+
+\hspace{-0.75cm}\emph{2019}\textcolor{white}{.}ACM SIGKDD Int'l Conf. on Knowledge Discovery and Data Mining (KDD) \\
+\textcolor{white}{.}International World Wide Web Conference (WWW) \\
+\textcolor{white}{.}AAAI Conference on Artificial Intelligence (AAAI) \\
+\textcolor{white}{.}International Joint Conference on Artificial Intelligence (IJCAI) \\
+\textcolor{white}{.}Conference on Empirical Methods in Natural Language Processing (EMNLP) \\
+\textcolor{white}{.}ACM International Conference on Knowledge Management (CIKM) \\
+\textcolor{white}{.}International Conference on Web Search and Data Mining (WSDM) \\
+\textcolor{white}{.}SIAM Conference on Data Mining (SDM) \\
+\textcolor{white}{.}Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD) \\
+\textcolor{white}{.}Int'l Conf. Series on Advances in Social Network Analysis and Mining (ASONAM)
+	
+\hspace{-0.75cm}\emph{2018}\textcolor{white}{.}ACM SIGKDD Int'l Conf. on Knowledge Discovery and Data Mining (KDD) \\
+\textcolor{white}{.}International World Wide Web Conference (WWW) \\
+\textcolor{white}{.}AAAI Conference on Artificial Intelligence (AAAI) \\
+\textcolor{white}{.}Conference on Empirical Methods in Natural Language Processing (EMNLP) \\
+\textcolor{white}{.}ACM International Conference on Knowledge Management (CIKM) \\
+\textcolor{white}{.}International Conference on Web Search and Data Mining (WSDM) \\
+\textcolor{white}{.}SIAM Conference on Data Mining (SDM) \\
+\textcolor{white}{.}ACM International Conference on Multimedia (MM) \\
+\textcolor{white}{.}Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD) \\
+\textcolor{white}{.}Workshop on Graph Techniques for Adversarial Activity Analytics (GTA3) \\
+\textcolor{white}{.}Workshop on Social Influence Analysis and Mining Actionable Insights from Social Networks (SocInf+MAISoN)
+
+\hspace{-0.75cm}\emph{2017}\textcolor{white}{.}AAAI Conference on Artificial Intelligence (AAAI) \\
+\textcolor{white}{.}ACM International Conference on Knowledge Management (CIKM) \\
+\textcolor{white}{.}ACM International Conference on Multimedia (MM) \\
+\textcolor{white}{.}Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD)
+
+}
+
+\hspace{-0.75cm}{\bf Journal Reviewer}
+
+{\small
+
+IEEE Access (\textit{Access}) \\
+Artificial Intelligence Journal (\textit{AI Journal}) \\
+Data Mining and Knowledge Discovery (\textit{DMKD}) \\
+Decision Sciences Journal (\textit{DSJ}) \\
+Frontiers of Computer Science (\textit{FCS}) \\
+International Journal of Information Technology and Decision Making (\textit{IJITDM}) \\
+Information Sciences (\textit{INS}) \\
+Information Systems (\textit{InfoSys}) \\
+Information Processing and Management (\textit{IPM}) \\
+IEEE Intelligent Systems (\textit{IS}) \\
+Journal of Computers (\textit{JCP}) \\
+Journal of Machine Learning Research (\textit{JMLR}) \\
+INFORMS Journal on Computing (\textit{JOC}) \\
+Knowledge and Information Systems (\textit{KAIS}) \\
+Neurocomputing (\textit{NEUCOM}) \\
+Pattern Recognition (\textit{PR}) \\
+IEEE Transactions on Big Data (\textit{TBD}) \\
+IEEE Transactions on Information Forensics and Security (\textit{TIFS}) \\
+KSII Transactions on Internet and Information Systems (\textit{TIIS}) \\
+ACM Transactions on Intelligent Systems and Technology (\textit{TIST}) \\
+ACM Transactions on Knowledge Discovery from Data (\textit{TKDD}) \\
+IEEE Transactions on Knowledge and Data Engineering (\textit{TKDE}) \\
+ACM Trans. on Multimedia Comp. Comm. and App. (\textit{TOMCCAP}) \\
+IEEE Transactions on Neural Networks and Learning Systems (\textit{TNNLS}) \\
+World Wide Web Journal (\textit{WWWJ})
+
+}
+
+
+\end{myindentpar}
+
+
 \end{document}
 
