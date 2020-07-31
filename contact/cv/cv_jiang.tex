@@ -1,4 +1,3 @@
-
 \documentclass[10pt]{article}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -14,23 +13,16 @@
 \usepackage{enumitem}
 \usepackage[top=4cm, bottom=4cm]{geometry}
 
-% Alter some LaTeX defaults for better treatment of figures:
-    % See p.105 of "TeX Unbound" for suggested values.
-    % See pp. 199-200 of Lamport's "LaTeX" book for details.
-    %   General parameters, for ALL pages:
-    \renewcommand{\topfraction}{0.9}	% max fraction of floats at top
-    \renewcommand{\bottomfraction}{0.8}	% max fraction of floats at bottom
-    %   Parameters for TEXT pages (not float pages):
-    \setcounter{topnumber}{2}
-    \setcounter{bottomnumber}{2}
-    \setcounter{totalnumber}{4}     % 2 may work better
-    \setcounter{dbltopnumber}{2}    % for 2-column pages
-    \renewcommand{\dbltopfraction}{0.9}	% fit big float above 2-col. text
-    \renewcommand{\textfraction}{0.07}	% allow minimal text w. figs
-    %   Parameters for FLOAT pages (not text pages):
-    \renewcommand{\floatpagefraction}{0.7}	% require fuller float pages
-	% N.B.: floatpagefraction MUST be less than topfraction !!
-    \renewcommand{\dblfloatpagefraction}{0.7}	% require fuller float pages
+\renewcommand{\topfraction}{0.9}	% max fraction of floats at top
+\renewcommand{\bottomfraction}{0.8}	% max fraction of floats at bottom
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}     % 2 may work better
+\setcounter{dbltopnumber}{2}    % for 2-column pages
+\renewcommand{\dbltopfraction}{0.9}	% fit big float above 2-col. text
+\renewcommand{\textfraction}{0.07}	% allow minimal text w. figs
+\renewcommand{\floatpagefraction}{0.7}	% require fuller float pages
+\renewcommand{\dblfloatpagefraction}{0.7}	% require fuller float pages
 
 \newenvironment{myindentpar}[1]%
 {\begin{list}{}%
@@ -40,25 +32,18 @@
 {\end{list}}
 
 \renewcommand\refname{\vspace{-0.4in}}
-
 \textwidth5in
-
-%\setlength{\topmargin}{-0in} \addtolength{\topmargin}{-\headheight}
 \addtolength{\topmargin}{-\headsep}
-
 \setlength{\oddsidemargin}{0in}
-
 \oddsidemargin 0.75in \evensidemargin 0.75in
-
 \setlength{\parindent}{0pt}
-
 \newcounter{list}
 
 \fancypagestyle{firststyle}
 {
    \fancyhf{}
    \renewcommand{\headrulewidth}{0pt}
-   \fancyhead[R]{\vspace{-2cm}\footnotesize Last updated July 28, 2020}
+   \fancyhead[R]{\vspace{-2cm}\footnotesize Last updated August 1, 2020}
 }
 
 \newcommand{\hide}[1]{}
@@ -66,7 +51,6 @@
 \begin{document}
 
 \setcounter{secnumdepth}{0}
-%\raisebox{1.5cm}
 
 \thispagestyle{firststyle}
 
@@ -74,11 +58,6 @@
 University of Notre Dame \hfill \url{http://www.meng-jiang.com/} \\
 326C Cushing Hall \hfill \url{mjiang2@nd.edu}\\
 Notre Dame, IN 46556 \hfill +1 (574) 631--7454
-
-%\subsection{\sc Research}
-%\vspace{-0.4cm} \line(1,0){370} \vspace{0.1cm}
-
-%{\bf Data mining}, machine learning, artificial intelligence, natural language processing, behavior modeling, recommender system, fraud detection, social media analysis, text mining, information extraction, and knowledge graph construction
 
 \subsection{\sc Work Experience}
 \vspace{-0.4cm} \line(1,0){370} \vspace{0.1cm}
@@ -107,8 +86,6 @@ Notre Dame, IN 46556 \hfill +1 (574) 631--7454
 \bf{Ph.D.}&Tsinghua University, Computer Science&2015\\
  &\multicolumn{2}{l}{\small Thesis: \textit{Modeling Complex User Behaviors in Social Media}}\\
  &\multicolumn{2}{l}{\small Graduated with honors}\\	
- %&\multicolumn{2}{l}{\small Committee: Shiqiang Yang (chair), Xindong Wu, Philip S. Yu, Peng Cui\vspace{0.2cm}}\\
-% &\multicolumn{2}{l}{\small\hspace{1.95cm}Xipeng Shen, Peter Kemper\vspace{0.1cm}}\\
 \bf{B.S.}&Tsinghua University, Computer Science&2010\\
  &\multicolumn{2}{l}{\small Graduated with honors}\\	
 
@@ -159,31 +136,31 @@ Travel Award, PAKDD&2014 \\
 July 1, 2020 (Unrestricted gift) \\
 Funding Vehicle: Snap Inc. Research\\
 Amount: \textbf{\$10,000} \\
-Role: \textbf{Sole P.I.}
+Role: {Single PI}
 
 \hspace{-0.75cm}``CRII: III: Beyond Similarity Learning: Complementarity Learning for Contextual Behavior Modeling''\\
 October 1, 2019 -- September 30, 2021 \\
 Funding Vehicle: NSF IIS-1849816 \\
 Amount: \textbf{\$174,910} \\
-Role: \textbf{Sole P.I.}
+Role: {Single PI}
 
 \hspace{-0.75cm}``SHF: Medium: Collaborative Research: Semantically-Enhanced Software Traceability for Supporting Human-Centric Tasks''\\
 August 15, 2019 -- August 14, 2023 \\
 Funding Vehicle: NSF CCF-1901059 \\
 Amount: \$1,019,030 (Share: \textbf{\$336,280}) \\
-Role: \textbf{Co-P.I.} with ND Profs. Huang and Metoyer (Comp. Sci. \& Eng.)
+Role: {Co-PI} with ND Profs. Huang and Metoyer (Comp. Sci. \& Eng.)
 
 \hspace{-0.75cm}``Digital Empires: Structured Biographical and Social Network Analysis of Early Chinese Empires''\\
 May 1, 2019 -- August 31, 2021 \\
 Funding Vehicle: Notre Dame RGG \\
 Amount: \$43,811 (Share: \textbf{\$30,281}) \\
-Role: \textbf{Co-P.I.} with ND Prof. Cai (History)
+Role: {Co-PI} with ND Prof. Cai (History)
 
 \hspace{-0.75cm}``Representation Learning for Modeling and Predicting User Engagement and Propensity for Conversion Through the Engagement Funnel''\\
 January 21, 2019 -- May 20, 2020 \\
 Funding Vehicle: Conde Nast \\
 Amount: \$148,400 (Share: \textbf{\$74,200}) \\
-Role: \textbf{Co-P.I.} with ND Prof. Chawla (Comp. Sci. \& Eng.)
+Role: {Co-PI} with ND Prof. Chawla (Comp. Sci. \& Eng.)
 
 \end{myindentpar}
 
@@ -196,6 +173,198 @@ Role: \textbf{Co-P.I.} with ND Prof. Chawla (Comp. Sci. \& Eng.)
 
 \begin{myindentpar}{0.00cm}
 
+\hspace{-0.25cm}\textit{Refereed Conference Papers} {\small (10 ACM SIGKDD full papers, etc.)}
+
+\begin{enumerate}[leftmargin=.5cm]
+
+\item[C44] Guo, Z., @Yu, W., Zhang, C., \textbf{Jiang, M.}, Chawla, N.V. ``GraSeq: Graph and Sequence Fusion Learning for Molecular Property Prediction'', in Proceedings of \textit{ACM International Conference on Information and Knowledge Management} (CIKM), October 2020. (acceptance rate 21\% = 193/920)
+		
+\item[C43] @Zhao, T., *Deng, C., *Yu, K., @Jiang, T., @Wang, D., \textbf{Jiang, M.} ``Error-bounded Graph Anomaly Loss for GNNs'', in Proceedings of \textit{ACM International Conference on Information and Knowledge Management} (CIKM), October 2020. (acceptance rate 21\% = 193/920)
+
+\item[C42] Liu, Y., Lin, J., @Zeng, Q., \textbf{Jiang, M.}, Cleland-Huang, J. ``Towards Semantically Guided Traceability'', in Proceedings of \textit{IEEE International Requirements Engineering Conference} (RE), August 2020.	
+
+\item[C41] @Wang, D., \textbf{Jiang, M.}, Syed, M., Conway, O., Juneja, V., Subramanian, S., Chawla, N.V. ``Calendar Graph Neural Networks for Modeling Time Structures in Spatiotemporal User Behaviors'', in Proceedings of \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2020. (oral, acceptance rate 5.8\% = 44/756)
+
+\item[C40] @Yu, W., Wu, L., @Zeng, Q., Tao, S., Deng, Y., \textbf{Jiang, M.} ``Crossing Variational Autoencoders for Answer Retrieval'', in Proceedings of \textit{Annual Meeting of the Association for Computational Linguistics} (ACL), July 2020.
+
+\item[C39] \textbf{Jiang, M.} ``Improving Situational Awareness with Collective Artificial Intelligence over Knowledge Graphs'', in Proceedings of \textit{Artificial Intelligence and Machine Learning for Multi-Domain Operations Applications II} in \textit{SPIE Defense + Commercial Sensing} Symposium, April 2020. (oral)
+
+\item[C38] @Yu, W., *Yu, M., @Zhao, T., \textbf{Jiang, M.} ``Identifying Referential Intention with Heterogeneous Contexts'', in Proceedings of \textit{The Web Conference} (TheWebConf), April 2020. (acceptance rate 19\% = 217/1129)
+
+\item[C37] @Yu, W., *Peng, W., *Shu, Y., @Zeng, Q., \textbf{Jiang, M.} ``Experimental Evidence Extraction in Data Science with Hybrid Table Features and Ensemble Learning'', in Proceedings of \textit{The Web Conference} (TheWebConf), April 2020. (\textbf{best poster award} at the 14th Annual Poster Contest at ND CSE; acceptance rate 19\% = 217/1129)
+
+\item[C36] Tang, P., \textbf{Jiang, M.}, Xia, N., Pitera, J., Welser, J., Chawla, N.V. ``Multi-label Patent Categorization with Non-local Attention-based Graph Convolutional Network'', in Proceedings of \textit{AAAI Conference on Artificial Intelligence} (AAAI), February 2020. (acceptance rate 20.6\% = 1591/7737)
+	
+\item[C35] Zhang, C., Yao, H., \textbf{Jiang, M.}, Li, Z., Chawla, N.V. ``Few-Shot Knowledge Base Completion'', in Proceedings of \textit{AAAI Conference on Artificial Intelligence} (AAAI), February 2020. (acceptance rate 20.6\% = 1591/7737)
+
+\item[C34] Yao, H., Zhang, C., Wei, Y., \textbf{Jiang, M.}, Wang, S., Chawla, N.V., Li, Z. ``Graph Few-shot Learning via Knowledge Transfer'', in Proceedings of \textit{AAAI Conference on Artificial Intelligence} (AAAI), February 2020. (acceptance rate 20.6\% = 1591/7737)
+
+\item[C33] @Ding, Y., @Wang, D., Weninger, T., \textbf{Jiang, M.} ``Preserving Composition and Crystal Structure Information of Chemical Compounds in Atomic Embedding'', in Proceedings of \textit{IEEE International Conference on Big Data} (BigData), December 2019. (poster)
+
+\item[C32] @Jiang, T., *Zhang, Z., @Zhao, T., Qin, B., Liu, T., Chawla, N.V., \textbf{Jiang, M.} ``CTGA: Graph-based Biomedical Literature Search'', in Proceedings of \textit{IEEE International Conference on Bioinformatics and Biomedicine} (BIBM), November 2019. (acceptance rate 18\% = 98/543)
+
+\item[C31] @Jiang, T., @Zhao, T., Qin, B., Liu, T., Chawla, N.V., \textbf{Jiang, M.} ``Multi-input Multi-output Sequence Labeling for Joint Extraction of Fact and Condition Tuples from Scientific Text'' in Proceedings of \textit{Conference on Empirical Methods in Natural Language Processing} (EMNLP), November 2019. (acceptance rate 23\% = 465/2022)
+
+\item[C30] Wang, T., Xu, X., Xiong, J., \textbf{Jiang, M.}, Shi, Y. ``MSU-Net: Multiscale Statistical U-Net forReal-time 3D Cardiac MRI Video Segmentation'' in Proceedings of \textit{International Conference on Medical Image Computing and Computer Assisted Intervention} (MICCAI), October 2019. (acceptance rate 31\% = 536/1729)
+
+\item[C29] @Jiang, T., @Zhao, T., Qin, B., Liu, T., Chawla, N.V., \textbf{Jiang, M.} ``The Role of Condition: A Novel Scientific Knowledge Graph Representation and Construction Model'' in Proceedings of \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2019. (acceptance rate 14.2\% = 170/1200)
+
+\item[C28] @Wang, D., @Jiang, T., Chawla, N.V., \textbf{Jiang, M.} ``TUBE: Embedding Behavior Outcomes for Predicting Success'' in Proceedings of \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2019. (\textbf{best paper award} at at the Annual Meeting of the International Society for Data Science and Analytics; acceptance rate 9.2\% = 110/1200)
+	
+\item[C27] *Yu, W., Li, Z., @Zeng, Q., \textbf{Jiang, M.} ``Tablepedia: Automating PDF Table Reading in an Experimental Evidence Exploration and Analytic System'' in Proceedings of \textit{The Web Conference} (TheWebConf), May 2019. (demo)
+	
+\item[C26] @Wang, X., @Zhang, H., @Li, Q., Shi, Y., \textbf{Jiang, M.} ``A Novel Unsupervised Approach for Precise Temporal Slot Filling from Incomplete and Noisy Temporal Contexts'' in Proceedings of \textit{The Web Conference} (TheWebConf), May 2019. (\textbf{best poster award} at the 13th Annual Poster Contest at ND CSE; acceptance rate 18.0\% = 225/1247)
+
+\item[C25] @Zhao, T., *Malir, M., \textbf{Jiang, M.} ``Actionable Objective Optimization for Suspicious Behavior Detection on Large Bipartite Graphs'' in Proceedings of \textit{IEEE International Conference on Big Data} (BigData), December 2018. (acceptance rate 18.9\% = 98/518)
+
+\item[C24] Tao, F., Zhang, C., Chen, X., \textbf{Jiang, M.}, Hanratty, T., Kaplan, L., Han, J. ``Doc2Cube: Allocating Documents to Text Cube without Labeled Data'' in Proceedings of \textit{IEEE International Conference on Data Mining} (ICDM), November 2018. (acceptance rate 11.1\% = 105/948)
+
+\item[C23] Ding, Y., Liu, J., Xiong, J., \textbf{Jiang, M.}, Shi, Y. ``Optimizing Boiler Control in Real-Time with Machine Learning for Sustainability'' in Proceedings of \textit{ACM International Conference on Information and Knowledge Management} (CIKM), October 2018. (acceptance rate 26.0\% = 34/130)
+
+\item[C22] Zhao, S., \textbf{Jiang, M.}, Liu, M., Qin, B., Liu, T. ``CausalTriad: Toward Pseudo Causal Relation Discovery and Hypotheses Generation from Medical Text Data'' in Proceedings of \textit{ACM International Conference on Bioinformatics, Computational Biology, and Health Informatics} (BCB), August 2018. (acceptance rate 31.1\% = 46/148)
+
+\item[C21] @Wang, D., \textbf{Jiang, M.}, @Wang, X., @Zhao, T., @Zeng, Q., Chawla, N.V. ``A Project Showcase for Planning Research Work towards Publishable Success'' in Proceedings of \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2018. (demo)
+
+\item[C20] Zhang, C., Tao, F., Chen, X., Shen, J., \textbf{Jiang, M.}, Sadler, B., Vanni, M., Han, J. ``TaxoGen: Constructing Topical Concept Taxonomy by Adaptive Term Embedding and Clustering'' in Proceedings of \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2018. (acceptance rate 10.9\% = 107/983)
+
+\item[C19] \textbf{Jiang, M.}, Li, Q., Zhang, X., Qu, M., Hanratty, T., Gao, J., Han, J. ``TruePIE: Discovering Reliable Patterns in Pattern-Based Information Extraction'' in Proceedings of \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2018. (acceptance rate 10.9\% = 107/983)
+	
+\item[C18] @Wang, D., \textbf{Jiang, M.}, @Zeng, Q., @Eberhart, Z., Chawla, N.V. ``Multi-Type Itemset Embedding for Learning Behavior Success'' in Proceedings of \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2018. (acceptance rate 10.9\% = 107/983)
+
+\item[C17] Zhao, S., \textbf{Jiang, M.}, Yuan, Q., Qin, B., Liu, T., Zhai, C.X. ``ContextCare: Incorporating Contextual Information Networks to Representation Learning in Medical Forum Data'' in Proceedings of \textit{International Joint Conference on Artificial Intelligence} (IJCAI), August 2017. (acceptance rate 26.0\% = 660/2540)
+
+\item[C16] \textbf{Jiang, M.}, Shang, J., Cassidy, T., Ren, X., Kaplan, L., Hanratty, T., Han, J. ``MetaPAD: Meta Patten Discovery from Massive Text Corpora'' in Proceedings of \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2017. (acceptance rate 13.7\% = 130/748)
+
+\item[C15] Kuang, K., Cui, P., Li, B., \textbf{Jiang, M.}, Yang, S., Wang, F. ``Estimating Treatment Effect in the Wild via Differentiated Confounder Balancing'' in Proceedings of \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2017. (acceptance rate 13.7\% = 130/748)
+
+\item[C14] Ren, X., Shen, J., Qu, M., Wang, X., Wu, Z., Zhu, Q., \textbf{Jiang, M.}, Tao, F., Sinha, S., Liem, D., Ping, P., Weinshilboum, R., Han, J. ``LifeNet: A Structured Network-Based Knowledge Exploration and Analytics System for Life Sciences'' in Proceedings of \textit{Annual Meeting of the Association for Computational Linguistics} (ACL), July 2017. (demo)
+
+\item[C13] Kuang, K., Cui, P., Li, B., \textbf{Jiang, M.}, Yang, S., Wang, F. ``Treatment Effect Estimation with Data-Driven Variable Decomposition'' in Proceedings of \textit{AAAI Conference on Artificial Intelligence} (AAAI), February 2017. (acceptance rate 24.6\% = 638/2590)
+
+\item[C12] Kuang, K., \textbf{Jiang, M.}, Cui, P., Yang, S. ``Steering Social Media Promotions with Effective Strategies'' in Proceedings of \textit{IEEE International Conference on Data Mining} (ICDM), November 2016. (acceptance rate 19.6\% = 177/904)
+
+\item[C11] Gui, H., Liu, J., Tao, F., \textbf{Jiang, M.}, Norick, B., Han, J. ``Large-Scale Embedding Learning in Heterogeneous Event Data'' in Proceedings of \textit{IEEE International Conference on Data Mining} (ICDM), November 2016. (acceptance rate 19.6\% = 177/904)
+
+\item[C10] \textbf{Jiang, M.}, Faloutsos, C., Han, J. ``CatchTartan: Representing and Summarizing Dynamic Multicontextual Behaviors'' in Proceedings of \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2016. (acceptance rate 8.9\% = 70/784)
+
+\item[C9] \textbf{Jiang, M.}, Cui, P., Yuan, N.J., Xie, X., Yang, S. ``Little is Much: Bridging Cross-Platform Behaviors through Overlapped Crowds'' in Proceedings of \textit{AAAI Conference on Artificial Intelligence} (AAAI), February 2016. (acceptance rate 25.8\% = 550/2132)
+
+\item[C8] \textbf{Jiang, M.}, Beutel, A., Cui, P., Hooi, B., Yang, S., Faloutsos, C. ``A General Suspiciousness Metric for Dense Blocks in Multimodal Data'' in Proceedings of \textit{IEEE International Conference on Data Mining} (ICDM), November 2015. (acceptance rate 18.1\% = 146/807)
+
+\item[C7] \textbf{Jiang, M.}, Cui, P., Wang, F., Xu, X., Zhu, W., Yang, S. ``FEMA: Flexible Evolutionary Multi-Faceted Analysis for Dynamic Behavioral Pattern Discovery'' in Proceedings of \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2014. (acceptance rate 14.6\% = 151/1036)
+
+\item[C6] \textbf{Jiang, M.}, Cui, P., Beutel, A., Faloutsos, C., Yang, S. ``CatchSync: Catching Synchronized Behavior in Large Directed Graphs'' in Proceedings of \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2014. (\textbf{best paper finalist} and invited to TKDD special issue; acceptance rate 14.6\% = 151/1036)
+	
+\item[C5] \textbf{Jiang, M.}, Cui, P., Beutel, A., Faloutsos, C., Yang, S. ``Inferring Strange Behavior from Connectivity Pattern in Social Networks'' in Proceedings of \textit{Pacific-Asia Conference on Knowledge Discovery and Data Mining} (PAKDD), April 2014. (acceptance rate 10.8\% = 40/371)
+
+\item[C4] \textbf{Jiang, M.}, Cui, P., Beutel, A., Faloutsos, C., Yang, S. ``Detecting Suspicious Following Behavior in Multimillion-Node Social Networks'' in Proceedings of \textit{International Conference on World Wide Web} (WWW), April 2014. (poster)
+
+\item[C3] \textbf{Jiang, M.}, Cui, P., Wang, F., Yang, Q., Zhu, W., Yang, S. ``Social Recommendation across Multiple Relational Domains'' in Proceedings of \textit{ACM International Conference on Information and Knowledge Management} (CIKM), October 2012. (acceptance rate 13.4\% = 146/1088)
+
+\item[C2] \textbf{Jiang, M.}, Cui, P., Liu, R., Yang, Q., Wang, F., Zhu, W., Yang, S. ``Social Contextual Recommendation'' in Proceedings of \textit{ACM International Conference on Information and Knowledge Management} (CIKM), October 2012. (acceptance rate 13.4\% = 146/1088)
+
+\item[C1] Liu, L., Tang, J., Han, J., \textbf{Jiang, M.}, Yang, S. ``Mining Topic-Level Influence in Heterogeneous Networks'' in Proceedings of \textit{ACM International Conference on Information and Knowledge Management} (CIKM), October 2010. (acceptance rate 13.3\% = 126/945)
+
+\end{enumerate}
+
+\hspace{-0.25cm}\textit{Refereed Journal Papers} {\small (6 IEEE Trans. on Knowledge \& Data Eng. (TKDE), etc.)}
+
+\begin{enumerate}[leftmargin=.5cm]
+
+\item[J19] @Jiang, T., @Zeng, Q., @Zhao, T., Qin, B., Liu, T., Chawla, N.V., \textbf{Jiang, M.} ``Biomedical Knowledge Graphs Construction from Conditional Statements'' \textit{IEEE/ACM Transactions on Computational Biology and Bioinformatics}. In press, early access in March 2020. (IF=3.015)
+
+\item[J18] Liu, J., Xu, X., \textbf{Jiang, M.}, Shi, Y. ``Binarizing Weights Wisely for Edge Intelligence: Guide for Partial Binarization of Deconvolution-Based Generators'' \textit{Transactions on Computer-Aided Design of Integrated Circuits and Systems}. In press, early access in March 2020. (IF=2.168)
+
+\item[J17] Zhou, S., Hu, Z., Gu, W., \textbf{Jiang, M.}, Chen, M., Hong, Q., Booth, C. ``Combined Heat and Power System Intelligent Economic Dispatch: A Deep Reinforcement Learning Approach'' \textit{International Journal of Electrical Power and Energy Systems}. 120, September 2020. (IF=3.588)
+
+\item[J16] @Wang, X., \textbf{Jiang, M.} ``Precise Temporal Slot Filling via Truth Finding with Data-Driven Commonsense'' \textit{Knowledge and Information Systems}. 1-27, July 2020. (IF=2.936)
+
+\item[J15] \textbf{Jiang, M.}, Ammerman, B.A., @Zeng, Q., Jacobucci, R., Brodersen, A. ``Phrase-level Pairwise Topic Modeling to Uncover Helpful Peer Responses to Online Suicidal Crises'' \textit{Humanities \& Social Sciences Communications} (formerly known as \textit{Nature Palgrave Communications}). 7:36, July 2020.
+
+\item[J14] Kuang, K., Cui, P., Li, B., \textbf{Jiang, M.}, Yang, S. ``Treatment Effect Estimation via Differentiated Confounder Balancing and Regression'' \textit{ACM Transactions on Knowledge Discovery from Data}. 14:1, 1-25, December 2019. (IF=2.200)
+	
+\item[J13] Zhou, S., Hu, Z., Zhong, Z., He, D., \textbf{Jiang, M.} ``An Integrated Energy System Operating Scenarios Generator based on Generative Adversarial Network'' \textit{Sustainability}. 11:23, 6699, November 2019. (IF=2.576)
+
+\item[J12] Zhou, S., Hu, Z., Gu, W., \textbf{Jiang, M.}, Zhang, X.P. ``Artificial Intelligence based Smart Energy Community Management: A Reinforcement Learning Approach'' \textit{CSEE Journal of Power and Energy Systems}. 5:1, 1-10, March 2019. (IF=2.680)
+
+\item[J11] Kuang, K., \textbf{Jiang, M.}, Cui, P., Luo, H., Yang, S. ``Effective Promotional Strategies Selection in Social Media: A Data-Driven Approach'' \textit{IEEE Transactions on Big Data}. 4:4, 487-501, December 2018.
+
+\item[J10] Shang, J., Liu, J., \textbf{Jiang, M.}, Ren, X., Voss, C.R., Han, J. ``Automated Phrase Mining from Massive Text Corpora'' \textit{IEEE Transactions on Knowledge and Data Engineering}. 30:10, 1825-1837, October 2018. (IF=4.935)
+
+\item[J9] Shang, J., \textbf{Jiang, M.}, Tong, W., Xiao, J., Peng, J., Han, J. ``DPPred: An Effective Prediction Framework with Concise Discriminative Patterns'' \textit{IEEE Transactions on Knowledge and Data Engineering}. 30:7, 1226-1239, July 2018. (IF=4.935)
+
+\item[J8] Gui, H., Liu, J., Tao, F., \textbf{Jiang, M.}, Norick, B., Kaplan, L., Han, J. ``Embedding Learning with Events in Heterogeneous Information Networks'' \textit{IEEE Transactions on Knowledge and Data Engineering}. 29:11, 2428-2441, July 2017. (IF=4.935)
+
+\item[J7] \textbf{Jiang, M.}, Cui, P., Beutel, A., Faloutsos, C., Yang, S. ``Inferring Lockstep Behavior from Connectivity Pattern in Large Graphs'' \textit{Knowledge and Information Systems}. 48:2, 399-428, August 2016. (IF=2.936)
+
+\item[J6] \textbf{Jiang, M.}, Cui, P., Beutel, A., Faloutsos, C., Yang, S. ``Catching Synchronized Behaviors in Large Networks: A Graph Mining Approach'' \textit{ACM Transactions on Knowledge Discovery from Data - Special Issue on SIGKDD 2014}. 10:4, 35:1-35:27, July 2016. (IF=2.200)
+
+\item[J5] \textbf{Jiang, M.}, Beutel, A., Cui, P., Hooi, B., Yang, S., Faloutsos, C. ``Spotting Suspicious Behaviors in Multimodal Data: A General Metric and Algorithms'' \textit{IEEE Transactions on Knowledge and Data Engineering}. 28:8, 2187-2200, April 2016. (IF=4.935)
+
+\item[J4] \textbf{Jiang, M.}, Cui, P., Yang, S. ``Suspicious Behavior Detection: Current Trends and Future Directions'' \textit{IEEE Intelligent Systems}. 31:1, 31-39, January 2016. (IF=3.210)
+
+\item[J3] \textbf{Jiang, M.}, Cui, P., Chen, X., Wang, F., Zhu, W., Yang, S. ``Social Recommendation with Cross-Domain Transferable Knowledge'' \textit{IEEE Transactions on Knowledge and Data Engineering}. 27:11, 3084-3097, November 2015. (IF=4.935)
+
+\item[J2] \textbf{Jiang, M.}, Cui, P., Wang, F., Zhu, W., Yang, S. ``Scalable Recommendation with Social Contextual Information'' \textit{IEEE Transactions on Knowledge and Data Engineering}. 26:11, 2789-2802, November 2014. (IF=4.935)
+
+\item[J1] Liu, L., Zhu, F., \textbf{Jiang, M.}, Han, J., Sun, L., Yang, S. ``Mining Diversity on Social Media Networks'' \textit{Multimedia Tools and Applications}. 56:1, 179-205, January 2012. (IF=2.313)
+
+\end{enumerate}
+
+\hspace{-0.25cm}\textit{Refereed Workshop Papers}
+
+\begin{enumerate}[leftmargin=.5cm]
+
+\item[W12] @Wang, D., *Zhang, Z., *Ma, Y., @Zhao, T., @Jiang, T., Chawla, N.V., \textbf{Jiang, M.} ``Learning Attribute-Structure Co-Evolutions in Dynamic Graphs'', in the \textit{Second International Workshop on Deep Learning on Graphs: Methods and Applications} (DLG) in conjunction with \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2020.
+		
+\item[W11] @Zhao, T., *Ni, B., @Yu, W., \textbf{Jiang, M.} ``Early Fraud Detection with Augmented Graph Learning'', in the \textit{Second International Workshop on Deep Learning on Graphs: Methods and Applications} (DLG) in conjunction with \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2020.
+
+\item[W10] @Zhao, T., *Deng, C., *Yu, K., @Jiang, T., @Wang, D., \textbf{Jiang, M.} ``GNN-based Graph Anomaly Detection with Graph Anomaly Loss'', in the \textit{Second International Workshop on Deep Learning on Graphs: Methods and Applications} (DLG) in conjunction with \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2020.
+
+\item[W9] *Zhou, Y., @Zhao, T., \textbf{Jiang, M.} ``A Probabilistic Model with Commonsense Constraints for Pattern-based Temporal Fact Extraction'', in the \textit{Workshop on Fact Extraction and Verification} (FEVER) in conjunction with \textit{Annual Meeting of the Association for Computational Linguistics} (ACL), July 2020.
+
+\item[W8] @Yu, W., Wu, L., Tao, S., Deng, Y., @Zeng, Q., \textbf{Jiang, M.} ``Generating Helpful Responses for Intelligent Tech Support'', in the \textit{Reasoning for Complex QA  Workshop} (RCQA) in conjunction with \textit{AAAI Conference on Artificial Intelligence} (AAAI), February 2020.
+
+\item[W7] Yao, H., Zhang, C., Wei, Y., \textbf{Jiang, M.}, Wang, S., Chawla, N.V., Li, Z. ``Graph Few-shot Learning via Knowledge Transfer'', in the \textit{Graph Representation Learning Workshop} (GRL) in conjunction with \textit{Conference on Neural Information Processing Systems} (NeurIPS), November 2019.
+	
+\item[W6] @Zeng, Q., *Yu, M., @Yu, W., Xiong, J., Shi, Y., \textbf{Jiang, M.} ``Faceted Hierarchy: A New Graph Type to Organize Scientific Concepts and a Construction Method'', in the \textit{Workshop on Graph-Based Natural Language Processing} (TextGraphs) in conjunction with \textit{Conference on Empirical Methods in Natural Language Processing} (EMNLP), November 2019.
+
+\item[W5] *Ma, Y., @Zeng, Q., @Jiang, T., Cai, L., \textbf{Jiang, M.} ``A Study of Person Entity Extraction and Profiling from Classical Chinese Historiography'', in the \textit{International Workshop on EntitY REtrieval} (EYRE) in conjunction with \textit{ACM International Conference on Information and Knowledge Management} (CIKM), November 2019.
+
+\item[W4] @Jiang, T., @Zhao, T., Qin, B., Liu, T., Chawla, N.V., \textbf{Jiang, M.} ``Constructing Information-Lossless Biological Knowledge Graphs from Conditional Statements'' in the 18th \textit{International Workshop on Data Mining in Bioinformatics} (BioKDD) in conjunction with \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2019.
+
+\item[W3] @Wang, D., \textbf{Jiang, M.}, @Wang, X., Chawla, N.V., Brunts, P. ``Multifaceted Event Analysis on Cross-Media Network Data'' in the \textit{International Workshop on Heterogeneous Networks Analysis and Mining} (HeteroNAM) in conjunction with \textit{ACM Conference on Web Search and Data Mining} (WSDM), February 2018.
+
+\item[W2] Chen, L.W., Mangipudi, B., Bandlamudi, J., Sehgal, R., Hao, Y., \textbf{Jiang, M.} ``Integrating Knowledge from Latent and Explicit Features for Triple Scoring—Team Radicchio's Triple Scorer at WSDM Cup 2017'' in the 10th \textit{ACM Conference on Web Search and Data Mining Notebook Papers} (WSDM), February 2017.
+
+\item[W1] \textbf{Jiang, M.} ``Catching Social Media Advertisers with Strategy Analysis'' in the 1st \textit{International Workshop on Computational Methods for CyberSafety} in conjunction with \textit{ACM International Conference on Information and Knowledge Management} (CIKM), October 2016.
+
+\end{enumerate}
+
+\hspace{-0.25cm}\textit{Refereed Tutorials}
+
+\begin{enumerate}[leftmargin=.5cm]
+
+\item[T9] \textbf{Jiang, M.}, Shang, J. ``Scientific Text Mining and Knowledge Graphs'' in the \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2020.
+		
+\item[T8] Zhang, C., \textbf{Jiang, M.}, Zhang, X., Ye, Y., Chawla, N.V. ``Multi-modal Network Representation Learning: Methods and Applications'' in the \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2020.
+
+\item[T7] Zhang, C., \textbf{Jiang, M.}, Zhang, X., Chawla, N.V. ``Multi-modal Network Representation Learning: Methods and Applications'' in the \textit{SIAM International Conference on Data Mining} (SDM), May 2020. (accepted but cancelled due to COVID-19)
+
+\item[T6] \textbf{Jiang, M.}, Kumar, S., Subrahmanian, V.S., Faloutsos, C. ``Data-Driven Approaches towards Malicious Behavior Modeling'' in the \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2017.
+
+\item[T5] Shang, J., \textbf{Jiang, M.}, Ren, X., Han, J. ``Mining Entity-Relation-Attribute Structures from Massive Text Data'' in the \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2017.
+
+\item[T4] Ren, X., \textbf{Jiang, M.}, Shang, J., Han, J. ``Building Structured Databases of Factual Knowledge from Massive Text Data'' in the \textit{ACM SIGMOD International Conference on Management of Data} (SIGMOD), May 2017.
+		
+\item[T3] Ren, X., \textbf{Jiang, M.}, Shang, J., Han, J. ``Constructing Structured Information Networks from Massive Text Corpora'' in the \textit{International World Wide Web Conference}  (WWW), April 2017.
+
+\item[T2] \textbf{Jiang, M.}, Cui, P., Han, J. ``Data-Driven Behavioral Analytics: Observations, Representations and Models'' in the \textit{ACM International Conference on Information and Knowledge Management} (CIKM), October 2016.
+		
+\item[T1] \textbf{Jiang, M.}, Cui, P. ``Behavior Modeling in Social Networks: From Micro to Macro'' in the \textit{IEEE International Conference on Data Mining} (ICDM), November 2015.
+
+\end{enumerate}
+
 \hspace{-0.25cm}\textit{Invited Book Chapters}
 
 \begin{enumerate}[leftmargin=.5cm]
@@ -206,296 +375,35 @@ Role: \textbf{Co-P.I.} with ND Prof. Chawla (Comp. Sci. \& Eng.)
 
 \end{enumerate}
 
-\hspace{-0.25cm}\textit{Refereed Conference Papers} {\small (10 ACM SIGKDD full papers, etc.)}
+\hspace{-0.25cm}\textit{Preprints}
 
 \begin{enumerate}[leftmargin=.5cm]
 
-\item[C44] @Zhao, T., *Deng, C., *Yu, K., @Jiang, T., @Wang, D., \textbf{Jiang, M.} ``Error-bounded Graph Anomaly Loss for GNNs'', in Proceedings of \textit{ACM International Conference on Information and Knowledge Management} (CIKM), 2020. (acceptance rate 21\% = 193/920)
+\item[P13] @Jiang, T., @Zhao, T., Qin, B., Liu, T., Chawla, N.V., \textbf{Jiang, M.} ``Canonicalizing Open Knowledge Bases with Multi-Layered Meta-Graph Neural Network'' in \textit{arXiv preprint arXiv:2006.09610}, June 2020.
 		
-\item[C43] Guo, Z., @Yu, W., Zhang, C., \textbf{Jiang, M.}, Chawla, N.V. ``GraSeq: Graph and Sequence Fusion Learning for Molecular Property Prediction'', in Proceedings of \textit{ACM International Conference on Information and Knowledge Management} (CIKM), 2020. (acceptance rate 21\% = 193/920)
+\item[P12] @Zhao, T., Liu, Y., Neves, L., Woodford, O., \textbf{Jiang, M.}, Shah, N. ``Data Augmentation for Graph Neural Networks'' in \textit{arXiv preprint arXiv:2006.06830}, June 2020.
 
-\item[C42] Liu, Y., Lin, J., @Zeng, Q., \textbf{Jiang, M.}, Cleland-Huang, J. ``Towards Semantically Guided Traceability'', in Proceedings of \textit{IEEE International Requirements Engineering Conference} (RE), August 2020. (RE@NEXT! track)	
-
-\item[C41] @Wang, D., \textbf{Jiang, M.}, Syed, M., Conway, O., Juneja, V., Subramanian, S., Chawla, N.V. ``Calendar Graph Neural Networks for Modeling Time Structures in Spatiotemporal User Behaviors'', in Proceedings of \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2020. (applied data science track with oral presentation, acceptance rate 5.8\%=44/756)
-
-\item[C40] @Yu, W., Wu, L., @Zeng, Q., Tao, S., Deng, Y., \textbf{Jiang, M.} ``Crossing Variational Autoencoders for Answer Retrieval'', in Proceedings of \textit{Annual Meeting of the Association for Computational Linguistics} (ACL), 2020.
-
-\item[C39] \textbf{Jiang, M.} ``Improving Situational Awareness with Collective Artificial Intelligence over Knowledge Graphs'', in Proceedings of \textit{Artificial Intelligence and Machine Learning for Multi-Domain Operations Applications II} in \textit{SPIE Defense + Commercial Sensing} Symposium, 2020. (Oral presentation)
-
-\item[C38] @Yu, W., *Yu, M., @Zhao, T., \textbf{Jiang, M.} ``Identifying Referential Intention with Heterogeneous Contexts'', in Proceedings of \textit{The Web Conference} (TheWebConf), 2020. (acceptance rate 19\% = 217/1129)
-
-\item[C37] @Yu, W., *Peng, W., *Shu, Y., @Zeng, Q., \textbf{Jiang, M.} ``Experimental Evidence Extraction in Data Science with Hybrid Table Features and Ensemble Learning'', in Proceedings of \textit{The Web Conference} (TheWebConf), 2020. (acceptance rate 19\% = 217/1129, won the first place at 14th Annual Poster Contest at ND CSE)
-
-\item[C36] Tang, P., \textbf{Jiang, M.}, Xia, N., Pitera, J., Welser, J., Chawla, N.V. ``Multi-label Patent Categorization with Non-local Attention-based Graph Convolutional Network'', in Proceedings of \textit{AAAI Conference on Artificial Intelligence} (AAAI), 2020. (acceptance rate 20.6\% = 1591/7737)
-	
-\item[C35] Zhang, C., Yao, H., \textbf{Jiang, M.}, Li, Z., Chawla, N.V. ``Few-Shot Knowledge Base Completion'', in Proceedings of \textit{AAAI Conference on Artificial Intelligence} (AAAI), 2020. (acceptance rate 20.6\% = 1591/7737)
-
-\item[C34] Yao, H., Zhang, C., Wei, Y., \textbf{Jiang, M.}, Wang, S., Chawla, N.V., Li, Z. ``Graph Few-shot Learning via Knowledge Transfer'', in Proceedings of \textit{AAAI Conference on Artificial Intelligence} (AAAI), 2020. (acceptance rate 20.6\% = 1591/7737)
-
-\item[C33] @Ding, Y., @Wang, D., Weninger, T., \textbf{Jiang, M.} ``Preserving Composition and Crystal Structure Information of Chemical Compounds in Atomic Embedding'', in Proceedings of \textit{IEEE International Conference on Big Data} (BigData), December 2019. (poster)
-
-\item[C32] @Jiang, T., *Zhang, Z., @Zhao, T., Qin, B., Liu, T., Chawla, N.V., \textbf{Jiang, M.} ``CTGA: Graph-based Biomedical Literature Search'', in Proceedings of \textit{IEEE International Conference on Bioinformatics and Biomedicine} (BIBM), November 2019. (regular paper, acceptance rate 18\% = 98/543)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I made 20\% contribution and Mr. Jiang made 60\%. I conceived the idea. Mr. Jiang implemented the system, did the experiments, and wrote the paper.}}}
-
-\item[C31] @Jiang, T., @Zhao, T., Qin, B., Liu, T., Chawla, N.V., \textbf{Jiang, M.} ``Multi-input Multi-output Sequence Labeling for Joint Extraction of Fact and Condition Tuples from Scientific Text'' in Proceedings of \textit{Conference on Empirical Methods in Natural Language Processing} (EMNLP), November 2019. (acceptance rate 23\%)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I made 30\% contribution and Mr. Jiang made 60\%. I conceived the idea. Mr. Jiang designed the study, implemented the system, and did the experiments. I wrote the introduction. Mr. Jiang wrote the rest of the paper.}}}
-
-\item[C30] Wang, T., Xu, X., Xiong, J., \textbf{Jiang, M.}, Shi, Y. ``MSU-Net: Multiscale Statistical U-Net forReal-time 3D Cardiac MRI Video Segmentation'' in Proceedings of \textit{International Conference on Medical Image Computing and Computer Assisted Intervention} (MICCAI), October 2019. (acceptance rate 31\%)		
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I made 5\% contribution. I joined the discussions, re-wrote the introduction section, and reviewed the rest of the paper.}}}
-
-\item[C29] @Wang, D., @Jiang, T., Chawla, N.V., \textbf{Jiang, M.} ``TUBE: Embedding Behavior Outcomes for Predicting Success'' in Proceedings of \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2019. (research track with oral presentation, acceptance rate 9.2\%=110/1200; \textbf{won the Best Paper Award} at the Annual Meeting of the International Society for Data Science and Analytics (ISDSA), winning rate 6.9\%=2/29)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I made 30\% contribution and Mr. Wang made 60\%. I conceived the idea. Mr. Wang designed the study, implemented the system, and did the experiments. I wrote the introduction and part of method sections. Mr. Wang wrote the rest of the paper.}}}
-
-\item[C28] @Jiang, T., @Zhao, T., Qin, B., Liu, T., Chawla, N.V., \textbf{Jiang, M.} ``The Role of Condition: A Novel Scientific Knowledge Graph Representation and Construction Model'' in Proceedings of \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2019. (research track with poster presentation, acceptance rate 14.2\%=170/1200)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I made 30\% contribution and Mr. Jiang made 60\%. I conceived the idea. Mr. Jiang designed the study, implemented the system, and did the experiments. I wrote the introduction. Mr. Jiang wrote the rest of the paper.}}}
-
-\item[C27] @Wang, X., @Zhang, H., @Li, Q., Shi, Y., \textbf{Jiang, M.} ``A Novel Unsupervised Approach for Precise Temporal Slot Filling from Incomplete and Noisy Temporal Contexts'' in Proceedings of \textit{The Web Conference} (TheWebConf), May 2019. (acceptance rate 18.0\%=225/1247, won the first place at 12th Annual Poster Contest at ND CSE)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I made 75\% contribution and Ms. Wang made 20\%. I conceived the idea, designed the study, and implemented the system. Ms. Wang did the experiments. Ms. Wang and I wrote the paper.}}}
-
-\item[C26] *Yu, W., Li, Z., @Zeng, Q., \textbf{Jiang, M.} ``Tablepedia: Automating PDF Table Reading in an Experimental Evidence Exploration and Analytic System'' in Proceedings of \textit{The Web Conference} (TheWebConf), May 2019. (acceptance rate 44.8\%=26/58)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I made 30\% contribution and Mr. Yu made 60\%. I conceived the idea and designed the study. Mr. Yu (junior) implemented the system and did the experiments. Mr. Yu and I wrote the paper.}}}
-
-\item[C25] @Zhao, T., *Malir, M., \textbf{Jiang, M.} ``Actionable Objective Optimization for Suspicious Behavior Detection on Large Bipartite Graphs'' in Proceedings of \textit{IEEE International Conference on Big Data} (BigData), December 2018. (acceptance rate 18.9\%=98/518)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I made 40\% contribution and Mr. Zhao made 40\%. I conceived the idea and designed the study. Mr. Zhao implemented the system. Mr. Malir (sophomore) did the experiments. Mr. Zhao and I wrote the paper.}}}
-
-\item[C24] Tao, F., Zhang, C., Chen, X., \textbf{Jiang, M.}, Hanratty, T., Kaplan, L., Han, J. ``Doc2Cube: Allocating Documents to Text Cube without Labeled Data'' in Proceedings of \textit{IEEE International Conference on Data Mining} (ICDM), November 2018. (acceptance rate 11.1\%=105/948)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I made 3\% contribution. Mr. Tao conceived the idea in consultation with myself. Mr. Tao did the experiments and wrote the paper.}}}
-
-\item[C23] Ding, Y., Liu, J., Xiong, J., \textbf{Jiang, M.}, Shi, Y. ``Optimizing Boiler Control in Real-Time with Machine Learning for Sustainability'' in Proceedings of \textit{ACM International Conference on Information and Knowledge Management} (CIKM), October 2018. (industry track, acceptance rate 26.0\%=34/130)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I made 3\% contribution. Mr. Ding conceived the idea in consultation with myself. Mr. Ding implemented the system, completed the experiments, and wrote the paper.}}}
-
-\item[C22] Zhao, S., \textbf{Jiang, M.}, Liu, M., Qin, B., Liu, T. ``CausalTriad: Toward Pseudo Causal Relation Discovery and Hypotheses Generation from Medical Text Data'' in Proceedings of \textit{ACM International Conference on Bioinformatics, Computational Biology, and Health Informatics} (BCB), August-September 2018. (acceptance rate 31.1\%=46/148)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I made 20\% contribution. Mr. Zhao conceived the idea in consultation with myself. Mr. Zhao implemented the system, completed the experiments, and wrote the paper.}}}
-
-\item[C21] @Wang, D., \textbf{Jiang, M.}, @Wang, X., @Zhao, T., @Zeng, Q., Chawla, N.V. ``A Project Showcase for Planning Research Work towards Publishable Success'' in Proceedings of \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2018. (demo track)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I made 20\% contribution. I conceived the idea. Mr. Wang implemented the system, did the experiments, and wrote the paper.}}}
-
-\item[C20] @Wang, D., \textbf{Jiang, M.}, @Zeng, Q., @Eberhart, Z., Chawla, N.V. ``Multi-Type Itemset Embedding for Learning Behavior Success'' in Proceedings of \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2018. (acceptance rate 10.9\%=107/983)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I made 70\% contribution and Mr. Wang made 20\%. I conceived the idea and designed the study. Mr. Wang implemented the system and did the experiments.}}}
-
-\item[C19] \textbf{Jiang, M.}, Li, Q., Zhang, X., Qu, M., Hanratty, T., Gao, J., Han, J. ``TruePIE: Discovering Reliable Patterns in Pattern-Based Information Extraction'' in Proceedings of \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2018. (acceptance rate 10.9\%=107/983)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I made 40\% contribution and Dr. Li made 40\%. Dr. Li and I are co-first authors. I conceived the idea. Dr. Li did the experiments, and wrote the paper.}}}
-
-\item[C18] Zhang, C., Tao, F., Chen, X., Shen, J., \textbf{Jiang, M.}, Sadler, B., Vanni, M., Han, J. ``TaxoGen: Constructing Topical Concept Taxonomy by Adaptive Term Embedding and Clustering'' in Proceedings of \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2018. (acceptance rate 10.9\%=107/983)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I made 3\% contribution. Mr. Zhang conceived the idea in consultation with myself. Mr. Zhang did the experiments and wrote the paper.}}}
-
-\item[C17] Zhao, S., \textbf{Jiang, M.}, Yuan, Q., Qin, B., Liu, T., Zhai, C.X. ``ContextCare: Incorporating Contextual Information Networks to Representation Learning in Medical Forum Data'' in Proceedings of \textit{International Joint Conference on Artificial Intelligence} (IJCAI), August 2017. (acceptance rate 26.0\%=660/2540)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I made 30\% contribution and Mr. Zhao made 60\%. Mr. Zhao conceived the idea in consultation with myself. Mr. Zhao implemented the system and completed the experiments. I wrote the introduction section. Mr. Zhao wrote the rest of the paper.}}}
-
-\item[C16] \textbf{Jiang, M.}, Shang, J., Cassidy, T., Ren, X., Kaplan, L., Hanratty, T., Han, J. ``MetaPAD: Meta Patten Discovery from Massive Text Corpora'' in Proceedings of \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2017. (acceptance rate 13.7\%=130/748)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I conceived the idea, designed the study, did the experiments, and wrote the paper. Dr. Han edited the paper.}}}
-
-\item[C15] Kuang, K., Cui, P., Li, B., \textbf{Jiang, M.}, Yang, S., Wang, F. ``Estimating Treatment Effect in the Wild via Differentiated Confounder Balancing'' in Proceedings of \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2017. (acceptance rate 13.7\%=130/748)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{Mr. Kuang conceived the idea in consultation with myself. Mr. Kuang implemented the system and completed the experiments. Mr. Kuang wrote the paper.}}}
-
-\item[C14] Ren, X., Shen, J., Qu, M., Wang, X., Wu, Z., Zhu, Q., \textbf{Jiang, M.}, Tao, F., Sinha, S., Liem, D., Ping, P., Weinshilboum, R., Han, J. ``LifeNet: A Structured Network-Based Knowledge Exploration and Analytics System for Life Sciences'' in Proceedings of \textit{Annual Meeting of the Association for Computational Linguistics} (ACL), July-August 2017. (demo track)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{Mr. Ren conceived the idea. Mr. Shen implemented the system and completed the experiments. Mr. Ren wrote the paper. I edited the paper.}}}
-
-\item[C13] Kuang, K., Cui, P., Li, B., \textbf{Jiang, M.}, Yang, S., Wang, F. ``Treatment Effect Estimation with Data-Driven Variable Decomposition'' in Proceedings of \textit{AAAI Conference on Artificial Intelligence} (AAAI), February 2017. (acceptance rate 24.6\%=638/2590)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{Mr. Kuang conceived the idea in consultation with myself. Mr. Kuang implemented the system and completed the experiments. Mr. Kuang wrote the paper.}}}
-
-\item[C12] Kuang, K., \textbf{Jiang, M.}, Cui, P., Yang, S. ``Steering Social Media Promotions with Effective Strategies'' in Proceedings of \textit{IEEE International Conference on Data Mining} (ICDM), November 2016. (acceptance rate 19.6\%=177/904)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I conceived the idea. Mr. Kuang implemented the system and completed the experiments. Mr. Kuang and I wrote the paper.}}}
-
-\item[C11] Gui, H., Liu, J., Tao, F., \textbf{Jiang, M.}, Norick, B., Han, J. ``Large-Scale Embedding Learning in Heterogeneous Event Data'' in Proceedings of \textit{IEEE International Conference on Data Mining} (ICDM), November 2016. (acceptance rate 19.6\%=177/904)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{Ms. Gui conceived the idea in consultation with myself. Ms. Gui, her colleague Dr. Liu, and I implemented the system and completed the experiments. Ms. Gui wrote the paper. I edited the paper.}}}
-
-\item[C10] \textbf{Jiang, M.}, Faloutsos, C., Han, J. ``CatchTartan: Representing and Summarizing Dynamic Multicontextual Behaviors'' in Proceedings of \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2016. (acceptance rate 8.9\%=70/784)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I conceived the idea, designed the study, did the experiments, and wrote the paper.}}}
-
-\item[C9] \textbf{Jiang, M.}, Cui, P., Yuan, N.J., Xie, X., Yang, S. ``Little is Much: Bridging Cross-Platform Behaviors through Overlapped Crowds'' in Proceedings of \textit{AAAI Conference on Artificial Intelligence} (AAAI), February 2016. (acceptance rate 25.8\%=550/2132)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I conceived the idea in consultation with Dr. Cui. I designed the study, completed the experiments, and wrote the paper.}}}
-
-\item[C8] \textbf{Jiang, M.}, Beutel, A., Cui, P., Hooi, B., Yang, S., Faloutsos, C. ``A General Suspiciousness Metric for Dense Blocks in Multimodal Data'' in Proceedings of \textit{IEEE International Conference on Data Mining} (ICDM), November 2015. (acceptance rate 18.1\%=146/807)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I conceived the idea in consultation with Dr. Beutel. I designed the study, completed the experiments, and wrote the paper. Dr. Beutel edited the paper.}}}
-
-\item[C7] \textbf{Jiang, M.}, Cui, P., Beutel, A., Faloutsos, C., Yang, S. ``CatchSync: Catching Synchronized Behavior in Large Directed Graphs'' in Proceedings of \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2014. (\textbf{best paper finalist}, acceptance rate 14.6\%=151/1036)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I conceived the idea in consultation with Dr. Faloutsos. I designed the study, did the experiments, and wrote the paper. Drs. Beutel and Faloutsos edited the paper.}}}
-
-\item[C6] \textbf{Jiang, M.}, Cui, P., Wang, F., Xu, X., Zhu, W., Yang, S. ``FEMA: Flexible Evolutionary Multi-Faceted Analysis for Dynamic Behavioral Pattern Discovery'' in Proceedings of \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2014. (acceptance rate 14.6\%=151/1036)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I conceived the idea in consultation with Drs. Cui and Wang. I designed the study, completed the experiments, and wrote the paper.}}}
-
-\item[C5] \textbf{Jiang, M.}, Cui, P., Beutel, A., Faloutsos, C., Yang, S. ``Inferring Strange Behavior from Connectivity Pattern in Social Networks'' in Proceedings of \textit{Pacific-Asia Conference on Knowledge Discovery and Data Mining} (PAKDD), April 2014. (oral long, acceptance rate 10.8\%=40/371)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I conceived the idea, designed the study, did the experiments, and wrote the paper.}}}
-
-\item[C4] \textbf{Jiang, M.}, Cui, P., Beutel, A., Faloutsos, C., Yang, S. ``Detecting Suspicious Following Behavior in Multimillion-Node Social Networks'' in Proceedings of \textit{International Conference on World Wide Web} (WWW), April 2014. (poster track, acceptance rate 48.7\%=110/226)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I conceived the idea, designed the study, did the experiments, and wrote the paper.}}}
-
-\item[C3] \textbf{Jiang, M.}, Cui, P., Wang, F., Yang, Q., Zhu, W., Yang, S. ``Social Recommendation across Multiple Relational Domains'' in Proceedings of \textit{ACM International Conference on Information and Knowledge Management} (CIKM), October 2012. (acceptance rate 13.4\%=146/1088)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I conceived the idea in consultation with Dr. Wang. I designed the study, completed the experiments, and wrote the paper. Dr. Cui edited the paper.}}}
-
-\item[C2] \textbf{Jiang, M.}, Cui, P., Liu, R., Yang, Q., Wang, F., Zhu, W., Yang, S. ``Social Contextual Recommendation'' in Proceedings of \textit{ACM International Conference on Information and Knowledge Management} (CIKM), October 2012. (acceptance rate 13.4\%=146/1088)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I conceived the idea in consultation with Dr. Cui. I designed the study, completed the experiments, and wrote the paper. Dr. Cui edited the paper.}}}
-
-\item[C1] Liu, L., Tang, J., Han, J., \textbf{Jiang, M.}, Yang, S. ``Mining Topic-Level Influence in Heterogeneous Networks'' in Proceedings of \textit{ACM International Conference on Information and Knowledge Management} (CIKM), October 2010. (acceptance rate 13.3\%=126/945)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{Ms. Liu conceived the idea in consultation with myself. Ms. Liu and I implemented the system and completed the experiments.}}}
-
-\end{enumerate}
-
-\hspace{-0.25cm}\textit{Refereed Journal Papers} {\small (6 IEEE Trans. on Knowledge \& Data Eng. (TKDE), etc.)}
-
-\begin{enumerate}[leftmargin=.5cm]
-
-\item[J19] @Wang, X., \textbf{Jiang, M.} ``Precise Temporal Slot Filling via Truth Finding with Data-Driven Commonsense'' \textit{Knowledge and Information Systems}. In press, accepted June 2020. (IF=2.397 in 2018)
-
-\item[J18] \textbf{Jiang, M.}, Ammerman, B.A., @Zeng, Q., Jacobucci, R., Brodersen, A. ``Phrase-level Pairwise Topic Modeling to Uncover Helpful Peer Responses to Online Suicidal Crises'' \textit{Humanities \& Social Sciences Communications} (formerly known as \textit{Nature Palgrave Communications}). In press, accepted May 2020. (IF=n/a)
-	
-\item[J17] Liu, J., Xu, X., \textbf{Jiang, M.}, Shi, Y. ``Binarizing Weights Wisely for Edge Intelligence: Guide for Partial Binarization of Deconvolution-Based Generators'' \textit{Transactions on Computer-Aided Design of Integrated Circuits and Systems}. In press, accepted March 2020. (IF=2.402 in 2018)
-
-\item[J16] Zhou, S., Hu, Z., Gu, W., \textbf{Jiang, M.}, Chen, M., Hong, Q., Booth, C. ``Combined Heat and Power System Intelligent Economic Dispatch: A Deep Reinforcement Learning Approach'' \textit{International Journal of Electrical Power and Energy Systems}. In press, accepted March 2020. (IF=4.418 in 2018)
-
-\item[J15] @Jiang, T., @Zeng, Q., @Zhao, T., Qin, B., Liu, T., Chawla, N.V., \textbf{Jiang, M.} ``Biomedical Knowledge Graphs Construction from Conditional Statements'' \textit{IEEE/ACM Transactions on Computational Biology and Bioinformatics}. In press, accepted March 2020. (IF=2.896 in 2018)
-
-\item[J14] Zhou, S., Hu, Z., Zhong, Z., He, D., \textbf{Jiang, M.} ``An Integrated Energy System Operating Scenarios Generator based on Generative Adversarial Network'' \textit{Sustainability}. 11:23, 6699, November 2019. (IF=2.592 in 2018)
+\item[P11] @Wang, D., \textbf{Jiang, M.}, Syed, M., Conway, O., Juneja, V., Subramanian, S., Chawla, N.V. ``Calendar Graph Neural Networks for Modeling Time Structures in Spatiotemporal User Behaviors'' in \textit{arXiv preprint arXiv:2006.06820}, June 2020. (accepted in KDD 2020)
 		
-\item[J13] Kuang, K., Cui, P., Li, B., \textbf{Jiang, M.}, Yang, S. ``Treatment Effect Estimation via Differentiated Confounder Balancing and Regression'' \textit{ACM Transactions on Knowledge Discovery from Data}. 14:1, 1-25, December 2019. (IF=n/a)
+\item[P10] *Zhou, Y., @Zhao, T., \textbf{Jiang, M.} ``A Probabilistic Model with Commonsense Constraints for Pattern-based Temporal Fact Extraction'' in \textit{arXiv preprint arXiv:2006.06436}, June 2020. (accepted in ACL-FEVER 2020)
 
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{Mr. Kuang conceived the idea in consultation with myself. Mr. Kuang implemented the system and completed the experiments. Mr. Kuang wrote the paper.}}}
-
-\item[J12] Zhou, S., Hu, Z., Gu, W., \textbf{Jiang, M.}, Zhang, X.P. ``Artificial Intelligence based Smart Energy Community Management: A Reinforcement Learning Approach'' \textit{CSEE Journal of Power and Energy Systems}. 5:1, 1-10, March 2019. (IF=2.680 in 2018)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I made 3\% contribution. Dr. Zhou conceived the idea, implemented the system, and completed the experiments. I joined the discussion and edited the paper.}}}
-
-\item[J11] Kuang, K., \textbf{Jiang, M.}, Cui, P., Luo, H., Yang, S. ``Effective Promotional Strategies Selection in Social Media: A Data-Driven Approach'' \textit{IEEE Transactions on Big Data}. 4:4, 487-501, December 2018. (IF=n/a)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I made 40\% contribution. I conceived the idea and design the study. Mr. Kuang completed the experiments. Mr. Kuang and I wrote the paper.}}}
-
-\item[J10] Shang, J., Liu, J., \textbf{Jiang, M.}, Ren, X., Voss, C.R., Han, J. ``Automated Phrase Mining from Massive Text Corpora'' \textit{IEEE Transactions on Knowledge and Data Engineering}. 30:10, 1825-1837, October 2018. (IF=3.857 in 2018)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I made 5\% contribution. Mr. Shang conceived the idea in consultation with myself. Mr. Shang implemented the system, completed the experiments, and wrote the paper.}}}
-
-\item[J9] Shang, J., \textbf{Jiang, M.}, Tong, W., Xiao, J., Peng, J., Han, J. ``DPPred: An Effective Prediction Framework with Concise Discriminative Patterns'' \textit{IEEE Transactions on Knowledge and Data Engineering}. 30:7, 1226-1239, July 2018. (IF=3.857 in 2018)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I made 25\% contribution. Mr. Shang conceived the idea in consultation with myself. Mr. Shang implemented the system, completed the experiments, and wrote the paper.}}}
-
-\item[J8] Gui, H., Liu, J., Tao, F., \textbf{Jiang, M.}, Norick, B., Kaplan, L., Han, J. ``Embedding Learning with Events in Heterogeneous Information Networks'' \textit{IEEE Transactions on Knowledge and Data Engineering}. 29:11, 2428-2441, July 2017. (IF=3.857 in 2018)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{Ms. Gui conceived the idea in consultation with myself. Ms. Gui, Dr. Liu, and I implemented the system and completed the experiments. Ms. Gui wrote the paper.}}}
-
-\item[J7] \textbf{Jiang, M.}, Cui, P., Beutel, A., Faloutsos, C., Yang, S. ``Inferring Lockstep Behavior from Connectivity Pattern in Large Graphs'' \textit{Knowledge and Information Systems}. 48:2, 399-428, August 2016. (IF=2.397 in 2018)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I conceived the idea in consultation with Dr. Faloutsos. I designed the study, completed the experiments, and wrote the paper.}}}
-
-\item[J6] \textbf{Jiang, M.}, Cui, P., Beutel, A., Faloutsos, C., Yang, S. ``Catching Synchronized Behaviors in Large Networks: A Graph Mining Approach'' \textit{ACM Transactions on Knowledge Discovery from Data - Special Issue on SIGKDD 2014}. 10:4, 35:1-35:27, July 2016. (IF=3.291 in 2018)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I conceived the idea in consultation with Dr. Faloutsos. I designed the study, completed the experiments, and wrote the paper.}}}
-
-\item[J5] \textbf{Jiang, M.}, Beutel, A., Cui, P., Hooi, B., Yang, S., Faloutsos, C. ``Spotting Suspicious Behaviors in Multimodal Data: A General Metric and Algorithms'' \textit{IEEE Transactions on Knowledge and Data Engineering}. 28:8, 2187-2200, April 2016. (IF=3.857 in 2018)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I conceived the idea in consultation with Dr. Faloutsos. I designed the study, completed the experiments, and wrote the paper.}}}
-
-\item[J4] \textbf{Jiang, M.}, Cui, P., Yang, S. ``Suspicious Behavior Detection: Current Trends and Future Directions'' \textit{IEEE Intelligent Systems}. 31:1, 31-39, January-February 2016. (IF=4.464 in 2018)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I conceived the idea in consultation with Dr. Cui. I designed the survey and wrote the paper. Dr. Cui edited the paper.}}}
-
-\item[J3] \textbf{Jiang, M.}, Cui, P., Chen, X., Wang, F., Zhu, W., Yang, S. ``Social Recommendation with Cross-Domain Transferable Knowledge'' \textit{IEEE Transactions on Knowledge and Data Engineering}. 27:11, 3084-3097, November 2015. (IF=3.857 in 2018)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I conceived the idea in consultation with Dr. Cui. I designed the study, completed the experiments, and wrote the paper. Mr. Chen helped the experiments.}}}
-
-\item[J2] \textbf{Jiang, M.}, Cui, P., Wang, F., Zhu, W., Yang, S. ``Scalable Recommendation with Social Contextual Information'' \textit{IEEE Transactions on Knowledge and Data Engineering}. 26:11, 2789-2802, November 2014. (IF=3.857 in 2018)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I conceived the idea in consultation with Dr. Cui. I designed the study, completed the experiments, and wrote the paper. Dr. Cui edited the paper.}}}
-
-\item[J1] Liu, L., Zhu, F., \textbf{Jiang, M.}, Han, J., Sun, L., Yang, S. ``Mining Diversity on Social Media Networks'' \textit{Multimedia Tools and Applications}. 56:1, 179-205, January 2012. (IF=2.101 in 2018)
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{Ms. Liu conceived the idea in consultation with myself. Ms. Liu, her colleague Dr. Zhu, and I implemented the system and completed the experiments.}}}
-
-\end{enumerate}
-
-\hspace{-0.25cm}\textit{Refereed Workshop Papers}
-
-\begin{enumerate}[leftmargin=.5cm]
-
-\item[W12] @Wang, D., *Zhang, Z., *Ma, Y., @Zhao, T., @Jiang, T., Chawla, N.V., \textbf{Jiang, M.} ``Learning Attribute-Structure Co-Evolutions in Dynamic Graphs'', in the \textit{Second International Workshop on Deep Learning on Graphs: Methods and Applications} (DLG) in conjunction with \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), 2020.
+\item[P9] @Yu., W., Wu., L., @Zeng, Q., Deng, Yu, Tao, S., \textbf{Jiang, M.} ``Crossing Variational Autoencoders for Answer Retrieval'' in \textit{arXiv preprint arXiv:2005.02557}, May 2020. (accepted in ACL 2020)
 		
-\item[W11] @Zhao, T., *Ni, B., @Yu, W., \textbf{Jiang, M.} ``Early Fraud Detection with Augmented Graph Learning'', in the \textit{Second International Workshop on Deep Learning on Graphs: Methods and Applications} (DLG) in conjunction with \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), 2020.
+\item[P8] Zhu, C., Hinthorn, W., Xu, R., Zeng, @Q., Zeng, M., Huang, X., \textbf{Jiang, M.} ``Boosting Factual Correctness of Abstractive Summarization with Knowledge Graph'' in \textit{arXiv preprint arXiv:2003.08612}, March 2020.
 
-\item[W10] @Zhao, T., *Deng, C., *Yu, K., @Jiang, T., @Wang, D., \textbf{Jiang, M.} ``GNN-based Graph Anomaly Detection with Graph Anomaly Loss'', in the \textit{Second International Workshop on Deep Learning on Graphs: Methods and Applications} (DLG) in conjunction with \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), 2020.
+\item[P7] Saebi, M., Krieg, S., Zhang, C., \textbf{Jiang, M.}, Chawla, N.V. ``Heterogeneous Relational Reasoning in Knowledge Graphs with Reinforcement Learning'' in \textit{arXiv preprint arXiv:2003.06050}, March 2020.
 
-\item[W9] *Zhou, Y., @Zhao, T., \textbf{Jiang, M.} ``A Probabilistic Model with Commonsense Constraints for Pattern-based Temporal Fact Extraction'', in the \textit{Workshop on Fact Extraction and Verification} (FEVER) in conjunction with \textit{Annual Meeting of the Association for Computational Linguistics} (ACL), 2020.
-
-\item[W8] @Yu, W., Wu, L., Tao, S., Deng, Y., @Zeng, Q., \textbf{Jiang, M.} ``Generating Helpful Responses for Intelligent Tech Support'', in the \textit{Reasoning for Complex QA  Workshop} (RCQA) in conjunction with \textit{AAAI Conference on Artificial Intelligence} (AAAI), 2020.
-
-\item[W7] Yao, H., Zhang, C., Wei, Y., \textbf{Jiang, M.}, Wang, S., Chawla, N.V., Li, Z. ``Graph Few-shot Learning via Knowledge Transfer'', in the \textit{Graph Representation Learning Workshop} (GRL) in conjunction with \textit{Conference on Neural Information Processing Systems} (NeurIPS), 2019.
-	
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I made 5\% contribution. I joined the discussions and reviewed the paper.}}}
-	
-\item[W6] @Zeng, Q., *Yu, M., @Yu, W., Xiong, J., Shi, Y., \textbf{Jiang, M.} ``Faceted Hierarchy: A New Graph Type to Organize Scientific Concepts and a Construction Method'', in the \textit{Workshop on Graph-Based Natural Language Processing} (TextGraphs) in conjunction with \textit{Conference on Empirical Methods in Natural Language Processing} (EMNLP), 2019.
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I conceived the idea and wrote the paper. Mr. Zeng designed the study, and completed the experiments.}}}
-	
-\item[W5] *Ma, Y., @Zeng, Q., @Jiang, T., Cai, L., \textbf{Jiang, M.} ``A Study of Person Entity Extraction and Profiling from Classical Chinese Historiography'', in the \textit{International Workshop on EntitY REtrieval} (EYRE) in conjunction with \textit{ACM International Conference on Information and Knowledge Management} (CIKM), 2019.
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I conceived the idea. Mr. Ma designed the study, completed the experiments, and wrote the paper. I edited the paper.}}}
-
-\item[W4] @Jiang, T., @Zhao, T., Qin, B., Liu, T., Chawla, N.V., \textbf{Jiang, M.} ``Constructing Information-Lossless Biological Knowledge Graphs from Conditional Statements'' in the 18th \textit{International Workshop on Data Mining in Bioinformatics} (BioKDD) in conjunction with \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), 2019.
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{Mr. Jiang conceived the idea and wrote the paper. I edited the paper.}}}
-	
-\item[W3] @Wang, D., \textbf{Jiang, M.}, @Wang, X., Chawla, N.V., Brunts, P. ``Multifaceted Event Analysis on Cross-Media Network Data'' in the \textit{International Workshop on Heterogeneous Networks Analysis and Mining} (HeteroNAM) in conjunction with \textit{ACM Conference on Web Search and Data Mining} (WSDM), February 2018.
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I conceived the idea in consultation with Mr. Wang. Mr. Wang designed the study, completed the experiments, and wrote the paper. I edited the paper.}}}
-
-\item[W2] Chen, L.W., Mangipudi, B., Bandlamudi, J., Sehgal, R., Hao, Y., \textbf{Jiang, M.} ``Integrating Knowledge from Latent and Explicit Features for Triple Scoring—Team Radicchio's Triple Scorer at WSDM Cup 2017'' in the 10th \textit{ACM Conference on Web Search and Data Mining Notebook Papers} (WSDM), February 2017.
-
-	\hide{\vspace{-0.1cm}\hspace{0.5cm}{\small \textit{I joined the discussion and edited the paper.}}}
-
-\item[W1] \textbf{Jiang, M.} ``Catching Social Media Advertisers with Strategy Analysis'' in the 1st \textit{International Workshop on Computational Methods for CyberSafety} in conjunction with \textit{ACM International Conference on Information and Knowledge Management} (CIKM), 2016.
-
-\end{enumerate}
-
-\hspace{-0.25cm}\textit{Refereed Tutorials}
-
-\begin{enumerate}[leftmargin=.5cm]
-
-\item[T9] \textbf{Jiang, M.}, Shang, J. ``Scientific Text Mining and Knowledge Graphs'' at the \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2020.
+\item[P6] *Ni, B., @Guo, Z., @Li, J., \textbf{Jiang, M.} ``Improving Generalizability of Fake News Detection Methods using Propensity Score Matching'' in \textit{arXiv preprint arXiv:2002.00838}, January 2020.
 		
-\item[T8] Zhang, C., \textbf{Jiang, M.}, Zhang, X., Ye, Y., Chawla, N.V. ``Multi-modal Network Representation Learning: Methods and Applications'' at the \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2020.
+\item[P5] Zhang, C., Yao, H., Huang, C., \textbf{Jiang, M.}, Li, Z., Chawla, N.V. ``Few-Shot Knowledge Graph Completion'' in \textit{arXiv preprint arXiv:1911.11298}, November 2019. (accepted in AAAI 2020)
 
-\item[T7] Zhang, C., \textbf{Jiang, M.}, Zhang, X., Chawla, N.V. ``Multi-modal Network Representation Learning: Methods and Applications'' at the \textit{SIAM International Conference on Data Mining} (SDM), May 2020. (accepted but cancelled due to coronavirus pandemic)
-
-\item[T6] \textbf{Jiang, M.}, Kumar, S., Subrahmanian, V.S., Faloutsos, C. ``Data-Driven Approaches towards Malicious Behavior Modeling'' at the \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2017.
-
-\item[T5] Shang, J., \textbf{Jiang, M.}, Ren, X., Han, J. ``Mining Entity-Relation-Attribute Structures from Massive Text Data'' at the \textit{ACM SIGKDD International Conference on Knowledge Discovery and Data Mining} (KDD), August 2017.
-
-\item[T4] Ren, X., \textbf{Jiang, M.}, Shang, J., Han, J. ``Building Structured Databases of Factual Knowledge from Massive Text Data'' at the \textit{ACM SIGMOD International Conference on Management of Data} (SIGMOD), May 2017.
+\item[P4] Yao, H., Zhang, C., Wei, Y., \textbf{Jiang, M.}, Wang, S., Huang, J., Chawla, N.V., Li, Z. ``Graph Few-Shot Learning via Knowledge Transfer'' in \textit{arXiv preprint arXiv:1910.03053}, October 2019. (accepted in AAAI 2020)
 		
-\item[T3] Ren, X., \textbf{Jiang, M.}, Shang, J., Han, J. ``Constructing Structured Information Networks from Massive Text Corpora'' at the \textit{International World Wide Web Conference}  (WWW), April 2017.
-
-\item[T2] \textbf{Jiang, M.}, Cui, P., Han, J. ``Data-Driven Behavioral Analytics: Observations, Representations and Models'' at the \textit{ACM International Conference on Information and Knowledge Management} (CIKM), October 2016.
+\item[P3] Jiang, T., Zhao, T., Qin, B., Liu, T., Chawla, N.V., \textbf{Jiang, M.} ``Constructing Information-Lossless Biological Knowledge Graphs from Conditional Statements'' in \textit{arXiv preprint arXiv:1907.00720}, June 2019. (accepted in KDD 2019)
 		
-\item[T1] \textbf{Jiang, M.}, Cui, P. ``Behavior Modeling in Social Networks: From Micro to Macro'' at the \textit{IEEE International Conference on Data Mining} (ICDM), November 2015.
+\item[P2] Liu, J., Zhang, J., Ding, Y., Xu, X., \textbf{Jiang, M.}, Shi, Y. ``PBGen: Partial Binarization of Deconvolution-Based Generators for Edge Intelligence'' in \textit{arXiv preprint arXiv:1802.09153}, February 2018. (accepted in TCADICS)
+		
+\item[P1] Shang, J., Shi, X., \textbf{Jiang, M.}, Liu, L., Hanratty, T., Han, J. ``Contrast Subgraph Mining from Coherent Cores'' in \textit{arXiv preprint arXiv:1802.06189}, February 2018.
 
 \end{enumerate}
 
@@ -512,13 +420,13 @@ Role: \textbf{Co-P.I.} with ND Prof. Chawla (Comp. Sci. \& Eng.)
 
 %\item[] Schnur, J., Karl, R., Martinez, A.G., \textbf{Jiang, M.}, Chawla, N.V. ``Imputing Common Growth Snapshots in Child Health Development: A Tensor Decomposition Approach'', under review at \textit{???} (???), 2020.
 	
-\item[CR13] Liu, Z., \textbf{Jiang, M.}, Luo, T. ``Leverage Electron Properties to Predict Phonon Properties via Transfer Learning for Semiconductors'', under review at \textit{ASME's International Mechanical Engineering Congress and Exposition} (IMECE), 2020. (Talk abstract)
+\item[CR13] Liu, Z., \textbf{Jiang, M.}, Luo, T. ``Leverage Electron Properties to Predict Phonon Properties via Transfer Learning for Semiconductors'', under review at \textit{ASME's International Mechanical Engineering Congress and Exposition} (IMECE), 2020. (abstract)
 
 \item[CR12] @Zhao, T., Liu, Y., Woodford, O., Neves, L., \textbf{Jiang, M.}, Shah, N. ``Improving Graph Neural Network Generalization with Data Augmentation'', under review at \textit{Conference on Neural Information Processing Systems} (NeurIPS), 2020.
 
 \item[CR11] \textbf{Jiang, M.}, Jung, T., Karl, R., @Zhao, T. ``Federated Dynamic GNN with Secure Aggregation'', under review at \textit{Conference on Neural Information Processing Systems} (NeurIPS), 2020.
 
-\item[CR10] @Yu, W., Wu, L., Deng, Y., Mahindru, R., @Zeng, Q., Guven, S., \textbf{Jiang, M.} ``A Technical Question Answering System with Transfer Learning'', under review at \textit{Conference on Empirical Methods in Natural Language Processing} (EMNLP), 2020. (Demo track)
+\item[CR10] @Yu, W., Wu, L., Deng, Y., Mahindru, R., @Zeng, Q., Guven, S., \textbf{Jiang, M.} ``A Technical Question Answering System with Transfer Learning'', under review at \textit{Conference on Empirical Methods in Natural Language Processing} (EMNLP), 2020. (demo)
 	
 \item[CR9] @Yu, W., Wu, L., Deng, Y., Mahindru, R., @Zeng, Q., Guven, S., \textbf{Jiang, M.} ``Technical Question Answering across Tasks and Domains'', under review at \textit{Conference on Empirical Methods in Natural Language Processing} (EMNLP), 2020.
 
@@ -544,19 +452,19 @@ Role: \textbf{Co-P.I.} with ND Prof. Chawla (Comp. Sci. \& Eng.)
 
 \begin{enumerate}[leftmargin=.5cm]
 
-\item[JR7] @Wang, D., *Zhang, Z., *Ma, Y., @Zhao, T., @Jiang, T., Chawla, N.V., \textbf{Jiang, M.} ``CoEvoGNNs: Modeling Co-evolution of Attributed and Structural Information in Dynamic Graph Sequence'', under review at \textit{IEEE Transactions on Knowledge and Data Engineering}. (IF=3.857 in 2018)
-		
-\item[JR6] Saebi, M., Krieg, S., Zhang, C., \textbf{Jiang, M.}, Chawla, N.V. ``Heterogeneous Relational Reasoning in Knowledge Graphs with Reinforcement Learning'', under review at \textit{Transactions on Knowledge Discovery from Data}. (IF=3.291 in 2018)
-		
-\item[JR5] Liu, Z., \textbf{Jiang, M.}, Luo, T. ``Leverage Electron Properties to Predict Phonon Properties via Transfer Learning for Semiconductors'', under review at \textit{Science Advances}. (IF=12.804 in 2018)
-		
-\item[JR4] Zhang, C., Yao, H., Yu, L., Huang, C., Song, D., \textbf{Jiang, M.}, Chen, H., Chawla, N.V. ``Inductive Contextual Relation Learning for Personalization'', under review at \textit{Transactions on Information Systems}. (IF=2.312 in 2018)
+%\item[] Liu, Z., \textbf{Jiang, M.}, Lin, H. ``Specification Mining and Automated Task Planning for Autonomous Robots based on a Graph-based Spatial Temporal Logic'', under review at \textit{}.
 
-\item[JR3] Liu, Z., \textbf{Jiang, M.}, Lin, H. ``Specification Mining and Automated Task Planning for Autonomous Robots based on a Graph-based Spatial Temporal Logic'', under review at \textit{Robotics and Autonomous Systems}. (IF=2.928 in 2018)
+\item[JR6] @Wang, D., *Zhang, Z., *Ma, Y., @Zhao, T., @Jiang, T., Chawla, N.V., \textbf{Jiang, M.} ``Modeling Co-evolution of Attributed and Structural Information in Graph Sequence'', under review at \textit{IEEE Transactions on Knowledge and Data Engineering}. (IF=4.935)
 
-\item[JR2] @Wang, D., @Zeng, Q., Chawla, N.V., \textbf{Jiang, M.} ``Modeling Complementarity in Behavior Data with Multi-Type Itemset Embedding'', under review at \textit{ACM Transactions on Intelligent Systems and Technology}. (Conditional acceptance with minor revision, IF=2.861 in 2018)
+\item[JR5] Saebi, M., Krieg, S., Zhang, C., \textbf{Jiang, M.}, Chawla, N.V. ``Heterogeneous Relational Reasoning in Knowledge Graphs with Reinforcement Learning'', under review at \textit{Transactions on Knowledge Discovery from Data}. (IF=2.200)
+		
+\item[JR4] Liu, Z., \textbf{Jiang, M.}, Luo, T. ``Leverage Electron Properties to Predict Phonon Properties via Transfer Learning for Semiconductors'', under review at \textit{Science Advances}. (IF=13.116)
+		
+\item[JR3] Zhang, C., Yao, H., Yu, L., Huang, C., Song, D., \textbf{Jiang, M.}, Chen, H., Chawla, N.V. ``Inductive Contextual Relation Learning for Personalization'', under review at \textit{Transactions on Information Systems}. (IF=2.312)
 
-\item[JR1] Zhao, S., \textbf{Jiang, M.}, Qin, B., Liu, T., Zhai, C.X., Wang, F. ``Structural and Textual Information Fusion for Symptom and Disease Representation Learning'', under review at \textit{IEEE Transactions on Knowledge and Data Engineering}. (Major revision, IF=3.857 in 2018)
+\item[JR2] @Wang, D., @Zeng, Q., Chawla, N.V., \textbf{Jiang, M.} ``Modeling Complementarity in Behavior Data with Multi-Type Itemset Embedding'', under review at \textit{ACM Transactions on Intelligent Systems and Technology}. (Conditional acceptance with minor revision, IF=2.861)
+
+\item[JR1] Zhao, S., \textbf{Jiang, M.}, Qin, B., Liu, T., Zhai, C.X., Wang, F. ``Structural and Textual Information Fusion for Symptom and Disease Representation Learning'', under review at \textit{IEEE Transactions on Knowledge and Data Engineering}. (Major revision, IF=4.935)
 
 \end{enumerate}
 
@@ -573,6 +481,8 @@ Role: \textbf{Co-P.I.} with ND Prof. Chawla (Comp. Sci. \& Eng.)
 
 \begin{myindentpar}{0.75cm}
 
+\hspace{-0.75cm} Microsoft Research, Zoom, August 2020
+	
 \hspace{-0.75cm} Conference Follow-up from Artificial Intelligence and Machine Learning for Multi-Domain Operations, Zoom, May 2020
 	
 \hspace{-0.75cm} Saint Mary's College, Notre Dame, Indiana, February 2020
@@ -608,17 +518,6 @@ Role: \textbf{Co-P.I.} with ND Prof. Chawla (Comp. Sci. \& Eng.)
 \hspace{-0.75cm} University of Massachusetts Boston, Boston, Massachusetts, November 2015
 
 \end{myindentpar}
-
-\hide{
-\subsection{\sc Notre Dame Invited Presentations}
-\vspace{-0.4cm} \line(1,0){370} \vspace{-0.1cm}
-
-\begin{myindentpar}{0.75cm}
-
-\hspace{-0.75cm} Graduate Seminar, Department of Psychology, October 2018
-
-\end{myindentpar}
-}
 
 \subsection{\sc Master Student Graduated}
 \vspace{-0.4cm} \line(1,0){370} \vspace{-0.1cm}
@@ -793,8 +692,8 @@ Role: \textbf{Co-P.I.} with ND Prof. Chawla (Comp. Sci. \& Eng.)
 \textcolor{white}{.}{\bf Guoqiang Liu}, Notre Dame Biology \\
 \textcolor{white}{.}{\bf Kaitlynn Meis}, Notre Dame Biology \\
 \textcolor{white}{.}{\bf Mandana Saebi}, Notre Dame Comp. Sci. \& Eng. \\
-\textcolor{white}{.}{\bf Pamela Bilo Thomas}, Notre Dame Comp. Sci. \& Eng.
-\textcolor{white}{.}{\bf Hao Zheng}, Notre Dame Comp. Sci. \& Eng. \\
+\textcolor{white}{.}{\bf Pamela Bilo Thomas}, Notre Dame Comp. Sci. \& Eng. \\
+\textcolor{white}{.}{\bf Hao Zheng}, Notre Dame Comp. Sci. \& Eng.
 }
 
 %\hspace{-0.75cm}{\bf Editorial Board} \\
