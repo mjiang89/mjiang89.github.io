@@ -1,0 +1,1526 @@
+{
+  "data": {
+    "2012": {
+      "nodes": [
+        {
+          "category": "author", 
+          "type": "meta", 
+          "name": "__author__"
+        }, 
+        {
+          "category": "affiliation", 
+          "type": "meta", 
+          "name": "__affiliation__"
+        }, 
+        {
+          "category": "keyword", 
+          "type": "meta", 
+          "name": "__keyword__"
+        }, 
+        {
+          "category": "author", 
+          "type": "normal", 
+          "name": "Yongjian Fu"
+        }, 
+        {
+          "category": "author", 
+          "rate": 1.0, 
+          "type": "normal", 
+          "name": "Jiawei Han"
+        }, 
+        {
+          "category": "author", 
+          "type": "normal", 
+          "name": "Osmar Za\u00efane"
+        }, 
+        {
+          "category": "author", 
+          "rate": 0.348337353917, 
+          "type": "normal", 
+          "name": "Gao Jing"
+        }, 
+        {
+          "category": "author", 
+          "rate": 0.228694676873, 
+          "type": "normal", 
+          "name": "Xifeng Yan"
+        }, 
+        {
+          "category": "author", 
+          "rate": 0.199371397083, 
+          "type": "normal", 
+          "name": "He Xiaofei"
+        }, 
+        {
+          "category": "author", 
+          "rate": 0.209602133561, 
+          "type": "normal", 
+          "name": "Deng Cai"
+        }, 
+        {
+          "category": "author", 
+          "rate": 0.209602133561, 
+          "type": "normal", 
+          "name": "Philip Yu"
+        }, 
+        {
+          "category": "author", 
+          "rate": 0.237666479859, 
+          "type": "normal", 
+          "name": "Tianyi Wu"
+        }, 
+        {
+          "category": "author", 
+          "type": "normal", 
+          "name": "Nick Cercone"
+        }, 
+        {
+          "category": "author", 
+          "rate": 0.354292269958, 
+          "type": "normal", 
+          "name": "Yizhou Sun"
+        }, 
+        {
+          "category": "author", 
+          "type": "normal", 
+          "name": "Jian Pei"
+        }, 
+        {
+          "category": "affiliation", 
+          "type": "normal", 
+          "name": "Simon Fraser University"
+        }, 
+        {
+          "category": "affiliation", 
+          "type": "normal", 
+          "name": "IBM T. J. Watson Research Center"
+        }, 
+        {
+          "category": "affiliation", 
+          "rate": 1.0, 
+          "type": "normal", 
+          "name": "University of Illinois at Urbana Champaign"
+        }, 
+        {
+          "category": "affiliation", 
+          "type": "normal", 
+          "name": "State University of New York at Buffalo"
+        }, 
+        {
+          "category": "affiliation", 
+          "rate": 0.0985648309831, 
+          "type": "normal", 
+          "name": "University of California at Santa Barbara"
+        }, 
+        {
+          "category": "affiliation", 
+          "rate": 0.0917588639815, 
+          "type": "normal", 
+          "name": "University of Illinois at Chicago"
+        }, 
+        {
+          "category": "affiliation", 
+          "rate": 0.14396315015, 
+          "type": "normal", 
+          "name": "Zhejiang University"
+        }, 
+        {
+          "category": "keyword", 
+          "type": "normal", 
+          "name": "relational database"
+        }, 
+        {
+          "category": "keyword", 
+          "type": "normal", 
+          "name": "recursive query"
+        }, 
+        {
+          "category": "keyword", 
+          "type": "normal", 
+          "name": "association rules"
+        }, 
+        {
+          "category": "keyword", 
+          "type": "normal", 
+          "name": "frequent pattern"
+        }, 
+        {
+          "category": "keyword", 
+          "type": "normal", 
+          "name": "sequential pattern"
+        }, 
+        {
+          "category": "keyword", 
+          "type": "normal", 
+          "name": "indexing"
+        }, 
+        {
+          "category": "keyword", 
+          "rate": 0.645961443935, 
+          "type": "normal", 
+          "name": "clustering"
+        }, 
+        {
+          "category": "keyword", 
+          "rate": 0.36971698295, 
+          "type": "normal", 
+          "name": "factorization model"
+        }, 
+        {
+          "category": "keyword", 
+          "rate": 0.826712306313, 
+          "type": "normal", 
+          "name": "community detection"
+        }, 
+        {
+          "category": "keyword", 
+          "rate": 0.843937329324, 
+          "type": "normal", 
+          "name": "social networks"
+        }, 
+        {
+          "category": "keyword", 
+          "rate": 1.0, 
+          "type": "normal", 
+          "name": "heterogeneous information network"
+        }
+      ], 
+      "links": [
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 3
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 4
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 5
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 6
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 7
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 8
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 9
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 10
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 11
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 12
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 13
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 14
+        }, 
+        {
+          "source": 1, 
+          "type": "metalink", 
+          "target": 15
+        }, 
+        {
+          "source": 1, 
+          "type": "metalink", 
+          "target": 16
+        }, 
+        {
+          "source": 1, 
+          "type": "metalink", 
+          "target": 17
+        }, 
+        {
+          "source": 1, 
+          "type": "metalink", 
+          "target": 18
+        }, 
+        {
+          "source": 1, 
+          "type": "metalink", 
+          "target": 19
+        }, 
+        {
+          "source": 1, 
+          "type": "metalink", 
+          "target": 20
+        }, 
+        {
+          "source": 1, 
+          "type": "metalink", 
+          "target": 21
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 22
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 23
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 24
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 25
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 26
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 27
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 28
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 29
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 30
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 31
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 32
+        }, 
+        {
+          "source": 4, 
+          "rate": 35.0, 
+          "type": "inner", 
+          "target": 10
+        }, 
+        {
+          "source": 4, 
+          "rate": 40.0, 
+          "type": "inner", 
+          "target": 7
+        }, 
+        {
+          "source": 4, 
+          "rate": 17.0, 
+          "type": "inner", 
+          "target": 8
+        }, 
+        {
+          "source": 4, 
+          "rate": 18.0, 
+          "type": "inner", 
+          "target": 9
+        }, 
+        {
+          "source": 4, 
+          "rate": 16.0, 
+          "type": "inner", 
+          "target": 13
+        }, 
+        {
+          "source": 4, 
+          "rate": 20.0, 
+          "type": "inner", 
+          "target": 6
+        }, 
+        {
+          "source": 4, 
+          "rate": 7.0, 
+          "type": "inner", 
+          "target": 11
+        }, 
+        {
+          "source": 10, 
+          "rate": 18.0, 
+          "type": "inner", 
+          "target": 7
+        }, 
+        {
+          "source": 10, 
+          "rate": 0.0, 
+          "type": "inner", 
+          "target": 8
+        }, 
+        {
+          "source": 10, 
+          "rate": 0.0, 
+          "type": "inner", 
+          "target": 9
+        }, 
+        {
+          "source": 10, 
+          "rate": 1.0, 
+          "type": "inner", 
+          "target": 13
+        }, 
+        {
+          "source": 10, 
+          "rate": 3.0, 
+          "type": "inner", 
+          "target": 6
+        }, 
+        {
+          "source": 10, 
+          "rate": 0.0, 
+          "type": "inner", 
+          "target": 11
+        }, 
+        {
+          "source": 7, 
+          "rate": 0.0, 
+          "type": "inner", 
+          "target": 8
+        }, 
+        {
+          "source": 7, 
+          "rate": 0.0, 
+          "type": "inner", 
+          "target": 9
+        }, 
+        {
+          "source": 7, 
+          "rate": 1.0, 
+          "type": "inner", 
+          "target": 13
+        }, 
+        {
+          "source": 7, 
+          "rate": 1.0, 
+          "type": "inner", 
+          "target": 6
+        }, 
+        {
+          "source": 7, 
+          "rate": 0.0, 
+          "type": "inner", 
+          "target": 11
+        }, 
+        {
+          "source": 8, 
+          "rate": 17.0, 
+          "type": "inner", 
+          "target": 9
+        }, 
+        {
+          "source": 8, 
+          "rate": 0.0, 
+          "type": "inner", 
+          "target": 13
+        }, 
+        {
+          "source": 8, 
+          "rate": 0.0, 
+          "type": "inner", 
+          "target": 6
+        }, 
+        {
+          "source": 8, 
+          "rate": 0.0, 
+          "type": "inner", 
+          "target": 11
+        }, 
+        {
+          "source": 9, 
+          "rate": 0.0, 
+          "type": "inner", 
+          "target": 13
+        }, 
+        {
+          "source": 9, 
+          "rate": 0.0, 
+          "type": "inner", 
+          "target": 6
+        }, 
+        {
+          "source": 9, 
+          "rate": 0.0, 
+          "type": "inner", 
+          "target": 11
+        }, 
+        {
+          "source": 13, 
+          "rate": 4.0, 
+          "type": "inner", 
+          "target": 6
+        }, 
+        {
+          "source": 13, 
+          "rate": 3.0, 
+          "type": "inner", 
+          "target": 11
+        }, 
+        {
+          "source": 6, 
+          "rate": 0.0, 
+          "type": "inner", 
+          "target": 11
+        }, 
+        {
+          "source": 4, 
+          "rate": 458.0, 
+          "type": "outer", 
+          "target": 17
+        }, 
+        {
+          "source": 10, 
+          "rate": 13.0, 
+          "type": "outer", 
+          "target": 20
+        }, 
+        {
+          "source": 7, 
+          "rate": 10.0, 
+          "type": "outer", 
+          "target": 17
+        }, 
+        {
+          "source": 7, 
+          "rate": 15.0, 
+          "type": "outer", 
+          "target": 19
+        }, 
+        {
+          "source": 8, 
+          "rate": 4.0, 
+          "type": "outer", 
+          "target": 17
+        }, 
+        {
+          "source": 8, 
+          "rate": 15.0, 
+          "type": "outer", 
+          "target": 21
+        }, 
+        {
+          "source": 9, 
+          "rate": 4.0, 
+          "type": "outer", 
+          "target": 17
+        }, 
+        {
+          "source": 9, 
+          "rate": 17.0, 
+          "type": "outer", 
+          "target": 21
+        }, 
+        {
+          "source": 13, 
+          "rate": 60.0, 
+          "type": "outer", 
+          "target": 17
+        }, 
+        {
+          "source": 6, 
+          "rate": 58.0, 
+          "type": "outer", 
+          "target": 17
+        }, 
+        {
+          "source": 11, 
+          "rate": 27.0, 
+          "type": "outer", 
+          "target": 17
+        }, 
+        {
+          "source": 17, 
+          "rate": 7.0, 
+          "type": "outer", 
+          "target": 29
+        }, 
+        {
+          "source": 17, 
+          "rate": 44.0, 
+          "type": "outer", 
+          "target": 28
+        }, 
+        {
+          "source": 17, 
+          "rate": 55.0, 
+          "type": "outer", 
+          "target": 30
+        }, 
+        {
+          "source": 17, 
+          "rate": 63.0, 
+          "type": "outer", 
+          "target": 31
+        }, 
+        {
+          "source": 17, 
+          "rate": 99.0, 
+          "type": "outer", 
+          "target": 32
+        }, 
+        {
+          "source": 21, 
+          "rate": 6.0, 
+          "type": "outer", 
+          "target": 29
+        }, 
+        {
+          "source": 19, 
+          "rate": 3.0, 
+          "type": "outer", 
+          "target": 32
+        }, 
+        {
+          "source": 20, 
+          "rate": 3.0, 
+          "type": "outer", 
+          "target": 32
+        }
+      ]
+    }, 
+    "2005": {
+      "nodes": [
+        {
+          "category": "author", 
+          "type": "meta", 
+          "name": "__author__"
+        }, 
+        {
+          "category": "affiliation", 
+          "type": "meta", 
+          "name": "__affiliation__"
+        }, 
+        {
+          "category": "keyword", 
+          "type": "meta", 
+          "name": "__keyword__"
+        }, 
+        {
+          "category": "author", 
+          "type": "normal", 
+          "name": "Yongjian Fu"
+        }, 
+        {
+          "category": "author", 
+          "rate": 1.0, 
+          "type": "normal", 
+          "name": "Jiawei Han"
+        }, 
+        {
+          "category": "author", 
+          "type": "normal", 
+          "name": "Osmar Za\u00efane"
+        }, 
+        {
+          "category": "author", 
+          "type": "normal", 
+          "name": "Gao Jing"
+        }, 
+        {
+          "category": "author", 
+          "rate": 0.467459643733, 
+          "type": "normal", 
+          "name": "Xifeng Yan"
+        }, 
+        {
+          "category": "author", 
+          "type": "normal", 
+          "name": "He Xiaofei"
+        }, 
+        {
+          "category": "author", 
+          "type": "normal", 
+          "name": "Deng Cai"
+        }, 
+        {
+          "category": "author", 
+          "rate": 0.375154289247, 
+          "type": "normal", 
+          "name": "Philip Yu"
+        }, 
+        {
+          "category": "author", 
+          "type": "normal", 
+          "name": "Tianyi Wu"
+        }, 
+        {
+          "category": "author", 
+          "type": "normal", 
+          "name": "Nick Cercone"
+        }, 
+        {
+          "category": "author", 
+          "type": "normal", 
+          "name": "Yizhou Sun"
+        }, 
+        {
+          "category": "author", 
+          "rate": 0.421637021356, 
+          "type": "normal", 
+          "name": "Jian Pei"
+        }, 
+        {
+          "category": "affiliation", 
+          "rate": 0.21025536158, 
+          "type": "normal", 
+          "name": "Simon Fraser University"
+        }, 
+        {
+          "category": "affiliation", 
+          "rate": 0.264805496959, 
+          "type": "normal", 
+          "name": "IBM T. J. Watson Research Center"
+        }, 
+        {
+          "category": "affiliation", 
+          "rate": 1.0, 
+          "type": "normal", 
+          "name": "University of Illinois at Urbana Champaign"
+        }, 
+        {
+          "category": "affiliation", 
+          "rate": 0.178919521355, 
+          "type": "normal", 
+          "name": "State University of New York at Buffalo"
+        }, 
+        {
+          "category": "affiliation", 
+          "type": "normal", 
+          "name": "University of California at Santa Barbara"
+        }, 
+        {
+          "category": "affiliation", 
+          "type": "normal", 
+          "name": "University of Illinois at Chicago"
+        }, 
+        {
+          "category": "affiliation", 
+          "type": "normal", 
+          "name": "Zhejiang University"
+        }, 
+        {
+          "category": "keyword", 
+          "rate": 0.584348709791, 
+          "type": "normal", 
+          "name": "relational database"
+        }, 
+        {
+          "category": "keyword", 
+          "type": "normal", 
+          "name": "recursive query"
+        }, 
+        {
+          "category": "keyword", 
+          "type": "normal", 
+          "name": "association rules"
+        }, 
+        {
+          "category": "keyword", 
+          "rate": 1.0, 
+          "type": "normal", 
+          "name": "frequent pattern"
+        }, 
+        {
+          "category": "keyword", 
+          "rate": 0.937042571332, 
+          "type": "normal", 
+          "name": "sequential pattern"
+        }, 
+        {
+          "category": "keyword", 
+          "rate": 0.680745645705, 
+          "type": "normal", 
+          "name": "indexing"
+        }, 
+        {
+          "category": "keyword", 
+          "rate": 0.604858378909, 
+          "type": "normal", 
+          "name": "clustering"
+        }, 
+        {
+          "category": "keyword", 
+          "type": "normal", 
+          "name": "factorization model"
+        }, 
+        {
+          "category": "keyword", 
+          "type": "normal", 
+          "name": "community detection"
+        }, 
+        {
+          "category": "keyword", 
+          "type": "normal", 
+          "name": "social networks"
+        }, 
+        {
+          "category": "keyword", 
+          "type": "normal", 
+          "name": "heterogeneous information network"
+        }
+      ], 
+      "links": [
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 3
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 4
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 5
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 6
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 7
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 8
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 9
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 10
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 11
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 12
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 13
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 14
+        }, 
+        {
+          "source": 1, 
+          "type": "metalink", 
+          "target": 15
+        }, 
+        {
+          "source": 1, 
+          "type": "metalink", 
+          "target": 16
+        }, 
+        {
+          "source": 1, 
+          "type": "metalink", 
+          "target": 17
+        }, 
+        {
+          "source": 1, 
+          "type": "metalink", 
+          "target": 18
+        }, 
+        {
+          "source": 1, 
+          "type": "metalink", 
+          "target": 19
+        }, 
+        {
+          "source": 1, 
+          "type": "metalink", 
+          "target": 20
+        }, 
+        {
+          "source": 1, 
+          "type": "metalink", 
+          "target": 21
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 22
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 23
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 24
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 25
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 26
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 27
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 28
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 29
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 30
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 31
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 32
+        }, 
+        {
+          "source": 4, 
+          "rate": 35.0, 
+          "type": "inner", 
+          "target": 10
+        }, 
+        {
+          "source": 4, 
+          "rate": 35.0, 
+          "type": "inner", 
+          "target": 14
+        }, 
+        {
+          "source": 4, 
+          "rate": 40.0, 
+          "type": "inner", 
+          "target": 7
+        }, 
+        {
+          "source": 10, 
+          "rate": 2.0, 
+          "type": "inner", 
+          "target": 14
+        }, 
+        {
+          "source": 10, 
+          "rate": 18.0, 
+          "type": "inner", 
+          "target": 7
+        }, 
+        {
+          "source": 14, 
+          "rate": 2.0, 
+          "type": "inner", 
+          "target": 7
+        }, 
+        {
+          "source": 4, 
+          "rate": 268.0, 
+          "type": "outer", 
+          "target": 17
+        }, 
+        {
+          "source": 4, 
+          "rate": 2.0, 
+          "type": "outer", 
+          "target": 15
+        }, 
+        {
+          "source": 10, 
+          "rate": 38.0, 
+          "type": "outer", 
+          "target": 16
+        }, 
+        {
+          "source": 14, 
+          "rate": 27.0, 
+          "type": "outer", 
+          "target": 15
+        }, 
+        {
+          "source": 14, 
+          "rate": 21.0, 
+          "type": "outer", 
+          "target": 18
+        }, 
+        {
+          "source": 7, 
+          "rate": 59.0, 
+          "type": "outer", 
+          "target": 17
+        }, 
+        {
+          "source": 17, 
+          "rate": 13.0, 
+          "type": "outer", 
+          "target": 22
+        }, 
+        {
+          "source": 17, 
+          "rate": 27.0, 
+          "type": "outer", 
+          "target": 25
+        }, 
+        {
+          "source": 17, 
+          "rate": 27.0, 
+          "type": "outer", 
+          "target": 26
+        }, 
+        {
+          "source": 17, 
+          "rate": 5.0, 
+          "type": "outer", 
+          "target": 27
+        }, 
+        {
+          "source": 17, 
+          "rate": 12.0, 
+          "type": "outer", 
+          "target": 28
+        }, 
+        {
+          "source": 15, 
+          "rate": 3.0, 
+          "type": "outer", 
+          "target": 25
+        }, 
+        {
+          "source": 15, 
+          "rate": 2.0, 
+          "type": "outer", 
+          "target": 26
+        }, 
+        {
+          "source": 18, 
+          "rate": 3.0, 
+          "type": "outer", 
+          "target": 25
+        }, 
+        {
+          "source": 18, 
+          "rate": 2.0, 
+          "type": "outer", 
+          "target": 26
+        }, 
+        {
+          "source": 16, 
+          "rate": 1.0, 
+          "type": "outer", 
+          "target": 22
+        }, 
+        {
+          "source": 16, 
+          "rate": 2.0, 
+          "type": "outer", 
+          "target": 25
+        }, 
+        {
+          "source": 16, 
+          "rate": 1.0, 
+          "type": "outer", 
+          "target": 26
+        }, 
+        {
+          "source": 16, 
+          "rate": 1.0, 
+          "type": "outer", 
+          "target": 27
+        }, 
+        {
+          "source": 16, 
+          "rate": 3.0, 
+          "type": "outer", 
+          "target": 28
+        }
+      ]
+    }, 
+    "1998": {
+      "nodes": [
+        {
+          "category": "author", 
+          "type": "meta", 
+          "name": "__author__"
+        }, 
+        {
+          "category": "affiliation", 
+          "type": "meta", 
+          "name": "__affiliation__"
+        }, 
+        {
+          "category": "keyword", 
+          "type": "meta", 
+          "name": "__keyword__"
+        }, 
+        {
+          "category": "author", 
+          "rate": 0.501426536422, 
+          "type": "normal", 
+          "name": "Yongjian Fu"
+        }, 
+        {
+          "category": "author", 
+          "rate": 1.0, 
+          "type": "normal", 
+          "name": "Jiawei Han"
+        }, 
+        {
+          "category": "author", 
+          "rate": 0.472077475482, 
+          "type": "normal", 
+          "name": "Osmar Za\u00efane"
+        }, 
+        {
+          "category": "author", 
+          "type": "normal", 
+          "name": "Gao Jing"
+        }, 
+        {
+          "category": "author", 
+          "type": "normal", 
+          "name": "Xifeng Yan"
+        }, 
+        {
+          "category": "author", 
+          "type": "normal", 
+          "name": "He Xiaofei"
+        }, 
+        {
+          "category": "author", 
+          "type": "normal", 
+          "name": "Deng Cai"
+        }, 
+        {
+          "category": "author", 
+          "type": "normal", 
+          "name": "Philip Yu"
+        }, 
+        {
+          "category": "author", 
+          "type": "normal", 
+          "name": "Tianyi Wu"
+        }, 
+        {
+          "category": "author", 
+          "rate": 0.169030850946, 
+          "type": "normal", 
+          "name": "Nick Cercone"
+        }, 
+        {
+          "category": "author", 
+          "type": "normal", 
+          "name": "Yizhou Sun"
+        }, 
+        {
+          "category": "author", 
+          "type": "normal", 
+          "name": "Jian Pei"
+        }, 
+        {
+          "category": "affiliation", 
+          "rate": 1.0, 
+          "type": "normal", 
+          "name": "Simon Fraser University"
+        }, 
+        {
+          "category": "affiliation", 
+          "type": "normal", 
+          "name": "IBM T. J. Watson Research Center"
+        }, 
+        {
+          "category": "affiliation", 
+          "type": "normal", 
+          "name": "University of Illinois at Urbana Champaign"
+        }, 
+        {
+          "category": "affiliation", 
+          "type": "normal", 
+          "name": "State University of New York at Buffalo"
+        }, 
+        {
+          "category": "affiliation", 
+          "type": "normal", 
+          "name": "University of California at Santa Barbara"
+        }, 
+        {
+          "category": "affiliation", 
+          "type": "normal", 
+          "name": "University of Illinois at Chicago"
+        }, 
+        {
+          "category": "affiliation", 
+          "type": "normal", 
+          "name": "Zhejiang University"
+        }, 
+        {
+          "category": "keyword", 
+          "rate": 1.0, 
+          "type": "normal", 
+          "name": "relational database"
+        }, 
+        {
+          "category": "keyword", 
+          "rate": 0.308606699924, 
+          "type": "normal", 
+          "name": "recursive query"
+        }, 
+        {
+          "category": "keyword", 
+          "rate": 0.755928946018, 
+          "type": "normal", 
+          "name": "association rules"
+        }, 
+        {
+          "category": "keyword", 
+          "type": "normal", 
+          "name": "frequent pattern"
+        }, 
+        {
+          "category": "keyword", 
+          "type": "normal", 
+          "name": "sequential pattern"
+        }, 
+        {
+          "category": "keyword", 
+          "type": "normal", 
+          "name": "indexing"
+        }, 
+        {
+          "category": "keyword", 
+          "type": "normal", 
+          "name": "clustering"
+        }, 
+        {
+          "category": "keyword", 
+          "type": "normal", 
+          "name": "factorization model"
+        }, 
+        {
+          "category": "keyword", 
+          "type": "normal", 
+          "name": "community detection"
+        }, 
+        {
+          "category": "keyword", 
+          "type": "normal", 
+          "name": "social networks"
+        }, 
+        {
+          "category": "keyword", 
+          "type": "normal", 
+          "name": "heterogeneous information network"
+        }
+      ], 
+      "links": [
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 3
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 4
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 5
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 6
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 7
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 8
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 9
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 10
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 11
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 12
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 13
+        }, 
+        {
+          "source": 0, 
+          "type": "metalink", 
+          "target": 14
+        }, 
+        {
+          "source": 1, 
+          "type": "metalink", 
+          "target": 15
+        }, 
+        {
+          "source": 1, 
+          "type": "metalink", 
+          "target": 16
+        }, 
+        {
+          "source": 1, 
+          "type": "metalink", 
+          "target": 17
+        }, 
+        {
+          "source": 1, 
+          "type": "metalink", 
+          "target": 18
+        }, 
+        {
+          "source": 1, 
+          "type": "metalink", 
+          "target": 19
+        }, 
+        {
+          "source": 1, 
+          "type": "metalink", 
+          "target": 20
+        }, 
+        {
+          "source": 1, 
+          "type": "metalink", 
+          "target": 21
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 22
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 23
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 24
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 25
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 26
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 27
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 28
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 29
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 30
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 31
+        }, 
+        {
+          "source": 2, 
+          "type": "metalink", 
+          "target": 32
+        }, 
+        {
+          "source": 4, 
+          "rate": 9.0, 
+          "type": "inner", 
+          "target": 12
+        }, 
+        {
+          "source": 4, 
+          "rate": 17.0, 
+          "type": "inner", 
+          "target": 3
+        }, 
+        {
+          "source": 4, 
+          "rate": 11.0, 
+          "type": "inner", 
+          "target": 5
+        }, 
+        {
+          "source": 12, 
+          "rate": 2.0, 
+          "type": "inner", 
+          "target": 3
+        }, 
+        {
+          "source": 12, 
+          "rate": 0.0, 
+          "type": "inner", 
+          "target": 5
+        }, 
+        {
+          "source": 3, 
+          "rate": 2.0, 
+          "type": "inner", 
+          "target": 5
+        }, 
+        {
+          "source": 4, 
+          "rate": 175.0, 
+          "type": "outer", 
+          "target": 15
+        }, 
+        {
+          "source": 12, 
+          "rate": 5.0, 
+          "type": "outer", 
+          "target": 15
+        }, 
+        {
+          "source": 3, 
+          "rate": 44.0, 
+          "type": "outer", 
+          "target": 15
+        }, 
+        {
+          "source": 5, 
+          "rate": 39.0, 
+          "type": "outer", 
+          "target": 15
+        }, 
+        {
+          "source": 15, 
+          "rate": 50.0, 
+          "type": "outer", 
+          "target": 22
+        }, 
+        {
+          "source": 15, 
+          "rate": 6.0, 
+          "type": "outer", 
+          "target": 23
+        }, 
+        {
+          "source": 15, 
+          "rate": 36.0, 
+          "type": "outer", 
+          "target": 24
+        }
+      ]
+    }
+  }, 
+  "year_description": [
+    1998, 
+    2005, 
+    2012
+  ]
+}
