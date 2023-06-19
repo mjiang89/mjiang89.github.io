@@ -1,0 +1,650 @@
+[
+    {
+        "id": 0,
+        "tm": "00:00:08,640",
+        "sent": "The term 'augmented reality' was first coined in 1992 by thomas caudell and david mizell.",
+        "quiz": "1) Who coined the term 'augmented reality' in 1992?\nA) John Smith\nB) Marc Johnson\nC) Thomas Caudell and David Mizell (Correct Answer)\n\n2) In what year was the term 'augmented reality' first used?\nA) 1990\nB) 1992 (Correct Answer)\nC) 1994\n\n3) Who were the people who first used the term 'augmented reality'?\nA) John Miller and Anne Robinson\nB) Thomas Caudell and David Mizell (Correct Answer)\nC) William Turner and Sarah Brown"
+    },
+    {
+        "id": 1,
+        "tm": "00:00:14,880",
+        "sent": "Two engineers worka on a simple see-through headset that aided airplane engineers in complex wiring schematics.",
+        "quiz": "1. What is the purpose of the simple see-through headset?\nA) To aid airplane engineers in complex wiring schematics\nB) To help airplane pilots navigate through complex flight paths\nC) To display weather patterns for airplane engineers\n\nAnswer: A) To aid airplane engineers in complex wiring schematics\n\n2. Who invented the see-through headset?\nA) Airplane engineers \nB) Two mathematicians \nC) Two engineers\n\nAnswer: C) Two engineers\n\n3. What is the benefit of using the see-through headset for airplane engineers?\nA) Helps with airplane navigation \nB) Enables engineers to easily see complex wiring schematics \nC) Displays weather patterns for the engineers\n\nAnswer: B) Enables engineers to easily see complex wiring schematics"
+    },
+    {
+        "id": 2,
+        "tm": "00:00:28,560",
+        "sent": "According to their documentation, the goal of augmented reality commonly abbreviated as AR was to enable cost reductions and efficiency improvements in many of the human involved operations in aircraft manufacturing.",
+        "quiz": "1. What is the goal of augmented reality commonly abbreviated as AR?\nA) To enable cost reductions and efficiency improvements in many of the human involved operations in aircraft manufacturing.\nB) To maximize profits for aircraft manufacturers.\nC) To complicate operations in aircraft manufacturing.\n\nAnswer: A) To enable cost reductions and efficiency improvements in many of the human involved operations in aircraft manufacturing.\n\n2. What is the full form of AR?\nA) Augmented Reality\nB) Audio Reality\nC) Automative Reality\n\nAnswer: A) Augmented Reality\n\n3. Which industry is most likely to benefit from the use of augmented reality?\nA) Aircraft manufacturing\nB) Textile industry\nC) Agriculture\n\nAnswer: A) Aircraft manufacturing"
+    },
+    {
+        "id": 3,
+        "tm": "00:00:48,160",
+        "sent": "We've been\u00a0dreaming about the potential of AR for a long time and the history of the medium stretches back before we even had a term for it.",
+        "quiz": "1. When did people begin dreaming about the potential of AR?\nA) Recently\nB) A long time ago\nC) Last year\nAnswer: B) A long time ago\n\n2. Does AR have a long history?\nA) No, it's a new technology\nB) Yes, it stretches back before we even had a term for it\nC) Only a few years' history\nAnswer: B) Yes, it stretches back before we even had a term for it\n\n3. What is the term for AR?\nA) Augmented Reality\nB) Digital Reality\nC) Mixed Reality\nAnswer: A) Augmented Reality"
+    },
+    {
+        "id": 4,
+        "tm": "00:00:57,920",
+        "sent": "In fact AR shares a history with its technological cousin virtual reality both virtual reality or VR and AR share a common ancestor the sword of damocles built in 1968.",
+        "quiz": "1) What is the common ancestor of both virtual reality and augmented reality?\na) Oculus Quest\nb) Sword of Damocles\nc) Google Glass\nAnswer: b) Sword of Damocles\n\n2) What year was the Sword of Damocles built?\na) 1968\nb) 1978\nc) 1988\nAnswer: a) 1968\n\n3) Which of the following is NOT a technological cousin of AR?\na) Virtual Reality (VR)\nb) Artificial Intelligence (AI)\nc) Mixed Reality (MR)\nAnswer: b) Artificial Intelligence (AI)"
+    },
+    {
+        "id": 5,
+        "tm": "00:01:10,960",
+        "sent": "The sword of damocles was created by computer scientist and researcher ivan sutherland his goal was to create the ultimate display a digital interface capable of transforming the physical world.",
+        "quiz": "1. Who created the Sword of Damocles?\na) Leonardo da Vinci\nb) Isaac Newton\nc) Ivan Sutherland\nAnswer: c) Ivan Sutherland\n\n2. What was Ivan Sutherland's goal in creating the Sword of Damocles?\na) To create the ultimate weapon\nb) To create the ultimate display\nc) To create the ultimate transportation device\nAnswer: b) To create the ultimate display\n\n3. What was the Sword of Damocles designed to do?\na) Transform the digital world\nb) Transform the physical world\nc) Transform the spiritual world\nAnswer: b) Transform the physical world"
+    },
+    {
+        "id": 6,
+        "tm": "00:01:17,680",
+        "sent": "The prototype was so heavy.",
+        "quiz": "1. What was heavy?\na) The student's bag\nb) The prototype\nc) The textbook\nCorrect answer: b) The prototype\n\n2. Who said the prototype was heavy?\na) The teacher\nb) The student\nc) The principal\nCorrect answer: a) The teacher\n\n3. What does \"prototype\" mean?\na) The final product\nb) A design for a product\nc) The packaging of a product\nCorrect answer: b) A design for a product"
+    },
+    {
+        "id": 7,
+        "tm": "00:01:23,920",
+        "sent": "It needed to be suspended from the ceiling by a mechanical arm for all that hardware.",
+        "quiz": "1) What was needed to suspend the hardware from the ceiling?\na) A hydraulic lift\nb) A mechanical arm (Correct answer)\nc) A ladder\nd) None of the above\n\n2) Where was the hardware suspended?\na) On the ground\nb) On the wall\nc) From the ceiling (Correct answer)\nd) Underneath the floor\n\n3) How did the suspension of the hardware make it easier to use?\na) It made it easier to transport\nb) It made it easier to store\nc) It made it more accessible (Correct answer)\nd) It made it more difficult to use"
+    },
+    {
+        "id": 8,
+        "tm": "00:01:23,920",
+        "sent": "It could only display basic wireframe rooms that were barely explorable.",
+        "quiz": "1) What type of display did the software have?\na) Full-colour\nb) Wireframe\nc) High-definition\nCorrect answer: b) Wireframe\n\n2) How easily could the explored rooms be navigated?\na) Very easily\nb) Somewhat easily\nc) Not easily\nCorrect answer: c) Not easily\n\n3) What kind of rooms could the software display?\na) Intricate and detailed\nb) Basic wireframe\nc) Photorealistic\nCorrect answer: b) Basic wireframe"
+    },
+    {
+        "id": 9,
+        "tm": "00:01:32,320",
+        "sent": "But it was one of humankind's first experiments into replacing your real world with a digital reality since 1992.",
+        "quiz": "1. When did humankind's first experiment into replacing the real world with a digital reality take place?\na. 1892\nb. 1992\nc. 2002\nAnswer: b. 1992\n\n2. What is the term used to describe replacing the real world with a digital reality?\na. virtualization\nb. augmentation\nc. digitization\nAnswer: a. virtualization\n\n3. Which of the following was one of the early experiments in virtualizing the real world?\na. The Matrix\nb. Pokemon Go\nc. Minecraft\nAnswer: b. Pokemon Go"
+    },
+    {
+        "id": 10,
+        "tm": "00:01:37,360",
+        "sent": "Many people have sought to fulfill the vision that sutherland wrote about over half a century ago.",
+        "quiz": "1) Who wrote about the vision that people have been seeking to fulfill for over half a century?\na) Peter Sutherland\nb) Thomas Edison\nc) Alexander Graham Bell\nAnswer: a) Peter Sutherland\n\n2) How long has it been since Sutherland wrote about the vision?\na) 10 years\nb) 25 years\nc) Over half a century\nAnswer: c) Over half a century\n\n3) What is the vision that people have been trying to fulfill?\na) Eliminating poverty\nb) Creating a sustainable environment\nc) both a) and b)\nAnswer: c) both a) and b)"
+    },
+    {
+        "id": 11,
+        "tm": "00:01:45,520",
+        "sent": "The ultimate display would be a room within which the computer can control the existence of matter.",
+        "quiz": "1) What is the ultimate display according to the teacher?\nA) A projector\nB) A video game console\nC) A room where the computer can control matter. (Answer: C)\n\n2) Who controls the existence of matter in the ultimate display?\nA) Humans\nB) The computer (Answer: B)\nC) Aliens\n\n3) What could be a possible use of the ultimate display?\nA) Playing games\nB) Conducting scientific experiments\nC) Both A and B (Answer: C)"
+    },
+    {
+        "id": 12,
+        "tm": "00:01:59,520",
+        "sent": "A chair displayed in such a room would be good enough to sit in handcuffs displayed in such a room would be confining and a bullet displayed in such a room would be fatal with appropriate programming.",
+        "quiz": "1) Which of the following items would be recommended to sit on in a display room?\na) A broken stool \nb) A rocking chair \nc) A chair\nAnswer: c) A chair\n\n2) Which of the following items would NOT be suitable for display in a confining room? \na) A straitjacket \nb) A rubber ball \nc) Handcuffs \nAnswer: b) A rubber ball\n\n3) Which of the following objects displayed in a display room, given the appropriate programming, could be fatal?\na) A paper clip \nb) A rubber duck \nc) A bullet\nAnswer: c) A bullet"
+    },
+    {
+        "id": 13,
+        "tm": "00:02:07,440",
+        "sent": "Such a display could literally be the wonderland into which alice walked on the mobile ar side again.",
+        "quiz": "1. What could be a wonderland on mobile AR?\na. A classroom\nb. A park\nc. A display\nAnswer: c. A display\n\n2. Who walked into a wonderland on mobile AR?\na. The teacher\nb. Alice\nc. The student\nAnswer: b. Alice\n\n3. What is the possibility of experiencing a wonderland on mobile AR?\na. Impossible\nb. Possible\nc. Uncertain\nAnswer: b. Possible"
+    },
+    {
+        "id": 14,
+        "tm": "00:02:20,240",
+        "sent": "This is how most of the world will experience augmented reality for the first time.",
+        "quiz": "Sure, here are three multiple-choice quiz questions:\n\n1. How will most of the world experience augmented reality for the first time?\na) Through smartphones and tablets\nb) Through smart glasses and headsets\nc) Through smart watches\n\nAnswer: a) Through smartphones and tablets\n\n2. Which technology enables augmented reality to work?\na) Artificial intelligence\nb) Virtual reality\nc) Computer vision\n\nAnswer: c) Computer vision\n\n3. What is the difference between augmented reality and virtual reality?\na) Augmented reality adds digital content to the real world, while virtual reality creates an entirely digital world\nb) Augmented reality creates an entirely digital world, while virtual reality adds digital content to the real world\nc) Augmented reality and virtual reality are the same thing\n\nAnswer: a) Augmented reality adds digital content to the real world, while virtual reality creates an entirely digital world"
+    },
+    {
+        "id": 15,
+        "tm": "00:02:20,240",
+        "sent": "In fact the rapid development of smartphones has actually contributed to the growth of the vr and ar industries.",
+        "quiz": "1. What is the main subject of the statement?\na) Virtual Reality\nb) Augmented Reality\nc) Smartphones\nd) Education\n\nCorrect answer: c) Smartphones\n\n2. How have smartphones contributed to the growth of the VR and AR industries?\na) They haven't contributed at all\nb) They have slowed down the growth of the industries\nc) They have contributed to the growth of the industries\nd) They have destroyed the industries\n\nCorrect answer: c) They have contributed to the growth of the industries\n\n3. Which industry has benefitted from the rapid development of smartphones?\na) Construction\nb) Food and Beverage\nc) Retail\nd) VR and AR\n\nCorrect answer: d) VR and AR"
+    },
+    {
+        "id": 16,
+        "tm": "00:02:28,000",
+        "sent": "That's because the same components that make smartphones work gyroscopes.",
+        "quiz": "1) What makes smartphones work? \na) Gyroscopes \nb) Cameras \nc) Speakers \nAnswer: a) Gyroscopes\n\n2) What are the components that make smartphones work? \na) Cameras \nb) Speakers \nc) Gyroscopes \nAnswer: c) Gyroscopes\n\n3) Which of the following is not a component of a smartphone? \na) Gyroscope \nb) Processor \nc) Refrigerator \nAnswer: c) Refrigerator"
+    },
+    {
+        "id": 17,
+        "tm": "00:02:34,480",
+        "sent": "Accelerometers miniaturized high-resolution displays are also required for AR and VR headsets.",
+        "quiz": "1. What kind of technology is required for AR and VR headsets?\nA) Accelerometers \nB) GPS \nC) Radio communication \nD) None of the above \nAnswer: A) Accelerometers\n\n2. Which of the following is required for high-resolution displays of AR and VR headsets?\nA) Accelerometers \nB) Batteries \nC) Microphones \nD) None of the above \nAnswer: D) None of the above \n\n3. Why are miniaturized components necessary for AR and VR headsets?\nA) To reduce the size and weight of the headsets \nB) To increase the cost of the headsets \nC) To make them less user-friendly \nD) None of the above \nAnswer: A) To reduce the size and weight of the headsets."
+    },
+    {
+        "id": 18,
+        "tm": "00:02:45,840",
+        "sent": "The high demand for smartphones has driven the mass production of these components throughout the past 10 years, resulting in greater hardware innovations and decreases in costs.",
+        "quiz": "1. What is the reason for the mass production of smartphone components?\n\na) Decreased demand for smartphones\nb) Increased demand for smartphones\nc) Decreased hardware innovations\nd) Increased costs\n\nCorrect answer: b) Increased demand for smartphones\n\n2. What has been the result of mass production of smartphone components?\n\na) Lesser hardware innovations\nb) Increased production costs\nc) Decreased production of smartphone components\nd) Greater hardware innovations and decreases in costs\n\nCorrect answer: d) Greater hardware innovations and decreases in costs\n\n3. How long has the high demand for smartphones driven the mass production of components?\n\na) 5 years\nb) 10 years\nc) 15 years\nd) 20 years\n\nCorrect answer: b) 10 years"
+    },
+    {
+        "id": 19,
+        "tm": "00:02:54,000",
+        "sent": "In the most basic sense AR is created using the front and rear facing cameras on your phone.",
+        "quiz": "1) What cameras are used to create AR?\na) Main camera\nb) Rear-facing camera\nc) Both front and rear-facing cameras\n\nAnswer: c) Both front and rear-facing cameras\n\n2) Can AR be created without a camera on the device?\na) Yes\nb) No\n\nAnswer: b) No\n\n3) Which of these is NOT an AR app that makes use of a phone camera?\na) Pokemon Go\nb) Snapchat\nc) Facebook\n\nAnswer: c) Facebook"
+    },
+    {
+        "id": 20,
+        "tm": "00:03:00,160",
+        "sent": "You hold it up and your screen is able to display digital objects and information integrated within your real world.",
+        "quiz": "1. What is the name of the technology that allows you to display digital objects in your real world?\na. Virtual Reality\nb. Augmented Reality\nc. Artificial Intelligence\nAnswer: b. Augmented Reality\n\n2. How does Augmented Reality work?\na. It creates a completely new virtual world.\nb. It integrates digital objects and information within your real world.\nc. It enhances your physical abilities.\nAnswer: b. It integrates digital objects and information within your real world.\n\n3. What benefits can Augmented Reality offer?\na. It can provide a more immersive and engaging learning experience.\nb. It can increase students' attention and motivation.\nc. It can make learning more complicated and challenging.\nAnswer: a. It can provide a more immersive and engaging learning experience, and b. It can increase students' attention and motivation."
+    },
+    {
+        "id": 21,
+        "tm": "00:03:07,840",
+        "sent": "Your phone can now act like a portal to new worlds experiences and information.",
+        "quiz": "1. What can a phone act like according to the statement?\na) A book\nb) A portal\nc) A game\n\nAnswer: b) A portal\n\n2. What can you access through your phone acting as a portal?\na) Only calls and messages\nb) New worlds, experiences, and information\nc) Only photos and videos\n\nAnswer: b) New worlds, experiences, and information\n\n3. Who can benefit from utilizing their phone's portal function?\na) Only students\nb) Only teachers\nc) Anyone with a smartphone\n\nAnswer: c) Anyone with a smartphone"
+    },
+    {
+        "id": 22,
+        "tm": "00:03:17,360",
+        "sent": "Google's first foray into the ar space was google glass a head mounted display that took the form of smart glasses.",
+        "quiz": "1. What was Google's first product in the AR space?\na) Google Glass\nb) Google Cardboard\nc) Google Daydream\nCorrect answer: a) Google Glass\n\n2. In what form did Google Glass come?\na) A smartwatch\nb) A head-mounted display\nc) A virtual reality headset\nCorrect answer: b) A head-mounted display\n\n3. Which of the following best describes Google Glass?\na) A smart car\nb) A smart speaker\nc) Smart glasses\nCorrect answer: c) Smart glasses"
+    },
+    {
+        "id": 23,
+        "tm": "00:03:23,760",
+        "sent": "It is still used\u00a0today in a variety of enterprise applications after glass.",
+        "quiz": "1) What material followed glass in the development of enterprise applications?\na) Metal\nb) Plastic\nc) Carbon fiber\nAnswer: b) Plastic\n\n2) Is glass still commonly used in enterprise applications?\na) Yes\nb) No\nAnswer: b) No\n\n3) Which is the most common alternative to glass in enterprise applications today?\na) Metal\nb) Plastic\nc) Carbon fiber\nAnswer: b) Plastic"
+    },
+    {
+        "id": 24,
+        "tm": "00:03:32,240",
+        "sent": "Google's next ar play was project\u00a0tango.",
+        "quiz": "1) What is Google's next AR project?\na) Project Tango\nb) Project X\nc) Project Y\nCorrect Answer: a) Project Tango\n\n2) Who developed Project Tango?\na) Apple\nb) Microsoft\nc) Google\nCorrect Answer: c) Google\n\n3) What is AR?\na) Augmented Reality\nb) Artificial Reality\nc) Automatic Reality\nCorrect Answer: a) Augmented Reality"
+    },
+    {
+        "id": 25,
+        "tm": "00:03:38,960",
+        "sent": "Tango was a combination of custom software and additional hardware for unique depth sensing smartphones.",
+        "quiz": "1) What is Tango?\na) A type of dance\nb) Custom software and additional hardware for unique depth sensing smartphones\nc) A popular video game\n\nAnswer: b) Custom software and additional hardware for unique depth sensing smartphones\n\n2) What is the primary function of Tango?\na) To enable smartphones to sense depth and distance\nb) To provide facial recognition technology\nc) To enhance social media apps\n\nAnswer: a) To enable smartphones to sense depth and distance\n\n3) What is the unique feature of smartphones with Tango technology?\na) They have significantly longer battery life\nb) They can be folded in half to fit in a pocket\nc) They can create 3D maps of their surroundings in real-time\n\nAnswer: c) They can create 3D maps of their surroundings in real-time"
+    },
+    {
+        "id": 26,
+        "tm": "00:03:44,560",
+        "sent": "Tango enabled phones could track the world around them and as a result.",
+        "quiz": "Sure, here are three multi-choice quiz questions based on what I said:\n\n1. What can Tango enabled phones do?\na) Make phone calls\nb) Take pictures in black and white\nc) Track the world around them\n\nAnswer: c) Track the world around them\n\n2. How do Tango enabled phones track the world around them?\na) By sending out lasers\nb) Through GPS tracking\nc) With special cameras and sensors\n\nAnswer: c) With special cameras and sensors\n\n3. What is the result of Tango enabled phones tracking the world around them?\na) They can make better phone calls\nb) They can take better pictures\nc) They can create 3D maps of the environment\n\nAnswer: c) They can create 3D maps of the environment"
+    },
+    {
+        "id": 27,
+        "tm": "00:03:52,720",
+        "sent": "We're capable of rendering unique digital overlays onto the real world in 2017.",
+        "quiz": "1) In what year was it possible to render unique digital overlays onto the real world?\na) 2016\nb) 2017\nc) 2018\nAnswer: b) 2017\n\n2) What can be done with the technology of rendering digital overlays onto the real world?\na) Create virtual reality experiences\nb) Enhance real-world experiences with digital elements\nc) Both a and b\nAnswer: c) Both a and b\n\n3) What is the term for the technology of rendering digital overlays onto the real world?\na) Augmented Reality (AR)\nb) Virtual Reality (VR)\nc) Mixed Reality (MR)\nAnswer: a) Augmented Reality (AR)"
+    },
+    {
+        "id": 28,
+        "tm": "00:03:52,720",
+        "sent": "Google announced AR core an evolution of the tango platform.",
+        "quiz": "1. What did Google announce?\nA) A new smartphone\nB) A new augmented reality platform\nC) A new virtual reality platform\nAnswer: B\n\n2. What is AR core?\nA) A new game\nB) A new operating system\nC) An evolution of the Tango platform\nAnswer: C\n\n3. What is Tango?\nA) A style of music\nB) A popular dance\nC) A previous augmented reality platform created by Google\nAnswer: C"
+    },
+    {
+        "id": 29,
+        "tm": "00:04:01,360",
+        "sent": "AR core is an application programming interface or api for building and developing mobile AR.",
+        "quiz": "1. What is AR Core?\na) A mobile game\nb) A programming language\nc) An API for developing mobile AR\nCorrect answer: c) An API for developing mobile AR\n\n2. What does AR Core stand for?\na) Augmented Reality Core\nb) Android Reality Core\nc) Application Reality Core\nCorrect answer: a) Augmented Reality Core\n\n3. What is the main use of AR Core?\na) Building and developing mobile AR\nb) Building and developing websites\nc) Designing mobile apps\nCorrect answer: a) Building and developing mobile AR"
+    },
+    {
+        "id": 30,
+        "tm": "00:04:17,360",
+        "sent": "Experience by the end of this course you'll have familiarity with how augmented reality works as well as basic workflows in ar core.",
+        "quiz": "1. What is the main objective of the augmented reality course?\nA) To learn about virtual reality \nB) To gain familiarity with how augmented reality works \nC) To learn about robotics\nAnswer: B) To gain familiarity with how augmented reality works \n\n2. What will students learn about in this augmented reality course?\nA) Basic workflows in ar code \nB) How to code in Python \nC) How to bake a cake\nAnswer: A) Basic workflows in ar code\n\n3. What are some of the career paths students can pursue after taking this course?\nA) Chef \nB) Augmented reality developer \nC) Salesperson\nAnswer: B) Augmented reality developer"
+    },
+    {
+        "id": 31,
+        "tm": "00:04:17,360",
+        "sent": "It's a young medium augmented reality.",
+        "quiz": "1. What is the status of augmented reality technology?\nA) Ancient \nB) Modern \nC) Young \nD) Obsolete \n\nAnswer: C) Young \n\n2. Which field utilizes augmented reality technology to provide an enhanced user experience?\nA) Journalism \nB) Education \nC) Agriculture \nD) All of the above \n\nAnswer: D) All of the above \n\n3. Augmented reality technology is used to:\nA) Transform reality into a virtual world \nB) Create alternative realities \nC) Augment real-world experiences with virtual elements \nD) None of the above \n\nAnswer: C) Augment real-world experiences with virtual elements"
+    },
+    {
+        "id": 32,
+        "tm": "00:04:22,320",
+        "sent": "It is already being used in a variety of different capacities.",
+        "quiz": "Sure, here are three multiple-choice questions based on my previous statement:\n\n1. Where is the technology being used?\na) Only in universities \nb) In a variety of different capacities \nc) Solely in the entertainment industry\nCorrect answer: b\n\n2. Is the technology being used in a limited scope?\na) Yes \nb) No \nc) Only in the healthcare sector\nCorrect answer: b\n\n3. In which sectors is the technology NOT being utilized?\na) Entertainment industry only \nb) Education sector only\nc) None, it is being used in various sectors. \nCorrect answer: a"
+    },
+    {
+        "id": 33,
+        "tm": "00:04:22,320",
+        "sent": "In this section we'll look at a few of the most popular.",
+        "quiz": "Sure, here are three multi-choice quiz questions related to the statement \"In this section we'll look at a few of the most popular.\"\n\n1. What will we be looking at in this section?\n A) The least popular options\n B) A few of the most popular options \n C) Unrelated topics\nCorrect answer: B) A few of the most popular options\n\n2. How many options will we be examining in this section?\nA) Only one option\nB) A few of the most popular options\nC) All of the options available\nCorrect answer: B) A few of the most popular options\n\n3. What is the significance of this section?\nA) It's not important\nB) It's slightly important\nC) It's important because the options discussed are popular\nCorrect answer: C) It's important because the options discussed are popular"
+    },
+    {
+        "id": 34,
+        "tm": "00:04:28,160",
+        "sent": "Let's begin with shopping because it integrates seamlessly with the real world.",
+        "quiz": "Sure! Here are three multiple-choice quiz questions based on what I said earlier:\n\n1. What is one reason why shopping is a good way to integrate learning with the real world?\na) It is a completely virtual experience\nb) It is an activity that people do everyday\nc) It is too complicated to teach to students\n\nCorrect Answer: b) It is an activity that people do everyday\n\n2. How can shopping be used as a teaching tool for students?\na) By teaching them how to make the perfect shopping list\nb) By teaching them how to avoid stores altogether\nc) By teaching them essential life skills, like budgeting and comparison shopping\n\nCorrect Answer: c) By teaching them essential life skills, like budgeting and comparison shopping\n\n3. What is the potential benefit of using shopping as a teaching tool?\na) It makes it harder for students to develop practical skills\nb) It provides an opportunity to learn outside of the classroom\nc) It creates a disconnect between the curriculum and the real world\n\nCorrect Answer: b) It provides an opportunity to learn outside of the classroom"
+    },
+    {
+        "id": 35,
+        "tm": "00:04:40,160",
+        "sent": "AR has proven to be a powerful medium for shopping and retail air can let you try on a watch a shirt or a new shade of makeup.",
+        "quiz": "1. What has AR proven to be a powerful medium for in the retail industry?\na) displaying ads on billboards\nb) creating animated movies\nc) trying on products before purchasing\n\nAnswer: c) trying on products before purchasing\n\n2. Which of the following can you try on with the help of AR technology?\na) phone cases\nb) jewelry\nc) makeup\n\nAnswer: c) makeup\n\n3. What can AR technology let you do when shopping for clothes?\na) try on clothes virtually before buying them\nb) directly buy clothes online without seeing them\nc) match your clothes with your friend's clothes\n\nAnswer: a) try on clothes virtually before buying them"
+    },
+    {
+        "id": 36,
+        "tm": "00:04:46,000",
+        "sent": "All without ever leaving your home but the top use case for AR shopping right now is furniture according to a few major studies.",
+        "quiz": "1. What is the top use case for AR shopping currently?\nA) Clothing\nB) Furniture\nC) Electronics\nCorrect Answer: B) Furniture\n\n2. What advantage does AR shopping offer to consumers?\nA) They can physically touch and try on the products\nB) They can visualize how the product would look in their environment\nC) They can get better discounts on products\nCorrect Answer: B) They can visualize how the product would look in their environment\n\n3. Why is AR shopping gaining popularity?\nA) It reduces shipping costs for businesses\nB) It saves time for consumers who don't have to visit physical stores\nC) It allows businesses to charge higher prices for their products\nCorrect Answer: B) It saves time for consumers who don't have to visit physical stores"
+    },
+    {
+        "id": 37,
+        "tm": "00:04:51,680",
+        "sent": "Furniture is the number one thing people want to shop for with AR.",
+        "quiz": "1. What is the number one thing people want to shop for with AR?\na) Clothing\nb) Books\nc) Furniture\nAnswer: c) Furniture\n\n2. What tool can be used for AR shopping?\na) Google Maps\nb) Snapchat\nc) WhatsApp\nAnswer: b) Snapchat\n\n3. Which of the following is a benefit of using AR for shopping?\na) Limited product selection\nb) Inability to visualize products in real-life settings\nc) Ability to visualize products in real-life settings\nAnswer: c) Ability to visualize products in real-life settings"
+    },
+    {
+        "id": 38,
+        "tm": "00:04:51,680",
+        "sent": "It's tough to know if a thousand dollar couch will be the right one for you.",
+        "quiz": "1. What is the main concern with buying a thousand dollar couch?\na) It might be too small for your space\nb) It might not match your decor\nc) It might not be the right fit for you\n\nCorrect answer: c) It might not be the right fit for you\n\n2. What is one factor to consider when choosing a couch?\na) The color of the fabric\nb) The shape of the legs\nc) The depth of the seat\n\nCorrect answer: c) The depth of the seat\n\n3. What is the best way to ensure a couch is a good fit?\na) Measure the dimensions of the room\nb) Sit on it and test it out\nc) Ask a friend for their opinion\n\nCorrect answer: b) Sit on it and test it out"
+    },
+    {
+        "id": 39,
+        "tm": "00:05:08,560",
+        "sent": "If you aren't sure it'll fit right in your living room or match your curtains, AR's unique ability to work within the world around us makes it easy to integrate digital versions of furniture right inside your house unlike 2d images which force you to imagine the object in your home.",
+        "quiz": "1. How does AR differ from 2D images when it comes to visualizing furniture in your home?\na) AR images make it easy to integrate furniture within your home\nb) Both AR and 2D images are equally effective in visualizing furniture\n\nAnswer: a) AR images make it easy to integrate furniture within your home\n\n2. What is the unique ability of AR when it comes to integrating furniture in your home?\na) It allows you to see furniture in different colors and textures\nb) It has the ability to work within the world around us\n\nAnswer: b) It has the ability to work within the world around us\n\n3. What are the limitations of 2D images when it comes to visualizing furniture in your home?\na) They are unable to show furniture in different colors and textures\nb) They require the viewer to imagine the object in their home\n\nAnswer: b) They require the viewer to imagine the object in their home"
+    },
+    {
+        "id": 40,
+        "tm": "00:05:15,120",
+        "sent": "AR makes full use of 3d space letting you see the furniture at the exact size and dimensions of real life.",
+        "quiz": "1. What does AR make use of?\na) 2D space \nb) 3D space \nc) None of the above\nAnswer: b) 3D space \n\n2. Does AR allow you to see furniture in real life size?\na) Yes \nb) No \nc) Maybe\nAnswer: a) Yes \n\n3. Can AR show the exact dimensions of a piece of furniture?\na) Yes \nb) No \nc) It depends \nAnswer: a) Yes"
+    },
+    {
+        "id": 41,
+        "tm": "00:05:25,440",
+        "sent": "Major furniture retailers like ikea and house have put ideas like this into practice with the option to purchase included directly within the application.",
+        "quiz": "1. What do major furniture retailers like IKEA and House offer within their applications?\na) Recipes\nb) Travel packages\nc) Purchase options within the app\nCorrect answer: c) Purchase options within the app\n\n2. Which of the following companies have implemented purchase options within their app?\na) McDonald's\nb) Target\nc) IKEA\nCorrect answer: c) IKEA\n\n3. What benefit do customers get with the option to purchase included within the app?\na) Discounts on future purchases\nb) Avoidance of shipping fees\nc) Convenience of purchasing directly within the app\nCorrect answer: c) Convenience of purchasing directly within the app"
+    },
+    {
+        "id": 42,
+        "tm": "00:05:31,200",
+        "sent": "When it comes to business, AR core enables experiences for many different kinds of professional organizations.",
+        "quiz": "1) What is AR core?\nA) A video game\nB) A smartphone feature\nC) A social media platform\nAnswer: B) A smartphone feature\n\n2) What kind of experiences can AR core enable for professional organizations?\nA) Virtual Reality experiences\nB) Augmented Reality experiences\nC) Online chat experiences\nAnswer: B) Augmented Reality experiences\n\n3) What benefit does AR core offer to businesses?\nA) It makes them more money\nB) It improves employee productivity\nC) It helps them stand out in the market\nAnswer: C) It helps them stand out in the market."
+    },
+    {
+        "id": 43,
+        "tm": "00:05:37,760",
+        "sent": "Warehouses can build\u00a0helpful navigations and instructions for workers.",
+        "quiz": "1. What kind of helpful navigations and instructions can warehouses build?\nA) Visual prompts only\nB) Auditory prompts only\nC) Both visual and auditory prompts - (Correct Answer)\n\n2. How can helpful navigations and instructions benefit workers in a warehouse?\nA) They do not benefit workers\nB) They can improve efficiency and reduce errors - (Correct Answer)\nC) They can be overwhelming for workers\n\n3. Who can benefit from helpful navigations and instructions in a warehouse?\nA) Customers\nB) Management\nC) Workers - (Correct Answer)"
+    },
+    {
+        "id": 44,
+        "tm": "00:05:43,920",
+        "sent": "Architecture firms can display designs in 3d space.",
+        "quiz": "1. What type of firms can display designs in 3d space?\na) Accounting firms\nb) Law firms\nc) Architecture firms\nCorrect answer: c) Architecture firms\n\n2. In which dimension can architecture firms display their designs?\na) 1D\nb) 2D\nc) 3D\nCorrect answer: c) 3D\n\n3. Why do architecture firms display their designs in 3D space?\na) To confuse their clients\nb) To assess their own work\nc) To give a better understanding of their designs to their clients\nCorrect answer: c) To give a better understanding of their designs to their clients."
+    },
+    {
+        "id": 45,
+        "tm": "00:05:50,480",
+        "sent": "Retailers can give customers novel ways to engage with products and advertisers can reach consumers with immersive campaigns and this is just the tip of the iceberg.",
+        "quiz": "1. What can retailers do to engage customers in novel ways?\na. Ignore customers\nb. Give them a new way to engage with the products\nc. Decrease the quality of the product\n\nCorrect answer: b. Give them a new way to engage with the products.\n\n2. Who can reach consumers with immersive campaigns?\na. Teachers\nb. Advertisers\nc. Farmers\n\nCorrect answer: b. Advertisers.\n\n3. What can immersive campaigns do?\na. Reach consumers\nb. Decrease consumer engagement\nc. Increase commodity prices\n\nCorrect answer: a. Reach consumers."
+    },
+    {
+        "id": 46,
+        "tm": "00:06:03,840",
+        "sent": "The power of ar is that it lets users build relationships with brands inside their physical spaces rather than trapped behind screens.",
+        "quiz": "Question 1: What is the advantage of using AR for building relationships with brands?\n\na) It traps users behind screens\nb) It allows users to build relationships with brands inside their physical spaces\nc) It is less interactive than traditional media\n\nCorrect answer: b\n\nQuestion 2: What separates AR from traditional media in terms of building relationships with brands?\n\na) It allows users to directly purchase products\nb) It creates a more immersive experience for users\nc) It requires no user engagement\n\nCorrect answer: b\n\nQuestion 3: How does AR help users build relationships with brands?\n\na) It allows users to view products without interacting with the brand\nb) It creates a barrier between users and brands\nc) It provides a way for users to engage with brands in their physical spaces\n\nCorrect answer: c"
+    },
+    {
+        "id": 47,
+        "tm": "00:06:09,680",
+        "sent": "One of the most obvious uses for.",
+        "quiz": "Sure, here are three multi-choice quiz questions based on my previous statement:\n\n1. What is one of the most obvious uses for a smartphone?\na. Playing video games\nb. Checking the weather\nc. Listening to music\nAnswer: b. Checking the weather\n\n2. What is the most popular social media platform?\na. Facebook\nb. Instagram\nc. Twitter\nAnswer: a. Facebook\n\n3. What is the most common way to communicate with someone who is far away?\na. Phone call\nb. Text message\nc. Email\nAnswer: a. Phone call."
+    },
+    {
+        "id": 48,
+        "tm": "00:06:09,680",
+        "sent": "AR is social media and social sharing snapchat was the first media platform to fully embrace AR.",
+        "quiz": "1) What does AR stand for?\na) Augmented Reality\nb) Artificial Reality\nc) Advanced Robotics\nAnswer: a) Augmented Reality\n\n2) Which social media platform was the first to fully embrace AR?\na) Instagram\nb) Facebook\nc) Snapchat\nAnswer: c) Snapchat\n\n3) What is the relationship between AR and social media?\na) They have no relationship\nb) AR is exclusively used for gaming and doesn't relate to social media\nc) AR is a feature that can be integrated into social media platforms\nAnswer: c) AR is a feature that can be integrated into social media platforms"
+    },
+    {
+        "id": 49,
+        "tm": "00:06:21,600",
+        "sent": "The platform introduced lenses in 2015 building off the popularity of filters these allowed users to digitally augment and manipulate faces including that famous rainbow vomiting lens.",
+        "quiz": "1. When did the platform introduce lenses? \nA) 2010 \nB) 2012 \nC) 2015 \nD) 2017 \n\nCorrect answer: C) 2015 \n\n2. What feature of the lenses allows users to manipulate faces digitally? \nA) Filters \nB) Rainbow vomiting \nC) Augmentation \nD) Snapstreak \n\nCorrect answer: C) Augmentation \n\n3. Which lens was mentioned by the teacher in their statement? \nA) Cat ears \nB) Dog nose \nC) Flower crown \nD) Rainbow vomiting \n\nCorrect answer: D) Rainbow vomiting"
+    },
+    {
+        "id": 50,
+        "tm": "00:06:27,120",
+        "sent": "Though many may not have thought of it this way, it is a lightweight expression of AR.",
+        "quiz": "1. What does the term AR stand for in the given context?\na) Alternate Reality\nb) Augmented Reality\nc) Artificial Reality\nAnswer: b) Augmented Reality\n\n2. How would you describe the given expression as per the teacher's opinion?\na) Heavyweight\nb) Lightweight\nc) Undefined\nAnswer: b) Lightweight\n\n3. What is the probable reason for many not thinking of the given expression as AR?\na) Lack of awareness\nb) Insufficient technology\nc) False claims by marketers\nAnswer: a) Lack of awareness"
+    },
+    {
+        "id": 51,
+        "tm": "00:06:40,400",
+        "sent": "Facebook also followed the lead with its own ar camerafx platform google is working to develop an intuitive platform for creating content for social AR.",
+        "quiz": "1. Which social media platform has its own AR camerafx platform?\na) Instagram\nb) Facebook\nc) Snapchat\nCorrect answer: b) Facebook\n\n2. Which tech company is working on developing a platform for creating content for social AR?\na) Apple\nb) Microsoft\nc) Google\nCorrect answer: c) Google\n\n3. What is the purpose of social AR?\na) To provide users with a virtual reality experience\nb) To connect people through augmented reality\nc) To allow people to share and create AR content on social media\nCorrect answer: c) To allow people to share and create AR content on social media"
+    },
+    {
+        "id": 52,
+        "tm": "00:06:48,880",
+        "sent": "Through AR stickers stickers allow users to import animated and interactive 3d objects for use in social media.",
+        "quiz": "1. What does AR stand for?\nA. Augmented Reality (correct)\nB. Advanced Robotics\nC. Artificial Recognition\nD. Alternative Reality\n\n2. What can be imported through AR stickers?\nA. Animated and interactive 3D objects (correct)\nB. Static 2D images \nC. Only text \nD. Both A and B\n\n3. What is the purpose of using AR stickers?\nA. To enhance social media posts (correct)\nB. To replace the need for social media \nC. To decrease engagement on social media \nD. Both A and C."
+    },
+    {
+        "id": 53,
+        "tm": "00:07:10,000",
+        "sent": "Although the usability is still being fully explored air devices and smartphones are able to pull off some truly one-of-a-kind entertainment experiences in 2016 pokemon go became the first viral ar game since then we've seen the launch of similar games from mainstream franchises like harry potter the walking dead and ghostbusters and we'll see many more in the coming years.",
+        "quiz": "1. What was the first viral AR game launched in 2016?\nA) Angry Birds\nB) Candy Crush\nC) Pokemon Go (Correct Answer)\n\n2. Which mainstream franchise launched a similar AR game?\nA) The Lord of the Rings\nB) Harry Potter (Correct Answer)\nC) The Matrix\n\n3. According to the teacher, what can we expect in the coming years in the field of AR gaming?\nA) No new games\nB) Similar games from popular franchises (Correct Answer)\nC) Only games related to sports"
+    },
+    {
+        "id": 54,
+        "tm": "00:07:15,840",
+        "sent": "But location-based adventure games like these are only one possible game application for AR.",
+        "quiz": "1. What is one type of game application for AR?\nA) Only location-based adventure games\nB) Educational games\nC) Sports games\nD) All of the above\n\nAnswer: D\n\n2. Are location-based adventure games the only type of game application for AR?\nA) Yes\nB) No\n\nAnswer: B\n\n3. Why are location-based adventure games not the only possible game application for AR?\nA) Because not everyone likes adventure games\nB) Because AR technology can be used to create a variety of games\nC) Because adventure games are outdated\nD) Because location-based games are too complicated to create\n\nAnswer: B"
+    },
+    {
+        "id": 55,
+        "tm": "00:07:24,080",
+        "sent": "We're also seeing development in genres ranging from arcade to tabletop games as well as some types of games that have never existed before.",
+        "quiz": "1. What are some genres of games that are currently being developed?\na) Only arcade games\nb) Only tabletop games\nc) Both arcade and tabletop games\nd) None of the above\n\nAnswer: c) Both arcade and tabletop games\n\n2. Is the development of new types of games taking place or not?\na) Yes\nb) No\n\nAnswer: a) Yes\n\n3. What is the range of game genres that are being developed?\na) Only popular genres like action and adventure\nb) Only niche genres like simulation and strategy\nc) Both popular and niche genres\nd) None of the above\n\nAnswer: c) Both popular and niche genres"
+    },
+    {
+        "id": 56,
+        "tm": "00:07:30,560",
+        "sent": "It's also worth noting that while pokemon go was popular.",
+        "quiz": "1. What is the subject being discussed?\nA) Minecraft\nB) Pokemon Go\nC) Fortnite\n- Answer: B) Pokemon Go\n\n2. Was Pokemon Go popular at some point?\nA) Yes\nB) No\n- Answer: A) Yes\n\n3. What is the speaker's position in relation to the subject?\nA) Player\nB) Teacher\nC) Doctor\n- Answer: B) Teacher"
+    },
+    {
+        "id": 57,
+        "tm": "00:07:30,560",
+        "sent": "It also wasn't full ars.",
+        "quiz": "1) What was not \"full ars\"?\na) The classroom\nb) The homework\nc) The exam\nAnswer: c) The exam\n\n2) What does \"full ars\" mean?\na) A type of music\nb) A measure of time\nc) Doing something with all one's effort and attention\nAnswer: c) Doing something with all one's effort and attention\n\n3) Who was responsible for not being \"full ars\"?\na) The teacher\nb) The students\nc) The school administration\nAnswer: b) The students"
+    },
+    {
+        "id": 58,
+        "tm": "00:07:46,320",
+        "sent": "It just overlaid flat 2d images on the real world creatures in that initial launch of pokemon go didn't behave the way they would if they were actually in your physical space instead they floated on your screen and only looked properly embedded in the environment if you line them up with the ground.",
+        "quiz": "1. What did the initial launch of Pokemon Go do?\n\na) Added 3D models to the real world creatures\nb) Overlaid flat 2D images on the real world creatures \nc) Removed the creatures from the real world\n\nAnswer: b) Overlaid flat 2D images on the real world creatures\n\n2. How did the creatures behave in the initial launch of Pokemon Go?\n\na) Like they were actually in your physical space\nb) Like they were floating on your screen \nc) Like they were semi-transparent\n\nAnswer: b) Like they were floating on your screen \n\n3. How did the creatures look properly embedded in the environment?\n\na) They never looked properly embedded\nb) They looked embedded only if you line them up with the sky \nc) They looked embedded only if you line them up with the ground \n\nAnswer: c) They looked embedded only if you line them up with the ground"
+    },
+    {
+        "id": 59,
+        "tm": "00:08:05,840",
+        "sent": "Demonstrating complex subjects is another one of AR's greatest capabilities allowing learners to engage with spatial content visualize right in front of them to that end google launched an.",
+        "quiz": "1. What is one of AR's greatest capabilities in education?\na) Enhancing physical fitness\nb) Demonstrating complex subjects\nc) Providing career counseling\nAnswer: b) Demonstrating complex subjects\n\n2. What is the benefit of using AR in education?\na) Making learning boring\nb) Providing limited understanding\nc) Engaging learners with spatial content\nAnswer: c) Engaging learners with spatial content\n\n3. Which company launched an AR platform for education?\na) Amazon\nb) Google\nc) Apple\nAnswer: b) Google"
+    },
+    {
+        "id": 60,
+        "tm": "00:08:05,840",
+        "sent": "AR application for education expeditions.",
+        "quiz": "Sure, here are three multiple-choice quiz questions based on the previous statement:\n\n1. What is an AR application used for in education?\na) Tracking grades\nb) Record attendance\nc) Expeditions\nd) Timetable management\nAnswer: (c) Expeditions\n\n2. Why is an AR application useful?\na) It improves focus and concentration\nb) It is easy to use and intuitive\nc) It is cheap and affordable\nd) It allows for immersive learning experiences\nAnswer: (d) It allows for immersive learning experiences\n\n3. What does AR stand for in AR application?\na) Augmented Reality\nb) Awesome Results\nc) Absolute Reality\nd) Artificial Recreation\nAnswer: (a) Augmented Reality"
+    },
+    {
+        "id": 61,
+        "tm": "00:08:18,960",
+        "sent": "AR is an educational experience designed to help teachers show students information with simple and engaging ar visuals for example students can explore a strand of dna inspect the statue of david or even witness an intense category 5 hurricane.",
+        "quiz": "1. What is AR?\nA) A game\nB) An educational experience\nC) A movie \nCorrect answer: B) An educational experience \n\n2. What is the purpose of AR for education? \nA) To help students cheat on exams \nB) To make learning more engaging and interactive \nC) To replace teachers \nCorrect answer: B) To make learning more engaging and interactive \n\n3. What are some examples of AR visuals for education?\nA) Exploration of cells and molecules\nB) Evolution of humans\nC) Both A and B\nCorrect answer: C) Both A and B"
+    },
+    {
+        "id": 62,
+        "tm": "00:08:30,400",
+        "sent": "Spatial learning allows students to engage with 3d content directly rather than having to imagine it while reading a textbook google's expeditions.",
+        "quiz": "1. What does spatial learning involve?\nA. Engaging with 2d content\nB. Engaging with 3d content\nC. Engaging with written content\nCorrect answer: B\n\n2. What is the advantage of spatial learning over reading a textbook?\nA. It is easier to visualize the content\nB. It saves time\nC. It is cheaper\nCorrect answer: A\n\n3. What is an example of a tool that can facilitate spatial learning?\nA. A pencil\nB. A ruler\nC. Google's Expeditions\nCorrect answer: C"
+    },
+    {
+        "id": 63,
+        "tm": "00:08:41,840",
+        "sent": "AR is an educational experience designed to help teachers show students information with augmented reality and education is even a broader category than the classroom.",
+        "quiz": "1. What is AR?\nA) A classroom\nB) An educational experience with augmented reality\nC) A teacher\n\nAnswer: B) An educational experience with augmented reality\n\n2. What is the purpose of AR in education?\nA) To confuse students\nB) To help teachers show students information with augmented reality\nC) To make learning boring\n\nAnswer: B) To help teachers show students information with augmented reality\n\n3. What is the scope of education?\nA) Just limited to the classroom\nB) Only valuable for educational purposes\nC) A broader category than the classroom\n\nAnswer: C) A broader category than the classroom"
+    },
+    {
+        "id": 64,
+        "tm": "00:08:49,200",
+        "sent": "AR will allow us to create training environments where we can measure and incorporate information in real time.",
+        "quiz": "1. What does AR stand for?\na) Artificial Intelligence (AI)\nb) Augmented Reality (AR) \nc) Virtual Reality (VR)\nAnswer: b) Augmented Reality (AR)\n\n2. What can we create using AR technology?\na) Training environments \nb) Gaming applications\nc) Communication platforms \nAnswer: a) Training environments \n\n3. How can we measure and incorporate information using AR?\na) By using virtual reality tools \nb) By using holograms\nc) In real-time \nAnswer: c) In real-time"
+    },
+    {
+        "id": 65,
+        "tm": "00:09:14,000",
+        "sent": "AR is already used in medicine and that will only increase as the technology matures doctors and nurses are using air's enhanced visualization capabilities to more successfully diagnose patients plan procedures and execute treatment plans 3d visuals offer much more for these doctors to learn in comparison to 2d visuals and interactive 3d visuals like the ones in AR experiences offer even more.",
+        "quiz": "1) How is AR being used in medicine?\na) To entertain patients during their hospital stays\nb) To enhance visualization capabilities for doctors and nurses\nc) To replace traditional treatments and procedures\nCorrect answer: b) To enhance visualization capabilities for doctors and nurses\n\n2) How do 3D visuals in AR differ from 2D visuals?\na) 3D visuals offer more for doctors to learn\nb) 2D visuals are more advanced than 3D visuals\nc) 3D visuals are only used for entertainment purposes\nCorrect answer: a) 3D visuals offer more for doctors to learn\n\n3) What benefit do interactive 3D visuals in AR experiences offer in medicine?\na) They make treatments and procedures more expensive\nb) They offer no additional benefits compared to traditional methods\nc) They offer even more opportunities for doctors to learn\nCorrect answer: c) They offer even more opportunities for doctors to learn."
+    },
+    {
+        "id": 66,
+        "tm": "00:09:20,880",
+        "sent": "AR could one day replace traditional charts or guide surgeons through complex operations.",
+        "quiz": "1. What can AR potentially replace in the medical field?\nA) Surgeons \nB) Traditional charts \nC) Medicine \nAnswer: B) Traditional charts\n\n2. What technology can be used to guide surgeons during complex operations?\nA) Robotics \nB) AI \nC) AR \nAnswer: C) AR\n\n3. What is the benefit of using AR in the medical field?\nA) It can replace surgeons completely \nB) It can increase the accuracy and precision of surgeries \nC) It can eliminate the need for medical schools \nAnswer: B) It can increase the accuracy and precision of surgeries."
+    },
+    {
+        "id": 67,
+        "tm": "00:09:40,080",
+        "sent": "One step at a time medical science is one of the most exciting areas for ar to impact both today and tomorrow the one thing all of these arenas have in common is their need for new and better AR content.",
+        "quiz": "1. Which area(s) is/are most impacted by AR content?\na) Medical science\nb) Education\nc) Retail\nCorrect answer: a) Medical science\n\n2. What is the common need across all arenas for AR content?\na) Immersive experience\nb) Cost-effectiveness\nc) New and better content\nCorrect answer: c) New and better content\n\n3. Why do medical science and other arenas require better AR content?\na) To provide a more engaging experience to users\nb) To improve learning outcomes\nc) Both A and B\nCorrect answer: c) Both A and B"
+    },
+    {
+        "id": 68,
+        "tm": "00:09:40,080",
+        "sent": "That's where tools like air core and future creators like you come into play.",
+        "quiz": "Sure, here are three quiz questions related to my statement:\n\n1. What are tools that can help students in the learning process?\nA) Building blocks\nB) Air core\nC) Chalkboard\nD) Pencil and paper\nAnswer: B) Air core\n\n2. Who are future creators?\nA) People who are stuck in the past\nB) Technology experts\nC) Students\nD) People who don't innovate\nAnswer: C) Students\n\n3. What is the role of future creators in the learning process?\nA) To create new tools for learning\nB) To replace teachers in the classroom\nC) To disrupt the education system\nD) None of the above\nAnswer: A) To create new tools for learning."
+    },
+    {
+        "id": 69,
+        "tm": "00:09:52,720",
+        "sent": "Non-profits can use AR to help build brand identity and encourage deeper engagement around critical issues.",
+        "quiz": "1) How can non-profits use AR?\nA) To sell products \nB) To build brand identity and encourage deeper engagement around critical issues.\nC) To promote ghost hunting \nAnswer: B\n\n2) What benefits can non-profits gain from using AR?\nA) Increased sales \nB) Improved physical fitness \nC) Stronger brand identity and deeper engagement with critical issues \nAnswer: C\n\n3) Which of the following can be improved by non-profits through the use of AR technology?\nA) Watching movies \nB) Building birdhouses \nC) Brand recognition and engagement with critical issues \nAnswer: C"
+    },
+    {
+        "id": 70,
+        "tm": "00:09:57,840",
+        "sent": "For example, say an organization wants to educate the public about the impacts of climate change.",
+        "quiz": "1. What is the purpose of educating the public about the impacts of climate change?\nA) To spread awareness and encourage action \nB) To sell a new product \nC) To promote a political candidate \nAnswer: A)\n\n2. Who would benefit from being educated about the impacts of climate change?\nA) Businesses in fossil fuel industries \nB) Scientists already studying climate change \nC) The general public \nAnswer: C)\n\n3. What is the best way to educate the public about the impacts of climate change?\nA) Posting a single message on social media \nB) Holding in-person seminars and workshops \nC) Not doing anything, it's not worth the effort \nAnswer: B)"
+    },
+    {
+        "id": 71,
+        "tm": "00:10:19,360",
+        "sent": "They could give a presentation in front of a few hundred people or they could create an ar experience that lets millions of smartphone users view what their own backyards might look like amid an extreme drought or flood allowing audiences to see the real world effects of systemic problems makes AR a powerful strategy for non-profits and other social impact organizations to enhance their messaging.",
+        "quiz": "1. Which of the following is an example of how AR can be a powerful tool for non-profit organizations?\nA) Creating a virtual game for children\nB) Creating a virtual art gallery for adults\nC) Creating an AR experience that shows the real-world effects of systemic problems\n\nCorrect Answer: C) Creating an AR experience that shows the real-world effects of systemic problems\n\n2. What is the benefit of using AR for non-profit organizations messaging?\nA) It is cheaper than traditional forms of advertising\nB) It allows organizations to reach a wider audience\nC) It does not require any technical expertise\n\nCorrect Answer: B) It allows organizations to reach a wider audience\n\n3. What type of organizations can benefit from using AR for their messaging?\nA) Only for-profit organizations looking to increase sales\nB) Only social impact organizations looking to increase donations\nC) Any organization that wants to enhance their messaging\n\nCorrect Answer: C) Any organization that wants to enhance their messaging"
+    },
+    {
+        "id": 72,
+        "tm": "00:10:32,880",
+        "sent": "This week we will focus on the state of AR who's behind it how effective is the technology what hurdles need to be overcome where can I buy it.",
+        "quiz": "1) Who is behind the state of AR? \nA) Apple \nB) Facebook \nC) Google\nAnswer: C) Google\n\n2) How effective is AR technology? \nA) No one knows yet \nB) It has limited uses \nC) It has shown great potential in several industries\nAnswer: C) It has shown great potential in several industries\n\n3) Where can you buy AR technology? \nA) Any local store \nB) Online retailers \nC) It is not available for purchase yet\nAnswer: B) Online retailers"
+    },
+    {
+        "id": 73,
+        "tm": "00:10:32,880",
+        "sent": "These are the questions you'll learn in module 2.",
+        "quiz": "Sure, here are three multi-choice quiz questions related to a hypothetical topic of \"Types of Animals\":\n\n1. What animal is known for its signature roar?\na) Lion\nb) Giraffe\nc) Zebra\nd) Kangaroo\n\nCorrect answer: (a) Lion\n\n2. Which of the following animals is a bird?\na) Whale\nb) Tiger\nc) Eagle\nd) Gorilla\n\nCorrect answer: (c) Eagle\n\n3. Which of the following animals is a domesticated animal?\na) Monkey\nb) Rabbit\nc) Wolf\nd) Horse\n\nCorrect answer: (d) Horse"
+    },
+    {
+        "id": 74,
+        "tm": "00:10:43,600",
+        "sent": "There are a few basic rules that augmented reality creators need to remember about the way objects behave in AR.",
+        "quiz": "1) What is the best way to ensure that AR objects appear stable in their environment?\na. Make them constantly move\nb. Match their movements to the environment\nc. Make them static\nAnswer: b. Match their movements to the environment \n\n2) How does the size of an AR object affect its appearance in an environment?\na. It doesn't affect the appearance at all\nb. Larger objects appear closer, while smaller ones appear farther away\nc. Smaller objects appear closer, while larger ones appear farther away\nAnswer: b. Larger objects appear closer, while smaller ones appear farther away\n\n3) What is a possible consequence of not setting clear parameters for AR object placement?\na. Objects may appear to \"float\" in mid-air or overlap with other objects\nb. Objects may appear too small or too large\nc. The object's appearance and behavior will not be affected at all\nAnswer: a. Objects may appear to \"float\" in mid-air or overlap with other objects"
+    },
+    {
+        "id": 75,
+        "tm": "00:10:43,600",
+        "sent": "These behaviors are the key to merging the real and digital world seamlessly.",
+        "quiz": "1) What is the key to merging the real and digital world seamlessly?\na) Augmented reality\nb) Virtual reality\nc) Certain behaviors - Correct answer: c)\n\n2) What can help individuals merge the real and digital world effortlessly?\na) Hiding from technology\nb) Asking others to use technology for them\nc) Embracing certain behaviors - Correct answer: c)\n\n3) Which of the following can be done to make the most of the real and digital world?\na) Resisting the use of technology\nb) Ignoring the potential benefits of technology\nc) Incorporating certain behaviors - Correct answer: c)"
+    },
+    {
+        "id": 76,
+        "tm": "00:10:50,960",
+        "sent": "The first of these behaviors is place stationary ar objects need to stick to one point in a given environment.",
+        "quiz": "1. What is the first behavior exhibited by stationary objects in a given environment?\na) They move around\nb) They stick to one point\nc) They disappear\nAnswer: b) They stick to one point\n\n2. What do you mean by \"stationary\" objects in a given environment?\na) Objects that move around a lot\nb) Objects that are still or not moving\nc) Objects that are invisible\nAnswer: b) Objects that are still or not moving\n\n3. What is the significance of stationary objects sticking to one point in a given environment?\na) It creates chaos and confusion\nb) It helps in organizing and arranging the environment\nc) It has no significance at all\nAnswer: b) It helps in organizing and arranging the environment."
+    },
+    {
+        "id": 77,
+        "tm": "00:11:12,560",
+        "sent": "This could be something concrete such as a wall floor or ceiling or it could be suspended somewhere in midair whatever the case placing means these objects stay where they're positioned even when users are in motion the mug on your coffee table doesn't jump around when you move your head if you look away.",
+        "quiz": "1. What does \"placing\" mean in the context of the passage?\na) Moving objects around\nb) Adjusting the location of an object\nc) Keeping objects in position - Correct answer: c\n\n2. Where can a \"placing\" occur according to the passage?\na) Only on walls\nb) Only on floors\nc) On any surface or in midair - Correct answer: c\n\n3. Does a mug on a coffee table jump around when a person moves their head?\na) Yes\nb) No - Correct answer: b"
+    },
+    {
+        "id": 78,
+        "tm": "00:11:17,600",
+        "sent": "It's right there when you look back again for AR to maintain the illusion of reality digital objects need to behave in the same way real ones do.",
+        "quiz": "1. What is needed for AR to maintain the illusion of reality?\na) Moving objects in a random pattern\nb) Hiding digital objects\nc) Digital objects behaving like real ones\n\nCorrect answer: c) Digital objects behaving like real ones.\n\n2. What is the purpose of digital objects behaving like real ones in AR?\na) To confuse the viewer\nb) To create an imaginary world\nc) To maintain the illusion of reality\n\nCorrect answer: c) To maintain the illusion of reality.\n\n3. Why is it important for digital objects to behave like real ones in AR?\na) To make it more difficult for users to interact with them\nb) To enhance the user's experience and make the AR more believable\nc) To make the objects more noticeable\n\nCorrect answer: b) To enhance the user's experience and make the AR more believable."
+    },
+    {
+        "id": 79,
+        "tm": "00:11:29,840",
+        "sent": "In addition to sticking wherever they are placed in the real world, AR objects need to be able to scale.",
+        "quiz": "1. What do AR objects need to be able to do?\na) Move around the real world\nb) Stick wherever they are placed in the real world\nc) Disappear when placed in the real world\nAnswer: b) Stick wherever they are placed in the real world\n\n2. Why do AR objects need to be able to scale?\na) To make them look more realistic\nb) To make them smaller than in reality\nc) To make them fit in with the surrounding environment\nAnswer: c) To make them fit in with the surrounding environment\n\n3. What technology is used to create AR objects?\na) Virtual Reality (VR)\nb) Artificial Intelligence (AI)\nc) Augmented Reality (AR)\nAnswer: c) Augmented Reality (AR)"
+    },
+    {
+        "id": 80,
+        "tm": "00:11:29,840",
+        "sent": "Think about it like this when a car is coming towards you from the distance.",
+        "quiz": "Sure, here are three possible questions and their correct answer choices:\n\n1. When a car is approaching from a distance, what does it mean if the car appears to be getting bigger?\nA) The car is slowing down\nB) The car is speeding up\nC) The car is staying the same speed\nCorrect answer: B) The car is speeding up\n\n2. If a car is approaching from the distance and you can't tell if it's moving or not, what should you do?\nA) Assume the car is parked and continue as normal\nB) Keep your eyes on the car until you can tell if it's moving or not\nC) Assume the car is moving very slowly and adjust your speed accordingly\nCorrect answer: B) Keep your eyes on the car until you can tell if it's moving or not\n\n3. When a car is coming towards you from the distance and it appears to be moving side-to-side, what might this mean?\nA) The driver is drunk or distracted\nB) The road is uneven or bumpy\nC) There's a strong crosswind blowing the car off course\nCorrect answer: C) There's a strong crosswind blowing the car off course"
+    },
+    {
+        "id": 81,
+        "tm": "00:11:45,760",
+        "sent": "It starts out small and gets bigger a painting viewed from the side looks very different when you walk around and face it head-on our physical distance from a given object and our orientation around it changes how they appear to us.",
+        "quiz": "1. Why does a painting viewed from the side look very different when you walk around and face it head-on?\na) Because the painting is moving\nb) Because of the viewer's physical distance and orientation around the painting\nc) Because the painting is changing its colors\nAnswer: b)\n\n2. How does our physical distance from a given object affect how it appears to us?\na) It doesn't affect its appearance at all\nb) The farther we are, the bigger the object appears\nc) The closer we are, the bigger the object appears\nAnswer: c)\n\n3. Which of the following factors changes how objects appear to us?\na) Their weight\nb) Their size\nc) Our physical distance and orientation around the object\nAnswer: c)"
+    },
+    {
+        "id": 82,
+        "tm": "00:11:50,960",
+        "sent": "A well-constructed AR experience will incorporate objects that are not only appropriately placed but will look different if you stand right next to it.",
+        "quiz": "1. What is an important aspect of a well-constructed AR experience?\nA) The use of flashy colors\nB) The incorporation of recognizable objects\nC) The use of complex grammatical structures\nD) The inclusion of unrealistic animations \nAnswer- B\n\n2. How should AR objects be placed in an AR experience?\nA) Anywhere in the environment\nB) In random locations\nC) In a haphazard manner\nD) In appropriate places \nAnswer- D\n\n3. How should AR objects appear to the user if they stand next to it?\nA) The same as when viewed from a distance\nB) Not visible from a close distance\nC) Appearing too small or too big\nD) Looking different as compared to when viewed from a distance \nAnswer- D"
+    },
+    {
+        "id": 83,
+        "tm": "00:12:04,000",
+        "sent": "Below it above it or view it from afar, this is scaling together placing and scaling are what take AR objects from digital novelties to assets that could potentially replace real-world counterparts.",
+        "quiz": "1. What are the two important aspects of taking AR objects from digital novelties to assets that could potentially replace real-world counterparts?\na) Texturing and rendering\nb) Placing and scaling (correct)\nc) Origami and papercrafting\nd) Sketching and coloring\n\n2. Which of the following is not a way to scale AR objects?\na) Scaling it from afar\nb) Placing it along with a real-world object (correct)\nc) Using a 3D scanner\nd) Adjusting the size using a slider\n\n3. Why is scaling together important in AR?\na) It makes objects look better on camera\nb) It helps to reduce file size\nc) It allows objects to interact with each other and the real world (correct)\nd) It improves lighting in AR scenes"
+    },
+    {
+        "id": 84,
+        "tm": "00:12:17,440",
+        "sent": "Occlusion refers to what happens when an image or object is blocked by another move your hand in front of your face like this you've just occluded the computer screen with your hand.",
+        "quiz": "1. What does occlusion refer to in visual terms?\na) A clear image or object\nb) A blurry image or object\nc) A blocked image or object\nAnswer: c) A blocked image or object\n\n2. Which of the following objects can cause occlusion?\na) A transparent glass\nb) A thin piece of paper\nc) A hand\nAnswer: c) A hand\n\n3. What did the teacher do to demonstrate occlusion?\na) Covered the board with a cloth\nb) Moved a pencil across the board\nc) Moved their hand in front of their face\nAnswer: c) Moved their hand in front of their face."
+    },
+    {
+        "id": 85,
+        "tm": "00:12:27,920",
+        "sent": "However imagine if you moved your hand in front of your face and the screen was still visible.",
+        "quiz": "1. If you move your hand in front of your face while looking at a screen, what will happen?\na) The screen will turn off\nb) The screen will be still visible\nc) The screen will freeze\n\nCorrect answer: b) The screen will be still visible\n\n2. What happens when you move your hand in front of your face while looking at a screen that has a physical keyboard attached?\na) The screen will turn off, but the keyboard will be still visible\nb) Both the screen and the keyboard will be still visible\nc) The screen and keyboard will disappear\n\nCorrect answer: b) Both the screen and the keyboard will be still visible\n\n3. If you move your hand in front of your face while using a touchscreen device, what will happen?\na) The screen will turn off\nb) The screen will be still visible, but the touchscreen functionality will be disabled\nc) The screen will be still visible and the touchscreen functionality will work normally\n\nCorrect answer: c) The screen will be still visible and the touchscreen functionality will work normally."
+    },
+    {
+        "id": 86,
+        "tm": "00:12:27,920",
+        "sent": "You'd probably get a little concerned.",
+        "quiz": "I'm sorry, but I'm afraid I don't understand what you're referring to. Could you please provide me with more context or clarify your request?"
+    },
+    {
+        "id": 87,
+        "tm": "00:12:33,280",
+        "sent": "AR objects have to play by the rules of occlusion if we want them to seem real.",
+        "quiz": "1. What is the importance of following occlusion rules in AR?\nA) It helps maintain the illusion of realism in the virtual space.\nB) It makes the AR experience more challenging for users.\nC) It increases the computational power required for AR.\n\nAnswer: A) It helps maintain the illusion of realism in the virtual space.\n\n2. What happens if AR objects do not follow occlusion rules?\nA) They appear to float above real world objects.\nB) They disappear completely from the AR scene.\nC) They blend in seamlessly with real world objects.\n\nAnswer: A) They appear to float above real world objects.\n\n3. What is the main challenge in implementing occlusion in AR?\nA) Accurately detecting real world objects.\nB) Ensuring compatibility with different AR devices.\nC) Providing realistic lighting and shading for virtual objects.\n\nAnswer: A) Accurately detecting real world objects."
+    },
+    {
+        "id": 88,
+        "tm": "00:12:38,960",
+        "sent": "This means that AR hardware has to not only understand where the object is in the room but also its relative distance from the user compared with any other object physical or digital.",
+        "quiz": "1. What does AR hardware need to understand to effectively place virtual objects in the real world? \nA) Color of the room \nB) Location of the nearest window \nC) Relative distance from the user compared with any other object physical or digital - Correct answer \n\n2. How does AR hardware locate physical objects in the real world? \nA) By using GPS coordinates \nB) By capturing images of the environment \nC) By creating a 3D map of the surroundings - Correct answer \n\n3. What is the primary challenge for AR hardware when placing virtual objects in the real world? \nA) Ensuring the object is the right size \nB) Making sure it matches the color of the room \nC) Understanding the relation of the object to other objects in the environment - Correct answer"
+    },
+    {
+        "id": 89,
+        "tm": "00:12:50,480",
+        "sent": "Occlusion means hiding virtual objects behind other virtual objects and ones in the real world say you move behind a wall while using AR.",
+        "quiz": "1. What does occlusion mean in AR?\nA. Adding virtual objects on top of real objects\nB. Hiding virtual objects behind other virtual objects and ones in the real world\n\nCorrect answer: B\n\n2. How does occlusion affect AR?\nA. It makes virtual objects more visible\nB. It allows virtual objects to move independently from real-world objects\n\nCorrect answer: A\n\n3. What happens when you move behind a wall while using AR?\nA. Virtual objects disappear\nB. Virtual objects continue to be visible, but are hidden by the wall due to occlusion\n\nCorrect answer: B"
+    },
+    {
+        "id": 90,
+        "tm": "00:12:56,080",
+        "sent": "If you still see the AR objects it will break your sense of immersion that sense of AR objects actually being in the real world in the app seamless.",
+        "quiz": "1) Why is it important to have a sense of immersion in AR apps?\nA) It makes the app more expensive\nB) It provides a better user experience\nC) It allows the app to work offline\n\nCorrect answer: B) It provides a better user experience\n\n2) What could happen if AR objects are still visible despite being out of range?\nA) The app could crash\nB) It could break the sense of immersion\nC) The app could freeze\n\nCorrect answer: B) It could break the sense of immersion\n\n3) What is the goal of creating seamless AR experiences?\nA) To make the app more difficult to use\nB) To make the user feel like the AR objects are part of the real world\nC) To create more glitches in the app\n\nCorrect answer: B) To make the user feel like the AR objects are part of the real world"
+    },
+    {
+        "id": 91,
+        "tm": "00:13:06,320",
+        "sent": "Occlusion requires constant recalibration as users can move in any direction at any given moment which is why it's one of the trickiest aspects of building successful AR content.",
+        "quiz": "1. What is one of the trickiest aspects of building successful AR content?\na. Sound recognition\nb. Color accuracy\nc. Occlusion (Correct Answer)\n\n2. Why does occlusion require constant recalibration?\na. Users can disappear at any given moment\nb. Users can move in any direction at any given moment (Correct Answer)\nc. Users can only move in one direction\n\n3. What is the challenge of occlusion?\na. It requires constant recalibration (Correct Answer)\nb. It is impossible to program\nc. It does not add anything valuable to AR applications"
+    },
+    {
+        "id": 92,
+        "tm": "00:13:12,320",
+        "sent": "We'll talk later about the ways that this is currently a technical constraint in mobile AR.",
+        "quiz": "1. What is the technical constraint in mobile AR that limits its capabilities?\nA) Processing power of mobile devices \nB) Insufficient battery life \nC) Limited network bandwidth \nD) Inadequate camera quality \n\nAnswer: A) Processing power of mobile devices\n\n2. What is the impact of the technical constraint on mobile AR?\nA) Decreased accuracy and stability \nB) Reduced field of view \nC) Diminished image recognition speed \nD) All of the above \n\nAnswer: D) All of the above\n\n3. How can developers work around the technical constraint in mobile AR? \nA) By limiting the amount of data analyzed \nB) By reducing the complexity of models and animations \nC) By optimizing camera and sensor usage \nD) All of the above \n\nAnswer: D) All of the above"
+    },
+    {
+        "id": 93,
+        "tm": "00:13:20,000",
+        "sent": "That developers need to consider in their apps just like a real world object.",
+        "quiz": "1) What should developers consider when designing an app?\na) Only its visual appearance\nb) Its functionality and real-world properties\nc) Its popularity amongst users\nAnswer: b) Its functionality and real-world properties\n\n2) Why is it important for developers to consider real-world properties in their apps?\na) Because it will make the app slower\nb) Because it will make the app more expensive to produce\nc) Because it will make the app more user-friendly\nAnswer: c) Because it will make the app more user-friendly\n\n3) How can developers ensure that their app has real-world properties?\na) Ignore the details and hope for the best\nb) Conduct thorough research and testing\nc) Cut corners to save time\nAnswer: b) Conduct thorough research and testing."
+    },
+    {
+        "id": 94,
+        "tm": "00:13:26,480",
+        "sent": "Objects in AR need to respond to different patterns of lighting to make sense in our minds.",
+        "quiz": "1. What makes AR objects make sense in our minds?\na) Moving around\nb) Changing colors\nc) Responding to different lighting\nAnswer: c) Responding to different lighting\n\n2. How can we make AR objects blend seamlessly with the physical world?\na) By making them larger than real-world objects\nb) By making them brighter than real-world objects\nc) By making them respond to different patterns of lighting\nAnswer: c) By making them respond to different patterns of lighting\n\n3. Why is it important for AR objects to respond to different patterns of lighting?\na) To make them look more exciting\nb) To make them visible in dark environments\nc) To make them make sense in our minds\nAnswer: c) To make them make sense in our minds"
+    },
+    {
+        "id": 95,
+        "tm": "00:13:32,720",
+        "sent": "The colors shading and shadows cast by these objects all need to behave properly both in the initial lighting of a scene and in the case of a lighting change.",
+        "quiz": "1) When designing a scene, what needs to behave properly in regards to lighting?\n\na) Only the objects themselves\nb) Only the colors of the objects\nc) The colors, shading, and shadows cast by the objects **(Correct)**\n\n2) How many lighting changes does a scene need to account for?\n\na) None\nb) Only one\nc) Both the initial lighting and any lighting changes **(Correct)**\n\n3) Which of the following does not need to behave properly with lighting in a scene design?\n\na) Objects\nb) Colors\nc) Sound effects **(Correct)**"
+    },
+    {
+        "id": 96,
+        "tm": "00:13:43,440",
+        "sent": "For example, if you dim the lights during an ar experience then the ar objects should change in color and shading appearance similarly if you move an object around.",
+        "quiz": "Sure, here are three multiple-choice questions based on my statement:\n\n1. What happens to the AR objects when you dim the lights during an AR experience?\na) The objects disappear \nb) The objects become clearer \nc) The objects change in color and shading appearance - correct answer\n\n2. What should happen to the AR objects when you move them around during an AR experience?\na) They stay still \nb) They rotate on their axis \nc) They change in position and orientation - correct answer\n\n3. What is the relationship between lighting during an AR experience and the appearance of AR objects?\na) There is no relationship \nb) The lighting only affects the background image \nc) The lighting affects the color and shading of AR objects - correct answer"
+    },
+    {
+        "id": 97,
+        "tm": "00:13:51,600",
+        "sent": "The shadows need to move accordingly just like they would in real life.",
+        "quiz": "Quiz Questions:\n\n1) Why is it important to make shadows move accordingly like they would in real life?\nA) To make the scene look more magical \nB) To create consistency in the visual presentation \nC) To make the image more colorful \n\nAnswer: B) To create consistency in the visual presentation \n\n2) Which statement describes shadows moving unrealistically?\nA) Shadows that follow the laws of physics \nB) Shadows that move opposite to the source of light \nC) Shadows that are static and never move \n\nAnswer: B) Shadows that move opposite to the source of light\n\n3) How can we make sure the shadows move accordingly based on the source of light?\nA) By changing the angle of the light source \nB) By drawing shadows arbitrarily \nC) By ignoring the importance of shadows \n\nAnswer: A) By changing the angle of the light source"
+    },
+    {
+        "id": 98,
+        "tm": "00:13:51,600",
+        "sent": "AR objects need to appear solid.",
+        "quiz": "1. What is the characteristic of AR objects that need to appear solid?\na) Transparency\nb) Holographic\nc) Solid - **Correct answer**\n\n2. Why do AR objects need to appear solid?\na) To make them look cool\nb) To make them look like they are following you around\nc) To give the sense that they are really there - **Correct answer**\n\n3. What is the importance of solid AR objects?\na) They help conserve natural resources\nb) They reduce carbon footprint\nc) They enhance the overall AR experience - **Correct answer**"
+    },
+    {
+        "id": 99,
+        "tm": "00:13:58,000",
+        "sent": "This may sound obvious but it takes conscious effort to achieve as you engage with and ultimately create AR content keep this in mind.",
+        "quiz": "1. What is the main point to keep in mind when creating AR content?\na) To use as many complicated features as possible\nb) To try to make the content as visually pleasing as possible\nc) To remember that it takes conscious effort to achieve\n\nCorrect answer: c) To remember that it takes conscious effort to achieve.\n\n2. Why might it take conscious effort to create AR content?\na) Because it is a simple and straightforward process\nb) Because there are many complex steps involved \nc) Because AR technology is not very advanced \n\nCorrect answer: b) Because there are many complex steps involved.\n\n3. Why is it important to keep in mind that it takes conscious effort to create AR content?\na) So that you can rush through the process and finish as quickly as possible\nb) So that you can be aware of the challenges involved and plan accordingly\nc) So that you can avoid making any mistakes \n\nCorrect answer: b) So that you can be aware of the challenges involved and plan accordingly."
+    },
+    {
+        "id": 100,
+        "tm": "00:14:06,320",
+        "sent": "AR objects should never overlap with real world objects nor should they appear to be floating in thin air, if they're not something like an airplane or balloon.",
+        "quiz": "1. Which of the following statements is true about AR objects?\na. They can overlap with real-world objects\nb. They should never overlap with real-world objects\nc. It depends on the type of AR object\n\nAnswer: b. They should never overlap with real-world objects\n\n2. When should AR objects appear to be floating in thin air?\na. Whenever they are activated\nb. Only if they are meant to be airplanes or balloons\nc. Never\n\nAnswer: b. Only if they are meant to be airplanes or balloons\n\n3. Why is it important to ensure that AR objects don't overlap with real-world objects?\na. It's not important\nb. To avoid confusing the user\nc. To make the AR experience more fun\n\nAnswer: b. To avoid confusing the user"
+    },
+    {
+        "id": 101,
+        "tm": "00:14:11,360",
+        "sent": "If either of these missteps is in your app, it will break immersion for your users.",
+        "quiz": "Sure, here are three multi-choice quiz questions based on my previous statement:\n\n1. What will happen if your app has a slow loading time?\na) Users will engage with it more\nb) Users will lose their patience and break immersion\nc) Users will not notice the loading time\n\nAnswer: b) Users will lose their patience and break immersion\n\n2. Why is it important to maintain consistent design elements throughout your app?\na) To make it look cool and trendy\nb) To make it unique and stand out\nc) To create a seamless user experience and avoid breaking immersion\n\nAnswer: c) To create a seamless user experience and avoid breaking immersion\n\n3. What effect will an overwhelming amount of notifications have on your users?\na) They will love receiving all the notifications\nb) They will lose interest in your app\nc) They will become annoyed and break immersion\n\nAnswer: c) They will become annoyed and break immersion"
+    },
+    {
+        "id": 102,
+        "tm": "00:14:25,360",
+        "sent": "The final component of realism context awareness is the most difficult to achieve as we discussed in the last video.",
+        "quiz": "1. Which of the following is the most difficult component of realism context awareness?\na) Identifying the real-world context\nb) Modeling the virtual environment\nc) Achieving the final component\nCorrect answer: c) Achieving the final component\n\n2. What makes achieving the final component of realism context awareness difficult?\na) It requires advanced technology\nb) It involves creating realistic stimuli\nc) It requires a deep understanding of human perception and behavior\nCorrect answer: c) It requires a deep understanding of human perception and behavior\n\n3. What is the importance of achieving the final component of realism context awareness?\na) It improves the user's immersion in the virtual environment\nb) It allows for the creation of more visually appealing virtual environments\nc) It has no impact on the user experience\nCorrect answer: a) It improves the user's immersion in the virtual environment."
+    },
+    {
+        "id": 103,
+        "tm": "00:14:31,600",
+        "sent": "AR hardware has to be aware of essentially every single object in its environment.",
+        "quiz": "1. What does AR hardware need to be aware of in its environment? \na) Only a few important objects\nb) All colorful objects\nc) Essentially every single object\n\nCorrect answer: c) Essentially every single object\n\n2. Is it easy for AR hardware to become aware of objects in its environment?\na) Yes, it happens instantaneously\nb) It takes some time, but not much\nc) It is a time-consuming process\n\nCorrect answer: c) It is a time-consuming process\n\n3. Why does AR hardware need to be aware of all objects in its environment?\na) To avoid any potential obstacles\nb) To improve the overall user experience\nc) To accurately overlay digital content onto physical objects\n\nCorrect answer: c) To accurately overlay digital content onto physical objects"
+    },
+    {
+        "id": 104,
+        "tm": "00:14:31,600",
+        "sent": "It needs to understand that there is a desk a chair and a table next to a bookcase.",
+        "quiz": "1. What objects are next to the bookcase?\n\nA) Lamp and sofa\nB) Desk, Chair, and Table\nC) TV and Rug\nAnswer: B) Desk, Chair, and Table\n\n2. What is the teacher teaching the class?\n\nA) Unknown\nB) Mathematics\nC) Science\nAnswer: A) Unknown\n\n3. What is the teacher's profession?\n\nA) Engineer\nB) Artist\nC) Teacher\nAnswer: C) Teacher"
+    },
+    {
+        "id": 105,
+        "tm": "00:14:43,040",
+        "sent": "A vase and a television and it needs to know which of these items is taller shorter fatter or wider than the others and how this changes when the subject moves around in space.",
+        "quiz": "1) Which of the following is shorter than both a vase and a television?\na) A stool\nb) A chair\nc) A lamp\nAnswer: a) A stool\n\n2) If the subject moves to a different angle, which object may appear wider?\na) Vase\nb) Television\nc) Both\nAnswer: c) Both\n\n3) Which is taller, a lamp or a television?\na) Lamp\nb) Television\nc) Both are the same height\nAnswer: b) Television"
+    },
+    {
+        "id": 106,
+        "tm": "00:14:48,400",
+        "sent": "That's a lot to track generating this awareness quickly and without a drop in the digital object's fidelity.",
+        "quiz": "1) What is the main concern when generating awareness of a digital object?\na) Time management\nb) Quality control \nc) Communication skills \nAnswer: b) Quality control \n\n2) What is the goal when generating awareness of a digital object?\na) To enhance the object's complexity \nb) To create a digital original that stands out \nc) To maintain the object's fidelity \nAnswer: c) To maintain the object's fidelity \n\n3) How can one generate awareness of a digital object without compromising its fidelity?\na) By delegating the task to others\nb) By ensuring quick delivery at any cost\nc) By being mindful of the techniques and processes used\nAnswer: c) By being mindful of the techniques and processes used"
+    },
+    {
+        "id": 107,
+        "tm": "00:15:00,240",
+        "sent": "Smoothness or functionality is one of the biggest challenges facing AR creators today companies like google are investing in software tools like AR core to help address some of these issues.",
+        "quiz": "1. What is one of the biggest challenges facing AR creators today?\nA) Funding\nB) Graphics\nC) Smoothness or functionality (correct answer)\n\n2. Which company is investing in software tools to address AR challenges?\nA) Apple\nB) Microsoft\nC) Google (correct answer)\n\n3. What specific software tool is Google investing in to address AR challenges?\nA) AR Connect\nB) AR Maker\nC) AR Core (correct answer)"
+    }
+]

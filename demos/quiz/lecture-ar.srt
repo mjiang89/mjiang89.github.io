@@ -1,0 +1,740 @@
+1
+00:00:00,880 --> 00:00:08,640
+The term 'augmented reality' was first coined in 
+1992 by thomas caudell and david mizell.
+
+2
+00:00:08,640 --> 00:00:14,880
+Two engineers worka on a simple see-through headset 
+that aided airplane engineers in complex wiring schematics.
+
+3
+00:00:14,880 --> 00:00:21,760
+According to their documentation, the 
+goal of augmented reality commonly abbreviated as 
+AR was to enable cost reductions and efficiency 
+improvements
+
+4
+00:00:21,760 --> 00:00:28,560
+in many of the human involved operations
+in aircraft manufacturing.
+
+5
+00:00:28,560 --> 00:00:35,520
+We've been dreaming about 
+the potential of AR for a long time
+
+6
+00:00:35,520 --> 00:00:39,440
+and the history of the medium stretches 
+back before we even had a term for it
+
+7
+00:00:40,240 --> 00:00:48,160
+In fact AR shares a history with its technological 
+cousin virtual reality both virtual reality
+
+8
+00:00:48,160 --> 00:00:57,920
+or VR and AR share a common ancestor the sword of 
+damocles built in 1968. 
+
+9
+00:00:57,920 --> 00:01:04,400
+The sword of damocles was created by computer scientist and researcher 
+ivan sutherland his goal was to 
+
+10
+00:01:04,400 --> 00:01:10,960
+create the ultimate display a digital interface capable of 
+transforming the physical world. 
+
+11
+00:01:10,960 --> 00:01:17,680
+The prototype was so heavy. It needed to be suspended from the 
+ceiling by a mechanical arm for all that hardware
+
+12
+00:01:17,680 --> 00:01:23,920
+It could only display basic wireframe rooms 
+that were barely explorable.
+
+13
+00:01:23,920 --> 00:01:32,320
+But it was one of humankind's first experiments into replacing 
+your real world with a digital reality since 1992.
+
+14
+00:01:32,320 --> 00:01:37,360
+Many people have sought to fulfill the vision 
+that sutherland wrote about over half a century ago.
+
+15
+00:01:37,360 --> 00:01:45,520
+The ultimate display would be a room within 
+which the computer can control the existence of matter.
+
+16
+00:01:45,520 --> 00:01:52,160
+A chair displayed in such a room would be 
+good enough to sit in handcuffs displayed in such
+
+17
+00:01:52,160 --> 00:01:59,520
+a room would be confining and a bullet displayed 
+in such a room would be fatal with appropriate
+programming.
+
+18
+00:01:59,520 --> 00:02:07,440
+Such a display could literally be the 
+wonderland into which alice walked on the mobile
+ar side again.
+
+19
+00:02:07,440 --> 00:02:14,320
+This is how most of the world will 
+experience augmented reality for the first time
+
+20
+00:02:15,040 --> 00:02:20,240
+In fact the rapid development of smartphones 
+has actually contributed to the growth of
+the vr and ar industries.
+
+21
+00:02:20,240 --> 00:02:28,000
+That's because the same 
+components that make smartphones work gyroscopes.
+
+22
+00:02:28,000 --> 00:02:34,480
+Accelerometers miniaturized high-resolution 
+displays are also required for AR and VR headsets.
+
+23
+00:02:35,440 --> 00:02:40,480
+The high demand for smartphones has driven the 
+mass production of these components throughout
+the past 10 years,
+
+24
+00:02:40,480 --> 00:02:45,840
+resulting in greater 
+hardware innovations and decreases in costs.
+
+25
+00:02:47,120 --> 00:02:54,000
+In the most basic sense AR is created using the 
+front and rear facing cameras on your phone. 
+
+26
+00:02:54,000 --> 00:03:00,160
+You hold it up and your screen is able to display 
+digital objects and information integrated
+within your real world.
+
+27
+00:03:00,160 --> 00:03:07,840
+Your phone can now act like 
+a portal to new worlds experiences and information.
+
+28
+00:03:11,520 --> 00:03:17,360
+Google's first foray into the ar space was 
+google glass a head mounted display that
+took the form of smart glasses.
+
+29
+00:03:17,360 --> 00:03:23,760
+It is still used today in a variety of 
+enterprise applications after glass.
+
+30
+00:03:24,720 --> 00:03:32,240
+Google's next ar play was project tango. 
+Tango was a combination of custom software
+
+31
+00:03:32,240 --> 00:03:38,960
+and additional hardware for unique depth sensing 
+smartphones. Tango enabled phones could track
+
+32
+00:03:38,960 --> 00:03:44,560
+the world around them and as a result. We're 
+capable of rendering unique digital overlays
+
+33
+00:03:44,560 --> 00:03:52,720
+onto the real world in 2017. Google announced 
+AR core an evolution of the tango platform.
+
+34
+00:03:53,600 --> 00:04:01,360
+AR core is an application programming interface 
+or api for building and developing mobile AR.
+
+35
+00:04:01,360 --> 00:04:08,160
+Experience by the end of this course you'll 
+have familiarity with how augmented reality works
+
+36
+00:04:08,160 --> 00:04:17,360
+as well as basic workflows in ar core. It's a young 
+medium augmented reality. It is already being used
+
+37
+00:04:17,360 --> 00:04:22,320
+in a variety of different capacities. In this 
+section we'll look at a few of the most popular.
+
+38
+00:04:22,960 --> 00:04:28,160
+Let's begin with shopping because it integrates 
+seamlessly with the real world. AR has proven to
+
+39
+00:04:28,160 --> 00:04:34,560
+be a powerful medium for shopping and retail 
+air can let you try on a watch a shirt
+
+40
+00:04:34,560 --> 00:04:40,160
+or a new shade of makeup. All without ever leaving your 
+home but the top use case for AR shopping right now is
+
+41
+00:04:40,160 --> 00:04:46,000
+furniture according to a few major studies. 
+Furniture is the number one thing people want to
+
+42
+00:04:46,000 --> 00:04:51,680
+shop for with AR. It's tough to know if a thousand 
+dollar couch will be the right one for you.
+
+43
+00:04:51,680 --> 00:04:57,200
+If you aren't sure it'll fit right in your living 
+room or match your curtains, AR's unique ability
+
+44
+00:04:57,200 --> 00:05:02,080
+to work within the world around us makes it easy 
+to integrate digital versions of furniture right
+
+45
+00:05:02,080 --> 00:05:08,560
+inside your house unlike 2d images which force you 
+to imagine the object in your home. 
+
+46
+00:05:08,560 --> 00:05:15,120
+AR makes full use of 3d space letting you see the furniture 
+at the exact size and dimensions of real life.
+
+47
+00:05:15,760 --> 00:05:20,240
+Major furniture retailers like ikea 
+and house have put ideas like this
+
+48
+00:05:20,240 --> 00:05:25,440
+into practice with the option to purchase 
+included directly within the application.
+
+49
+00:05:27,120 --> 00:05:31,200
+When it comes to business, AR core enables 
+experiences for many different kinds of
+professional organizations.
+
+50
+00:05:31,200 --> 00:05:37,760
+Warehouses can build helpful navigations
+and instructions for workers.
+
+51
+00:05:37,760 --> 00:05:43,920
+Architecture firms can display designs in 3d space. 
+Retailers can give customers novel ways to engage
+
+52
+00:05:43,920 --> 00:05:50,480
+with products and advertisers can reach consumers 
+with immersive campaigns and this is just the tip
+of the iceberg.
+
+53
+00:05:50,480 --> 00:05:56,000
+The power of ar is that it 
+lets users build relationships with brands
+
+54
+00:05:56,000 --> 00:06:03,840
+inside their physical spaces rather than trapped 
+behind screens. One of the most obvious uses for
+
+55
+00:06:03,840 --> 00:06:09,680
+AR is social media and social sharing snapchat 
+was the first media platform to fully embrace AR.
+
+56
+00:06:10,240 --> 00:06:16,480
+The platform introduced lenses in 2015 building 
+off the popularity of filters these allowed users
+
+57
+00:06:16,480 --> 00:06:21,600
+to digitally augment and manipulate faces 
+including that famous rainbow vomiting lens.
+
+58
+00:06:22,400 --> 00:06:27,120
+Though many may not have thought of it this 
+way, it is a lightweight expression of AR.
+
+59
+00:06:27,680 --> 00:06:33,680
+Facebook also followed the lead with its own ar 
+camerafx platform google is working to develop
+
+60
+00:06:33,680 --> 00:06:40,400
+an intuitive platform for creating content for 
+social AR. Through AR stickers stickers allow users
+
+61
+00:06:40,400 --> 00:06:48,880
+to import animated and interactive 3d objects 
+for use in social media. Although the usability
+
+62
+00:06:48,880 --> 00:06:53,600
+is still being fully explored air devices and 
+smartphones are able to pull off some truly
+
+63
+00:06:53,600 --> 00:07:00,080
+one-of-a-kind entertainment experiences in 
+2016 pokemon go became the first viral ar game
+
+64
+00:07:00,720 --> 00:07:05,600
+since then we've seen the launch of similar games 
+from mainstream franchises like harry potter
+
+65
+00:07:05,600 --> 00:07:10,000
+the walking dead and ghostbusters and 
+we'll see many more in the coming years.
+
+66
+00:07:10,560 --> 00:07:15,840
+But location-based adventure games like these 
+are only one possible game application for AR.
+
+67
+00:07:16,640 --> 00:07:20,960
+We're also seeing development in genres 
+ranging from arcade to tabletop games
+
+68
+00:07:20,960 --> 00:07:24,080
+as well as some types of games 
+that have never existed before.
+
+69
+00:07:24,800 --> 00:07:30,560
+It's also worth noting that while pokemon go was 
+popular. It also wasn't full ars. It just overlaid
+
+70
+00:07:30,560 --> 00:07:36,000
+flat 2d images on the real world creatures 
+in that initial launch of pokemon go didn't
+
+71
+00:07:36,000 --> 00:07:41,040
+behave the way they would if they were actually in 
+your physical space instead they floated on your
+
+72
+00:07:41,040 --> 00:07:46,320
+screen and only looked properly embedded in the 
+environment if you line them up with the ground.
+
+73
+00:07:48,960 --> 00:07:54,160
+Demonstrating complex subjects is another one 
+of AR's greatest capabilities allowing learners
+
+74
+00:07:54,160 --> 00:07:59,760
+to engage with spatial content visualize right 
+in front of them to that end google launched an
+
+75
+00:07:59,760 --> 00:08:05,840
+AR application for education expeditions. AR is an 
+educational experience designed to help teachers
+
+76
+00:08:05,840 --> 00:08:12,720
+show students information with simple and engaging 
+ar visuals for example students can explore a
+
+77
+00:08:12,720 --> 00:08:18,960
+strand of dna inspect the statue of david or 
+even witness an intense category 5 hurricane.
+
+78
+00:08:19,600 --> 00:08:24,560
+Spatial learning allows students to engage with 
+3d content directly rather than having to imagine
+
+79
+00:08:24,560 --> 00:08:30,400
+it while reading a textbook google's expeditions.
+AR is an educational experience designed to help
+
+80
+00:08:30,400 --> 00:08:36,960
+teachers show students information with augmented 
+reality and education is even a broader category
+
+81
+00:08:36,960 --> 00:08:41,840
+than the classroom. AR will allow us to create 
+training environments where we can measure and
+
+82
+00:08:41,840 --> 00:08:49,200
+incorporate information in real time. AR is already 
+used in medicine and that will only increase
+
+83
+00:08:49,200 --> 00:08:55,760
+as the technology matures doctors and nurses are 
+using air's enhanced visualization capabilities
+
+84
+00:08:55,760 --> 00:09:02,160
+to more successfully diagnose patients 
+plan procedures and execute treatment plans
+
+85
+00:09:02,800 --> 00:09:07,680
+3d visuals offer much more for these 
+doctors to learn in comparison to 2d
+
+86
+00:09:07,680 --> 00:09:14,000
+visuals and interactive 3d visuals like 
+the ones in AR experiences offer even more.
+
+87
+00:09:14,880 --> 00:09:20,880
+AR could one day replace traditional charts 
+or guide surgeons through complex operations.
+
+88
+00:09:20,880 --> 00:09:26,960
+One step at a time medical science is one of 
+the most exciting areas for ar to impact both
+
+89
+00:09:26,960 --> 00:09:33,440
+today and tomorrow the one thing all of these 
+arenas have in common is their need for new
+
+90
+00:09:33,440 --> 00:09:40,080
+and better AR content. That's where tools like air 
+core and future creators like you come into play.
+
+91
+00:09:42,640 --> 00:09:47,520
+Non-profits can use AR to help build brand 
+identity and encourage deeper engagement
+
+92
+00:09:47,520 --> 00:09:52,720
+around critical issues. For example, say an 
+organization wants to educate the public about
+
+93
+00:09:52,720 --> 00:09:57,840
+the impacts of climate change. They could give 
+a presentation in front of a few hundred people
+
+94
+00:09:58,480 --> 00:10:03,280
+or they could create an ar experience that 
+lets millions of smartphone users view
+
+95
+00:10:03,280 --> 00:10:08,320
+what their own backyards might look like 
+amid an extreme drought or flood allowing
+
+96
+00:10:08,320 --> 00:10:14,160
+audiences to see the real world effects of 
+systemic problems makes AR a powerful strategy
+
+97
+00:10:14,160 --> 00:10:19,360
+for non-profits and other social impact 
+organizations to enhance their messaging.
+
+98
+00:10:21,600 --> 00:10:27,680
+This week we will focus on the state of AR who's 
+behind it how effective is the technology what
+
+99
+00:10:27,680 --> 00:10:32,880
+hurdles need to be overcome where can I buy it. 
+These are the questions you'll learn in module 2.
+
+100
+00:10:33,680 --> 00:10:38,240
+There are a few basic rules that augmented reality 
+creators need to remember about the way objects
+
+101
+00:10:38,240 --> 00:10:43,600
+behave in AR. These behaviors are the key to 
+merging the real and digital world seamlessly.
+
+102
+00:10:44,400 --> 00:10:50,960
+The first of these behaviors is place stationary 
+ar objects need to stick to one point in a given environment.
+
+103
+00:10:50,960 --> 00:10:56,880
+This could be something concrete 
+such as a wall floor or ceiling or it could be
+
+104
+00:10:56,880 --> 00:11:02,320
+suspended somewhere in midair whatever the case 
+placing means these objects stay where they're
+
+105
+00:11:02,320 --> 00:11:07,440
+positioned even when users are in motion the 
+mug on your coffee table doesn't jump around
+
+106
+00:11:07,440 --> 00:11:12,560
+when you move your head if you look away. It's 
+right there when you look back again for AR to
+
+107
+00:11:12,560 --> 00:11:17,600
+maintain the illusion of reality digital objects 
+need to behave in the same way real ones do.
+
+108
+00:11:19,680 --> 00:11:24,480
+In addition to sticking wherever they are placed 
+in the real world, AR objects need to be able to
+
+109
+00:11:24,480 --> 00:11:29,840
+scale. Think about it like this when a car is 
+coming towards you from the distance.
+
+110
+00:11:29,840 --> 00:11:34,800
+It starts out small and gets bigger a painting viewed from 
+the side looks very different when you walk around
+
+111
+00:11:34,800 --> 00:11:40,400
+and face it head-on our physical distance from 
+a given object and our orientation around it
+
+112
+00:11:40,400 --> 00:11:45,760
+changes how they appear to us. A well-constructed 
+AR experience will incorporate objects that
+
+113
+00:11:45,760 --> 00:11:50,960
+are not only appropriately placed but will look 
+different if you stand right next to it. 
+
+114
+00:11:51,520 --> 00:11:58,480
+Below it above it or view it from afar, this is scaling 
+together placing and scaling are what take AR
+
+115
+00:11:58,480 --> 00:12:04,000
+objects from digital novelties to assets that 
+could potentially replace real-world counterparts.
+
+116
+00:12:06,640 --> 00:12:12,320
+Occlusion refers to what happens when an image 
+or object is blocked by another move your hand
+
+117
+00:12:12,320 --> 00:12:17,440
+in front of your face like this you've just 
+occluded the computer screen with your hand.
+
+118
+00:12:18,160 --> 00:12:22,720
+However imagine if you moved your hand in front 
+of your face and the screen was still visible
+
+119
+00:12:22,720 --> 00:12:27,920
+You'd probably get a little concerned. AR objects 
+have to play by the rules of occlusion if we want
+
+120
+00:12:27,920 --> 00:12:33,280
+them to seem real. This means that AR hardware has 
+to not only understand where the object is in the
+
+121
+00:12:33,280 --> 00:12:38,960
+room but also its relative distance from the user 
+compared with any other object physical or digital.
+
+122
+00:12:39,680 --> 00:12:44,480
+Occlusion means hiding virtual objects behind 
+other virtual objects and ones in the real world
+
+123
+00:12:45,120 --> 00:12:50,480
+say you move behind a wall while using AR. If you 
+still see the AR objects it will break your sense
+
+124
+00:12:50,480 --> 00:12:56,080
+of immersion that sense of AR objects actually 
+being in the real world in the app seamless.
+
+125
+00:12:56,080 --> 00:13:01,920
+Occlusion requires constant recalibration as users 
+can move in any direction at any given moment
+
+126
+00:13:01,920 --> 00:13:06,320
+which is why it's one of the trickiest 
+aspects of building successful AR content.
+
+127
+00:13:06,320 --> 00:13:08,480
+We'll talk later about the 
+ways that this is currently
+
+128
+00:13:08,480 --> 00:13:12,320
+a technical constraint in mobile AR. That 
+developers need to consider in their apps
+
+129
+00:13:14,640 --> 00:13:20,000
+just like a real world object. Objects in AR need 
+to respond to different patterns of lighting to
+
+130
+00:13:20,000 --> 00:13:26,480
+make sense in our minds. The colors shading and 
+shadows cast by these objects all need to behave
+
+131
+00:13:26,480 --> 00:13:32,720
+properly both in the initial lighting of a scene 
+and in the case of a lighting change. 
+
+132
+00:13:32,720 --> 00:13:37,520
+For example, if you dim the lights during an ar experience 
+then the ar objects should change in color and
+
+133
+00:13:37,520 --> 00:13:43,440
+shading appearance similarly if you move an object 
+around. The shadows need to move accordingly just
+
+134
+00:13:43,440 --> 00:13:51,600
+like they would in real life. AR objects need to 
+appear solid. This may sound obvious but it takes
+
+135
+00:13:51,600 --> 00:13:58,000
+conscious effort to achieve as you engage with 
+and ultimately create AR content keep this in mind.
+
+136
+00:13:58,640 --> 00:14:02,960
+AR objects should never overlap with real 
+world objects nor should they appear to
+
+137
+00:14:02,960 --> 00:14:06,320
+be floating in thin air, if they're not 
+something like an airplane or balloon.
+
+138
+00:14:07,040 --> 00:14:11,360
+If either of these missteps is in your 
+app, it will break immersion for your users.
+
+139
+00:14:13,600 --> 00:14:20,320
+The final component of realism context awareness 
+is the most difficult to achieve as we discussed
+
+140
+00:14:20,320 --> 00:14:25,360
+in the last video. AR hardware has to be aware 
+of essentially every single object in its
+
+141
+00:14:25,360 --> 00:14:31,600
+environment. It needs to understand that there 
+is a desk a chair and a table next to a bookcase.
+
+142
+00:14:31,600 --> 00:14:37,360
+A vase and a television and it needs to know 
+which of these items is taller shorter fatter or
+
+143
+00:14:37,360 --> 00:14:43,040
+wider than the others and how this changes when 
+the subject moves around in space. That's a lot
+
+144
+00:14:43,040 --> 00:14:48,400
+to track generating this awareness quickly and 
+without a drop in the digital object's fidelity.
+
+145
+00:14:48,400 --> 00:14:54,560
+Smoothness or functionality is one of the biggest 
+challenges facing AR creators today companies like
+
+146
+00:14:54,560 --> 00:15:00,240
+google are investing in software tools like 
+AR core to help address some of these issues.
+
