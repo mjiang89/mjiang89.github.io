@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mandarin Primer — Lesson 18 Lecture Page</title>
+<style>
+  :root{
+    --bg:#f6f8fc; --ink:#1d2433; --muted:#5a6475; --card:#ffffff; --line:#d8dfeb;
+    --blue:#2f6fed; --green:#2f9e77; --purple:#7b61ff; --orange:#f08c2e; --red:#d9485f; --gold:#c99700; --teal:#118ab2;
+    --shadow:0 10px 30px rgba(28,35,54,.08); --radius:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--ink);
+    background:radial-gradient(circle at top right, rgba(47,111,237,.08), transparent 28%),
+               radial-gradient(circle at top left, rgba(123,97,255,.08), transparent 26%), var(--bg);
+    line-height:1.65;
+  }
+  .wrap{width:min(1180px,94vw); margin:0 auto; padding:28px 0 64px;}
+  header.hero{
+    background:linear-gradient(135deg,#17457e,#2b63cf 55%,#7b61ff); color:#fff; border-radius:28px;
+    padding:34px 34px 28px; box-shadow:var(--shadow); overflow:hidden;
+  }
+  .eyebrow{
+    display:inline-block; padding:6px 10px; border:1px solid rgba(255,255,255,.28); border-radius:999px;
+    font-size:.83rem; margin-bottom:10px; background:rgba(255,255,255,.08);
+  }
+  h1,h2,h3{line-height:1.2; margin:.2rem 0 .8rem}
+  h1{font-size:clamp(2rem,3vw,3rem)} h2{font-size:1.55rem} h3{font-size:1.12rem}
+  p.lead{font-size:1.08rem; max-width:980px; opacity:.98}
+  .small{font-size:.95rem; color:var(--muted)}
+  .grid{display:grid; gap:18px}
+  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media (max-width:900px){.g2{grid-template-columns:1fr}}
+  section{margin-top:22px}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px}
+  .pill{display:inline-block; font-size:.8rem; font-weight:800; padding:5px 10px; border-radius:999px; color:#fff; margin-bottom:10px}
+  .blue{background:var(--blue)} .green{background:var(--green)} .purple{background:var(--purple)} .orange{background:var(--orange)} .red{background:var(--red)} .gold{background:var(--gold)} .teal{background:var(--teal)}
+  .banner{border-left:6px solid var(--gold); background:#fff8db; padding:14px 16px; border-radius:14px}
+  .callout{border-left:5px solid var(--blue); background:#eef4ff; padding:14px 16px; border-radius:14px}
+  .warning{border-left:5px solid var(--red); background:#fff2f4; padding:14px 16px; border-radius:14px}
+  ul li, ol li{margin:.45rem 0}
+  .flow{display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:12px}
+  @media (max-width:1000px){.flow{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){.flow{grid-template-columns:1fr}}
+  .step{background:linear-gradient(180deg,#fff,#f8faff); border:1px solid var(--line); border-radius:18px; padding:16px; min-height:162px}
+  .num{width:34px; height:34px; border-radius:50%; display:grid; place-items:center; color:#fff; font-weight:800; margin-bottom:10px; background:linear-gradient(135deg,var(--blue),var(--purple))}
+  .dialogue-line{padding:10px 0; border-bottom:1px dashed var(--line)}
+  .dialogue-line:last-child{border-bottom:none}
+  .speaker{display:inline-block; min-width:112px; font-weight:800; color:var(--blue)}
+  .roman{font-size:1.02rem; font-weight:650}
+  .gloss{color:var(--muted)}
+  .concept-grid,.practice{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px}
+  @media (max-width:900px){.concept-grid,.practice{grid-template-columns:1fr}}
+  .concept{border:1px solid var(--line); border-radius:16px; padding:16px; background:#fbfcff}
+  .tag{display:inline-block; padding:4px 8px; border-radius:999px; font-size:.78rem; font-weight:700; margin:2px 4px 2px 0; background:#eef3ff; color:#2c4a9c}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; background:#f5f7fb; padding:.08rem .35rem; border-radius:8px}
+  table{width:100%; border-collapse:collapse; font-size:.96rem}
+  th,td{border-bottom:1px solid var(--line); padding:12px 10px; text-align:left; vertical-align:top}
+  th{background:#f4f7fc} tr:last-child td{border-bottom:none}
+  .graph-wrap{overflow:auto; border:1px solid var(--line); border-radius:18px; background:linear-gradient(180deg,#fcfdff,#f6f9ff); padding:12px}
+  svg text{font-family:Inter,system-ui,sans-serif; fill:#1f2430}
+  .edge{stroke:#90a4d4; stroke-width:2.2; fill:none; marker-end:url(#arrow)}
+  .node rect{rx:18; ry:18; stroke:#d8dff2; stroke-width:1.4}
+  .legend{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; font-size:.9rem}
+  .legend span{display:flex; align-items:center; gap:6px; background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 10px}
+  .dot{width:12px; height:12px; border-radius:50%; display:inline-block}
+  .quiz-q{border:1px solid var(--line); border-radius:16px; padding:16px; margin-bottom:16px; background:#fbfdff}
+  .quiz-q label{display:block; padding:9px 10px; border:1px solid transparent; border-radius:12px; cursor:pointer}
+  .quiz-q label:hover{background:#f1f6ff; border-color:#dbe6ff}
+  button{appearance:none; border:none; background:linear-gradient(135deg,var(--blue),var(--purple)); color:#fff; border-radius:12px; padding:11px 16px; font-size:.96rem; font-weight:700; cursor:pointer; box-shadow:var(--shadow)}
+  button.secondary{background:linear-gradient(135deg,var(--green),#3fb58e)}
+  .feedback{margin-top:10px; padding:12px 14px; border-radius:12px; display:none}
+  .feedback.ok{background:#edf9f3; border:1px solid #bfe7cf}
+  .feedback.no{background:#fff1f3; border:1px solid #f0c0cb}
+  footer{margin-top:28px; color:var(--muted); font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Yuen Ren Chao - Mandarin Primer: An Intensive Course in Spoken Chinese</div>
+  <h1>Mandarin Primer — Lesson 18</h1>
+  <h2 style="font-size:1.35rem;font-weight:650;opacity:.98;">To the Minsheng Works</h2>
+  <p class="lead">
+    Lesson 18 continues the Indusco storyline, but now the focus shifts from discussing the movement in general to physically reaching and visiting one
+    of its factories. The lesson combines asking for directions, dialect misunderstanding, factory reception, introductions, product lines, war-related
+    production, the Three Principles of the People, popular education, public opinion, and self-government. It is one of the richest early lessons for showing
+    how language, place, politics, and industry all meet in one real-world visit.
+  </p>
+  <p class="small" style="color:rgba(255,255,255,.9);">This page keeps the book’s original romanization system so the page stays aligned with the scanned lesson.</p>
+</header>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill blue">Learning goals</div>
+    <h2>What students should learn</h2>
+    <ul>
+      <li>Follow the sequence of arriving at a factory: asking directions, handling dialect misunderstanding, entering, meeting the engineer, and touring the site.</li>
+      <li>Understand route language such as turn left, turn right, go past the second bridge, crossroad, T-junction, and sign on the door.</li>
+      <li>Recognize how the lesson uses Chungking dialect as a teaching moment about regional variation inside Mandarin.</li>
+      <li>Learn vocabulary for factory products, including towels, blankets, sheets, alcohol, soap, ink, uniforms, shoes, rifles, cartridges, batteries, radio receivers, kerosene, and gasoline.</li>
+      <li>Understand the ideological structure of the Three Principles of the People as reflected in factory names: Minsheng, Mintzwu, and Minchyuan.</li>
+      <li>See how the lesson links popular education, public opinion, and self-government to a printing press rather than a manufacturing shop.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="pill gold">Teacher lens</div>
+    <h2>Why this lesson matters</h2>
+    <div class="banner"><strong>Lesson 18 teaches how a factory visit becomes a lesson in language variation, industrial specialization, and civic ideals.</strong> It moves from practical wayfinding to a broader explanation of what different factories are for and why their names matter.</div>
+    <p>
+      For high-school students, this lesson is engaging because it contains humor, confusion, and discovery. They hear an unfamiliar dialect, mishear directions,
+      meet an engineer, learn about toy airplanes and real weapons factories, and see how language is tied to larger political ideas.
+    </p>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill purple">Two-hour lecture flow</div>
+  <h2>Suggested lecture sequence</h2>
+  <div class="flow">
+    <div class="step"><div class="num">1</div><strong>Direction hook</strong><br><span class="small">Begin with the question: how do we get to the Minsheng Works?</span></div>
+    <div class="step"><div class="num">2</div><strong>Dialect surprise</strong><br><span class="small">Teach the Chungking dialect misunderstanding and how speaker B repairs it.</span></div>
+    <div class="step"><div class="num">3</div><strong>Route mapping</strong><br><span class="small">Map the path: bridge, left, right, crossroad, T-junction, foreign-style building, triangle sign.</span></div>
+    <div class="step"><div class="num">4</div><strong>Factory visit and introduction</strong><br><span class="small">Teach meeting Mr. Liou, introducing a friend, and asking what the factory makes.</span></div>
+    <div class="step"><div class="num">5</div><strong>Factory names and meanings</strong><br><span class="small">Teach Minsheng, Mintzwu, and Minchyuan as meaningful categories tied to livelihood, national freedom, and democratic self-government.</span></div>
+    <div class="step"><div class="num">6</div><strong>Printing press + quiz</strong><br><span class="small">End with popular education, public opinion, self-government, and the start-of-work bell.</span></div>
+  </div>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill green">How to teach it well</div>
+    <h2>Effective teaching moves for beginners</h2>
+    <div class="callout">
+      The source’s “To the Student” pages emphasize utterances, echoing, and grammar-through-exercises. Lesson 18 works especially well when students can see both a route map and a factory network diagram while hearing the dialogue.
+    </div>
+    <ol>
+      <li>Draw the route step by step on the board as the direction-giving unfolds.</li>
+      <li>Use two colors for Standard Mandarin and Chungking dialect features so students can see what changes and what stays stable.</li>
+      <li>Separate the lesson into three layers: directions, factory tour, and civic-political explanation.</li>
+      <li>Use real objects or pictures for product vocabulary: towel, soap, ink, battery, radio, gasoline.</li>
+      <li>Teach the Three Principles segment as meaning-by-naming: why each factory or press has that name.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="pill red">Likely beginner confusions</div>
+    <h2>Where English speakers may stumble</h2>
+    <div class="warning">
+      Students may think the main difficulty is vocabulary, but the deeper challenge is that the lesson keeps changing frames: first directions, then dialect, then factory products, then political ideals.
+    </div>
+    <ul>
+      <li><strong>Chungking dialect</strong> can look intimidating, but the notes make the sound correspondences quite systematic.</li>
+      <li><strong><span class="mono">shanq ... chiuh</span> vs. <span class="mono">daw ... chiuh</span></strong> is corrected inside the lesson itself by speaker B.</li>
+      <li><strong><span class="mono">wanyell</span></strong> can mean “toy” but also “trifle,” which explains why speaker B misreads the joke about airplanes and tanks.</li>
+      <li><strong><span class="mono">Minsheng</span>, <span class="mono">Mintzwu</span>, and <span class="mono">Minchyuan</span></strong> are not just names; they organize the ideological logic of the conversation.</li>
+      <li><strong><span class="mono">tzyhjyh</span></strong> is explained in the notes as a literary-style compound meaning “to practice self-government,” not just a transparent word-by-word phrase.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill blue">Dialogue walkthrough</div>
+  <h2>Lesson 18 as route, reception, and civic explanation</h2>
+  <p class="small">This lesson becomes much easier when grouped into three scenes.</p>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 1</span>
+    <span class="roman">Laujiah, Nin a! Chiing wenn shanq Minsheng Chaang sh tzeem tzoou d'a?</span><br>
+    <span class="gloss">Excuse me, sir, may I ask how to get to the Minsheng Works?</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 1</span>
+    <span class="roman">Enq? Nii sor sahtz a? ... ta bu doong niide huah. Ranq woo lai wenn ta.</span><br>
+    <span class="gloss">Huh? What did you say? ... He does not understand what you said. Let me ask him.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 1</span>
+    <span class="roman">Tsorng jey-tyau luh wann tzuoo joan ... tzoou-guohle dih'ellg chyau, tzay shianq yow tzoou, tzooule leanglii luh de yanqtz, jiow yeou ig syr-tzyh-luhkeel ...</span><br>
+    <span class="gloss">Take this road and turn left ... after going past the second bridge, turn right, walk about two li, and then there will be a crossroad ...</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 1</span>
+    <span class="roman">Tzay tzoou-guoh.chiuh ideal, yow daw ig din-tzyh-luhkeel. Tsorng din-tzyh-luhkeel joan.jinnchiuh, nii jiow kann-dao i-tzuoh yang-farngtz, menshanq yeou g sanjeaul-shyng de jau.pair, nah jiowsh Minsheng Chaang le.</span><br>
+    <span class="gloss">Go a little farther and you reach a T-junction. Turn in there, and you will see a foreign-style building with a triangle sign on the door; that is the Minsheng Works.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 2</span>
+    <span class="roman">Liou Jinglii lai le ba? ... Nii sh bush jao Liou Gongcherngshy a? ... Ta hair mei lai, dannsh jiow yaw lai le.</span><br>
+    <span class="gloss">Has Manager Liou come? ... Are you looking for Engineer Liou? ... He has not arrived yet, but he will be here soon.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 2</span>
+    <span class="roman">Ranq woo jiehsha i-wey perngyeou. Jehsh Shyu Ryhshin Shg., gen woo ikuall lai tsanguan de.</span><br>
+    <span class="gloss">Allow me to introduce a friend. This is Mr. Shyu Ryhshin, who came with me to visit your factory.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 2</span>
+    <span class="roman">Beenlai juan tzuoh jey-i-harng. Howlai baa fannwei jiannxde kuoh-dahle. Shianntzay chwule shoou.jin a, taantz a, beydal a ... yow tianle i-men huahshyue yonqpiin, baukuoh jeoujing a, yitz a, mohshoei a ...</span><br>
+    <span class="gloss">Originally we specialized in this line. Later we gradually enlarged our scope. Now besides towels, blankets, sheets, and similar things, we have added a department of chemical products, including alcohol, soap, and ink.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 2</span>
+    <span class="roman">W oomen jeh.lii chwule jyh!wu, dahchaang, pyishye jy way, bu tzuoh jiunyonq-piin de. Yeou shie sheau-wanyell, haobii feiji le, jannche le, harngkong muujiann le ...</span><br>
+    <span class="gloss">Here, apart from uniforms, overcoats, and leather shoes, we do not make military goods. There are some little toys, such as airplanes, tanks, and aircraft carriers ...</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 2</span>
+    <span class="roman">Nah buguoh doush geei sheauharlmen wal de mushyng jiowshle. W oomen chu de dongshi dahduoshuh sh puutong sheng.hwo bihshiu de yonqpiin.</span><br>
+    <span class="gloss">Those are only models for children to play with. What we produce are mostly articles needed for ordinary life.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 3</span>
+    <span class="roman">Li jeh.lii buyeuan hair yeou i-jia jiaw Mintzwu Chaang de. Tamen neng tzaw chiang-paw, tzyydann, diannchyr, wushiann-diann shouinji, binqchiee hair neng liann meiyou gen chihyou.</span><br>
+    <span class="gloss">Not far from here there is another factory called the National Works. They can make rifles, cartridges, electric batteries, radio receivers, and can refine kerosene and gasoline.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 3</span>
+    <span class="roman">Inwey yaw baotswen mintzwu de tzyhyou, jiow deei yeou gwofarng, suooyii jyhtzaw wuuchih de gongchaang jiow jiaw Mintzwu Chaang lo.</span><br>
+    <span class="gloss">Because national freedom must be preserved by national defense, the factory that manufactures weapons is therefore called the National Works.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 3</span>
+    <span class="roman">Ting shuo tamen jenq tzaynall yuhbey yaw kaibann ig Minchyuan Yinnshua Suoo ne ... Jeyg yinnshua-suoo sh yuhbey tyichanq pyngmin jiaw.yuh, gen fabeau renmin de yanluenn yonq de.</span><br>
+    <span class="gloss">I hear they are preparing to set up a Democratic Press ... This printing establishment is intended for promoting popular education and expressing the people’s public opinion.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 3</span>
+    <span class="roman">Inwey ruguoo yaw renmin tzyhjyh me, torngshyr jiow deei baa renmin de jyshyh cherngduh tyi-gaule tsair shyng a; suooyii tsair jiaw Minchyuan Yinnshua Suoo.</span><br>
+    <span class="gloss">Because if you want the people to practice self-government, then at the same time you must raise the level of their knowledge before it will do; that is why it is called the Democratic Press.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Closing</span>
+    <span class="roman">Shianntzay daa ha-dean le, chaang.lii kai-gong le. Lao Ding! Lao Ding! ... Ruguoo yeou ren lai jao woo, nii jiow shuo woo peirj leang-wey laibin daw chaang.lii tsanguan chiuh le.</span><br>
+    <span class="gloss">It is eight now, work has begun in the factory. Lao Ding! ... If anyone comes looking for me, tell him that I have gone with two guests on a tour through the factory.</span>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill orange">Knowledge graph</div>
+  <h2>Concept network for Lesson 18</h2>
+  <p>
+    Lesson 18 forms a network around <strong>route-finding → dialect variation → reception → factory specialization → national defense → democratic education → self-government</strong>.
+  </p>
+  <div class="graph-wrap">
+    <svg width="1180" height="820" viewBox="0 0 1180 820" role="img" aria-label="Knowledge graph for Lesson 18">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" fill="#90a4d4"></path>
+        </marker>
+      </defs>
+
+      <path class="edge" d="M590,110 C590,145 590,155 590,195"/>
+      <path class="edge" d="M590,110 C440,130 320,150 205,225"/>
+      <path class="edge" d="M590,110 C740,130 860,150 975,225"/>
+      <path class="edge" d="M205,275 C205,320 205,332 205,390"/>
+      <path class="edge" d="M975,275 C975,320 975,332 975,390"/>
+      <path class="edge" d="M590,250 C490,300 430,335 375,410"/>
+      <path class="edge" d="M590,250 C690,300 750,335 805,410"/>
+      <path class="edge" d="M590,250 C590,320 590,338 590,410"/>
+      <path class="edge" d="M375,460 C340,530 300,570 250,675"/>
+      <path class="edge" d="M590,460 C590,530 590,570 590,675"/>
+      <path class="edge" d="M805,460 C840,530 880,570 930,675"/>
+
+      <g class="node">
+        <rect x="392" y="45" width="396" height="70" fill="#efeaff"></rect>
+        <text x="590" y="76" text-anchor="middle" font-size="18" font-weight="800">Lesson 18 Core Question</text>
+        <text x="590" y="99" text-anchor="middle" font-size="14">How does Mandarin connect wayfinding, dialect, factory production, and civic ideals in one visit?</text>
+      </g>
+
+      <g class="node">
+        <rect x="460" y="195" width="260" height="54" fill="#eaf2ff"></rect>
+        <text x="590" y="228" text-anchor="middle" font-size="17" font-weight="800">Factory-visit interaction</text>
+      </g>
+
+      <g class="node">
+        <rect x="55" y="225" width="300" height="52" fill="#eefaf5"></rect>
+        <text x="205" y="257" text-anchor="middle" font-size="17" font-weight="800">Directions and dialect</text>
+      </g>
+
+      <g class="node">
+        <rect x="825" y="225" width="300" height="52" fill="#fff5e8"></rect>
+        <text x="975" y="257" text-anchor="middle" font-size="17" font-weight="800">Factories, principles, and civic meaning</text>
+      </g>
+
+      <g class="node">
+        <rect x="85" y="390" width="240" height="68" fill="#edf7ff"></rect>
+        <text x="205" y="419" text-anchor="middle" font-size="16" font-weight="800">left / right / bridge / crossroad / T-junction</text>
+        <text x="205" y="441" text-anchor="middle" font-size="13">route language</text>
+      </g>
+
+      <g class="node">
+        <rect x="855" y="390" width="240" height="68" fill="#fff0f3"></rect>
+        <text x="975" y="419" text-anchor="middle" font-size="16" font-weight="800">Minsheng / Mintzwu / Minchyuan</text>
+        <text x="975" y="441" text-anchor="middle" font-size="13">naming by purpose</text>
+      </g>
+
+      <g class="node">
+        <rect x="255" y="410" width="240" height="50" fill="#eefaf5"></rect>
+        <text x="375" y="441" text-anchor="middle" font-size="16" font-weight="800">Chungking Mandarin variation</text>
+      </g>
+
+      <g class="node">
+        <rect x="685" y="410" width="240" height="50" fill="#eefaf5"></rect>
+        <text x="805" y="441" text-anchor="middle" font-size="16" font-weight="800">textiles / chemicals / weapons / printing</text>
+      </g>
+
+      <g class="node">
+        <rect x="495" y="410" width="190" height="50" fill="#eaf2ff"></rect>
+        <text x="590" y="441" text-anchor="middle" font-size="16" font-weight="800">introduction and reception</text>
+      </g>
+
+      <g class="node">
+        <rect x="155" y="675" width="190" height="58" fill="#eefaf5"></rect>
+        <text x="250" y="706" text-anchor="middle" font-size="16" font-weight="800">dialect correspondences</text>
+        <text x="250" y="726" text-anchor="middle" font-size="13">n/l, retroflex, finals</text>
+      </g>
+
+      <g class="node">
+        <rect x="495" y="675" width="190" height="58" fill="#fff5e8"></rect>
+        <text x="590" y="706" text-anchor="middle" font-size="16" font-weight="800">popular education + opinion</text>
+        <text x="590" y="726" text-anchor="middle" font-size="13">press function</text>
+      </g>
+
+      <g class="node">
+        <rect x="835" y="675" width="190" height="58" fill="#f3f0ff"></rect>
+        <text x="930" y="706" text-anchor="middle" font-size="16" font-weight="800">tzyhjyh</text>
+        <text x="930" y="726" text-anchor="middle" font-size="13">self-government</text>
+      </g>
+    </svg>
+  </div>
+  <div class="legend">
+    <span><i class="dot" style="background:#eaf2ff"></i> visit structure</span>
+    <span><i class="dot" style="background:#eefaf5"></i> route and dialect</span>
+    <span><i class="dot" style="background:#fff5e8"></i> production and ideology</span>
+    <span><i class="dot" style="background:#f3f0ff"></i> civic concepts</span>
+    <span><i class="dot" style="background:#fff0f3"></i> named institutions</span>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill green">Core concepts</div>
+  <h2>What the lesson teaches, concept by concept</h2>
+  <div class="concept-grid">
+    <div class="concept">
+      <h3>1) Asking directions is a real communicative task</h3>
+      <div class="tag">chiing wenn</div><div class="tag">tzeem tzoou</div><div class="tag">joan</div>
+      <ul>
+        <li>The lesson begins with a practical question and unfolds as a real navigation problem.</li>
+        <li>That makes spatial language memorable and meaningful.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>2) Dialect variation is systematic, not random</h3>
+      <div class="tag">Chungking dialect</div><div class="tag">retroflex → dental</div><div class="tag">n/l merger</div>
+      <ul>
+        <li>The notes on page 5 explain the main sound correspondences in Chungking Mandarin.</li>
+        <li>This lets students see dialect difference as a pattern they can learn, not just “strange pronunciation.”</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>3) Speaker B acts as a bridge between systems</h3>
+      <div class="tag">shanq...chiuh</div><div class="tag">daw...chiuh</div>
+      <ul>
+        <li>B has a smattering of the dialect and repairs the communication problem.</li>
+        <li>This is a strong example of linguistic mediation inside the dialogue itself.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>4) A factory can widen its scope over time</h3>
+      <div class="tag">juan tzuoh</div><div class="tag">fannwei kuoh-dah</div><div class="tag">tianle</div>
+      <ul>
+        <li>The factory originally specialized in textiles, then later expanded into chemical products.</li>
+        <li>This makes the lesson a good place to teach development and change over time.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>5) Humor helps manage sensitive topics</h3>
+      <div class="tag">wanyell</div><div class="tag">feiji</div><div class="tag">jannche</div><div class="tag">mushyng</div>
+      <ul>
+        <li>The joke about airplanes, tanks, and aircraft carriers being “little toys” creates surprise and lightness.</li>
+        <li>The notes explain why the ambiguity of <span class="mono">wanyell</span> matters.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>6) Names encode political purpose</h3>
+      <div class="tag">Minsheng</div><div class="tag">Mintzwu</div><div class="tag">Minchyuan</div>
+      <ul>
+        <li>The lesson explains why one factory is named for people’s livelihood, another for national freedom, and a press for democratic rights.</li>
+        <li>This makes naming itself part of the knowledge content.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>7) Education and opinion are prerequisites for self-government</h3>
+      <div class="tag">pyngmin jiaw.yuh</div><div class="tag">fabeau yanluenn</div><div class="tag">tzyhjyh</div>
+      <ul>
+        <li>The Democratic Press is justified as a tool for popular education and public opinion.</li>
+        <li>The lesson argues that self-government requires a raised level of public knowledge.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>8) Administrative speech remains highly practical</h3>
+      <div class="tag">laibin</div><div class="tag">peirj</div><div class="tag">tsanguan</div>
+      <ul>
+        <li>Even at the end, the lesson returns to practical factory routine: telling the attendant what to say if someone comes looking for the engineer.</li>
+        <li>This anchors the ideological discussion in ordinary workplace interaction.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill orange">Mini-board plan</div>
+    <h2>How to lay this out for students</h2>
+    <table>
+      <thead><tr><th>Board zone</th><th>Write this</th><th>Teaching purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Left</td><td>route map with bridge, crossroad, T-junction, foreign-style building</td><td>Makes the opening scene visual and concrete.</td></tr>
+        <tr><td>Center</td><td>dialect notes: sound correspondences and B’s repair strategy</td><td>Shows how misunderstanding becomes teachable.</td></tr>
+        <tr><td>Right</td><td>factory network: Minsheng / Mintzwu / Minchyuan</td><td>Organizes the ideological part of the lesson clearly.</td></tr>
+        <tr><td>Bottom</td><td>products and purposes: textiles, chemicals, defense, education, opinion</td><td>Links concrete production to civic concepts.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="pill teal">High-value classroom move</div>
+    <h2>Use a route-and-purpose simulation</h2>
+    <div class="callout">
+      One group gives directions, one group acts as factory visitors, and one group explains why each factory or press has its name.
+    </div>
+    <ol>
+      <li>Students first solve the route problem on a map.</li>
+      <li>Then they role-play the introductions and product questions.</li>
+      <li>Finally, they explain Minsheng, Mintzwu, and Minchyuan in simple English or Mandarin.</li>
+    </ol>
+    <p class="small">This preserves the lesson’s three-part logic: getting there, entering, then understanding what the place means.</p>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill blue">A key structural system</div>
+  <h2>Name → function → principle</h2>
+  <div class="practice">
+    <div class="concept">
+      <h3>Minsheng</h3>
+      <p><span class="mono">ordinary living goods</span></p>
+      <p class="small">People’s livelihood: articles needed for everyday life.</p>
+    </div>
+    <div class="concept">
+      <h3>Mintzwu</h3>
+      <p><span class="mono">weapons + fuel + defense</span></p>
+      <p class="small">National freedom: preserving the nation requires defense.</p>
+    </div>
+    <div class="concept">
+      <h3>Minchyuan</h3>
+      <p><span class="mono">education + public opinion + self-government</span></p>
+      <p class="small">People’s rights: democracy needs knowledge and expression.</p>
+    </div>
+    <div class="concept">
+      <h3>Teaching payoff</h3>
+      <p class="small">This lesson shows students how institutional names can encode a larger political philosophy.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill green">Guided practice</div>
+  <h2>Practice tasks for a two-hour lesson</h2>
+  <div class="practice">
+    <div class="concept">
+      <h3>Task A — Give the route</h3>
+      <p>Students guide a classmate to the Minsheng Works using only the lesson’s route expressions.</p>
+    </div>
+    <div class="concept">
+      <h3>Task B — Dialect detective</h3>
+      <p>Students identify two or three Chungking dialect features from the notes and explain how they would differ in Northern Mandarin.</p>
+    </div>
+    <div class="concept">
+      <h3>Task C — What does the factory make?</h3>
+      <p>Students sort products into livelihood goods, chemical goods, toy models, defense goods, and printing/education functions.</p>
+    </div>
+    <div class="concept">
+      <h3>Task D — Why that name?</h3>
+      <p>Students explain why Minsheng, Mintzwu, and Minchyuan are appropriate names for those institutions.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill red">Quick understanding check</div>
+  <h2>Two multiple-choice quiz questions</h2>
+
+  <div class="quiz-q" data-answer="b">
+    <h3>1) According to the notes, what is one major sound pattern of the Chungking dialect described in Lesson 18?</h3>
+    <label><input type="radio" name="q1" value="a"> All tones disappear completely.</label>
+    <label><input type="radio" name="q1" value="b"> Retroflex initials such as <span class="mono">jr, chr, shr, r</span> become dental sounds like <span class="mono">tz, ts, s, z</span>.</label>
+    <label><input type="radio" name="q1" value="c"> Every word keeps exactly the same pronunciation as Peiping Mandarin.</label>
+    <label><input type="radio" name="q1" value="d"> Only vowels change, never consonants.</label>
+    <div class="feedback ok">Correct. The notes on page 5 explicitly list this as one of the main Chungking dialect correspondences.</div>
+    <div class="feedback no">Not quite. The notes describe several systematic sound correspondences, and the retroflex-to-dental shift is one of the clearest.</div>
+  </div>
+
+  <div class="quiz-q" data-answer="c">
+    <h3>2) What is the lesson’s main reason for calling the planned press <span class="mono">Minchyuan Yinnshua Suoo</span>?</h3>
+    <label><input type="radio" name="q2" value="a"> Because it will only print toy catalogs for children.</label>
+    <label><input type="radio" name="q2" value="b"> Because it is located next to the bridge and the T-junction.</label>
+    <label><input type="radio" name="q2" value="c"> Because it is meant to promote popular education and public opinion, which are needed if people are to practice self-government.</label>
+    <label><input type="radio" name="q2" value="d"> Because every printing press in China must have the word <span class="mono">Minchyuan</span> in its name.</label>
+    <div class="feedback ok">Correct. The dialogue explicitly links popular education and public opinion to the possibility of self-government.</div>
+    <div class="feedback no">Not quite. The name is justified by the press’s civic function, not by location or convention alone.</div>
+  </div>
+
+  <button id="checkQuiz">Check my answers</button>
+  <button class="secondary" id="resetQuiz" style="margin-left:8px;">Reset</button>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill gold">Exit challenge</div>
+    <h2>End-of-lecture spoken challenge</h2>
+    <ol>
+      <li>Give two steps of the route to the Minsheng Works.</li>
+      <li>Explain one Chungking dialect feature from the notes.</li>
+      <li>Name one product made at the Minsheng Works and one at the Mintzwu Works.</li>
+      <li>Explain, in English, why a Democratic Press belongs in the lesson.</li>
+      <li>Say what has to be raised before self-government can really work, according to the dialogue.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="pill blue">References and source use</div>
+    <h2>References for this page</h2>
+    <ul>
+      <li><strong>Primary source:</strong> scanned Lesson 18 pages from <em>Mandarin Primer: An Intensive Course in Spoken Chinese</em>.</li>
+      <li><strong>Dialogue basis:</strong> Lesson 18 “To the Minsheng Works,” including the direction-seeking exchange, the Chungking-dialect misunderstanding, the route instructions, the introduction to Engineer Liou, the description of textile and chemical production, the joke about military “toys,” the explanation of Minsheng and Mintzwu factories, and the plan for a Minchyuan Printing Establishment connected to education, public opinion, and self-government.</li>
+      <li><strong>Notes basis:</strong> notes on <span class="mono">Minsheng</span>, <span class="mono">chiing wenn</span>, the Chungking dialect features on page 5, <span class="mono">sheaude</span>, <span class="mono">-dao</span>, <span class="mono">din-tzyh-luhkeel</span>, <span class="mono">sanjeaul-shyng</span>, <span class="mono">jau.pair</span>, <span class="mono">jeouyeang</span>, <span class="mono">bii-tsyy</span>, <span class="mono">faangjy</span>, <span class="mono">juan tzuoh</span>, <span class="mono">huahshyue</span>, <span class="mono">jeoujing</span>, <span class="mono">mohshoei</span>, <span class="mono">pyishye</span>, <span class="mono">wanyell</span>, <span class="mono">jannche</span>, <span class="mono">harngkong muujiann</span>, <span class="mono">wushiann-diann shouinji</span>, <span class="mono">meiyou</span>, <span class="mono">chihyou</span>, <span class="mono">mintzwu</span>, <span class="mono">juuyih</span>, <span class="mono">Minchyuan</span>, <span class="mono">kaibann</span>, <span class="mono">yinnshua-suoo</span>, <span class="mono">pyngmin jiaw.yuh</span>, <span class="mono">fabeau yanluenn</span>, <span class="mono">tzyhjyh</span>, <span class="mono">tsair shyng</span>, <span class="mono">peirj</span>, <span class="mono">laibin</span>, and <span class="mono">yawder</span>.</li>
+      <li><strong>Exercises basis:</strong> the page 6 pattern exercises on expanding a factory’s scope and explaining the usefulness of institutions, which shaped the page’s emphasis on development, purpose, and naming.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  This lecture page is designed for a full two-hour beginner lesson. It keeps close to the source while turning Lesson 18 into a clearer,
+  more connected, and more teachable factory-visit lesson for English-speaking high-school students.
+</footer>
+</div>
+
+<script>
+document.getElementById('checkQuiz').addEventListener('click', function(){
+  document.querySelectorAll('.quiz-q').forEach(function(q){
+    const correct = q.dataset.answer;
+    const selected = q.querySelector('input[type="radio"]:checked');
+    const ok = q.querySelector('.feedback.ok');
+    const no = q.querySelector('.feedback.no');
+    ok.style.display = 'none';
+    no.style.display = 'none';
+    if(selected && selected.value === correct){ ok.style.display = 'block'; }
+    else { no.style.display = 'block'; }
+  });
+});
+document.getElementById('resetQuiz').addEventListener('click', function(){
+  document.querySelectorAll('input[type="radio"]').forEach(function(inp){ inp.checked = false; });
+  document.querySelectorAll('.feedback').forEach(function(f){ f.style.display = 'none'; });
+});
+</script>
+</body>
+</html>

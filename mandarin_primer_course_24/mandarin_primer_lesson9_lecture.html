@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mandarin Primer — Lesson 9 Lecture Page</title>
+<style>
+  :root{
+    --bg:#f6f8fc;
+    --ink:#1d2433;
+    --muted:#5a6475;
+    --card:#ffffff;
+    --line:#d8dfeb;
+    --blue:#2f6fed;
+    --green:#2f9e77;
+    --purple:#7b61ff;
+    --orange:#f08c2e;
+    --red:#d9485f;
+    --gold:#c99700;
+    --teal:#0f9db8;
+    --shadow:0 10px 30px rgba(28,35,54,.08);
+    --radius:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at top right, rgba(47,111,237,.08), transparent 28%),
+      radial-gradient(circle at top left, rgba(123,97,255,.08), transparent 26%),
+      var(--bg);
+    line-height:1.65;
+  }
+  .wrap{width:min(1180px,94vw); margin:0 auto; padding:28px 0 64px;}
+  header.hero{
+    background:linear-gradient(135deg,#17457e,#2b63cf 55%,#7b61ff);
+    color:#fff;
+    border-radius:28px;
+    padding:34px 34px 28px;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+  }
+  header.hero::after{
+    content:"";
+    position:absolute; right:-45px; top:-45px;
+    width:260px; height:260px;
+    background:radial-gradient(circle, rgba(255,255,255,.18), transparent 65%);
+  }
+  .eyebrow{
+    display:inline-block;
+    padding:6px 10px;
+    border:1px solid rgba(255,255,255,.28);
+    border-radius:999px;
+    font-size:.83rem;
+    letter-spacing:.02em;
+    margin-bottom:10px;
+    background:rgba(255,255,255,.08);
+  }
+  h1,h2,h3{line-height:1.2; margin:.2rem 0 .8rem}
+  h1{font-size:clamp(2rem,3vw,3rem)}
+  h2{font-size:1.55rem}
+  h3{font-size:1.12rem}
+  p.lead{font-size:1.08rem; max-width:980px; opacity:.98}
+  .small{font-size:.95rem; color:var(--muted)}
+  .grid{display:grid; gap:18px}
+  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media (max-width:900px){.g2{grid-template-columns:1fr}}
+  section{margin-top:22px}
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:22px;
+  }
+  .pill{
+    display:inline-block;
+    font-size:.8rem;
+    font-weight:800;
+    letter-spacing:.02em;
+    padding:5px 10px;
+    border-radius:999px;
+    color:#fff;
+    margin-bottom:10px;
+  }
+  .blue{background:var(--blue)}
+  .green{background:var(--green)}
+  .purple{background:var(--purple)}
+  .orange{background:var(--orange)}
+  .red{background:var(--red)}
+  .gold{background:var(--gold)}
+  .teal{background:var(--teal)}
+  .banner{
+    border-left:6px solid var(--gold);
+    background:#fff8db;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  .callout{
+    border-left:5px solid var(--blue);
+    background:#eef4ff;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  .warning{
+    border-left:5px solid var(--red);
+    background:#fff2f4;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  ul li, ol li{margin:.45rem 0}
+  .flow{
+    display:grid;
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    gap:12px;
+  }
+  @media (max-width:1000px){.flow{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){.flow{grid-template-columns:1fr}}
+  .step{
+    background:linear-gradient(180deg,#fff,#f8faff);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:16px;
+    min-height:154px;
+  }
+  .num{
+    width:34px; height:34px; border-radius:50%;
+    display:grid; place-items:center;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:#fff; font-weight:800; margin-bottom:10px;
+  }
+  .dialogue-line{
+    padding:10px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .dialogue-line:last-child{border-bottom:none}
+  .speaker{
+    display:inline-block; min-width:82px; font-weight:800; color:var(--blue);
+  }
+  .roman{font-size:1.02rem; font-weight:650}
+  .gloss{color:var(--muted)}
+  .concept-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;
+  }
+  @media (max-width:900px){.concept-grid{grid-template-columns:1fr}}
+  .concept{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px;
+    background:#fbfcff;
+  }
+  .tag{
+    display:inline-block;
+    padding:4px 8px;
+    border-radius:999px;
+    font-size:.78rem;
+    font-weight:700;
+    margin:2px 4px 2px 0;
+    background:#eef3ff;
+    color:#2c4a9c;
+  }
+  .mono{
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background:#f5f7fb;
+    padding:.08rem .35rem;
+    border-radius:8px;
+  }
+  table{width:100%; border-collapse:collapse; font-size:.96rem}
+  th,td{border-bottom:1px solid var(--line); padding:12px 10px; text-align:left; vertical-align:top}
+  th{background:#f4f7fc}
+  tr:last-child td{border-bottom:none}
+  .graph-wrap{
+    overflow:auto;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:linear-gradient(180deg,#fcfdff,#f6f9ff);
+    padding:12px;
+  }
+  svg text{font-family: Inter, system-ui, sans-serif; fill:#1f2430;}
+  .edge{stroke:#90a4d4; stroke-width:2.2; fill:none; marker-end:url(#arrow);}
+  .node rect{rx:18; ry:18; stroke:#d8dff2; stroke-width:1.4;}
+  .legend{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; font-size:.9rem}
+  .legend span{
+    display:flex; align-items:center; gap:6px;
+    background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 10px;
+  }
+  .dot{width:12px; height:12px; border-radius:50%; display:inline-block}
+  .practice{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px;
+  }
+  @media (max-width:900px){.practice{grid-template-columns:1fr}}
+  details{
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:12px 14px;
+    background:#fff;
+  }
+  summary{cursor:pointer; font-weight:700}
+  .quiz-q{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px;
+    margin-bottom:16px;
+    background:#fbfdff;
+  }
+  .quiz-q label{
+    display:block;
+    padding:9px 10px;
+    border:1px solid transparent;
+    border-radius:12px;
+    cursor:pointer;
+  }
+  .quiz-q label:hover{background:#f1f6ff; border-color:#dbe6ff}
+  button{
+    appearance:none;
+    border:none;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:#fff;
+    border-radius:12px;
+    padding:11px 16px;
+    font-size:.96rem;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:var(--shadow);
+  }
+  button.secondary{background:linear-gradient(135deg,var(--green),#3fb58e)}
+  .feedback{
+    margin-top:10px; padding:12px 14px; border-radius:12px; display:none;
+  }
+  .feedback.ok{background:#edf9f3; border:1px solid #bfe7cf}
+  .feedback.no{background:#fff1f3; border:1px solid #f0c0cb}
+  footer{margin-top:28px; color:var(--muted); font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Yuen Ren Chao - Mandarin Primer: An Intensive Course in Spoken Chinese</div>
+    <h1>Mandarin Primer — Lesson 9</h1>
+    <h2 style="font-size:1.35rem; font-weight:650; opacity:.98;">A Good Man</h2>
+    <p class="lead">
+      Lesson 9 returns to a character-based discussion, but this time the topic is moral judgment. The speakers try to decide whether a man is truly good.
+      The lesson becomes a rich exploration of what counts as goodness: words, actions, intention, ability, helpfulness, courage, disposition, and heart.
+      For beginners, it is especially powerful because it mixes humor with serious reasoning.
+    </p>
+    <p class="small" style="color:rgba(255,255,255,.9);">
+      This page keeps the book’s original romanization system so it stays aligned with the scanned lesson. The lesson note on page 3 also signals a formatting shift:
+      from Lesson 9 onward, dots before neutral-tone syllables are mostly omitted in the source text except in special cases.
+    </p>
+  </header>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill blue">Learning goals</div>
+      <h2>What students should learn</h2>
+      <ul>
+        <li>Follow a longer evaluative conversation about whether someone should be called a good person.</li>
+        <li>Understand how Mandarin talks about moral traits, helpfulness, disposition, and action.</li>
+        <li>Recognize discourse patterns for correction, hesitation, self-repair, and “what I mean is…”</li>
+        <li>Use structures for concession and contrast such as <span class="mono">sweiran ... keesh ...</span>, <span class="mono">budann ... erlchiee ...</span>, and <span class="mono">jyy yawsh ...</span>.</li>
+        <li>Notice grammar points such as V-<span class="mono">sh</span>-V concessive forms, emphatic <span class="mono">suoo</span>, interrogative-plus-<span class="mono">dou</span>, and subject-predicate predicates like <span class="mono">ta shin hao</span>.</li>
+        <li>Think critically about the difference between saying good things, doing good deeds, and having a good heart.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="pill gold">Teacher lens</div>
+      <h2>Why this lesson matters</h2>
+      <div class="banner">
+        <strong>Lesson 9 teaches evaluation through conversation.</strong> Instead of memorizing moral vocabulary in isolation, students watch two speakers build and test a case for why someone is good.
+      </div>
+      <p>
+        This is excellent for high-school learners because it combines personality, humor, dialect description, and ethical reasoning. It also gives students a natural way to discuss
+        whether intentions, actions, and inner character are the same thing or not.
+      </p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill purple">Two-hour lecture flow</div>
+    <h2>Suggested lecture sequence</h2>
+    <div class="flow">
+      <div class="step"><div class="num">1</div><strong>Hook: what makes a good person?</strong><br><span class="small">Ask students whether “speaking good words,” “doing good deeds,” and “having a good heart” are the same thing.</span></div>
+      <div class="step"><div class="num">2</div><strong>Dialogue in episodes</strong><br><span class="small">Teach the conversation in blocks: mistaken name joke, moral slogan, practical problem, dialect description, first reason, second reason.</span></div>
+      <div class="step"><div class="num">3</div><strong>Correction and hesitation</strong><br><span class="small">Pull out the repair language: <span class="mono">woode yihsy sh shuo</span>, hesitation with <span class="mono">neyg</span>, and self-correction.</span></div>
+      <div class="step"><div class="num">4</div><strong>Argument structure</strong><br><span class="small">Map the two reasons given for calling the man good and how B challenges each one.</span></div>
+      <div class="step"><div class="num">5</div><strong>Grammar from reasoning</strong><br><span class="small">Highlight concessive V-<span class="mono">sh</span>-V, <span class="mono">suoo</span>, <span class="mono">budann ... erlchiee ...</span>, <span class="mono">jyy yawsh</span>, and S-P predicates.</span></div>
+      <div class="step"><div class="num">6</div><strong>Knowledge graph + quiz</strong><br><span class="small">End with a structured review of language, logic, and moral evaluation.</span></div>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill green">How to teach it well</div>
+      <h2>Effective teaching moves for beginners</h2>
+      <div class="callout">
+        The source’s “To the Student” pages stress utterances, repetition, echoing, and grammar-through-exercises. For Lesson 9, that means students should hear the reasoning as connected speech, not just memorize isolated moral terms. 
+      </div>
+      <ol>
+        <li>Use a visible two-column chart: <strong>reasons he seems good</strong> and <strong>reasons that raise doubt</strong>.</li>
+        <li>Teach the joke about names and misnaming first, because it keeps students engaged.</li>
+        <li>Then slow down when the lesson becomes abstract: “good words,” “good deeds,” “good heart.”</li>
+        <li>Have students separate external actions from internal character.</li>
+        <li>Keep the dialect-description section visual by mapping regions or labeling speech as mixed, unclear, southern-toned, northern-accented, etc.</li>
+      </ol>
+    </div>
+    <div class="card">
+      <div class="pill red">Likely beginner confusions</div>
+      <h2>Where English speakers may stumble</h2>
+      <div class="warning">
+        Students may think the lesson is simply about “good” vocabulary. In fact, it is also about discourse: correcting oneself, arguing, conceding, qualifying, and building a case.
+      </div>
+      <ul>
+        <li><strong>V-<span class="mono">sh</span>-V</strong> does not mean repetition for emphasis alone; it carries concessive force like “it is good, to be sure, but…”</li>
+        <li><strong><span class="mono">suoo</span></strong> is an emphatic adverb, not just a relative pronoun replacement, even though it often translates like “that which.”</li>
+        <li><strong><span class="mono">ta shin hao</span></strong> is a subject-predicate predicate, not simply “his heart” with an omitted possessive.</li>
+        <li><strong><span class="mono">jyy yawsh</span></strong> means “if only / so long as,” not the same as <span class="mono">jyy yeou</span> “only if.”</li>
+        <li><strong>Interrogative-plus-<span class="mono">dou</span></strong> like <span class="mono">sherm dou bush</span> means “it is nothing in particular,” not a literal question.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill blue">Dialogue walkthrough</div>
+    <h2>Lesson 9 as an argument about goodness</h2>
+    <p class="small">This lesson works best when broken into social and logical stages.</p>
+
+    <div class="dialogue-line">
+      <span class="speaker">Opening joke</span>
+      <span class="roman">Woo geei nii jeang ig ren.</span><br>
+      <span class="gloss">I will tell you about a man.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Misfire</span>
+      <span class="roman">Sh bush neyg ... Shuo Buwan Shg.?</span><br>
+      <span class="gloss">Is it that Mr. Can’t Finish Speaking?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Correction</span>
+      <span class="roman">Woode yihsy sh shuo ... jiaw Tarn Butyng Shg., sh bush'a?</span><br>
+      <span class="gloss">What I mean is … he’s called Mr. Can’t Stop Talking, right?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">New topic</span>
+      <span class="roman">Jeyg ren a, ta tzoong duey ren shuo, "Farm.sh shyhjieh.shanq de ren a, dou inggai dwu hao-shu, shuo hao-huah, tzuoh hao-ren, shyng hao-shyh."</span><br>
+      <span class="gloss">This man always says: Every person in the world ought to read good books, speak good words, be a good person, and do good deeds.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Problem</span>
+      <span class="roman">Ta sweiran sheang tzemm tzuoh, keesh ta mei been.shyh bae yanqyanql dou tzuoh-dawle.</span><br>
+      <span class="gloss">Although he wants to do these things, he does not have the ability to carry all of them out.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Example 1</span>
+      <span class="roman">Ta lian ig dah.tzyh dou bu renn.de, hair tyi sherm dwu hao-shu dwu huay-shu ne?</span><br>
+      <span class="gloss">He cannot even recognize a character like “big,” so what is the point of talking about reading good books or bad books?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Example 2</span>
+      <span class="roman">Ta suoo shuo de huah, ren.jia charngchang ting.bu-dah-doong.</span><br>
+      <span class="gloss">The words he says are often not very understandable to people.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Escalation</span>
+      <span class="roman">Budann sh shengren ting.bu-doong ta de huah e, lian ... ta tay.tay a, ta tzyhjii jia.lii de sheauharl a, yonq.ren a, torngshyhmen a ... tamen yee yeou ting.bu-doong ta de shyrhowl.</span><br>
+      <span class="gloss">Not only strangers, but even his wife, children, servants, and colleagues often cannot understand him.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Comic nickname</span>
+      <span class="roman">O-h-oh, bush Tarn Butyng Shg., sh Shuo Buching Shg., ar?</span><br>
+      <span class="gloss">Oh, so not Mr. Can’t Stop Talking, but Mr. No Clear Speaking?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Dialect sketch</span>
+      <span class="roman">Ta shuo de yee bujydaw sh Beeipyng-huah, yee bujydaw sh Nan.jing-huah ... iball shianq Jonggwo-huah, yow iball shianq waygwo-huah shyhde.</span><br>
+      <span class="gloss">His speech is neither clearly Pekingese nor Nankingese … half like Chinese, half like a foreign language.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Challenge</span>
+      <span class="roman">Ta shuo de huah jihran nemm nan doong, neme tzeem jydaw ta sh g hao-ren ne?</span><br>
+      <span class="gloss">If what he says is so hard to understand, how do you know that he is a good man?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Reason 1</span>
+      <span class="roman">Ta jeyg ren a, ta tzuey keen bang ren de mang. Jyy yawsh duey bye.ren yeou hao.chuh de shyh.chyng, ta meiyeou bukeen gann de.</span><br>
+      <span class="gloss">He is most willing to help people. So long as something benefits others, there is nothing he is unwilling to do.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Reason 1, stronger</span>
+      <span class="roman">Ta budann neng tzuoh renjia yiiwei nan tzuoh de shyh, binqchiee gaan tzuoh renjia suoo bugaan tzuoh de shyh.</span><br>
+      <span class="gloss">He not only does things others think are hard to do, but also dares to do things others do not dare to do.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Reason 2</span>
+      <span class="roman">Jeyg ren budann ibeytz tzuoh hao-shyh, erlchiee ta shin hao.</span><br>
+      <span class="gloss">This man not only does good deeds all his life, but also has a good heart.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Disposition evidence</span>
+      <span class="roman">Bye.ren gaushinq ta yee gaushinq; bye.ren bukuay.hwo ta yee bukuay.hwo ... ren.jia nanshow de shyrhowl ta jiow tzoong chiuh an.wey ren.jia.</span><br>
+      <span class="gloss">When others are happy, he is happy; when they are unhappy, he is unhappy … when they feel bad, he goes to comfort them.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Conclusion</span>
+      <span class="roman">Woo shiangshinn jeh ren idinq shin hao. Suooyii shuo ta sh hao-ren a, nahsh jyueduey meiyeou wenntyi de.</span><br>
+      <span class="gloss">I believe this person certainly has a good heart. So to say he is a good man is absolutely no problem.</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill orange">Knowledge graph</div>
+    <h2>Concept network for Lesson 9</h2>
+    <p>
+      Lesson 9 is a network of <strong>speech, misunderstanding, moral evaluation, evidence, and conclusion</strong>.
+      The conversation moves from an outer sign of goodness to deeper reasoning about action and inner character.
+    </p>
+    <div class="graph-wrap">
+      <svg width="1180" height="760" viewBox="0 0 1180 760" role="img" aria-label="Knowledge graph for Lesson 9">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#90a4d4"></path>
+          </marker>
+        </defs>
+
+        <path class="edge" d="M590,110 C590,145 590,155 590,195"/>
+        <path class="edge" d="M590,110 C440,130 320,150 205,220"/>
+        <path class="edge" d="M590,110 C740,130 860,150 975,220"/>
+        <path class="edge" d="M205,270 C205,315 205,328 205,375"/>
+        <path class="edge" d="M975,270 C975,315 975,328 975,375"/>
+        <path class="edge" d="M590,250 C490,300 430,332 375,395"/>
+        <path class="edge" d="M590,250 C690,300 750,332 805,395"/>
+        <path class="edge" d="M590,250 C590,320 590,335 590,395"/>
+        <path class="edge" d="M375,445 C340,515 300,550 250,625"/>
+        <path class="edge" d="M590,445 C590,515 590,550 590,625"/>
+        <path class="edge" d="M805,445 C840,515 880,550 930,625"/>
+
+        <g class="node">
+          <rect x="410" y="45" width="360" height="70" fill="#efeaff"></rect>
+          <text x="590" y="76" text-anchor="middle" font-size="18" font-weight="800">Lesson 9 Core Question</text>
+          <text x="590" y="99" text-anchor="middle" font-size="14">What makes someone a good person: good words, good deeds, or a good heart?</text>
+        </g>
+
+        <g class="node">
+          <rect x="460" y="195" width="260" height="54" fill="#eaf2ff"></rect>
+          <text x="590" y="228" text-anchor="middle" font-size="17" font-weight="800">Evaluative utterances</text>
+        </g>
+
+        <g class="node">
+          <rect x="55" y="220" width="300" height="52" fill="#eefaf5"></rect>
+          <text x="205" y="252" text-anchor="middle" font-size="17" font-weight="800">Speech and misunderstanding</text>
+        </g>
+
+        <g class="node">
+          <rect x="825" y="220" width="300" height="52" fill="#fff5e8"></rect>
+          <text x="975" y="252" text-anchor="middle" font-size="17" font-weight="800">Action, willingness, and heart</text>
+        </g>
+
+        <g class="node">
+          <rect x="85" y="375" width="240" height="66" fill="#edf7ff"></rect>
+          <text x="205" y="404" text-anchor="middle" font-size="16" font-weight="800">repair / hesitation / nickname play</text>
+          <text x="205" y="425" text-anchor="middle" font-size="13">meaning correction in talk</text>
+        </g>
+
+        <g class="node">
+          <rect x="855" y="375" width="240" height="66" fill="#fff0f3"></rect>
+          <text x="975" y="404" text-anchor="middle" font-size="16" font-weight="800">helping, daring, comforting</text>
+          <text x="975" y="425" text-anchor="middle" font-size="13">evidence for goodness</text>
+        </g>
+
+        <g class="node">
+          <rect x="255" y="395" width="240" height="50" fill="#eefaf5"></rect>
+          <text x="375" y="426" text-anchor="middle" font-size="16" font-weight="800">dialect mixture and clarity</text>
+        </g>
+
+        <g class="node">
+          <rect x="685" y="395" width="240" height="50" fill="#eefaf5"></rect>
+          <text x="805" y="426" text-anchor="middle" font-size="16" font-weight="800">two reasons argument</text>
+        </g>
+
+        <g class="node">
+          <rect x="495" y="395" width="190" height="50" fill="#eaf2ff"></rect>
+          <text x="590" y="426" text-anchor="middle" font-size="16" font-weight="800">moral conclusion</text>
+        </g>
+
+        <g class="node">
+          <rect x="155" y="625" width="190" height="58" fill="#eefaf5"></rect>
+          <text x="250" y="656" text-anchor="middle" font-size="16" font-weight="800">V-sh-V / sweiran ... keesh</text>
+          <text x="250" y="676" text-anchor="middle" font-size="13">concession and contrast</text>
+        </g>
+
+        <g class="node">
+          <rect x="495" y="625" width="190" height="58" fill="#fff5e8"></rect>
+          <text x="590" y="656" text-anchor="middle" font-size="16" font-weight="800">budann ... erlchiee</text>
+          <text x="590" y="676" text-anchor="middle" font-size="13">not only ... but also</text>
+        </g>
+
+        <g class="node">
+          <rect x="835" y="625" width="190" height="58" fill="#f3f0ff"></rect>
+          <text x="930" y="656" text-anchor="middle" font-size="16" font-weight="800">ta shin hao</text>
+          <text x="930" y="676" text-anchor="middle" font-size="13">subject-predicate predicate</text>
+        </g>
+      </svg>
+    </div>
+    <div class="legend">
+      <span><i class="dot" style="background:#eaf2ff"></i> argument structure</span>
+      <span><i class="dot" style="background:#eefaf5"></i> discourse and clarification</span>
+      <span><i class="dot" style="background:#fff5e8"></i> moral evidence</span>
+      <span><i class="dot" style="background:#f3f0ff"></i> predicate structure</span>
+      <span><i class="dot" style="background:#fff0f3"></i> inner character signals</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill green">Core concepts</div>
+    <h2>What the lesson teaches, concept by concept</h2>
+    <div class="concept-grid">
+      <div class="concept">
+        <h3>1) “Goodness” is tested, not assumed</h3>
+        <div class="tag">good words</div><div class="tag">good deeds</div><div class="tag">good heart</div>
+        <ul>
+          <li>The lesson begins with a slogan but then asks whether the man can actually do what he says.</li>
+          <li>That makes the lesson more analytic than purely descriptive.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>2) Correction and hesitation are part of real conversation</h3>
+        <div class="tag">woode yihsy sh shuo</div><div class="tag">neyg</div>
+        <ul>
+          <li>The notes say <span class="mono">woode yihsy sh shuo</span> is a regular expression for “I mean” when correcting oneself.</li>
+          <li><span class="mono">neyg</span> is also noted as a common hesitation filler.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>3) V-sh-V forms can be concessive</h3>
+        <div class="tag">hao sh hao</div><div class="tag">good, to be sure</div>
+        <ul>
+          <li>The notes explain that when a verb or adjective is repeated with <span class="mono">sh</span> in the middle, it has concessive force.</li>
+          <li>This is a key pattern for the lesson’s “It is good, all right, but …” reasoning.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>4) “What’s the point in…” has its own rhetorical pattern</h3>
+        <div class="tag">verb + sherm + object</div>
+        <ul>
+          <li>The notes explain that <span class="mono">verb + sherm + object</span> can be a rhetorical question meaning “What is the use / point of …?”</li>
+          <li>This is exactly how the text dismisses talk of reading good books when the man cannot recognize even a basic character.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>5) <span class="mono">suoo</span> gives emphasis inside de-constructions</h3>
+        <div class="tag">suoo</div><div class="tag">the thing that...</div>
+        <ul>
+          <li>The notes call <span class="mono">suoo</span> an emphatic adverb, though it often translates in relative-clause-like ways.</li>
+          <li>This helps students see that translation and grammar are not always the same thing.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>6) The lesson builds a two-reason argument</h3>
+        <div class="tag">dih'i-tserng</div><div class="tag">dih'ell-tserng</div>
+        <ul>
+          <li>First reason: he helps people and dares to do difficult things for their benefit.</li>
+          <li>Second reason: he has a good heart and a good disposition.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>7) Subject-predicate predicates matter</h3>
+        <div class="tag">ta shin hao</div>
+        <ul>
+          <li>The notes explicitly explain that <span class="mono">ta shin hao</span> is not just an omitted possessive form.</li>
+          <li>It is structured more like “as for him, the heart is good.”</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>8) Moral inference comes from behavior</h3>
+        <div class="tag">gaushinq</div><div class="tag">bukuay.hwo</div><div class="tag">an.wey</div>
+        <ul>
+          <li>The speaker cannot literally see the man’s heart, so he infers goodness from shared feeling and comforting behavior.</li>
+          <li>This makes the lesson an exercise in reasoning from evidence.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill orange">Mini-board plan</div>
+      <h2>How to lay this out for students</h2>
+      <table>
+        <thead><tr><th>Board zone</th><th>Write this</th><th>Teaching purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Left</td><td>good words / good deeds / good heart</td><td>Keeps the central evaluative categories visible.</td></tr>
+          <tr><td>Center</td><td>Reason 1 and Reason 2 with supporting evidence</td><td>Shows the lesson’s argumentative flow.</td></tr>
+          <tr><td>Right</td><td>discourse moves: <span class="mono">woode yihsy sh shuo</span>, hesitation, repair, challenge</td><td>Highlights real conversational texture.</td></tr>
+          <tr><td>Bottom</td><td><span class="mono">hao sh hao</span>, <span class="mono">sweiran ... keesh</span>, <span class="mono">budann ... erlchiee</span>, <span class="mono">ta shin hao</span></td><td>Connects argument meaning to grammar structure.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="pill teal">High-value classroom move</div>
+      <h2>Run a “case for goodness” debate</h2>
+      <div class="callout">
+        Split the class into two sides: one side argues that the man is clearly good; the other side argues that he only sounds good.
+      </div>
+      <ol>
+        <li>Use the lesson’s own evidence only.</li>
+        <li>Require at least one Mandarin phrase from the lesson in each claim.</li>
+        <li>End by asking whether intentions, actions, and inner character should count equally.</li>
+      </ol>
+      <p class="small">This turns the lesson into a structured reasoning activity instead of a passive reading exercise.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill blue">A key structural contrast</div>
+    <h2>Good actions vs. good heart</h2>
+    <div class="practice">
+      <div class="concept">
+        <h3>Outer action</h3>
+        <p><span class="mono">tzuoh hao-shyh</span></p>
+        <p class="small">Doing helpful things that benefit others.</p>
+      </div>
+      <div class="concept">
+        <h3>Inner character</h3>
+        <p><span class="mono">ta shin hao</span></p>
+        <p class="small">Having a good heart or kindly disposition.</p>
+      </div>
+      <div class="concept">
+        <h3>Why this matters</h3>
+        <p class="small">The lesson insists that doing good deeds and having a good heart are related but not identical.</p>
+      </div>
+      <div class="concept">
+        <h3>Teaching payoff</h3>
+        <p class="small">This distinction gives students a natural context for talking about evidence, motive, and moral judgment.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill green">Guided practice</div>
+    <h2>Practice tasks for a two-hour lesson</h2>
+    <div class="practice">
+      <div class="concept">
+        <h3>Task A — Repair the sentence</h3>
+        <p>Students practice hesitant and corrected speech using:
+        <span class="mono">woode yihsy sh shuo ...</span></p>
+      </div>
+      <div class="concept">
+        <h3>Task B — Evaluate the man</h3>
+        <p>Students list evidence for and against calling him a good person.</p>
+      </div>
+      <div class="concept">
+        <h3>Task C — Contrast builder</h3>
+        <p>Students turn simple statements into:
+        <span class="mono">sweiran ... keesh ...</span> and <span class="mono">budann ... erlchiee ...</span> forms.</p>
+      </div>
+      <div class="concept">
+        <h3>Task D — Read the heart?</h3>
+        <p>Students explain how the speaker concludes <span class="mono">ta shin hao</span> without literally seeing the heart.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill red">Quick understanding check</div>
+    <h2>Two multiple-choice quiz questions</h2>
+
+    <div class="quiz-q" data-answer="b">
+      <h3>1) According to the notes, what does the V-<span class="mono">sh</span>-V construction like <span class="mono">hao sh hao</span> do?</h3>
+      <label><input type="radio" name="q1" value="a"> It turns the adjective into a yes/no question.</label>
+      <label><input type="radio" name="q1" value="b"> It gives a concessive force like “it is good, to be sure, but …”</label>
+      <label><input type="radio" name="q1" value="c"> It always means repeated action in the past.</label>
+      <label><input type="radio" name="q1" value="d"> It marks sarcasm and only sarcasm.</label>
+      <div class="feedback ok">Correct. The notes explain that V-<span class="mono">sh</span>-V can be translated as “to be sure,” “all right,” or a concessive intonation pattern before a contrast.</div>
+      <div class="feedback no">Not quite. In Lesson 9, V-<span class="mono">sh</span>-V is important because it carries concessive force rather than just repetition.</div>
+    </div>
+
+    <div class="quiz-q" data-answer="c">
+      <h3>2) What is the best reason the speaker finally gives for believing the man is good-hearted?</h3>
+      <label><input type="radio" name="q2" value="a"> Because the man speaks a prestigious dialect.</label>
+      <label><input type="radio" name="q2" value="b"> Because the man can read many good books.</label>
+      <label><input type="radio" name="q2" value="c"> Because his emotional responses and comforting behavior suggest a good disposition.</label>
+      <label><input type="radio" name="q2" value="d"> Because everyone can clearly understand what he says.</label>
+      <div class="feedback ok">Correct. The speaker admits he cannot literally see the man’s heart, but infers goodness from how he rejoices with happy people, feels with unhappy people, and comforts others.</div>
+      <div class="feedback no">Not quite. The lesson’s final evidence for inner goodness comes from observed disposition and behavior, not from literacy or speech clarity.</div>
+    </div>
+
+    <button id="checkQuiz">Check my answers</button>
+    <button class="secondary" id="resetQuiz" style="margin-left:8px;">Reset</button>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill gold">Exit challenge</div>
+      <h2>End-of-lecture spoken challenge</h2>
+      <ol>
+        <li>Give one reason why the man seems hard to take seriously at first.</li>
+        <li>Give the speaker’s first reason for calling him a good man.</li>
+        <li>Give the second reason.</li>
+        <li>Use one concessive form and one “not only … but also” form from the lesson.</li>
+        <li>Explain, in English, whether you agree that he is a good person.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <div class="pill blue">References and source use</div>
+      <h2>References for this page</h2>
+      <ul>
+        <li><strong>Primary source:</strong> scanned Lesson 9 pages from <em>Mandarin Primer: An Intensive Course in Spoken Chinese</em>.</li>
+        <li><strong>Dialogue basis:</strong> Lesson 9 “A Good Man,” including the mistaken naming joke, the slogan about reading and goodness, the man’s unclear speech, the dialect discussion, and the two-part argument that he is good.</li>
+        <li><strong>Grammar basis:</strong> notes on <span class="mono">jeang</span>, omitted <span class="mono">jiaw</span>, correction phrases like <span class="mono">woode yihsy sh shuo</span>, hesitation with <span class="mono">neyg</span>, V-<span class="mono">sh</span>-V constructions, rhetorical <span class="mono">verb + sherm + object</span>, emphatic <span class="mono">suoo</span>, <span class="mono">jyy yawsh</span>, <span class="mono">budann ... erlchiee</span>, S-P predicates like <span class="mono">ta shin hao</span>, and related notes on <span class="mono">shenqren</span>, <span class="mono">ikuaZZ</span>, <span class="mono">torngshyh</span>, and <span class="mono">sherm dou bush</span>.</li>
+        <li><strong>Teaching basis:</strong> the source’s “To the Student” guidance on utterances, repetition, echoing, and grammar-through-exercises.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    This lecture page is designed for a full two-hour beginner lesson. It keeps close to the source while turning Lesson 9 into a clearer,
+    more connected, and more teachable discussion of language, character, and moral reasoning for English-speaking high-school students.
+  </footer>
+</div>
+
+<script>
+document.getElementById('checkQuiz').addEventListener('click', function(){
+  document.querySelectorAll('.quiz-q').forEach(function(q){
+    const correct = q.dataset.answer;
+    const selected = q.querySelector('input[type="radio"]:checked');
+    const ok = q.querySelector('.feedback.ok');
+    const no = q.querySelector('.feedback.no');
+    ok.style.display = 'none';
+    no.style.display = 'none';
+    if(selected && selected.value === correct){
+      ok.style.display = 'block';
+    } else {
+      no.style.display = 'block';
+    }
+  });
+});
+
+document.getElementById('resetQuiz').addEventListener('click', function(){
+  document.querySelectorAll('input[type="radio"]').forEach(function(inp){ inp.checked = false; });
+  document.querySelectorAll('.feedback').forEach(function(f){ f.style.display = 'none'; });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mandarin Primer — Lesson 4 Lecture Page</title>
+<style>
+  :root{
+    --bg:#f6f8fc;
+    --ink:#1d2433;
+    --muted:#5a6475;
+    --card:#ffffff;
+    --line:#d8dfeb;
+    --blue:#2f6fed;
+    --green:#2f9e77;
+    --purple:#7b61ff;
+    --orange:#f08c2e;
+    --red:#d9485f;
+    --gold:#c99700;
+    --teal:#0f9db8;
+    --shadow:0 10px 30px rgba(28,35,54,.08);
+    --radius:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at top right, rgba(47,111,237,.08), transparent 28%),
+      radial-gradient(circle at top left, rgba(123,97,255,.08), transparent 26%),
+      var(--bg);
+    line-height:1.65;
+  }
+  .wrap{width:min(1180px,94vw); margin:0 auto; padding:28px 0 64px;}
+  header.hero{
+    background:linear-gradient(135deg,#123b8e,#2462c9 55%,#6f55ff);
+    color:#fff;
+    border-radius:28px;
+    padding:34px 34px 28px;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+  }
+  header.hero::after{
+    content:"";
+    position:absolute; right:-45px; top:-45px;
+    width:260px; height:260px;
+    background:radial-gradient(circle, rgba(255,255,255,.18), transparent 65%);
+  }
+  .eyebrow{
+    display:inline-block;
+    padding:6px 10px;
+    border:1px solid rgba(255,255,255,.28);
+    border-radius:999px;
+    font-size:.83rem;
+    letter-spacing:.02em;
+    margin-bottom:10px;
+    background:rgba(255,255,255,.08);
+  }
+  h1,h2,h3{line-height:1.2; margin:.2rem 0 .8rem}
+  h1{font-size:clamp(2rem,3vw,3rem)}
+  h2{font-size:1.55rem}
+  h3{font-size:1.12rem}
+  p.lead{font-size:1.08rem; max-width:980px; opacity:.98}
+  .small{font-size:.95rem; color:var(--muted)}
+  .grid{display:grid; gap:18px}
+  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  @media (max-width:900px){.g2,.g3{grid-template-columns:1fr}}
+  section{margin-top:22px}
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:22px;
+  }
+  .pill{
+    display:inline-block;
+    font-size:.8rem;
+    font-weight:800;
+    letter-spacing:.02em;
+    padding:5px 10px;
+    border-radius:999px;
+    color:#fff;
+    margin-bottom:10px;
+  }
+  .blue{background:var(--blue)}
+  .green{background:var(--green)}
+  .purple{background:var(--purple)}
+  .orange{background:var(--orange)}
+  .red{background:var(--red)}
+  .gold{background:var(--gold)}
+  .teal{background:var(--teal)}
+  .banner{
+    border-left:6px solid var(--gold);
+    background:#fff8db;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  .callout{
+    border-left:5px solid var(--blue);
+    background:#eef4ff;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  .warning{
+    border-left:5px solid var(--red);
+    background:#fff2f4;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  ul li, ol li{margin:.45rem 0}
+  .flow{
+    display:grid;
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    gap:12px;
+  }
+  @media (max-width:1000px){.flow{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){.flow{grid-template-columns:1fr}}
+  .step{
+    background:linear-gradient(180deg,#fff,#f8faff);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:16px;
+    min-height:150px;
+  }
+  .num{
+    width:34px; height:34px; border-radius:50%;
+    display:grid; place-items:center;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:#fff; font-weight:800; margin-bottom:10px;
+  }
+  .dialogue-line{
+    padding:10px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .dialogue-line:last-child{border-bottom:none}
+  .speaker{
+    display:inline-block; min-width:82px; font-weight:800; color:var(--blue);
+  }
+  .roman{font-size:1.02rem; font-weight:650}
+  .gloss{color:var(--muted)}
+  .concept-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;
+  }
+  @media (max-width:900px){.concept-grid{grid-template-columns:1fr}}
+  .concept{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px;
+    background:#fbfcff;
+  }
+  .tag{
+    display:inline-block;
+    padding:4px 8px;
+    border-radius:999px;
+    font-size:.78rem;
+    font-weight:700;
+    margin:2px 4px 2px 0;
+    background:#eef3ff;
+    color:#2c4a9c;
+  }
+  .mono{
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background:#f5f7fb;
+    padding:.08rem .35rem;
+    border-radius:8px;
+  }
+  table{width:100%; border-collapse:collapse; font-size:.96rem}
+  th,td{border-bottom:1px solid var(--line); padding:12px 10px; text-align:left; vertical-align:top}
+  th{background:#f4f7fc}
+  tr:last-child td{border-bottom:none}
+  .graph-wrap{
+    overflow:auto;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:linear-gradient(180deg,#fcfdff,#f6f9ff);
+    padding:12px;
+  }
+  svg text{font-family: Inter, system-ui, sans-serif; fill:#1f2430;}
+  .edge{stroke:#90a4d4; stroke-width:2.2; fill:none; marker-end:url(#arrow);}
+  .node rect{rx:18; ry:18; stroke:#d8dff2; stroke-width:1.4;}
+  .legend{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; font-size:.9rem}
+  .legend span{
+    display:flex; align-items:center; gap:6px;
+    background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 10px;
+  }
+  .dot{width:12px; height:12px; border-radius:50%; display:inline-block}
+  .practice{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px;
+  }
+  @media (max-width:900px){.practice{grid-template-columns:1fr}}
+  details{
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:12px 14px;
+    background:#fff;
+  }
+  summary{cursor:pointer; font-weight:700}
+  .quiz-q{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px;
+    margin-bottom:16px;
+    background:#fbfdff;
+  }
+  .quiz-q label{
+    display:block;
+    padding:9px 10px;
+    border:1px solid transparent;
+    border-radius:12px;
+    cursor:pointer;
+  }
+  .quiz-q label:hover{background:#f1f6ff; border-color:#dbe6ff}
+  button{
+    appearance:none;
+    border:none;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:#fff;
+    border-radius:12px;
+    padding:11px 16px;
+    font-size:.96rem;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:var(--shadow);
+  }
+  button.secondary{background:linear-gradient(135deg,var(--green),#3fb58e)}
+  .feedback{
+    margin-top:10px; padding:12px 14px; border-radius:12px; display:none;
+  }
+  .feedback.ok{background:#edf9f3; border:1px solid #bfe7cf}
+  .feedback.no{background:#fff1f3; border:1px solid #f0c0cb}
+  footer{margin-top:28px; color:var(--muted); font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Yuen Ren Chao - Mandarin Primer: An Intensive Course in Spoken Chinese</div>
+    <h1>Mandarin Primer — Lesson 4</h1>
+    <h2 style="font-size:1.35rem; font-weight:650; opacity:.98;">Telephoning</h2>
+    <p class="lead">
+      Lesson 4 is a major step forward in real-life interaction. Students move into a telephone conversation full of
+      listening problems, numbers, directions, polite address, dates and times, travel methods, requests for repetition,
+      and negotiation about plans. This lesson is ideal for showing that beginner Mandarin is already a system for doing things,
+      not just naming things.
+    </p>
+    <p class="small" style="color:rgba(255,255,255,.9);">
+      This page keeps the book’s original romanization system to stay aligned with the scanned lesson.
+    </p>
+  </header>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill blue">Learning goals</div>
+      <h2>What students should learn</h2>
+      <ul>
+        <li>Handle a basic phone exchange with greetings, identification, and number confirmation.</li>
+        <li>Recognize and use numbers, days of the week, and clock time in a conversational setting.</li>
+        <li>Ask about routes and motion: <span class="mono">tsorng naal tzoou?</span>, <span class="mono">tzeem lai .de?</span></li>
+        <li>Distinguish different question types, including high-pitched <span class="mono">.ma</span>, low-pitched confirming <span class="mono">.a</span>, and disjunctive <span class="mono">.hair.sh</span>.</li>
+        <li>Use polite forms in phone talk, such as <span class="mono">Nin</span>, <span class="mono">gueyshinq</span>, <span class="mono">shian.sheng</span>, and <span class="mono">tairfuu</span>.</li>
+        <li>Request repetition and slower speech when comprehension breaks down.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="pill gold">Teacher lens</div>
+      <h2>Why this lesson matters</h2>
+      <div class="banner">
+        <strong>Lesson 4 is the first high-pressure communication scene.</strong> The speaker cannot see the other person and must rely on sound,
+        clarification, confirmation, and repair.
+      </div>
+      <p>
+        That makes this lesson especially powerful for teaching listening strategy. Students see that real conversation includes not understanding,
+        asking again, hearing incorrectly, checking names and numbers, and negotiating plans.
+      </p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill purple">Two-hour lecture flow</div>
+    <h2>Suggested lecture sequence</h2>
+    <div class="flow">
+      <div class="step"><div class="num">1</div><strong>Sound and situation</strong><br><span class="small">Begin with a ringing-phone scenario. Ask what students might need to say when they cannot see the speaker.</span></div>
+      <div class="step"><div class="num">2</div><strong>Chunk the conversation</strong><br><span class="small">Teach the dialogue in stages: ringing and locating, greeting and identification, date/time questions, travel details, comprehension repair, planning.</span></div>
+      <div class="step"><div class="num">3</div><strong>Number and time drill</strong><br><span class="small">Practice telephone numbers, dates, weekdays, and o’clock expressions separately before reinserting them into the conversation.</span></div>
+      <div class="step"><div class="num">4</div><strong>Question types in action</strong><br><span class="small">Show how different intonation and particles change the communicative force of the question.</span></div>
+      <div class="step"><div class="num">5</div><strong>Repair strategies</strong><br><span class="small">Focus on not understanding: asking for slower speech, asking again, checking meaning, and hearing key details.</span></div>
+      <div class="step"><div class="num">6</div><strong>Role play + quiz</strong><br><span class="small">End with paired telephone role plays and two understanding checks on core structures.</span></div>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill green">How to teach it well</div>
+      <h2>Effective teaching moves for beginners</h2>
+      <div class="callout">
+        The source pages emphasize utterances, echoing, repetition, and grammar learned through exercises. Lesson 4 works best when students
+        experience it as a performance scene, not as a vocabulary list.
+      </div>
+      <ol>
+        <li>Teach with one student facing away from the other, to simulate no visual cues.</li>
+        <li>Separate the lesson into subskills: numbers, greetings, names, dates, travel, clarification.</li>
+        <li>Use repeated mini-dialogues such as <span class="mono">Sherm.me? Woo ting.bu-doong.</span></li>
+        <li>Keep a visible timeline on the board for <span class="mono">tzwol / jiel / miengl</span> and weekdays.</li>
+        <li>Have students compare what is hard in phone talk versus face-to-face talk.</li>
+      </ol>
+    </div>
+    <div class="card">
+      <div class="pill red">Likely beginner confusions</div>
+      <h2>Where English speakers may stumble</h2>
+      <div class="warning">
+        English-speaking beginners often think conversation is mainly about content words. Lesson 4 shows that conversation is also about control signals:
+        checking, slowing down, repeating, and choosing between alternatives.
+      </div>
+      <ul>
+        <li><strong><span class="mono">Uai</span></strong> is a telephone or hailing “Hello,” not a general greeting hello.</li>
+        <li><strong><span class="mono">Nin naal?</span></strong> on the phone asks “what place are you?” rather than directly “who are you?”</li>
+        <li><strong>Disjunctive <span class="mono">.hair.sh</span></strong> is different from non-disjunctive <span class="mono">.huoh.jee</span>.</li>
+        <li><strong><span class="mono">ting.bu-doong</span></strong> and related patterns use potential complements, not a separate word for “can’t.”</li>
+        <li><strong><span class="mono">.de</span></strong> after time expressions often highlights a specific past point: “the plane that arrived at twelve o’clock.”</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill blue">Dialogue walkthrough</div>
+    <h2>Lesson 4 as a live communication sequence</h2>
+    <p class="small">This lesson is best understood as a sequence of communicative problems and repairs.</p>
+
+    <div class="dialogue-line">
+      <span class="speaker">Scene 1</span>
+      <span class="roman">Ting! Nii ting! Sherm sheang? Sherm sheng.in sheang?</span><br>
+      <span class="gloss">Listen! What is ringing? What sound is it?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 1</span>
+      <span class="roman">Sh menliengl .hair.sh diannhuah .ia?</span><br>
+      <span class="gloss">Is it the doorbell or the telephone?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 1</span>
+      <span class="roman">Diannhuah tzay naal? Tsorng naal tzoou? Tzeem tzoou?</span><br>
+      <span class="gloss">Where is the telephone? Which way do I go? How do I go?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 2</span>
+      <span class="roman">.Uai, .uai, Nin naal? Nin sh neei-i-wey? Gueyshinq .a?</span><br>
+      <span class="gloss">Hello? What place are you? Who are you, please? What is your honorable surname?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 2</span>
+      <span class="roman">Shinq Wang .a? Wang .Shian.sheng Tairfuu .sh-?</span><br>
+      <span class="gloss">Your surname is Wang? And your courtesy name / personal style, Mr. Wang, is…?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 3</span>
+      <span class="roman">.Oh, nii jiow.sh Wang Ell! Woo mei ting.chu.lai jiow.sh nii.</span><br>
+      <span class="gloss">Oh, it is just Wang Ell! I didn’t make out that it was you.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 3</span>
+      <span class="roman">Nii tzeem tzemm.shie shyr.howl yee mei lai kann woo .ia?</span><br>
+      <span class="gloss">Why haven’t you come to see me for such a long time?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 4</span>
+      <span class="roman">Nii lai.guoh .ma? Nii sherm .shyr.howl lai .de? Neei-tian lai .de?</span><br>
+      <span class="gloss">You did come? When did you come? What day did you come?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 4</span>
+      <span class="roman">Jiel .hair.sh tzwol .a? Tzwol shanq.wuu .hair.sh shiah.wuu .a?</span><br>
+      <span class="gloss">Today or yesterday? Yesterday morning or afternoon?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 5</span>
+      <span class="roman">Nii tzeem lai .de? Sh tzoou-dawl lai .de, sh tzuoh-che lai .de, .hair.sh tzuoh-chwan lai .de?</span><br>
+      <span class="gloss">How did you come? Did you walk, come by car, or come by boat?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 5</span>
+      <span class="roman">.Oh, nii sh tzuoh feiji lai .de! Jii-dean jong .de feiji? Sherm .shyr.howl daw .de?</span><br>
+      <span class="gloss">Oh, you came by plane! What time plane? When did it arrive?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 6</span>
+      <span class="roman">Ar? Sherm.me? Nii shuo sherm.me? Woo ting.bu-doong.</span><br>
+      <span class="gloss">Huh? What? What did you say? I can’t understand.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 6</span>
+      <span class="roman">Chiing nii mann.i.deal shuo. Chiing nii shuo-mann.i.deal.</span><br>
+      <span class="gloss">Please speak a little more slowly. Please say it more slowly.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 7</span>
+      <span class="roman">Woo sheang woo jey-leang-tian mei konql … Nii.men leang-wey shanq woo.jell lai .ha, .hao .bu.hao?</span><br>
+      <span class="gloss">I think I’ll be busy these next few days … You two gentlemen come to my place instead, all right?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 7</span>
+      <span class="roman">Miengl jiann, .ah! .Tzay.jiann vx!</span><br>
+      <span class="gloss">See you tomorrow! Goodbye!</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill orange">Knowledge graph</div>
+    <h2>Concept network for Lesson 4</h2>
+    <p>
+      Lesson 4 is a network of <strong>hearing, identifying, locating, timing, moving, repairing, and arranging</strong>.
+      It is one of the best lessons for showing students how spoken Mandarin manages conversation under pressure.
+    </p>
+    <div class="graph-wrap">
+      <svg width="1160" height="700" viewBox="0 0 1160 700" role="img" aria-label="Knowledge graph for Lesson 4">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#90a4d4"></path>
+          </marker>
+        </defs>
+
+        <path class="edge" d="M580,110 C580,145 580,155 580,195"/>
+        <path class="edge" d="M580,110 C435,130 320,150 210,215"/>
+        <path class="edge" d="M580,110 C725,130 840,150 950,215"/>
+        <path class="edge" d="M210,265 C210,305 210,320 210,365"/>
+        <path class="edge" d="M950,265 C950,305 950,320 950,365"/>
+        <path class="edge" d="M580,245 C485,295 430,325 380,385"/>
+        <path class="edge" d="M580,245 C675,295 730,325 780,385"/>
+        <path class="edge" d="M580,245 C580,315 580,330 580,385"/>
+        <path class="edge" d="M380,435 C345,500 305,535 260,600"/>
+        <path class="edge" d="M580,435 C580,500 580,535 580,600"/>
+        <path class="edge" d="M780,435 C815,500 855,535 900,600"/>
+
+        <g class="node">
+          <rect x="420" y="45" width="320" height="70" fill="#efeaff"></rect>
+          <text x="580" y="76" text-anchor="middle" font-size="18" font-weight="800">Lesson 4 Core Question</text>
+          <text x="580" y="99" text-anchor="middle" font-size="14">How do we manage a phone conversation when we cannot see the other person?</text>
+        </g>
+
+        <g class="node">
+          <rect x="450" y="195" width="260" height="54" fill="#eaf2ff"></rect>
+          <text x="580" y="228" text-anchor="middle" font-size="17" font-weight="800">Telephone utterances</text>
+        </g>
+
+        <g class="node">
+          <rect x="70" y="215" width="280" height="52" fill="#eefaf5"></rect>
+          <text x="210" y="247" text-anchor="middle" font-size="17" font-weight="800">Identification and location</text>
+        </g>
+
+        <g class="node">
+          <rect x="810" y="215" width="280" height="52" fill="#fff5e8"></rect>
+          <text x="950" y="247" text-anchor="middle" font-size="17" font-weight="800">Time, travel, and repair</text>
+        </g>
+
+        <g class="node">
+          <rect x="95" y="365" width="230" height="64" fill="#edf7ff"></rect>
+          <text x="210" y="394" text-anchor="middle" font-size="16" font-weight="800">phone number / place / name</text>
+          <text x="210" y="415" text-anchor="middle" font-size="13">tzoongjyu, Nin naal, gueyshinq</text>
+        </g>
+
+        <g class="node">
+          <rect x="835" y="365" width="230" height="64" fill="#fff0f3"></rect>
+          <text x="950" y="394" text-anchor="middle" font-size="16" font-weight="800">dates / times / vehicles</text>
+          <text x="950" y="415" text-anchor="middle" font-size="13">weekdays, o’clock, plane, car, boat</text>
+        </g>
+
+        <g class="node">
+          <rect x="260" y="385" width="240" height="50" fill="#eefaf5"></rect>
+          <text x="380" y="416" text-anchor="middle" font-size="16" font-weight="800">politeness and address</text>
+        </g>
+
+        <g class="node">
+          <rect x="660" y="385" width="240" height="50" fill="#eefaf5"></rect>
+          <text x="780" y="416" text-anchor="middle" font-size="16" font-weight="800">repair and repetition</text>
+        </g>
+
+        <g class="node">
+          <rect x="485" y="385" width="190" height="50" fill="#eaf2ff"></rect>
+          <text x="580" y="416" text-anchor="middle" font-size="16" font-weight="800">question systems</text>
+        </g>
+
+        <g class="node">
+          <rect x="165" y="600" width="190" height="58" fill="#eefaf5"></rect>
+          <text x="260" y="631" text-anchor="middle" font-size="16" font-weight="800">Nin / wey / shian.sheng</text>
+          <text x="260" y="651" text-anchor="middle" font-size="13">polite telephone style</text>
+        </g>
+
+        <g class="node">
+          <rect x="485" y="600" width="190" height="58" fill="#fff5e8"></rect>
+          <text x="580" y="631" text-anchor="middle" font-size="16" font-weight="800">.ma / .a / .hair.sh / .huoh.jee</text>
+          <text x="580" y="651" text-anchor="middle" font-size="13">different question logics</text>
+        </g>
+
+        <g class="node">
+          <rect x="805" y="600" width="190" height="58" fill="#f3f0ff"></rect>
+          <text x="900" y="631" text-anchor="middle" font-size="16" font-weight="800">ting.bu-doong / tzay shuo i.biann</text>
+          <text x="900" y="651" text-anchor="middle" font-size="13">comprehension repair</text>
+        </g>
+      </svg>
+    </div>
+    <div class="legend">
+      <span><i class="dot" style="background:#eaf2ff"></i> sentence patterns</span>
+      <span><i class="dot" style="background:#eefaf5"></i> identification and politeness</span>
+      <span><i class="dot" style="background:#fff5e8"></i> question logic and timing</span>
+      <span><i class="dot" style="background:#f3f0ff"></i> repair strategy</span>
+      <span><i class="dot" style="background:#fff0f3"></i> travel and schedule details</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill green">Core concepts</div>
+    <h2>What the lesson teaches, concept by concept</h2>
+    <div class="concept-grid">
+      <div class="concept">
+        <h3>1) Phone talk begins with place and number</h3>
+        <div class="tag">tzoongjyu</div><div class="tag">jii-haw</div><div class="tag">Nin naal</div>
+        <ul>
+          <li>The lesson begins with a telephone number and exchange.</li>
+          <li>On the phone, the first question is often “what place are you?” rather than “who are you?”</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>2) Politeness has special forms</h3>
+        <div class="tag">Nin</div><div class="tag">wey</div><div class="tag">gueyshinq</div><div class="tag">shian.sheng</div>
+        <ul>
+          <li><span class="mono">Nin</span> is a polite “you” in the Peiping area.</li>
+          <li><span class="mono">wey</span> is the polite form used in asking identity.</li>
+          <li><span class="mono">gueyshinq</span> asks one’s honorable surname.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>3) Numbers matter in real time</h3>
+        <div class="tag">1–100</div><div class="tag">AN after numerals</div><div class="tag">o’clock</div>
+        <ul>
+          <li>The notes give a full number system from 1 to 100.</li>
+          <li>Lesson 4 makes numbers practical: phone numbers, dates, doors, and arrival times.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>4) Days and time are part of planning logic</h3>
+        <div class="tag">Liibay</div><div class="tag">tzwol</div><div class="tag">jiel</div><div class="tag">miengl</div>
+        <ul>
+          <li>The lesson moves through yesterday, today, tomorrow, and days of the week.</li>
+          <li>Students learn how schedule questions unfold step by step.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>5) Travel is expressed through manner of arrival</h3>
+        <div class="tag">tzoou-dawl</div><div class="tag">tzuoh-che</div><div class="tag">tzuoh-chwan</div><div class="tag">tzuoh feiji</div>
+        <ul>
+          <li>The lesson asks how someone came: walking, by car, by boat, by plane.</li>
+          <li>This is excellent for teaching verb-object travel expressions.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>6) Potential complements express listening ability</h3>
+        <div class="tag">ting.bu-doong</div><div class="tag">ting.bu-ching.chuu</div><div class="tag">kann.bu-jiann</div>
+        <ul>
+          <li>The notes explain that <span class="mono">-de-</span> and <span class="mono">-bu-</span> inside verb-complement compounds express can / cannot.</li>
+          <li>This gives students a more structural way to say “I can’t understand.”</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>7) Question particles and intonation matter a lot</h3>
+        <div class="tag">.ma</div><div class="tag">.a</div><div class="tag">low pitch</div><div class="tag">high pitch</div>
+        <ul>
+          <li>High-pitched <span class="mono">.ma</span> leans toward agreement/disagreement.</li>
+          <li>Low-pitched <span class="mono">.a</span> can function as echo-confirmation: “Did you say…?”</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>8) Mandarin distinguishes two kinds of “or”</h3>
+        <div class="tag">.hair.sh</div><div class="tag">.huoh.jee</div>
+        <ul>
+          <li><span class="mono">.hair.sh</span> is used in disjunctive choice questions: which one?</li>
+          <li><span class="mono">.huoh.jee</span> is used in non-disjunctive or statement-like “or.”</li>
+          <li>This is a subtle but important conversational distinction.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill orange">Mini-board plan</div>
+      <h2>How to lay this out for students</h2>
+      <table>
+        <thead><tr><th>Board zone</th><th>Write this</th><th>Teaching purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Left</td><td><span class="mono">Uai / Nin naal / gueyshinq</span></td><td>Keep phone opening formula visible.</td></tr>
+          <tr><td>Center</td><td>number line + weekday line + clock times</td><td>Support fast listening for numbers and scheduling.</td></tr>
+          <tr><td>Right</td><td><span class="mono">ting.bu-doong</span>, <span class="mono">mann.i.deal</span>, <span class="mono">tzay shuo i.biann</span></td><td>Give students survival repair language.</td></tr>
+          <tr><td>Bottom</td><td><span class="mono">.ma</span> vs <span class="mono">.a</span>; <span class="mono">.hair.sh</span> vs <span class="mono">.huoh.jee</span></td><td>Make question logic explicit.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="pill teal">High-value classroom move</div>
+      <h2>Turn Lesson 4 into a telephone lab</h2>
+      <div class="callout">
+        Have students sit back-to-back or separated by a divider so they cannot see each other.
+      </div>
+      <ol>
+        <li>One student reads a phone number. The other repeats and confirms it.</li>
+        <li>The caller asks for identity politely.</li>
+        <li>The receiver intentionally says one phrase unclearly.</li>
+        <li>The caller must use repair language such as <span class="mono">Woo ting.bu-doong</span> or <span class="mono">Chiing nii tzay shuo i.biann.</span></li>
+        <li>End by arranging a visit for today or tomorrow.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill blue">Two “or”s, two different meanings</div>
+    <h2>A key lesson 4 concept</h2>
+    <div class="practice">
+      <div class="concept">
+        <h3>Disjunctive “or”</h3>
+        <p><span class="mono">Jiel .hair.sh tzwol .a?</span></p>
+        <p class="small">This asks the listener to choose: today or yesterday?</p>
+      </div>
+      <div class="concept">
+        <h3>Non-disjunctive “or”</h3>
+        <p><span class="mono">Nii yaw chianbii .huoh.jee gangbii .bu.yaw?</span></p>
+        <p class="small">This is more like “do you want a pencil or a pen, or not?” not a simple immediate forced choice in the same way.</p>
+      </div>
+    </div>
+    <details>
+      <summary>Why this is important for beginners</summary>
+      <p>
+        English uses “or” for both of these situations, but the lesson explicitly teaches that Chinese separates them.
+        That gives students a deeper sense that conversation meaning depends on the <em>type</em> of alternative being presented.
+      </p>
+    </details>
+  </section>
+
+  <section class="card">
+    <div class="pill green">Guided practice</div>
+    <h2>Practice tasks for a two-hour lesson</h2>
+    <div class="practice">
+      <div class="concept">
+        <h3>Task A — Number relay</h3>
+        <p>Students take turns saying:</p>
+        <ul>
+          <li>telephone numbers</li>
+          <li>dates</li>
+          <li>o’clock times</li>
+        </ul>
+      </div>
+      <div class="concept">
+        <h3>Task B — Weekday timeline</h3>
+        <p>Students answer:</p>
+        <ul>
+          <li><span class="mono">Tzwol Liibayliow, jiel Liibayjii .ne?</span></li>
+          <li><span class="mono">Miengl .ne?</span></li>
+        </ul>
+      </div>
+      <div class="concept">
+        <h3>Task C — Repair chain</h3>
+        <p>One student mumbles a phrase. The other must respond with:</p>
+        <ul>
+          <li><span class="mono">Sherm.me?</span></li>
+          <li><span class="mono">Woo ting.bu-doong.</span></li>
+          <li><span class="mono">Chiing nii shuo-mann.i.deal.</span></li>
+          <li><span class="mono">Chiing nii tzay shuo i.biann.</span></li>
+        </ul>
+      </div>
+      <div class="concept">
+        <h3>Task D — Arrange a meeting</h3>
+        <p>Students negotiate whether to meet:</p>
+        <ul>
+          <li>today or tomorrow</li>
+          <li>at my place or your place</li>
+          <li>right away or later</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill red">Quick understanding check</div>
+    <h2>Two multiple-choice quiz questions</h2>
+
+    <div class="quiz-q" data-answer="b">
+      <h3>1) In this lesson, why is <span class="mono">Nin naal?</span> especially important?</h3>
+      <label><input type="radio" name="q1" value="a"> Because it is the normal way to greet someone face-to-face on the street.</label>
+      <label><input type="radio" name="q1" value="b"> Because in telephone talk the first question often asks what place or residence is speaking, not simply “Who are you?”</label>
+      <label><input type="radio" name="q1" value="c"> Because it means “Where are you going tomorrow?”</label>
+      <label><input type="radio" name="q1" value="d"> Because it is only used when speaking to children.</label>
+      <div class="feedback ok">Correct. The notes explain that telephone subscribers are treated as places or organizations, so “what place are you?” is a natural opening question.</div>
+      <div class="feedback no">Not quite. In this lesson, <span class="mono">Nin naal?</span> is tied to telephone etiquette and identification of the calling place.</div>
+    </div>
+
+    <div class="quiz-q" data-answer="c">
+      <h3>2) What is the key difference between <span class="mono">.hair.sh</span> and <span class="mono">.huoh.jee</span> in the notes?</h3>
+      <label><input type="radio" name="q2" value="a"> One is formal and the other is informal, but they mean exactly the same thing.</label>
+      <label><input type="radio" name="q2" value="b"> One means “and” and the other means “or.”</label>
+      <label><input type="radio" name="q2" value="c"> <span class="mono">.hair.sh</span> is used for disjunctive choice questions, while <span class="mono">.huoh.jee</span> is used for non-disjunctive or statement-like “or.”</label>
+      <label><input type="radio" name="q2" value="d"> <span class="mono">.hair.sh</span> is only for written Chinese and <span class="mono">.huoh.jee</span> is only for spoken Chinese.</label>
+      <div class="feedback ok">Correct. The notes make this distinction explicit: they are two different kinds of “or,” not interchangeable forms.</div>
+      <div class="feedback no">Not quite. Lesson 4 explicitly teaches two different “or” logics, with <span class="mono">.hair.sh</span> for disjunctive choice questions and <span class="mono">.huoh.jee</span> for non-disjunctive uses.</div>
+    </div>
+
+    <button id="checkQuiz">Check my answers</button>
+    <button class="secondary" id="resetQuiz" style="margin-left:8px;">Reset</button>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill gold">Exit challenge</div>
+      <h2>End-of-lecture spoken challenge</h2>
+      <ol>
+        <li>Answer a phone opening politely.</li>
+        <li>Confirm a number correctly.</li>
+        <li>Ask when someone came and how they came.</li>
+        <li>Use one repair phrase when you “mishear” something.</li>
+        <li>Arrange whether to meet today or tomorrow and end the call politely.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <div class="pill blue">References and source use</div>
+      <h2>References for this page</h2>
+      <ul>
+        <li><strong>Primary source:</strong> scanned Lesson 4 pages from <em>Mandarin Primer: An Intensive Course in Spoken Chinese</em>.</li>
+        <li><strong>Dialogue basis:</strong> Lesson 4 “Telephoning,” including ringing, locating the phone, identifying the caller, dates/times, vehicles, misunderstanding, repetition, and arranging a visit.</li>
+        <li><strong>Grammar basis:</strong> notes on <span class="mono">diannhuah</span>, the number system, ordinal forms, polite telephone forms, Chinese names, weekdays, time expressions, potential complements, <span class="mono">mann.i.deal</span>, <span class="mono">X sh sherm yih.sy</span>, and the difference between disjunctive <span class="mono">.hair.sh</span> and non-disjunctive <span class="mono">.huoh.jee</span>.</li>
+        <li><strong>Teaching basis:</strong> the source’s “To the Student” guidance on utterances, repetition, echoing, and learning grammar through exercises.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    This lecture page is designed for a full two-hour beginner lesson. It keeps close to the source while turning Lesson 4 into a clearer,
+    more connected, and more teachable experience for English-speaking high-school students.
+  </footer>
+</div>
+
+<script>
+document.getElementById('checkQuiz').addEventListener('click', function(){
+  document.querySelectorAll('.quiz-q').forEach(function(q){
+    const correct = q.dataset.answer;
+    const selected = q.querySelector('input[type="radio"]:checked');
+    const ok = q.querySelector('.feedback.ok');
+    const no = q.querySelector('.feedback.no');
+    ok.style.display = 'none';
+    no.style.display = 'none';
+    if(selected && selected.value === correct){
+      ok.style.display = 'block';
+    } else {
+      no.style.display = 'block';
+    }
+  });
+});
+
+document.getElementById('resetQuiz').addEventListener('click', function(){
+  document.querySelectorAll('input[type="radio"]').forEach(function(inp){ inp.checked = false; });
+  document.querySelectorAll('.feedback').forEach(function(f){ f.style.display = 'none'; });
+});
+</script>
+</body>
+</html>

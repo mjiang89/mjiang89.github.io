@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mandarin Primer — Lesson 21 Lecture Page</title>
+<style>
+  :root{
+    --bg:#f6f8fc; --ink:#1d2433; --muted:#5a6475; --card:#ffffff; --line:#d8dfeb;
+    --blue:#2f6fed; --green:#2f9e77; --purple:#7b61ff; --orange:#f08c2e; --red:#d9485f; --gold:#c99700; --teal:#118ab2;
+    --shadow:0 10px 30px rgba(28,35,54,.08); --radius:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--ink);
+    background:radial-gradient(circle at top right, rgba(47,111,237,.08), transparent 28%),
+               radial-gradient(circle at top left, rgba(123,97,255,.08), transparent 26%), var(--bg);
+    line-height:1.65;
+  }
+  .wrap{width:min(1180px,94vw); margin:0 auto; padding:28px 0 64px;}
+  header.hero{
+    background:linear-gradient(135deg,#17457e,#2b63cf 55%,#7b61ff); color:#fff; border-radius:28px;
+    padding:34px 34px 28px; box-shadow:var(--shadow); overflow:hidden;
+  }
+  .eyebrow{display:inline-block; padding:6px 10px; border:1px solid rgba(255,255,255,.28); border-radius:999px; font-size:.83rem; margin-bottom:10px; background:rgba(255,255,255,.08);}
+  h1,h2,h3{line-height:1.2; margin:.2rem 0 .8rem}
+  h1{font-size:clamp(2rem,3vw,3rem)} h2{font-size:1.55rem} h3{font-size:1.12rem}
+  p.lead{font-size:1.08rem; max-width:980px; opacity:.98}
+  .small{font-size:.95rem; color:var(--muted)}
+  .grid{display:grid; gap:18px}
+  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media (max-width:900px){.g2{grid-template-columns:1fr}}
+  section{margin-top:22px}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px}
+  .pill{display:inline-block; font-size:.8rem; font-weight:800; padding:5px 10px; border-radius:999px; color:#fff; margin-bottom:10px}
+  .blue{background:var(--blue)} .green{background:var(--green)} .purple{background:var(--purple)} .orange{background:var(--orange)} .red{background:var(--red)} .gold{background:var(--gold)} .teal{background:var(--teal)}
+  .banner{border-left:6px solid var(--gold); background:#fff8db; padding:14px 16px; border-radius:14px}
+  .callout{border-left:5px solid var(--blue); background:#eef4ff; padding:14px 16px; border-radius:14px}
+  .warning{border-left:5px solid var(--red); background:#fff2f4; padding:14px 16px; border-radius:14px}
+  ul li, ol li{margin:.45rem 0}
+  .flow{display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:12px}
+  @media (max-width:1000px){.flow{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){.flow{grid-template-columns:1fr}}
+  .step{background:linear-gradient(180deg,#fff,#f8faff); border:1px solid var(--line); border-radius:18px; padding:16px; min-height:170px}
+  .num{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;margin-bottom:10px;background:linear-gradient(135deg,var(--blue),var(--purple))}
+  .dialogue-line{padding:10px 0; border-bottom:1px dashed var(--line)}
+  .dialogue-line:last-child{border-bottom:none}
+  .speaker{display:inline-block; min-width:116px; font-weight:800; color:var(--blue)}
+  .roman{font-size:1.02rem; font-weight:650}
+  .gloss{color:var(--muted)}
+  .concept-grid,.practice{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px}
+  @media (max-width:900px){.concept-grid,.practice{grid-template-columns:1fr}}
+  .concept{border:1px solid var(--line); border-radius:16px; padding:16px; background:#fbfcff}
+  .tag{display:inline-block; padding:4px 8px; border-radius:999px; font-size:.78rem; font-weight:700; margin:2px 4px 2px 0; background:#eef3ff; color:#2c4a9c}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; background:#f5f7fb; padding:.08rem .35rem; border-radius:8px}
+  table{width:100%; border-collapse:collapse; font-size:.96rem}
+  th,td{border-bottom:1px solid var(--line); padding:12px 10px; text-align:left; vertical-align:top}
+  th{background:#f4f7fc} tr:last-child td{border-bottom:none}
+  .graph-wrap{overflow:auto; border:1px solid var(--line); border-radius:18px; background:linear-gradient(180deg,#fcfdff,#f6f9ff); padding:12px}
+  svg text{font-family:Inter,system-ui,sans-serif; fill:#1f2430}
+  .edge{stroke:#90a4d4; stroke-width:2.2; fill:none; marker-end:url(#arrow)}
+  .node rect{rx:18; ry:18; stroke:#d8dff2; stroke-width:1.4}
+  .legend{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; font-size:.9rem}
+  .legend span{display:flex; align-items:center; gap:6px; background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 10px}
+  .dot{width:12px; height:12px; border-radius:50%; display:inline-block}
+  .quiz-q{border:1px solid var(--line); border-radius:16px; padding:16px; margin-bottom:16px; background:#fbfdff}
+  .quiz-q label{display:block; padding:9px 10px; border:1px solid transparent; border-radius:12px; cursor:pointer}
+  .quiz-q label:hover{background:#f1f6ff; border-color:#dbe6ff}
+  button{appearance:none; border:none; background:linear-gradient(135deg,var(--blue),var(--purple)); color:#fff; border-radius:12px; padding:11px 16px; font-size:.96rem; font-weight:700; cursor:pointer; box-shadow:var(--shadow)}
+  button.secondary{background:linear-gradient(135deg,var(--green),#3fb58e)}
+  .feedback{margin-top:10px; padding:12px 14px; border-radius:12px; display:none}
+  .feedback.ok{background:#edf9f3; border:1px solid #bfe7cf}
+  .feedback.no{background:#fff1f3; border:1px solid #f0c0cb}
+  footer{margin-top:28px; color:var(--muted); font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Yuen Ren Chao - Mandarin Primer: An Intensive Course in Spoken Chinese</div>
+  <h1>Mandarin Primer — Lesson 21</h1>
+  <h2 style="font-size:1.35rem;font-weight:650;opacity:.98;">Listening and Listening In</h2>
+  <p class="lead">
+    Lesson 21 is a major metalinguistic lesson. Instead of focusing on one real-life setting like renting a house or visiting a factory,
+    it turns language learning itself into the topic. The lesson moves through dictation, classroom observation, praise for conversational fluency,
+    discussion of dialects, and then a comic scene in Shanghai where people mock foreigners in front of foreigners who actually understand them.
+    It is an ideal lesson for teaching listening, accent awareness, sociolinguistic humility, and the difference between speaking a language and assuming others cannot.
+  </p>
+  <p class="small" style="color:rgba(255,255,255,.9);">This page keeps the book’s original romanization system so the page stays aligned with the scanned lesson.</p>
+</header>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill blue">Learning goals</div>
+    <h2>What students should learn</h2>
+    <ul>
+      <li>Understand Lesson 21’s three-part structure: dictation, classroom visit, and the Shanghai street scene.</li>
+      <li>See why listening is treated as a separate skill from speaking and reading.</li>
+      <li>Learn vocabulary for dictation, listening ability, correction, conversation practice, pronunciation, fluency, topic, dialect, accent, and embarrassment.</li>
+      <li>Recognize how accent, dialect, and register shape what people understand and how they are judged.</li>
+      <li>Understand the comic irony of assuming foreigners are linguistically ignorant.</li>
+      <li>Reflect on how language learning includes humility, noticing, and sociolinguistic awareness, not just grammar and vocabulary.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="pill gold">Teacher lens</div>
+    <h2>Why this lesson matters</h2>
+    <div class="banner"><strong>Lesson 21 teaches students to listen to listening itself.</strong> It asks not only “Can you say this?” but “Can you catch it at speed? Can you follow accent differences? Can you tell when someone actually understands you?”</div>
+    <p>
+      For high-school students, this lesson is especially valuable because it captures a real danger in language learning: feeling confident when speech is slow and familiar, then falling apart when speech speeds up or accents shift. It also teaches respect. The Shanghai scene shows why mocking people in front of them can backfire badly.
+    </p>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill purple">Two-hour lecture flow</div>
+  <h2>Suggested lecture sequence</h2>
+  <div class="flow">
+    <div class="step"><div class="num">1</div><strong>Listening hook</strong><br><span class="small">Begin with the teacher’s diagnosis: students are doing fairly well, but their ability to listen to ordinary speech is still insufficient.</span></div>
+    <div class="step"><div class="num">2</div><strong>Dictation as skill</strong><br><span class="small">Teach why the sentences are given at ordinary speed and why one-by-one writing matters.</span></div>
+    <div class="step"><div class="num">3</div><strong>Classroom visit</strong><br><span class="small">Teach praise, metalinguistic evaluation, and the idea that students can now converse freely on many topics.</span></div>
+    <div class="step"><div class="num">4</div><strong>Dialect awareness</strong><br><span class="small">Focus on Cantonese, Shanghai dialect, Standard Mandarin, and what counts as “foreign accent.”</span></div>
+    <div class="step"><div class="num">5</div><strong>Shanghai irony scene</strong><br><span class="small">Work through the mocking conversation, the Shanghai accent, and the punch line that the foreigners understand enough to answer back.</span></div>
+    <div class="step"><div class="num">6</div><strong>Reflection + quiz</strong><br><span class="small">End with the embarrassment scene and a discussion of why linguistic assumptions are dangerous.</span></div>
+  </div>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill green">How to teach it well</div>
+    <h2>Effective teaching moves for beginners</h2>
+    <div class="callout">
+      The “To the Student” pages emphasize utterances, repetition, echoing, and fluency. Lesson 21 adds something crucial: speed and unpredictability. Students need to hear what happens when Chinese is spoken as Chinese speakers ordinarily speak it.
+    </div>
+    <ol>
+      <li>Actually do a mini-dictation in class at natural speed so students feel the pressure of listening in real time.</li>
+      <li>Put the three acts on the board as a progression: skill test → public praise → social trap.</li>
+      <li>Use one color for Standard Mandarin and another for Shanghai-accent lines so students can hear code and accent shifts.</li>
+      <li>Ask students after each scene: what is the real lesson here about communication?</li>
+      <li>Have students role-play the final street scene twice: once with ignorance, once with awareness of being overheard.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="pill red">Likely beginner confusions</div>
+    <h2>Where English speakers may stumble</h2>
+    <div class="warning">
+      Students may think the lesson is only about dictation, but it is really about listening across speed, register, dialect, and social assumptions.
+    </div>
+    <ul>
+      <li><strong><span class="mono">ting shuo-huah</span></strong> means “listen to speaking,” while <span class="mono">ting-huah</span> can also mean “obey instructions.” The notes draw this contrast explicitly.</li>
+      <li><strong><span class="mono">guay</span></strong> in “you talk too guay” reflects Student A’s confusion between aspirated and unaspirated sounds; the joke depends on a pronunciation error.</li>
+      <li><strong><span class="mono">jinnlai</span></strong> with full tone on <span class="mono">lai</span> means “recently,” not the more ordinary directional “come in.”</li>
+      <li><strong>Shanghai-accent English and Shanghai-accent Mandarin</strong> are both being stylized in the scene; students should hear this as performance as well as content.</li>
+      <li><strong><span class="mono">bu da.yinq</span></strong> can mean “take offense at,” not just “do not answer.”</li>
+    </ul>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill blue">Lesson walkthrough</div>
+  <h2>Lesson 21 as skill, praise, and social irony</h2>
+  <p class="small">This lesson becomes easiest to teach when its three acts are treated as one connected argument about listening.</p>
+
+  <div class="dialogue-line">
+    <span class="speaker">Act I</span>
+    <span class="roman">Jintian woo geei niimen ig shin de liannshyi tzuoh. Niimen shu dou hair niann de butsuoh, keesh niimen ting shuo-huah de beenshyh dou hair bushyng.</span><br>
+    <span class="gloss">Today I am going to give you a new exercise. Your studies are not bad, but your ability to listen to speech is still not good enough.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Act I</span>
+    <span class="roman">Woo shianntzay jaw Jonggworen pyngcharng shuo-huah de kuay-mann shuo jiig jiuhtz. Niimen tingle geei woo i-jiuh i-jiuh de dou shiee.shiahlai.</span><br>
+    <span class="gloss">I am now going to say several sentences at the speed at which Chinese people ordinarily speak. After listening, write them down one by one.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Act I</span>
+    <span class="roman">Lau Nin jiah, jiee jell shanq huooche-jann sh tzeem tzoou d'a? ... Woo bae jeyg shoou-tyibau ge de jell ay-shyh bu ay-shyh? ...</span><br>
+    <span class="gloss">Excuse me, sir, how do I get from here to the railway station? ... Will this suitcase be in the way if I put it here? ...</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Act I</span>
+    <span class="roman">A: Shiansheng, nii shuo de tay guay. ... Bush bush, woo sh yaw shuo nii shuo de tay kuay. ... Woo shuo de tay mann!</span><br>
+    <span class="gloss">A: Professor, you speak too “queer.” ... No, no, I mean too fast. ... I speak too slowly!</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Act II</span>
+    <span class="roman">Woo jintian lai tsanguan niimen shanq Jongwen-keh, jyuej feicharng de yeou chiuh.wey. Woo kann niimen ... dwu-in dwu de nemm joen, shuo-huah shuo de nemm liou.lih ...</span><br>
+    <span class="gloss">I came today to visit your Chinese class and found it extremely interesting. I heard you pronounce so accurately and speak so fluently ...</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Act II</span>
+    <span class="roman">Tamen shianntzay sherm tyi.muh dou neng gen nii tarn ... kai-wanshiaw a, shenn.jyh.yu taoluenn shyueshuh a ...</span><br>
+    <span class="gloss">They can now talk with you on any topic ... joke with you, or even discuss learned subjects ...</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Act II</span>
+    <span class="roman">A: Shiansheng, gangtsair nii gen Wu Shg. shuo de sh naal de huah? Sh Goangdong-huah hairsh Shanqhae-huah?</span><br>
+    <span class="gloss">A: Professor, what dialect were you speaking with Mr. Wu just now? Cantonese or the Shanghai dialect?</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Act III</span>
+    <span class="roman">Jinnlai jeh dihfangl tzeem yueh biann yueh reh.naw le ... jie.shanq tingjiann de budann jinqsh shuo wayluh-koouin de ...</span><br>
+    <span class="gloss">Recently this place seems to have grown more and more lively ... on the streets one hears not only accents from other provinces ...</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Act III</span>
+    <span class="roman">D: (Yonq Shanqhae-koouin) Tehbyesh woo jey-tzoong — Shanqhae sheng'in de Gwoyeu — waygworen tingjiann le idinq genq.jia moh-ming-chyi-miaw de.</span><br>
+    <span class="gloss">D: Especially this kind of mine — National Language with a Shanghai accent — when foreigners hear it they will be even more at a loss.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Act III</span>
+    <span class="roman">A: Nong weyte kaang Zanqhe-hhewoh va? (Nii huey shuo Shanghae-huah ba?) B: Hng! Dih Shyrliow Keh!</span><br>
+    <span class="gloss">A: You can speak the Shanghai dialect, can’t you? B: Hng! Lesson Sixteen!</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Act III</span>
+    <span class="roman">C: Aiiau! Jeyg ren jende huey shuo Shanqhae huah! ... C: Nah tzarmen gangtsair yihluenn le tamen nemm banntian de huah, dou geei tamen ting le chiuh le!</span><br>
+    <span class="gloss">C: Goodness, this man really can speak Shanghai! ... Then everything we were discussing about them for all that time was heard by them!</span>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill orange">Knowledge graph</div>
+  <h2>Concept network for Lesson 21</h2>
+  <p>
+    Lesson 21 forms a network around <strong>listening skill → dictation → conversational fluency → dialect awareness → overheard speech → embarrassment</strong>.
+  </p>
+  <div class="graph-wrap">
+    <svg width="1180" height="820" viewBox="0 0 1180 820" role="img" aria-label="Knowledge graph for Lesson 21">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" fill="#90a4d4"></path>
+        </marker>
+      </defs>
+
+      <path class="edge" d="M590,110 C590,145 590,155 590,195"/>
+      <path class="edge" d="M590,110 C440,130 320,150 205,225"/>
+      <path class="edge" d="M590,110 C740,130 860,150 975,225"/>
+      <path class="edge" d="M205,275 C205,320 205,332 205,390"/>
+      <path class="edge" d="M975,275 C975,320 975,332 975,390"/>
+      <path class="edge" d="M590,250 C490,300 430,335 375,410"/>
+      <path class="edge" d="M590,250 C690,300 750,335 805,410"/>
+      <path class="edge" d="M590,250 C590,320 590,338 590,410"/>
+      <path class="edge" d="M375,460 C340,530 300,570 250,675"/>
+      <path class="edge" d="M590,460 C590,530 590,570 590,675"/>
+      <path class="edge" d="M805,460 C840,530 880,570 930,675"/>
+
+      <g class="node">
+        <rect x="390" y="45" width="400" height="70" fill="#efeaff"></rect>
+        <text x="590" y="76" text-anchor="middle" font-size="18" font-weight="800">Lesson 21 Core Question</text>
+        <text x="590" y="99" text-anchor="middle" font-size="14">What does it really mean to understand spoken Chinese across speed, accent, and social situation?</text>
+      </g>
+
+      <g class="node">
+        <rect x="460" y="195" width="260" height="54" fill="#eaf2ff"></rect>
+        <text x="590" y="228" text-anchor="middle" font-size="17" font-weight="800">Listening as social skill</text>
+      </g>
+
+      <g class="node">
+        <rect x="55" y="225" width="300" height="52" fill="#eefaf5"></rect>
+        <text x="205" y="257" text-anchor="middle" font-size="17" font-weight="800">Act I: dictation and speed</text>
+      </g>
+
+      <g class="node">
+        <rect x="825" y="225" width="300" height="52" fill="#fff5e8"></rect>
+        <text x="975" y="257" text-anchor="middle" font-size="17" font-weight="800">Acts II–III: praise, dialect, and overhearing</text>
+      </g>
+
+      <g class="node">
+        <rect x="85" y="390" width="240" height="68" fill="#edf7ff"></rect>
+        <text x="205" y="419" text-anchor="middle" font-size="16" font-weight="800">ordinary speech rate</text>
+        <text x="205" y="441" text-anchor="middle" font-size="13">listening under pressure</text>
+      </g>
+
+      <g class="node">
+        <rect x="855" y="390" width="240" height="68" fill="#fff0f3"></rect>
+        <text x="975" y="419" text-anchor="middle" font-size="16" font-weight="800">mockery → comprehension → embarrassment</text>
+        <text x="975" y="441" text-anchor="middle" font-size="13">social consequence</text>
+      </g>
+
+      <g class="node">
+        <rect x="255" y="410" width="240" height="50" fill="#eefaf5"></rect>
+        <text x="375" y="441" text-anchor="middle" font-size="16" font-weight="800">pronunciation and dictation sentences</text>
+      </g>
+
+      <g class="node">
+        <rect x="685" y="410" width="240" height="50" fill="#eefaf5"></rect>
+        <text x="805" y="441" text-anchor="middle" font-size="16" font-weight="800">Cantonese / Shanghai / Gwoyeu</text>
+      </g>
+
+      <g class="node">
+        <rect x="495" y="410" width="190" height="50" fill="#eaf2ff"></rect>
+        <text x="590" y="441" text-anchor="middle" font-size="16" font-weight="800">metalinguistic talk</text>
+      </g>
+
+      <g class="node">
+        <rect x="155" y="675" width="190" height="58" fill="#eefaf5"></rect>
+        <text x="250" y="706" text-anchor="middle" font-size="16" font-weight="800">ting shuo-huah</text>
+        <text x="250" y="726" text-anchor="middle" font-size="13">listening to speech</text>
+      </g>
+
+      <g class="node">
+        <rect x="495" y="675" width="190" height="58" fill="#fff5e8"></rect>
+        <text x="590" y="706" text-anchor="middle" font-size="16" font-weight="800">wayluh-koouin</text>
+        <text x="590" y="726" text-anchor="middle" font-size="13">outside accent</text>
+      </g>
+
+      <g class="node">
+        <rect x="835" y="675" width="190" height="58" fill="#f3f0ff"></rect>
+        <text x="930" y="706" text-anchor="middle" font-size="16" font-weight="800">buhaoyihsy / nanweichyng</text>
+        <text x="930" y="726" text-anchor="middle" font-size="13">embarrassment</text>
+      </g>
+    </svg>
+  </div>
+  <div class="legend">
+    <span><i class="dot" style="background:#eaf2ff"></i> lesson structure</span>
+    <span><i class="dot" style="background:#eefaf5"></i> listening mechanics</span>
+    <span><i class="dot" style="background:#fff5e8"></i> dialect and accent</span>
+    <span><i class="dot" style="background:#f3f0ff"></i> social emotion</span>
+    <span><i class="dot" style="background:#fff0f3"></i> irony and consequence</span>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill green">Core concepts</div>
+  <h2>What the lesson teaches, concept by concept</h2>
+  <div class="concept-grid">
+    <div class="concept">
+      <h3>1) Listening is not the same as studying</h3>
+      <div class="tag">niann-shu</div><div class="tag">ting shuo-huah</div>
+      <ul>
+        <li>The teacher says the students are studying fairly well, but listening to speech remains weak.</li>
+        <li>This separates academic preparation from real-time comprehension.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>2) Dictation is framed as hearing whole utterances</h3>
+      <div class="tag">ordinary speed</div><div class="tag">sentence-by-sentence</div>
+      <ul>
+        <li>The dictation sentences are practical utterances, not abstract word lists.</li>
+        <li>This directly matches the book’s general philosophy of learning utterances in situations.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>3) Mishearing can come from pronunciation weakness</h3>
+      <div class="tag">guay / kuay</div><div class="tag">aspiration contrast</div>
+      <ul>
+        <li>Student A says the teacher speaks too “queer,” then repairs it to “too fast.”</li>
+        <li>The notes explain this as a problem with aspirated versus unaspirated initials.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>4) Fluency invites social mobility</h3>
+      <div class="tag">kai-wanshiaw</div><div class="tag">taoluenn shyueshuh</div>
+      <ul>
+        <li>The visiting guest is told the students can chat freely, joke, and even discuss learned subjects.</li>
+        <li>This lesson connects language competence to social and professional usefulness.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>5) Dialect knowledge complicates identity</h3>
+      <div class="tag">Goangdong-huah</div><div class="tag">Shanqhae-huah</div><div class="tag">Gwoyeu</div>
+      <ul>
+        <li>The lesson treats dialect choice as noticeable and meaningful.</li>
+        <li>Students learn that “Chinese” is not one single undifferentiated speech variety.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>6) Accent is socially judged</h3>
+      <div class="tag">wayluh-koouin</div><div class="tag">piaw.lianq</div><div class="tag">moh-ming-chyi-miaw</div>
+      <ul>
+        <li>Characters evaluate foreign accents, Shanghai-accented Mandarin, and polished speech.</li>
+        <li>This makes accent part of social meaning, not just sound.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>7) The Shanghai scene is a lesson in overhearing</h3>
+      <div class="tag">shiaw.huah</div><div class="tag">bu da.yinq</div>
+      <ul>
+        <li>One speaker warns that foreigners might understand and take offense.</li>
+        <li>The warning turns out to be correct, making listening a matter of ethics as well as skill.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>8) Embarrassment is the moral ending</h3>
+      <div class="tag">buhaoyihsy</div><div class="tag">nanweichyng</div>
+      <ul>
+        <li>The final emotion is not anger but embarrassment.</li>
+        <li>That softens the ending while preserving the lesson’s social sting.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill orange">Mini-board plan</div>
+    <h2>How to lay this out for students</h2>
+    <table>
+      <thead><tr><th>Board zone</th><th>Write this</th><th>Teaching purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Left</td><td>three acts: dictation / classroom visit / Shanghai scene</td><td>Keeps the lesson’s structure visible.</td></tr>
+        <tr><td>Center</td><td>listening problems: speed, accent, unfamiliar pronunciation, social assumptions</td><td>Shows that “listening” is multidimensional.</td></tr>
+        <tr><td>Right</td><td>dialect map: Mandarin, Cantonese, Shanghai dialect, foreign accents</td><td>Helps students visualize speech varieties.</td></tr>
+        <tr><td>Bottom</td><td>moral arc: confidence → mockery → unexpected understanding → embarrassment</td><td>Makes the social lesson explicit.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="pill teal">High-value classroom move</div>
+    <h2>Do a live listening experiment</h2>
+    <div class="callout">
+      Read a few short sentences once at careful speed and once at natural speed, then ask students what changed in their comprehension.
+    </div>
+    <ol>
+      <li>Use practical sentences like the dictation lines in the lesson.</li>
+      <li>Then add a playful accent shift or slight pronunciation twist.</li>
+      <li>Afterward, connect the experience directly to Act III.</li>
+    </ol>
+    <p class="small">This lets students feel the lesson’s central message instead of only reading about it.</p>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill blue">A key structural system</div>
+  <h2>Skill → assumption → consequence</h2>
+  <div class="practice">
+    <div class="concept">
+      <h3>Skill</h3>
+      <p><span class="mono">ting shuo-huah</span>, <span class="mono">dwu-in</span>, <span class="mono">liou.lih</span></p>
+      <p class="small">Can you hear and process real speech?</p>
+    </div>
+    <div class="concept">
+      <h3>Assumption</h3>
+      <p><span class="mono">waygworen tingjiann le ...</span></p>
+      <p class="small">What do you assume others can or cannot understand?</p>
+    </div>
+    <div class="concept">
+      <h3>Consequence</h3>
+      <p><span class="mono">buhaoyihsy</span>, <span class="mono">nanweichyng</span></p>
+      <p class="small">Embarrassment follows bad assumptions.</p>
+    </div>
+    <div class="concept">
+      <h3>Teaching payoff</h3>
+      <p class="small">The lesson shows that language ability is cognitive, social, and ethical all at once.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill green">Guided practice</div>
+  <h2>Practice tasks for a two-hour lesson</h2>
+  <div class="practice">
+    <div class="concept">
+      <h3>Task A — Dictation reflection</h3>
+      <p>Students write down what made one dictation sentence hard: speed, sound confusion, unfamiliar words, or memory load.</p>
+    </div>
+    <div class="concept">
+      <h3>Task B — Praise and doubt</h3>
+      <p>Students identify which parts of Act II praise the learners and which parts still reveal anxiety about comprehension.</p>
+    </div>
+    <div class="concept">
+      <h3>Task C — Accent and attitude</h3>
+      <p>Students explain how the Shanghai scene links accent judgment to social judgment.</p>
+    </div>
+    <div class="concept">
+      <h3>Task D — Rewrite the ending</h3>
+      <p>Students create one more exchange after the embarrassed realization and decide whether the speakers apologize or pretend nothing happened.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill red">Quick understanding check</div>
+  <h2>Two multiple-choice quiz questions</h2>
+
+  <div class="quiz-q" data-answer="b">
+    <h3>1) According to the notes, why is <span class="mono">ting shuo-huah</span> used in Act I instead of only <span class="mono">ting-huah</span>?</h3>
+    <label><input type="radio" name="q1" value="a"> Because <span class="mono">ting-huah</span> only means “to sing.”</label>
+    <label><input type="radio" name="q1" value="b"> Because <span class="mono">ting-huah</span> can also mean “to obey instructions,” while <span class="mono">ting shuo-huah</span> clearly means listening to spoken speech.</label>
+    <label><input type="radio" name="q1" value="c"> Because <span class="mono">ting shuo-huah</span> only appears in poetry.</label>
+    <label><input type="radio" name="q1" value="d"> Because the teacher wants students to ignore meaning.</label>
+    <div class="feedback ok">Correct. The notes explicitly make this distinction and it is central to the lesson’s focus on real listening.</div>
+    <div class="feedback no">Not quite. The lesson carefully distinguishes ordinary listening to speech from the broader expression that can also mean obeying orders.</div>
+  </div>
+
+  <div class="quiz-q" data-answer="c">
+    <h3>2) What is the main irony of the Shanghai scene in Act III?</h3>
+    <label><input type="radio" name="q2" value="a"> The foreigners cannot understand any Chinese at all.</label>
+    <label><input type="radio" name="q2" value="b"> The teacher forgets how to speak Mandarin.</label>
+    <label><input type="radio" name="q2" value="c"> The speakers assume the foreigners are linguistically clueless, but the foreigners understand enough to respond and expose them.</label>
+    <label><input type="radio" name="q2" value="d"> Nobody in Shanghai has any accent.</label>
+    <div class="feedback ok">Correct. The humor and embarrassment come from the collapse of a bad assumption about who can understand what.</div>
+    <div class="feedback no">Not quite. The point of the scene is exactly that assumptions about others’ language ability can be very wrong.</div>
+  </div>
+
+  <button id="checkQuiz">Check my answers</button>
+  <button class="secondary" id="resetQuiz" style="margin-left:8px;">Reset</button>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill gold">Exit challenge</div>
+    <h2>End-of-lecture spoken challenge</h2>
+    <ol>
+      <li>Explain why the teacher gives a dictation exercise in Act I.</li>
+      <li>Name one sentence type from the dictation that sounds like real everyday speech.</li>
+      <li>Describe, in English, why the classroom visitor is impressed in Act II.</li>
+      <li>Explain what mistake the speakers in Shanghai make about the foreigners.</li>
+      <li>Name the final emotion of the ending and explain why it fits.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="pill blue">References and source use</div>
+    <h2>References for this page</h2>
+    <ul>
+      <li><strong>Primary source:</strong> scanned Lesson 21 pages from <em>Mandarin Primer: An Intensive Course in Spoken Chinese</em>.</li>
+      <li><strong>Text basis:</strong> Lesson 21 “Listening and Listening In,” including Act I on dictation at ordinary speech speed, Act II on a visitor observing and praising the class’s accuracy and fluency, and Act III in Shanghai, where speakers comment on foreigners and are then embarrassed when the foreigners demonstrate understanding.</li>
+      <li><strong>Notes basis:</strong> notes on <span class="mono">yeu</span>, <span class="mono">parngting</span>, <span class="mono">muh</span>, <span class="mono">niann-shu</span>, <span class="mono">ting shuo-huah</span>, <span class="mono">jaw</span>, the dictation timing table for sentences 1–8, <span class="mono">ay-shyh</span>, <span class="mono">bau.fwu</span>, <span class="mono">iuehuey</span>, <span class="mono">ta shiehx le</span>, <span class="mono">wu-yuan wu-guh</span>, <span class="mono">shuo-lai shuo-chiuh</span>, <span class="mono">guay</span>, <span class="mono">chiuh.wey</span>, <span class="mono">huey-huah</span>, <span class="mono">dwu-in</span>, the “ostentatious confidence” of the long breathy <span class="mono">ti--ng</span>, <span class="mono">jiin.goan</span>, <span class="mono">liau-tial</span>, <span class="mono">kai-wanshiaw</span>, <span class="mono">shenn.jyh.yu</span>, <span class="mono">shyueshuh</span>, <span class="mono">keeguan</span>, <span class="mono">leau.bu.de</span>, <span class="mono">jianglai</span>, <span class="mono">duey.yu ... shanq(tou)</span>, <span class="mono">fwuwuh</span>, <span class="mono">guanyu</span>, <span class="mono">sheang fartz</span>, <span class="mono">jinnlai</span>, <span class="mono">reh.naw</span>, <span class="mono">wayluh-koouin</span>, <span class="mono">Shi.yangren</span>, <span class="mono">duo.chu.lai</span>, <span class="mono">liou-shin</span>, <span class="mono">shiaw.huah</span>, <span class="mono">da.yinq</span>, <span class="mono">puutong-huah</span>, <span class="mono">Gwoyeu</span>, <span class="mono">moh-ming-chyi-miaw</span>, <span class="mono">yawminq</span>, <span class="mono">piaw.lianq</span>, <span class="mono">buhaoyihsy</span>, and <span class="mono">geei tamen tingle chiuh le</span>.</li>
+      <li><strong>Exercises basis:</strong> the page 6 exercises on contrastive forms like <span class="mono">duey</span>, <span class="mono">dueyyu</span>, <span class="mono">guanyu</span>, <span class="mono">shennjyh(yu)</span>, <span class="mono">jyhyu</span>, and <span class="mono">bujyhyu</span>, which informed the page’s emphasis on metalinguistic analysis and social nuance.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  This lecture page is designed for a full two-hour beginner lesson. It keeps close to the source while turning Lesson 21 into a clearer,
+  more connected, and more teachable lesson about listening, dialects, and sociolinguistic awareness for English-speaking high-school students.
+</footer>
+</div>
+
+<script>
+document.getElementById('checkQuiz').addEventListener('click', function(){
+  document.querySelectorAll('.quiz-q').forEach(function(q){
+    const correct = q.dataset.answer;
+    const selected = q.querySelector('input[type="radio"]:checked');
+    const ok = q.querySelector('.feedback.ok');
+    const no = q.querySelector('.feedback.no');
+    ok.style.display = 'none';
+    no.style.display = 'none';
+    if(selected && selected.value === correct){ ok.style.display = 'block'; }
+    else { no.style.display = 'block'; }
+  });
+});
+document.getElementById('resetQuiz').addEventListener('click', function(){
+  document.querySelectorAll('input[type="radio"]').forEach(function(inp){ inp.checked = false; });
+  document.querySelectorAll('.feedback').forEach(function(f){ f.style.display = 'none'; });
+});
+</script>
+</body>
+</html>

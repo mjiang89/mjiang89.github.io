@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mandarin Primer — Lesson 17 Lecture Page</title>
+<style>
+  :root{
+    --bg:#f6f8fc; --ink:#1d2433; --muted:#5a6475; --card:#ffffff; --line:#d8dfeb;
+    --blue:#2f6fed; --green:#2f9e77; --purple:#7b61ff; --orange:#f08c2e; --red:#d9485f; --gold:#c99700;
+    --shadow:0 10px 30px rgba(28,35,54,.08); --radius:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--ink);
+    background:radial-gradient(circle at top right, rgba(47,111,237,.08), transparent 28%),
+               radial-gradient(circle at top left, rgba(123,97,255,.08), transparent 26%), var(--bg);
+    line-height:1.65;
+  }
+  .wrap{width:min(1180px,94vw); margin:0 auto; padding:28px 0 64px;}
+  header.hero{
+    background:linear-gradient(135deg,#17457e,#2b63cf 55%,#7b61ff); color:#fff; border-radius:28px;
+    padding:34px 34px 28px; box-shadow:var(--shadow); overflow:hidden;
+  }
+  .eyebrow{
+    display:inline-block; padding:6px 10px; border:1px solid rgba(255,255,255,.28); border-radius:999px;
+    font-size:.83rem; margin-bottom:10px; background:rgba(255,255,255,.08);
+  }
+  h1,h2,h3{line-height:1.2; margin:.2rem 0 .8rem}
+  h1{font-size:clamp(2rem,3vw,3rem)} h2{font-size:1.55rem} h3{font-size:1.12rem}
+  p.lead{font-size:1.08rem; max-width:980px; opacity:.98}
+  .small{font-size:.95rem; color:var(--muted)}
+  .grid{display:grid; gap:18px}
+  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media (max-width:900px){.g2{grid-template-columns:1fr}}
+  section{margin-top:22px}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px}
+  .pill{display:inline-block; font-size:.8rem; font-weight:800; padding:5px 10px; border-radius:999px; color:#fff; margin-bottom:10px}
+  .blue{background:var(--blue)} .green{background:var(--green)} .purple{background:var(--purple)} .orange{background:var(--orange)} .red{background:var(--red)} .gold{background:var(--gold)}
+  .banner{border-left:6px solid var(--gold); background:#fff8db; padding:14px 16px; border-radius:14px}
+  .callout{border-left:5px solid var(--blue); background:#eef4ff; padding:14px 16px; border-radius:14px}
+  .warning{border-left:5px solid var(--red); background:#fff2f4; padding:14px 16px; border-radius:14px}
+  ul li, ol li{margin:.45rem 0}
+  .flow{display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:12px}
+  @media (max-width:1000px){.flow{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){.flow{grid-template-columns:1fr}}
+  .step{background:linear-gradient(180deg,#fff,#f8faff); border:1px solid var(--line); border-radius:18px; padding:16px; min-height:160px}
+  .num{width:34px; height:34px; border-radius:50%; display:grid; place-items:center; color:#fff; font-weight:800; margin-bottom:10px; background:linear-gradient(135deg,var(--blue),var(--purple))}
+  .dialogue-line{padding:10px 0; border-bottom:1px dashed var(--line)}
+  .dialogue-line:last-child{border-bottom:none}
+  .speaker{display:inline-block; min-width:110px; font-weight:800; color:var(--blue)}
+  .roman{font-size:1.02rem; font-weight:650}
+  .gloss{color:var(--muted)}
+  .concept-grid,.practice{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px}
+  @media (max-width:900px){.concept-grid,.practice{grid-template-columns:1fr}}
+  .concept{border:1px solid var(--line); border-radius:16px; padding:16px; background:#fbfcff}
+  .tag{display:inline-block; padding:4px 8px; border-radius:999px; font-size:.78rem; font-weight:700; margin:2px 4px 2px 0; background:#eef3ff; color:#2c4a9c}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; background:#f5f7fb; padding:.08rem .35rem; border-radius:8px}
+  table{width:100%; border-collapse:collapse; font-size:.96rem}
+  th,td{border-bottom:1px solid var(--line); padding:12px 10px; text-align:left; vertical-align:top}
+  th{background:#f4f7fc} tr:last-child td{border-bottom:none}
+  .graph-wrap{overflow:auto; border:1px solid var(--line); border-radius:18px; background:linear-gradient(180deg,#fcfdff,#f6f9ff); padding:12px}
+  svg text{font-family:Inter,system-ui,sans-serif; fill:#1f2430}
+  .edge{stroke:#90a4d4; stroke-width:2.2; fill:none; marker-end:url(#arrow)}
+  .node rect{rx:18; ry:18; stroke:#d8dff2; stroke-width:1.4}
+  .legend{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; font-size:.9rem}
+  .legend span{display:flex; align-items:center; gap:6px; background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 10px}
+  .dot{width:12px; height:12px; border-radius:50%; display:inline-block}
+  .quiz-q{border:1px solid var(--line); border-radius:16px; padding:16px; margin-bottom:16px; background:#fbfdff}
+  .quiz-q label{display:block; padding:9px 10px; border:1px solid transparent; border-radius:12px; cursor:pointer}
+  .quiz-q label:hover{background:#f1f6ff; border-color:#dbe6ff}
+  button{appearance:none; border:none; background:linear-gradient(135deg,var(--blue),var(--purple)); color:#fff; border-radius:12px; padding:11px 16px; font-size:.96rem; font-weight:700; cursor:pointer; box-shadow:var(--shadow)}
+  button.secondary{background:linear-gradient(135deg,var(--green),#3fb58e)}
+  .feedback{margin-top:10px; padding:12px 14px; border-radius:12px; display:none}
+  .feedback.ok{background:#edf9f3; border:1px solid #bfe7cf}
+  .feedback.no{background:#fff1f3; border:1px solid #f0c0cb}
+  footer{margin-top:28px; color:var(--muted); font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Yuen Ren Chao - Mandarin Primer: An Intensive Course in Spoken Chinese</div>
+  <h1>Mandarin Primer — Lesson 17</h1>
+  <h2 style="font-size:1.35rem;font-weight:650;opacity:.98;">Talking About Indusco</h2>
+  <p class="lead">
+    Lesson 17 begins with a small everyday conflict about oversleeping, breakfast, and hurrying to a factory visit, then opens into a much larger topic:
+    the Indusco movement, wartime industrial relocation, cooperative light industry, science, machinery, returned students, native materials, and improving
+    ordinary people’s lives. It is an excellent lesson for showing students how spoken Mandarin can move from ordinary complaint to economic and social explanation.
+  </p>
+  <p class="small" style="color:rgba(255,255,255,.9);">This page keeps the book’s original romanization system so it stays aligned with the scanned lesson.</p>
+</header>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill blue">Learning goals</div>
+    <h2>What students should learn</h2>
+    <ul>
+      <li>Follow the two-part structure of the lesson: rushing out in the morning, then discussing Indusco while walking.</li>
+      <li>Understand everyday hurry-up language: getting up, washing, brushing teeth, making tea, waiting, blaming, being late, and walking instead of riding.</li>
+      <li>Learn how the lesson explains what Indusco means and how the Light Industrial Cooperative Movement started in wartime China.</li>
+      <li>Recognize vocabulary for machines, workers, technicians, capital, trade, handicraft, scientific method, specialists, engineers, returned students, research, and native materials.</li>
+      <li>See how Mandarin handles cause-and-effect, “one effort, two results,” and explanation of social benefit.</li>
+      <li>Notice the shift from conversational irritation to organized civic-economic reasoning.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="pill gold">Teacher lens</div>
+    <h2>Why this lesson matters</h2>
+    <div class="banner"><strong>Lesson 17 teaches practical life and national reconstruction in one flow.</strong> The speakers start by worrying about time, breakfast, and transportation, and end by discussing industry, science, jobs, and living standards.</div>
+    <p>
+      For high-school students, this is especially effective because it shows that language is not divided into “simple life talk” versus “serious knowledge talk.”
+      One conversation can move naturally from both.
+    </p>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill purple">Two-hour lecture flow</div>
+  <h2>Suggested lecture sequence</h2>
+  <div class="flow">
+    <div class="step"><div class="num">1</div><strong>Morning rush hook</strong><br><span class="small">Start with the comic complaint: it is already half past seven and one person is still accused of lying in bed and snoring.</span></div>
+    <div class="step"><div class="num">2</div><strong>Time and routine</strong><br><span class="small">Teach rising, washing, brushing, tea-making, delay, blame, and whether there is still enough time.</span></div>
+    <div class="step"><div class="num">3</div><strong>Travel to the factory</strong><br><span class="small">Map the route, transport options, and appointment constraints: five li, before eight, country roads.</span></div>
+    <div class="step"><div class="num">4</div><strong>What is Indusco?</strong><br><span class="small">Explain the term, then introduce the Light Industrial Cooperative Movement and its wartime origin.</span></div>
+    <div class="step"><div class="num">5</div><strong>Why it matters</strong><br><span class="small">Teach how Indusco helps workers, produces useful goods, uses science, and raises living standards.</span></div>
+    <div class="step"><div class="num">6</div><strong>Research and problem-solving + quiz</strong><br><span class="small">End with engineers, returned students, native materials, cheap useful goods, and the final moment of realizing they may be lost.</span></div>
+  </div>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill green">How to teach it well</div>
+    <h2>Effective teaching moves for beginners</h2>
+    <div class="callout">
+      The source’s “To the Student” guidance stresses utterances, echoing, and grammar-through-exercises. Lesson 17 works especially well when the teacher makes students feel the scene change: first a rushing morning, then a walking conversation about society and economics.
+    </div>
+    <ol>
+      <li>Teach the first page like a mini skit: bed, snoring, washing, tea, hurrying out the door.</li>
+      <li>Then make a visible transition on the board from “personal delay” to “public purpose.”</li>
+      <li>Use a simple timeline for the wartime story: war begins → factories move inland → workers and technicians suffer → industries are rebuilt.</li>
+      <li>Put “problem → solution → benefit” on the board as the main logic of the Indusco half.</li>
+      <li>Have students sort vocabulary into everyday life words versus industrial-development words, then show how the lesson connects them.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="pill red">Likely beginner confusions</div>
+    <h2>Where English speakers may stumble</h2>
+    <div class="warning">
+      Students may think the second half is abstract and difficult, but it becomes manageable once they see the repeated pattern: problem, movement inland, rebuilding, cooperation, scientific improvement, better life.
+    </div>
+    <ul>
+      <li><strong>Final <span class="mono">dou</span></strong> in <span class="mono">chi-dean-bann le dou</span> is an afterthought emphasis marker, not ordinary “all.”</li>
+      <li><strong><span class="mono">.shanq</span></strong> appears where English would say “in,” as in being on the bed or on a surface.</li>
+      <li><strong><span class="mono">le</span> in enumeration</strong> can show “and what not” attitude rather than only past time or completion.</li>
+      <li><strong><span class="mono">gongher</span></strong> does not literally mean “work together”; the notes explain that this popular interpretation conflicts with normal Chinese modifier order.</li>
+      <li><strong><span class="mono">bujiannde</span></strong> means “not necessarily / not likely seen as,” and the notes say there is no ordinary positive *<span class="mono">jiannde</span>* form.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill blue">Dialogue walkthrough</div>
+  <h2>Lesson 17 as a movement from hurry to explanation</h2>
+  <p class="small">This lesson becomes much easier when divided into two clear scenes.</p>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 1</span>
+    <span class="roman">Jeanjyr shiaw.huah! Chi-dean-bann le dou! Woo jiaw nii tzao.deal chiilai, nii jiow lao taang de chwang.shanq tzaynall daa-hu.lu.</span><br>
+    <span class="gloss">This is ridiculous! It is already half past seven! I told you to get up early, and you just kept lying in bed snoring.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 1</span>
+    <span class="roman">Woo i-dah-tzao jiow chii-chwang le ... Neme nii dan.wuh de shyrhowl tay duo le. Shii-lean le, shua-ya shuh-koou le, chuan i.shang, chuan wahtz, jih shyedall le ...</span><br>
+    <span class="gloss">I got up as soon as it was morning ... Then you wasted too much time: washing your face, brushing your teeth, rinsing your mouth, putting on clothes and socks, tying your shoelaces ...</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 1</span>
+    <span class="roman">Nii feideei deeng shoei kai le, weyle yaw na kai-shoei chi-char chy dean.shin, yow deei deeng nemm banntian!</span><br>
+    <span class="gloss">You insisted on waiting for the water to boil, and then for making tea with boiling water for breakfast we had to wait such a long time.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 1</span>
+    <span class="roman">Bye guay jeyg guay neyg le. Jeh yeou sherm jeng.toul? Hairsh kuay tzoou b'ou!</span><br>
+    <span class="gloss">Stop blaming this and blaming that. What is the point of arguing about it? Better hurry and go.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 1</span>
+    <span class="roman">Jell naal lai yangche ia? Jell yee mei che tzuoh yee mei liu chyi yinqsh deei na jeau tzoou.</span><br>
+    <span class="gloss">Where would rickshas come from here? There are no vehicles and no donkeys to ride; the hard fact is that we have to walk on our feet.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 1</span>
+    <span class="roman">Jell li gongchaang yeou wuu-lii-duo dih. Tzarmen gen tamen iue de sh ba-dean chyan.ideal daw nall tsanguan ... Kuaydeal tzoou laidejyi.</span><br>
+    <span class="gloss">The factory is more than five li from here. Our appointment is to get there a little before eight for the visit ... If we walk fast, we can still make it in time.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 2</span>
+    <span class="roman">'Gongher' jiowsh 'Gongyeh Hertzuoh' heje 'Ching Gongyeh Hertzuoh Yunndonq' de jeandan shuo.faa.</span><br>
+    <span class="gloss">“Gongher” is simply a shortened way of saying “industrial cooperatives” or “the light industrial cooperative movement.”</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 2</span>
+    <span class="roman">Jeyg yunndonq de lihshyy sh tsorng Mingwo ellshyrchi-nian chii-tourl de ... ney-tsyh de daa-janq a, bujiannde sh ig doan-shyrchyi de jannjeng.</span><br>
+    <span class="gloss">The history of this movement begins in 1938 ... that war was not likely to be a short war.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 2</span>
+    <span class="roman">Renren dou shiahle charngchyi diikanq de jyueshin, mooyii bae gehchuh gongchaang.lii de jichih a, yeou shiunnliann de gong.ren a, yeou jingyann de jihshy a ... ban-dawle neydih geh-sheeng.</span><br>
+    <span class="gloss">Everyone was determined on long-term resistance, so machines, trained workers, and experienced technicians from the factories were moved into the inland provinces.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 2</span>
+    <span class="roman">Tamen dou kuu de heen ... tsair bae gongyeh yow jiannsheh.chiilai. I-fangmiann ne, keeyii bangjuh neyshie mei shell gann mei fann chy de gong.ren ... torngshyr ne, yow keeyii tzaw.chu sheuduo ryhyonq bihshiu de wuhpiin lai.</span><br>
+    <span class="gloss">They suffered a great deal before they finally rebuilt industry. On the one hand, they could help workers without jobs and food; at the same time, they could produce many daily necessities.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 2</span>
+    <span class="roman">Re, tzemmyanql dawsh 'i-jeu leang-der,' ar? ... hao.chuh jiow tzay jell lo.</span><br>
+    <span class="gloss">Ah, that is really “one effort, two results,” isn’t it? ... That is exactly where the advantage lies.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 2</span>
+    <span class="roman">Tamen jyh.tzaw dongshi gen bann-shyh, chyuansh jawj keshyue fangfaa de. Farnsh keeyii yonq jichih de dihfangl jiow yonq jichih; keeyii bae jiow-fartz gaeliang de dihfangl, jiow gaecherngle shin-fartz.</span><br>
+    <span class="gloss">In manufacturing and management, they proceed entirely according to scientific methods. Wherever machines can be used, they use them; where old methods can be improved, they change them into new methods.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 2</span>
+    <span class="roman">I-fangmiann keeyii tzengjia shengchaan de lih.lianq, torngshyr ne, yow keeyii bae renmin de sheng.hwo cherng.duh geei tyi-gau le.</span><br>
+    <span class="gloss">On the one hand, they can increase productive power, and at the same time they can raise the standard of living of the people.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 2</span>
+    <span class="roman">Gongher.lii yeou sheuduo juanmen de rentsair ... lioushyuesheng ... Tamen i-tian-daw-woan yanjiow yonq tzeemvx jeandan-huah de jichih, yonq neeishie vx beendih de tsair.liaw, ranhow tzaw.de.chu shermvx yow yeou yonq yow may de pyan.yi de huoliwuh lai.</span><br>
+    <span class="gloss">Within Indusco there are many specialists, including returned students from abroad. They keep researching simplified machinery and local materials in order to make useful goods that can also be sold cheaply.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Closing</span>
+    <span class="roman">Tzarmen tzooule tzemm banntian, kee yeou iball luh l'a? ... koongpah tzoou-tsuoh le luh le ba. Diinghao wennx ren ba.</span><br>
+    <span class="gloss">We have walked for such a long time — are we even halfway there yet? ... I am afraid we have taken the wrong road. We had better ask someone.</span>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill orange">Knowledge graph</div>
+  <h2>Concept network for Lesson 17</h2>
+  <p>
+    Lesson 17 forms a strong network around <strong>delay → urgency → travel → factory visit → wartime relocation → cooperation → scientific production → improved livelihood</strong>.
+  </p>
+  <div class="graph-wrap">
+    <svg width="1180" height="820" viewBox="0 0 1180 820" role="img" aria-label="Knowledge graph for Lesson 17">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" fill="#90a4d4"></path>
+        </marker>
+      </defs>
+
+      <path class="edge" d="M590,110 C590,145 590,155 590,195"/>
+      <path class="edge" d="M590,110 C440,130 320,150 205,225"/>
+      <path class="edge" d="M590,110 C740,130 860,150 975,225"/>
+      <path class="edge" d="M205,275 C205,320 205,332 205,390"/>
+      <path class="edge" d="M975,275 C975,320 975,332 975,390"/>
+      <path class="edge" d="M590,250 C490,300 430,335 375,410"/>
+      <path class="edge" d="M590,250 C690,300 750,335 805,410"/>
+      <path class="edge" d="M590,250 C590,320 590,338 590,410"/>
+      <path class="edge" d="M375,460 C340,530 300,570 250,675"/>
+      <path class="edge" d="M590,460 C590,530 590,570 590,675"/>
+      <path class="edge" d="M805,460 C840,530 880,570 930,675"/>
+
+      <g class="node">
+        <rect x="390" y="45" width="400" height="70" fill="#efeaff"></rect>
+        <text x="590" y="76" text-anchor="middle" font-size="18" font-weight="800">Lesson 17 Core Question</text>
+        <text x="590" y="99" text-anchor="middle" font-size="14">How does Mandarin connect everyday rushing around with a broader explanation of cooperative industry and social benefit?</text>
+      </g>
+
+      <g class="node">
+        <rect x="460" y="195" width="260" height="54" fill="#eaf2ff"></rect>
+        <text x="590" y="228" text-anchor="middle" font-size="17" font-weight="800">Factory-visit conversation</text>
+      </g>
+
+      <g class="node">
+        <rect x="55" y="225" width="300" height="52" fill="#eefaf5"></rect>
+        <text x="205" y="257" text-anchor="middle" font-size="17" font-weight="800">Morning routine and delay</text>
+      </g>
+
+      <g class="node">
+        <rect x="825" y="225" width="300" height="52" fill="#fff5e8"></rect>
+        <text x="975" y="257" text-anchor="middle" font-size="17" font-weight="800">Indusco and social reconstruction</text>
+      </g>
+
+      <g class="node">
+        <rect x="85" y="390" width="240" height="68" fill="#edf7ff"></rect>
+        <text x="205" y="419" text-anchor="middle" font-size="16" font-weight="800">get up / wash / brush / tea / hurry</text>
+        <text x="205" y="441" text-anchor="middle" font-size="13">everyday sequence</text>
+      </g>
+
+      <g class="node">
+        <rect x="855" y="390" width="240" height="68" fill="#fff0f3"></rect>
+        <text x="975" y="419" text-anchor="middle" font-size="16" font-weight="800">jobs / useful goods / living standard</text>
+        <text x="975" y="441" text-anchor="middle" font-size="13">social payoff</text>
+      </g>
+
+      <g class="node">
+        <rect x="255" y="410" width="240" height="50" fill="#eefaf5"></rect>
+        <text x="375" y="441" text-anchor="middle" font-size="16" font-weight="800">five li / before eight / walk fast</text>
+      </g>
+
+      <g class="node">
+        <rect x="685" y="410" width="240" height="50" fill="#eefaf5"></rect>
+        <text x="805" y="441" text-anchor="middle" font-size="16" font-weight="800">machines / methods / research / materials</text>
+      </g>
+
+      <g class="node">
+        <rect x="495" y="410" width="190" height="50" fill="#eaf2ff"></rect>
+        <text x="590" y="441" text-anchor="middle" font-size="16" font-weight="800">wartime movement inland</text>
+      </g>
+
+      <g class="node">
+        <rect x="155" y="675" width="190" height="58" fill="#eefaf5"></rect>
+        <text x="250" y="706" text-anchor="middle" font-size="16" font-weight="800">afterthought dou / enumeration le</text>
+        <text x="250" y="726" text-anchor="middle" font-size="13">spoken texture</text>
+      </g>
+
+      <g class="node">
+        <rect x="495" y="675" width="190" height="58" fill="#fff5e8"></rect>
+        <text x="590" y="706" text-anchor="middle" font-size="16" font-weight="800">i-jeu leang-der</text>
+        <text x="590" y="726" text-anchor="middle" font-size="13">one effort, two results</text>
+      </g>
+
+      <g class="node">
+        <rect x="835" y="675" width="190" height="58" fill="#f3f0ff"></rect>
+        <text x="930" y="706" text-anchor="middle" font-size="16" font-weight="800">lioushyuesheng / rentsair</text>
+        <text x="930" y="726" text-anchor="middle" font-size="13">specialists and engineers</text>
+      </g>
+    </svg>
+  </div>
+  <div class="legend">
+    <span><i class="dot" style="background:#eaf2ff"></i> scene structure</span>
+    <span><i class="dot" style="background:#eefaf5"></i> daily-life actions</span>
+    <span><i class="dot" style="background:#fff5e8"></i> industrial logic</span>
+    <span><i class="dot" style="background:#f3f0ff"></i> expertise and research</span>
+    <span><i class="dot" style="background:#fff0f3"></i> social effects</span>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill green">Core concepts</div>
+  <h2>What the lesson teaches, concept by concept</h2>
+  <div class="concept-grid">
+    <div class="concept">
+      <h3>1) Spoken complaint can carry rich grammar</h3>
+      <div class="tag">afterthought dou</div><div class="tag">enumeration le</div><div class="tag">guay</div>
+      <ul>
+        <li>The opening scene is full of natural spoken texture: emphatic afterthoughts, lists of actions, blame, and impatience.</li>
+        <li>This makes the everyday part of the lesson grammatically valuable, not just comic.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>2) The lesson turns time pressure into motion</h3>
+      <div class="tag">laidejyi</div><div class="tag">iue</div><div class="tag">tsanguan</div>
+      <ul>
+        <li>The speakers calculate whether they can still arrive before eight for a factory visit.</li>
+        <li>This creates a clear action frame before the explanatory discussion begins.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>3) Indusco is defined through abbreviation and correction</h3>
+      <div class="tag">gongher</div><div class="tag">gongyeh hertzuoh</div><div class="tag">ching gongyeh hertzuoh yunndonq</div>
+      <ul>
+        <li>The lesson explicitly teaches what the label “Indusco” stands for.</li>
+        <li>The notes also warn against the misleading folk translation “work together.”</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>4) Wartime relocation is the historical engine of the lesson</h3>
+      <div class="tag">kanqjann</div><div class="tag">charngchyi diikanq</div><div class="tag">ban-daw neydih</div>
+      <ul>
+        <li>The movement is explained as a response to long-term resistance during wartime.</li>
+        <li>Machines, workers, and technicians all move inland together.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>5) Cooperation solves two problems at once</h3>
+      <div class="tag">mei shell gann</div><div class="tag">ryhyonq bihshiu de wuhpiin</div><div class="tag">i-jeu leang-der</div>
+      <ul>
+        <li>Indusco helps unemployed workers and produces useful daily necessities.</li>
+        <li>This is the core moral-economic point of the lesson.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>6) Light industry is contrasted with trade and handicraft</h3>
+      <div class="tag">tzybeen</div><div class="tag">mae.may</div><div class="tag">shoou.yih</div>
+      <ul>
+        <li>The lesson asks why this is not just ordinary small business or handicraft.</li>
+        <li>The answer is scientific method, better organization, machinery, and systematic improvement.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>7) Scientific method is framed as practical improvement</h3>
+      <div class="tag">keshyue fangfaa</div><div class="tag">gaeliang</div><div class="tag">shin-fartz</div>
+      <ul>
+        <li>Science here is not abstract theory. It means using machines where possible and improving old methods where they can be improved.</li>
+        <li>This helps students connect “science” to concrete production choices.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>8) Expertise is socially useful</h3>
+      <div class="tag">juanmen de rentsair</div><div class="tag">gongcherngshy</div><div class="tag">lioushyuesheng</div><div class="tag">beendih de tsair.liaw</div>
+      <ul>
+        <li>The lesson emphasizes specialists, engineers, returned students, simplified machinery, and native materials.</li>
+        <li>The goal is not prestige but useful, affordable goods and a higher standard of living.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill orange">Mini-board plan</div>
+    <h2>How to lay this out for students</h2>
+    <table>
+      <thead><tr><th>Board zone</th><th>Write this</th><th>Teaching purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Left</td><td>morning routine chain: get up → wash → brush → tea → hurry</td><td>Gives students a concrete opening scene.</td></tr>
+        <tr><td>Center</td><td>wartime timeline: war → move inland → rebuild industry</td><td>Explains where Indusco comes from.</td></tr>
+        <tr><td>Right</td><td>problem → cooperation → science → better life</td><td>Shows the social logic of the second half.</td></tr>
+        <tr><td>Bottom</td><td>key contrast: trade / handicraft / light industry</td><td>Clarifies the lesson’s conceptual center.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="pill green">High-value classroom move</div>
+    <h2>Use a two-scene performance</h2>
+    <div class="callout">
+      Divide the class into Scene 1 actors and Scene 2 explainers.
+    </div>
+    <ol>
+      <li>One pair performs the oversleeping and rushing scene.</li>
+      <li>Another pair continues the walk and explains Indusco to the class.</li>
+      <li>The board records the shift from personal inconvenience to public purpose.</li>
+    </ol>
+    <p class="small">This helps students feel the lesson’s structure instead of treating it as a single block of text.</p>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill blue">A key structural system</div>
+  <h2>Problem → solution → benefit</h2>
+  <div class="practice">
+    <div class="concept">
+      <h3>Problem</h3>
+      <p><span class="mono">mei shell gann</span>, <span class="mono">mei fann chy</span></p>
+      <p class="small">Workers lose jobs and need livelihood.</p>
+    </div>
+    <div class="concept">
+      <h3>Solution</h3>
+      <p><span class="mono">gongyeh hertzuoh</span>, <span class="mono">yonq jichih</span>, <span class="mono">gaecherngle shin-fartz</span></p>
+      <p class="small">Cooperation, machines, and improved methods.</p>
+    </div>
+    <div class="concept">
+      <h3>Benefit</h3>
+      <p><span class="mono">tzaw.chu ryhyonq bihshiu de wuhpiin</span>, <span class="mono">tyi-gau sheng.hwo cherng.duh</span></p>
+      <p class="small">Useful goods and a higher standard of living.</p>
+    </div>
+    <div class="concept">
+      <h3>Teaching payoff</h3>
+      <p class="small">This lesson gives students a clean template for explaining social programs in Mandarin.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill green">Guided practice</div>
+  <h2>Practice tasks for a two-hour lesson</h2>
+  <div class="practice">
+    <div class="concept">
+      <h3>Task A — Morning-rush retell</h3>
+      <p>Students retell the first scene using sequence markers and routine verbs.</p>
+    </div>
+    <div class="concept">
+      <h3>Task B — Why were they late?</h3>
+      <p>Students identify each source of delay and explain which complaints are reasonable.</p>
+    </div>
+    <div class="concept">
+      <h3>Task C — What is Indusco?</h3>
+      <p>Students explain the term, when the movement started, and what problem it tried to solve.</p>
+    </div>
+    <div class="concept">
+      <h3>Task D — Science and cheap useful goods</h3>
+      <p>Students explain how engineers, research, simplified machines, and local materials fit together.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill red">Quick understanding check</div>
+  <h2>Two multiple-choice quiz questions</h2>
+
+  <div class="quiz-q" data-answer="b">
+    <h3>1) According to the notes, why is the popular translation of <span class="mono">gongher</span> as “work together” considered misleading?</h3>
+    <label><input type="radio" name="q1" value="a"> Because Chinese has no word for “work.”</label>
+    <label><input type="radio" name="q1" value="b"> Because the modifier should come before the modified in Chinese, so that phrase does not match normal Chinese grammar.</label>
+    <label><input type="radio" name="q1" value="c"> Because the lesson never discusses cooperation.</label>
+    <label><input type="radio" name="q1" value="d"> Because <span class="mono">gongher</span> only means “war factory.”</label>
+    <div class="feedback ok">Correct. The notes explicitly say that reading <span class="mono">gongher</span> as “work together” goes against the normal modifier-before-head pattern of Chinese grammar.</div>
+    <div class="feedback no">Not quite. The notes make a grammar point here, not just a dictionary point.</div>
+  </div>
+
+  <div class="quiz-q" data-answer="c">
+    <h3>2) What is the clearest summary of the lesson’s social argument about Indusco?</h3>
+    <label><input type="radio" name="q2" value="a"> It only helps people who already have a great deal of money.</label>
+    <label><input type="radio" name="q2" value="b"> It is mainly about riding faster to the factory.</label>
+    <label><input type="radio" name="q2" value="c"> It helps unemployed workers solve livelihood problems while also producing useful goods and improving living standards.</label>
+    <label><input type="radio" name="q2" value="d"> It proves that all old methods are useless.</label>
+    <div class="feedback ok">Correct. The lesson explicitly frames Indusco as helping workers and producing useful goods, then extends that logic to improved production and living standards.</div>
+    <div class="feedback no">Not quite. The lesson’s key idea is social benefit through cooperative production, not just factories in the abstract.</div>
+  </div>
+
+  <button id="checkQuiz">Check my answers</button>
+  <button class="secondary" id="resetQuiz" style="margin-left:8px;">Reset</button>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill gold">Exit challenge</div>
+    <h2>End-of-lecture spoken challenge</h2>
+    <ol>
+      <li>Name two things that delayed the speakers in the morning.</li>
+      <li>Explain what <span class="mono">gongher</span> stands for in the lesson.</li>
+      <li>Describe, in English, why factories, workers, and technicians were moved inland.</li>
+      <li>Give one example of how science changes production in the lesson.</li>
+      <li>Explain the meaning of <span class="mono">i-jeu leang-der</span> in this context.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="pill blue">References and source use</div>
+    <h2>References for this page</h2>
+    <ul>
+      <li><strong>Primary source:</strong> scanned Lesson 17 pages from <em>Mandarin Primer: An Intensive Course in Spoken Chinese</em>.</li>
+      <li><strong>Dialogue basis:</strong> Lesson 17 “Talking About Indusco,” including the oversleeping and breakfast-delay exchange, the walk to the factory, the explanation of “Gongher,” the wartime movement inland, the rebuilding of industries, the help given to unemployed workers, the production of useful daily goods, the scientific-method explanation, the role of specialists and returned students, and the realization that the speakers may have taken the wrong road.</li>
+      <li><strong>Notes basis:</strong> notes on afterthought <span class="mono">dou</span>, the use of <span class="mono">.shanq</span>, enumeration <span class="mono">le</span>, clothing verbs like <span class="mono">chuan</span>, <span class="mono">chi-char</span>, <span class="mono">banntian</span>, <span class="mono">guay</span>, <span class="mono">yeou ... toul</span>, <span class="mono">yangche</span>, <span class="mono">yinqsh</span>, <span class="mono">iue</span>, <span class="mono">tsanguan</span>, <span class="mono">shiang.shiah</span>, the grammar point about <span class="mono">gongher</span>, <span class="mono">kanqjann</span>, subject pause <span class="mono">a</span>, <span class="mono">bujiannde</span>, <span class="mono">shiah jyueshin</span>, interrupted <span class="mono">bae</span>, <span class="mono">haorongyih</span>, <span class="mono">hao</span> “in order to,” <span class="mono">tzaw.chulai</span>, <span class="mono">i-jeu leang-der</span>, <span class="mono">chu-chyan</span>, <span class="mono">mae.may</span>, <span class="mono">cherng.duh</span>, <span class="mono">tyi-gau</span>, <span class="mono">laobae.shinq</span>, <span class="mono">rentsair</span>, <span class="mono">lioushyue</span>, and <span class="mono">tzaw.de.chulai</span>.</li>
+      <li><strong>Exercises basis:</strong> page 5–6 exercises on answering practical questions, on who comes to look for what, and on translating statements about war, jobs, useful goods, research, and cheap goods, which shaped the page’s practice emphasis.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  This lecture page is designed for a full two-hour beginner lesson. It keeps close to the source while turning Lesson 17 into a clearer,
+  more connected, and more teachable conversation about daily life, cooperative industry, and wartime reconstruction for English-speaking high-school students.
+</footer>
+</div>
+
+<script>
+document.getElementById('checkQuiz').addEventListener('click', function(){
+  document.querySelectorAll('.quiz-q').forEach(function(q){
+    const correct = q.dataset.answer;
+    const selected = q.querySelector('input[type="radio"]:checked');
+    const ok = q.querySelector('.feedback.ok');
+    const no = q.querySelector('.feedback.no');
+    ok.style.display = 'none';
+    no.style.display = 'none';
+    if(selected && selected.value === correct){ ok.style.display = 'block'; }
+    else { no.style.display = 'block'; }
+  });
+});
+document.getElementById('resetQuiz').addEventListener('click', function(){
+  document.querySelectorAll('input[type="radio"]').forEach(function(inp){ inp.checked = false; });
+  document.querySelectorAll('.feedback').forEach(function(f){ f.style.display = 'none'; });
+});
+</script>
+</body>
+</html>

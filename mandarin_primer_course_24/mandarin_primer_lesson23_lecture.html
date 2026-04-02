@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mandarin Primer — Lesson 23 Lecture Page</title>
+<style>
+  :root{
+    --bg:#f6f8fc; --ink:#1d2433; --muted:#5a6475; --card:#ffffff; --line:#d8dfeb;
+    --blue:#2f6fed; --green:#2f9e77; --purple:#7b61ff; --orange:#f08c2e; --red:#d9485f; --gold:#c99700; --teal:#118ab2;
+    --shadow:0 10px 30px rgba(28,35,54,.08); --radius:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--ink);
+    background:radial-gradient(circle at top right, rgba(47,111,237,.08), transparent 28%),
+               radial-gradient(circle at top left, rgba(123,97,255,.08), transparent 26%), var(--bg);
+    line-height:1.65;
+  }
+  .wrap{width:min(1180px,94vw); margin:0 auto; padding:28px 0 64px;}
+  header.hero{
+    background:linear-gradient(135deg,#17457e,#2b63cf 55%,#7b61ff); color:#fff; border-radius:28px;
+    padding:34px 34px 28px; box-shadow:var(--shadow); overflow:hidden;
+  }
+  .eyebrow{display:inline-block; padding:6px 10px; border:1px solid rgba(255,255,255,.28); border-radius:999px; font-size:.83rem; margin-bottom:10px; background:rgba(255,255,255,.08);}
+  h1,h2,h3{line-height:1.2; margin:.2rem 0 .8rem}
+  h1{font-size:clamp(2rem,3vw,3rem)} h2{font-size:1.55rem} h3{font-size:1.12rem}
+  p.lead{font-size:1.08rem; max-width:980px; opacity:.98}
+  .small{font-size:.95rem; color:var(--muted)}
+  .grid{display:grid; gap:18px}
+  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media (max-width:900px){.g2{grid-template-columns:1fr}}
+  section{margin-top:22px}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px}
+  .pill{display:inline-block; font-size:.8rem; font-weight:800; padding:5px 10px; border-radius:999px; color:#fff; margin-bottom:10px}
+  .blue{background:var(--blue)} .green{background:var(--green)} .purple{background:var(--purple)} .orange{background:var(--orange)} .red{background:var(--red)} .gold{background:var(--gold)} .teal{background:var(--teal)}
+  .banner{border-left:6px solid var(--gold); background:#fff8db; padding:14px 16px; border-radius:14px}
+  .callout{border-left:5px solid var(--blue); background:#eef4ff; padding:14px 16px; border-radius:14px}
+  .warning{border-left:5px solid var(--red); background:#fff2f4; padding:14px 16px; border-radius:14px}
+  ul li, ol li{margin:.45rem 0}
+  .flow{display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:12px}
+  @media (max-width:1000px){.flow{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){.flow{grid-template-columns:1fr}}
+  .step{background:linear-gradient(180deg,#fff,#f8faff); border:1px solid var(--line); border-radius:18px; padding:16px; min-height:172px}
+  .num{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;margin-bottom:10px;background:linear-gradient(135deg,var(--blue),var(--purple))}
+  .dialogue-line{padding:10px 0; border-bottom:1px dashed var(--line)}
+  .dialogue-line:last-child{border-bottom:none}
+  .speaker{display:inline-block; min-width:118px; font-weight:800; color:var(--blue)}
+  .roman{font-size:1.02rem; font-weight:650}
+  .gloss{color:var(--muted)}
+  .concept-grid,.practice{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px}
+  @media (max-width:900px){.concept-grid,.practice{grid-template-columns:1fr}}
+  .concept{border:1px solid var(--line); border-radius:16px; padding:16px; background:#fbfcff}
+  .tag{display:inline-block; padding:4px 8px; border-radius:999px; font-size:.78rem; font-weight:700; margin:2px 4px 2px 0; background:#eef3ff; color:#2c4a9c}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; background:#f5f7fb; padding:.08rem .35rem; border-radius:8px}
+  table{width:100%; border-collapse:collapse; font-size:.96rem}
+  th,td{border-bottom:1px solid var(--line); padding:12px 10px; text-align:left; vertical-align:top}
+  th{background:#f4f7fc} tr:last-child td{border-bottom:none}
+  .graph-wrap{overflow:auto; border:1px solid var(--line); border-radius:18px; background:linear-gradient(180deg,#fcfdff,#f6f9ff); padding:12px}
+  svg text{font-family:Inter,system-ui,sans-serif; fill:#1f2430}
+  .edge{stroke:#90a4d4; stroke-width:2.2; fill:none; marker-end:url(#arrow)}
+  .node rect{rx:18; ry:18; stroke:#d8dff2; stroke-width:1.4}
+  .legend{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; font-size:.9rem}
+  .legend span{display:flex; align-items:center; gap:6px; background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 10px}
+  .dot{width:12px; height:12px; border-radius:50%; display:inline-block}
+  .quiz-q{border:1px solid var(--line); border-radius:16px; padding:16px; margin-bottom:16px; background:#fbfdff}
+  .quiz-q label{display:block; padding:9px 10px; border:1px solid transparent; border-radius:12px; cursor:pointer}
+  .quiz-q label:hover{background:#f1f6ff; border-color:#dbe6ff}
+  button{appearance:none; border:none; background:linear-gradient(135deg,var(--blue),var(--purple)); color:#fff; border-radius:12px; padding:11px 16px; font-size:.96rem; font-weight:700; cursor:pointer; box-shadow:var(--shadow)}
+  button.secondary{background:linear-gradient(135deg,var(--green),#3fb58e)}
+  .feedback{margin-top:10px; padding:12px 14px; border-radius:12px; display:none}
+  .feedback.ok{background:#edf9f3; border:1px solid #bfe7cf}
+  .feedback.no{background:#fff1f3; border:1px solid #f0c0cb}
+  footer{margin-top:28px; color:var(--muted); font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Yuen Ren Chao - Mandarin Primer: An Intensive Course in Spoken Chinese</div>
+  <h1>Mandarin Primer — Lesson 23</h1>
+  <h2 style="font-size:1.35rem;font-weight:650;opacity:.98;">The Vernacular Literature Movement</h2>
+  <p class="lead">
+    Lesson 23 begins with a messy and very human train-car interruption: hot tea spills, a child cries, passengers complain, and a waiter apologizes.
+    From that ordinary disturbance, the lesson opens into a deep argument about books, schooling, classical prose, novels, literary reform, and the case
+    for writing in the vernacular. It is one of the richest lessons in the book for showing how literary history can emerge naturally out of conversation.
+  </p>
+  <p class="small" style="color:rgba(255,255,255,.9);">This page keeps the book’s original romanization system so the page stays aligned with the scanned lesson.</p>
+</header>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill blue">Learning goals</div>
+    <h2>What students should learn</h2>
+    <ul>
+      <li>Follow the lesson’s large-scale structure: train accident, return to conversation, childhood reading preferences, college-level change, and debate over the Vernacular Literature Movement.</li>
+      <li>Understand the contrast between <span class="mono">wenyan</span> and <span class="mono">bairhuah</span>, and why that distinction matters culturally and educationally.</li>
+      <li>Learn vocabulary for novels, classics, prohibiting books, public reading, elementary education, the masses, abstruse theories, official documents, advertisements, newspapers, correspondence, pretending, being fooled, and killing time.</li>
+      <li>Recognize how the speaker’s love of fiction becomes part of a broader defense of vernacular writing.</li>
+      <li>See how the lesson stages a real debate: one side emphasizing accessibility and living language, the other emphasizing precision and established written norms.</li>
+      <li>Notice that the lesson ends not with agreement only, but with teasing, irony, and the feeling that serious debate can also be playful.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="pill gold">Teacher lens</div>
+    <h2>Why this lesson matters</h2>
+    <div class="banner"><strong>Lesson 23 teaches that literature is also a social struggle over who gets to read, write, and be included.</strong> The move from classical writing to vernacular writing is presented not as an abstract slogan, but as something connected to novels, schools, mass education, and ordinary communication.</div>
+    <p>
+      For high-school students, this lesson is especially effective because it begins with immediate drama and then becomes a debate about why certain kinds
+      of writing feel alive, accessible, or restrictive. It is a perfect bridge between language learning and intellectual history.
+    </p>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill purple">Two-hour lecture flow</div>
+  <h2>Suggested lecture sequence</h2>
+  <div class="flow">
+    <div class="step"><div class="num">1</div><strong>Train-car hook</strong><br><span class="small">Begin with the scalding accident: crying child, wet clothes, apologies, anger, and social repair.</span></div>
+    <div class="step"><div class="num">2</div><strong>Return to reading history</strong><br><span class="small">Resume the interrupted story of what the speaker liked and did not like to read when young.</span></div>
+    <div class="step"><div class="num">3</div><strong>Forbidden novels</strong><br><span class="small">Teach “idle books,” hidden novels, and the thrill of reading what teachers forbade.</span></div>
+    <div class="step"><div class="num">4</div><strong>College and reversal</strong><br><span class="small">Show how university study turns novels from forbidden pleasures into legitimate course material.</span></div>
+    <div class="step"><div class="num">5</div><strong>Debate over vernacular literature</strong><br><span class="small">Teach the two sides of the argument: accessibility and mass education versus precision and prestige of literary language.</span></div>
+    <div class="step"><div class="num">6</div><strong>Playful ending + quiz</strong><br><span class="small">End with the reveal that one side was partly pretending, then shift into midnight-snack comedy.</span></div>
+  </div>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill green">How to teach it well</div>
+    <h2>Effective teaching moves for beginners</h2>
+    <div class="callout">
+      The “To the Student” pages stress utterances, repetition, and grammar-through-exercises. Lesson 23 works especially well when students can feel the shift from concrete scene to intellectual argument rather than treating the debate as disconnected from the opening.
+    </div>
+    <ol>
+      <li>Act out the train-spill scene first, with strong emotion and quick turn-taking.</li>
+      <li>Then put a big board arrow showing the lesson’s shift from everyday disruption to literary argument.</li>
+      <li>Use a side-by-side chart for <span class="mono">wenyan</span> and <span class="mono">bairhuah</span>: who can read it, where it appears, what it is good for, what its limits are.</li>
+      <li>Put the titles of the novels on the board as cultural objects, not just vocabulary items.</li>
+      <li>Treat the debate as live and unresolved; do not flatten it into “one side is simply correct.”</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="pill red">Likely beginner confusions</div>
+    <h2>Where English speakers may stumble</h2>
+    <div class="warning">
+      Students may assume this is only a literature-history lesson, but it is also about educational authority, taste, public language, and who gets access to reading.
+    </div>
+    <ul>
+      <li><strong><span class="mono">bairhuah</span></strong> is not just “casual speech.” The notes say it is vernacular literature, especially the currently used style of writing that still includes many new terms and literary expressions.</li>
+      <li><strong><span class="mono">koouyeu</span></strong> is the literary label for colloquial language in the debate section.</li>
+      <li><strong><span class="mono">shyanshu</span></strong> means “idle books,” an old dismissive term for novels, not literally books with nothing inside.</li>
+      <li><strong>The central-dialect features matter</strong>, such as final particle <span class="mono">sha</span>, <span class="mono">naalii sheaude</span>, and <span class="mono">torng</span> for <span class="mono">gen</span>.</li>
+      <li><strong>The ending is playful but serious</strong>: pretending to argue the opposite side is framed as train-time chat, but the actual arguments still matter.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill blue">Lesson walkthrough</div>
+  <h2>Lesson 23 as interruption, reading history, and literary debate</h2>
+  <p class="small">This lesson becomes easiest to teach when broken into five connected scenes.</p>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 1</span>
+    <span class="roman">E, e, e, nii yeanjing kann de naal chiuh le? ... Nii saa de woo i-shen de! ... Nii bae hairtz tanq de, shoou dou tanq de tong-horng de!</span><br>
+    <span class="gloss">Hey, where are your eyes? Look what you spilled all over me! ... You have scalded the child and made the hands all red!</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 1</span>
+    <span class="roman">Dueybujuh, chiing Nin yuan.lianq! ... Naalii sheaude huooche huran de i-tyng sha? Woo ig jann.bu-woen ...</span><br>
+    <span class="gloss">I am terribly sorry, please forgive me! ... How could I have known the train would stop so suddenly? I lost my footing ...</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 1</span>
+    <span class="roman">Hao, kann jey-wey shiansheng de mianntz, jey-hwei raule nii!</span><br>
+    <span class="gloss">All right, for this gentleman’s sake, I will spare you this time.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 2</span>
+    <span class="roman">Woo sheau.shyrhowl budah shiihuan niann jenq.jing shu. Chwule Menq Tzyy, Tzuoojuann, gen Lii Bor de shy jy way, chyiyude jing-shu woo i-deal yee butzay.hu niann.</span><br>
+    <span class="gloss">When I was young I did not much like reading serious books. Apart from Mencius, Tso’s Chronicles, and Li Po’s poems, I did not care for the other classics at all.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 2</span>
+    <span class="roman">Woo youchyi ay kann sheaushuol, shiansheng goan ta jiaw shyanshu, busheu woomen kann, char.jaur le hair deei air-mah.</span><br>
+    <span class="gloss">I especially loved reading novels, which our teacher called “idle books,” forbidding us to read them, and if we were found out we would be scolded.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 2</span>
+    <span class="roman">Woo yeou shyrhowl toutoulde bae sheaushuol-shu tsarng de shujuol chou.tih lii — biifang Shoeihuu Juann, Hornglou Menq, Rulin Wayshyy, Sangwo Jyh ...</span><br>
+    <span class="gloss">Sometimes I secretly hid novels in my desk drawer — books like Water Margin, Dream of the Red Chamber, Informal History of Literary Men, and the Story of the Three Kingdoms.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 3</span>
+    <span class="roman">Howlai woo ruh le dahshyue, woomde gwowel jiawshow budann bu jinnjyy woomen kann sheaushuol, hair jiaw woomen na ta danq gongkeh niann ... tzay dah-tyng-goang-jonq, gongran de kann.chii shyanshu lai, nii chyau jeh dwo guoh-yiin a!</span><br>
+    <span class="gloss">Later, when I entered college, our Chinese professor not only did not prohibit us from reading novels, but even assigned them as lessons ... and we could openly read those once-forbidden “idle books” in public — what a thrill!</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 4</span>
+    <span class="roman">Woo sh feicharng tzanncherng jeyg Bairhuah Wen Yunndonq de.</span><br>
+    <span class="gloss">I am very much in favor of this Vernacular Literature Movement.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 4</span>
+    <span class="roman">Wey chujyi jiawyuh, huohjee dahjonq jiawyuh, huohjee bairhuah shiangyi i-deal, dannsh ruguoo yaw jeang gaushen i-deal de shyuelii, koongpah koouyeu meiyeou wenyan nemm joenchiueh ha?</span><br>
+    <span class="gloss">For elementary education, or perhaps mass education, the vernacular may be more suitable, but if you want to discuss more advanced learned theories, I am afraid the colloquial is not as precise as the literary language.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 4</span>
+    <span class="roman">Tarngchaur de Forjiaw de yeuluh a ... Songchaur liishuejia de ... tongshyng de geh-joong gongwen a ... tyauiue a, faaliuh de tyauwen a ... shangwuh de hertorng a ... bawshanq de goanggaw torng shinwen, shennjyhyu pyngcharng ren shiee-shinn ... rengjiow sh yii wenyan wei juu ...</span><br>
+    <span class="gloss">But the records of Buddhist lectures in the T’ang, the Sung philosophers, current official documents, treaties, legal clauses, contracts, advertisements, news, and even ordinary letters still take literary language as their main support ...</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 5</span>
+    <span class="roman">Ay, jeyg wenntyi yawsh chehdii de taoluenn.chiilai, jiowsh i-yeh shuo daw tianlianq yee shuo.bu-wan de lo ... woo daangj nii shianqlai sh tzanncherng bairhuah de, bush ma?</span><br>
+    <span class="gloss">If we really discussed this thoroughly, we could talk from night till dawn and still not finish ... I had always thought you supported the vernacular, didn’t you?</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 5</span>
+    <span class="roman">Woo buguoh jeajuangl de jann tzay faanmiall de lihchaang gen nii shia-liau jiowshle. ... Ch! woo shanq le nii nemm g dah-danq! ... Che.shanq herngsh mei shell gann, jao g tyimuh sweibiann tarn, shiaumo shyrjian jiowshle.</span><br>
+    <span class="gloss">I was only pretending to take the opposite position so I could chat with you, that’s all. ... Hah, you really made a fool of me! ... There is nothing to do on the train anyway, so I just found a topic and talked at random to kill time.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Closing</span>
+    <span class="roman">Leang-wey shiansheng jiaw deal sherm deanshin ha? ... Woo chiing nii chy shiauyeh.</span><br>
+    <span class="gloss">What refreshments would the two gentlemen like? ... Let me treat you to a midnight supper.</span>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill orange">Knowledge graph</div>
+  <h2>Concept network for Lesson 23</h2>
+  <p>
+    Lesson 23 forms a network around <strong>train accident → apology and social repair → forbidden novels → university legitimation → vernacular-literary debate → playful reversal</strong>.
+  </p>
+  <div class="graph-wrap">
+    <svg width="1180" height="860" viewBox="0 0 1180 860" role="img" aria-label="Knowledge graph for Lesson 23">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" fill="#90a4d4"></path>
+        </marker>
+      </defs>
+
+      <path class="edge" d="M590,110 C590,145 590,155 590,205"/>
+      <path class="edge" d="M590,110 C430,135 315,155 205,235"/>
+      <path class="edge" d="M590,110 C750,135 865,155 975,235"/>
+      <path class="edge" d="M205,285 C205,330 205,342 205,405"/>
+      <path class="edge" d="M975,285 C975,330 975,342 975,405"/>
+      <path class="edge" d="M590,255 C490,310 430,350 375,425"/>
+      <path class="edge" d="M590,255 C690,310 750,350 805,425"/>
+      <path class="edge" d="M590,255 C590,330 590,350 590,425"/>
+      <path class="edge" d="M375,475 C340,550 300,595 250,710"/>
+      <path class="edge" d="M590,475 C590,550 590,595 590,710"/>
+      <path class="edge" d="M805,475 C840,550 880,595 930,710"/>
+
+      <g class="node">
+        <rect x="360" y="45" width="460" height="70" fill="#efeaff"></rect>
+        <text x="590" y="76" text-anchor="middle" font-size="18" font-weight="800">Lesson 23 Core Question</text>
+        <text x="590" y="99" text-anchor="middle" font-size="14">Why does the shift from literary language to vernacular literature matter, and who benefits from it?</text>
+      </g>
+
+      <g class="node">
+        <rect x="445" y="205" width="290" height="54" fill="#eaf2ff"></rect>
+        <text x="590" y="238" text-anchor="middle" font-size="17" font-weight="800">Literature debate in a train car</text>
+      </g>
+
+      <g class="node">
+        <rect x="55" y="235" width="300" height="52" fill="#eefaf5"></rect>
+        <text x="205" y="267" text-anchor="middle" font-size="17" font-weight="800">Scene and reading experience</text>
+      </g>
+
+      <g class="node">
+        <rect x="825" y="235" width="300" height="52" fill="#fff5e8"></rect>
+        <text x="975" y="267" text-anchor="middle" font-size="17" font-weight="800">Bairhuah versus wenyan</text>
+      </g>
+
+      <g class="node">
+        <rect x="85" y="405" width="240" height="68" fill="#edf7ff"></rect>
+        <text x="205" y="434" text-anchor="middle" font-size="16" font-weight="800">spill / apology / courtesy / spare punishment</text>
+        <text x="205" y="456" text-anchor="middle" font-size="13">social repair</text>
+      </g>
+
+      <g class="node">
+        <rect x="855" y="405" width="240" height="68" fill="#fff0f3"></rect>
+        <text x="975" y="434" text-anchor="middle" font-size="16" font-weight="800">mass education / precision / documents</text>
+        <text x="975" y="456" text-anchor="middle" font-size="13">debate criteria</text>
+      </g>
+
+      <g class="node">
+        <rect x="255" y="425" width="240" height="50" fill="#eefaf5"></rect>
+        <text x="375" y="456" text-anchor="middle" font-size="16" font-weight="800">forbidden novels in drawer</text>
+      </g>
+
+      <g class="node">
+        <rect x="685" y="425" width="240" height="50" fill="#eefaf5"></rect>
+        <text x="805" y="456" text-anchor="middle" font-size="16" font-weight="800">university makes novels legitimate</text>
+      </g>
+
+      <g class="node">
+        <rect x="495" y="425" width="190" height="50" fill="#eaf2ff"></rect>
+        <text x="590" y="456" text-anchor="middle" font-size="16" font-weight="800">pretend-opposite stance</text>
+      </g>
+
+      <g class="node">
+        <rect x="155" y="710" width="190" height="58" fill="#eefaf5"></rect>
+        <text x="250" y="741" text-anchor="middle" font-size="16" font-weight="800">novel titles as cultural evidence</text>
+        <text x="250" y="761" text-anchor="middle" font-size="13">reading taste</text>
+      </g>
+
+      <g class="node">
+        <rect x="495" y="710" width="190" height="58" fill="#fff5e8"></rect>
+        <text x="590" y="741" text-anchor="middle" font-size="16" font-weight="800">koouyeu / bairhuah / wenyan</text>
+        <text x="590" y="761" text-anchor="middle" font-size="13">language labels</text>
+      </g>
+
+      <g class="node">
+        <rect x="835" y="710" width="190" height="58" fill="#f3f0ff"></rect>
+        <text x="930" y="741" text-anchor="middle" font-size="16" font-weight="800">shiauyeh on the train</text>
+        <text x="930" y="761" text-anchor="middle" font-size="13">serious talk becomes comedy</text>
+      </g>
+    </svg>
+  </div>
+  <div class="legend">
+    <span><i class="dot" style="background:#eaf2ff"></i> overall structure</span>
+    <span><i class="dot" style="background:#eefaf5"></i> reading experience</span>
+    <span><i class="dot" style="background:#fff5e8"></i> language debate</span>
+    <span><i class="dot" style="background:#f3f0ff"></i> comic framing</span>
+    <span><i class="dot" style="background:#fff0f3"></i> argument criteria</span>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill green">Core concepts</div>
+  <h2>What the lesson teaches, concept by concept</h2>
+  <div class="concept-grid">
+    <div class="concept">
+      <h3>1) Public accidents reveal social language quickly</h3>
+      <div class="tag">dueybujuh</div><div class="tag">yuan.lianq</div><div class="tag">mianntz</div><div class="tag">rau</div>
+      <ul>
+        <li>The opening is full of apology, blame, comfort, and negotiated forgiveness.</li>
+        <li>This is excellent beginner material because emotions are clear and speech acts are concrete.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>2) Literary taste begins in rebellion</h3>
+      <div class="tag">sheaushuol</div><div class="tag">shyanshu</div><div class="tag">toutoulde</div>
+      <ul>
+        <li>The speaker’s love of novels begins as something hidden and forbidden.</li>
+        <li>This gives emotional force to the later support for vernacular literature.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>3) Canon and pleasure are contrasted, not simply opposed</h3>
+      <div class="tag">Menq Tzyy</div><div class="tag">Tzuoojuann</div><div class="tag">Lii Bor</div>
+      <ul>
+        <li>The speaker does like some serious texts, but not all of them.</li>
+        <li>The lesson avoids a simplistic “classics bad, novels good” position.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>4) Institutional legitimacy changes what counts as worthy reading</h3>
+      <div class="tag">dahshyue</div><div class="tag">jinnjyy</div><div class="tag">gongkeh</div>
+      <ul>
+        <li>Once at university, novels move from hidden leisure reading to official course material.</li>
+        <li>This is a powerful statement about how institutions define value.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>5) The Vernacular Literature Movement is framed as educationally useful</h3>
+      <div class="tag">chujyi jiawyuh</div><div class="tag">dahjonq jiawyuh</div><div class="tag">bairhuah</div>
+      <ul>
+        <li>One strong argument for vernacular writing is that it better serves elementary and mass education.</li>
+        <li>This gives the movement a democratic logic.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>6) The counterargument is about precision and prestige</h3>
+      <div class="tag">gaushen</div><div class="tag">shyuelii</div><div class="tag">wenyan</div>
+      <ul>
+        <li>The opposing voice says colloquial language may not be precise enough for advanced theories and established written domains.</li>
+        <li>This is a serious argument, not a straw man.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>7) Real language use is mixed and transitional</h3>
+      <div class="tag">gongwen</div><div class="tag">tyauiue</div><div class="tag">goanggaw</div><div class="tag">shiee-shinn</div>
+      <ul>
+        <li>The lesson points out that official documents, contracts, ads, news, and correspondence still rely heavily on literary forms.</li>
+        <li>This makes the reform movement feel historically unfinished.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>8) Debate can be sincere and playful at once</h3>
+      <div class="tag">jeajuangl</div><div class="tag">shanq-danq</div><div class="tag">shiaumo shyrjian</div>
+      <ul>
+        <li>The reveal that one speaker was partly pretending does not erase the debate’s substance.</li>
+        <li>Instead, it models intellectual play, friendship, and argument as social practice.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill orange">Mini-board plan</div>
+    <h2>How to lay this out for students</h2>
+    <table>
+      <thead><tr><th>Board zone</th><th>Write this</th><th>Teaching purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Left</td><td>train-scene chain: spill → blame → apology → comfort → partial forgiveness</td><td>Anchors the lesson in a vivid social scene.</td></tr>
+        <tr><td>Center</td><td>reading-history ladder: classics / novels / university / public reading</td><td>Shows how literary taste develops over time.</td></tr>
+        <tr><td>Right</td><td>bairhuah vs wenyan chart: access / precision / domains / audience</td><td>Organizes the central debate clearly.</td></tr>
+        <tr><td>Bottom</td><td>ending shift: argument → teasing → yawning → midnight supper</td><td>Preserves the lesson’s comic rhythm.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="pill teal">High-value classroom move</div>
+    <h2>Run a live two-side debate</h2>
+    <div class="callout">
+      Split the class into a vernacular-writing side and a literary-language side.
+    </div>
+    <ol>
+      <li>One side argues from education, accessibility, and living speech.</li>
+      <li>The other argues from precision, legal/official use, and established literary forms.</li>
+      <li>At the end, ask students whether the lesson itself seems to favor one side while still taking the other side seriously.</li>
+    </ol>
+    <p class="small">This turns the page into an actual intellectual event for students.</p>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill blue">A key structural system</div>
+  <h2>Forbidden → legitimized → debated</h2>
+  <div class="practice">
+    <div class="concept">
+      <h3>Forbidden</h3>
+      <p><span class="mono">shyanshu</span>, <span class="mono">busheu woomen kann</span>, <span class="mono">char.jaur</span></p>
+      <p class="small">Novels are hidden, disapproved, and punishable.</p>
+    </div>
+    <div class="concept">
+      <h3>Legitimized</h3>
+      <p><span class="mono">na ta danq gongkeh</span>, <span class="mono">gongran de kann</span></p>
+      <p class="small">University transforms novels into public and legitimate study.</p>
+    </div>
+    <div class="concept">
+      <h3>Debated</h3>
+      <p><span class="mono">bairhuah wen</span>, <span class="mono">wenyan</span>, <span class="mono">shyuelii</span></p>
+      <p class="small">The question becomes not whether literature matters, but what kind of language literature should use.</p>
+    </div>
+    <div class="concept">
+      <h3>Teaching payoff</h3>
+      <p class="small">Students can see how personal taste, institutional power, and language reform connect.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill green">Guided practice</div>
+  <h2>Practice tasks for a two-hour lesson</h2>
+  <div class="practice">
+    <div class="concept">
+      <h3>Task A — What kind of reader was the speaker?</h3>
+      <p>Students describe which texts the speaker liked, disliked, or secretly read, and what that reveals about him.</p>
+    </div>
+    <div class="concept">
+      <h3>Task B — Why were novels threatening?</h3>
+      <p>Students explain why teachers labeled novels “idle books” and why hiding them in a drawer matters symbolically.</p>
+    </div>
+    <div class="concept">
+      <h3>Task C — Summarize the two sides</h3>
+      <p>Following the page 7 exercise, students summarize the arguments for and against the Vernacular Literature Movement.</p>
+    </div>
+    <div class="concept">
+      <h3>Task D — Extend the ending</h3>
+      <p>Students write two more turns after the midnight-supper invitation: does the debate continue, or does it dissolve into food and friendship?</p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill red">Quick understanding check</div>
+  <h2>Two multiple-choice quiz questions</h2>
+
+  <div class="quiz-q" data-answer="c">
+    <h3>1) What is the strongest argument made in favor of the Vernacular Literature Movement inside the lesson?</h3>
+    <label><input type="radio" name="q1" value="a"> That no important texts were ever written in literary language</label>
+    <label><input type="radio" name="q1" value="b"> That novels are better only because they are forbidden</label>
+    <label><input type="radio" name="q1" value="c"> That vernacular language better serves elementary education and mass education, making reading and writing more accessible</label>
+    <label><input type="radio" name="q1" value="d"> That all advertisements should be poems</label>
+    <div class="feedback ok">Correct. The lesson explicitly connects vernacular writing to elementary and mass education, making it a broader social issue rather than only a literary preference.</div>
+    <div class="feedback no">Not quite. The pro-vernacular argument in this lesson is strongly tied to accessibility and education.</div>
+  </div>
+
+  <div class="quiz-q" data-answer="b">
+    <h3>2) Why is the reveal that A was partly pretending to take the opposite side important?</h3>
+    <label><input type="radio" name="q2" value="a"> It proves the debate had no substance at all.</label>
+    <label><input type="radio" name="q2" value="b"> It shows that serious intellectual disagreement can also be used playfully to provoke discussion and pass time.</label>
+    <label><input type="radio" name="q2" value="c"> It means A actually hates literature.</label>
+    <label><input type="radio" name="q2" value="d"> It shows the waiter won the argument.</label>
+    <div class="feedback ok">Correct. The lesson ends by showing debate as both meaningful and social, with teasing layered over serious ideas.</div>
+    <div class="feedback no">Not quite. The playful reveal does not erase the debate; it changes how we understand the tone of the exchange.</div>
+  </div>
+
+  <button id="checkQuiz">Check my answers</button>
+  <button class="secondary" id="resetQuiz" style="margin-left:8px;">Reset</button>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill gold">Exit challenge</div>
+    <h2>End-of-lecture spoken challenge</h2>
+    <ol>
+      <li>Name two kinds of books the speaker enjoyed and two kinds he did not care much to read.</li>
+      <li>Explain why novels once had to be hidden.</li>
+      <li>State one argument for <span class="mono">bairhuah</span> and one argument for <span class="mono">wenyan</span>.</li>
+      <li>Explain, in English, why university changes the meaning of reading novels in this lesson.</li>
+      <li>Describe the function of the midnight-supper ending.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="pill blue">References and source use</div>
+    <h2>References for this page</h2>
+    <ul>
+      <li><strong>Primary source:</strong> scanned Lesson 23 pages from <em>Mandarin Primer: An Intensive Course in Spoken Chinese</em>.</li>
+      <li><strong>Text basis:</strong> Lesson 23 “The Vernacular Literature Movement,” including the tea-spill incident in the train car, the resumed discussion of childhood reading preferences, the hiding of forbidden novels, the change in university attitudes toward fiction, the direct statement of support for the Vernacular Literature Movement, the counterarguments about precision and literary language, the reveal that one side was partly pretended for the sake of conversation, and the shift into midnight-supper talk.</li>
+      <li><strong>Notes basis:</strong> notes on <span class="mono">bairhuah</span>, final particle <span class="mono">sha</span>, intensifying adjective compounds like <span class="mono">tong-horng</span> and <span class="mono">shiueh-bair</span>, <span class="mono">guai.guai</span>, <span class="mono">dahguall</span>, <span class="mono">tsushin</span>, <span class="mono">naalii sheaude</span>, <span class="mono">mianntz</span>, <span class="mono">rau</span>, <span class="mono">tzay.hu</span>, <span class="mono">Lao Tzyy</span>, <span class="mono">Juang Tzyy</span>, <span class="mono">sheaushuo</span>, <span class="mono">shyanshu</span>, <span class="mono">toutoulde</span>, <span class="mono">chou.tih</span>, the major novel titles <span class="mono">Shoeihuu Juann</span>, <span class="mono">Hornglou Menq</span>, <span class="mono">Rulin Wayshyy</span>, and <span class="mono">Sangwo Jyh Yeanyih</span>, <span class="mono">dahshyue</span>, <span class="mono">jinnjyy</span>, <span class="mono">guoh-yiin</span>, <span class="mono">koou.chih</span>, <span class="mono">chujyi</span>, <span class="mono">dahjonq</span>, <span class="mono">gaushen</span>, <span class="mono">shyuelii</span>, <span class="mono">koouyeu</span>, <span class="mono">yeuluh</span>, <span class="mono">liishyue</span>, <span class="mono">torng</span>, <span class="mono">kee.shi</span>, <span class="mono">Hu Shih</span>, <span class="mono">jeajuangl</span>, <span class="mono">shia-liau</span>, <span class="mono">shanq-danq</span>, <span class="mono">shiaumo</span>, <span class="mono">shyrjian</span>, <span class="mono">paw</span>, <span class="mono">shiauyeh</span>, <span class="mono">tsaydantz</span>, <span class="mono">chao-miann</span>, <span class="mono">nih</span>, and <span class="mono">huootoei-jisy-miann</span>.</li>
+      <li><strong>Exercises basis:</strong> the page 6–7 exercises, especially the prompt to summarize arguments for and against the movement, which directly shaped the discussion structure of this page.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  This lecture page is designed for a full two-hour beginner lesson. It keeps close to the source while turning Lesson 23 into a clearer,
+  more connected, and more teachable lesson about novels, literary reform, and the vernacular-literary debate for English-speaking high-school students.
+</footer>
+</div>
+
+<script>
+document.getElementById('checkQuiz').addEventListener('click', function(){
+  document.querySelectorAll('.quiz-q').forEach(function(q){
+    const correct = q.dataset.answer;
+    const selected = q.querySelector('input[type="radio"]:checked');
+    const ok = q.querySelector('.feedback.ok');
+    const no = q.querySelector('.feedback.no');
+    ok.style.display = 'none';
+    no.style.display = 'none';
+    if(selected && selected.value === correct){ ok.style.display = 'block'; }
+    else { no.style.display = 'block'; }
+  });
+});
+document.getElementById('resetQuiz').addEventListener('click', function(){
+  document.querySelectorAll('input[type="radio"]').forEach(function(inp){ inp.checked = false; });
+  document.querySelectorAll('.feedback').forEach(function(f){ f.style.display = 'none'; });
+});
+</script>
+</body>
+</html>

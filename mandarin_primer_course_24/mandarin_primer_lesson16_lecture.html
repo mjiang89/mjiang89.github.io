@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mandarin Primer — Lesson 16 Lecture Page</title>
+<style>
+  :root{
+    --bg:#f6f8fc; --ink:#1d2433; --muted:#5a6475; --card:#ffffff; --line:#d8dfeb;
+    --blue:#2f6fed; --green:#2f9e77; --purple:#7b61ff; --orange:#f08c2e; --red:#d9485f; --gold:#c99700;
+    --shadow:0 10px 30px rgba(28,35,54,.08); --radius:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--ink);
+    background:radial-gradient(circle at top right, rgba(47,111,237,.08), transparent 28%),
+               radial-gradient(circle at top left, rgba(123,97,255,.08), transparent 26%), var(--bg);
+    line-height:1.65;
+  }
+  .wrap{width:min(1180px,94vw); margin:0 auto; padding:28px 0 64px;}
+  header.hero{
+    background:linear-gradient(135deg,#17457e,#2b63cf 55%,#7b61ff); color:#fff; border-radius:28px;
+    padding:34px 34px 28px; box-shadow:var(--shadow); overflow:hidden;
+  }
+  .eyebrow{
+    display:inline-block; padding:6px 10px; border:1px solid rgba(255,255,255,.28); border-radius:999px;
+    font-size:.83rem; margin-bottom:10px; background:rgba(255,255,255,.08);
+  }
+  h1,h2,h3{line-height:1.2; margin:.2rem 0 .8rem}
+  h1{font-size:clamp(2rem,3vw,3rem)} h2{font-size:1.55rem} h3{font-size:1.12rem}
+  p.lead{font-size:1.08rem; max-width:980px; opacity:.98}
+  .small{font-size:.95rem; color:var(--muted)}
+  .grid{display:grid; gap:18px}
+  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media (max-width:900px){.g2{grid-template-columns:1fr}}
+  section{margin-top:22px}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px}
+  .pill{display:inline-block; font-size:.8rem; font-weight:800; padding:5px 10px; border-radius:999px; color:#fff; margin-bottom:10px}
+  .blue{background:var(--blue)} .green{background:var(--green)} .purple{background:var(--purple)} .orange{background:var(--orange)} .red{background:var(--red)} .gold{background:var(--gold)}
+  .banner{border-left:6px solid var(--gold); background:#fff8db; padding:14px 16px; border-radius:14px}
+  .callout{border-left:5px solid var(--blue); background:#eef4ff; padding:14px 16px; border-radius:14px}
+  .warning{border-left:5px solid var(--red); background:#fff2f4; padding:14px 16px; border-radius:14px}
+  ul li, ol li{margin:.45rem 0}
+  .flow{display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:12px}
+  @media (max-width:1000px){.flow{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){.flow{grid-template-columns:1fr}}
+  .step{background:linear-gradient(180deg,#fff,#f8faff); border:1px solid var(--line); border-radius:18px; padding:16px; min-height:156px}
+  .num{width:34px; height:34px; border-radius:50%; display:grid; place-items:center; color:#fff; font-weight:800; margin-bottom:10px; background:linear-gradient(135deg,var(--blue),var(--purple))}
+  .dialogue-line{padding:10px 0; border-bottom:1px dashed var(--line)}
+  .dialogue-line:last-child{border-bottom:none}
+  .speaker{display:inline-block; min-width:102px; font-weight:800; color:var(--blue)}
+  .roman{font-size:1.02rem; font-weight:650}
+  .gloss{color:var(--muted)}
+  .concept-grid,.practice{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px}
+  @media (max-width:900px){.concept-grid,.practice{grid-template-columns:1fr}}
+  .concept{border:1px solid var(--line); border-radius:16px; padding:16px; background:#fbfcff}
+  .tag{display:inline-block; padding:4px 8px; border-radius:999px; font-size:.78rem; font-weight:700; margin:2px 4px 2px 0; background:#eef3ff; color:#2c4a9c}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; background:#f5f7fb; padding:.08rem .35rem; border-radius:8px}
+  table{width:100%; border-collapse:collapse; font-size:.96rem}
+  th,td{border-bottom:1px solid var(--line); padding:12px 10px; text-align:left; vertical-align:top}
+  th{background:#f4f7fc} tr:last-child td{border-bottom:none}
+  .graph-wrap{overflow:auto; border:1px solid var(--line); border-radius:18px; background:linear-gradient(180deg,#fcfdff,#f6f9ff); padding:12px}
+  svg text{font-family:Inter,system-ui,sans-serif; fill:#1f2430}
+  .edge{stroke:#90a4d4; stroke-width:2.2; fill:none; marker-end:url(#arrow)}
+  .node rect{rx:18; ry:18; stroke:#d8dff2; stroke-width:1.4}
+  .legend{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; font-size:.9rem}
+  .legend span{display:flex; align-items:center; gap:6px; background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 10px}
+  .dot{width:12px; height:12px; border-radius:50%; display:inline-block}
+  .quiz-q{border:1px solid var(--line); border-radius:16px; padding:16px; margin-bottom:16px; background:#fbfdff}
+  .quiz-q label{display:block; padding:9px 10px; border:1px solid transparent; border-radius:12px; cursor:pointer}
+  .quiz-q label:hover{background:#f1f6ff; border-color:#dbe6ff}
+  button{appearance:none; border:none; background:linear-gradient(135deg,var(--blue),var(--purple)); color:#fff; border-radius:12px; padding:11px 16px; font-size:.96rem; font-weight:700; cursor:pointer; box-shadow:var(--shadow)}
+  button.secondary{background:linear-gradient(135deg,var(--green),#3fb58e)}
+  .feedback{margin-top:10px; padding:12px 14px; border-radius:12px; display:none}
+  .feedback.ok{background:#edf9f3; border:1px solid #bfe7cf}
+  .feedback.no{background:#fff1f3; border:1px solid #f0c0cb}
+  footer{margin-top:28px; color:var(--muted); font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Yuen Ren Chao - Mandarin Primer: An Intensive Course in Spoken Chinese</div>
+  <h1>Mandarin Primer — Lesson 16</h1>
+  <h2 style="font-size:1.35rem;font-weight:650;opacity:.98;">Chinese Geography</h2>
+  <p class="lead">
+    Lesson 16 continues the classroom-geography unit by moving from world geography to China. The teacher gives a regional overview of China,
+    contrasting dense and sparse population zones, discussing the Northeast, Inner Mongolia, the Yellow River basin, the Yangtze basin, the far south,
+    and the cultural and political importance of each region. The lesson also uses geography to teach identity, history, migration, and the limits of
+    regional labels like “north” and “south.”
+  </p>
+  <p class="small" style="color:rgba(255,255,255,.9);">This page keeps the book’s original romanization system so it stays aligned with the scanned lesson.</p>
+</header>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill blue">Learning goals</div>
+    <h2>What students should learn</h2>
+    <ul>
+      <li>Follow a lecture-style discussion of China’s major regions and population distribution.</li>
+      <li>Understand how Mandarin describes regional geography, provinces, river basins, cultural centers, and internal migration.</li>
+      <li>Recognize the contrast between the Yellow River basin as the cradle of ancient culture and the Yangtze basin as the center of modern China.</li>
+      <li>Learn region-related vocabulary such as <span class="mono">dongnan-buh</span>, <span class="mono">liouyuh</span>, <span class="mono">day</span>, <span class="mono">dongbeei</span>, and province names.</li>
+      <li>Understand the discussion of Manchus, Han people, assimilation, and why regional identity labels can be complicated.</li>
+      <li>Notice how the teacher manages disagreement and clarifies that both students can be partly right and partly wrong.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="pill gold">Teacher lens</div>
+    <h2>Why this lesson matters</h2>
+    <div class="banner"><strong>Lesson 16 teaches geography as cultural reasoning.</strong> Students are not only locating provinces. They are thinking about population, history, cultural centers, identity labels, and what makes a region “north” or “south.”</div>
+    <p>
+      For high-school students, this lesson is especially rich because it turns a map into a conversation about who counts as northern or southern,
+      what makes a region important, and how historical categories do not always match present-day usage.
+    </p>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill purple">Two-hour lecture flow</div>
+  <h2>Suggested lecture sequence</h2>
+  <div class="flow">
+    <div class="step"><div class="num">1</div><strong>China overview hook</strong><br><span class="small">Start with the striking fact that China has the world’s largest population and almost one-fourth of the world’s people.</span></div>
+    <div class="step"><div class="num">2</div><strong>Population map</strong><br><span class="small">Contrast densely populated eastern/southern China with more sparsely populated Tibet, Qinghai, Xinjiang, and Inner Mongolia.</span></div>
+    <div class="step"><div class="num">3</div><strong>Northeast and identity</strong><br><span class="small">Teach the Northeast provinces, the term Manchuria, and the discussion of Manchus, Han, and assimilation.</span></div>
+    <div class="step"><div class="num">4</div><strong>Yellow River and ancient culture</strong><br><span class="small">Teach the northern provinces, the Yellow River basin, and its role in early Chinese culture and dynastic capitals.</span></div>
+    <div class="step"><div class="num">5</div><strong>Yangtze and the south</strong><br><span class="small">Teach the Yangtze basin, the richest provinces, the far south, and debates over what counts as “the South.”</span></div>
+    <div class="step"><div class="num">6</div><strong>Famous southerners + quiz</strong><br><span class="small">End with the discussion of Chairman Chiang, Shanghai dialect, Sun Yat-sen, and the principle that some figures represent all of China.</span></div>
+  </div>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill green">How to teach it well</div>
+    <h2>Effective teaching moves for beginners</h2>
+    <div class="callout">
+      The source’s “To the Student” pages emphasize utterances, repetition, echoing, and grammar-through-exercises. Lesson 16 becomes especially teachable when the map of China stays visible and each region is tied to one memorable idea.
+    </div>
+    <ol>
+      <li>Use a color-coded map of China: Northeast, Yellow River basin, Yangtze basin, far south, and sparsely populated border regions.</li>
+      <li>Give each region a “headline”: ancient culture, modern center, sparsely populated frontier, etc.</li>
+      <li>Keep the identity discussion grounded: ethnicity, migration, and labels are discussed as classroom reasoning, not slogans.</li>
+      <li>Use the page 5 notes to explain why the teacher’s language is formal and lecture-like.</li>
+      <li>Turn the south/north debate into a controlled classroom discussion, since the lesson itself models respectful correction.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="pill red">Likely beginner confusions</div>
+    <h2>Where English speakers may stumble</h2>
+    <div class="warning">
+      Students may think the lesson is just a long list of provinces. It is not. Its real structure is contrast: dense versus sparse, ancient versus modern center, regional versus national identity.
+    </div>
+    <ul>
+      <li><strong><span class="mono">been-</span></strong> is a formal “this,” as in <span class="mono">beengwo</span> “this country,” and differs in style from more ordinary forms.</li>
+      <li><strong><span class="mono">tornghuah</span></strong> means assimilate, not merely identify.</li>
+      <li><strong><span class="mono">sherm Chyiren Hannren</span></strong> functions like an indirect rhetorical question in the notes.</li>
+      <li><strong><span class="mono">Charng Jiang</span></strong> is much more common than <span class="mono">Yangtzyy Jiang</span> for the Yangtze River.</li>
+      <li><strong>“South” is relative</strong>: Jiangsu and Zhejiang can count as “south” relative to the northern provinces, yet a national leader is also beyond east-west-south-north labeling in the teacher’s logic.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill blue">Dialogue walkthrough</div>
+  <h2>Lesson 16 as a lecture on regions and identity</h2>
+  <p class="small">This lesson is easiest to teach as a sequence of regional contrasts and classroom clarifications.</p>
+
+  <div class="dialogue-line">
+    <span class="speaker">Opening</span>
+    <span class="roman">Hao, shianntzay kaishyy jeang beengwo dihlii. Jonggwo sh shyhjieh.shanq renkoou tzuey duo de gwojia, chahbuduo jann chyuan-shyhjieh renkoou de syh-fenn-jy-i.</span><br>
+    <span class="gloss">Good, now I shall begin to lecture on the geography of this country. China has the largest population in the world, making up almost one-fourth of the world’s population.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Population map</span>
+    <span class="roman">Dannsh Jonggwo de renmin, duoshuh juh tzay Jonggwo de dongnan-buh ... Shitzanq, Chinghae, Shinjiang Sheeng, gen Ney Mengguu ... renkoou biijeaude shishao ideal.</span><br>
+    <span class="gloss">But the majority of the Chinese population lives in the southeastern part of China ... Tibet, Qinghai, Xinjiang, and Inner Mongolia are comparatively sparsely populated.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Northeast</span>
+    <span class="roman">Tzuey beeibial de jii-sheeng jiowsh dongbeei jii-sheeng ... waygworen yeou shyrhowl goan ta jiaw Maan.jou.</span><br>
+    <span class="gloss">The northernmost provinces are the provinces of the Northeast ... foreigners sometimes call them Manchuria.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Identity correction</span>
+    <span class="roman">Sanbae-duo-nian chyan, Chyiren ruhle Guan yiihow ... yiijing gen Hannren tornghuah le ... faan.jenq doush Jonggworen jiowshle.</span><br>
+    <span class="gloss">More than 300 years ago, when the Manchus entered the Pass, they dispersed into the interior and have gradually assimilated to the Han; anyway, they are all Chinese now.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Migration point</span>
+    <span class="roman">Jyhyu shianntzay Dongbeei de jiumin a, chahbuduo chyuansh Hannren, tamen dahduoshuh doush tsorng Shan.dong banle chiuh de.</span><br>
+    <span class="gloss">As for the present inhabitants of the Northeast, almost all are Han Chinese, and the great majority moved there from Shantung.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Inner Mongolia</span>
+    <span class="roman">Rehher, Charhaeel, Sweiyeuan jey-san-sheeng her.chiilai jiaw Ney Mengguu.</span><br>
+    <span class="gloss">Jehol, Chahar, and Suiyuan together are called Inner Mongolia.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Yellow River basin</span>
+    <span class="roman">Hwangher liouyuh de beei jii-sheeng ... jiaw Beeibian, jehsh Jonggwo guu.shyr.howl wenhuah fadar tzuey tzao de dihfang.</span><br>
+    <span class="gloss">The northern provinces of the Yellow River basin ... are called “the North”; this is where ancient Chinese culture developed earliest.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Dynastic capitals</span>
+    <span class="roman">Shang.chaur a, Jou.chaur a, Chyn.chaur a, leang-Hann, Tarng, Sonq, Yuan, Ming, Ching ... de jingcherng chahbuduo doush tzay Hwangher liouyuh de.</span><br>
+    <span class="gloss">The capitals of the great ancient dynasties were for the most part in the Yellow River basin.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Modern center</span>
+    <span class="roman">Dannsh Charng Jiang liouyuh sh shiannday Jonggwo de jongshin ... ney-jii-sheeng yaw suannsh tzuey fuh de jii-sheeng le.</span><br>
+    <span class="gloss">But the Yangtze basin is the center of modern China ... those provinces count as the richest provinces.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Far south</span>
+    <span class="roman">Tzuey nanbial de jii-sheeng jiowsh Fwu.jiann, Tair.uan, Goang.dong, Goang.shi, Guey.jou, Yun.nan ... tzay jenqjyh.shanq, gwofarng.shanq, jingjih.shanq, wenhuah.shanq, yee doush jann feicharng jonqyaw de dihwey de.</span><br>
+    <span class="gloss">The southernmost provinces are Fujian, Taiwan, Guangdong, Guangxi, Guizhou, and Yunnan, and they occupy very important political, strategic, economic, and cultural positions.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">South debate</span>
+    <span class="roman">Jiang.su Jeh.jiang gen Beeibian bii.chiilai sh tzay nanbial, suooyii dyichiueh sh yeou ren goan Jiang- Jeh- leang-sheeng jiaw 'Nanbian.'</span><br>
+    <span class="gloss">Compared with the northern provinces, Jiangsu and Zhejiang are in the south, so indeed some people call those two provinces “the South.”</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">National identity point</span>
+    <span class="roman">Inwey i-gwo jenqfuu de juushyi sh daybeau chyuan-gwo de, genbeen jiow wusuoowey dong shi nan beei ... Tan yahgel jiowsh Jonggworen sh bush'a? Duey le, jiow(sh) jeh huah lo.</span><br>
+    <span class="gloss">Since the chairman of a country’s government represents the whole country, fundamentally there is no point in speaking of east, west, south, or north ... He is just Chinese, right? Yes, that is exactly the point.</span>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill orange">Knowledge graph</div>
+  <h2>Concept network for Lesson 16</h2>
+  <p>
+    Lesson 16 forms a network around <strong>population distribution → regional belts → ancient/modern centers → migration and ethnicity → debate over “north” and “south” → national identity</strong>.
+  </p>
+  <div class="graph-wrap">
+    <svg width="1180" height="820" viewBox="0 0 1180 820" role="img" aria-label="Knowledge graph for Lesson 16">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" fill="#90a4d4"></path>
+        </marker>
+      </defs>
+
+      <path class="edge" d="M590,110 C590,145 590,155 590,195"/>
+      <path class="edge" d="M590,110 C440,130 320,150 205,225"/>
+      <path class="edge" d="M590,110 C740,130 860,150 975,225"/>
+      <path class="edge" d="M205,275 C205,320 205,332 205,390"/>
+      <path class="edge" d="M975,275 C975,320 975,332 975,390"/>
+      <path class="edge" d="M590,250 C490,300 430,335 375,410"/>
+      <path class="edge" d="M590,250 C690,300 750,335 805,410"/>
+      <path class="edge" d="M590,250 C590,320 590,338 590,410"/>
+      <path class="edge" d="M375,460 C340,530 300,570 250,675"/>
+      <path class="edge" d="M590,460 C590,530 590,570 590,675"/>
+      <path class="edge" d="M805,460 C840,530 880,570 930,675"/>
+
+      <g class="node">
+        <rect x="385" y="45" width="410" height="70" fill="#efeaff"></rect>
+        <text x="590" y="76" text-anchor="middle" font-size="18" font-weight="800">Lesson 16 Core Question</text>
+        <text x="590" y="99" text-anchor="middle" font-size="14">How does Mandarin organize China geographically while also discussing culture, history, and identity?</text>
+      </g>
+
+      <g class="node">
+        <rect x="460" y="195" width="260" height="54" fill="#eaf2ff"></rect>
+        <text x="590" y="228" text-anchor="middle" font-size="17" font-weight="800">Chinese geography lecture</text>
+      </g>
+
+      <g class="node">
+        <rect x="55" y="225" width="300" height="52" fill="#eefaf5"></rect>
+        <text x="205" y="257" text-anchor="middle" font-size="17" font-weight="800">Population and regional distribution</text>
+      </g>
+
+      <g class="node">
+        <rect x="825" y="225" width="300" height="52" fill="#fff5e8"></rect>
+        <text x="975" y="257" text-anchor="middle" font-size="17" font-weight="800">History, identity, and regional labels</text>
+      </g>
+
+      <g class="node">
+        <rect x="85" y="390" width="240" height="68" fill="#edf7ff"></rect>
+        <text x="205" y="419" text-anchor="middle" font-size="16" font-weight="800">dense east/south vs sparse frontier regions</text>
+        <text x="205" y="441" text-anchor="middle" font-size="13">population pattern</text>
+      </g>
+
+      <g class="node">
+        <rect x="855" y="390" width="240" height="68" fill="#fff0f3"></rect>
+        <text x="975" y="419" text-anchor="middle" font-size="16" font-weight="800">north / south / just Chinese</text>
+        <text x="975" y="441" text-anchor="middle" font-size="13">identity reasoning</text>
+      </g>
+
+      <g class="node">
+        <rect x="255" y="410" width="240" height="50" fill="#eefaf5"></rect>
+        <text x="375" y="441" text-anchor="middle" font-size="16" font-weight="800">Northeast / Inner Mongolia / migration</text>
+      </g>
+
+      <g class="node">
+        <rect x="685" y="410" width="240" height="50" fill="#eefaf5"></rect>
+        <text x="805" y="441" text-anchor="middle" font-size="16" font-weight="800">Yellow River vs Yangtze basin</text>
+      </g>
+
+      <g class="node">
+        <rect x="495" y="410" width="190" height="50" fill="#eaf2ff"></rect>
+        <text x="590" y="441" text-anchor="middle" font-size="16" font-weight="800">formal lecture register</text>
+      </g>
+
+      <g class="node">
+        <rect x="155" y="675" width="190" height="58" fill="#eefaf5"></rect>
+        <text x="250" y="706" text-anchor="middle" font-size="16" font-weight="800">Manchu / Han / assimilate</text>
+        <text x="250" y="726" text-anchor="middle" font-size="13">ethnicity and history</text>
+      </g>
+
+      <g class="node">
+        <rect x="495" y="675" width="190" height="58" fill="#fff5e8"></rect>
+        <text x="590" y="706" text-anchor="middle" font-size="16" font-weight="800">liouyuh / day / gwodu</text>
+        <text x="590" y="726" text-anchor="middle" font-size="13">academic geography terms</text>
+      </g>
+
+      <g class="node">
+        <rect x="835" y="675" width="190" height="58" fill="#f3f0ff"></rect>
+        <text x="930" y="706" text-anchor="middle" font-size="16" font-weight="800">Shanghai dialect joke</text>
+        <text x="930" y="726" text-anchor="middle" font-size="13">regional speech and perspective</text>
+      </g>
+    </svg>
+  </div>
+  <div class="legend">
+    <span><i class="dot" style="background:#eaf2ff"></i> lecture structure</span>
+    <span><i class="dot" style="background:#eefaf5"></i> regions and geography</span>
+    <span><i class="dot" style="background:#fff5e8"></i> history and identity</span>
+    <span><i class="dot" style="background:#f3f0ff"></i> discourse and perspective</span>
+    <span><i class="dot" style="background:#fff0f3"></i> classification debates</span>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill green">Core concepts</div>
+  <h2>What the lesson teaches, concept by concept</h2>
+  <div class="concept-grid">
+    <div class="concept">
+      <h3>1) China is introduced through population scale</h3>
+      <div class="tag">renkoou</div><div class="tag">syh-fenn-jy-i</div>
+      <ul>
+        <li>The lesson begins with a large-scale demographic claim: China has the world’s largest population and nearly one-fourth of the world’s people.</li>
+        <li>This gives students a big-picture anchor before the regional details begin.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>2) Regional geography is tied to density</h3>
+      <div class="tag">dongnan-buh</div><div class="tag">shishao</div>
+      <ul>
+        <li>The central contrast is between the populous east/south and the more sparsely populated southwest, west, northwest, and north border regions.</li>
+        <li>This is an easy map-based concept for beginners to visualize.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>3) The Northeast becomes a lesson in migration and ethnicity</h3>
+      <div class="tag">Maan.jou</div><div class="tag">Chyiren</div><div class="tag">Hannren</div><div class="tag">tornghuah</div>
+      <ul>
+        <li>The teacher rejects a simplistic identification of Northeast people with “Manchus.”</li>
+        <li>Instead, the lesson explains assimilation and later Han migration from Shantung.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>4) The Yellow River basin is framed as the cradle of ancient China</h3>
+      <div class="tag">Hwangher liouyuh</div><div class="tag">guuday</div><div class="tag">wenhuah</div>
+      <ul>
+        <li>The teacher explicitly links the North and the Yellow River basin to the earliest flourishing of Chinese culture.</li>
+        <li>Confucius and the dynastic capitals reinforce that claim.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>5) The Yangtze basin is framed as the center of modern China</h3>
+      <div class="tag">Charng Jiang</div><div class="tag">jongshin</div><div class="tag">tzuey fuh</div>
+      <ul>
+        <li>The lesson contrasts ancient and modern centers rather than saying there is only one core region.</li>
+        <li>This is a powerful structural contrast for teaching.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>6) The far south is politically and culturally important</h3>
+      <div class="tag">jonqyaw de dihwey</div><div class="tag">jenqjyh</div><div class="tag">gwofarng</div><div class="tag">jingjih</div>
+      <ul>
+        <li>The southernmost provinces are not treated as marginal; they are said to hold important political, strategic, economic, and cultural positions.</li>
+        <li>This broadens how students think about regional importance.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>7) “South” is shown to be relative and contextual</h3>
+      <div class="tag">Nanbian</div><div class="tag">Shanqhae-huah</div>
+      <ul>
+        <li>The teacher shows that Jiangsu and Zhejiang can count as south relative to the North, and that Shanghai speakers use “southern dialect” from their own perspective.</li>
+        <li>This is a lesson in linguistic relativity inside geography.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>8) National representatives exceed regional labels</h3>
+      <div class="tag">daybeau chyuan-gwo</div><div class="tag">wusuoowey dong shi nan beei</div>
+      <ul>
+        <li>The teacher argues that a national chairman represents the whole country, so east-west-south-north labels become beside the point.</li>
+        <li>This culminates the lesson’s tension between local and national identity.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill orange">Mini-board plan</div>
+    <h2>How to lay this out for students</h2>
+    <table>
+      <thead><tr><th>Board zone</th><th>Write this</th><th>Teaching purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Left</td><td>population map: dense east/south, sparse west/north borderlands</td><td>Gives the lesson its main geographical contrast.</td></tr>
+        <tr><td>Center</td><td>three region blocks: Northeast / Yellow River basin / Yangtze + far south</td><td>Organizes the lecture clearly.</td></tr>
+        <tr><td>Right</td><td>identity debate: Manchu, Han, “the South,” “just Chinese”</td><td>Shows that the lesson is also about classification.</td></tr>
+        <tr><td>Bottom</td><td>famous people + regional labels: Confucius, Chiang, Sun Yat-sen, Shanghai dialect</td><td>Connects abstract geography to memorable figures.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="pill green">High-value classroom move</div>
+    <h2>Use a “headline map” activity</h2>
+    <div class="callout">
+      Ask students to assign one short headline to each major region in the lesson.
+    </div>
+    <ol>
+      <li>Northeast = migration and Manchuria.</li>
+      <li>Yellow River basin = earliest ancient culture.</li>
+      <li>Yangtze basin = center of modern China.</li>
+      <li>Far south = politically and culturally important.</li>
+    </ol>
+    <p class="small">This helps students remember the lesson as a structured argument, not as a list of provinces.</p>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill blue">A key structural system</div>
+  <h2>Ancient center versus modern center</h2>
+  <div class="practice">
+    <div class="concept">
+      <h3>Ancient center</h3>
+      <p><span class="mono">Hwangher liouyuh</span></p>
+      <p class="small">Earliest cultural development and many dynastic capitals.</p>
+    </div>
+    <div class="concept">
+      <h3>Modern center</h3>
+      <p><span class="mono">Charng Jiang liouyuh</span></p>
+      <p class="small">Modern China’s center and many of the richest provinces.</p>
+    </div>
+    <div class="concept">
+      <h3>Why it matters</h3>
+      <p class="small">The lesson teaches that cultural centrality can shift over time.</p>
+    </div>
+    <div class="concept">
+      <h3>Teaching payoff</h3>
+      <p class="small">Students can compare how historical and present-day importance are not always located in the same place.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill green">Guided practice</div>
+  <h2>Practice tasks for a two-hour lesson</h2>
+  <div class="practice">
+    <div class="concept">
+      <h3>Task A — Region summary</h3>
+      <p>Students summarize one region of China from the lesson in three short sentences: where it is, what it is known for, and why it matters.</p>
+    </div>
+    <div class="concept">
+      <h3>Task B — Identity explanation</h3>
+      <p>Students explain in English why the teacher says Northeast residents are not simply “the so-called Manchus.”</p>
+    </div>
+    <div class="concept">
+      <h3>Task C — North/South debate</h3>
+      <p>Students explain how Jiangsu and Zhejiang can be both “southern” and yet not the whole meaning of “south.”</p>
+    </div>
+    <div class="concept">
+      <h3>Task D — Famous people map</h3>
+      <p>Students place Confucius, Chairman Chiang, and Sun Yat-sen into the geography discussion and explain what each example is used to show.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill red">Quick understanding check</div>
+  <h2>Two multiple-choice quiz questions</h2>
+
+  <div class="quiz-q" data-answer="a">
+    <h3>1) According to Lesson 16, which region is described as the center of modern China?</h3>
+    <label><input type="radio" name="q1" value="a"> The Yangtze River basin</label>
+    <label><input type="radio" name="q1" value="b"> The Arctic Ocean region</label>
+    <label><input type="radio" name="q1" value="c"> Inner Mongolia only</label>
+    <label><input type="radio" name="q1" value="d"> The Mediterranean region</label>
+    <div class="feedback ok">Correct. The lesson explicitly contrasts the Yellow River basin as the center of ancient China with the Yangtze basin as the center of modern China.</div>
+    <div class="feedback no">Not quite. One of the lesson’s clearest contrasts is that the Yangtze basin is presented as the center of modern China.</div>
+  </div>
+
+  <div class="quiz-q" data-answer="c">
+    <h3>2) What is the best summary of the teacher’s final point about calling a national leader “southern” or “northern”?</h3>
+    <label><input type="radio" name="q2" value="a"> The teacher says such labels are always scientifically exact.</label>
+    <label><input type="radio" name="q2" value="b"> The teacher says no one in China is ever from any region.</label>
+    <label><input type="radio" name="q2" value="c"> The teacher says that because a national chairman represents the whole country, regional labels become beside the point at that level.</label>
+    <label><input type="radio" name="q2" value="d"> The teacher says only Shanghai people are allowed to use regional labels.</label>
+    <div class="feedback ok">Correct. The lesson’s closing reasoning is that a national representative stands for the whole country, so east-west-south-north labels are no longer the main issue.</div>
+    <div class="feedback no">Not quite. The teacher is not denying that regions exist; he is saying that, at the national level of representation, those labels become secondary.</div>
+  </div>
+
+  <button id="checkQuiz">Check my answers</button>
+  <button class="secondary" id="resetQuiz" style="margin-left:8px;">Reset</button>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill gold">Exit challenge</div>
+    <h2>End-of-lecture spoken challenge</h2>
+    <ol>
+      <li>State one fact about China’s population distribution from the lesson.</li>
+      <li>Name one province group associated with the Yellow River basin.</li>
+      <li>Explain, in English, why the teacher says the Northeast is not simply “the so-called Manchus.”</li>
+      <li>Describe the contrast between the Yellow River basin and the Yangtze basin.</li>
+      <li>Give one example from the lesson showing that “south” is a relative term.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="pill blue">References and source use</div>
+    <h2>References for this page</h2>
+    <ul>
+      <li><strong>Primary source:</strong> scanned Lesson 16 pages from <em>Mandarin Primer: An Intensive Course in Spoken Chinese</em>.</li>
+      <li><strong>Dialogue basis:</strong> Lesson 16 “Chinese Geography,” including the population overview, the regional contrast between east/south and sparse frontier areas, the Northeast/Manchuria discussion, Inner Mongolia, the Yellow River basin, the Yangtze basin, the southernmost provinces, the debate over who counts as a southerner, the Shanghai-dialect joke, and the conclusion that some national figures are simply Chinese rather than regionally labeled.</li>
+      <li><strong>Notes basis:</strong> notes on <span class="mono">kaishyy</span>, formal <span class="mono">been-</span>, <span class="mono">jann</span>, <span class="mono">jyhyu</span>, optional neutral tones in province names, <span class="mono">shia-shuo</span>, <span class="mono">jiee.shyh</span>, <span class="mono">Chyiren</span>, <span class="mono">Guan</span>, <span class="mono">Hannren</span>, <span class="mono">tornghuah</span>, rhetorical <span class="mono">sherm Chyiren Hannren</span>, <span class="mono">faan.jenq</span>, <span class="mono">ban</span>, <span class="mono">liouyuh</span>, <span class="mono">day</span>, <span class="mono">Koong Tzyy</span>, <span class="mono">guuday</span>, <span class="mono">shingwanq</span>, <span class="mono">gwodu</span>, <span class="mono">Charng Jiang</span>, <span class="mono">tzay...shanq</span>, <span class="mono">gwofarng</span>, formal <span class="mono">naa-shie</span>, Chairman Chiang naming conventions, Shanghai pronunciation note, <span class="mono">genbeen</span>, <span class="mono">yahgel</span>, and Sun Yat-sen naming conventions.</li>
+      <li><strong>Exercises basis:</strong> page 6 completion and translation exercises, which informed the teaching emphasis on sequencing, regional importance, and contrast statements.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  This lecture page is designed for a full two-hour beginner lesson. It keeps close to the source while turning Lesson 16 into a clearer,
+  more connected, and more teachable Chinese-geography lecture for English-speaking high-school students.
+</footer>
+</div>
+
+<script>
+document.getElementById('checkQuiz').addEventListener('click', function(){
+  document.querySelectorAll('.quiz-q').forEach(function(q){
+    const correct = q.dataset.answer;
+    const selected = q.querySelector('input[type="radio"]:checked');
+    const ok = q.querySelector('.feedback.ok');
+    const no = q.querySelector('.feedback.no');
+    ok.style.display = 'none';
+    no.style.display = 'none';
+    if(selected && selected.value === correct){ ok.style.display = 'block'; }
+    else { no.style.display = 'block'; }
+  });
+});
+document.getElementById('resetQuiz').addEventListener('click', function(){
+  document.querySelectorAll('input[type="radio"]').forEach(function(inp){ inp.checked = false; });
+  document.querySelectorAll('.feedback').forEach(function(f){ f.style.display = 'none'; });
+});
+</script>
+</body>
+</html>

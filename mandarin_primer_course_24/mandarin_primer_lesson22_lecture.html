@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mandarin Primer — Lesson 22 Lecture Page</title>
+<style>
+  :root{
+    --bg:#f6f8fc; --ink:#1d2433; --muted:#5a6475; --card:#ffffff; --line:#d8dfeb;
+    --blue:#2f6fed; --green:#2f9e77; --purple:#7b61ff; --orange:#f08c2e; --red:#d9485f; --gold:#c99700; --teal:#118ab2;
+    --shadow:0 10px 30px rgba(28,35,54,.08); --radius:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--ink);
+    background:radial-gradient(circle at top right, rgba(47,111,237,.08), transparent 28%),
+               radial-gradient(circle at top left, rgba(123,97,255,.08), transparent 26%), var(--bg);
+    line-height:1.65;
+  }
+  .wrap{width:min(1180px,94vw); margin:0 auto; padding:28px 0 64px;}
+  header.hero{
+    background:linear-gradient(135deg,#17457e,#2b63cf 55%,#7b61ff); color:#fff; border-radius:28px;
+    padding:34px 34px 28px; box-shadow:var(--shadow); overflow:hidden;
+  }
+  .eyebrow{display:inline-block; padding:6px 10px; border:1px solid rgba(255,255,255,.28); border-radius:999px; font-size:.83rem; margin-bottom:10px; background:rgba(255,255,255,.08);}
+  h1,h2,h3{line-height:1.2; margin:.2rem 0 .8rem}
+  h1{font-size:clamp(2rem,3vw,3rem)} h2{font-size:1.55rem} h3{font-size:1.12rem}
+  p.lead{font-size:1.08rem; max-width:980px; opacity:.98}
+  .small{font-size:.95rem; color:var(--muted)}
+  .grid{display:grid; gap:18px}
+  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media (max-width:900px){.g2{grid-template-columns:1fr}}
+  section{margin-top:22px}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px}
+  .pill{display:inline-block; font-size:.8rem; font-weight:800; padding:5px 10px; border-radius:999px; color:#fff; margin-bottom:10px}
+  .blue{background:var(--blue)} .green{background:var(--green)} .purple{background:var(--purple)} .orange{background:var(--orange)} .red{background:var(--red)} .gold{background:var(--gold)} .teal{background:var(--teal)}
+  .banner{border-left:6px solid var(--gold); background:#fff8db; padding:14px 16px; border-radius:14px}
+  .callout{border-left:5px solid var(--blue); background:#eef4ff; padding:14px 16px; border-radius:14px}
+  .warning{border-left:5px solid var(--red); background:#fff2f4; padding:14px 16px; border-radius:14px}
+  ul li, ol li{margin:.45rem 0}
+  .flow{display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:12px}
+  @media (max-width:1000px){.flow{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){.flow{grid-template-columns:1fr}}
+  .step{background:linear-gradient(180deg,#fff,#f8faff); border:1px solid var(--line); border-radius:18px; padding:16px; min-height:172px}
+  .num{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;margin-bottom:10px;background:linear-gradient(135deg,var(--blue),var(--purple))}
+  .dialogue-line{padding:10px 0; border-bottom:1px dashed var(--line)}
+  .dialogue-line:last-child{border-bottom:none}
+  .speaker{display:inline-block; min-width:118px; font-weight:800; color:var(--blue)}
+  .roman{font-size:1.02rem; font-weight:650}
+  .gloss{color:var(--muted)}
+  .concept-grid,.practice{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px}
+  @media (max-width:900px){.concept-grid,.practice{grid-template-columns:1fr}}
+  .concept{border:1px solid var(--line); border-radius:16px; padding:16px; background:#fbfcff}
+  .tag{display:inline-block; padding:4px 8px; border-radius:999px; font-size:.78rem; font-weight:700; margin:2px 4px 2px 0; background:#eef3ff; color:#2c4a9c}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; background:#f5f7fb; padding:.08rem .35rem; border-radius:8px}
+  table{width:100%; border-collapse:collapse; font-size:.96rem}
+  th,td{border-bottom:1px solid var(--line); padding:12px 10px; text-align:left; vertical-align:top}
+  th{background:#f4f7fc} tr:last-child td{border-bottom:none}
+  .graph-wrap{overflow:auto; border:1px solid var(--line); border-radius:18px; background:linear-gradient(180deg,#fcfdff,#f6f9ff); padding:12px}
+  svg text{font-family:Inter,system-ui,sans-serif; fill:#1f2430}
+  .edge{stroke:#90a4d4; stroke-width:2.2; fill:none; marker-end:url(#arrow)}
+  .node rect{rx:18; ry:18; stroke:#d8dff2; stroke-width:1.4}
+  .legend{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; font-size:.9rem}
+  .legend span{display:flex; align-items:center; gap:6px; background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 10px}
+  .dot{width:12px; height:12px; border-radius:50%; display:inline-block}
+  .quiz-q{border:1px solid var(--line); border-radius:16px; padding:16px; margin-bottom:16px; background:#fbfdff}
+  .quiz-q label{display:block; padding:9px 10px; border:1px solid transparent; border-radius:12px; cursor:pointer}
+  .quiz-q label:hover{background:#f1f6ff; border-color:#dbe6ff}
+  button{appearance:none; border:none; background:linear-gradient(135deg,var(--blue),var(--purple)); color:#fff; border-radius:12px; padding:11px 16px; font-size:.96rem; font-weight:700; cursor:pointer; box-shadow:var(--shadow)}
+  button.secondary{background:linear-gradient(135deg,var(--green),#3fb58e)}
+  .feedback{margin-top:10px; padding:12px 14px; border-radius:12px; display:none}
+  .feedback.ok{background:#edf9f3; border:1px solid #bfe7cf}
+  .feedback.no{background:#fff1f3; border:1px solid #f0c0cb}
+  footer{margin-top:28px; color:var(--muted); font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Yuen Ren Chao - Mandarin Primer: An Intensive Course in Spoken Chinese</div>
+  <h1>Mandarin Primer — Lesson 22</h1>
+  <h2 style="font-size:1.35rem;font-weight:650;opacity:.98;">Studying</h2>
+  <p class="lead">
+    Lesson 22 moves into biography, schooling, literary education, regional speech, and the emotional meaning of study. A casual tea-ordering conversation on a train becomes a long reflection on ancestral origin, northern and southern speech, family-school education, the Four Books and Five Classics, Tang poetry, chanting, homesickness, and the transition from traditional study to modern middle-school subjects. It is one of the richest lessons in the book for showing how language learning, literature, family history, and educational identity come together.
+  </p>
+  <p class="small" style="color:rgba(255,255,255,.9);">This page keeps the book’s original romanization system so the page stays aligned with the scanned lesson.</p>
+</header>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill blue">Learning goals</div>
+    <h2>What students should learn</h2>
+    <ul>
+      <li>Follow how the lesson develops from a tea order into a long autobiographical story about language and schooling.</li>
+      <li>Understand the difference between place of origin, birthplace, and place of upbringing in the Chinese cultural frame of <span class="mono">yuanjyi</span>.</li>
+      <li>Recognize contrasts between northern upbringing and southern dialect heritage.</li>
+      <li>Learn vocabulary for family schooling, early literacy, classics, poetry, chanting, middle school, and modern school subjects like English, history, geography, physics, and chemistry.</li>
+      <li>See how the lesson links linguistic identity to emotional experience, especially homesickness and poetic memory.</li>
+      <li>Notice that studying is presented not only as academic work but as a cultural inheritance shaped by family, region, and genre.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="pill gold">Teacher lens</div>
+    <h2>Why this lesson matters</h2>
+    <div class="banner"><strong>Lesson 22 teaches studying as life history.</strong> The speaker’s educational path is not just a school transcript. It includes home dialect, private tutors, primers, classics, poetry chanting, parental influence, migration, and later modern schooling.</div>
+    <p>
+      For high-school students, this lesson is especially strong because it shows that “what subject do you like?” can be the endpoint of a much larger story about identity, family, place, and memory.
+    </p>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill purple">Two-hour lecture flow</div>
+  <h2>Suggested lecture sequence</h2>
+  <div class="flow">
+    <div class="step"><div class="num">1</div><strong>Tea-car opening</strong><br><span class="small">Begin with the waiter, the tea order, the train whistle, and the relaxed opening that makes the later biography feel natural.</span></div>
+    <div class="step"><div class="num">2</div><strong>Origin and dialect</strong><br><span class="small">Teach <span class="mono">yuanjyi</span>, Changchow, northern upbringing, and why the speaker cannot really speak the southern dialect of the family.</span></div>
+    <div class="step"><div class="num">3</div><strong>Traditional education</strong><br><span class="small">Teach family school, learning characters, the Three-Character Classic, Hundred Family Surnames, Thousand-Character Text, Four Books, and Five Classics.</span></div>
+    <div class="step"><div class="num">4</div><strong>Poetry and chanting</strong><br><span class="small">Teach Tang poems, poetic genres, chanting, and the two famous poems quoted in the lesson.</span></div>
+    <div class="step"><div class="num">5</div><strong>Modern school subjects</strong><br><span class="small">Teach the move south, entry into middle school, and the expansion to English, history, geography, physics, chemistry, mathematics, and Chinese.</span></div>
+    <div class="step"><div class="num">6</div><strong>Identity and interest + quiz</strong><br><span class="small">End with the question of why the speaker studies Chinese now and the unresolved “opposite reason” cut off by coughing and the whistle.</span></div>
+  </div>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill green">How to teach it well</div>
+    <h2>Effective teaching moves for beginners</h2>
+    <div class="callout">
+      The “To the Student” pages emphasize utterances, repetition, echoing, and exercise-based grammar learning. Lesson 22 works especially well when students can see a timeline, a dialect map, and a traditional-versus-modern schooling chart at the same time.
+    </div>
+    <ol>
+      <li>Use a two-column board: traditional family-school education on one side, modern school subjects on the other.</li>
+      <li>Create a life timeline for the speaker: ancestral home → northern childhood → southern tutor → family school → poetry with mother → move south → middle school → Chinese department.</li>
+      <li>Project or hand out the two poems and read them aloud with contrasting tone: regulated verse and antique-style verse.</li>
+      <li>Treat the quoted poems as emotional evidence, not decorative quotation.</li>
+      <li>Keep asking students what the speaker’s educational experience says about identity, not just what books he read.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="pill red">Likely beginner confusions</div>
+    <h2>Where English speakers may stumble</h2>
+    <div class="warning">
+      Students may think the lesson is just a list of books and school subjects, but the real thread is how place, language, and education do not line up neatly.
+    </div>
+    <ul>
+      <li><strong><span class="mono">yuanjyi</span></strong> means ancestral or registered place of origin, not simply place of birth. The notes explain that a person may be called a native of the ancestral place even if raised elsewhere.</li>
+      <li><strong><span class="mono">Charng.jou</span></strong> is the Kiangsu Changchow here, not the Fukien place with the same common romanization.</li>
+      <li><strong><span class="mono">shufarng</span>, <span class="mono">syshwu</span>, and <span class="mono">shyueshiaw</span></strong> do not all mean the same kind of school.</li>
+      <li><strong>The poetic terms <span class="mono">shy</span>, <span class="mono">tsyr</span>, <span class="mono">ge</span>, and <span class="mono">fuh</span></strong> are carefully distinguished in the notes.</li>
+      <li><strong>The page 6–7 musical notation matters</strong>: the lesson is not only about reading poems, but about chanting them in different melodic traditions.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill blue">Lesson walkthrough</div>
+  <h2>Lesson 22 as train talk, schooling story, and literary memory</h2>
+  <p class="small">This lesson becomes easiest to teach as five connected movements.</p>
+
+  <div class="dialogue-line">
+    <span class="speaker">Movement 1</span>
+    <span class="roman">Leang-wey shiansheng chy sherm char? ... Longjiing. ... Yeou jiuhual meiyeou? ... Miengl tian i-lianq jiow daw.</span><br>
+    <span class="gloss">What kind of tea will you two gentlemen have? ... Dragon well. ... Do you have chrysanthemum? ... We arrive first thing tomorrow morning.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Movement 1</span>
+    <span class="roman">Ryhshin ah, woo renn.shyhle nii tzemm jeou, woo tsornglai mei wenn.guoh ni yuanjyi sh naal.</span><br>
+    <span class="gloss">Ryhshin, I have known you for so long and never asked where your place of origin is.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Movement 2</span>
+    <span class="roman">Woo beenlai sh Charng.jou-ren; keesh woo isheaul shengjaang tzay Beeibian, budann buhuey shuo Nanbian-huah, lian ting dou ting budah.</span><br>
+    <span class="gloss">Originally I am from Changchow, but I was brought up in the North, and not only could I not speak the southern dialect, I could hardly even understand it.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Movement 2</span>
+    <span class="roman">Woomen sheauharlmen i-kai-meng de shyrhowl, woo tzuufuh jiow jiow ye Nanbian chiing le i-wey shuo jiashiang-koouin de shiansheng lai jiau woomde shu.</span><br>
+    <span class="gloss">As soon as we children were ready to begin school, my grandfather invited a teacher from the south who spoke our home dialect to teach us.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Movement 3</span>
+    <span class="roman">Woo tsorng syh-suey chii jiow chii-tourl renn fangkuall-tzyh; wuu-suey chii-tourl jiow niann Santzyh Jing, Baejia Shinq, Chiantzyh Wen ...</span><br>
+    <span class="gloss">Starting at four years old I began learning characters; at five I started reading the Three-Character Classic, the Hundred-Family Surnames, and the Thousand-Character Text.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Movement 3</span>
+    <span class="roman">Howlai jiow niann Dah.shyue, Jong.iong, Luen.yeu, Menq .Tzyy. Syh Shu dwu-wanle me, jiowsh Wuu Jing.</span><br>
+    <span class="gloss">After that came the Great Learning, the Doctrine of the Mean, the Analects, and Mencius. After the Four Books came the Five Classics.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Movement 4</span>
+    <span class="roman">Woo shian-muu tzuey ay shy tsyr ge fuh ... meei-woanshanq jiau woomen tzyy.mey jiig ren niann Tarng Shy Sanbae Shoou, shooux dou niann daw bey.de-chulai.</span><br>
+    <span class="gloss">My mother loved poetry, lyrics, songs, and rhapsodies most of all ... every night she had us brothers and sisters read the Three Hundred Tang Poems until we could recite them from memory.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Movement 4</span>
+    <span class="roman">Niimen dwu-shy heng bu heng a? ... Heng a. ... 'Yueh luoh u tyi shuang maan tian ... Yehbann jongsheng daw kehchwan.'</span><br>
+    <span class="gloss">Did you chant poetry when you read it aloud? ... Yes ... “The moon goes down, a raven cries, frost fills the sky ... At midnight the bell reaches the traveler’s boat.”</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Movement 4</span>
+    <span class="roman">'Chwang-chyan mingyueh guang, Yi sh dihshanq shuang, Jeu-tour wanq mingyueh, Di-tour sy guhshiang.'</span><br>
+    <span class="gloss">“In front of my bed is moonlight / I thought it was frost on the ground / I raise my head and gaze at the moon / I lower my head and think of home.”</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Movement 5</span>
+    <span class="roman">Howlai me, woomen chyuan-jia ban-hwei daw Nanbian, woo jiow tzay Nanbian jinnle jongshyue. Nah shyrhowl woo jiow kaishyy shyue Ing'wen, lihshyy, dihlii, hair yeou wuhlii, huahshyue ...</span><br>
+    <span class="gloss">Later our whole family moved back south, and I entered middle school there. At that time I began to study English, history, geography, and also physics and chemistry.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Movement 5</span>
+    <span class="roman">Woo sheang woo hairsh diing shiihuan dwu gwowen. Suooyii woo shianntzay tzay gwowenshih a. ... Bush jeyg yuanguh, huohjee keeyii shuo sh inwey ig chiahx shiangfaan de ...</span><br>
+    <span class="gloss">I think I still like Chinese literature best, which is why I am in the Chinese department now. ... That is not the reason, or perhaps you can say it is for an exactly opposite reason ...</span>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill orange">Knowledge graph</div>
+  <h2>Concept network for Lesson 22</h2>
+  <p>
+    Lesson 22 forms a network around <strong>tea-car conversation → ancestral origin → dialect and upbringing → family school → classics and poetry → modern schooling → subject preference and identity</strong>.
+  </p>
+  <div class="graph-wrap">
+    <svg width="1180" height="860" viewBox="0 0 1180 860" role="img" aria-label="Knowledge graph for Lesson 22">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" fill="#90a4d4"></path>
+        </marker>
+      </defs>
+
+      <path class="edge" d="M590,110 C590,145 590,155 590,205"/>
+      <path class="edge" d="M590,110 C430,135 315,155 205,235"/>
+      <path class="edge" d="M590,110 C750,135 865,155 975,235"/>
+      <path class="edge" d="M205,285 C205,330 205,342 205,405"/>
+      <path class="edge" d="M975,285 C975,330 975,342 975,405"/>
+      <path class="edge" d="M590,255 C490,310 430,350 375,425"/>
+      <path class="edge" d="M590,255 C690,310 750,350 805,425"/>
+      <path class="edge" d="M590,255 C590,330 590,350 590,425"/>
+      <path class="edge" d="M375,475 C340,550 300,595 250,710"/>
+      <path class="edge" d="M590,475 C590,550 590,595 590,710"/>
+      <path class="edge" d="M805,475 C840,550 880,595 930,710"/>
+
+      <g class="node">
+        <rect x="365" y="45" width="450" height="70" fill="#efeaff"></rect>
+        <text x="590" y="76" text-anchor="middle" font-size="18" font-weight="800">Lesson 22 Core Question</text>
+        <text x="590" y="99" text-anchor="middle" font-size="14">How do language background, literary education, and school history shape who the speaker becomes?</text>
+      </g>
+
+      <g class="node">
+        <rect x="450" y="205" width="280" height="54" fill="#eaf2ff"></rect>
+        <text x="590" y="238" text-anchor="middle" font-size="17" font-weight="800">Studying as biography</text>
+      </g>
+
+      <g class="node">
+        <rect x="55" y="235" width="300" height="52" fill="#eefaf5"></rect>
+        <text x="205" y="267" text-anchor="middle" font-size="17" font-weight="800">Origin, dialect, and upbringing</text>
+      </g>
+
+      <g class="node">
+        <rect x="825" y="235" width="300" height="52" fill="#fff5e8"></rect>
+        <text x="975" y="267" text-anchor="middle" font-size="17" font-weight="800">Texts, poetry, and modern subjects</text>
+      </g>
+
+      <g class="node">
+        <rect x="85" y="405" width="240" height="68" fill="#edf7ff"></rect>
+        <text x="205" y="434" text-anchor="middle" font-size="16" font-weight="800">yuanjyi / birthplace / north vs south</text>
+        <text x="205" y="456" text-anchor="middle" font-size="13">identity layers</text>
+      </g>
+
+      <g class="node">
+        <rect x="855" y="405" width="240" height="68" fill="#fff0f3"></rect>
+        <text x="975" y="434" text-anchor="middle" font-size="16" font-weight="800">Chinese department / opposite reason</text>
+        <text x="975" y="456" text-anchor="middle" font-size="13">unfinished motive</text>
+      </g>
+
+      <g class="node">
+        <rect x="255" y="425" width="240" height="50" fill="#eefaf5"></rect>
+        <text x="375" y="456" text-anchor="middle" font-size="16" font-weight="800">family school / southern tutor / primers</text>
+      </g>
+
+      <g class="node">
+        <rect x="685" y="425" width="240" height="50" fill="#eefaf5"></rect>
+        <text x="805" y="456" text-anchor="middle" font-size="16" font-weight="800">Tang poems / chanting / homesickness</text>
+      </g>
+
+      <g class="node">
+        <rect x="495" y="425" width="190" height="50" fill="#eaf2ff"></rect>
+        <text x="590" y="456" text-anchor="middle" font-size="16" font-weight="800">traditional → modern curriculum</text>
+      </g>
+
+      <g class="node">
+        <rect x="155" y="710" width="190" height="58" fill="#eefaf5"></rect>
+        <text x="250" y="741" text-anchor="middle" font-size="16" font-weight="800">Four Books / Five Classics</text>
+        <text x="250" y="761" text-anchor="middle" font-size="13">canonical education</text>
+      </g>
+
+      <g class="node">
+        <rect x="495" y="710" width="190" height="58" fill="#fff5e8"></rect>
+        <text x="590" y="741" text-anchor="middle" font-size="16" font-weight="800">poem melodies on page 6–7</text>
+        <text x="590" y="761" text-anchor="middle" font-size="13">sound + literature</text>
+      </g>
+
+      <g class="node">
+        <rect x="835" y="710" width="190" height="58" fill="#f3f0ff"></rect>
+        <text x="930" y="741" text-anchor="middle" font-size="16" font-weight="800">gwowen / gendii / shinqchiuh</text>
+        <text x="930" y="761" text-anchor="middle" font-size="13">academic identity</text>
+      </g>
+    </svg>
+  </div>
+  <div class="legend">
+    <span><i class="dot" style="background:#eaf2ff"></i> life-story structure</span>
+    <span><i class="dot" style="background:#eefaf5"></i> upbringing and schooling</span>
+    <span><i class="dot" style="background:#fff5e8"></i> literature and melody</span>
+    <span><i class="dot" style="background:#f3f0ff"></i> subject identity</span>
+    <span><i class="dot" style="background:#fff0f3"></i> unresolved motivation</span>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill green">Core concepts</div>
+  <h2>What the lesson teaches, concept by concept</h2>
+  <div class="concept-grid">
+    <div class="concept">
+      <h3>1) “Place of origin” is socially deeper than birthplace</h3>
+      <div class="tag">yuanjyi</div><div class="tag">ancestral registration</div>
+      <ul>
+        <li>The notes explain that people can be called natives of the ancestral place rather than the place where they were born or raised.</li>
+        <li>This is central to the lesson’s opening misunderstanding about identity.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>2) Language inheritance and language competence can diverge</h3>
+      <div class="tag">jiashiang-koouin</div><div class="tag">Beeibian</div><div class="tag">Nanbian-huah</div>
+      <ul>
+        <li>The speaker’s family is from the south, but he grew up in the north and could neither speak nor really understand the southern dialect at first.</li>
+        <li>This makes language background more layered than students may expect.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>3) Traditional schooling begins before modern school</h3>
+      <div class="tag">kai-meng</div><div class="tag">syshwu</div><div class="tag">fangkuall-tzyh</div>
+      <ul>
+        <li>The lesson shows literacy beginning in the family school before entry into any modern institution.</li>
+        <li>That matters for understanding what “studying” means in this world.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>4) Canonical texts shape the speaker’s early mind</h3>
+      <div class="tag">Santzyh Jing</div><div class="tag">Syh Shu</div><div class="tag">Wuu Jing</div>
+      <ul>
+        <li>The progression from primers to Four Books to Five Classics gives the lesson its traditional educational backbone.</li>
+        <li>It is not just bibliography; it marks an educational worldview.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>5) Poetry enters through family affection</h3>
+      <div class="tag">shian-muu</div><div class="tag">Tarng Shy Sanbae Shoou</div><div class="tag">bey.de-chulai</div>
+      <ul>
+        <li>The mother’s love of poetry turns literary education into an intimate household practice.</li>
+        <li>This is why the poetry section feels emotional rather than merely scholarly.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>6) Chanting joins literature to melody</h3>
+      <div class="tag">heng</div><div class="tag">liuhshy</div><div class="tag">guushy</div>
+      <ul>
+        <li>The notes on pages 6–7 and the musical notation show that poem reading is also a sonic practice.</li>
+        <li>This is one of the richest multimodal moments in the book so far.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>7) Modern education expands the curriculum</h3>
+      <div class="tag">jongshyue</div><div class="tag">Ing'wen</div><div class="tag">wuhlii</div><div class="tag">huahshyue</div>
+      <ul>
+        <li>Once the family moves south, schooling broadens into English, history, geography, physics, and chemistry.</li>
+        <li>The lesson quietly contrasts older and newer educational systems.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>8) Loving Chinese may come from a paradox</h3>
+      <div class="tag">gwowenshih</div><div class="tag">gendii</div><div class="tag">shiangfaan</div>
+      <ul>
+        <li>The friend assumes the speaker studies Chinese because he has a strong foundation and interest.</li>
+        <li>The speaker begins to say the real reason may be exactly the opposite, then the scene cuts off. That unfinished ending invites reflection.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill orange">Mini-board plan</div>
+    <h2>How to lay this out for students</h2>
+    <table>
+      <thead><tr><th>Board zone</th><th>Write this</th><th>Teaching purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Left</td><td>life timeline: origin → north childhood → southern tutor → family school → move south → middle school</td><td>Keeps the biography clear.</td></tr>
+        <tr><td>Center</td><td>traditional texts list + modern subjects list</td><td>Shows educational contrast directly.</td></tr>
+        <tr><td>Right</td><td>poetry box: two quoted poems + chant note</td><td>Makes literature central rather than decorative.</td></tr>
+        <tr><td>Bottom</td><td>identity questions: Where are you from? What language do you really speak? Why do you study what you study?</td><td>Connects the lesson to students’ own experience.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="pill teal">High-value classroom move</div>
+    <h2>Use a schooling comparison activity</h2>
+    <div class="callout">
+      Ask students to compare the speaker’s early education with their own schooling.
+    </div>
+    <ol>
+      <li>What did he memorize early that modern students usually do not?</li>
+      <li>What modern subjects appear only later?</li>
+      <li>Where do family and school overlap in his education?</li>
+    </ol>
+    <p class="small">This makes the lesson feel historically alive instead of distant.</p>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill blue">A key structural system</div>
+  <h2>Heritage → study → identity</h2>
+  <div class="practice">
+    <div class="concept">
+      <h3>Heritage</h3>
+      <p><span class="mono">yuanjyi</span>, <span class="mono">jiashiang-koouin</span>, <span class="mono">shian-muu</span></p>
+      <p class="small">Ancestral place, home dialect, and family influence.</p>
+    </div>
+    <div class="concept">
+      <h3>Study</h3>
+      <p><span class="mono">syshwu</span>, <span class="mono">Syh Shu</span>, <span class="mono">Wuu Jing</span>, <span class="mono">jongshyue</span></p>
+      <p class="small">Traditional and modern educational stages.</p>
+    </div>
+    <div class="concept">
+      <h3>Identity</h3>
+      <p><span class="mono">gwowen</span>, <span class="mono">shinqchiuh</span>, <span class="mono">shiangfaan de yuanguh</span></p>
+      <p class="small">What the speaker ends up studying and why.</p>
+    </div>
+    <div class="concept">
+      <h3>Teaching payoff</h3>
+      <p class="small">Students can see how subject preference grows out of a complicated personal history, not a simple talent label.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill green">Guided practice</div>
+  <h2>Practice tasks for a two-hour lesson</h2>
+  <div class="practice">
+    <div class="concept">
+      <h3>Task A — Retell Ryhshin’s language history</h3>
+      <p>Students retell the speaker’s early linguistic experience, following the page 7 exercise prompt and varying the places and conditions.</p>
+    </div>
+    <div class="concept">
+      <h3>Task B — Traditional versus modern curriculum</h3>
+      <p>Students sort all named texts and subjects into family-school, classical study, poetry training, and modern middle-school study.</p>
+    </div>
+    <div class="concept">
+      <h3>Task C — Poetry as emotion</h3>
+      <p>Students explain why the train vendor’s cry about tea eggs triggers homesickness right after the poetry recitation.</p>
+    </div>
+    <div class="concept">
+      <h3>Task D — The unfinished reason</h3>
+      <p>Students propose what the speaker may have meant by saying that the real reason for studying Chinese is “exactly the opposite.”</p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill red">Quick understanding check</div>
+  <h2>Two multiple-choice quiz questions</h2>
+
+  <div class="quiz-q" data-answer="c">
+    <h3>1) According to the notes, what does <span class="mono">yuanjyi</span> most closely mean in this lesson?</h3>
+    <label><input type="radio" name="q1" value="a"> The hotel where someone is currently staying</label>
+    <label><input type="radio" name="q1" value="b"> The exact hospital where someone was born</label>
+    <label><input type="radio" name="q1" value="c"> A person’s ancestral or registered place of origin, which may differ from where they were born or raised</label>
+    <label><input type="radio" name="q1" value="d"> The first school they ever attended</label>
+    <div class="feedback ok">Correct. The notes explicitly explain that this is a social and ancestral place-of-origin concept, not simply birthplace.</div>
+    <div class="feedback no">Not quite. In this lesson, the whole point is that “where you are from” is more complicated than where you happened to be born.</div>
+  </div>
+
+  <div class="quiz-q" data-answer="b">
+    <h3>2) What is the best summary of the lesson’s final unresolved twist?</h3>
+    <label><input type="radio" name="q2" value="a"> The speaker decides he actually dislikes all literature and only likes mathematics.</label>
+    <label><input type="radio" name="q2" value="b"> A says the speaker studies Chinese because of his strong foundation, but B starts to suggest the real reason may be the opposite before the conversation is interrupted.</label>
+    <label><input type="radio" name="q2" value="c"> The speaker reveals he never studied Chinese at all.</label>
+    <label><input type="radio" name="q2" value="d"> The waiter explains the Four Books and Five Classics instead.</label>
+    <div class="feedback ok">Correct. The lesson deliberately leaves that explanation incomplete, which makes students think harder about the speaker’s educational identity.</div>
+    <div class="feedback no">Not quite. The ending works because it withholds the full explanation and leaves a suggestive paradox hanging in the air.</div>
+  </div>
+
+  <button id="checkQuiz">Check my answers</button>
+  <button class="secondary" id="resetQuiz" style="margin-left:8px;">Reset</button>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill gold">Exit challenge</div>
+    <h2>End-of-lecture spoken challenge</h2>
+    <ol>
+      <li>Explain how the speaker can be from Changchow and still grow up not speaking the home dialect.</li>
+      <li>Name two traditional texts and two modern school subjects from the lesson.</li>
+      <li>Describe how the speaker learned poetry at home.</li>
+      <li>Explain why the cry of the tea-egg vendor creates homesickness in the scene.</li>
+      <li>Give your own interpretation of the unfinished “opposite reason” at the end.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="pill blue">References and source use</div>
+    <h2>References for this page</h2>
+    <ul>
+      <li><strong>Primary source:</strong> scanned Lesson 22 pages from <em>Mandarin Primer: An Intensive Course in Spoken Chinese</em>.</li>
+      <li><strong>Text basis:</strong> Lesson 22 “Studying,” including the tea-order opening on the train, the discussion of ancestral origin and dialect, the account of family-school education, the list of primers and classics, the role of the mother in teaching poetry, the chanting of “Feng Chyau Yeh Bor” and “Yeh Sy,” the transition into modern middle-school subjects, and the unfinished explanation of why the speaker studies Chinese now.</li>
+      <li><strong>Notes basis:</strong> notes on <span class="mono">char.farng</span>, central-dialect <span class="mono">chy</span> for drink/smoke/eat, <span class="mono">Longjiing</span>, <span class="mono">jiuhual</span>, <span class="mono">yuanjyi</span>, <span class="mono">yuanshian</span>, <span class="mono">chwenjenq</span>, <span class="mono">Beeifang</span>, <span class="mono">guh.shyh</span>, lively adjective <span class="mono">-j ne</span>, the Changchow place-name note, <span class="mono">yanghuoo</span>, <span class="mono">isheaul</span>, <span class="mono">ney-i-luh</span>, central-dialect <span class="mono">gao</span>, <span class="mono">kai-meng</span>, <span class="mono">tzuufuh</span>, <span class="mono">chiing</span>, <span class="mono">jiashiang</span>, <span class="mono">jiau-shu</span>, <span class="mono">shyueshiaw</span>, <span class="mono">shufarng</span>, <span class="mono">syshwu</span>, <span class="mono">fangkuall-tzyh</span>, <span class="mono">Santzyh Jing</span>, <span class="mono">Baejia Shinq</span>, <span class="mono">Chiantzyh Wen</span>, <span class="mono">Dah.shyue</span>, <span class="mono">Jong.iong</span>, <span class="mono">Luen.yeu</span>, <span class="mono">Menq .Tzyy</span>, <span class="mono">Shy.jing</span>, <span class="mono">Shanqshu</span>, <span class="mono">Tzuoojuann</span>, <span class="mono">Liijih</span>, <span class="mono">Yih.jing</span>, distinctions among <span class="mono">shy</span>, <span class="mono">tsyr</span>, <span class="mono">ge</span>, and <span class="mono">fuh</span>, <span class="mono">heng</span>, the melody explanation and musical notation for the two poems on pages 6–7, <span class="mono">Lii Bor</span>, <span class="mono">mingyueh</span>, <span class="mono">wuushiang charyeh-dann</span>, <span class="mono">jongshyue</span>, <span class="mono">wuhlii</span>, <span class="mono">shuhshyue</span>, <span class="mono">gwowen</span>, <span class="mono">gendii</span>, <span class="mono">gaanjyue shinqchiuh</span>, <span class="mono">huoo.jih</span>, and <span class="mono">yea</span>.</li>
+      <li><strong>Exercises basis:</strong> the page 7 exercises, especially the retelling task about Ryhshin’s early language experience, which shaped the page’s emphasis on biography, language background, and variation.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  This lecture page is designed for a full two-hour beginner lesson. It keeps close to the source while turning Lesson 22 into a clearer,
+  more connected, and more teachable lesson about education, poetry, language background, and academic identity for English-speaking high-school students.
+</footer>
+</div>
+
+<script>
+document.getElementById('checkQuiz').addEventListener('click', function(){
+  document.querySelectorAll('.quiz-q').forEach(function(q){
+    const correct = q.dataset.answer;
+    const selected = q.querySelector('input[type="radio"]:checked');
+    const ok = q.querySelector('.feedback.ok');
+    const no = q.querySelector('.feedback.no');
+    ok.style.display = 'none';
+    no.style.display = 'none';
+    if(selected && selected.value === correct){ ok.style.display = 'block'; }
+    else { no.style.display = 'block'; }
+  });
+});
+document.getElementById('resetQuiz').addEventListener('click', function(){
+  document.querySelectorAll('input[type="radio"]').forEach(function(inp){ inp.checked = false; });
+  document.querySelectorAll('.feedback').forEach(function(f){ f.style.display = 'none'; });
+});
+</script>
+</body>
+</html>

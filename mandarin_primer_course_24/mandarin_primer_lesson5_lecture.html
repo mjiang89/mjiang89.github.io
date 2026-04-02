@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mandarin Primer — Lesson 5 Lecture Page</title>
+<style>
+  :root{
+    --bg:#f6f8fc;
+    --ink:#1d2433;
+    --muted:#5a6475;
+    --card:#ffffff;
+    --line:#d8dfeb;
+    --blue:#2f6fed;
+    --green:#2f9e77;
+    --purple:#7b61ff;
+    --orange:#f08c2e;
+    --red:#d9485f;
+    --gold:#c99700;
+    --teal:#0f9db8;
+    --shadow:0 10px 30px rgba(28,35,54,.08);
+    --radius:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at top right, rgba(47,111,237,.08), transparent 28%),
+      radial-gradient(circle at top left, rgba(123,97,255,.08), transparent 26%),
+      var(--bg);
+    line-height:1.65;
+  }
+  .wrap{width:min(1180px,94vw); margin:0 auto; padding:28px 0 64px;}
+  header.hero{
+    background:linear-gradient(135deg,#184b84,#2e6eda 55%,#7b61ff);
+    color:#fff;
+    border-radius:28px;
+    padding:34px 34px 28px;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+  }
+  header.hero::after{
+    content:"";
+    position:absolute; right:-45px; top:-45px;
+    width:260px; height:260px;
+    background:radial-gradient(circle, rgba(255,255,255,.18), transparent 65%);
+  }
+  .eyebrow{
+    display:inline-block;
+    padding:6px 10px;
+    border:1px solid rgba(255,255,255,.28);
+    border-radius:999px;
+    font-size:.83rem;
+    letter-spacing:.02em;
+    margin-bottom:10px;
+    background:rgba(255,255,255,.08);
+  }
+  h1,h2,h3{line-height:1.2; margin:.2rem 0 .8rem}
+  h1{font-size:clamp(2rem,3vw,3rem)}
+  h2{font-size:1.55rem}
+  h3{font-size:1.12rem}
+  p.lead{font-size:1.08rem; max-width:980px; opacity:.98}
+  .small{font-size:.95rem; color:var(--muted)}
+  .grid{display:grid; gap:18px}
+  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media (max-width:900px){.g2{grid-template-columns:1fr}}
+  section{margin-top:22px}
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:22px;
+  }
+  .pill{
+    display:inline-block;
+    font-size:.8rem;
+    font-weight:800;
+    letter-spacing:.02em;
+    padding:5px 10px;
+    border-radius:999px;
+    color:#fff;
+    margin-bottom:10px;
+  }
+  .blue{background:var(--blue)}
+  .green{background:var(--green)}
+  .purple{background:var(--purple)}
+  .orange{background:var(--orange)}
+  .red{background:var(--red)}
+  .gold{background:var(--gold)}
+  .teal{background:var(--teal)}
+  .banner{
+    border-left:6px solid var(--gold);
+    background:#fff8db;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  .callout{
+    border-left:5px solid var(--blue);
+    background:#eef4ff;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  .warning{
+    border-left:5px solid var(--red);
+    background:#fff2f4;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  ul li, ol li{margin:.45rem 0}
+  .flow{
+    display:grid;
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    gap:12px;
+  }
+  @media (max-width:1000px){.flow{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){.flow{grid-template-columns:1fr}}
+  .step{
+    background:linear-gradient(180deg,#fff,#f8faff);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:16px;
+    min-height:152px;
+  }
+  .num{
+    width:34px; height:34px; border-radius:50%;
+    display:grid; place-items:center;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:#fff; font-weight:800; margin-bottom:10px;
+  }
+  .dialogue-line{
+    padding:10px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .dialogue-line:last-child{border-bottom:none}
+  .speaker{
+    display:inline-block; min-width:82px; font-weight:800; color:var(--blue);
+  }
+  .roman{font-size:1.02rem; font-weight:650}
+  .gloss{color:var(--muted)}
+  .concept-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;
+  }
+  @media (max-width:900px){.concept-grid{grid-template-columns:1fr}}
+  .concept{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px;
+    background:#fbfcff;
+  }
+  .tag{
+    display:inline-block;
+    padding:4px 8px;
+    border-radius:999px;
+    font-size:.78rem;
+    font-weight:700;
+    margin:2px 4px 2px 0;
+    background:#eef3ff;
+    color:#2c4a9c;
+  }
+  .mono{
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background:#f5f7fb;
+    padding:.08rem .35rem;
+    border-radius:8px;
+  }
+  table{width:100%; border-collapse:collapse; font-size:.96rem}
+  th,td{border-bottom:1px solid var(--line); padding:12px 10px; text-align:left; vertical-align:top}
+  th{background:#f4f7fc}
+  tr:last-child td{border-bottom:none}
+  .graph-wrap{
+    overflow:auto;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:linear-gradient(180deg,#fcfdff,#f6f9ff);
+    padding:12px;
+  }
+  svg text{font-family: Inter, system-ui, sans-serif; fill:#1f2430;}
+  .edge{stroke:#90a4d4; stroke-width:2.2; fill:none; marker-end:url(#arrow);}
+  .node rect{rx:18; ry:18; stroke:#d8dff2; stroke-width:1.4;}
+  .legend{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; font-size:.9rem}
+  .legend span{
+    display:flex; align-items:center; gap:6px;
+    background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 10px;
+  }
+  .dot{width:12px; height:12px; border-radius:50%; display:inline-block}
+  .practice{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px;
+  }
+  @media (max-width:900px){.practice{grid-template-columns:1fr}}
+  details{
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:12px 14px;
+    background:#fff;
+  }
+  summary{cursor:pointer; font-weight:700}
+  .quiz-q{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px;
+    margin-bottom:16px;
+    background:#fbfdff;
+  }
+  .quiz-q label{
+    display:block;
+    padding:9px 10px;
+    border:1px solid transparent;
+    border-radius:12px;
+    cursor:pointer;
+  }
+  .quiz-q label:hover{background:#f1f6ff; border-color:#dbe6ff}
+  button{
+    appearance:none;
+    border:none;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:#fff;
+    border-radius:12px;
+    padding:11px 16px;
+    font-size:.96rem;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:var(--shadow);
+  }
+  button.secondary{background:linear-gradient(135deg,var(--green),#3fb58e)}
+  .feedback{
+    margin-top:10px; padding:12px 14px; border-radius:12px; display:none;
+  }
+  .feedback.ok{background:#edf9f3; border:1px solid #bfe7cf}
+  .feedback.no{background:#fff1f3; border:1px solid #f0c0cb}
+  footer{margin-top:28px; color:var(--muted); font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Yuen Ren Chao - Mandarin Primer: An Intensive Course in Spoken Chinese</div>
+    <h1>Mandarin Primer — Lesson 5</h1>
+    <h2 style="font-size:1.35rem; font-weight:650; opacity:.98;">Up, Down, Left, Right, Front, Back, and Middle</h2>
+    <p class="lead">
+      Lesson 5 is the first major lesson on <em>space</em>. It teaches how Mandarin talks about where things are, what lies above or below,
+      how writing appears on surfaces, how objects stand in front of or behind one another, how “inside” and “outside” work, and even how
+      writing direction differs between Chinese and foreign scripts. This makes it one of the richest early lessons for building a mental map of Mandarin structure.
+    </p>
+    <p class="small" style="color:rgba(255,255,255,.9);">
+      This page keeps the book’s original romanization system so it stays aligned with the scanned lesson.
+    </p>
+  </header>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill blue">Learning goals</div>
+      <h2>What students should learn</h2>
+      <ul>
+        <li>Use key localizers: <span class="mono">shanq</span>, <span class="mono">dii.shiah</span>, <span class="mono">chyan.tou</span>, <span class="mono">how.tou</span>, <span class="mono">jongjiall</span>, <span class="mono">lii.tou</span>, <span class="mono">way.tou</span>.</li>
+        <li>Understand the structure of location expressions like <span class="mono">juol.shanq</span> “on the desk” and <span class="mono">utz.lii</span> “in the room.”</li>
+        <li>Distinguish between <span class="mono">yeou</span> “there is” and <span class="mono">sh</span> “it is” in spatial descriptions.</li>
+        <li>Describe where things are relative to one another: desk, chair, wall, paper, floor, blackboard.</li>
+        <li>Talk about writing direction, inside vs. outside, and visible vs. invisible writing.</li>
+        <li>Notice how adjectives behave like verbs in Mandarin and how <span class="mono">hei .de</span> differs from a simple English adjective phrase.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="pill gold">Teacher lens</div>
+      <h2>Why this lesson matters</h2>
+      <div class="banner">
+        <strong>Lesson 5 turns the classroom itself into the textbook.</strong> The desk, chair, wall, paper, blackboard, room, and people all become grammar in action.
+      </div>
+      <p>
+        For high-school beginners, this is excellent because spatial meaning is concrete and visible. At the same time, the lesson introduces important structural ideas:
+        postpositions/localizers, the “there is A on B” pattern, result complements, adjective predicates, and the way context changes interpretation.
+      </p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill purple">Two-hour lecture flow</div>
+    <h2>Suggested lecture sequence</h2>
+    <div class="flow">
+      <div class="step"><div class="num">1</div><strong>Room as language lab</strong><br><span class="small">Use the actual classroom: desk, chair, wall, door, floor, paper, board. Students should point before they explain.</span></div>
+      <div class="step"><div class="num">2</div><strong>Localizers first</strong><br><span class="small">Introduce space words visually: on, under, in front of, behind, inside, outside, between.</span></div>
+      <div class="step"><div class="num">3</div><strong>Dialogue in movement</strong><br><span class="small">Read the dialogue while moving objects or moving yourself: walk behind the chair, then in front of the desk.</span></div>
+      <div class="step"><div class="num">4</div><strong>Writing and surfaces</strong><br><span class="small">Use paper and board to show “there is writing on…” and the difference between black outside vs. white inside.</span></div>
+      <div class="step"><div class="num">5</div><strong>Grammar from contrasts</strong><br><span class="small">Highlight <span class="mono">yeou</span> vs. <span class="mono">sh</span>, adjective predicates, <span class="mono">tzay</span> usage, and serial verb phrases like “use right hand write.”</span></div>
+      <div class="step"><div class="num">6</div><strong>Knowledge graph + quiz</strong><br><span class="small">Finish with a structured review of spatial relations, visibility, and writing direction.</span></div>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill green">How to teach it well</div>
+      <h2>Effective teaching moves for beginners</h2>
+      <div class="callout">
+        The source’s teaching philosophy still applies here: whole utterances, repetition, echoing, and doing grammar through exercises. Lesson 5 becomes much stronger when students physically see the relations.
+      </div>
+      <ol>
+        <li>Do not start with a definition list. Start with one object above another, then ask what students notice.</li>
+        <li>Use the same few objects repeatedly so cognitive load stays low.</li>
+        <li>Let students act out front/back/between with their own bodies.</li>
+        <li>Write on actual paper and on a board so “there is writing on…” becomes visible.</li>
+        <li>When confusion appears, translate the structure, not just the word. For example, explain “desk-top” rather than just “on.”</li>
+      </ol>
+    </div>
+    <div class="card">
+      <div class="pill red">Likely beginner confusions</div>
+      <h2>Where English speakers may stumble</h2>
+      <div class="warning">
+        English often uses simple prepositions like “on,” “in,” and “under.” Lesson 5 shows that Mandarin often builds these relations through noun-plus-localizer structures.
+      </div>
+      <ul>
+        <li><strong>Localizers are not just prepositions:</strong> <span class="mono">juol.shanq</span> is literally “desk-top.”</li>
+        <li><strong><span class="mono">tzay</span></strong> can be translated or left untranslated depending on whether it is the main predicate or comes before another verb.</li>
+        <li><strong><span class="mono">sh</span> vs. <span class="mono">yeou</span>:</strong> one tells what something is; the other tells whether there is anything there.</li>
+        <li><strong>Adjectives behave like verbs:</strong> <span class="mono">Jey-been shu hei</span> does not need a separate “is.”</li>
+        <li><strong><span class="mono">hei .de shu</span></strong> is structurally more like “books that are black” than a simple English adjective slot.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill blue">Dialogue walkthrough</div>
+    <h2>Lesson 5 as a classroom world</h2>
+    <p class="small">The lesson works especially well when each line is tied to a visible action or spatial arrangement.</p>
+
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Juol.shanq jiow.sh juotz .de shanq.tou. Yiitz.shanq jiow.sh yiitz .de shanq.tou.</span><br>
+      <span class="gloss">“On the desk” means on the top of the desk. “On the chair” means on the top of the chair.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Juol.shanq yeou shu … suoo.yii shu tzay juol.shanq.</span><br>
+      <span class="gloss">There are books on the desk, therefore the books are on the desk.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Chyang.shanq yeou men; suoo.yii men tzay chyang.shanq.</span><br>
+      <span class="gloss">There is a door in/on the wall; therefore the door is in the wall.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">B</span>
+      <span class="roman">Men tzay chyang .de shanq.tou .ma?</span><br>
+      <span class="gloss">Is the door above the wall?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Bu.sh … 'men tzay chyang.shanq' jiow.sh 'tzay chyang.nall' .de .yih.sy.</span><br>
+      <span class="gloss">No … “the door is on the wall” means it is where the wall is, not physically above it.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Jeyg shu .de dii.shiah yeou jii-jang jyy, jyy dii.shiah sh juotz, juotz dii.shiah sh dih.</span><br>
+      <span class="gloss">Under this book are papers; under the papers is the desk; under the desk is the floor.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Baw.shanq yeou tzyh. Nii kann, baw.shanq yeou tzyh.</span><br>
+      <span class="gloss">There is writing on the newspaper. Look, there is writing on the newspaper.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Shianntzay woo tzay jyy.shanq shiee-tzyh … Shianntzay jyy.shanq yeou tzyh .le.</span><br>
+      <span class="gloss">Now I write on the paper … now there is writing on the paper.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">B</span>
+      <span class="roman">Nii na yowshoou .hair.sh na tzuoo.shoou shiee-tzyh .a?</span><br>
+      <span class="gloss">Do you write with your right hand or left hand?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Woo sh yonq yow.shoou shiee-tzyh .de, woo buhuey yonq tzuoo.shoou shiee-tzyh.</span><br>
+      <span class="gloss">I write with my right hand; I cannot write with my left hand.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Way.gwo-tzyh sh tsorng shanq.tou tzuoo.bial wanq yow shiee .de.</span><br>
+      <span class="gloss">Foreign writing is written from the upper left side toward the right.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Juotz tzay woo.de chyan.tou … Yiitz tzay woo.de how.tou … Woo jiow tzay jey-leang-jiann dong.shi .de jongjiall.</span><br>
+      <span class="gloss">The desk is in front of me … the chair is behind me … I am between these two things.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Jey-been shu way.tou hei, kee.sh lii.tou bu hei.</span><br>
+      <span class="gloss">This book is black outside, but not black inside.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">B</span>
+      <span class="roman">Tzar.men ren shianntzay tzay way.tou hair.sh tzay lii.tou .a?</span><br>
+      <span class="gloss">Are we outside or inside now?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Tzar.men tzay lii.tou .a.</span><br>
+      <span class="gloss">We are inside.</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill orange">Knowledge graph</div>
+    <h2>Concept network for Lesson 5</h2>
+    <p>
+      Lesson 5 is built around a powerful network: <strong>object → location relation → visibility/writing → bodily orientation → inside/outside</strong>.
+      The localizers are the backbone, but they connect to several other important grammar points.
+    </p>
+    <div class="graph-wrap">
+      <svg width="1160" height="720" viewBox="0 0 1160 720" role="img" aria-label="Knowledge graph for Lesson 5">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#90a4d4"></path>
+          </marker>
+        </defs>
+
+        <path class="edge" d="M580,110 C580,145 580,155 580,195"/>
+        <path class="edge" d="M580,110 C435,130 320,150 210,220"/>
+        <path class="edge" d="M580,110 C725,130 840,150 950,220"/>
+        <path class="edge" d="M210,270 C210,310 210,325 210,370"/>
+        <path class="edge" d="M950,270 C950,310 950,325 950,370"/>
+        <path class="edge" d="M580,250 C485,300 430,330 380,390"/>
+        <path class="edge" d="M580,250 C675,300 730,330 780,390"/>
+        <path class="edge" d="M580,250 C580,320 580,335 580,390"/>
+        <path class="edge" d="M380,440 C345,505 305,540 260,610"/>
+        <path class="edge" d="M580,440 C580,505 580,540 580,610"/>
+        <path class="edge" d="M780,440 C815,505 855,540 900,610"/>
+
+        <g class="node">
+          <rect x="420" y="45" width="320" height="70" fill="#efeaff"></rect>
+          <text x="580" y="76" text-anchor="middle" font-size="18" font-weight="800">Lesson 5 Core Question</text>
+          <text x="580" y="99" text-anchor="middle" font-size="14">Where is something in relation to something else, and how does Mandarin package that relation?</text>
+        </g>
+
+        <g class="node">
+          <rect x="450" y="195" width="260" height="54" fill="#eaf2ff"></rect>
+          <text x="580" y="228" text-anchor="middle" font-size="17" font-weight="800">Spatial utterances</text>
+        </g>
+
+        <g class="node">
+          <rect x="70" y="220" width="280" height="52" fill="#eefaf5"></rect>
+          <text x="210" y="252" text-anchor="middle" font-size="17" font-weight="800">Localizers / postpositions</text>
+        </g>
+
+        <g class="node">
+          <rect x="810" y="220" width="280" height="52" fill="#fff5e8"></rect>
+          <text x="950" y="252" text-anchor="middle" font-size="17" font-weight="800">Visibility, writing, and contrast</text>
+        </g>
+
+        <g class="node">
+          <rect x="95" y="370" width="230" height="66" fill="#edf7ff"></rect>
+          <text x="210" y="399" text-anchor="middle" font-size="16" font-weight="800">shanq / dii.shiah / chyan.tou</text>
+          <text x="210" y="420" text-anchor="middle" font-size="13">on, under, in front of, etc.</text>
+        </g>
+
+        <g class="node">
+          <rect x="835" y="370" width="230" height="66" fill="#fff0f3"></rect>
+          <text x="950" y="399" text-anchor="middle" font-size="16" font-weight="800">tzyh / black-white / inside-outside</text>
+          <text x="950" y="420" text-anchor="middle" font-size="13">writing on surfaces and contrast</text>
+        </g>
+
+        <g class="node">
+          <rect x="260" y="390" width="240" height="50" fill="#eefaf5"></rect>
+          <text x="380" y="421" text-anchor="middle" font-size="16" font-weight="800">there is A on B</text>
+        </g>
+
+        <g class="node">
+          <rect x="660" y="390" width="240" height="50" fill="#eefaf5"></rect>
+          <text x="780" y="421" text-anchor="middle" font-size="16" font-weight="800">using hand / writing direction</text>
+        </g>
+
+        <g class="node">
+          <rect x="485" y="390" width="190" height="50" fill="#eaf2ff"></rect>
+          <text x="580" y="421" text-anchor="middle" font-size="16" font-weight="800">tzay / yeou / sh</text>
+        </g>
+
+        <g class="node">
+          <rect x="165" y="610" width="190" height="58" fill="#eefaf5"></rect>
+          <text x="260" y="641" text-anchor="middle" font-size="16" font-weight="800">juol.shanq, utz.lii</text>
+          <text x="260" y="661" text-anchor="middle" font-size="13">noun + localizer packages</text>
+        </g>
+
+        <g class="node">
+          <rect x="485" y="610" width="190" height="58" fill="#fff5e8"></rect>
+          <text x="580" y="641" text-anchor="middle" font-size="16" font-weight="800">adjective = verb</text>
+          <text x="580" y="661" text-anchor="middle" font-size="13">hei, bai, bu iyanq</text>
+        </g>
+
+        <g class="node">
+          <rect x="805" y="610" width="190" height="58" fill="#f3f0ff"></rect>
+          <text x="900" y="641" text-anchor="middle" font-size="16" font-weight="800">see / hear / write well</text>
+          <text x="900" y="661" text-anchor="middle" font-size="13">potential complement vs predicate</text>
+        </g>
+      </svg>
+    </div>
+    <div class="legend">
+      <span><i class="dot" style="background:#eaf2ff"></i> sentence patterns</span>
+      <span><i class="dot" style="background:#eefaf5"></i> spatial structure</span>
+      <span><i class="dot" style="background:#fff5e8"></i> contrast and writing</span>
+      <span><i class="dot" style="background:#f3f0ff"></i> complements and interpretation</span>
+      <span><i class="dot" style="background:#fff0f3"></i> visible outcomes</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill green">Core concepts</div>
+    <h2>What the lesson teaches, concept by concept</h2>
+    <div class="concept-grid">
+      <div class="concept">
+        <h3>1) Localizers are structural, not just vocabulary</h3>
+        <div class="tag">juol.shanq</div><div class="tag">utz.lii</div><div class="tag">yiitz-how.tou</div>
+        <ul>
+          <li>The notes call these <strong>localizers</strong> or postpositions.</li>
+          <li>They are built as noun-plus-localizer compounds like “desk-top” and “room-inside.”</li>
+          <li>This helps students see that Mandarin packages space through noun structure, not only separate prepositions.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>2) There-is-A-on-B has a regular pattern</h3>
+        <div class="tag">B.shanq yeou A</div><div class="tag">yeou</div>
+        <ul>
+          <li>The notes explicitly state the general form: “There is A on/at/in B” → <span class="mono">B.shanq yeou A</span>.</li>
+          <li>This is a high-value pattern students can reuse across many concrete scenes.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>3) <span class="mono">tzay</span> changes how the sentence translates</h3>
+        <div class="tag">main predicate</div><div class="tag">before another verb</div>
+        <ul>
+          <li><span class="mono">Shu tzay juol.shanq</span> = The book is on the desk.</li>
+          <li><span class="mono">Ta tzay jyy.shanq shiee jiig tzyh</span> = He writes a few words on the paper.</li>
+          <li>The difference matters for accurate beginner understanding.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>4) <span class="mono">sh</span> and <span class="mono">yeou</span> do different jobs</h3>
+        <div class="tag">identity</div><div class="tag">existence</div>
+        <ul>
+          <li><span class="mono">Jyy dii.shiah sh juotz</span> says what the thing under the paper is.</li>
+          <li><span class="mono">Jyy dii.shiah yeou juotz</span> says that there is something there, namely a desk.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>5) Writing can make an invisible relation visible</h3>
+        <div class="tag">tzyh</div><div class="tag">paper</div><div class="tag">blackboard</div>
+        <ul>
+          <li>The lesson uses writing on paper and on the board to show changing states.</li>
+          <li>This makes <span class="mono">.le</span> and visible-result meaning easy to demonstrate in class.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>6) Mandarin can omit obvious possessives</h3>
+        <div class="tag">right hand</div><div class="tag">left hand</div>
+        <ul>
+          <li>The notes explain that English says “my right hand,” but Mandarin often does not need the possessive because it is obvious whose hand it is.</li>
+          <li>This is a good example of how English can be more explicit than Mandarin.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>7) <span class="mono">neng</span> and <span class="mono">huey</span> are not identical</h3>
+        <div class="tag">neng</div><div class="tag">huey</div>
+        <ul>
+          <li>The lesson contrasts <span class="mono">neng</span> “able, can” with <span class="mono">huey</span> “know how to, can.”</li>
+          <li>This distinction is subtle but useful when students talk about what they are able to do physically versus what they know how to do.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>8) Adjectives behave like verbs</h3>
+        <div class="tag">hei</div><div class="tag">bai</div><div class="tag">hei .de</div>
+        <ul>
+          <li>Chinese adjectives can be full predicates: <span class="mono">Jey-been shu hei</span>.</li>
+          <li>With <span class="mono">.de</span>, forms like <span class="mono">hei .de shu</span> are more like “books that are black.”</li>
+          <li>The notes explicitly say the rule is: either use both <span class="mono">sh</span> and <span class="mono">.de</span>, or omit both.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill orange">Mini-board plan</div>
+      <h2>How to lay this out for students</h2>
+      <table>
+        <thead><tr><th>Board zone</th><th>Write this</th><th>Teaching purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Left</td><td><span class="mono">shanq / dii.shiah / chyan.tou / how.tou / jongjiall</span></td><td>Keep the core spatial system visible.</td></tr>
+          <tr><td>Center</td><td>desk, chair, wall, floor, paper, board with arrows</td><td>Map language directly onto visible objects.</td></tr>
+          <tr><td>Right</td><td><span class="mono">B.shanq yeou A</span>, <span class="mono">A tzay B.shanq</span>, <span class="mono">B dii.shiah sh A</span></td><td>Show sentence patterns side by side.</td></tr>
+          <tr><td>Bottom</td><td><span class="mono">hei / bai / hei .de shu / shiee.de-hao</span></td><td>Connect space to adjectives and complement interpretation.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="pill teal">High-value classroom move</div>
+      <h2>Teach the room by moving in it</h2>
+      <div class="callout">
+        This lesson becomes much clearer if the teacher physically changes position relative to a desk and chair.
+      </div>
+      <ol>
+        <li>Stand behind the chair and say what is now in front of you.</li>
+        <li>Walk to the front of the desk and ask what is between you and the chair.</li>
+        <li>Place paper under a book and ask what is under what.</li>
+        <li>Write on paper and ask students whether there is writing there now.</li>
+      </ol>
+      <p class="small">Students remember spatial grammar better when their own bodies are part of the scene.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill blue">A key structural contrast</div>
+    <h2>Potential complement or descriptive predicate?</h2>
+    <div class="callout">
+      The notes make an important point: <span class="mono">shiee.de-hao</span> and <span class="mono">shiee .de hao</span> sound the same in actual speech, but they do not always mean the same thing.
+    </div>
+    <div class="practice">
+      <div class="concept">
+        <h3>Potential complement reading</h3>
+        <p><span class="mono">Ta shiee.de-hao .ma?</span></p>
+        <p class="small">Can he write well?</p>
+      </div>
+      <div class="concept">
+        <h3>Descriptive predicate reading</h3>
+        <p><span class="mono">Ta shiee .de hao .ma?</span></p>
+        <p class="small">Does he write well?</p>
+      </div>
+    </div>
+    <p class="small" style="margin-top:12px;">
+      This is a rich teaching moment: meaning sometimes depends not on sound alone, but on grammar and context.
+    </p>
+  </section>
+
+  <section class="card">
+    <div class="pill green">Guided practice</div>
+    <h2>Practice tasks for a two-hour lesson</h2>
+    <div class="practice">
+      <div class="concept">
+        <h3>Task A — Build the scene</h3>
+        <p>Students place objects and describe them:</p>
+        <ul>
+          <li><span class="mono">Juol.shanq yeou shu.</span></li>
+          <li><span class="mono">Shu tzay juol.shanq.</span></li>
+        </ul>
+      </div>
+      <div class="concept">
+        <h3>Task B — Move yourself</h3>
+        <p>Students stand and change positions:</p>
+        <ul>
+          <li>in front of desk</li>
+          <li>behind chair</li>
+          <li>between desk and chair</li>
+        </ul>
+      </div>
+      <div class="concept">
+        <h3>Task C — Write and reveal</h3>
+        <p>Teacher writes on paper or board. Students answer:</p>
+        <ul>
+          <li><span class="mono">Jyy.shanq yeou tzyh .le .ma?</span></li>
+          <li><span class="mono">Kann.jiann .le.</span></li>
+        </ul>
+      </div>
+      <div class="concept">
+        <h3>Task D — Black or white?</h3>
+        <p>Students describe book outside vs. inside, and explain why they differ.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill red">Quick understanding check</div>
+    <h2>Two multiple-choice quiz questions</h2>
+
+    <div class="quiz-q" data-answer="b">
+      <h3>1) What is the best explanation of <span class="mono">juol.shanq</span> in this lesson?</h3>
+      <label><input type="radio" name="q1" value="a"> It is a single unanalyzable word meaning “desk.”</label>
+      <label><input type="radio" name="q1" value="b"> It is a noun-plus-localizer structure, literally something like “desk-top,” used for “on the desk.”</label>
+      <label><input type="radio" name="q1" value="c"> It is a verb meaning “to put on the desk.”</label>
+      <label><input type="radio" name="q1" value="d"> It only works with abstract nouns, not classroom objects.</label>
+      <div class="feedback ok">Correct. The notes explicitly explain these forms as localizer compounds such as “desk-top,” which English usually translates with a preposition.</div>
+      <div class="feedback no">Not quite. Lesson 5 treats <span class="mono">juol.shanq</span> as a localizer structure: noun plus localizer, not just a single unanalyzed word.</div>
+    </div>
+
+    <div class="quiz-q" data-answer="c">
+      <h3>2) Why is the contrast between <span class="mono">sh</span> and <span class="mono">yeou</span> important in this lesson?</h3>
+      <label><input type="radio" name="q2" value="a"> Because one is formal and the other is informal, but they mean exactly the same thing.</label>
+      <label><input type="radio" name="q2" value="b"> Because <span class="mono">sh</span> is only for people and <span class="mono">yeou</span> is only for objects.</label>
+      <label><input type="radio" name="q2" value="c"> Because <span class="mono">sh</span> identifies what something is, while <span class="mono">yeou</span> indicates whether something exists there at all.</label>
+      <label><input type="radio" name="q2" value="d"> Because Mandarin requires both together in every location sentence.</label>
+      <div class="feedback ok">Correct. The notes explain that <span class="mono">sh</span> tells what the thing is, while <span class="mono">yeou</span> tells whether there is anything there.</div>
+      <div class="feedback no">Not quite. The lesson contrasts two different jobs: identification with <span class="mono">sh</span> and existence with <span class="mono">yeou</span>.</div>
+    </div>
+
+    <button id="checkQuiz">Check my answers</button>
+    <button class="secondary" id="resetQuiz" style="margin-left:8px;">Reset</button>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill gold">Exit challenge</div>
+      <h2>End-of-lecture spoken challenge</h2>
+      <ol>
+        <li>Describe where a book is relative to a desk and a chair.</li>
+        <li>Say what is under something and what is in front of something.</li>
+        <li>Use one sentence with <span class="mono">yeou</span> and one with <span class="mono">sh</span>.</li>
+        <li>Explain whether we are inside or outside.</li>
+        <li>Say, in English, why the outside and inside of the black book are not the same.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <div class="pill blue">References and source use</div>
+      <h2>References for this page</h2>
+      <ul>
+        <li><strong>Primary source:</strong> scanned Lesson 5 pages from <em>Mandarin Primer: An Intensive Course in Spoken Chinese</em>.</li>
+        <li><strong>Dialogue basis:</strong> Lesson 5 on up/down/left/right/front/back/middle, writing on paper and blackboard, hand use, writing direction, front/back/between, black vs. white, and inside vs. outside.</li>
+        <li><strong>Grammar basis:</strong> notes on localizers, “There-is-A-on-B” forms, <span class="mono">tzay</span> translation conditions, <span class="mono">sh</span> vs. <span class="mono">yeou</span>, serial verb expressions, omission of possessives, <span class="mono">neng</span>, potential complements, adjective predicates, and inside/outside contrasts.</li>
+        <li><strong>Teaching basis:</strong> the source’s “To the Student” guidance on utterances, repetition, echoing, and learning grammar through exercises.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    This lecture page is designed for a full two-hour beginner lesson. It keeps close to the source while turning Lesson 5 into a clearer,
+    more connected, and more teachable experience for English-speaking high-school students.
+  </footer>
+</div>
+
+<script>
+document.getElementById('checkQuiz').addEventListener('click', function(){
+  document.querySelectorAll('.quiz-q').forEach(function(q){
+    const correct = q.dataset.answer;
+    const selected = q.querySelector('input[type="radio"]:checked');
+    const ok = q.querySelector('.feedback.ok');
+    const no = q.querySelector('.feedback.no');
+    ok.style.display = 'none';
+    no.style.display = 'none';
+    if(selected && selected.value === correct){
+      ok.style.display = 'block';
+    } else {
+      no.style.display = 'block';
+    }
+  });
+});
+
+document.getElementById('resetQuiz').addEventListener('click', function(){
+  document.querySelectorAll('input[type="radio"]').forEach(function(inp){ inp.checked = false; });
+  document.querySelectorAll('.feedback').forEach(function(f){ f.style.display = 'none'; });
+});
+</script>
+</body>
+</html>

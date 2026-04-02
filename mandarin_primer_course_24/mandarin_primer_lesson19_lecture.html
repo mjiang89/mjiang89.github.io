@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mandarin Primer — Lesson 19 Lecture Page</title>
+<style>
+  :root{
+    --bg:#f6f8fc; --ink:#1d2433; --muted:#5a6475; --card:#ffffff; --line:#d8dfeb;
+    --blue:#2f6fed; --green:#2f9e77; --purple:#7b61ff; --orange:#f08c2e; --red:#d9485f; --gold:#c99700; --teal:#118ab2;
+    --shadow:0 10px 30px rgba(28,35,54,.08); --radius:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--ink);
+    background:radial-gradient(circle at top right, rgba(47,111,237,.08), transparent 28%),
+               radial-gradient(circle at top left, rgba(123,97,255,.08), transparent 26%), var(--bg);
+    line-height:1.65;
+  }
+  .wrap{width:min(1180px,94vw); margin:0 auto; padding:28px 0 64px;}
+  header.hero{
+    background:linear-gradient(135deg,#17457e,#2b63cf 55%,#7b61ff); color:#fff; border-radius:28px;
+    padding:34px 34px 28px; box-shadow:var(--shadow); overflow:hidden;
+  }
+  .eyebrow{display:inline-block; padding:6px 10px; border:1px solid rgba(255,255,255,.28); border-radius:999px; font-size:.83rem; margin-bottom:10px; background:rgba(255,255,255,.08);}
+  h1,h2,h3{line-height:1.2; margin:.2rem 0 .8rem}
+  h1{font-size:clamp(2rem,3vw,3rem)} h2{font-size:1.55rem} h3{font-size:1.12rem}
+  p.lead{font-size:1.08rem; max-width:980px; opacity:.98}
+  .small{font-size:.95rem; color:var(--muted)}
+  .grid{display:grid; gap:18px}
+  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media (max-width:900px){.g2{grid-template-columns:1fr}}
+  section{margin-top:22px}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px}
+  .pill{display:inline-block; font-size:.8rem; font-weight:800; padding:5px 10px; border-radius:999px; color:#fff; margin-bottom:10px}
+  .blue{background:var(--blue)} .green{background:var(--green)} .purple{background:var(--purple)} .orange{background:var(--orange)} .red{background:var(--red)} .gold{background:var(--gold)} .teal{background:var(--teal)}
+  .banner{border-left:6px solid var(--gold); background:#fff8db; padding:14px 16px; border-radius:14px}
+  .callout{border-left:5px solid var(--blue); background:#eef4ff; padding:14px 16px; border-radius:14px}
+  .warning{border-left:5px solid var(--red); background:#fff2f4; padding:14px 16px; border-radius:14px}
+  ul li, ol li{margin:.45rem 0}
+  .flow{display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:12px}
+  @media (max-width:1000px){.flow{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){.flow{grid-template-columns:1fr}}
+  .step{background:linear-gradient(180deg,#fff,#f8faff); border:1px solid var(--line); border-radius:18px; padding:16px; min-height:165px}
+  .num{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;margin-bottom:10px;background:linear-gradient(135deg,var(--blue),var(--purple))}
+  .dialogue-line{padding:10px 0; border-bottom:1px dashed var(--line)}
+  .dialogue-line:last-child{border-bottom:none}
+  .speaker{display:inline-block; min-width:108px; font-weight:800; color:var(--blue)}
+  .roman{font-size:1.02rem; font-weight:650}
+  .gloss{color:var(--muted)}
+  .concept-grid,.practice{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px}
+  @media (max-width:900px){.concept-grid,.practice{grid-template-columns:1fr}}
+  .concept{border:1px solid var(--line); border-radius:16px; padding:16px; background:#fbfcff}
+  .tag{display:inline-block; padding:4px 8px; border-radius:999px; font-size:.78rem; font-weight:700; margin:2px 4px 2px 0; background:#eef3ff; color:#2c4a9c}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; background:#f5f7fb; padding:.08rem .35rem; border-radius:8px}
+  table{width:100%; border-collapse:collapse; font-size:.96rem}
+  th,td{border-bottom:1px solid var(--line); padding:12px 10px; text-align:left; vertical-align:top}
+  th{background:#f4f7fc} tr:last-child td{border-bottom:none}
+  .graph-wrap{overflow:auto; border:1px solid var(--line); border-radius:18px; background:linear-gradient(180deg,#fcfdff,#f6f9ff); padding:12px}
+  svg text{font-family:Inter,system-ui,sans-serif; fill:#1f2430}
+  .edge{stroke:#90a4d4; stroke-width:2.2; fill:none; marker-end:url(#arrow)}
+  .node rect{rx:18; ry:18; stroke:#d8dff2; stroke-width:1.4}
+  .legend{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; font-size:.9rem}
+  .legend span{display:flex; align-items:center; gap:6px; background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 10px}
+  .dot{width:12px; height:12px; border-radius:50%; display:inline-block}
+  .quiz-q{border:1px solid var(--line); border-radius:16px; padding:16px; margin-bottom:16px; background:#fbfdff}
+  .quiz-q label{display:block; padding:9px 10px; border:1px solid transparent; border-radius:12px; cursor:pointer}
+  .quiz-q label:hover{background:#f1f6ff; border-color:#dbe6ff}
+  button{appearance:none; border:none; background:linear-gradient(135deg,var(--blue),var(--purple)); color:#fff; border-radius:12px; padding:11px 16px; font-size:.96rem; font-weight:700; cursor:pointer; box-shadow:var(--shadow)}
+  button.secondary{background:linear-gradient(135deg,var(--green),#3fb58e)}
+  .feedback{margin-top:10px; padding:12px 14px; border-radius:12px; display:none}
+  .feedback.ok{background:#edf9f3; border:1px solid #bfe7cf}
+  .feedback.no{background:#fff1f3; border:1px solid #f0c0cb}
+  footer{margin-top:28px; color:var(--muted); font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Yuen Ren Chao - Mandarin Primer: An Intensive Course in Spoken Chinese</div>
+  <h1>Mandarin Primer — Lesson 19</h1>
+  <h2 style="font-size:1.35rem;font-weight:650;opacity:.98;">Renting a House</h2>
+  <p class="lead">
+    Lesson 19 moves from factories and public institutions to private domestic life. The speakers spot a rental notice from a streetcar, inspect a large
+    traditional courtyard residence, debate comfort and convenience, negotiate the rent, and then discover that the bargain may be connected to the house’s
+    reputation as a haunted house. The lesson is especially rich for teaching housing vocabulary, spatial description, facilities, bargaining, and the clash
+    between practicality and superstition.
+  </p>
+  <p class="small" style="color:rgba(255,255,255,.9);">This page keeps the book’s original romanization system so the page stays aligned with the scanned lesson.</p>
+</header>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill blue">Learning goals</div>
+    <h2>What students should learn</h2>
+    <ul>
+      <li>Follow the full sequence of renting a house: noticing the sign, getting off the streetcar, inspecting the property, asking about utilities, discussing price, paying a deposit, and reacting to the address.</li>
+      <li>Understand vocabulary for house-hunting: rental signs, keeper, rooms, courtyards, main rooms, gatekeeper’s room, kitchen, servants’ quarters, backyard, pond, vegetable garden, wiring, tap water, bathroom, bathtub, flush toilet, deposit, receipt, and lease folder.</li>
+      <li>Recognize descriptive comparison patterns such as one courtyard being larger than the next, and how <span class="mono">hair ... ne</span> keeps adding “more” aspects of what is being examined.</li>
+      <li>See how the dialogue balances practical concerns like light, water, shopping access, and transportation against emotional concerns like haunted-house rumors.</li>
+      <li>Learn how Mandarin handles approval, surprise, contempt, and teasing through particles and exclamations such as <span class="mono">Ee</span>, <span class="mono">E</span>, <span class="mono">Eh</span>, and <span class="mono">Ch!</span>.</li>
+      <li>Understand the humorous ending in which cheap rent is suddenly reinterpreted as suspiciously cheap.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="pill gold">Teacher lens</div>
+    <h2>Why this lesson matters</h2>
+    <div class="banner"><strong>Lesson 19 teaches that describing a house is never just about architecture.</strong> It is also about comfort, family imagination, urban convenience, money, status, and beliefs.</div>
+    <p>
+      For high-school students, this lesson is highly engaging because it feels like a real argument: one person sees opportunity, the other sees vegetables,
+      then suddenly ghosts enter the conversation. It is also one of the best lessons for teaching how detailed physical description supports decision-making.
+    </p>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill purple">Two-hour lecture flow</div>
+  <h2>Suggested lecture sequence</h2>
+  <div class="flow">
+    <div class="step"><div class="num">1</div><strong>Streetcar hook</strong><br><span class="small">Begin with the cry of discovery: “For Rent!” and the argument over whether such a thing could even exist now.</span></div>
+    <div class="step"><div class="num">2</div><strong>Entering the house</strong><br><span class="small">Teach the keeper, room counts, courtyards, reception hall, main rooms, and echoes.</span></div>
+    <div class="step"><div class="num">3</div><strong>Living conditions</strong><br><span class="small">Teach height, coolness, winter cold, kitchen, servants’ quarters, pond, fish, garden, and vegetables.</span></div>
+    <div class="step"><div class="num">4</div><strong>Utilities and facilities</strong><br><span class="small">Focus on electric wiring, tap water, bathroom, bathtub, flush toilet, and reinstallation.</span></div>
+    <div class="step"><div class="num">5</div><strong>Rent and decision</strong><br><span class="small">Teach price, central location, deposit, receipt, landlord, contract, and address.</span></div>
+    <div class="step"><div class="num">6</div><strong>Cheapness and ghosts + quiz</strong><br><span class="small">End with the haunted-house twist, teasing about superstition, and the final decision to take the house anyway.</span></div>
+  </div>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill green">How to teach it well</div>
+    <h2>Effective teaching moves for beginners</h2>
+    <div class="callout">
+      The source’s “To the Student” guidance still applies: utterances first, then notes, then fluency through repetition and exercises. Lesson 19 becomes especially teachable when students can visualize the house as they walk through it.
+    </div>
+    <ol>
+      <li>Draw a courtyard-house floor plan as the keeper introduces each space.</li>
+      <li>Use color coding for “advantages” and “problems”: big rooms, cool summer, pond, garden, central location versus winter cold, missing fixtures, and ghost reputation.</li>
+      <li>Pause at each new discovery and ask students: would this make you more likely or less likely to rent the house?</li>
+      <li>Teach <span class="mono">hair ... ne</span> as a discourse move for adding surprising new good features during inspection.</li>
+      <li>Act out the ending as comedy so students hear the shift from practical negotiation to emotional suspicion.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="pill red">Likely beginner confusions</div>
+    <h2>Where English speakers may stumble</h2>
+    <div class="warning">
+      Students may focus only on vocabulary lists, but the deeper challenge is noticing how the speakers gradually reinterpret the same house: first impressive, then convenient, then suspiciously cheap.
+    </div>
+    <ul>
+      <li><strong><span class="mono">hair ... ne</span></strong> repeatedly signals “there is still more to notice,” not just a simple “still.”</li>
+      <li><strong><span class="mono">jian</span></strong> in Beijing housing counts bays between columns, not always what English speakers would count as full rooms.</li>
+      <li><strong><span class="mono">farngjian</span> vs. <span class="mono">utz</span></strong> matter: one is room as usable space, the other more like the thing or structure.</li>
+      <li><strong><span class="mono">-hao</span></strong> in <span class="mono">kann-hao</span> means reaching a satisfactory conclusion, not simply “good.”</li>
+      <li><strong><span class="mono">pyanyi jiow pyanyi tzay...</span></strong> is a special explanatory frame meaning “as for its cheapness, that is exactly where the cheapness lies.”</li>
+    </ul>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill blue">Dialogue walkthrough</div>
+  <h2>Lesson 19 as discovery, inspection, and reinterpretation</h2>
+  <p class="small">This lesson becomes clearer when divided into four scenes.</p>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 1</span>
+    <span class="roman">'Jau-tzu,' 'Jau-tzu,' 'Jyifarng jau-tzu'! ... Chiing nii dawle shiah-i-jann tyng i-tyng!</span><br>
+    <span class="gloss">“For rent,” “For rent,” “vacancy for rent”! Please stop at the next station!</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 1</span>
+    <span class="roman">Jiann-goei le ... jeh niantourl naal yeou jau-tzu de farngtz? ... Jende me, woo chinyean kannjiann de me.</span><br>
+    <span class="gloss">You must be seeing apparitions ... where nowadays can there be houses for rent? ... It is true, I saw it with my own eyes.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 1</span>
+    <span class="roman">Tzeem mei ren a? Nii tzay duo enn leang.shiall! ... Yee sheu diannliengl huay le ba? Tzarmen chiaux men kann.</span><br>
+    <span class="gloss">Why is there nobody here? Ring some more! ... Perhaps the bell is broken? Let us knock on the door.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 2</span>
+    <span class="roman">Igonq sanshyr'ell-jian ... Jeybial sh menfarngl, neybial sh chefarng, yuanntz neybial sh ig san-kaijian de dah-kehting.</span><br>
+    <span class="gloss">Thirty-two bays altogether ... this side is the gateman’s room, the other side is the ricksha room, and across the courtyard is a large three-bay reception hall.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 2</span>
+    <span class="roman">Shanqfarng tzay liitou i-jinn, liitou hair yeou leangg yuanntz ne ... Hao dah de farngjian. E, hair yeou hweisheng ne. Uai!</span><br>
+    <span class="gloss">The main rooms are one court farther in, and there are two more courtyards inside ... What big rooms. And there are even echoes too. Yoohoo!</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 2</span>
+    <span class="roman">Jeh farngdieengl jen gau. ... Gau hao, shiahtian liang.kuay. ... Keesh dongtian leeng e!</span><br>
+    <span class="gloss">The ceilings are really high. ... High is good, cool in summer. ... But cold in winter!</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 2</span>
+    <span class="roman">Howyuall bii jenq-yuanntz hair genq dah le; hair yeou leang-ke songshuh, nail hair yeou sheuduo jwutz, neyg chyrtz.lii meijoel hair keeyii yeang-yu ne.</span><br>
+    <span class="gloss">The backyard is even larger than the main courtyard; there are two pine trees, lots of bamboo, and the pond there might even be used for raising fish.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 2</span>
+    <span class="roman">Neybial hair yeou g tsayyuan ne ... keeyii jonq deal bairtsay, bortsay, luo.bo, shihorngshyh ...</span><br>
+    <span class="gloss">There is even a vegetable garden there ... we could plant cabbages, spinach, radishes, tomatoes ...</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 3</span>
+    <span class="roman">Jeh farngtz de men, chuang, dihbaan, diingbaan shermde, dou hair buhuay, ar? ... Jeh farngtz yeou dianndeng tzyhlai-shoei meiyeou?</span><br>
+    <span class="gloss">The doors, windows, floors, ceilings and so on are still not bad, aren’t they? ... Does this house have electric lights and tap water?</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 3</span>
+    <span class="roman">Diannshiann dou yeou, jiowsh mei jie-diann. Tzyhlai-shoei yee yeou. ... Beenlai dawsh yeou [shiitzao-farng], keesh tamen ban-tzoou de shyrhowl jiow bae tsyrtiee de tzaopern, choushoei-maatoong shermde dou geei chaile.shiahlai ban-tzoou le.</span><br>
+    <span class="gloss">The wiring is there, only the electricity is not connected. There is also tap water. ... There used to be a bathroom, but when the previous tenants moved out they dismantled and removed the enameled tub, flush toilet, and such things.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 3</span>
+    <span class="roman">Jyy yaw shoei-goantz hair yeou, woomen keeyii mae le tzay juang.chiilai. E - jeh farngtz tzu sherm jiah.chyan?</span><br>
+    <span class="gloss">As long as the pipes are still there, we can buy the things and install them again. What is the rent for this house?</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 4</span>
+    <span class="roman">Tzu.chyan sh wuushyr'ell-kuay chyan ig yueh. ... Jell bush Lao Heryall ma? ... shyrjii-fen jong jiow yeou shyhchaang gen tzarhuoh-pull ...</span><br>
+    <span class="gloss">The rent is fifty-two dollars a month. ... This is Old Riverside, isn’t it? ... in ten-some minutes there are markets and general stores ...</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 4</span>
+    <span class="roman">Tzarmen jiow idinq yaw ha. ... Fuh ellshyrwuu-kuay chyan ha ... woo geei Nin kai g shoutyaul ... shiahwuu woo jiow chiuh bawgaw farngdong chiuh geei Nin yuhbey jertz.</span><br>
+    <span class="gloss">Then let us definitely take it. ... I will pay twenty-five dollars first ... I will write you a receipt ... this afternoon I shall report to the landlord and prepare the lease folder.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 4</span>
+    <span class="roman">Lao Heryall shyrsan-haw ... jeh bush jeh dihfangl de Syh-dah Shiongjair lii de ig shiongjair ma? ... Yuanlai pyanyi jiow pyanyi tzay jeyg shanq!</span><br>
+    <span class="gloss">No. 13 Old Riverside ... isn’t this one of the Four Great Haunted Houses here? ... So that is exactly where the cheapness lies!</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Closing</span>
+    <span class="roman">Nii yow jiann-goei le. ... Naj g nantzyy-hann, itourl tyichanq pohchwu mishinn, itourl hair pah goei ne ... Nii bu pah woo yee bu pah. ... Neme jeh farngtz hairsh yaw le? Yaw.</span><br>
+    <span class="gloss">You are seeing ghosts again. ... With all the dignity of a he-man, promoting the abolition of superstition and still fearing ghosts ... If you are not afraid, I am not afraid either ... Then we still want the house? Yes.</span>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill orange">Knowledge graph</div>
+  <h2>Concept network for Lesson 19</h2>
+  <p>
+    Lesson 19 forms a network around <strong>rental sign → inspection → features → utilities → bargain → address → superstition → final decision</strong>.
+  </p>
+  <div class="graph-wrap">
+    <svg width="1180" height="820" viewBox="0 0 1180 820" role="img" aria-label="Knowledge graph for Lesson 19">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" fill="#90a4d4"></path>
+        </marker>
+      </defs>
+
+      <path class="edge" d="M590,110 C590,145 590,155 590,195"/>
+      <path class="edge" d="M590,110 C440,130 320,150 205,225"/>
+      <path class="edge" d="M590,110 C740,130 860,150 975,225"/>
+      <path class="edge" d="M205,275 C205,320 205,332 205,390"/>
+      <path class="edge" d="M975,275 C975,320 975,332 975,390"/>
+      <path class="edge" d="M590,250 C490,300 430,335 375,410"/>
+      <path class="edge" d="M590,250 C690,300 750,335 805,410"/>
+      <path class="edge" d="M590,250 C590,320 590,338 590,410"/>
+      <path class="edge" d="M375,460 C340,530 300,570 250,675"/>
+      <path class="edge" d="M590,460 C590,530 590,570 590,675"/>
+      <path class="edge" d="M805,460 C840,530 880,570 930,675"/>
+
+      <g class="node">
+        <rect x="400" y="45" width="380" height="70" fill="#efeaff"></rect>
+        <text x="590" y="76" text-anchor="middle" font-size="18" font-weight="800">Lesson 19 Core Question</text>
+        <text x="590" y="99" text-anchor="middle" font-size="14">How does Mandarin turn a house inspection into a discussion of comfort, convenience, price, and superstition?</text>
+      </g>
+
+      <g class="node">
+        <rect x="460" y="195" width="260" height="54" fill="#eaf2ff"></rect>
+        <text x="590" y="228" text-anchor="middle" font-size="17" font-weight="800">House-renting conversation</text>
+      </g>
+
+      <g class="node">
+        <rect x="55" y="225" width="300" height="52" fill="#eefaf5"></rect>
+        <text x="205" y="257" text-anchor="middle" font-size="17" font-weight="800">Architecture and inspection</text>
+      </g>
+
+      <g class="node">
+        <rect x="825" y="225" width="300" height="52" fill="#fff5e8"></rect>
+        <text x="975" y="257" text-anchor="middle" font-size="17" font-weight="800">Money, convenience, and haunted-house logic</text>
+      </g>
+
+      <g class="node">
+        <rect x="85" y="390" width="240" height="68" fill="#edf7ff"></rect>
+        <text x="205" y="419" text-anchor="middle" font-size="16" font-weight="800">gate room / reception hall / main rooms / courtyards</text>
+        <text x="205" y="441" text-anchor="middle" font-size="13">house layout</text>
+      </g>
+
+      <g class="node">
+        <rect x="855" y="390" width="240" height="68" fill="#fff0f3"></rect>
+        <text x="975" y="419" text-anchor="middle" font-size="16" font-weight="800">cheap rent → suspicious cause → ghosts</text>
+        <text x="975" y="441" text-anchor="middle" font-size="13">reinterpretation</text>
+      </g>
+
+      <g class="node">
+        <rect x="255" y="410" width="240" height="50" fill="#eefaf5"></rect>
+        <text x="375" y="441" text-anchor="middle" font-size="16" font-weight="800">high ceilings / cool summer / cold winter</text>
+      </g>
+
+      <g class="node">
+        <rect x="685" y="410" width="240" height="50" fill="#eefaf5"></rect>
+        <text x="805" y="441" text-anchor="middle" font-size="16" font-weight="800">wiring / tap water / bathtub / flush toilet</text>
+      </g>
+
+      <g class="node">
+        <rect x="495" y="410" width="190" height="50" fill="#eaf2ff"></rect>
+        <text x="590" y="441" text-anchor="middle" font-size="16" font-weight="800">hair ... ne</text>
+      </g>
+
+      <g class="node">
+        <rect x="155" y="675" width="190" height="58" fill="#eefaf5"></rect>
+        <text x="250" y="706" text-anchor="middle" font-size="16" font-weight="800">pond / garden / vegetables</text>
+        <text x="250" y="726" text-anchor="middle" font-size="13">domestic imagination</text>
+      </g>
+
+      <g class="node">
+        <rect x="495" y="675" width="190" height="58" fill="#fff5e8"></rect>
+        <text x="590" y="706" text-anchor="middle" font-size="16" font-weight="800">deposit / receipt / jertz</text>
+        <text x="590" y="726" text-anchor="middle" font-size="13">lease process</text>
+      </g>
+
+      <g class="node">
+        <rect x="835" y="675" width="190" height="58" fill="#f3f0ff"></rect>
+        <text x="930" y="706" text-anchor="middle" font-size="16" font-weight="800">superstition vs anti-superstition</text>
+        <text x="930" y="726" text-anchor="middle" font-size="13">comic tension</text>
+      </g>
+    </svg>
+  </div>
+  <div class="legend">
+    <span><i class="dot" style="background:#eaf2ff"></i> discourse structure</span>
+    <span><i class="dot" style="background:#eefaf5"></i> house features</span>
+    <span><i class="dot" style="background:#fff5e8"></i> utilities and money</span>
+    <span><i class="dot" style="background:#f3f0ff"></i> beliefs and teasing</span>
+    <span><i class="dot" style="background:#fff0f3"></i> bargain logic</span>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill green">Core concepts</div>
+  <h2>What the lesson teaches, concept by concept</h2>
+  <div class="concept-grid">
+    <div class="concept">
+      <h3>1) Discovery begins with disbelief</h3>
+      <div class="tag">jau-tzu</div><div class="tag">jiann-goei le</div>
+      <ul>
+        <li>The rental sign is immediately framed as almost unbelievable in the current housing situation.</li>
+        <li>That makes the entire house visit feel like finding unexpected luck.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>2) The house is described as a sequence of expanding spaces</h3>
+      <div class="tag">yuanntz</div><div class="tag">jinn</div><div class="tag">shanqfarng</div>
+      <ul>
+        <li>The lesson leads the visitors deeper and deeper into the residence.</li>
+        <li>This creates spatial suspense while teaching the vocabulary of traditional courtyard housing.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>3) <span class="mono">hair ... ne</span> marks added discoveries</h3>
+      <div class="tag">more to notice</div><div class="tag">inspection discourse</div>
+      <ul>
+        <li>The notes explain that <span class="mono">hair ... ne</span> signals interest in new aspects still being discovered.</li>
+        <li>It is one of the lesson’s most important discourse patterns.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>4) Good features are always paired with tradeoffs</h3>
+      <div class="tag">high ceiling</div><div class="tag">summer cool</div><div class="tag">winter cold</div>
+      <ul>
+        <li>The dialogue never presents a feature as purely good or bad.</li>
+        <li>This is excellent for teaching balanced evaluation in Mandarin.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>5) Domestic imagination transforms empty space into home</h3>
+      <div class="tag">goldfish pond</div><div class="tag">vegetable garden</div><div class="tag">cabbage</div><div class="tag">tomato</div>
+      <ul>
+        <li>The wife immediately imagines fish and vegetables, turning the house from structure into lived space.</li>
+        <li>This helps students see how language reveals values and priorities.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>6) Modern convenience matters</h3>
+      <div class="tag">dianndeng</div><div class="tag">tzyhlai-shoei</div><div class="tag">shiitzao-farng</div>
+      <ul>
+        <li>The house may be large and elegant, but questions about electricity, water, and bathrooms are decisive.</li>
+        <li>This makes the lesson feel modern and practical.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>7) Renting has its own speech routines</h3>
+      <div class="tag">dinq.chyan</div><div class="tag">shoutyaul</div><div class="tag">jertz</div>
+      <ul>
+        <li>The lesson teaches deposit, receipt, landlord reporting, and the lease folder as procedural vocabulary.</li>
+        <li>It therefore goes beyond description into transaction language.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>8) Cheapness becomes an explanation problem</h3>
+      <div class="tag">yuanlai</div><div class="tag">pyanyi jiow pyanyi tzay...</div><div class="tag">shiongjair</div>
+      <ul>
+        <li>The ending reinterprets the low rent: it is not merely lucky, but perhaps cheap for a reason.</li>
+        <li>This is the comic twist that gives the lesson its memorable ending.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill orange">Mini-board plan</div>
+    <h2>How to lay this out for students</h2>
+    <table>
+      <thead><tr><th>Board zone</th><th>Write this</th><th>Teaching purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Left</td><td>courtyard house map with rooms, halls, backyard, pond, and garden</td><td>Makes the architecture visible.</td></tr>
+        <tr><td>Center</td><td>feature chart: good / bad / can be repaired</td><td>Organizes evaluation language.</td></tr>
+        <tr><td>Right</td><td>renting sequence: price → deposit → receipt → landlord → contract → house number</td><td>Shows the transactional flow.</td></tr>
+        <tr><td>Bottom</td><td>ending twist: cheap rent → haunted reputation → argument about ghosts</td><td>Keeps the narrative structure clear.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="pill teal">High-value classroom move</div>
+    <h2>Use a “Would you rent it?” debate</h2>
+    <div class="callout">
+      Split the class into two sides: one side argues for renting the house, the other argues against it.
+    </div>
+    <ol>
+      <li>Students must use house features from the lesson as evidence.</li>
+      <li>One team emphasizes size, garden, location, and cheap rent.</li>
+      <li>The other emphasizes winter cold, missing bathroom fixtures, and haunted-house reputation.</li>
+    </ol>
+    <p class="small">This turns vocabulary into real decision-making and helps students remember the lesson’s flow.</p>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill blue">A key structural system</div>
+  <h2>Feature → evaluation → decision</h2>
+  <div class="practice">
+    <div class="concept">
+      <h3>Feature</h3>
+      <p><span class="mono">farngdieengl gau</span>, <span class="mono">yeou tzyhlai-shoei</span>, <span class="mono">yeou tsayyuan</span></p>
+      <p class="small">What the house has.</p>
+    </div>
+    <div class="concept">
+      <h3>Evaluation</h3>
+      <p><span class="mono">shiahtian liang.kuay</span>, <span class="mono">dongtian leeng</span>, <span class="mono">heen pyanyi</span></p>
+      <p class="small">Why that matters.</p>
+    </div>
+    <div class="concept">
+      <h3>Decision</h3>
+      <p><span class="mono">jiow idinq yaw ha</span>, <span class="mono">hairsh yaw le?</span></p>
+      <p class="small">Whether to take the house or not.</p>
+    </div>
+    <div class="concept">
+      <h3>Teaching payoff</h3>
+      <p class="small">This lesson models how Mandarin can move from observation to judgment to action.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill green">Guided practice</div>
+  <h2>Practice tasks for a two-hour lesson</h2>
+  <div class="practice">
+    <div class="concept">
+      <h3>Task A — Describe the house</h3>
+      <p>Students describe the property room by room, courtyard by courtyard, as if leading a visitor through it.</p>
+    </div>
+    <div class="concept">
+      <h3>Task B — What is still there?</h3>
+      <p>Students sort features into still present, removed by former tenants, and imagined future uses.</p>
+    </div>
+    <div class="concept">
+      <h3>Task C — Practical or emotional?</h3>
+      <p>Students decide whether each concern belongs more to comfort, convenience, cost, or superstition.</p>
+    </div>
+    <div class="concept">
+      <h3>Task D — Rewrite the ending</h3>
+      <p>Students invent one more exchange after the ghost argument and decide whether the couple signs the contract.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill red">Quick understanding check</div>
+  <h2>Two multiple-choice quiz questions</h2>
+
+  <div class="quiz-q" data-answer="b">
+    <h3>1) According to the notes, what does <span class="mono">hair ... ne</span> mainly express in this lesson?</h3>
+    <label><input type="radio" name="q1" value="a"> It marks only past time.</label>
+    <label><input type="radio" name="q1" value="b"> It expresses interest in new additional aspects of something that is still being looked over.</label>
+    <label><input type="radio" name="q1" value="c"> It means the same as the English word “hair.”</label>
+    <label><input type="radio" name="q1" value="d"> It always introduces a ghost story.</label>
+    <div class="feedback ok">Correct. The notes explicitly explain that <span class="mono">hair ... ne</span> signals that more is still being discovered about the thing under inspection.</div>
+    <div class="feedback no">Not quite. This is one of the lesson’s key discourse notes, and it is central to how the house inspection unfolds.</div>
+  </div>
+
+  <div class="quiz-q" data-answer="c">
+    <h3>2) What is the best explanation of the husband’s line <span class="mono">pyanyi jiow pyanyi tzay jeyg shanq</span> at the end?</h3>
+    <label><input type="radio" name="q2" value="a"> He means the vegetables are too expensive.</label>
+    <label><input type="radio" name="q2" value="b"> He means the house is cheap because there is no water system.</label>
+    <label><input type="radio" name="q2" value="c"> He means that the real reason for the cheap rent lies exactly in the house’s haunted reputation.</label>
+    <label><input type="radio" name="q2" value="d"> He means that all cheap houses are always the same.</label>
+    <div class="feedback ok">Correct. The phrase means that the explanation for the cheapness lies precisely in that frightening fact.</div>
+    <div class="feedback no">Not quite. The line is not just about price; it is about discovering the hidden explanation for the bargain.</div>
+  </div>
+
+  <button id="checkQuiz">Check my answers</button>
+  <button class="secondary" id="resetQuiz" style="margin-left:8px;">Reset</button>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill gold">Exit challenge</div>
+    <h2>End-of-lecture spoken challenge</h2>
+    <ol>
+      <li>Name two features of the house that make it attractive.</li>
+      <li>Name one thing that the former tenants removed.</li>
+      <li>Explain, in English, why the house seems so cheap.</li>
+      <li>Give one example of how the wife imagines turning the house into a home.</li>
+      <li>State the couple’s final decision at the end of the lesson.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="pill blue">References and source use</div>
+    <h2>References for this page</h2>
+    <ul>
+      <li><strong>Primary source:</strong> scanned Lesson 19 pages from <em>Mandarin Primer: An Intensive Course in Spoken Chinese</em>.</li>
+      <li><strong>Dialogue basis:</strong> Lesson 19 “Renting a House,” including the rental sign seen from the car, the keeper’s walkthrough of the house, the expanding courtyards, the echo, high ceilings, backyard, pond, garden, utility questions, rent discussion, deposit and receipt, the house number, the haunted-house revelation, and the final argument about ghosts and superstition.</li>
+      <li><strong>Notes basis:</strong> notes on <span class="mono">jyifarng jau-tzu</span>, <span class="mono">chinyean</span>, <span class="mono">hair ... ne</span>, reduplicated stress in <span class="mono">chingxchuux</span>, <span class="mono">goanggaw</span>, <span class="mono">enn leang.shiall</span>, <span class="mono">jian</span>, <span class="mono">chefarng</span>, <span class="mono">shanqfarng</span>, <span class="mono">jinn</span>, <span class="mono">hweisheng</span>, <span class="mono">bairtsay</span>, <span class="mono">shihorngshyh</span>, complement <span class="mono">-hao</span>, <span class="mono">dihbaan</span>, <span class="mono">diingbaan</span>, <span class="mono">tzyhlai-shoei</span>, <span class="mono">diannshiann</span>, <span class="mono">shiitzao</span>, <span class="mono">farngkeh</span>, <span class="mono">tsyrtiee</span>, <span class="mono">choushoei-maatoong</span>, <span class="mono">jiah.chyan</span>, <span class="mono">shanq-jie</span>, <span class="mono">tzarhuoh-pull</span>, <span class="mono">gonggonq-chihche</span>, <span class="mono">shoutyaul</span>, <span class="mono">jertz</span>, <span class="mono">menpair</span>, <span class="mono">yuanlai</span>, <span class="mono">pyanyi jiow pyanyi tzay</span>, <span class="mono">naw-goei</span>, <span class="mono">Ch!</span>, <span class="mono">nantzyy-hann</span>, and <span class="mono">woo tsair ... ne!</span></li>
+      <li><strong>Exercises basis:</strong> page 6 exercises on locating what is worst or best about a situation and on repair/completion patterns, which influenced the page’s emphasis on explanation and evaluation.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  This lecture page is designed for a full two-hour beginner lesson. It keeps close to the source while turning Lesson 19 into a clearer,
+  more connected, and more teachable house-renting lesson for English-speaking high-school students.
+</footer>
+</div>
+
+<script>
+document.getElementById('checkQuiz').addEventListener('click', function(){
+  document.querySelectorAll('.quiz-q').forEach(function(q){
+    const correct = q.dataset.answer;
+    const selected = q.querySelector('input[type="radio"]:checked');
+    const ok = q.querySelector('.feedback.ok');
+    const no = q.querySelector('.feedback.no');
+    ok.style.display = 'none';
+    no.style.display = 'none';
+    if(selected && selected.value === correct){ ok.style.display = 'block'; }
+    else { no.style.display = 'block'; }
+  });
+});
+document.getElementById('resetQuiz').addEventListener('click', function(){
+  document.querySelectorAll('input[type="radio"]').forEach(function(inp){ inp.checked = false; });
+  document.querySelectorAll('.feedback').forEach(function(f){ f.style.display = 'none'; });
+});
+</script>
+</body>
+</html>

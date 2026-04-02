@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mandarin Primer — Lesson 12 Lecture Page</title>
+<style>
+  :root{
+    --bg:#f6f8fc;
+    --ink:#1d2433;
+    --muted:#5a6475;
+    --card:#ffffff;
+    --line:#d8dfeb;
+    --blue:#2f6fed;
+    --green:#2f9e77;
+    --purple:#7b61ff;
+    --orange:#f08c2e;
+    --red:#d9485f;
+    --gold:#c99700;
+    --teal:#0f9db8;
+    --shadow:0 10px 30px rgba(28,35,54,.08);
+    --radius:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at top right, rgba(47,111,237,.08), transparent 28%),
+      radial-gradient(circle at top left, rgba(123,97,255,.08), transparent 26%),
+      var(--bg);
+    line-height:1.65;
+  }
+  .wrap{width:min(1180px,94vw); margin:0 auto; padding:28px 0 64px;}
+  header.hero{
+    background:linear-gradient(135deg,#17457e,#2b63cf 55%,#7b61ff);
+    color:#fff;
+    border-radius:28px;
+    padding:34px 34px 28px;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+  }
+  header.hero::after{
+    content:"";
+    position:absolute; right:-45px; top:-45px;
+    width:260px; height:260px;
+    background:radial-gradient(circle, rgba(255,255,255,.18), transparent 65%);
+  }
+  .eyebrow{
+    display:inline-block;
+    padding:6px 10px;
+    border:1px solid rgba(255,255,255,.28);
+    border-radius:999px;
+    font-size:.83rem;
+    letter-spacing:.02em;
+    margin-bottom:10px;
+    background:rgba(255,255,255,.08);
+  }
+  h1,h2,h3{line-height:1.2; margin:.2rem 0 .8rem}
+  h1{font-size:clamp(2rem,3vw,3rem)}
+  h2{font-size:1.55rem}
+  h3{font-size:1.12rem}
+  p.lead{font-size:1.08rem; max-width:980px; opacity:.98}
+  .small{font-size:.95rem; color:var(--muted)}
+  .grid{display:grid; gap:18px}
+  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media (max-width:900px){.g2{grid-template-columns:1fr}}
+  section{margin-top:22px}
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:22px;
+  }
+  .pill{
+    display:inline-block;
+    font-size:.8rem;
+    font-weight:800;
+    letter-spacing:.02em;
+    padding:5px 10px;
+    border-radius:999px;
+    color:#fff;
+    margin-bottom:10px;
+  }
+  .blue{background:var(--blue)}
+  .green{background:var(--green)}
+  .purple{background:var(--purple)}
+  .orange{background:var(--orange)}
+  .red{background:var(--red)}
+  .gold{background:var(--gold)}
+  .teal{background:var(--teal)}
+  .banner{
+    border-left:6px solid var(--gold);
+    background:#fff8db;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  .callout{
+    border-left:5px solid var(--blue);
+    background:#eef4ff;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  .warning{
+    border-left:5px solid var(--red);
+    background:#fff2f4;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  ul li, ol li{margin:.45rem 0}
+  .flow{
+    display:grid;
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    gap:12px;
+  }
+  @media (max-width:1000px){.flow{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){.flow{grid-template-columns:1fr}}
+  .step{
+    background:linear-gradient(180deg,#fff,#f8faff);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:16px;
+    min-height:156px;
+  }
+  .num{
+    width:34px;height:34px;border-radius:50%;
+    display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:#fff;font-weight:800;margin-bottom:10px;
+  }
+  .dialogue-line{
+    padding:10px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .dialogue-line:last-child{border-bottom:none}
+  .speaker{
+    display:inline-block; min-width:96px; font-weight:800; color:var(--blue);
+  }
+  .roman{font-size:1.02rem; font-weight:650}
+  .gloss{color:var(--muted)}
+  .concept-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;
+  }
+  @media (max-width:900px){.concept-grid{grid-template-columns:1fr}}
+  .concept{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px;
+    background:#fbfcff;
+  }
+  .tag{
+    display:inline-block;
+    padding:4px 8px;
+    border-radius:999px;
+    font-size:.78rem;
+    font-weight:700;
+    margin:2px 4px 2px 0;
+    background:#eef3ff;
+    color:#2c4a9c;
+  }
+  .mono{
+    font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background:#f5f7fb;
+    padding:.08rem .35rem;
+    border-radius:8px;
+  }
+  table{width:100%; border-collapse:collapse; font-size:.96rem}
+  th,td{border-bottom:1px solid var(--line); padding:12px 10px; text-align:left; vertical-align:top}
+  th{background:#f4f7fc}
+  tr:last-child td{border-bottom:none}
+  .graph-wrap{
+    overflow:auto;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:linear-gradient(180deg,#fcfdff,#f6f9ff);
+    padding:12px;
+  }
+  svg text{font-family:Inter, system-ui, sans-serif; fill:#1f2430;}
+  .edge{stroke:#90a4d4; stroke-width:2.2; fill:none; marker-end:url(#arrow);}
+  .node rect{rx:18; ry:18; stroke:#d8dff2; stroke-width:1.4;}
+  .legend{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; font-size:.9rem}
+  .legend span{
+    display:flex; align-items:center; gap:6px;
+    background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 10px;
+  }
+  .dot{width:12px;height:12px;border-radius:50%;display:inline-block}
+  .practice{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px;
+  }
+  @media (max-width:900px){.practice{grid-template-columns:1fr}}
+  details{
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:12px 14px;
+    background:#fff;
+  }
+  summary{cursor:pointer; font-weight:700}
+  .quiz-q{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px;
+    margin-bottom:16px;
+    background:#fbfdff;
+  }
+  .quiz-q label{
+    display:block;
+    padding:9px 10px;
+    border:1px solid transparent;
+    border-radius:12px;
+    cursor:pointer;
+  }
+  .quiz-q label:hover{background:#f1f6ff; border-color:#dbe6ff}
+  button{
+    appearance:none;border:none;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:#fff;border-radius:12px;
+    padding:11px 16px;
+    font-size:.96rem;font-weight:700;cursor:pointer;
+    box-shadow:var(--shadow);
+  }
+  button.secondary{background:linear-gradient(135deg,var(--green),#3fb58e)}
+  .feedback{
+    margin-top:10px; padding:12px 14px; border-radius:12px; display:none;
+  }
+  .feedback.ok{background:#edf9f3; border:1px solid #bfe7cf}
+  .feedback.no{background:#fff1f3; border:1px solid #f0c0cb}
+  footer{margin-top:28px; color:var(--muted); font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Yuen Ren Chao - Mandarin Primer: An Intensive Course in Spoken Chinese</div>
+    <h1>Mandarin Primer — Lesson 12</h1>
+    <h2 style="font-size:1.35rem; font-weight:650; opacity:.98;">A Rescue at Sea</h2>
+    <p class="lead">
+      Lesson 12 is one of the most vivid action scenes so far. It begins with sudden danger, moves through rapid visual description,
+      confusion about direction and distance, recognition of a parachute, moral urgency about rescue, and then a tense small-boat operation
+      full of commands, engine trouble, rowing, throwing rescue equipment, balance, pulling, and relief. It is an excellent lesson for showing
+      students that beginner Mandarin can already handle crisis, motion, and teamwork.
+    </p>
+    <p class="small" style="color:rgba(255,255,255,.9);">
+      This page keeps the book’s original romanization system so it stays aligned with the scanned lesson.
+    </p>
+  </header>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill blue">Learning goals</div>
+      <h2>What students should learn</h2>
+      <ul>
+        <li>Follow and retell a fast-moving rescue narrative from airplane crash to successful pickup.</li>
+        <li>Understand the distinction between definite and indefinite reference in patterns like <span class="mono">i-jiah feiji</span> versus <span class="mono">feiji diaw.shiah.lai le</span>.</li>
+        <li>Recognize directional and location language in a maritime setting: east/south/west/north, port side, right side, above, below, near, far.</li>
+        <li>Use verbs and result forms for seeing, finding, floating, burning, sinking, escaping, throwing, pulling, rowing, and rescuing.</li>
+        <li>Notice command forms, urgency language, afterthought clauses, and practical safety talk.</li>
+        <li>Learn how shape, color, size, and distance are described under uncertain visual conditions.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="pill gold">Teacher lens</div>
+      <h2>Why this lesson matters</h2>
+      <div class="banner">
+        <strong>Lesson 12 teaches perception under pressure.</strong> Students do not simply describe what they know; they describe what they think they see, lose sight of, recover, and finally act on.
+      </div>
+      <p>
+        For high-school students, this is especially engaging because it feels cinematic. At the same time, it introduces important beginner grammar:
+        definite vs. indefinite reference, impersonal event expressions, result complements, distance expressions, and command-rich spoken interaction.
+      </p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill purple">Two-hour lecture flow</div>
+    <h2>Suggested lecture sequence</h2>
+    <div class="flow">
+      <div class="step"><div class="num">1</div><strong>Emergency hook</strong><br><span class="small">Start with the shout: a plane is falling. Ask students what information people need first in an emergency scene.</span></div>
+      <div class="step"><div class="num">2</div><strong>Visual tracking</strong><br><span class="small">Teach the first half as a seeing problem: smoke, fire, sinking, a shape in the sky, losing it, finding it again.</span></div>
+      <div class="step"><div class="num">3</div><strong>Space and direction</strong><br><span class="small">Map east/south/west/north, right/left, above/below, near/far, and “the side where the sun is.”</span></div>
+      <div class="step"><div class="num">4</div><strong>Recognition and inference</strong><br><span class="small">Show how speakers move from uncertainty to hypothesis: maybe a parachute, maybe the pilot, maybe only one person.</span></div>
+      <div class="step"><div class="num">5</div><strong>Rescue commands</strong><br><span class="small">Teach the second half as a command chain: launch, steer carefully, avoid collision, engine trouble, row, throw, pull, rebalance.</span></div>
+      <div class="step"><div class="num">6</div><strong>Retell + quiz</strong><br><span class="small">End with students narrating the rescue in stages and checking two key concepts.</span></div>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill green">How to teach it well</div>
+      <h2>Effective teaching moves for beginners</h2>
+      <div class="callout">
+        The source still emphasizes utterances, echoing, repetition, and grammar-through-exercises. Lesson 12 becomes especially effective when students can see the scene with their bodies and hands: point, steer, row, throw, and pull.
+      </div>
+      <ol>
+        <li>Use a board sketch of sea, ship, cloud, parachute, and pilot while reading the dialogue.</li>
+        <li>Let students physically point to “above,” “right side,” “port side,” and “the side where the sun is.”</li>
+        <li>Separate the lesson into two modes: seeing and acting.</li>
+        <li>Keep uncertainty language visible: “I can’t see it,” “I can’t distinguish,” “maybe,” “I guess,” “I wonder.”</li>
+        <li>Turn the rescue half into a group role-play so commands become memorable spoken chunks.</li>
+      </ol>
+    </div>
+    <div class="card">
+      <div class="pill red">Likely beginner confusions</div>
+      <h2>Where English speakers may stumble</h2>
+      <div class="warning">
+        This lesson moves quickly. Students may lose the grammar because the story is exciting. Slow down at the points where visual uncertainty and action instructions change form.
+      </div>
+      <ul>
+        <li><strong>Definite vs. indefinite reference</strong> matters in how nouns are introduced and then tracked.</li>
+        <li><strong><span class="mono">kann</span> vs. <span class="mono">kann.jiann</span></strong> and <span class="mono">jao</span> vs. <span class="mono">jao.jaur</span> are crucial: looking is not the same as actually seeing or finding.</li>
+        <li><strong>Chinese color words</strong> do not always line up neatly with English; the notes specifically discuss <span class="mono">hwang</span> and <span class="mono">ching</span>.</li>
+        <li><strong>Afterthought clauses</strong> come after the main clause in forms like <span class="mono">chwufei ...</span> only when added later.</li>
+        <li><strong>Command chains</strong> can sound dense; students benefit from physically acting them out.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill blue">Dialogue walkthrough</div>
+    <h2>Lesson 12 as a crisis-and-rescue sequence</h2>
+    <p class="small">This lesson works best when divided into phases: accident, searching, recognition, rescue approach, engine trouble, manual rescue.</p>
+
+    <div class="dialogue-line">
+      <span class="speaker">Phase 1</span>
+      <span class="roman">Niimen kuaydeal lai kann, yeou i-jiah feiji diaw.shiah.lai le! Feiji chu-shyh le!</span><br>
+      <span class="gloss">Come quickly and look, an airplane is falling down! There is an airplane accident!</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Phase 1</span>
+      <span class="roman">Fadonqji jaur-huoo le ... ta jinq maw-ial ... feiji de shentz yee jaur-huoo le!</span><br>
+      <span class="gloss">The motor has caught fire ... it is sending out smoke ... the body of the plane has caught fire too!</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Phase 1</span>
+      <span class="roman">Diaw de hae.liitou le, ideal ideal de chern.shiah.chiuh le.</span><br>
+      <span class="gloss">It has fallen into the sea and is sinking little by little.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Phase 2</span>
+      <span class="roman">Neybial yeou g sherm dongshi tzay bannkong jong piauj ne?</span><br>
+      <span class="gloss">What is that thing floating in the air over there?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Phase 2</span>
+      <span class="roman">Woo yee fen.bu.chu dong nan shi beei lai le ... tzay nanbial, tzay tay.yang ney.bial.</span><br>
+      <span class="gloss">I cannot distinguish east, south, west, and north anymore ... it is on the south side, on the side where the sun is.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Phase 2</span>
+      <span class="roman">Gangx tzay ney-kuay yun.tsae de shanqtou yowbial.</span><br>
+      <span class="gloss">Just above and to the right of that patch of cloud.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Phase 3</span>
+      <span class="roman">Sh tzeemyanql de ig dongshi? Sh fang de sh yuan de? Yeou dwo dah? Sh sherm yan.seh de?</span><br>
+      <span class="gloss">What sort of thing is it? Square or round? How big? What color?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Phase 3</span>
+      <span class="roman">I'wey nah dongshi li jell tay yeuan le, suooyii woo yee fen.bu.chu sh horng liuh hwang ching Ian tzyy hairsh sherm yan.seh lai le.</span><br>
+      <span class="gloss">Because it is too far from here, I cannot distinguish whether it is red, green, yellow, green-blue, blue, purple, or what color.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Phase 3</span>
+      <span class="roman">Gaan.chyng sh geei ney-kuay hei-yun geei daang.juh le. Shianntzay dawle ney-kuay yun.tsae de tzuoobial le.</span><br>
+      <span class="gloss">So it was covered by that black cloud. Now it has reached the left side of the cloud.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Phase 4</span>
+      <span class="roman">Nah bush g jianqluoh-saan ma? Saan diishiah guahj de bush g ren ma?</span><br>
+      <span class="gloss">Isn’t that a parachute? And isn’t there a person hanging under it?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Phase 4</span>
+      <span class="roman">Goan.bao sh de ba? — chwufei feiji.lii beenlai bujyy ig ren.</span><br>
+      <span class="gloss">I bet it is — unless there was more than one person in the plane.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Phase 4</span>
+      <span class="roman">Shinq.kuei ta chenntzao taurle.chulai, yawburan koongpah bush shau.syy yee deei ian.syy le.</span><br>
+      <span class="gloss">Fortunately he escaped in good time; otherwise he would probably either burn to death or drown.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Phase 5</span>
+      <span class="roman">Tzarmen deei maashanq jiow chiuh jiow ta tsair shyng ne!</span><br>
+      <span class="gloss">We must go rescue him at once, or else it will not do.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Phase 5</span>
+      <span class="roman">Daa jeybial tzoou — Sheaushin! Mannjdeal! Kawj dah-chwan de tzuoobial tzoou! Bye penq de duoh.shanq chiuh!</span><br>
+      <span class="gloss">Go this way — look out! Slower! Go by the port side of the big ship! Don’t bump into the rudder!</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Phase 6</span>
+      <span class="roman">Dao-mei, jeh huenn.janq de ji.chih, pianpial tiau tzemm g shyrhowl lai gen nii dao-luann.</span><br>
+      <span class="gloss">What bad luck — this stupid engine has to pick exactly this time to make trouble.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Phase 6</span>
+      <span class="roman">Na jeang chulai la! Kuaydeal hwa, hwa kuaydeal! Shyy-jinn, shyy-jinn hwa!</span><br>
+      <span class="gloss">Get the oars out! Hurry up and row, row faster! Use your strength, row hard!</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Phase 6</span>
+      <span class="roman">Bae jiowsheng-chiuan rheng geei ta! ... Bushyng, nii rheng de li ta tay yeuan le.</span><br>
+      <span class="gloss">Throw him the life-belt! ... That won’t do, you threw it too far from him.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Phase 7</span>
+      <span class="roman">Lha.juh! Bye sa-shoou! Deeng woom bae nii lha-shanq chwan.lai.</span><br>
+      <span class="gloss">Hold on! Don’t let go! Let us pull you up into the boat.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Phase 7</span>
+      <span class="roman">Jeh sheauchwal tay ching-hai ... nii na shentz yah neybial ideal. Bye donq! Ranq woo jiee jeybial bae ta lha.shang.lai.</span><br>
+      <span class="gloss">The little boat is too light ... put your weight over on that side. Don’t move! Let me pull him up from this side.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Phase 7</span>
+      <span class="roman">Kuaydeal hwa-hwei dah-chwan chiuh jiow hao le. (Du! Du!)</span><br>
+      <span class="gloss">Hurry up and row back to the big ship and everything will be fine. (Whistle.)</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill orange">Knowledge graph</div>
+    <h2>Concept network for Lesson 12</h2>
+    <p>
+      Lesson 12 forms a structured network around <strong>accident → visual uncertainty → recognition → rescue decision → technical difficulty → coordinated action → recovery</strong>.
+      The lesson is not only about what happens, but about how speakers track, identify, and respond.
+    </p>
+    <div class="graph-wrap">
+      <svg width="1180" height="780" viewBox="0 0 1180 780" role="img" aria-label="Knowledge graph for Lesson 12">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#90a4d4"></path>
+          </marker>
+        </defs>
+
+        <path class="edge" d="M590,110 C590,145 590,155 590,195"/>
+        <path class="edge" d="M590,110 C440,130 320,150 205,220"/>
+        <path class="edge" d="M590,110 C740,130 860,150 975,220"/>
+        <path class="edge" d="M205,270 C205,315 205,328 205,375"/>
+        <path class="edge" d="M975,270 C975,315 975,328 975,375"/>
+        <path class="edge" d="M590,250 C490,300 430,332 375,395"/>
+        <path class="edge" d="M590,250 C690,300 750,332 805,395"/>
+        <path class="edge" d="M590,250 C590,320 590,335 590,395"/>
+        <path class="edge" d="M375,445 C340,515 300,550 250,635"/>
+        <path class="edge" d="M590,445 C590,515 590,550 590,635"/>
+        <path class="edge" d="M805,445 C840,515 880,550 930,635"/>
+
+        <g class="node">
+          <rect x="405" y="45" width="370" height="70" fill="#efeaff"></rect>
+          <text x="590" y="76" text-anchor="middle" font-size="18" font-weight="800">Lesson 12 Core Question</text>
+          <text x="590" y="99" text-anchor="middle" font-size="14">How does Mandarin describe seeing, identifying, and rescuing someone in a fast-moving emergency at sea?</text>
+        </g>
+
+        <g class="node">
+          <rect x="460" y="195" width="260" height="54" fill="#eaf2ff"></rect>
+          <text x="590" y="228" text-anchor="middle" font-size="17" font-weight="800">Rescue-scene utterances</text>
+        </g>
+
+        <g class="node">
+          <rect x="55" y="220" width="300" height="52" fill="#eefaf5"></rect>
+          <text x="205" y="252" text-anchor="middle" font-size="17" font-weight="800">Seeing and uncertainty</text>
+        </g>
+
+        <g class="node">
+          <rect x="825" y="220" width="300" height="52" fill="#fff5e8"></rect>
+          <text x="975" y="252" text-anchor="middle" font-size="17" font-weight="800">Rescue action and control</text>
+        </g>
+
+        <g class="node">
+          <rect x="85" y="375" width="240" height="66" fill="#edf7ff"></rect>
+          <text x="205" y="404" text-anchor="middle" font-size="16" font-weight="800">look / see / find / lose sight</text>
+          <text x="205" y="425" text-anchor="middle" font-size="13">visual tracking language</text>
+        </g>
+
+        <g class="node">
+          <rect x="855" y="375" width="240" height="66" fill="#fff0f3"></rect>
+          <text x="975" y="404" text-anchor="middle" font-size="16" font-weight="800">launch / row / throw / pull</text>
+          <text x="975" y="425" text-anchor="middle" font-size="13">physical rescue sequence</text>
+        </g>
+
+        <g class="node">
+          <rect x="255" y="395" width="240" height="50" fill="#eefaf5"></rect>
+          <text x="375" y="426" text-anchor="middle" font-size="16" font-weight="800">distance, color, shape, direction</text>
+        </g>
+
+        <g class="node">
+          <rect x="685" y="395" width="240" height="50" fill="#eefaf5"></rect>
+          <text x="805" y="426" text-anchor="middle" font-size="16" font-weight="800">commands and boat safety</text>
+        </g>
+
+        <g class="node">
+          <rect x="495" y="395" width="190" height="50" fill="#eaf2ff"></rect>
+          <text x="590" y="426" text-anchor="middle" font-size="16" font-weight="800">recognition and inference</text>
+        </g>
+
+        <g class="node">
+          <rect x="155" y="635" width="190" height="58" fill="#eefaf5"></rect>
+          <text x="250" y="666" text-anchor="middle" font-size="16" font-weight="800">definite vs indefinite reference</text>
+          <text x="250" y="686" text-anchor="middle" font-size="13">introduce and track nouns</text>
+        </g>
+
+        <g class="node">
+          <rect x="495" y="635" width="190" height="58" fill="#fff5e8"></rect>
+          <text x="590" y="666" text-anchor="middle" font-size="16" font-weight="800">distance and cloud occlusion</text>
+          <text x="590" y="686" text-anchor="middle" font-size="13">why perception changes</text>
+        </g>
+
+        <g class="node">
+          <rect x="835" y="635" width="190" height="58" fill="#f3f0ff"></rect>
+          <text x="930" y="666" text-anchor="middle" font-size="16" font-weight="800">result and rescue success</text>
+          <text x="930" y="686" text-anchor="middle" font-size="13">hold, pull up, row back</text>
+        </g>
+      </svg>
+    </div>
+    <div class="legend">
+      <span><i class="dot" style="background:#eaf2ff"></i> scene logic</span>
+      <span><i class="dot" style="background:#eefaf5"></i> perception and description</span>
+      <span><i class="dot" style="background:#fff5e8"></i> inference and action</span>
+      <span><i class="dot" style="background:#f3f0ff"></i> result and completion</span>
+      <span><i class="dot" style="background:#fff0f3"></i> rescue mechanics</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill green">Core concepts</div>
+    <h2>What the lesson teaches, concept by concept</h2>
+    <div class="concept-grid">
+      <div class="concept">
+        <h3>1) Definite and indefinite reference shape the sentence</h3>
+        <div class="tag">i-jiah feiji</div><div class="tag">feiji</div>
+        <ul>
+          <li>The notes explain a strong tendency: indefinite nouns often appear as objects, while definite nouns tend to appear as subjects or after pretransitives.</li>
+          <li>This helps explain why the lesson introduces “an airplane” and then immediately tracks “the airplane.”</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>2) The lesson distinguishes looking, seeing, searching, and finding</h3>
+        <div class="tag">kann</div><div class="tag">kann.jiann</div><div class="tag">jao</div><div class="tag">jao.jaur</div>
+        <ul>
+          <li>The notes explicitly compare <span class="mono">kann</span> with <span class="mono">kann.jiann</span> and <span class="mono">jao</span> with <span class="mono">jao.jaur</span>.</li>
+          <li>This is essential in a lesson where perception changes every few lines.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>3) Distance changes what can be described</h3>
+        <div class="tag">li jell tay yeuan</div><div class="tag">jinn.deal</div>
+        <ul>
+          <li>The speakers cannot identify color or shape clearly because the object is too far away.</li>
+          <li>Later, when it comes nearer, their description becomes more certain.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>4) Direction words become practical, not just lexical</h3>
+        <div class="tag">dong nan shi beei</div><div class="tag">tayyang ney.bial</div><div class="tag">yowbial</div><div class="tag">tzuoobial</div>
+        <ul>
+          <li>The lesson shows direction under stress: the speakers must orient themselves quickly at sea.</li>
+          <li>The notes also explain stress-based meaning differences in expressions like <span class="mono">tayyang ney.bial</span>.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>5) Color terms do not map one-to-one to English</h3>
+        <div class="tag">hwang</div><div class="tag">ching</div>
+        <ul>
+          <li>The notes explain that <span class="mono">hwang</span> may cover what English calls brown in some contexts, and that <span class="mono">ching</span> spans a wide range of greens and blues.</li>
+          <li>This is a strong reminder not to translate too mechanically.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>6) Rescue talk is command-heavy and embodied</h3>
+        <div class="tag">sheaushin</div><div class="tag">mannjdeal</div><div class="tag">kuaydeal hwa</div><div class="tag">lha.juh</div>
+        <ul>
+          <li>The second half of the lesson is an excellent command lesson.</li>
+          <li>Because the commands are meaningful and urgent, they are easier for students to remember.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>7) Passive meaning and result meaning matter in rescue scenes</h3>
+        <div class="tag">geei daang.juh</div><div class="tag">lha.shang.lai</div><div class="tag">rheng dawle</div>
+        <ul>
+          <li>The notes emphasize passive meaning and result realization.</li>
+          <li>In this lesson, what matters is not just trying to rescue, but actually reaching, throwing, holding, and pulling successfully.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>8) The lesson is organized by uncertainty becoming action</h3>
+        <div class="tag">bujydaw</div><div class="tag">tsair shyng</div><div class="tag">yeou dawlii</div>
+        <ul>
+          <li>First the speakers do not know what they are seeing.</li>
+          <li>Then they infer that it is a parachute and a man.</li>
+          <li>Then they decide that only immediate rescue will do.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill orange">Mini-board plan</div>
+      <h2>How to lay this out for students</h2>
+      <table>
+        <thead><tr><th>Board zone</th><th>Write this</th><th>Teaching purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Left</td><td>crash sequence: plane → smoke → fire → sea → sink</td><td>Shows the opening narrative progression clearly.</td></tr>
+          <tr><td>Center</td><td>see / lose / find / identify chart</td><td>Makes perception language visible.</td></tr>
+          <tr><td>Right</td><td>boat commands: look out, slower, row, throw, hold on, don’t move</td><td>Organizes the action half of the lesson.</td></tr>
+          <tr><td>Bottom</td><td>definite vs indefinite nouns + direction map</td><td>Connects grammar to the visual scene.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="pill teal">High-value classroom move</div>
+      <h2>Turn the rescue into a live simulation</h2>
+      <div class="callout">
+        Put one student at the board as the spotter, one as the pilot in the water, and several as the rescue crew.
+      </div>
+      <ol>
+        <li>The spotter narrates what is seen and where it is.</li>
+        <li>The crew must respond with correct commands.</li>
+        <li>One student “throws” rope or life-belt, another “pulls,” and another rebalances the boat.</li>
+      </ol>
+      <p class="small">This lets the lesson’s command chains and result language become memorable spoken actions.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill blue">A key structural system</div>
+    <h2>Seeing versus actually seeing</h2>
+    <div class="practice">
+      <div class="concept">
+        <h3>Looking</h3>
+        <p><span class="mono">kann</span></p>
+        <p class="small">Direct attention visually, but not necessarily with success.</p>
+      </div>
+      <div class="concept">
+        <h3>Actually seeing</h3>
+        <p><span class="mono">kann.jiann</span></p>
+        <p class="small">The thing has come into view or has been perceived successfully.</p>
+      </div>
+      <div class="concept">
+        <h3>Looking for</h3>
+        <p><span class="mono">jao</span></p>
+        <p class="small">Search action without guaranteed success.</p>
+      </div>
+      <div class="concept">
+        <h3>Actually finding</h3>
+        <p><span class="mono">jao.jaur</span></p>
+        <p class="small">Search reaches a result.</p>
+      </div>
+    </div>
+    <p class="small" style="margin-top:12px;">
+      Lesson 12 is one of the clearest places in the early chapters to teach how Chinese marks the difference between activity and attained result.
+    </p>
+  </section>
+
+  <section class="card">
+    <div class="pill green">Guided practice</div>
+    <h2>Practice tasks for a two-hour lesson</h2>
+    <div class="practice">
+      <div class="concept">
+        <h3>Task A — Track the object</h3>
+        <p>Students narrate what happens to the plane, smoke, cloud-covered object, parachute, and pilot in order.</p>
+      </div>
+      <div class="concept">
+        <h3>Task B — Direction lab</h3>
+        <p>Students point and say: east, south, west, north, right side, left side, above, below, near, far.</p>
+      </div>
+      <div class="concept">
+        <h3>Task C — Rescue commands</h3>
+        <p>Students practice a command chain:
+        <span class="mono">sheaushin</span> → <span class="mono">mannjdeal</span> → <span class="mono">kuaydeal hwa</span> → <span class="mono">rheng geei ta</span> → <span class="mono">lha.juh</span>.</p>
+      </div>
+      <div class="concept">
+        <h3>Task D — Definite or indefinite?</h3>
+        <p>Students compare sentences introducing a new object with sentences tracking an already identified one.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill red">Quick understanding check</div>
+    <h2>Two multiple-choice quiz questions</h2>
+
+    <div class="quiz-q" data-answer="c">
+      <h3>1) According to the notes, what is one major reason the lesson says the speaker cannot identify the object’s color clearly at first?</h3>
+      <label><input type="radio" name="q1" value="a"> Because there are no Chinese color words for distant things.</label>
+      <label><input type="radio" name="q1" value="b"> Because the speaker has closed his eyes.</label>
+      <label><input type="radio" name="q1" value="c"> Because the object is too far away, so visual distinctions cannot be made clearly.</label>
+      <label><input type="radio" name="q1" value="d"> Because the object has no color at all.</label>
+      <div class="feedback ok">Correct. The dialogue explicitly says the object is too far from here, so the speaker cannot distinguish its color clearly.</div>
+      <div class="feedback no">Not quite. The lesson emphasizes distance as the reason for uncertain color identification.</div>
+    </div>
+
+    <div class="quiz-q" data-answer="b">
+      <h3>2) What is the best explanation of the difference between <span class="mono">kann</span> and <span class="mono">kann.jiann</span> in the notes?</h3>
+      <label><input type="radio" name="q2" value="a"><span class="mono">kann</span> means “to hear,” and <span class="mono">kann.jiann</span> means “to see.”</label>
+      <label><input type="radio" name="q2" value="b"><span class="mono">kann</span> is the act of looking, while <span class="mono">kann.jiann</span> indicates successful seeing.</label>
+      <label><input type="radio" name="q2" value="c"><span class="mono">kann</span> is formal Chinese and <span class="mono">kann.jiann</span> is slang.</label>
+      <label><input type="radio" name="q2" value="d">There is no difference; they are interchangeable.</label>
+      <div class="feedback ok">Correct. The notes explicitly contrast the plain action verb with the result form that means the object has actually come into view.</div>
+      <div class="feedback no">Not quite. Lesson 12 is a very clear example of action versus attained-result meaning.</div>
+    </div>
+
+    <button id="checkQuiz">Check my answers</button>
+    <button class="secondary" id="resetQuiz" style="margin-left:8px;">Reset</button>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill gold">Exit challenge</div>
+      <h2>End-of-lecture spoken challenge</h2>
+      <ol>
+        <li>Say what first happens to the airplane.</li>
+        <li>Explain how the speakers finally identify the object in the sky.</li>
+        <li>Give two commands from the rescue scene.</li>
+        <li>Explain, in English, why the rescue becomes harder halfway through.</li>
+        <li>State what happens at the end of the rescue.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <div class="pill blue">References and source use</div>
+      <h2>References for this page</h2>
+      <ul>
+        <li><strong>Primary source:</strong> scanned Lesson 12 pages from <em>Mandarin Primer: An Intensive Course in Spoken Chinese</em>.</li>
+        <li><strong>Dialogue basis:</strong> Lesson 12 “A Rescue at Sea,” including the airplane accident, the burning and sinking plane, uncertain visual tracking, recognition of a parachute and pilot, rescue decision, motorboat handling, engine trouble, rowing, throwing rescue gear, pulling the survivor aboard, and rowing back.</li>
+        <li><strong>Grammar basis:</strong> notes on definite and indefinite reference, impersonal event expression in <span class="mono">chu-shyh</span>, result forms for seeing/finding, directions, color terms like <span class="mono">hwang</span> and <span class="mono">ching</span>, afterthought clauses, <span class="mono">chenntzao</span>, <span class="mono">tsair shyng</span>, <span class="mono">yeou dawlii</span>, <span class="mono">sheaushin</span>, propeller terminology, engine-related expressions, and scope markers in the exercises.</li>
+        <li><strong>Teaching basis:</strong> the source’s “To the Student” guidance on utterances, repetition, echoing, and grammar-through-exercises.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    This lecture page is designed for a full two-hour beginner lesson. It keeps close to the source while turning Lesson 12 into a clearer,
+    more connected, and more teachable rescue narrative for English-speaking high-school students.
+  </footer>
+</div>
+
+<script>
+document.getElementById('checkQuiz').addEventListener('click', function(){
+  document.querySelectorAll('.quiz-q').forEach(function(q){
+    const correct = q.dataset.answer;
+    const selected = q.querySelector('input[type="radio"]:checked');
+    const ok = q.querySelector('.feedback.ok');
+    const no = q.querySelector('.feedback.no');
+    ok.style.display = 'none';
+    no.style.display = 'none';
+    if(selected && selected.value === correct){
+      ok.style.display = 'block';
+    } else {
+      no.style.display = 'block';
+    }
+  });
+});
+
+document.getElementById('resetQuiz').addEventListener('click', function(){
+  document.querySelectorAll('input[type="radio"]').forEach(function(inp){ inp.checked = false; });
+  document.querySelectorAll('.feedback').forEach(function(f){ f.style.display = 'none'; });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mandarin Primer — Lesson 2 Lecture Page</title>
+<style>
+  :root{
+    --bg:#f6f8fc;
+    --ink:#1d2433;
+    --muted:#5a6475;
+    --card:#ffffff;
+    --line:#d8dfeb;
+    --blue:#2f6fed;
+    --green:#2f9e77;
+    --purple:#7b61ff;
+    --orange:#f08c2e;
+    --red:#d9485f;
+    --gold:#c99700;
+    --teal:#0f9db8;
+    --shadow:0 10px 30px rgba(28,35,54,.08);
+    --radius:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at top right, rgba(47,111,237,.08), transparent 28%),
+      radial-gradient(circle at top left, rgba(123,97,255,.08), transparent 26%),
+      var(--bg);
+    line-height:1.65;
+  }
+  .wrap{width:min(1180px,94vw); margin:0 auto; padding:28px 0 64px;}
+  header.hero{
+    background:linear-gradient(135deg,#1247a7,#3f65dd 55%,#7b61ff);
+    color:#fff;
+    border-radius:28px;
+    padding:34px 34px 28px;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+  }
+  header.hero::after{
+    content:"";
+    position:absolute; right:-40px; top:-40px;
+    width:250px; height:250px;
+    background:radial-gradient(circle, rgba(255,255,255,.18), transparent 65%);
+  }
+  .eyebrow{
+    display:inline-block;
+    padding:6px 10px;
+    border:1px solid rgba(255,255,255,.28);
+    border-radius:999px;
+    font-size:.83rem;
+    letter-spacing:.02em;
+    margin-bottom:10px;
+    background:rgba(255,255,255,.08);
+  }
+  h1,h2,h3{line-height:1.2; margin:.2rem 0 .8rem}
+  h1{font-size:clamp(2rem,3vw,3rem)}
+  h2{font-size:1.55rem}
+  h3{font-size:1.12rem}
+  p.lead{font-size:1.08rem; max-width:940px; opacity:.98}
+  .small{font-size:.95rem; color:var(--muted)}
+  .grid{display:grid; gap:18px}
+  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  @media (max-width:900px){.g2,.g3{grid-template-columns:1fr}}
+  section{margin-top:22px}
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:22px;
+  }
+  .pill{
+    display:inline-block;
+    font-size:.8rem;
+    font-weight:800;
+    letter-spacing:.02em;
+    padding:5px 10px;
+    border-radius:999px;
+    color:#fff;
+    margin-bottom:10px;
+  }
+  .blue{background:var(--blue)}
+  .green{background:var(--green)}
+  .purple{background:var(--purple)}
+  .orange{background:var(--orange)}
+  .red{background:var(--red)}
+  .gold{background:var(--gold)}
+  .teal{background:var(--teal)}
+  .banner{
+    border-left:6px solid var(--gold);
+    background:#fff8db;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  .callout{
+    border-left:5px solid var(--blue);
+    background:#eef4ff;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  .warning{
+    border-left:5px solid var(--red);
+    background:#fff2f4;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  ul li, ol li{margin:.45rem 0}
+  .flow{
+    display:grid;
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    gap:12px;
+  }
+  @media (max-width:1000px){.flow{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){.flow{grid-template-columns:1fr}}
+  .step{
+    background:linear-gradient(180deg,#fff,#f8faff);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:16px;
+    min-height:148px;
+  }
+  .num{
+    width:34px; height:34px; border-radius:50%;
+    display:grid; place-items:center;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:#fff; font-weight:800; margin-bottom:10px;
+  }
+  .dialogue-line{
+    padding:10px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .dialogue-line:last-child{border-bottom:none}
+  .speaker{
+    display:inline-block; min-width:82px; font-weight:800; color:var(--blue);
+  }
+  .roman{font-size:1.02rem; font-weight:650}
+  .gloss{color:var(--muted)}
+  .concept-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;
+  }
+  @media (max-width:900px){.concept-grid{grid-template-columns:1fr}}
+  .concept{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px;
+    background:#fbfcff;
+  }
+  .tag{
+    display:inline-block;
+    padding:4px 8px;
+    border-radius:999px;
+    font-size:.78rem;
+    font-weight:700;
+    margin:2px 4px 2px 0;
+    background:#eef3ff;
+    color:#2c4a9c;
+  }
+  .mono{
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background:#f5f7fb;
+    padding:.08rem .35rem;
+    border-radius:8px;
+  }
+  table{width:100%; border-collapse:collapse; font-size:.96rem}
+  th,td{border-bottom:1px solid var(--line); padding:12px 10px; text-align:left; vertical-align:top}
+  th{background:#f4f7fc}
+  tr:last-child td{border-bottom:none}
+  .graph-wrap{
+    overflow:auto;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:linear-gradient(180deg,#fcfdff,#f6f9ff);
+    padding:12px;
+  }
+  svg text{font-family: Inter, system-ui, sans-serif; fill:#1f2430;}
+  .edge{stroke:#90a4d4; stroke-width:2.2; fill:none; marker-end:url(#arrow);}
+  .node rect{rx:18; ry:18; stroke:#d8dff2; stroke-width:1.4;}
+  .legend{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; font-size:.9rem}
+  .legend span{
+    display:flex; align-items:center; gap:6px;
+    background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 10px;
+  }
+  .dot{width:12px; height:12px; border-radius:50%; display:inline-block}
+  .practice{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px;
+  }
+  @media (max-width:900px){.practice{grid-template-columns:1fr}}
+  details{
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:12px 14px;
+    background:#fff;
+  }
+  summary{cursor:pointer; font-weight:700}
+  .quiz-q{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px;
+    margin-bottom:16px;
+    background:#fbfdff;
+  }
+  .quiz-q label{
+    display:block;
+    padding:9px 10px;
+    border:1px solid transparent;
+    border-radius:12px;
+    cursor:pointer;
+  }
+  .quiz-q label:hover{background:#f1f6ff; border-color:#dbe6ff}
+  button{
+    appearance:none;
+    border:none;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:#fff;
+    border-radius:12px;
+    padding:11px 16px;
+    font-size:.96rem;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:var(--shadow);
+  }
+  button.secondary{background:linear-gradient(135deg,var(--green),#3fb58e)}
+  .feedback{
+    margin-top:10px; padding:12px 14px; border-radius:12px; display:none;
+  }
+  .feedback.ok{background:#edf9f3; border:1px solid #bfe7cf}
+  .feedback.no{background:#fff1f3; border:1px solid #f0c0cb}
+  footer{margin-top:28px; color:var(--muted); font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Yuen Ren Chao - Mandarin Primer: An Intensive Course in Spoken Chinese</div>
+    <h1>Mandarin Primer — Lesson 2</h1>
+    <h2 style="font-size:1.35rem; font-weight:650; opacity:.98;">Things</h2>
+    <p class="lead">
+      Lesson 2 expands beginner Mandarin from talking about <em>people</em> to talking about <em>objects, location, possession, quantity,
+      and classification</em>. The lesson looks simple on the surface — “What is this?” “What is that?” — but underneath it teaches how Mandarin
+      organizes reference, classifiers, “there is / there are,” location expressions, and noun modification.
+    </p>
+    <p class="small" style="color:rgba(255,255,255,.9);">
+      The page keeps the book’s original romanization system rather than converting it to pinyin, so students can stay aligned with the source text.
+    </p>
+  </header>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill blue">Learning goals</div>
+      <h2>What students should learn</h2>
+      <ul>
+        <li>Ask and answer object questions such as <span class="mono">Jeh.sh sherm.me?</span> and <span class="mono">Nah.sh sherm .ne?</span></li>
+        <li>Use demonstratives and determinative forms: <span class="mono">jeh / jeyg</span>, <span class="mono">nah / neyg</span>, <span class="mono">jey.shie</span>, <span class="mono">ney.shie</span>.</li>
+        <li>Recognize that Mandarin uses different auxiliary nouns / classifier-like forms for different kinds of objects, such as <span class="mono">jang</span>, <span class="mono">jiann</span>, <span class="mono">jy</span>, <span class="mono">shann</span>, <span class="mono">baa</span>, <span class="mono">shuang</span>.</li>
+        <li>Understand basic location and existence patterns with <span class="mono">tzay</span>, <span class="mono">jell</span>, <span class="mono">nall</span>, <span class="mono">naal</span>, and <span class="mono">yeou</span>.</li>
+        <li>Differentiate possession and existence: “have” versus “there is / there are.”</li>
+        <li>Notice how Mandarin builds meaning through phrases such as <span class="mono">bau dong.shi .de jyy</span> (“paper for wrapping things”).</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="pill gold">Teacher lens</div>
+      <h2>Why this lesson matters</h2>
+      <div class="banner">
+        <strong>Lesson 2 is the first object world.</strong> Students move from identifying people in Lesson 1 to identifying things, locating them,
+        counting them, owning them, and reclassifying them when initial guesses are wrong.
+      </div>
+      <p>
+        That means this lesson is excellent for teaching beginners how Mandarin turns perception into language:
+        <strong>see something → point to it → identify it → count it → locate it → describe what kind it is</strong>.
+      </p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill purple">Two-hour lecture flow</div>
+    <h2>Suggested lecture sequence</h2>
+    <div class="flow">
+      <div class="step"><div class="num">1</div><strong>Warm-up with real objects</strong><br><span class="small">Place a table, chair, pencil, paper, and lamp images on screen or board. Start with pointing, not grammar terminology.</span></div>
+      <div class="step"><div class="num">2</div><strong>Dialogue in visible space</strong><br><span class="small">Read the opening lines while pointing: this / that / these / those. Let students echo short chunks.</span></div>
+      <div class="step"><div class="num">3</div><strong>Classifier noticing</strong><br><span class="small">Group objects by shape and type: tables, doors, stick-like things, sheets, pairs. Explain that Mandarin packages nouns differently from English.</span></div>
+      <div class="step"><div class="num">4</div><strong>Location and possession</strong><br><span class="small">Introduce <span class="mono">tzay</span>, <span class="mono">jell</span>, <span class="mono">nall</span>, <span class="mono">naal</span>, and <span class="mono">yeou</span> through classroom space.</span></div>
+      <div class="step"><div class="num">5</div><strong>Meaning expansion</strong><br><span class="small">Show how the lesson becomes a mini mystery: pencils, paper, lamps, newspaper, wrapping paper, chopsticks.</span></div>
+      <div class="step"><div class="num">6</div><strong>Knowledge graph + quiz</strong><br><span class="small">End with connected review and beginner checks on demonstratives, classifiers, and location structure.</span></div>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill green">How to teach it well</div>
+      <h2>Effective teaching moves for beginners</h2>
+      <div class="callout">
+        The source text repeatedly argues that students learn best from <strong>whole utterances, repetition, echoing, and exercise-based fluency</strong>,
+        not from memorizing isolated word lists.
+      </div>
+      <ol>
+        <li>Use real or pictured objects wherever possible. This lesson is highly visual.</li>
+        <li>Teach question-answer pairs together: <span class="mono">Jeh.sh sherm.me?</span> ↔ <span class="mono">Jeh.sh i-jang juotz.</span></li>
+        <li>Let students point before they speak. Physical anchoring reduces beginner overload.</li>
+        <li>Keep English support strong, but return often to repeated Mandarin sentence frames.</li>
+        <li>Use correction as part of the meaning game: “newspaper?” “No — wrapping paper.”</li>
+      </ol>
+    </div>
+    <div class="card">
+      <div class="pill red">Likely beginner confusions</div>
+      <h2>Where English speakers may stumble</h2>
+      <div class="warning">
+        English often lets students say “this,” “that,” “here,” “there,” and plural nouns very freely. Lesson 2 shows that Mandarin organizes these ideas more structurally.
+      </div>
+      <ul>
+        <li><strong>Demonstratives often want an auxiliary noun / classifier-like form:</strong> <span class="mono">jeyg</span>, <span class="mono">neyg</span>.</li>
+        <li><strong>“These” is not simply a plural of “this”:</strong> <span class="mono">jey.shie</span> is an indefinite quantity form, not just a plural marker.</li>
+        <li><strong><span class="mono">tzay</span> does not equal English “is”:</strong> in <span class="mono">Maubii tzay jell</span>, the structure is more like “The brushes are at this place.”</li>
+        <li><strong><span class="mono">yeou</span> does two jobs:</strong> “have” and impersonal “there is / there are.”</li>
+        <li><strong>Object types matter:</strong> the lesson uses different auxiliary nouns depending on shape and semantic class.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill blue">Dialogue walkthrough</div>
+    <h2>Lesson 2 as a learning story</h2>
+    <p class="small">The lesson begins with simple identification, then expands into counting, possession, location, paper, lamps, and a final surprise about chopsticks.</p>
+
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Jeh.sh sherm.me? Jeyg sh sherm.me?</span><br>
+      <span class="gloss">What is this? What is this one?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">B</span>
+      <span class="roman">Jeyg .a?</span><br>
+      <span class="gloss">This one, you mean?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">.Eng, jeyg.</span><br>
+      <span class="gloss">Uh-huh, this one.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">B</span>
+      <span class="roman">Jeh.sh i-jang juotz. Juotz sh i-jiann dong.shi.</span><br>
+      <span class="gloss">This is a table. A table is a thing.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Nah.sh sherm .ne? Neyg sh sherm.me?</span><br>
+      <span class="gloss">And what is that? What is that one?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">B</span>
+      <span class="roman">Nah.sh i-shann men. Men yee.sh i-jiann dong.shi.</span><br>
+      <span class="gloss">That is a door. The door is also a thing.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Jey.shieg sh sherm.me?</span><br>
+      <span class="gloss">What are these?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">B</span>
+      <span class="roman">Jeh.sh bii. Jeh.sh jii-jy bii.</span><br>
+      <span class="gloss">These are writing instruments. These are a few writing instruments.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Woo sheang sh chianbii .ba?</span><br>
+      <span class="gloss">I think they are pencils, aren’t they?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">B</span>
+      <span class="roman">Bush .ba? Woo sheang sh maubii. Ney.shieg sh chianbii.</span><br>
+      <span class="gloss">Probably not. I think they are writing brushes. Those are pencils.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Chianbii tzay nii.nall .bu .tzay?</span><br>
+      <span class="gloss">Are the pencils there with you?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Wang</span>
+      <span class="roman">Tzay.jell, tzay woo.jell. Woo jyy yeou liow-jy.</span><br>
+      <span class="gloss">Yes, they are here with me. I only have six.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Woo sheang sh bawjyy .ba?</span><br>
+      <span class="gloss">I think it is newspaper, right?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">B</span>
+      <span class="roman">Jeh bu.sh bawjyy; jeh.sh bau dong.shi .de jyy!</span><br>
+      <span class="gloss">This is not newspaper; this is wrapping paper!</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">B</span>
+      <span class="roman">Nah.sh jii-shuang kuaytz!</span><br>
+      <span class="gloss">Those are a few pairs of chopsticks!</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill orange">Knowledge graph</div>
+    <h2>Concept network for Lesson 2</h2>
+    <p>
+      The center of this lesson is not “things” in general. It is the process of <strong>pointing, classifying, locating, and reinterpreting objects in space</strong>.
+      The graph below shows how demonstratives, classifiers, location, possession, and noun modification connect.
+    </p>
+    <div class="graph-wrap">
+      <svg width="1120" height="660" viewBox="0 0 1120 660" role="img" aria-label="Knowledge graph for Lesson 2">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#90a4d4"></path>
+          </marker>
+        </defs>
+
+        <path class="edge" d="M560,110 C560,145 560,155 560,190"/>
+        <path class="edge" d="M560,110 C430,130 325,150 230,210"/>
+        <path class="edge" d="M560,110 C690,130 795,150 890,210"/>
+        <path class="edge" d="M230,260 C230,300 230,315 230,350"/>
+        <path class="edge" d="M890,260 C890,300 890,315 890,350"/>
+        <path class="edge" d="M560,240 C480,290 430,320 390,370"/>
+        <path class="edge" d="M560,240 C640,290 690,320 730,370"/>
+        <path class="edge" d="M390,420 C355,470 325,505 290,560"/>
+        <path class="edge" d="M730,420 C765,470 795,505 830,560"/>
+        <path class="edge" d="M560,420 C560,470 560,505 560,560"/>
+        <path class="edge" d="M560,240 C560,310 560,325 560,370"/>
+
+        <g class="node">
+          <rect x="415" y="45" width="290" height="70" fill="#efeaff"></rect>
+          <text x="560" y="75" text-anchor="middle" font-size="18" font-weight="800">Lesson 2 Core Question</text>
+          <text x="560" y="98" text-anchor="middle" font-size="14">What is this thing, where is it, how many are there, and what kind is it?</text>
+        </g>
+
+        <g class="node">
+          <rect x="430" y="190" width="260" height="54" fill="#eaf2ff"></rect>
+          <text x="560" y="223" text-anchor="middle" font-size="17" font-weight="800">Whole object utterances</text>
+        </g>
+
+        <g class="node">
+          <rect x="105" y="210" width="250" height="52" fill="#eefaf5"></rect>
+          <text x="230" y="242" text-anchor="middle" font-size="17" font-weight="800">Pointing and determinatives</text>
+        </g>
+
+        <g class="node">
+          <rect x="765" y="210" width="250" height="52" fill="#fff5e8"></rect>
+          <text x="890" y="242" text-anchor="middle" font-size="17" font-weight="800">Classification and quantity</text>
+        </g>
+
+        <g class="node">
+          <rect x="135" y="350" width="190" height="60" fill="#edf7ff"></rect>
+          <text x="230" y="377" text-anchor="middle" font-size="16" font-weight="800">jeh / nah / jeyg / neyg</text>
+          <text x="230" y="397" text-anchor="middle" font-size="13">this / that / this one / that one</text>
+        </g>
+
+        <g class="node">
+          <rect x="775" y="350" width="230" height="60" fill="#fff0f3"></rect>
+          <text x="890" y="377" text-anchor="middle" font-size="16" font-weight="800">jang • jiann • jy • shann</text>
+          <text x="890" y="397" text-anchor="middle" font-size="13">classifier-like forms for object types</text>
+        </g>
+
+        <g class="node">
+          <rect x="285" y="370" width="210" height="50" fill="#eefaf5"></rect>
+          <text x="390" y="401" text-anchor="middle" font-size="16" font-weight="800">What kind?</text>
+        </g>
+
+        <g class="node">
+          <rect x="625" y="370" width="210" height="50" fill="#eefaf5"></rect>
+          <text x="730" y="401" text-anchor="middle" font-size="16" font-weight="800">Where / at this place</text>
+        </g>
+
+        <g class="node">
+          <rect x="465" y="370" width="190" height="50" fill="#eaf2ff"></rect>
+          <text x="560" y="401" text-anchor="middle" font-size="16" font-weight="800">Have / there is</text>
+        </g>
+
+        <g class="node">
+          <rect x="210" y="560" width="160" height="56" fill="#eefaf5"></rect>
+          <text x="290" y="589" text-anchor="middle" font-size="16" font-weight="800">sherm</text>
+          <text x="290" y="609" text-anchor="middle" font-size="13">what / what kind</text>
+        </g>
+
+        <g class="node">
+          <rect x="745" y="560" width="170" height="56" fill="#f3f0ff"></rect>
+          <text x="830" y="589" text-anchor="middle" font-size="16" font-weight="800">jell / nall / naal</text>
+          <text x="830" y="609" text-anchor="middle" font-size="13">here / there / where</text>
+        </g>
+
+        <g class="node">
+          <rect x="470" y="560" width="180" height="56" fill="#fff5e8"></rect>
+          <text x="560" y="589" text-anchor="middle" font-size="16" font-weight="800">.de modification</text>
+          <text x="560" y="609" text-anchor="middle" font-size="13">paper for wrapping things, etc.</text>
+        </g>
+      </svg>
+    </div>
+    <div class="legend">
+      <span><i class="dot" style="background:#eaf2ff"></i> sentence patterns</span>
+      <span><i class="dot" style="background:#eefaf5"></i> pointing, kind, and place</span>
+      <span><i class="dot" style="background:#fff5e8"></i> quantity and modification</span>
+      <span><i class="dot" style="background:#f3f0ff"></i> spatial reference</span>
+      <span><i class="dot" style="background:#fff0f3"></i> object classifiers</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill green">Core concepts</div>
+    <h2>What the lesson teaches, concept by concept</h2>
+    <div class="concept-grid">
+      <div class="concept">
+        <h3>1) Objects enter the conversation through pointing</h3>
+        <div class="tag">jeh</div><div class="tag">nah</div><div class="tag">jeyg</div><div class="tag">neyg</div>
+        <ul>
+          <li>The lesson starts from pointing rather than abstract vocabulary.</li>
+          <li><span class="mono">jeh</span> and <span class="mono">nah</span> can sometimes go directly with nouns or verbs, but forms like <span class="mono">jeyg</span> and <span class="mono">neyg</span> package “this one / that one.”</li>
+          <li>This is a good place to teach perception-based language.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>2) Determinatives are a major organizing idea</h3>
+        <div class="tag">demonstrative</div><div class="tag">interrogative</div><div class="tag">numeral</div>
+        <ul>
+          <li>The notes group demonstratives, interrogatives like “which,” and numerals together as <strong>determinatives</strong>.</li>
+          <li>These often combine with an auxiliary noun / classifier-like form before a noun is added.</li>
+          <li>This helps students see Mandarin noun phrases as structured packages.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>3) Object type matters for counting</h3>
+        <div class="tag">jang</div><div class="tag">jiann</div><div class="tag">jy</div><div class="tag">shann</div><div class="tag">baa</div><div class="tag">shuang</div>
+        <ul>
+          <li><span class="mono">jang</span> for tables and sheets, <span class="mono">shann</span> for doors, <span class="mono">jy</span> for stick-like things, <span class="mono">baa</span> for handled things, <span class="mono">shuang</span> for pairs.</li>
+          <li>This is one of the earliest lessons in how Mandarin classifies the physical world.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>4) <span class="mono">shie</span> means an indefinite quantity</h3>
+        <div class="tag">jey.shie</div><div class="tag">ney.shie</div>
+        <ul>
+          <li>The notes explain that <span class="mono">shie</span> is a measure word for “some / a number of / an amount of.”</li>
+          <li>So “these” is not just English-style plural marking.</li>
+          <li>That is a crucial beginner insight.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>5) <span class="mono">tzay</span> expresses location, not simple English “is”</h3>
+        <div class="tag">tzay</div><div class="tag">jell</div><div class="tag">nall</div><div class="tag">naal</div>
+        <ul>
+          <li><span class="mono">Maubii tzay jell.</span> = The brushes are here, but structurally more like “The brushes are at this place.”</li>
+          <li>The lesson warns students not to produce false sentences such as treating <span class="mono">jell</span> as if it were a plain adjective complement.</li>
+          <li>This is a great moment for careful beginner contrast with English.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>6) <span class="mono">yeou</span> means both possession and existence</h3>
+        <div class="tag">have</div><div class="tag">there is</div><div class="tag">mei.yeou</div>
+        <ul>
+          <li><span class="mono">Nii yeou jii-jy chianbii?</span> = How many pencils do you have?</li>
+          <li><span class="mono">Jell yeou deng .mei.yeou?</span> = Is there a lamp here?</li>
+          <li>When no subject is attached, the meaning becomes “there is / there are.”</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>7) The negative of “have” is special</h3>
+        <div class="tag">mei.yeou</div><div class="tag">mei</div>
+        <ul>
+          <li>The lesson explicitly notes that the negative of <span class="mono">yeou</span> is <span class="mono">mei.yeou</span>, not a simple <span class="mono">bu</span> pattern.</li>
+          <li>This is a high-value pattern for beginner fluency.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>8) <span class="mono">.de</span> builds modification before the noun</h3>
+        <div class="tag">woo.de</div><div class="tag">bau dong.shi .de jyy</div><div class="tag">baw.shanq .de shinwen</div>
+        <ul>
+          <li>The modifier comes before the noun in Chinese.</li>
+          <li>This allows long noun phrases like “paper for wrapping things.”</li>
+          <li>Lesson 2 quietly introduces students to a central structural habit of Mandarin.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill orange">Mini-board plan</div>
+      <h2>How to lay this out for students</h2>
+      <table>
+        <thead><tr><th>Board zone</th><th>Write this</th><th>Teaching purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Left</td><td>Pictures or drawings of table, door, lamp, chair, pencil, brush, paper, chopsticks</td><td>Anchor all language in visible things.</td></tr>
+          <tr><td>Center</td><td><span class="mono">jeh / nah / jeyg / neyg / jey.shie / ney.shie</span></td><td>Show pointing system clearly.</td></tr>
+          <tr><td>Right</td><td><span class="mono">jang, jiann, jy, shann, baa, shuang</span></td><td>Help students notice the classifier-like system.</td></tr>
+          <tr><td>Bottom</td><td><span class="mono">tzay jell / tzay nall / tzay naal</span> and <span class="mono">yeou / mei.yeou</span></td><td>Separate location from possession/existence.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="pill teal">Classroom demonstration</div>
+      <h2>Use space to teach structure</h2>
+      <ol>
+        <li>Place one object near you and one farther away.</li>
+        <li>Ask students: <span class="mono">Jeh.sh sherm.me?</span> then <span class="mono">Nah.sh sherm .ne?</span></li>
+        <li>Move pencils to a student and ask: <span class="mono">Chianbii tzay nii.nall .bu .tzay?</span></li>
+        <li>Ask for quantity: <span class="mono">Nii yeou jii-jy chianbii?</span></li>
+        <li>Then shift to place without owner: <span class="mono">Jell yeou deng .mei.yeou?</span></li>
+      </ol>
+      <p class="small">This turns grammar into a visible event, which is especially effective for high-school beginners.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill blue">A key structural contrast</div>
+    <h2>“Here” is not just an English-style slot</h2>
+    <div class="callout">
+      The notes explicitly warn learners not to create false sentences like treating <span class="mono">jell</span> as if it were simply “here” after “be.”
+    </div>
+    <p>
+      In English, students may think:
+      <span class="mono">The brushes are here.</span><br>
+      so Mandarin must be:
+      <span class="mono">*Maubii sh jell</span>
+    </p>
+    <p>
+      But the lesson says the real structure is:
+      <span class="mono">Maubii tzay jell.</span>
+      That means the idea is location: “The brushes are at this place.”
+    </p>
+    <details>
+      <summary>Why this matters</summary>
+      <p>
+        This is a classic beginner moment. If students learn too quickly that <span class="mono">jell = here</span>, they will misbuild the rest of the sentence.
+        So this lesson is excellent for teaching that translation shortcuts are useful only after the structure is understood.
+      </p>
+    </details>
+  </section>
+
+  <section class="card">
+    <div class="pill green">Guided practice</div>
+    <h2>Practice tasks for a two-hour lesson</h2>
+    <div class="practice">
+      <div class="concept">
+        <h3>Task A — Point and name</h3>
+        <p>Students point to objects and answer:</p>
+        <ul>
+          <li><span class="mono">Jeh.sh sherm.me?</span></li>
+          <li><span class="mono">Nah.sh sherm.me?</span></li>
+        </ul>
+      </div>
+      <div class="concept">
+        <h3>Task B — Sort by classifier</h3>
+        <p>Give objects or pictures and ask students to group them under:</p>
+        <ul>
+          <li><span class="mono">jang</span></li>
+          <li><span class="mono">jy</span></li>
+          <li><span class="mono">shuang</span></li>
+          <li><span class="mono">baa</span></li>
+        </ul>
+      </div>
+      <div class="concept">
+        <h3>Task C — Have vs. there is</h3>
+        <p>Convert one idea two ways:</p>
+        <ul>
+          <li><span class="mono">Nii yeou jii-jy chianbii?</span></li>
+          <li><span class="mono">Jell yeou jii-jy chianbii?</span></li>
+        </ul>
+      </div>
+      <div class="concept">
+        <h3>Task D — Mystery correction</h3>
+        <p>Students guess an object, then revise it:</p>
+        <ul>
+          <li>newspaper → wrapping paper</li>
+          <li>pencils → brushes</li>
+          <li>brushes/pencils/pens/chalks → chopsticks</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill red">Quick understanding check</div>
+    <h2>Two multiple-choice quiz questions</h2>
+
+    <div class="quiz-q" data-answer="c">
+      <h3>1) What is the best explanation of <span class="mono">jey.shie</span> in this lesson?</h3>
+      <label><input type="radio" name="q1" value="a"> It is simply the plural ending for all nouns in Mandarin.</label>
+      <label><input type="radio" name="q1" value="b"> It only means exactly two objects.</label>
+      <label><input type="radio" name="q1" value="c"> It expresses an indefinite quantity like “these / some of these,” not just English-style plural marking.</label>
+      <label><input type="radio" name="q1" value="d"> It can only be used for people, never for things.</label>
+      <div class="feedback ok">Correct. The notes explain that <span class="mono">shie</span> is a measure word for an indefinite number or quantity, so <span class="mono">jey.shie</span> should not be treated as a simple plural ending.</div>
+      <div class="feedback no">Not quite. In the lesson notes, <span class="mono">shie</span> means an indefinite number or quantity, so <span class="mono">jey.shie</span> is broader than a simple English-style plural.</div>
+    </div>
+
+    <div class="quiz-q" data-answer="b">
+      <h3>2) Why is <span class="mono">Maubii tzay jell.</span> important?</h3>
+      <label><input type="radio" name="q2" value="a"> Because it proves <span class="mono">tzay</span> is just another way to say “have.”</label>
+      <label><input type="radio" name="q2" value="b"> Because it shows that location in Mandarin is built with “be at/in/on” structure, not by simply copying English “The brushes are here.”</label>
+      <label><input type="radio" name="q2" value="c"> Because it means “The brushes are this place.”</label>
+      <label><input type="radio" name="q2" value="d"> Because it is the only possible way to use <span class="mono">jell</span>.</label>
+      <div class="feedback ok">Correct. The notes specifically warn learners that <span class="mono">jell</span> should not tempt them into false sentences. The real structure is location: the brushes are at this place.</div>
+      <div class="feedback no">Not quite. This example matters because it teaches structure: <span class="mono">tzay</span> marks location, so the sentence means the brushes are at or in this place.</div>
+    </div>
+
+    <button id="checkQuiz">Check my answers</button>
+    <button class="secondary" id="resetQuiz" style="margin-left:8px;">Reset</button>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill gold">Exit challenge</div>
+      <h2>End-of-lecture spoken challenge</h2>
+      <ol>
+        <li>Point to one near object and one far object.</li>
+        <li>Ask what each one is.</li>
+        <li>State where one object is.</li>
+        <li>Ask how many pencils someone has.</li>
+        <li>Produce one noun phrase with <span class="mono">.de</span>, such as “wrapping paper.”</li>
+      </ol>
+      <p class="small">A successful beginner should be able to move through object identification, quantity, and location in one short mini-dialogue.</p>
+    </div>
+
+    <div class="card">
+      <div class="pill blue">References and source use</div>
+      <h2>References for this page</h2>
+      <ul>
+        <li><strong>Primary source:</strong> scanned Lesson 2 pages from <em>Mandarin Primer: An Intensive Course in Spoken Chinese</em>.</li>
+        <li><strong>Dialogue basis:</strong> Lesson 2 “Things,” including pointing, object identification, paper, lamps, and chopsticks.</li>
+        <li><strong>Grammar basis:</strong> notes on <span class="mono">dong.shi</span>, determinatives, low-pitch echo confirmation, auxiliary nouns, <span class="mono">shie</span>, <span class="mono">tzay</span>, locality forms, <span class="mono">yeou</span>, <span class="mono">mei.yeou</span>, <span class="mono">.de</span>, and indefinite interrogative use.</li>
+        <li><strong>Teaching basis:</strong> the source’s broader “To the Student” guidance on utterances, repetition, echoing, and grammar through exercises.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    This lecture page is designed to be rich enough for a full two-hour beginner session. It keeps the lesson grounded in the source text while translating the material into a clearer visual and pedagogical flow for English-speaking high-school students.
+  </footer>
+</div>
+
+<script>
+document.getElementById('checkQuiz').addEventListener('click', function(){
+  document.querySelectorAll('.quiz-q').forEach(function(q){
+    const correct = q.dataset.answer;
+    const selected = q.querySelector('input[type="radio"]:checked');
+    const ok = q.querySelector('.feedback.ok');
+    const no = q.querySelector('.feedback.no');
+    ok.style.display = 'none';
+    no.style.display = 'none';
+    if(selected && selected.value === correct){
+      ok.style.display = 'block';
+    } else {
+      no.style.display = 'block';
+    }
+  });
+});
+
+document.getElementById('resetQuiz').addEventListener('click', function(){
+  document.querySelectorAll('input[type="radio"]').forEach(function(inp){ inp.checked = false; });
+  document.querySelectorAll('.feedback').forEach(function(f){ f.style.display = 'none'; });
+});
+</script>
+</body>
+</html>

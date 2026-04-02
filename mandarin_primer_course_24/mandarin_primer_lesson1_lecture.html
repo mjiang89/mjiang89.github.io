@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mandarin Primer — Lesson 1 Lecture Page</title>
+<style>
+  :root{
+    --bg:#f7f8fc;
+    --ink:#1f2430;
+    --muted:#556070;
+    --card:#ffffff;
+    --line:#d9dfeb;
+    --blue:#2f6fed;
+    --green:#2f9e77;
+    --purple:#7b61ff;
+    --orange:#f08c2e;
+    --red:#d9485f;
+    --gold:#c99700;
+    --shadow:0 10px 30px rgba(28,35,54,.08);
+    --radius:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at top right, rgba(123,97,255,.08), transparent 26%),
+      radial-gradient(circle at top left, rgba(47,111,237,.08), transparent 28%),
+      var(--bg);
+    line-height:1.65;
+  }
+  .wrap{
+    width:min(1180px, 94vw);
+    margin:0 auto;
+    padding:28px 0 64px;
+  }
+  header.hero{
+    background:linear-gradient(135deg, #1f3b9c, #5b44d1 70%, #8d63ff);
+    color:white;
+    border-radius:28px;
+    padding:34px 34px 28px;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+  }
+  header.hero::after{
+    content:"";
+    position:absolute;
+    right:-40px; top:-40px;
+    width:240px; height:240px;
+    background:radial-gradient(circle, rgba(255,255,255,.18), transparent 65%);
+    pointer-events:none;
+  }
+  .eyebrow{
+    display:inline-block;
+    padding:6px 10px;
+    border:1px solid rgba(255,255,255,.28);
+    border-radius:999px;
+    font-size:.83rem;
+    letter-spacing:.02em;
+    margin-bottom:10px;
+    background:rgba(255,255,255,.08);
+  }
+  h1,h2,h3{line-height:1.2; margin:.2rem 0 .8rem}
+  h1{font-size:clamp(2rem, 3vw, 3rem)}
+  h2{font-size:1.55rem}
+  h3{font-size:1.12rem}
+  p.lead{font-size:1.08rem; max-width:900px; opacity:.98}
+  .grid{
+    display:grid;
+    gap:18px;
+  }
+  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  @media (max-width:900px){ .g2,.g3{grid-template-columns:1fr;} }
+
+  section{
+    margin-top:22px;
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:22px;
+  }
+  .card h2:first-child, .card h3:first-child{margin-top:0}
+  .pill{
+    display:inline-block;
+    font-size:.8rem;
+    font-weight:700;
+    letter-spacing:.02em;
+    padding:5px 10px;
+    border-radius:999px;
+    margin-bottom:10px;
+    color:#fff;
+  }
+  .pill.blue{background:var(--blue)}
+  .pill.green{background:var(--green)}
+  .pill.purple{background:var(--purple)}
+  .pill.orange{background:var(--orange)}
+  .pill.red{background:var(--red)}
+  .pill.gold{background:var(--gold)}
+  .small{font-size:.95rem; color:var(--muted)}
+  .goals li, .steps li, .refs li{margin:.45rem 0}
+  .banner{
+    border-left:6px solid var(--gold);
+    background:#fff8db;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  .callout{
+    border-left:5px solid var(--blue);
+    background:#eef4ff;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  .warning{
+    border-left:5px solid var(--red);
+    background:#fff2f4;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  .lesson-flow{
+    display:grid;
+    grid-template-columns:repeat(6, minmax(0,1fr));
+    gap:12px;
+  }
+  @media (max-width:1000px){ .lesson-flow{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:640px){ .lesson-flow{grid-template-columns:1fr} }
+  .flow-step{
+    background:linear-gradient(180deg,#fff,#f8faff);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:16px;
+    position:relative;
+    min-height:142px;
+  }
+  .flow-step .num{
+    width:34px; height:34px; border-radius:50%;
+    display:grid; place-items:center;
+    color:#fff; font-weight:800;
+    margin-bottom:10px;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:.96rem;
+  }
+  th,td{
+    border-bottom:1px solid var(--line);
+    padding:12px 10px;
+    vertical-align:top;
+    text-align:left;
+  }
+  th{background:#f4f7fc}
+  tr:last-child td{border-bottom:none}
+
+  .dialogue-line{
+    padding:10px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .dialogue-line:last-child{border-bottom:none}
+  .speaker{
+    display:inline-block;
+    min-width:84px;
+    font-weight:800;
+    color:var(--blue);
+  }
+  .roman{
+    font-size:1.02rem;
+    font-weight:650;
+  }
+  .gloss{color:var(--muted)}
+
+  .concept-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;
+  }
+  @media (max-width:900px){ .concept-grid{grid-template-columns:1fr;} }
+  .concept{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px;
+    background:#fbfcff;
+  }
+  .concept ul{margin:.55rem 0 0 1.1rem}
+  .concept li{margin:.3rem 0}
+  .tag{
+    display:inline-block;
+    padding:4px 8px;
+    border-radius:999px;
+    font-size:.78rem;
+    font-weight:700;
+    margin:2px 4px 2px 0;
+    background:#eef3ff;
+    color:#2c4a9c;
+  }
+
+  .graph-wrap{
+    overflow:auto;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:linear-gradient(180deg,#fcfdff,#f6f9ff);
+    padding:12px;
+  }
+  svg text{
+    font-family: Inter, system-ui, sans-serif;
+    fill:#1f2430;
+  }
+  .node rect{
+    rx:18; ry:18;
+    stroke:#d8dff2;
+    stroke-width:1.4;
+  }
+  .edge{
+    stroke:#90a4d4;
+    stroke-width:2.2;
+    fill:none;
+    marker-end:url(#arrow);
+    opacity:.95;
+  }
+  .legend{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:10px;
+    font-size:.9rem;
+  }
+  .legend span{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:6px 10px;
+  }
+  .dot{
+    width:12px;height:12px;border-radius:50%;
+    display:inline-block;
+  }
+
+  .practice{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px;
+  }
+  @media (max-width:900px){ .practice{grid-template-columns:1fr;} }
+
+  .quiz-q{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px;
+    margin-bottom:16px;
+    background:#fbfdff;
+  }
+  .quiz-q label{
+    display:block;
+    padding:9px 10px;
+    border:1px solid transparent;
+    border-radius:12px;
+    cursor:pointer;
+  }
+  .quiz-q label:hover{background:#f1f6ff; border-color:#dbe6ff}
+  button{
+    appearance:none;
+    border:none;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:#fff;
+    border-radius:12px;
+    padding:11px 16px;
+    font-size:.96rem;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:var(--shadow);
+  }
+  button.secondary{
+    background:linear-gradient(135deg,var(--green),#3fb58e);
+  }
+  .feedback{
+    margin-top:10px;
+    padding:12px 14px;
+    border-radius:12px;
+    display:none;
+  }
+  .feedback.ok{background:#edf9f3; border:1px solid #bfe7cf}
+  .feedback.no{background:#fff1f3; border:1px solid #f0c0cb}
+  details{
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:12px 14px;
+    background:#fff;
+  }
+  summary{
+    cursor:pointer;
+    font-weight:700;
+  }
+  footer{
+    margin-top:28px;
+    color:var(--muted);
+    font-size:.92rem;
+  }
+  .mono{
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background:#f5f7fb;
+    padding:.1rem .35rem;
+    border-radius:8px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Yuen Ren Chao - Mandarin Primer: An Intensive Course in Spoken Chinese</div>
+    <h1>Mandarin Primer — Lesson 1</h1>
+    <h2 style="font-size:1.35rem; font-weight:650; opacity:.98;">You, I, and He — “Four Men”</h2>
+    <p class="lead">
+      This page turns Lesson 1 into a rich lecture for English-speaking beginners. It follows the book’s own teaching philosophy:
+      build from sound and repetition, teach whole utterances instead of isolated word lists, and help students understand how meaning,
+      grammar, and conversation fit together.
+    </p>
+    <p class="small" style="color:rgba(255,255,255,.9);">
+      Note: the lesson is presented in the book’s original romanization (for example <span class="mono">nii</span>, <span class="mono">woo</span>, <span class="mono">ta</span>, <span class="mono">sh</span>), not modern pinyin.
+    </p>
+  </header>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill blue">What students should learn</div>
+      <h2>Learning goals</h2>
+      <ul class="goals">
+        <li>Recognize and use the basic pronouns <strong>you</strong>, <strong>I</strong>, <strong>he/she/it</strong>: <span class="mono">nii</span>, <span class="mono">woo</span>, <span class="mono">ta</span>.</li>
+        <li>Ask and answer identity questions like <span class="mono">Nii sh sheir?</span> and <span class="mono">Ta sh sheir .a?</span></li>
+        <li>Understand how the lesson builds a small conversation out of <strong>people</strong>, <strong>counting</strong>, and <strong>group membership</strong>.</li>
+        <li>See that Mandarin often teaches meaning through <strong>patterns and utterances</strong>, not one-word-for-one-word translation.</li>
+        <li>Notice the difference between inclusive <span class="mono">tzar.men</span> (“we, including you”) and exclusive <span class="mono">woo.men</span> (“we, not including you”).</li>
+        <li>Practice beginner-friendly question forms, particles, and counting logic.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="pill gold">Teacher lens</div>
+      <h2>Why this lesson matters</h2>
+      <div class="banner">
+        <strong>This is not “just pronouns.”</strong> Lesson 1 quietly teaches students how Mandarin organizes social reference,
+        how questions are built, how counting works with a noun like <span class="mono">ren</span> “person,” and how conversation can
+        move by checking, correcting, and including or excluding speakers.
+      </div>
+      <p>
+        For beginners, the lesson is especially useful because the vocabulary is small, but the conceptual payoff is large:
+        students learn how to <em>track who is being talked about</em> and <em>who belongs in a group</em>. That is real conversational thinking.
+      </p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill purple">Two-hour lecture flow</div>
+    <h2>Suggested lecture sequence</h2>
+    <div class="lesson-flow">
+      <div class="flow-step"><div class="num">1</div><strong>Warm-up and ears first</strong><br><span class="small">Review that Mandarin depends on sound distinctions. Have students echo a few lesson words and notice that pronunciation matters from the very start.</span></div>
+      <div class="flow-step"><div class="num">2</div><strong>Story setup</strong><br><span class="small">Introduce the four named people: Ding I, Wang Ell, Jang San, Lii Syh. Put them on the board as a mini cast.</span></div>
+      <div class="flow-step"><div class="num">3</div><strong>Dialogue in chunks</strong><br><span class="small">Read the conversation in short stretches. After each chunk, pause for English explanation and quick choral repetition.</span></div>
+      <div class="flow-step"><div class="num">4</div><strong>Grammar from use</strong><br><span class="small">Pull out patterns only after students have heard them: pronouns, <span class="mono">sh</span>, question words, <span class="mono">.ne</span>, <span class="mono">yee.sh</span>, number phrases.</span></div>
+      <div class="flow-step"><div class="num">5</div><strong>Knowledge graph review</strong><br><span class="small">Show how every form connects: people → pronouns → groupings → counting → “we” forms → yes/no checking.</span></div>
+      <div class="flow-step"><div class="num">6</div><strong>Practice and quiz</strong><br><span class="small">Students answer, correct, and justify. End with two quick multiple-choice checks and a short spoken exit task.</span></div>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill green">Big idea from the book</div>
+      <h2>How to teach this lesson well</h2>
+      <div class="callout">
+        The book’s message is clear: students should learn <strong>utterances in situations</strong>, not just memorize loose vocabulary.
+      </div>
+      <ol class="steps">
+        <li>Start in English so beginners feel secure, then bring Mandarin back in every few minutes.</li>
+        <li>Use <strong>echoing</strong>: teacher says a phrase, students look away, repeat it, then check it.</li>
+        <li>Teach from <strong>whole lines</strong> such as <span class="mono">Nii sh sheir?</span> and <span class="mono">Woo sh Wang Ell.</span>, not from random word lists.</li>
+        <li>Keep the same names and groupings visible so students can follow the counting logic.</li>
+        <li>Ask students to physically point to pictures or classmates when using <span class="mono">nii</span>, <span class="mono">woo</span>, <span class="mono">ta</span>, <span class="mono">tzar.men</span>, <span class="mono">woo.men</span>.</li>
+      </ol>
+    </div>
+    <div class="card">
+      <div class="pill red">Common beginner confusions</div>
+      <h2>What English-speaking students may struggle with</h2>
+      <div class="warning">
+        Beginners often expect Mandarin to map neatly onto English. This lesson shows that it often does not.
+      </div>
+      <ul class="goals">
+        <li><strong>No required English-style “it” subject:</strong> <span class="mono">Sh woo.</span> means “It is I / It’s me,” but Mandarin does not need a dummy subject.</li>
+        <li><strong>The same pronoun form covers multiple English forms:</strong> <span class="mono">woo</span> can mean “I” or “me.”</li>
+        <li><strong>Question words stay in place:</strong> <span class="mono">Nii sh sheir?</span> is literally “You are who?”</li>
+        <li><strong>Chinese nouns do not mark plural the same way English does:</strong> <span class="mono">ren</span> can mean person, people, man, woman, human being depending on context.</li>
+        <li><strong>“We” has two meanings in this lesson:</strong> one includes the listener, one does not.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill blue">Lesson text as conversation</div>
+    <h2>Dialogue walkthrough</h2>
+    <p class="small">Selected lines are grouped to make the teaching flow visible. Keep returning to “Who is being counted? Who is included?”</p>
+
+    <div class="dialogue-line">
+      <span class="speaker">Ding 1</span>
+      <span class="roman">Sheir .a?</span><br>
+      <span class="gloss">Who is it?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Wang 2</span>
+      <span class="roman">Woo, sh woo.</span><br>
+      <span class="gloss">Me — it is I.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Ding 1</span>
+      <span class="roman">Nii sh sheir?</span><br>
+      <span class="gloss">Who are you?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Wang 2</span>
+      <span class="roman">Woo sh Wang Ell. Nii .ne?</span><br>
+      <span class="gloss">I am Wang Ell. And you?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Ding 1</span>
+      <span class="roman">Woo .ia, woo sh Ding I. Ta sh sheir .a?</span><br>
+      <span class="gloss">Me? I am Ding I. Who is he?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Wang 2</span>
+      <span class="roman">Ta sh Jang San.</span><br>
+      <span class="gloss">He is Jang San.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Ding 1</span>
+      <span class="roman">Jang San sh sherm.me?</span><br>
+      <span class="gloss">What is Jang San?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Wang 2</span>
+      <span class="roman">Jang San sh ren.</span><br>
+      <span class="gloss">Jang San is a person / man.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Ding 1</span>
+      <span class="roman">Nii gen woo, tzar.men sh jiig ren?</span><br>
+      <span class="gloss">You and I — how many people are we?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Wang 2</span>
+      <span class="roman">Woo gen nii, tzar.men yee.sh leangg ren.</span><br>
+      <span class="gloss">You and I — we are also two people.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Ding 1</span>
+      <span class="roman">Ne.me leangg ren gen leangg ren sh jiig ren .ne? Sh san'g ren .bu.sh?</span><br>
+      <span class="gloss">Then how many people are two people and two people? Are they three people?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Wang 2</span>
+      <span class="roman">Bu.sh, leangg leangg sh syhg.</span><br>
+      <span class="gloss">No, two and two are four.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Ding 1</span>
+      <span class="roman">Woomen bu.sh syhg ren; woo.men sh san'g ren. Lian nii tzar.men tsair sh syhg ren .ne.</span><br>
+      <span class="gloss">We are not four people; we are three people. Only including you do we become four people.</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill orange">Structured language network</div>
+    <h2>Knowledge graph for Lesson 1</h2>
+    <p>
+      The graph below treats the lesson as a connected system. The center is not a single vocabulary item but a communicative problem:
+      <strong>How do we identify people and count who belongs in a group?</strong>
+    </p>
+    <div class="graph-wrap">
+      <svg width="1100" height="630" viewBox="0 0 1100 630" role="img" aria-label="Knowledge graph for Lesson 1">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#90a4d4"></path>
+          </marker>
+        </defs>
+
+        <!-- Edges -->
+        <path class="edge" d="M550,120 C550,150 550,150 550,180" />
+        <path class="edge" d="M550,120 C430,135 340,150 260,205" />
+        <path class="edge" d="M550,120 C670,135 760,150 840,205" />
+        <path class="edge" d="M260,250 C260,290 260,300 260,340" />
+        <path class="edge" d="M840,250 C840,292 840,300 840,340" />
+        <path class="edge" d="M550,230 C470,285 425,320 390,370" />
+        <path class="edge" d="M550,230 C630,285 675,320 710,370" />
+        <path class="edge" d="M390,420 C355,470 330,500 300,540" />
+        <path class="edge" d="M710,420 C745,470 770,500 800,540" />
+        <path class="edge" d="M550,230 C550,300 550,330 550,370" />
+        <path class="edge" d="M550,420 C550,470 550,500 550,540" />
+
+        <!-- Nodes -->
+        <g class="node">
+          <rect x="420" y="55" width="260" height="70" fill="#efeaff"></rect>
+          <text x="550" y="84" text-anchor="middle" font-size="18" font-weight="800">Lesson 1 Core Question</text>
+          <text x="550" y="106" text-anchor="middle" font-size="14">Who is who, and how many people are in the group?</text>
+        </g>
+
+        <g class="node">
+          <rect x="430" y="180" width="240" height="52" fill="#eaf2ff"></rect>
+          <text x="550" y="211" text-anchor="middle" font-size="17" font-weight="800">Whole utterances</text>
+        </g>
+
+        <g class="node">
+          <rect x="140" y="200" width="240" height="52" fill="#eefaf5"></rect>
+          <text x="260" y="231" text-anchor="middle" font-size="17" font-weight="800">Pronouns</text>
+        </g>
+
+        <g class="node">
+          <rect x="720" y="200" width="240" height="52" fill="#fff5e8"></rect>
+          <text x="840" y="231" text-anchor="middle" font-size="17" font-weight="800">Counting + ren</text>
+        </g>
+
+        <g class="node">
+          <rect x="155" y="340" width="210" height="58" fill="#f3f0ff"></rect>
+          <text x="260" y="367" text-anchor="middle" font-size="16" font-weight="800">nii / woo / ta</text>
+          <text x="260" y="388" text-anchor="middle" font-size="13">you / I / he-she-it</text>
+        </g>
+
+        <g class="node">
+          <rect x="725" y="340" width="230" height="58" fill="#fff0f3"></rect>
+          <text x="840" y="367" text-anchor="middle" font-size="16" font-weight="800">ig • leangg • san'g • syhg</text>
+          <text x="840" y="388" text-anchor="middle" font-size="13">1 • 2 • 3 • 4</text>
+        </g>
+
+        <g class="node">
+          <rect x="280" y="370" width="220" height="50" fill="#edf7ff"></rect>
+          <text x="390" y="401" text-anchor="middle" font-size="16" font-weight="800">Identity questions</text>
+        </g>
+
+        <g class="node">
+          <rect x="600" y="370" width="220" height="50" fill="#edf7ff"></rect>
+          <text x="710" y="401" text-anchor="middle" font-size="16" font-weight="800">Group membership</text>
+        </g>
+
+        <g class="node">
+          <rect x="455" y="370" width="190" height="50" fill="#eefaf5"></rect>
+          <text x="550" y="401" text-anchor="middle" font-size="16" font-weight="800">Particles + rhythm</text>
+        </g>
+
+        <g class="node">
+          <rect x="205" y="540" width="190" height="54" fill="#eefaf5"></rect>
+          <text x="300" y="569" text-anchor="middle" font-size="16" font-weight="800">sheir / sherm.me</text>
+          <text x="300" y="589" text-anchor="middle" font-size="13">who / what</text>
+        </g>
+
+        <g class="node">
+          <rect x="695" y="540" width="210" height="54" fill="#f3f0ff"></rect>
+          <text x="800" y="569" text-anchor="middle" font-size="16" font-weight="800">tzar.men / woo.men</text>
+          <text x="800" y="589" text-anchor="middle" font-size="13">inclusive vs. exclusive “we”</text>
+        </g>
+
+        <g class="node">
+          <rect x="455" y="540" width="190" height="54" fill="#fff5e8"></rect>
+          <text x="550" y="569" text-anchor="middle" font-size="16" font-weight="800">sh .bu.sh?</text>
+          <text x="550" y="589" text-anchor="middle" font-size="13">checking / confirming</text>
+        </g>
+      </svg>
+    </div>
+    <div class="legend">
+      <span><i class="dot" style="background:#eaf2ff"></i> core sentence patterns</span>
+      <span><i class="dot" style="background:#eefaf5"></i> pronouns and particles</span>
+      <span><i class="dot" style="background:#fff5e8"></i> counting and logic</span>
+      <span><i class="dot" style="background:#f3f0ff"></i> perspective and group meaning</span>
+      <span><i class="dot" style="background:#fff0f3"></i> number forms</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill green">Core concepts</div>
+    <h2>What the lesson teaches, concept by concept</h2>
+    <div class="concept-grid">
+      <div class="concept">
+        <h3>1) Pronouns are the skeleton of the dialogue</h3>
+        <div class="tag">nii</div><div class="tag">woo</div><div class="tag">ta</div>
+        <ul>
+          <li><span class="mono">nii</span> = you</li>
+          <li><span class="mono">woo</span> = I / me</li>
+          <li><span class="mono">ta</span> = he / him / she / her / it</li>
+          <li>The lesson keeps reusing them so students learn reference through repetition.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>2) Question words stay where the answer goes</h3>
+        <div class="tag">sheir</div><div class="tag">sherm.me</div>
+        <ul>
+          <li><span class="mono">Nii sh sheir?</span> literally “You are who?”</li>
+          <li><span class="mono">Jang San sh sherm.me?</span> literally “Jang San is what?”</li>
+          <li>This is powerful for beginners because the question mirrors the answer pattern.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>3) <span class="mono">sh</span> means “be,” but not always like English</h3>
+        <div class="tag">sh</div><div class="tag">nominal predicate</div>
+        <ul>
+          <li><span class="mono">Woo sh Wang Ell.</span> = I am Wang Ell.</li>
+          <li><span class="mono">Ta sh Jang San.</span> = He is Jang San.</li>
+          <li>Later in the lesson, students also see that <span class="mono">sh</span> can sometimes be omitted in number statements.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>4) <span class="mono">ren</span> is a broad human noun</h3>
+        <div class="tag">ren</div><div class="tag">person</div><div class="tag">people</div>
+        <ul>
+          <li>The book glosses it broadly: man, woman, person, human being, people.</li>
+          <li>That means students should not reduce it too quickly to only one English word.</li>
+          <li>This supports the book’s wider point: meaning lives in context.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>5) Counting needs a classifier-like unit</h3>
+        <div class="tag">ig ren</div><div class="tag">leangg ren</div><div class="tag">syhg ren</div>
+        <ul>
+          <li>Chinese numerals usually combine with an auxiliary noun before a regular noun.</li>
+          <li>So “four men/people” is not just “four + person,” but a structured phrase.</li>
+          <li>This is one of the earliest signals that Mandarin packages quantity differently from English.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>6) There are two “we” forms in the lesson</h3>
+        <div class="tag">tzar.men</div><div class="tag">woo.men</div>
+        <ul>
+          <li><span class="mono">tzar.men</span> includes the listener.</li>
+          <li><span class="mono">woo.men</span> excludes the listener.</li>
+          <li>This is the conceptual heart of the “four men” joke at the end of the lesson.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>7) Small particles organize conversation</h3>
+        <div class="tag">.a</div><div class="tag">.ia</div><div class="tag">.ne</div>
+        <ul>
+          <li><span class="mono">.a</span> can soften a question or mark a new question.</li>
+          <li><span class="mono">.ne</span> often means “and…?” or “how about…?”</li>
+          <li>These tiny forms help the dialogue move naturally.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>8) Logic and correction are part of conversation</h3>
+        <div class="tag">Bu!</div><div class="tag">Bu.sh!</div><div class="tag">Duey .le</div>
+        <ul>
+          <li>The lesson teaches agreement, disagreement, and correction as real speech acts.</li>
+          <li>Students are not just naming people; they are checking whether a statement is true.</li>
+          <li>This makes the lesson interactive and easy to dramatize in class.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill orange">Teach it clearly</div>
+      <h2>Mini-board plan for explanation</h2>
+      <table>
+        <thead><tr><th>Board space</th><th>What to write</th><th>Why it helps beginners</th></tr></thead>
+        <tbody>
+          <tr><td>Left</td><td>Four names: Ding I, Wang Ell, Jang San, Lii Syh</td><td>Students can visually track who is being counted.</td></tr>
+          <tr><td>Center</td><td><span class="mono">nii / woo / ta</span></td><td>Connects people in the story to pronouns in the grammar.</td></tr>
+          <tr><td>Right</td><td><span class="mono">ig, leangg, san'g, syhg</span></td><td>Keeps the counting sequence visible during the joke-like reasoning.</td></tr>
+          <tr><td>Bottom</td><td><span class="mono">tzar.men</span> vs. <span class="mono">woo.men</span></td><td>Helps students understand the final correction about “four men.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="pill purple">Pronunciation attention</div>
+      <h2>High-value sound targets</h2>
+      <p class="small">The book’s exercises highlight specific difficult syllables. For beginners, keep the goal narrow: accurate noticing first, fluent repetition second.</p>
+      <ul class="goals">
+        <li><strong>Initials:</strong> <span class="mono">ren</span>, <span class="mono">sheir</span>, <span class="mono">Jang</span>, <span class="mono">sherm</span>, <span class="mono">tzar.men</span>, <span class="mono">jiig</span>, <span class="mono">tsair</span></li>
+        <li><strong>Finals:</strong> <span class="mono">keh</span>, <span class="mono">woo</span>, <span class="mono">syh</span>, <span class="mono">sh(yh)</span>, <span class="mono">ell</span>, <span class="mono">lian</span></li>
+        <li>Have students echo short chunks before full sentences.</li>
+        <li>When students hesitate, let them point to people and count physically. Meaning support helps pronunciation stick.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill blue">Inclusive vs. exclusive “we”</div>
+    <h2>Visualizing the trickiest idea in the lesson</h2>
+    <p>
+      This lesson’s most interesting concept is not the number four — it is perspective.
+      When Ding speaks to Wang, sometimes “we” means <em>Ding + Wang</em>, and sometimes it means <em>Ding + other people, but not Wang</em>.
+      That is why the same scene can produce both <strong>three</strong> and <strong>four</strong>.
+    </p>
+    <div class="practice">
+      <div class="concept">
+        <h3>Inclusive “we”</h3>
+        <p><span class="mono">tzar.men</span> = the speaker plus the listener</p>
+        <p class="small">Example idea: “you and I” or “you and the rest of us.”</p>
+      </div>
+      <div class="concept">
+        <h3>Exclusive “we”</h3>
+        <p><span class="mono">woo.men</span> = the speaker’s group, but not the listener</p>
+        <p class="small">Example idea: “he and I” / “they and I” / “our group, not you.”</p>
+      </div>
+    </div>
+    <details style="margin-top:14px;">
+      <summary>Suggested classroom move</summary>
+      <p>
+        Place four volunteers at the front. Let one student be Wang, one be Ding, and two be Jang San and Lii Syh.
+        Have Ding point to himself and Wang and say <span class="mono">tzar.men</span>. Then have Ding point to himself plus Jang San and Lii Syh,
+        while looking at Wang, and say <span class="mono">woo.men</span>. The idea becomes visible immediately.
+      </p>
+    </details>
+  </section>
+
+  <section class="card">
+    <div class="pill green">Practice</div>
+    <h2>Guided practice tasks</h2>
+    <div class="practice">
+      <div class="concept">
+        <h3>Task A — Build the line</h3>
+        <p>Give students word cards and ask them to assemble:</p>
+        <ul>
+          <li><span class="mono">Woo sh Wang Ell.</span></li>
+          <li><span class="mono">Ta sh Jang San.</span></li>
+          <li><span class="mono">Nii sh sheir?</span></li>
+        </ul>
+      </div>
+      <div class="concept">
+        <h3>Task B — Count the people</h3>
+        <p>Show small stick-figure groups and ask:</p>
+        <ul>
+          <li><span class="mono">Jiig ren?</span></li>
+          <li><span class="mono">Sh san'g ren .bu.sh?</span></li>
+        </ul>
+      </div>
+      <div class="concept">
+        <h3>Task C — Correct the statement</h3>
+        <p>Teacher says a false sentence. Students answer with:</p>
+        <ul>
+          <li><span class="mono">Bu!</span></li>
+          <li><span class="mono">Bu.sh!</span></li>
+          <li>then the corrected line</li>
+        </ul>
+      </div>
+      <div class="concept">
+        <h3>Task D — “We” sorting</h3>
+        <p>Students sort picture cards into:</p>
+        <ul>
+          <li><span class="mono">tzar.men</span> group</li>
+          <li><span class="mono">woo.men</span> group</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill red">Quick understanding check</div>
+    <h2>Two multiple-choice quiz questions</h2>
+
+    <div class="quiz-q" data-answer="b">
+      <h3>1) In this lesson, what does <span class="mono">tzar.men</span> mean most specifically?</h3>
+      <label><input type="radio" name="q1" value="a"> “they” — people over there</label>
+      <label><input type="radio" name="q1" value="b"> “we” including the listener</label>
+      <label><input type="radio" name="q1" value="c"> “we” excluding the listener</label>
+      <label><input type="radio" name="q1" value="d"> “you all” only</label>
+      <div class="feedback ok">Correct. In the lesson, <span class="mono">tzar.men</span> is the inclusive “we,” meaning the speaker includes the person being spoken to.</div>
+      <div class="feedback no">Not quite. The key distinction in the lesson is that <span class="mono">tzar.men</span> includes the listener, while <span class="mono">woo.men</span> does not.</div>
+    </div>
+
+    <div class="quiz-q" data-answer="c">
+      <h3>2) Why is <span class="mono">Nii sh sheir?</span> important for beginners?</h3>
+      <label><input type="radio" name="q2" value="a"> Because it proves Mandarin always puts question words at the beginning.</label>
+      <label><input type="radio" name="q2" value="b"> Because it means “What are you?” instead of “Who are you?”</label>
+      <label><input type="radio" name="q2" value="c"> Because it shows the question word stays in the position where the answer would go.</label>
+      <label><input type="radio" name="q2" value="d"> Because it is the only possible way to ask identity questions in Mandarin.</label>
+      <div class="feedback ok">Correct. The lesson explicitly supports the idea that the question word occupies the same slot as the answer: <span class="mono">Woo sh Wang Ell.</span> ↔ <span class="mono">Nii sh sheir?</span></div>
+      <div class="feedback no">Not quite. This line matters because it helps beginners see that Mandarin question words often remain in place, instead of moving to the front like English “who.”</div>
+    </div>
+
+    <button id="checkQuiz">Check my answers</button>
+    <button class="secondary" id="resetQuiz" style="margin-left:8px;">Reset</button>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill gold">Exit prompt</div>
+      <h2>End-of-lecture spoken challenge</h2>
+      <p>
+        Without looking at the text, students should be able to do this short sequence:
+      </p>
+      <ol class="steps">
+        <li>Ask one identity question.</li>
+        <li>Answer with a name.</li>
+        <li>Point to two people and say how many people there are.</li>
+        <li>Use either <span class="mono">tzar.men</span> or <span class="mono">woo.men</span> correctly in a sentence.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <div class="pill blue">References and source use</div>
+      <h2>References for this page</h2>
+      <ul class="refs">
+        <li><strong>Primary source:</strong> scanned Lesson 1 pages from <em>Mandarin Primer: An Intensive Course in Spoken Chinese</em>.</li>
+        <li><strong>Lesson text basis:</strong> Lesson 1 dialogue and English glosses.</li>
+        <li><strong>Teaching philosophy basis:</strong> “To the Student” pages on foundation, utterances, repetition, echoing, exercises, and lesson routine.</li>
+        <li><strong>Grammar basis:</strong> notes on pronouns, auxiliary nouns, <span class="mono">ren</span>, particles, <span class="mono">.ne</span>, <span class="mono">yee.sh</span>, plural <span class="mono">-.men</span>, and inclusive/exclusive “we.”</li>
+        <li><strong>Visual adaptation:</strong> the “we” explanation on this page is informed by the lesson’s diagrams of <span class="mono">Nii Woo Ta</span> and the <span class="mono">-.men</span> forms.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    This lecture page is intentionally rich enough for a two-hour session. It combines explanation, visual structure, dialogue analysis,
+    a knowledge graph, and beginner checks for understanding while staying close to the lesson’s original content and teaching method.
+  </footer>
+</div>
+
+<script>
+document.getElementById('checkQuiz').addEventListener('click', function(){
+  document.querySelectorAll('.quiz-q').forEach(function(q){
+    const correct = q.dataset.answer;
+    const selected = q.querySelector('input[type="radio"]:checked');
+    const ok = q.querySelector('.feedback.ok');
+    const no = q.querySelector('.feedback.no');
+    ok.style.display = 'none';
+    no.style.display = 'none';
+    if(selected && selected.value === correct){
+      ok.style.display = 'block';
+    } else {
+      no.style.display = 'block';
+    }
+  });
+});
+
+document.getElementById('resetQuiz').addEventListener('click', function(){
+  document.querySelectorAll('input[type="radio"]').forEach(function(inp){ inp.checked = false; });
+  document.querySelectorAll('.feedback').forEach(function(f){ f.style.display = 'none'; });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mandarin Primer — Lesson 24 Lecture Page</title>
+<style>
+:root{
+  --bg:#f6f8fc; --ink:#1d2433; --muted:#5a6475; --card:#ffffff; --line:#d8dfeb;
+  --blue:#2f6fed; --green:#2f9e77; --purple:#7b61ff; --orange:#f08c2e; --red:#d9485f; --gold:#c99700; --teal:#118ab2;
+  --shadow:0 10px 30px rgba(28,35,54,.08); --radius:18px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at top right, rgba(47,111,237,.08), transparent 28%),
+    radial-gradient(circle at top left, rgba(123,97,255,.08), transparent 26%),
+    var(--bg);
+  line-height:1.65;
+}
+.wrap{width:min(1180px,94vw); margin:0 auto; padding:28px 0 64px;}
+header.hero{
+  background:linear-gradient(135deg,#17457e,#2b63cf 55%,#7b61ff);
+  color:#fff; border-radius:28px; padding:34px 34px 28px; box-shadow:var(--shadow); overflow:hidden;
+}
+.eyebrow{
+  display:inline-block; padding:6px 10px; border:1px solid rgba(255,255,255,.28);
+  border-radius:999px; font-size:.83rem; margin-bottom:10px; background:rgba(255,255,255,.08);
+}
+h1,h2,h3{line-height:1.2; margin:.2rem 0 .8rem}
+h1{font-size:clamp(2rem,3vw,3rem)} h2{font-size:1.55rem} h3{font-size:1.12rem}
+p.lead{font-size:1.08rem; max-width:980px; opacity:.98}
+.small{font-size:.95rem; color:var(--muted)}
+.grid{display:grid; gap:18px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:900px){.g2{grid-template-columns:1fr}}
+section{margin-top:22px}
+.card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px}
+.pill{display:inline-block; font-size:.8rem; font-weight:800; padding:5px 10px; border-radius:999px; color:#fff; margin-bottom:10px}
+.blue{background:var(--blue)} .green{background:var(--green)} .purple{background:var(--purple)} .orange{background:var(--orange)} .red{background:var(--red)} .gold{background:var(--gold)} .teal{background:var(--teal)}
+.banner{border-left:6px solid var(--gold); background:#fff8db; padding:14px 16px; border-radius:14px}
+.callout{border-left:5px solid var(--blue); background:#eef4ff; padding:14px 16px; border-radius:14px}
+.warning{border-left:5px solid var(--red); background:#fff2f4; padding:14px 16px; border-radius:14px}
+ul li, ol li{margin:.45rem 0}
+.flow{display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:12px}
+@media (max-width:1000px){.flow{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.flow{grid-template-columns:1fr}}
+.step{background:linear-gradient(180deg,#fff,#f8faff); border:1px solid var(--line); border-radius:18px; padding:16px; min-height:172px}
+.num{
+  width:34px; height:34px; border-radius:50%; display:grid; place-items:center;
+  color:#fff; font-weight:800; margin-bottom:10px; background:linear-gradient(135deg,var(--blue),var(--purple))
+}
+.dialogue-line{padding:10px 0; border-bottom:1px dashed var(--line)}
+.dialogue-line:last-child{border-bottom:none}
+.speaker{display:inline-block; min-width:118px; font-weight:800; color:var(--blue)}
+.roman{font-size:1.02rem; font-weight:650}
+.gloss{color:var(--muted)}
+.concept-grid,.practice{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px}
+@media (max-width:900px){.concept-grid,.practice{grid-template-columns:1fr}}
+.concept{border:1px solid var(--line); border-radius:16px; padding:16px; background:#fbfcff}
+.tag{
+  display:inline-block; padding:4px 8px; border-radius:999px; font-size:.78rem; font-weight:700;
+  margin:2px 4px 2px 0; background:#eef3ff; color:#2c4a9c
+}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; background:#f5f7fb; padding:.08rem .35rem; border-radius:8px}
+table{width:100%; border-collapse:collapse; font-size:.96rem}
+th,td{border-bottom:1px solid var(--line); padding:12px 10px; text-align:left; vertical-align:top}
+th{background:#f4f7fc} tr:last-child td{border-bottom:none}
+.graph-wrap{overflow:auto; border:1px solid var(--line); border-radius:18px; background:linear-gradient(180deg,#fcfdff,#f6f9ff); padding:12px}
+svg text{font-family:Inter,system-ui,sans-serif; fill:#1f2430}
+.edge{stroke:#90a4d4; stroke-width:2.2; fill:none; marker-end:url(#arrow)}
+.node rect{rx:18; ry:18; stroke:#d8dff2; stroke-width:1.4}
+.legend{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; font-size:.9rem}
+.legend span{display:flex; align-items:center; gap:6px; background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 10px}
+.dot{width:12px; height:12px; border-radius:50%; display:inline-block}
+.quiz-q{border:1px solid var(--line); border-radius:16px; padding:16px; margin-bottom:16px; background:#fbfdff}
+.quiz-q label{display:block; padding:9px 10px; border:1px solid transparent; border-radius:12px; cursor:pointer}
+.quiz-q label:hover{background:#f1f6ff; border-color:#dbe6ff}
+button{
+  appearance:none; border:none; background:linear-gradient(135deg,var(--blue),var(--purple)); color:#fff;
+  border-radius:12px; padding:11px 16px; font-size:.96rem; font-weight:700; cursor:pointer; box-shadow:var(--shadow)
+}
+button.secondary{background:linear-gradient(135deg,var(--green),#3fb58e)}
+.feedback{margin-top:10px; padding:12px 14px; border-radius:12px; display:none}
+.feedback.ok{background:#edf9f3; border:1px solid #bfe7cf}
+.feedback.no{background:#fff1f3; border:1px solid #f0c0cb}
+footer{margin-top:28px; color:var(--muted); font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Yuen Ren Chao - Mandarin Primer: An Intensive Course in Spoken Chinese</div>
+  <h1>Mandarin Primer — Lesson 24</h1>
+  <h2 style="font-size:1.35rem;font-weight:650;opacity:.98;">An American Makes a Speech</h2>
+  <p class="lead">
+    Lesson 24 turns a delayed train arrival into a public speaking event. Two students rush into an assembly just as the national anthem begins, discover that an American exchange student is about to speak in Chinese, and then listen to a speech that mixes humility, humor, language learning, cultural desire, gratitude, and gender commentary. The lesson is excellent for teaching assembly language, speech framing, audience response, self-deprecating humor, and how public Chinese differs from casual conversation.
+  </p>
+  <p class="small" style="color:rgba(255,255,255,.9);">This page keeps the book’s original romanization system so the page stays aligned with the scanned lesson.</p>
+</header>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill blue">Learning goals</div>
+    <h2>What students should learn</h2>
+    <ul>
+      <li>Follow the lesson’s structure: arriving late, entering the hall quietly, hearing the anthem, listening to the president’s introduction, listening to the American student’s speech, and reacting afterward.</li>
+      <li>Understand vocabulary for meetings, auditoriums, dormitories, whispering, welcoming, exchange students, speeches, scholarships, rapid language courses, universities, faculty guidance, applause, and adjournment.</li>
+      <li>Recognize how the speaker uses humility formulas and jokes to make his Chinese speech more effective.</li>
+      <li>See how the lesson presents Chinese as difficult, desirable, culturally rich, and socially rewarding.</li>
+      <li>Notice the public style of formal thanks and respectful address in the speech.</li>
+      <li>Understand the role of the national anthem on page 5, including its literary diction and ceremonial effect.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="pill gold">Teacher lens</div>
+    <h2>Why this lesson matters</h2>
+    <div class="banner"><strong>Lesson 24 teaches Chinese in a public, performative setting.</strong> Students do not just order tea or argue with friends here. They enter an auditorium, hear formal introductions, interpret audience laughter, and analyze how a speaker wins a room.</div>
+    <p>
+      For high-school students, this lesson is memorable because the American speaker is both admirable and funny. He uses a proverb about a foreigner speaking Chinese, describes being intimidated by the language, then earns applause by speaking gracefully anyway.
+    </p>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill purple">Two-hour lecture flow</div>
+  <h2>Suggested lecture sequence</h2>
+  <div class="flow">
+    <div class="step"><div class="num">1</div><strong>Late-arrival hook</strong><br><span class="small">Begin with the rushing dialogue: the meeting has already started, the bell is ringing, and they should have gone straight to the auditorium.</span></div>
+    <div class="step"><div class="num">2</div><strong>Ceremony frame</strong><br><span class="small">Teach the anthem, the formal hall setting, whispering students, and the president’s introduction.</span></div>
+    <div class="step"><div class="num">3</div><strong>The speech opening</strong><br><span class="small">Focus on the proverb joke and the speaker’s humble claim that he cannot really make a speech.</span></div>
+    <div class="step"><div class="num">4</div><strong>Motivation and study path</strong><br><span class="small">Teach childhood interest in China, books, restaurants, fear of difficulty, the Harvard rapid course, and the scholarship.</span></div>
+    <div class="step"><div class="num">5</div><strong>Audience laughter and social meaning</strong><br><span class="small">Teach the coeducation joke, applause, polished Mandarin, and peer evaluation.</span></div>
+    <div class="step"><div class="num">6</div><strong>After-meeting retell + quiz</strong><br><span class="small">Use the exercise dialogue to retell the meeting and practice reported speech.</span></div>
+  </div>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill green">How to teach it well</div>
+    <h2>Effective teaching moves for beginners</h2>
+    <div class="callout">
+      The “To the Student” guidance still applies: work from clear understanding toward fluent repetition. Lesson 24 benefits especially from performance because much of its meaning comes from tone, applause, whispering, and laughter.
+    </div>
+    <ol>
+      <li>Open class by staging the late-arrival conversation at the door, with one student hurrying another into the “auditorium.”</li>
+      <li>Show the anthem visually as a ceremony object rather than treating it as just another text; page 5 includes the musical score, which makes the event feel formal and public.</li>
+      <li>Read the American speaker’s lines aloud with deliberate pauses, false starts, and self-correction, so students hear how humility and humor work.</li>
+      <li>Track audience responses on the board: whispering, laughter, great laughter, applause.</li>
+      <li>Use the exercise retell on page 6–7 to shift students from direct speech to narrative retelling.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="pill red">Likely beginner confusions</div>
+    <h2>Where English speakers may stumble</h2>
+    <div class="warning">
+      Students may think the lesson is mainly about the foreign speaker’s Chinese ability, but it is equally about public ritual, audience interpretation, and formal gratitude language.
+    </div>
+    <ul>
+      <li><strong><span class="mono">yeanshuo</span></strong> means “to make a speech,” and the notes distinguish it from <span class="mono">jeangyean</span> or <span class="mono">yeanjeang</span> “lecture.”</li>
+      <li><strong>The proverb formula matters:</strong> page 5 notes explain that with substitutions it is a common native reaction when hearing a foreigner speak one’s language or dialect.</li>
+      <li><strong><span class="mono">... de huah</span></strong> in the apology formula means “if it is a matter of / if,” not simply a noun phrase ending.</li>
+      <li><strong>Speaker A’s accent joke matters:</strong> page 6 notes that he is presumably from Szechwan and pronounces <span class="mono">gwoyeu</span> like <span class="mono">gueeyuh</span>.</li>
+      <li><strong>The anthem’s wording is intentionally literary:</strong> page 5 notes say the national anthem text is in an archaic literary style, even more literary than current <span class="mono">wenli</span>.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill blue">Lesson walkthrough</div>
+  <h2>Lesson 24 as arrival, ceremony, speech, and reaction</h2>
+  <p class="small">This lesson becomes much easier when treated as four connected scenes.</p>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 1</span>
+    <span class="roman">Huay le, huay le! Tzarmen daw-chyrle. Nii ting, yiijing daa-jong kai-huey le.</span><br>
+    <span class="gloss">Oh no, we are late. Listen, they are already ringing the bell for the meeting.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 1</span>
+    <span class="roman">Tzarmen huooche jihran wuhle dean, jiow inggai ijyr daw dah-liitarng ... nii iseel yaw shian daw suhsheh.</span><br>
+    <span class="gloss">Since our train was late, we should have come straight to the auditorium ... you insisted on going to the dormitory first.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 1</span>
+    <span class="roman">Tamen yiijing kaishyy chanq gwoge'l le! Tzarmen chingchienglde jinnchiuh.</span><br>
+    <span class="gloss">They have already started singing the national anthem. Let us go in quietly.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 2</span>
+    <span class="roman">Neusheng I: Jeangtair.shanq yeou g yangrel tzuoh de nall. ... Tzay nall, tzay shiawjaang weytz de yowbial.</span><br>
+    <span class="gloss">Woman Student I: There is a foreigner sitting on the platform. ... There, to the right of the president’s seat.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 2</span>
+    <span class="roman">Jintian woomen huan'yng i-wey shinjinn daw Jonggwo lai de Meeigwo torngshyue ... Ta sh ... Haafor Dahshyue gen been-shiaw de jiauhuann shyuesheng.</span><br>
+    <span class="gloss">Today we welcome an American student who has recently arrived in China ... He is an exchange student from Harvard University to our university.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 3</span>
+    <span class="roman">Swuyeu shuo de hao, “Tian bu pah, dih bu pah, jiow pah yanggoeitz shuo Jonggwo-huah.” ... Shuo de buhao de huah, chiing dahjia yuanlianq.</span><br>
+    <span class="gloss">As the proverb says, “Heaven is not to be feared, Earth is not to be feared, only a foreign devil speaking Chinese is fearful.” ... If I speak badly, please forgive me.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 3</span>
+    <span class="roman">Woo shiahle jyueshin, tzay Haafor Dahshyue sheuan le i-men Jonggwo Yeuyan Suhcherng Ke; yow derle i-bii jeangshyue-jin, shanq jell lai tzuoh jiauhuann-shyuesheng.</span><br>
+    <span class="gloss">I made up my mind, chose a rapid Chinese language course at Harvard University, and received a scholarship to come here as an exchange student.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 3</span>
+    <span class="roman">Shianntzay jiuran dar-dawle daw Jonggwo chyou-shyue de muhdih, woo jyuej jeanjyr kuay.hwo de shuo.bu-chulai le.</span><br>
+    <span class="gloss">Now that I have really achieved my aim of coming to China to study, I simply cannot express how happy I am.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 4</span>
+    <span class="roman">Haafor sh jyy shou nansheng d'e! ... kannjiann gehgehl dahshyue doush nan-neu torng-shiaw, jeyg shyy woo jyuej youchyi gaushinq!</span><br>
+    <span class="gloss">Harvard admits only male students! ... seeing that every university here is coeducational makes me especially happy.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Scene 4</span>
+    <span class="roman">Cherng geh-wey shyjaang, geh-wey torngshyue, chuhchuh de bang-mang jyydean, bujydaw tzeemyanq gaanshieh tsair hao. Yiihow hair shiwanq dahjia shyrshyr jyydao!</span><br>
+    <span class="gloss">Having received help and guidance everywhere from all the teachers and students, I do not know how best to thank you. I hope you will continue to guide me from time to time.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Closing</span>
+    <span class="roman">Jeyg waygworen de Jonggwo-huah shuo de jen butsuoh ... ta jey-i-koou de piawlianq gwoyeu lian woo dou shuo.bu-guoh ta. ... Dai.hoel sann le huey tzarm chiuh jiann ta chiuh.</span><br>
+    <span class="gloss">This foreigner’s Chinese is really not bad ... his polished Mandarin is so good that even I cannot surpass him. ... After the meeting we will go meet him.</span>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill orange">Knowledge graph</div>
+  <h2>Concept network for Lesson 24</h2>
+  <p>
+    Lesson 24 forms a network around <strong>late arrival → ceremony → formal introduction → self-deprecating speech → motivation to study Chinese → gratitude and applause → retelling afterward</strong>.
+  </p>
+  <div class="graph-wrap">
+    <svg width="1180" height="860" viewBox="0 0 1180 860" role="img" aria-label="Knowledge graph for Lesson 24">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" fill="#90a4d4"></path>
+        </marker>
+      </defs>
+
+      <path class="edge" d="M590,110 C590,145 590,155 590,205"/>
+      <path class="edge" d="M590,110 C430,135 315,155 205,235"/>
+      <path class="edge" d="M590,110 C750,135 865,155 975,235"/>
+      <path class="edge" d="M205,285 C205,330 205,342 205,405"/>
+      <path class="edge" d="M975,285 C975,330 975,342 975,405"/>
+      <path class="edge" d="M590,255 C490,310 430,350 375,425"/>
+      <path class="edge" d="M590,255 C690,310 750,350 805,425"/>
+      <path class="edge" d="M590,255 C590,330 590,350 590,425"/>
+      <path class="edge" d="M375,475 C340,550 300,595 250,710"/>
+      <path class="edge" d="M590,475 C590,550 590,595 590,710"/>
+      <path class="edge" d="M805,475 C840,550 880,595 930,710"/>
+
+      <g class="node">
+        <rect x="370" y="45" width="440" height="70" fill="#efeaff"></rect>
+        <text x="590" y="76" text-anchor="middle" font-size="18" font-weight="800">Lesson 24 Core Question</text>
+        <text x="590" y="99" text-anchor="middle" font-size="14">How does a public Chinese speech build credibility, humor, gratitude, and audience connection?</text>
+      </g>
+
+      <g class="node">
+        <rect x="445" y="205" width="290" height="54" fill="#eaf2ff"></rect>
+        <text x="590" y="238" text-anchor="middle" font-size="17" font-weight="800">Speech event on campus</text>
+      </g>
+
+      <g class="node">
+        <rect x="55" y="235" width="300" height="52" fill="#eefaf5"></rect>
+        <text x="205" y="267" text-anchor="middle" font-size="17" font-weight="800">Arrival and ceremony</text>
+      </g>
+
+      <g class="node">
+        <rect x="825" y="235" width="300" height="52" fill="#fff5e8"></rect>
+        <text x="975" y="267" text-anchor="middle" font-size="17" font-weight="800">Speech content and audience reaction</text>
+      </g>
+
+      <g class="node">
+        <rect x="85" y="405" width="240" height="68" fill="#edf7ff"></rect>
+        <text x="205" y="434" text-anchor="middle" font-size="16" font-weight="800">late train / dormitory / anthem / quiet entry</text>
+        <text x="205" y="456" text-anchor="middle" font-size="13">public setting</text>
+      </g>
+
+      <g class="node">
+        <rect x="855" y="405" width="240" height="68" fill="#fff0f3"></rect>
+        <text x="975" y="434" text-anchor="middle" font-size="16" font-weight="800">humor / gratitude / applause / polished Mandarin</text>
+        <text x="975" y="456" text-anchor="middle" font-size="13">performance success</text>
+      </g>
+
+      <g class="node">
+        <rect x="255" y="425" width="240" height="50" fill="#eefaf5"></rect>
+        <text x="375" y="456" text-anchor="middle" font-size="16" font-weight="800">whispering students / platform / president</text>
+      </g>
+
+      <g class="node">
+        <rect x="685" y="425" width="240" height="50" fill="#eefaf5"></rect>
+        <text x="805" y="456" text-anchor="middle" font-size="16" font-weight="800">Harvard / scholarship / exchange study</text>
+      </g>
+
+      <g class="node">
+        <rect x="495" y="425" width="190" height="50" fill="#eaf2ff"></rect>
+        <text x="590" y="456" text-anchor="middle" font-size="16" font-weight="800">proverb + humility</text>
+      </g>
+
+      <g class="node">
+        <rect x="155" y="710" width="190" height="58" fill="#eefaf5"></rect>
+        <text x="250" y="741" text-anchor="middle" font-size="16" font-weight="800">anthem score on page 5</text>
+        <text x="250" y="761" text-anchor="middle" font-size="13">ritual frame</text>
+      </g>
+
+      <g class="node">
+        <rect x="495" y="710" width="190" height="58" fill="#fff5e8"></rect>
+        <text x="590" y="741" text-anchor="middle" font-size="16" font-weight="800">coeducation joke</text>
+        <text x="590" y="761" text-anchor="middle" font-size="13">audience laughter</text>
+      </g>
+
+      <g class="node">
+        <rect x="835" y="710" width="190" height="58" fill="#f3f0ff"></rect>
+        <text x="930" y="741" text-anchor="middle" font-size="16" font-weight="800">exercise retell dialogue</text>
+        <text x="930" y="761" text-anchor="middle" font-size="13">reported speech practice</text>
+      </g>
+    </svg>
+  </div>
+  <div class="legend">
+    <span><i class="dot" style="background:#eaf2ff"></i> event structure</span>
+    <span><i class="dot" style="background:#eefaf5"></i> ceremony and setting</span>
+    <span><i class="dot" style="background:#fff5e8"></i> speech content</span>
+    <span><i class="dot" style="background:#f3f0ff"></i> retelling and reflection</span>
+    <span><i class="dot" style="background:#fff0f3"></i> audience effect</span>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill green">Core concepts</div>
+  <h2>What the lesson teaches, concept by concept</h2>
+  <div class="concept-grid">
+    <div class="concept">
+      <h3>1) Public events require public behavior</h3>
+      <div class="tag">dah-liitarng</div><div class="tag">gwoge</div><div class="tag">chingchienglde</div>
+      <ul>
+        <li>The opening teaches how to move into a formal event late: quietly, with awareness of ceremony.</li>
+        <li>This makes the lesson socially grounded before the speech even begins.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>2) Whispering sets audience mood</h3>
+      <div class="tag">eelyeu</div><div class="tag">jeangtair</div><div class="tag">yangrel</div>
+      <ul>
+        <li>The women students’ whispers show excitement, curiosity, and the presence of a foreign guest as a spectacle.</li>
+        <li>That prepares students to think about audience response, not only speaker content.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>3) Formal introduction creates legitimacy</h3>
+      <div class="tag">huan'yng</div><div class="tag">jiauhuann shyuesheng</div><div class="tag">been-shiaw</div>
+      <ul>
+        <li>The president’s introduction frames the American speaker as officially welcomed and academically serious.</li>
+        <li>This matters because the audience hears him first as an institutional guest, then as a person.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>4) Self-deprecating humor lowers audience resistance</h3>
+      <div class="tag">yanggoeitz shuo Jonggwo-huah</div><div class="tag">yuanlianq</div>
+      <ul>
+        <li>The proverb joke lets the speaker acknowledge his foreignness and the risk of speaking Chinese.</li>
+        <li>This wins laughter before any audience judgment becomes harsh.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>5) Motivation story creates sincerity</h3>
+      <div class="tag">charngcharng mae shu-baw</div><div class="tag">Jonggwo fanngoal</div><div class="tag">shiah de tzoong bugaan shyh</div>
+      <ul>
+        <li>The speaker explains his childhood desire to come to China and his fear of trying the language.</li>
+        <li>That makes his later achievement feel earned rather than decorative.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>6) A scholarship turns desire into reality</h3>
+      <div class="tag">Suhcherng Ke</div><div class="tag">jeangshyue-jin</div><div class="tag">chyou-shyue</div>
+      <ul>
+        <li>The speech links resolve, formal study, and financial opportunity.</li>
+        <li>This gives students a clear cause-and-effect academic path.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>7) Humor can shift to social critique</h3>
+      <div class="tag">jyy shou nansheng</div><div class="tag">nan-neu torng-shiaw</div><div class="tag">hong-tarng dah-shiaw</div>
+      <ul>
+        <li>The coeducation joke is funny, but it also reveals institutional difference between Harvard and Chinese universities in the lesson’s moment.</li>
+        <li>This is why the room erupts in big laughter.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>8) Formal gratitude closes the speech</h3>
+      <div class="tag">bang-mang jyydean</div><div class="tag">gaanshieh</div><div class="tag">jyydao</div>
+      <ul>
+        <li>The ending models a respectful public-thank-you style.</li>
+        <li>The notes also distinguish <span class="mono">jyydean</span> for practical guidance from <span class="mono">jyydao</span> for more general guidance.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill orange">Mini-board plan</div>
+    <h2>How to lay this out for students</h2>
+    <table>
+      <thead><tr><th>Board zone</th><th>Write this</th><th>Teaching purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Left</td><td>event sequence: late arrival → anthem → introduction → speech → applause → after-meeting plan</td><td>Keeps the public-event structure visible.</td></tr>
+        <tr><td>Center</td><td>speech strategy chart: joke / humility / motivation / gratitude</td><td>Shows why the speech succeeds rhetorically.</td></tr>
+        <tr><td>Right</td><td>audience response line: whisper → laughter → great laughter → applause</td><td>Helps students track social effect.</td></tr>
+        <tr><td>Bottom</td><td>language ladder: fear Chinese → rapid course → scholarship → speech in Chinese</td><td>Makes the speaker’s journey memorable.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="pill teal">High-value classroom move</div>
+    <h2>Stage the speech twice</h2>
+    <div class="callout">
+      Have one student give the speech flatly, then another give it with humor, pauses, and audience awareness.
+    </div>
+    <ol>
+      <li>Compare how the proverb lands in the two versions.</li>
+      <li>Notice how pauses around <span class="mono">uh</span> and self-correction create vulnerability.</li>
+      <li>Discuss why the coeducation joke works better once the room already trusts the speaker.</li>
+    </ol>
+    <p class="small">This shows that public speaking is not only about words but about delivery and relationship with the audience.</p>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill blue">A key structural system</div>
+  <h2>Fear → effort → arrival → gratitude</h2>
+  <div class="practice">
+    <div class="concept">
+      <h3>Fear</h3>
+      <p><span class="mono">renren dou jiinggaw woo</span>, <span class="mono">shiah de tzoong bugaan shyh</span></p>
+      <p class="small">Everyone warned him Chinese was difficult, so he was afraid to try.</p>
+    </div>
+    <div class="concept">
+      <h3>Effort</h3>
+      <p><span class="mono">shiahle jyueshin</span>, <span class="mono">Suhcherng Ke</span></p>
+      <p class="small">He finally made a resolution and took a rapid course.</p>
+    </div>
+    <div class="concept">
+      <h3>Arrival</h3>
+      <p><span class="mono">dar-dawle ... muhdih</span>, <span class="mono">jiauhuann shyuesheng</span></p>
+      <p class="small">He reaches China and becomes an exchange student.</p>
+    </div>
+    <div class="concept">
+      <h3>Gratitude</h3>
+      <p><span class="mono">gaanshieh</span>, <span class="mono">shiwanq dahjia ... jyydao</span></p>
+      <p class="small">He closes by thanking and requesting continued guidance.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill green">Guided practice</div>
+  <h2>Practice tasks for a two-hour lesson</h2>
+  <div class="practice">
+    <div class="concept">
+      <h3>Task A — Retell the event</h3>
+      <p>Using the page 6–7 exercise, students retell the whole meeting to a friend who missed it.</p>
+    </div>
+    <div class="concept">
+      <h3>Task B — Why did the audience laugh?</h3>
+      <p>Students identify each laugh point in the speech and explain what makes it funny or socially effective.</p>
+    </div>
+    <div class="concept">
+      <h3>Task C — What makes the speech persuasive?</h3>
+      <p>Students sort lines into humility, credibility, cultural interest, gratitude, and audience-pleasing humor.</p>
+    </div>
+    <div class="concept">
+      <h3>Task D — Compare two kinds of Chinese</h3>
+      <p>Students compare the informal student dialogue with the more formal public speech register.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill red">Quick understanding check</div>
+  <h2>Two multiple-choice quiz questions</h2>
+
+  <div class="quiz-q" data-answer="b">
+    <h3>1) What is the best explanation of why the foreign student opens with the proverb about “a foreign devil speaking Chinese”?</h3>
+    <label><input type="radio" name="q1" value="a"> He wants to insult the audience before the speech starts.</label>
+    <label><input type="radio" name="q1" value="b"> He uses self-deprecating humor to acknowledge the risk of speaking Chinese and win audience goodwill.</label>
+    <label><input type="radio" name="q1" value="c"> He is actually refusing to give the speech.</label>
+    <label><input type="radio" name="q1" value="d"> He is quoting the national anthem.</label>
+    <div class="feedback ok">Correct. The proverb lets him laugh at himself first, which lowers tension and makes the audience more receptive.</div>
+    <div class="feedback no">Not quite. The line works because it is humble and funny, not hostile.</div>
+  </div>
+
+  <div class="quiz-q" data-answer="c">
+    <h3>2) Why does the room break into especially big laughter at the line about Harvard and coeducation?</h3>
+    <label><input type="radio" name="q2" value="a"> Because nobody knows what Harvard is.</label>
+    <label><input type="radio" name="q2" value="b"> Because the speaker suddenly forgets all his Chinese.</label>
+    <label><input type="radio" name="q2" value="c"> Because the joke contrasts Harvard’s male-only admissions with the coeducational universities he now sees in China, turning institutional difference into audience-pleasing humor.</label>
+    <label><input type="radio" name="q2" value="d"> Because the president interrupts him.</label>
+    <div class="feedback ok">Correct. The joke lands because it is both surprising and flattering to the audience’s own university environment.</div>
+    <div class="feedback no">Not quite. The humor comes from the contrast between institutions and the way the speaker frames it for the room.</div>
+  </div>
+
+  <button id="checkQuiz">Check my answers</button>
+  <button class="secondary" id="resetQuiz" style="margin-left:8px;">Reset</button>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill gold">Exit challenge</div>
+    <h2>End-of-lecture spoken challenge</h2>
+    <ol>
+      <li>Explain why the two students arrive late and what they do when they enter the hall.</li>
+      <li>Name two reasons the American wanted to study China before he ever came.</li>
+      <li>Describe, in English, how he finally got to China.</li>
+      <li>Explain why the audience laughs more than once during the speech.</li>
+      <li>Retell the ending of the speech in one or two sentences of formal gratitude.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="pill blue">References and source use</div>
+    <h2>References for this page</h2>
+    <ul>
+      <li><strong>Primary source:</strong> scanned Lesson 24 pages from <em>Mandarin Primer: An Intensive Course in Spoken Chinese</em>.</li>
+      <li><strong>Text basis:</strong> Lesson 24 “An American Makes a Speech,” including the late arrival at the auditorium, the national anthem, the whispered comments about the foreigner on the platform, the president’s introduction of the exchange student from Harvard, the American student’s speech in Chinese, the proverb joke, his account of wanting to study China, his fear of the difficulty of Chinese, the rapid course and scholarship, the coeducation joke, the formal thanks, the applause, and the closing student reactions.</li>
+      <li><strong>Notes basis:</strong> notes on <span class="mono">yeanshuo</span>, <span class="mono">dah-liitarng</span>, <span class="mono">iseel</span>, <span class="mono">suhsheh</span>, the national anthem and its literary style, <span class="mono">eelyeu</span>, <span class="mono">jeangtair</span>, <span class="mono">yangrel</span>, <span class="mono">huan'yng</span>, <span class="mono">torngshyue</span>, <span class="mono">Masheeng</span>, <span class="mono">Jiannchyau</span>, <span class="mono">Limuh</span>, <span class="mono">guu-jaang</span>, <span class="mono">laoshy</span>, the proverb formula with substitutions, the conditional use of <span class="mono">... de huah</span>, the Szechwan-like pronunciation of <span class="mono">gwoyeu</span>, <span class="mono">baw</span>, <span class="mono">yeuyan</span>, <span class="mono">suhcherng-ke</span>, <span class="mono">bii</span> as measure word for scholarships, <span class="mono">chyou-shyue</span>, <span class="mono">shou</span>, <span class="mono">nan-neu torng-shiaw</span>, <span class="mono">shyy woo jyuej</span>, <span class="mono">hong-tarng dah-shiaw</span>, <span class="mono">jeh.lii</span>, <span class="mono">cherng</span>, <span class="mono">shyjaang</span>, <span class="mono">jyydean</span>, <span class="mono">gaanshieh</span>, <span class="mono">jyydao</span>, <span class="mono">shuo.bu-guoh</span>, <span class="mono">dai.hoel</span>, and <span class="mono">sann-huey</span>.</li>
+      <li><strong>Visual basis:</strong> the anthem score on page 5, which helps frame the event as ceremonial and public rather than merely conversational.</li>
+      <li><strong>Exercises basis:</strong> the page 6–7 retell conversation, which strongly shaped the page’s emphasis on reported speech and event retelling.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  This lecture page is designed for a full two-hour beginner lesson. It keeps close to the source while turning Lesson 24 into a clearer,
+  more connected, and more teachable lesson about public speaking, audience response, and studying Chinese in a formal setting for English-speaking high-school students.
+</footer>
+</div>
+
+<script>
+document.getElementById('checkQuiz').addEventListener('click', function(){
+  document.querySelectorAll('.quiz-q').forEach(function(q){
+    const correct = q.dataset.answer;
+    const selected = q.querySelector('input[type="radio"]:checked');
+    const ok = q.querySelector('.feedback.ok');
+    const no = q.querySelector('.feedback.no');
+    ok.style.display = 'none';
+    no.style.display = 'none';
+    if(selected && selected.value === correct){ ok.style.display = 'block'; }
+    else { no.style.display = 'block'; }
+  });
+});
+document.getElementById('resetQuiz').addEventListener('click', function(){
+  document.querySelectorAll('input[type="radio"]').forEach(function(inp){ inp.checked = false; });
+  document.querySelectorAll('.feedback').forEach(function(f){ f.style.display = 'none'; });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mandarin Primer — Lesson 11 Lecture Page</title>
+<style>
+  :root{
+    --bg:#f6f8fc;
+    --ink:#1d2433;
+    --muted:#5a6475;
+    --card:#ffffff;
+    --line:#d8dfeb;
+    --blue:#2f6fed;
+    --green:#2f9e77;
+    --purple:#7b61ff;
+    --orange:#f08c2e;
+    --red:#d9485f;
+    --gold:#c99700;
+    --teal:#0f9db8;
+    --shadow:0 10px 30px rgba(28,35,54,.08);
+    --radius:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at top right, rgba(47,111,237,.08), transparent 28%),
+      radial-gradient(circle at top left, rgba(123,97,255,.08), transparent 26%),
+      var(--bg);
+    line-height:1.65;
+  }
+  .wrap{width:min(1180px,94vw); margin:0 auto; padding:28px 0 64px;}
+  header.hero{
+    background:linear-gradient(135deg,#17457e,#2b63cf 55%,#7b61ff);
+    color:#fff;
+    border-radius:28px;
+    padding:34px 34px 28px;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+  }
+  header.hero::after{
+    content:"";
+    position:absolute; right:-45px; top:-45px;
+    width:260px; height:260px;
+    background:radial-gradient(circle, rgba(255,255,255,.18), transparent 65%);
+  }
+  .eyebrow{
+    display:inline-block;
+    padding:6px 10px;
+    border:1px solid rgba(255,255,255,.28);
+    border-radius:999px;
+    font-size:.83rem;
+    letter-spacing:.02em;
+    margin-bottom:10px;
+    background:rgba(255,255,255,.08);
+  }
+  h1,h2,h3{line-height:1.2; margin:.2rem 0 .8rem}
+  h1{font-size:clamp(2rem,3vw,3rem)}
+  h2{font-size:1.55rem}
+  h3{font-size:1.12rem}
+  p.lead{font-size:1.08rem; max-width:980px; opacity:.98}
+  .small{font-size:.95rem; color:var(--muted)}
+  .grid{display:grid; gap:18px}
+  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media (max-width:900px){.g2{grid-template-columns:1fr}}
+  section{margin-top:22px}
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:22px;
+  }
+  .pill{
+    display:inline-block;
+    font-size:.8rem;
+    font-weight:800;
+    letter-spacing:.02em;
+    padding:5px 10px;
+    border-radius:999px;
+    color:#fff;
+    margin-bottom:10px;
+  }
+  .blue{background:var(--blue)}
+  .green{background:var(--green)}
+  .purple{background:var(--purple)}
+  .orange{background:var(--orange)}
+  .red{background:var(--red)}
+  .gold{background:var(--gold)}
+  .teal{background:var(--teal)}
+  .banner{
+    border-left:6px solid var(--gold);
+    background:#fff8db;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  .callout{
+    border-left:5px solid var(--blue);
+    background:#eef4ff;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  .warning{
+    border-left:5px solid var(--red);
+    background:#fff2f4;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  ul li, ol li{margin:.45rem 0}
+  .flow{
+    display:grid;
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    gap:12px;
+  }
+  @media (max-width:1000px){.flow{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){.flow{grid-template-columns:1fr}}
+  .step{
+    background:linear-gradient(180deg,#fff,#f8faff);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:16px;
+    min-height:156px;
+  }
+  .num{
+    width:34px;height:34px;border-radius:50%;
+    display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:#fff;font-weight:800;margin-bottom:10px;
+  }
+  .dialogue-line{
+    padding:10px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .dialogue-line:last-child{border-bottom:none}
+  .speaker{
+    display:inline-block; min-width:94px; font-weight:800; color:var(--blue);
+  }
+  .roman{font-size:1.02rem; font-weight:650}
+  .gloss{color:var(--muted)}
+  .concept-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;
+  }
+  @media (max-width:900px){.concept-grid{grid-template-columns:1fr}}
+  .concept{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px;
+    background:#fbfcff;
+  }
+  .tag{
+    display:inline-block;
+    padding:4px 8px;
+    border-radius:999px;
+    font-size:.78rem;
+    font-weight:700;
+    margin:2px 4px 2px 0;
+    background:#eef3ff;
+    color:#2c4a9c;
+  }
+  .mono{
+    font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background:#f5f7fb;
+    padding:.08rem .35rem;
+    border-radius:8px;
+  }
+  table{width:100%; border-collapse:collapse; font-size:.96rem}
+  th,td{border-bottom:1px solid var(--line); padding:12px 10px; text-align:left; vertical-align:top}
+  th{background:#f4f7fc}
+  tr:last-child td{border-bottom:none}
+  .graph-wrap{
+    overflow:auto;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:linear-gradient(180deg,#fcfdff,#f6f9ff);
+    padding:12px;
+  }
+  svg text{font-family:Inter, system-ui, sans-serif; fill:#1f2430;}
+  .edge{stroke:#90a4d4; stroke-width:2.2; fill:none; marker-end:url(#arrow);}
+  .node rect{rx:18; ry:18; stroke:#d8dff2; stroke-width:1.4;}
+  .legend{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; font-size:.9rem}
+  .legend span{
+    display:flex; align-items:center; gap:6px;
+    background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 10px;
+  }
+  .dot{width:12px;height:12px;border-radius:50%;display:inline-block}
+  .practice{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px;
+  }
+  @media (max-width:900px){.practice{grid-template-columns:1fr}}
+  details{
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:12px 14px;
+    background:#fff;
+  }
+  summary{cursor:pointer; font-weight:700}
+  .quiz-q{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px;
+    margin-bottom:16px;
+    background:#fbfdff;
+  }
+  .quiz-q label{
+    display:block;
+    padding:9px 10px;
+    border:1px solid transparent;
+    border-radius:12px;
+    cursor:pointer;
+  }
+  .quiz-q label:hover{background:#f1f6ff; border-color:#dbe6ff}
+  button{
+    appearance:none;border:none;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:#fff;border-radius:12px;
+    padding:11px 16px;
+    font-size:.96rem;font-weight:700;cursor:pointer;
+    box-shadow:var(--shadow);
+  }
+  button.secondary{background:linear-gradient(135deg,var(--green),#3fb58e)}
+  .feedback{
+    margin-top:10px; padding:12px 14px; border-radius:12px; display:none;
+  }
+  .feedback.ok{background:#edf9f3; border:1px solid #bfe7cf}
+  .feedback.no{background:#fff1f3; border:1px solid #f0c0cb}
+  footer{margin-top:28px; color:var(--muted); font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Yuen Ren Chao - Mandarin Primer: An Intensive Course in Spoken Chinese</div>
+    <h1>Mandarin Primer — Lesson 11</h1>
+    <h2 style="font-size:1.35rem; font-weight:650; opacity:.98;">Watching the Year Out</h2>
+    <p class="lead">
+      Lesson 11 is a rich seasonal and calendar lesson built around New Year’s Eve. Two speakers move from immediate physical experience
+      — cold room, snow, stove, hat, coat — into dates, weekdays, years, holidays, the Republic calendar, the lunar and solar calendars,
+      solstices, equinoxes, and finally the exact countdown to midnight. It is one of the best early lessons for turning language into a structured time map.
+    </p>
+    <p class="small" style="color:rgba(255,255,255,.9);">
+      This page keeps the book’s original romanization system so it stays aligned with the scanned lesson.
+    </p>
+  </header>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill blue">Learning goals</div>
+      <h2>What students should learn</h2>
+      <ul>
+        <li>Talk about cold, warmth, snow, clothing color change, and immediate surroundings in a winter scene.</li>
+        <li>Use relative time expressions like <span class="mono">tzwo.tian</span>, <span class="mono">chyan.tian</span>, <span class="mono">dah-chyan.tian</span>, <span class="mono">ming.tian</span>, <span class="mono">how.tian</span>, and <span class="mono">dah-how.tian</span>.</li>
+        <li>Read and reason about dates, weekdays, months, and years, including Republic-year and Gregorian-year references.</li>
+        <li>Understand the difference between lunar and solar calendars as presented in the lesson.</li>
+        <li>Recognize key seasonal terms: winter solstice, summer solstice, vernal equinox, autumnal equinox, and the four seasons.</li>
+        <li>Follow the countdown to midnight and understand how time is expressed by minutes, quarter-hours, and seconds.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="pill gold">Teacher lens</div>
+      <h2>Why this lesson matters</h2>
+      <div class="banner">
+        <strong>Lesson 11 teaches Mandarin through time systems.</strong> Students learn not just words for dates and weather, but how different time scales connect: today, this week, this month, this year, this era.
+      </div>
+      <p>
+        For high-school beginners, this lesson is especially valuable because the topic is concrete and abstract at once. They can feel the cold room and see the snow,
+        but they also begin to map historical time, public holidays, calendars, and astronomical markers.
+      </p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill purple">Two-hour lecture flow</div>
+    <h2>Suggested lecture sequence</h2>
+    <div class="flow">
+      <div class="step"><div class="num">1</div><strong>Winter scene hook</strong><br><span class="small">Begin with the room, the stove, the cold, the snow, and the coat turning white. Let students enter the scene first.</span></div>
+      <div class="step"><div class="num">2</div><strong>Timeline of near days</strong><br><span class="small">Map yesterday, day before yesterday, tomorrow, day after tomorrow, and the first few days of January.</span></div>
+      <div class="step"><div class="num">3</div><strong>Calendar reasoning</strong><br><span class="small">Work through weekdays, dates, next Saturday, last Wednesday, and the chronological table.</span></div>
+      <div class="step"><div class="num">4</div><strong>Big time systems</strong><br><span class="small">Teach Republic years, Gregorian years, and the contrast between lunar and solar calendars.</span></div>
+      <div class="step"><div class="num">5</div><strong>Seasonal astronomy</strong><br><span class="small">Explain solstices, equinoxes, longest and shortest day/night, and how they organize the four seasons.</span></div>
+      <div class="step"><div class="num">6</div><strong>Midnight countdown + quiz</strong><br><span class="small">Finish with the final minute, the count in seconds, and a class countdown to the new year.</span></div>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill green">How to teach it well</div>
+      <h2>Effective teaching moves for beginners</h2>
+      <div class="callout">
+        The source’s “To the Student” pages emphasize utterances, repetition, echoing, and grammar-through-exercises. Lesson 11 becomes especially teachable when students can see time laid out visually while hearing the dialogue aloud.
+      </div>
+      <ol>
+        <li>Use a large classroom timeline for today, yesterday, tomorrow, next week, next month, and next year.</li>
+        <li>Put an actual calendar on screen or board and let students calculate along with the dialogue.</li>
+        <li>Separate “small time” and “big time”: first dates and weekdays, then years and calendars, then solstices and equinoxes.</li>
+        <li>Keep the winter room imagery visible so the lesson does not become pure abstraction.</li>
+        <li>Use the chronological table from the source as a teaching graphic and have students read across it aloud.</li>
+      </ol>
+    </div>
+    <div class="card">
+      <div class="pill red">Likely beginner confusions</div>
+      <h2>Where English speakers may stumble</h2>
+      <div class="warning">
+        Students often mix up the different time scales in this lesson. Help them distinguish what is about weather, what is about dates, what is about calendar systems, and what is about astronomy.
+      </div>
+      <ul>
+        <li><strong><span class="mono">shiahg</span> with months</strong> behaves differently because <span class="mono">yueh</span> is treated as a noun requiring an AN, unlike <span class="mono">nian</span>.</li>
+        <li><strong>Days of the week</strong> can be treated as measure words or nouns, so forms like <span class="mono">shiah Shingchi-liow</span> and <span class="mono">shiahg Shingchi-liow</span> both occur.</li>
+        <li><strong>Next Saturday</strong> in the lesson does not simply mean the very next Saturday chronologically; it often means the Saturday of next week.</li>
+        <li><strong>Lunar vs. solar calendar</strong> is a conceptual distinction, not only a vocabulary distinction.</li>
+        <li><strong>Numbers in Chinese</strong> group by four digits, not by three, which matters in the notes and chronological table.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill blue">Dialogue walkthrough</div>
+    <h2>Lesson 11 as a movement through time</h2>
+    <p class="small">This lesson works best when the dialogue is grouped into thematic scenes rather than read as one long block.</p>
+
+    <div class="dialogue-line">
+      <span class="speaker">Scene 1</span>
+      <span class="roman">Utzlii jen leeng! Woo yueh tzuoh yueh leeng. Leeng de jen nanshow!</span><br>
+      <span class="gloss">It is really cold in the room! The more I sit here, the colder I get. It is miserably cold.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 1</span>
+      <span class="roman">Jeh lutz ideal rehchiell dou meiyeou me! Goanbao sh meiyeou mei le ha?</span><br>
+      <span class="gloss">This stove has not a bit of warmth in it. I bet it is running out of coal.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 2</span>
+      <span class="roman">Hei-mawtz biannle bair-mawtz, hei-dahchaang biannle bair-dahchaang le.</span><br>
+      <span class="gloss">The black hat has turned into a white hat, and the black overcoat into a white overcoat.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 2</span>
+      <span class="roman">Jin.nian hair mei shiah.guoh tzemm dah de sheue ne ha?</span><br>
+      <span class="gloss">There has not yet been such a heavy snow this year, has there?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 3</span>
+      <span class="roman">Jiel Shyr'ell.yueh sanshyri-haw. Tzwo.tian sanshyr, chyan.tian ellshyr-jeou, dah-chyan.tian ellshyr-ba.</span><br>
+      <span class="gloss">Today is December 31st. Yesterday was the 30th, the day before yesterday the 29th, and the day before that the 28th.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 3</span>
+      <span class="roman">Ming.tian sh shiahg yueh de i-haw ... how.tian sh Jeng.yueh chu'ell, dah-how.tian sh Jeng.yueh chu-san.</span><br>
+      <span class="gloss">Tomorrow is the first day of the next month ... the day after tomorrow is January 2nd, and the day after that is January 3rd.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 4</span>
+      <span class="roman">Mingwo sanshyr-chi nian ... jiowsh Gonglih ichian jeoubae syhshyr-ba nian.</span><br>
+      <span class="gloss">This is the 37th year of the Republic ... which is the same as 1948 in the public/Gregorian calendar.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 4</span>
+      <span class="roman">Chiuh.nian sh i-jeou-syh-chi, chyan.nian i-jeou-syh-liow ... jiee ming.tian chii-tourl jiowsh i-jeou-syh-jeou-nian le.</span><br>
+      <span class="gloss">Last year was 1947, the year before last 1946 ... from tomorrow on it will be 1949.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 5</span>
+      <span class="roman">Jintian sh Shingchi-wuu ... shiah Shingchi-liow sh ba-haw.</span><br>
+      <span class="gloss">Today is Friday ... next week’s Saturday will be the 8th.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 5</span>
+      <span class="roman">Jeyg Shingchi-san sh ellshyr-jeou, shanq Shingchi-san sh ellshyr'ell — gaan.chyng jiowsh Dongjyh ou!</span><br>
+      <span class="gloss">This Wednesday was the 29th, last Wednesday was the 22nd — why, that was the winter solstice!</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 6</span>
+      <span class="roman">Dongjyh ... sh i-nian liitou bair.tian tzuey doan yeh.lii tzuey charng de ryhtz.</span><br>
+      <span class="gloss">The winter solstice is the day in the year with the shortest day and the longest night.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 6</span>
+      <span class="roman">Dongjyh de dueymiall sh Shiahjyh ... leang-jyh de dangjiall ne, hair yeou Chuenfen Chioufen.</span><br>
+      <span class="gloss">The counterpart of winter solstice is summer solstice ... and between the two there are also the vernal and autumnal equinoxes.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 7</span>
+      <span class="roman">Tzyhtsorng Shinhay Germinq yiihow, jiow bae inlih geei feychwu le, jiow na yanglih danqtzuoh gwolih yonq le.</span><br>
+      <span class="gloss">Since the Revolution of 1911, the lunar calendar has been abolished and the solar calendar has been used as the national calendar.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 8</span>
+      <span class="roman">Shianntzay yiijing sh shyri-dean san-keh le ... hair yeou i-keh jong jiowsh bannyeh shyr'ell-dean l'a.</span><br>
+      <span class="gloss">It is already quarter to twelve ... another quarter hour and it will be midnight.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 8</span>
+      <span class="roman">Wuushyr meau, wuushyri, wuushyr'ell ... wuushyrjeou — Shyr'ell-dean! Shianntzay sh i-jeou-syh-jeou l'a!</span><br>
+      <span class="gloss">Fifty seconds, 51, 52 ... 59 — Twelve o’clock! Now it is 1949!</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill orange">Knowledge graph</div>
+    <h2>Concept network for Lesson 11</h2>
+    <p>
+      Lesson 11 is a layered time network: <strong>winter scene → relative days → weekdays/dates → months/years → calendar systems → seasonal astronomy → countdown</strong>.
+      Students learn best when they can see how these layers connect.
+    </p>
+    <div class="graph-wrap">
+      <svg width="1180" height="780" viewBox="0 0 1180 780" role="img" aria-label="Knowledge graph for Lesson 11">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#90a4d4"></path>
+          </marker>
+        </defs>
+
+        <path class="edge" d="M590,110 C590,145 590,155 590,195"/>
+        <path class="edge" d="M590,110 C440,130 320,150 205,220"/>
+        <path class="edge" d="M590,110 C740,130 860,150 975,220"/>
+        <path class="edge" d="M205,270 C205,315 205,328 205,375"/>
+        <path class="edge" d="M975,270 C975,315 975,328 975,375"/>
+        <path class="edge" d="M590,250 C490,300 430,332 375,395"/>
+        <path class="edge" d="M590,250 C690,300 750,332 805,395"/>
+        <path class="edge" d="M590,250 C590,320 590,335 590,395"/>
+        <path class="edge" d="M375,445 C340,515 300,550 250,635"/>
+        <path class="edge" d="M590,445 C590,515 590,550 590,635"/>
+        <path class="edge" d="M805,445 C840,515 880,550 930,635"/>
+
+        <g class="node">
+          <rect x="405" y="45" width="370" height="70" fill="#efeaff"></rect>
+          <text x="590" y="76" text-anchor="middle" font-size="18" font-weight="800">Lesson 11 Core Question</text>
+          <text x="590" y="99" text-anchor="middle" font-size="14">How does Mandarin connect weather, dates, calendars, seasons, and the turning of the year?</text>
+        </g>
+
+        <g class="node">
+          <rect x="460" y="195" width="260" height="54" fill="#eaf2ff"></rect>
+          <text x="590" y="228" text-anchor="middle" font-size="17" font-weight="800">Time-and-season utterances</text>
+        </g>
+
+        <g class="node">
+          <rect x="55" y="220" width="300" height="52" fill="#eefaf5"></rect>
+          <text x="205" y="252" text-anchor="middle" font-size="17" font-weight="800">Immediate winter scene</text>
+        </g>
+
+        <g class="node">
+          <rect x="825" y="220" width="300" height="52" fill="#fff5e8"></rect>
+          <text x="975" y="252" text-anchor="middle" font-size="17" font-weight="800">Calendar and year systems</text>
+        </g>
+
+        <g class="node">
+          <rect x="85" y="375" width="240" height="66" fill="#edf7ff"></rect>
+          <text x="205" y="404" text-anchor="middle" font-size="16" font-weight="800">cold / warmth / snow / clothing</text>
+          <text x="205" y="425" text-anchor="middle" font-size="13">felt experience of winter</text>
+        </g>
+
+        <g class="node">
+          <rect x="855" y="375" width="240" height="66" fill="#fff0f3"></rect>
+          <text x="975" y="404" text-anchor="middle" font-size="16" font-weight="800">Republic year / Gregorian year</text>
+          <text x="975" y="425" text-anchor="middle" font-size="13">naming years and eras</text>
+        </g>
+
+        <g class="node">
+          <rect x="255" y="395" width="240" height="50" fill="#eefaf5"></rect>
+          <text x="375" y="426" text-anchor="middle" font-size="16" font-weight="800">relative days and weekdays</text>
+        </g>
+
+        <g class="node">
+          <rect x="685" y="395" width="240" height="50" fill="#eefaf5"></rect>
+          <text x="805" y="426" text-anchor="middle" font-size="16" font-weight="800">solstices and equinoxes</text>
+        </g>
+
+        <g class="node">
+          <rect x="495" y="395" width="190" height="50" fill="#eaf2ff"></rect>
+          <text x="590" y="426" text-anchor="middle" font-size="16" font-weight="800">countdown to midnight</text>
+        </g>
+
+        <g class="node">
+          <rect x="155" y="635" width="190" height="58" fill="#eefaf5"></rect>
+          <text x="250" y="666" text-anchor="middle" font-size="16" font-weight="800">tzwo.tian → dah-how.tian</text>
+          <text x="250" y="686" text-anchor="middle" font-size="13">local timeline around today</text>
+        </g>
+
+        <g class="node">
+          <rect x="495" y="635" width="190" height="58" fill="#fff5e8"></rect>
+          <text x="590" y="666" text-anchor="middle" font-size="16" font-weight="800">inlih / yanglih</text>
+          <text x="590" y="686" text-anchor="middle" font-size="13">lunar vs solar calendar</text>
+        </g>
+
+        <g class="node">
+          <rect x="835" y="635" width="190" height="58" fill="#f3f0ff"></rect>
+          <text x="930" y="666" text-anchor="middle" font-size="16" font-weight="800">Dongjyh / Shiahjyh / Chuenfen / Chioufen</text>
+          <text x="930" y="686" text-anchor="middle" font-size="13">astronomical anchors of the year</text>
+        </g>
+      </svg>
+    </div>
+    <div class="legend">
+      <span><i class="dot" style="background:#eaf2ff"></i> structural flow</span>
+      <span><i class="dot" style="background:#eefaf5"></i> local time and lived experience</span>
+      <span><i class="dot" style="background:#fff5e8"></i> calendar systems</span>
+      <span><i class="dot" style="background:#f3f0ff"></i> seasonal astronomy</span>
+      <span><i class="dot" style="background:#fff0f3"></i> year naming and historical reference</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill green">Core concepts</div>
+    <h2>What the lesson teaches, concept by concept</h2>
+    <div class="concept-grid">
+      <div class="concept">
+        <h3>1) The lesson starts from bodily winter experience</h3>
+        <div class="tag">leeng</div><div class="tag">noan.hwo</div><div class="tag">bair-mawtz</div>
+        <ul>
+          <li>Cold, warmth, snow, hat, and coat make the opening concrete and memorable.</li>
+          <li>This is important because the lesson later becomes much more abstract.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>2) Relative day expressions form a local timeline</h3>
+        <div class="tag">tzwo.tian</div><div class="tag">chyan.tian</div><div class="tag">dah-chyan.tian</div><div class="tag">ming.tian</div>
+        <ul>
+          <li>The lesson is excellent for teaching how one reference day anchors a whole set of nearby time words.</li>
+          <li>This becomes much clearer when laid out visually.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>3) Days, dates, and weekdays are a reasoning system</h3>
+        <div class="tag">Shingchi</div><div class="tag">liibay</div><div class="tag">ba-haw</div>
+        <ul>
+          <li>The dialogue asks students to calculate across weekdays and dates, not just recite them.</li>
+          <li>The notes emphasize that “next Saturday” can mean the Saturday of next week, not just the next Saturday that arrives.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>4) Two calendar systems are contrasted</h3>
+        <div class="tag">inlih</div><div class="tag">yanglih</div><div class="tag">gwolih</div>
+        <ul>
+          <li>The lesson explains why old-style New Year falls later and why it feels like spring afterward.</li>
+          <li>Then it explains the post-1911 use of the solar calendar as the national calendar.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>5) Republic years and Gregorian years map onto each other</h3>
+        <div class="tag">Mingwo</div><div class="tag">Gonglih</div><div class="tag">Shilih</div>
+        <ul>
+          <li>This lesson gives a direct bridge between political/historical year naming and Western chronology.</li>
+          <li>That makes it unusually rich for cultural context.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>6) Solstices and equinoxes are taught as seasonal anchors</h3>
+        <div class="tag">Dongjyh</div><div class="tag">Shiahjyh</div><div class="tag">Chuenfen</div><div class="tag">Chioufen</div>
+        <ul>
+          <li>The lesson does not just name the four seasons. It explains how astronomical points structure them.</li>
+          <li>This makes the lesson conceptually deeper than a simple weather unit.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>7) Chinese number grouping matters</h3>
+        <div class="tag">wann</div><div class="tag">groups of four</div><div class="tag">ling</div>
+        <ul>
+          <li>The notes explicitly explain that large numbers are grouped by four digits rather than three.</li>
+          <li>This is useful beyond the lesson itself and can be visualized with the examples on the source page.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>8) The final countdown turns abstract time into a shared event</h3>
+        <div class="tag">keh</div><div class="tag">meau</div><div class="tag">wannsuey</div>
+        <ul>
+          <li>Quarter-hours, seconds, and shouted celebration make the ending dramatic and communal.</li>
+          <li>It is a perfect speaking activity for the classroom.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill orange">Mini-board plan</div>
+      <h2>How to lay this out for students</h2>
+      <table>
+        <thead><tr><th>Board zone</th><th>Write this</th><th>Teaching purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Left</td><td>winter vocabulary: <span class="mono">leeng</span>, <span class="mono">noan.hwo</span>, <span class="mono">sheue</span>, <span class="mono">mawtz</span>, <span class="mono">dahchaang</span></td><td>Anchors the lesson in the opening scene.</td></tr>
+          <tr><td>Center</td><td>today-centered timeline from <span class="mono">dah-chyan.tian</span> to <span class="mono">dah-how.tian</span></td><td>Makes the near-day system visible.</td></tr>
+          <tr><td>Right</td><td>calendar layers: date / weekday / month / year / Republic year / solar vs lunar</td><td>Shows how time scales stack.</td></tr>
+          <tr><td>Bottom</td><td>solstice/equinox diagram + midnight countdown</td><td>Connects the season system to the dramatic ending.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="pill teal">High-value classroom move</div>
+      <h2>Use the source’s chronological table as a live map</h2>
+      <div class="callout">
+        The chronological table on the last page is one of the lesson’s best teaching tools.
+      </div>
+      <ol>
+        <li>Have students read across days of the week and dates aloud.</li>
+        <li>Then read down from current year to next year and year after next.</li>
+        <li>Then use it to answer questions like “What day was last Wednesday?” and “What date is next Saturday?”</li>
+      </ol>
+      <p class="small">This turns a difficult calendar lesson into a visual reasoning task instead of pure memorization.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill blue">A key structural system</div>
+    <h2>Small time, big time, and seasonal time</h2>
+    <div class="practice">
+      <div class="concept">
+        <h3>Small time</h3>
+        <p><span class="mono">jiel</span>, <span class="mono">tzwo.tian</span>, <span class="mono">ming.tian</span>, <span class="mono">jii-fen jong</span>, <span class="mono">wuushyr meau</span></p>
+        <p class="small">Immediate conversation time.</p>
+      </div>
+      <div class="concept">
+        <h3>Calendar time</h3>
+        <p><span class="mono">Shyr'ell.yueh sanshyri-haw</span>, <span class="mono">Shingchi-wuu</span>, <span class="mono">Mingwo sanshyr-chi nian</span></p>
+        <p class="small">Socially organized public time.</p>
+      </div>
+      <div class="concept">
+        <h3>Seasonal/astronomical time</h3>
+        <p><span class="mono">Dongjyh</span>, <span class="mono">Shiahjyh</span>, <span class="mono">Chuenfen</span>, <span class="mono">Chioufen</span></p>
+        <p class="small">The larger pattern of the year.</p>
+      </div>
+      <div class="concept">
+        <h3>Teaching payoff</h3>
+        <p class="small">Lesson 11 is strong because it moves smoothly from one time scale to another without losing the conversational setting.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill green">Guided practice</div>
+    <h2>Practice tasks for a two-hour lesson</h2>
+    <div class="practice">
+      <div class="concept">
+        <h3>Task A — Build the day line</h3>
+        <p>Students place cards for <span class="mono">tzwo.tian</span>, <span class="mono">chyan.tian</span>, <span class="mono">ming.tian</span>, and so on in the correct order.</p>
+      </div>
+      <div class="concept">
+        <h3>Task B — Calendar detective</h3>
+        <p>Students answer date/weekday questions using the lesson’s table and expressions.</p>
+      </div>
+      <div class="concept">
+        <h3>Task C — Explain the year systems</h3>
+        <p>Students explain in English how Republic years and Gregorian years are related in the lesson.</p>
+      </div>
+      <div class="concept">
+        <h3>Task D — Solstice versus equinox</h3>
+        <p>Students sort the four seasonal terms and say which ones involve longest/shortest day or equal day and night.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill red">Quick understanding check</div>
+    <h2>Two multiple-choice quiz questions</h2>
+
+    <div class="quiz-q" data-answer="b">
+      <h3>1) According to the lesson and notes, why does the speaker say that after old-style New Year it is already spring?</h3>
+      <label><input type="radio" name="q1" value="a"> Because the old calendar begins in June.</label>
+      <label><input type="radio" name="q1" value="b"> Because lunar New Year comes about one month to one and a half months later than the solar New Year.</label>
+      <label><input type="radio" name="q1" value="c"> Because winter officially ends at midnight on December 31st.</label>
+      <label><input type="radio" name="q1" value="d"> Because the speaker has confused spring with autumn.</label>
+      <div class="feedback ok">Correct. The lesson explains that New Year in the old lunar calendar arrives noticeably later than in the solar calendar, so spring is near or already felt after those holidays.</div>
+      <div class="feedback no">Not quite. The key point is the time difference between lunar and solar New Year, not a simple seasonal mistake.</div>
+    </div>
+
+    <div class="quiz-q" data-answer="c">
+      <h3>2) What is the best description of the winter solstice in Lesson 11?</h3>
+      <label><input type="radio" name="q2" value="a"> The day with the most snow in the year.</label>
+      <label><input type="radio" name="q2" value="b"> The first day of the lunar year.</label>
+      <label><input type="radio" name="q2" value="c"> The day in the year with the shortest day and the longest night.</label>
+      <label><input type="radio" name="q2" value="d"> The same thing as the autumnal equinox.</label>
+      <div class="feedback ok">Correct. The dialogue explicitly defines winter solstice as the day with the shortest day and longest night in the year.</div>
+      <div class="feedback no">Not quite. Lesson 11 gives a very specific astronomical definition of the winter solstice.</div>
+    </div>
+
+    <button id="checkQuiz">Check my answers</button>
+    <button class="secondary" id="resetQuiz" style="margin-left:8px;">Reset</button>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill gold">Exit challenge</div>
+      <h2>End-of-lecture spoken challenge</h2>
+      <ol>
+        <li>Say what the room feels like at the start of the lesson.</li>
+        <li>Tell what date “today” is in the lesson.</li>
+        <li>Give one sentence about tomorrow or the day after tomorrow.</li>
+        <li>Explain, in English, the difference between the lunar and solar calendars as the lesson presents it.</li>
+        <li>State what happens at midnight.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <div class="pill blue">References and source use</div>
+      <h2>References for this page</h2>
+      <ul>
+        <li><strong>Primary source:</strong> scanned Lesson 11 pages from <em>Mandarin Primer: An Intensive Course in Spoken Chinese</em>.</li>
+        <li><strong>Dialogue basis:</strong> Lesson 11 “Watching the Year Out,” including the cold room, snow, date and weekday calculations, holiday discussion, Republic and Gregorian year references, lunar versus solar calendar discussion, solstices and equinoxes, and the countdown to midnight.</li>
+        <li><strong>Grammar and culture basis:</strong> notes on <span class="mono">shoou-suey</span>, <span class="mono">rehchiell</span>, <span class="mono">goanbao</span>, month naming, <span class="mono">fanq-jiah</span>, <span class="mono">shingchi</span> versus <span class="mono">liibay</span>, “next Saturday,” <span class="mono">Dongjyh</span>, <span class="mono">Shiahjyh</span>, <span class="mono">Chuenfen</span>, <span class="mono">Chioufen</span>, <span class="mono">inlih</span> versus <span class="mono">yanglih</span>, cyclical year terms, quarter-hours, seconds, large-number grouping by fours, and the chronological table.</li>
+        <li><strong>Teaching basis:</strong> the source’s “To the Student” guidance on utterances, repetition, echoing, and grammar-through-exercises.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    This lecture page is designed for a full two-hour beginner lesson. It keeps close to the source while turning Lesson 11 into a clearer,
+    more connected, and more teachable lesson on winter, calendars, seasons, and the turning of the year for English-speaking high-school students.
+  </footer>
+</div>
+
+<script>
+document.getElementById('checkQuiz').addEventListener('click', function(){
+  document.querySelectorAll('.quiz-q').forEach(function(q){
+    const correct = q.dataset.answer;
+    const selected = q.querySelector('input[type="radio"]:checked');
+    const ok = q.querySelector('.feedback.ok');
+    const no = q.querySelector('.feedback.no');
+    ok.style.display = 'none';
+    no.style.display = 'none';
+    if(selected && selected.value === correct){
+      ok.style.display = 'block';
+    } else {
+      no.style.display = 'block';
+    }
+  });
+});
+
+document.getElementById('resetQuiz').addEventListener('click', function(){
+  document.querySelectorAll('input[type="radio"]').forEach(function(inp){ inp.checked = false; });
+  document.querySelectorAll('.feedback').forEach(function(f){ f.style.display = 'none'; });
+});
+</script>
+</body>
+</html>

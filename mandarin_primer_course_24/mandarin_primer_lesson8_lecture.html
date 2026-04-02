@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mandarin Primer — Lesson 8 Lecture Page</title>
+<style>
+  :root{
+    --bg:#f6f8fc;
+    --ink:#1d2433;
+    --muted:#5a6475;
+    --card:#ffffff;
+    --line:#d8dfeb;
+    --blue:#2f6fed;
+    --green:#2f9e77;
+    --purple:#7b61ff;
+    --orange:#f08c2e;
+    --red:#d9485f;
+    --gold:#c99700;
+    --teal:#0f9db8;
+    --shadow:0 10px 30px rgba(28,35,54,.08);
+    --radius:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at top right, rgba(47,111,237,.08), transparent 28%),
+      radial-gradient(circle at top left, rgba(123,97,255,.08), transparent 26%),
+      var(--bg);
+    line-height:1.65;
+  }
+  .wrap{width:min(1180px,94vw); margin:0 auto; padding:28px 0 64px;}
+  header.hero{
+    background:linear-gradient(135deg,#17457e,#2b63cf 55%,#7b61ff);
+    color:#fff;
+    border-radius:28px;
+    padding:34px 34px 28px;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+  }
+  header.hero::after{
+    content:"";
+    position:absolute; right:-45px; top:-45px;
+    width:260px; height:260px;
+    background:radial-gradient(circle, rgba(255,255,255,.18), transparent 65%);
+  }
+  .eyebrow{
+    display:inline-block;
+    padding:6px 10px;
+    border:1px solid rgba(255,255,255,.28);
+    border-radius:999px;
+    font-size:.83rem;
+    letter-spacing:.02em;
+    margin-bottom:10px;
+    background:rgba(255,255,255,.08);
+  }
+  h1,h2,h3{line-height:1.2; margin:.2rem 0 .8rem}
+  h1{font-size:clamp(2rem,3vw,3rem)}
+  h2{font-size:1.55rem}
+  h3{font-size:1.12rem}
+  p.lead{font-size:1.08rem; max-width:980px; opacity:.98}
+  .small{font-size:.95rem; color:var(--muted)}
+  .grid{display:grid; gap:18px}
+  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media (max-width:900px){.g2{grid-template-columns:1fr}}
+  section{margin-top:22px}
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:22px;
+  }
+  .pill{
+    display:inline-block;
+    font-size:.8rem;
+    font-weight:800;
+    letter-spacing:.02em;
+    padding:5px 10px;
+    border-radius:999px;
+    color:#fff;
+    margin-bottom:10px;
+  }
+  .blue{background:var(--blue)}
+  .green{background:var(--green)}
+  .purple{background:var(--purple)}
+  .orange{background:var(--orange)}
+  .red{background:var(--red)}
+  .gold{background:var(--gold)}
+  .teal{background:var(--teal)}
+  .banner{
+    border-left:6px solid var(--gold);
+    background:#fff8db;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  .callout{
+    border-left:5px solid var(--blue);
+    background:#eef4ff;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  .warning{
+    border-left:5px solid var(--red);
+    background:#fff2f4;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  ul li, ol li{margin:.45rem 0}
+  .flow{
+    display:grid;
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    gap:12px;
+  }
+  @media (max-width:1000px){.flow{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){.flow{grid-template-columns:1fr}}
+  .step{
+    background:linear-gradient(180deg,#fff,#f8faff);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:16px;
+    min-height:156px;
+  }
+  .num{
+    width:34px; height:34px; border-radius:50%;
+    display:grid; place-items:center;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:#fff; font-weight:800; margin-bottom:10px;
+  }
+  .dialogue-line{
+    padding:10px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .dialogue-line:last-child{border-bottom:none}
+  .speaker{
+    display:inline-block; min-width:82px; font-weight:800; color:var(--blue);
+  }
+  .roman{font-size:1.02rem; font-weight:650}
+  .gloss{color:var(--muted)}
+  .concept-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;
+  }
+  @media (max-width:900px){.concept-grid{grid-template-columns:1fr}}
+  .concept{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px;
+    background:#fbfcff;
+  }
+  .tag{
+    display:inline-block;
+    padding:4px 8px;
+    border-radius:999px;
+    font-size:.78rem;
+    font-weight:700;
+    margin:2px 4px 2px 0;
+    background:#eef3ff;
+    color:#2c4a9c;
+  }
+  .mono{
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background:#f5f7fb;
+    padding:.08rem .35rem;
+    border-radius:8px;
+  }
+  table{width:100%; border-collapse:collapse; font-size:.96rem}
+  th,td{border-bottom:1px solid var(--line); padding:12px 10px; text-align:left; vertical-align:top}
+  th{background:#f4f7fc}
+  tr:last-child td{border-bottom:none}
+  .graph-wrap{
+    overflow:auto;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:linear-gradient(180deg,#fcfdff,#f6f9ff);
+    padding:12px;
+  }
+  svg text{font-family: Inter, system-ui, sans-serif; fill:#1f2430;}
+  .edge{stroke:#90a4d4; stroke-width:2.2; fill:none; marker-end:url(#arrow);}
+  .node rect{rx:18; ry:18; stroke:#d8dff2; stroke-width:1.4;}
+  .legend{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; font-size:.9rem}
+  .legend span{
+    display:flex; align-items:center; gap:6px;
+    background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 10px;
+  }
+  .dot{width:12px; height:12px; border-radius:50%; display:inline-block}
+  .practice{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px;
+  }
+  @media (max-width:900px){.practice{grid-template-columns:1fr}}
+  details{
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:12px 14px;
+    background:#fff;
+  }
+  summary{cursor:pointer; font-weight:700}
+  .quiz-q{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px;
+    margin-bottom:16px;
+    background:#fbfdff;
+  }
+  .quiz-q label{
+    display:block;
+    padding:9px 10px;
+    border:1px solid transparent;
+    border-radius:12px;
+    cursor:pointer;
+  }
+  .quiz-q label:hover{background:#f1f6ff; border-color:#dbe6ff}
+  button{
+    appearance:none;
+    border:none;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:#fff;
+    border-radius:12px;
+    padding:11px 16px;
+    font-size:.96rem;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:var(--shadow);
+  }
+  button.secondary{background:linear-gradient(135deg,var(--green),#3fb58e)}
+  .feedback{
+    margin-top:10px; padding:12px 14px; border-radius:12px; display:none;
+  }
+  .feedback.ok{background:#edf9f3; border:1px solid #bfe7cf}
+  .feedback.no{background:#fff1f3; border:1px solid #f0c0cb}
+  footer{margin-top:28px; color:var(--muted); font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Yuen Ren Chao - Mandarin Primer: An Intensive Course in Spoken Chinese</div>
+    <h1>Mandarin Primer — Lesson 8</h1>
+    <h2 style="font-size:1.35rem; font-weight:650; opacity:.98;">Antonyms</h2>
+    <p class="lead">
+      Lesson 8 is the first openly conceptual lesson in the book. Instead of telling a story about a single event or person, it develops an idea:
+      the world contains <em>pairs</em>. Some pairs are true opposites, some are softer “not” forms, and some are not opposites at all but correlatives or counterparts.
+      This lesson is ideal for high-school students because it trains both language and reasoning at the same time.
+    </p>
+    <p class="small" style="color:rgba(255,255,255,.9);">
+      This page keeps the book’s original romanization system so it stays aligned with the scanned lesson.
+    </p>
+  </header>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill blue">Learning goals</div>
+      <h2>What students should learn</h2>
+      <ul>
+        <li>Understand the difference between <strong>antonyms</strong> and <strong>correlatives / counterparts</strong>.</li>
+        <li>Recognize several ways Mandarin expresses an opposite: true opposite words, “not X,” and relational pairings.</li>
+        <li>Use and understand key conceptual vocabulary such as <span class="mono">jenq</span>, <span class="mono">faan</span>, <span class="mono">dueymiall</span>, <span class="mono">shiangduey</span>, and <span class="mono">shiangfaan</span>.</li>
+        <li>See that some English opposites do not map neatly onto Chinese in the same way, especially with words like “good,” “easy,” “hard,” “interesting,” and “understand.”</li>
+        <li>Notice how modality and permission are built into examples like <span class="mono">kee.yii</span>, <span class="mono">bukee.yii</span>, <span class="mono">busheu</span>, <span class="mono">keen</span>, and <span class="mono">gaan</span>.</li>
+        <li>Connect the lesson’s philosophical framing to practical beginner language use.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="pill gold">Teacher lens</div>
+      <h2>Why this lesson matters</h2>
+      <div class="banner">
+        <strong>Lesson 8 teaches category thinking.</strong> Students are no longer only learning how to say things; they are learning how Mandarin organizes concepts into pairs and relations.
+      </div>
+      <p>
+        For English-speaking beginners, this is powerful because it prevents oversimplified one-word translation habits. The lesson repeatedly shows that “opposite”
+        is not always one fixed type of relation.
+      </p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill purple">Two-hour lecture flow</div>
+    <h2>Suggested lecture sequence</h2>
+    <div class="flow">
+      <div class="step"><div class="num">1</div><strong>Concept hook</strong><br><span class="small">Start with pairs students already know: hot/cold, buy/sell, here/there, you/I. Then ask whether all pairs are the same kind of opposite.</span></div>
+      <div class="step"><div class="num">2</div><strong>Text as argument</strong><br><span class="small">Teach the lesson as a discussion or mini-philosophical essay, not as a story. The logic matters.</span></div>
+      <div class="step"><div class="num">3</div><strong>Three pairing types</strong><br><span class="small">Separate true antonyms, not-X forms, and correlatives with clear examples.</span></div>
+      <div class="step"><div class="num">4</div><strong>Grammar from meaning</strong><br><span class="small">Focus on object-subject constructions, necessity with <span class="mono">deei</span>, willingness <span class="mono">keen</span>, daring <span class="mono">gaan</span>, and sentence-final <span class="mono">.me</span>.</span></div>
+      <div class="step"><div class="num">5</div><strong>Correlative network</strong><br><span class="small">Use a graph to connect man/woman, father/mother, son/daughter, here/there, I/you, speak/listen, write/read.</span></div>
+      <div class="step"><div class="num">6</div><strong>Reasoning + quiz</strong><br><span class="small">Have students classify pairs and explain why they belong in one category or another.</span></div>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill green">How to teach it well</div>
+      <h2>Effective teaching moves for beginners</h2>
+      <div class="callout">
+        The source pages still emphasize utterances, echoing, repetition, and learning grammar through exercises. For Lesson 8, that means students should repeatedly say and sort complete paired expressions, not just memorize isolated vocabulary.
+      </div>
+      <ol>
+        <li>Use a three-column board: <strong>true opposite</strong>, <strong>not-X form</strong>, <strong>correlative / counterpart</strong>.</li>
+        <li>Ask students to justify why a pair belongs in one column and not another.</li>
+        <li>Keep the lesson grounded in familiar examples from earlier lessons: come/go, sleep/wake, here/there, you/I, speak/listen.</li>
+        <li>Pause whenever the lesson moves from philosophy to practical speech, especially in the smoking-permission and willingness/daring examples.</li>
+        <li>Use quick classification games to prevent the lesson from becoming too abstract.</li>
+      </ol>
+    </div>
+    <div class="card">
+      <div class="pill red">Likely beginner confusions</div>
+      <h2>Where English speakers may stumble</h2>
+      <div class="warning">
+        Students may think every opposite is simply one positive word and one different negative word. Lesson 8 shows that Chinese often builds these relations in different ways.
+      </div>
+      <ul>
+        <li><strong><span class="mono">bu</span> can be enough</strong>: sometimes the opposite is just “not X,” not a different lexical item.</li>
+        <li><strong>Correlatives are not true opposites</strong>: father/mother or here/there are paired, but not opposites in the same way as true/false.</li>
+        <li><strong><span class="mono">hao</span> and <span class="mono">nan</span></strong> can combine with following verbs in ways English handles differently.</li>
+        <li><strong><span class="mono">kee.yii</span>, <span class="mono">busheu</span>, <span class="mono">keen</span>, and <span class="mono">gaan</span></strong> carry subtle meanings of permission, prohibition, willingness, and daring.</li>
+        <li><strong>Sentence-final <span class="mono">.me</span></strong> is not the same as ordinary question <span class="mono">.ma</span>; it carries impatience or “Can’t you see?” force.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill blue">Dialogue walkthrough</div>
+    <h2>Lesson 8 as a conceptual discussion</h2>
+    <p class="small">Teach this lesson as a sequence of claims, examples, and refinements.</p>
+
+    <div class="dialogue-line">
+      <span class="speaker">Claim</span>
+      <span class="roman">Tianshiah .de shyh.chyng, tian-dii.shiah .de dong.shi, mei.yeou i-yanql mei.yeou jenq-faan leang-miall .de.</span><br>
+      <span class="gloss">Of the affairs and things in the world, there is not one that does not have two sides, a right and a reverse.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Example</span>
+      <span class="roman">Lai .de faanmiall sh chiuh, mae .de faanmiall sh may, jen .de faanmiall sh jea, hao .de faanmiall sh huay.</span><br>
+      <span class="gloss">The opposite of come is go, of buy is sell, of true is false, of good is bad.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Example</span>
+      <span class="roman">Bu shin jiow.sh jiow, bu charng jiow.sh doan, bu leeng jiow jiaw reh, bu yinq jiow jiaw roan.</span><br>
+      <span class="gloss">Not new is old, not long is short, not cold is hot, not hard is soft.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Explanation</span>
+      <span class="roman">Yaw.sh i-jiann shyh.chyng bu hao tzuoh, jiow shuo jeh shyh.chyng heen nan … yaw.sh hao tzuoh .de .ne, jiow shuo jeh shyh.chyng heen rong.yih.</span><br>
+      <span class="gloss">If a thing is not easy to do, we say it is difficult; if it is easy to do, we say it is easy.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Shift</span>
+      <span class="roman">Yeou shyr.howl shuo faanmiall .de shyh, bu idinq deei yonq faanmiall .de tzyh, jia ig 'bu'-tzell jiow shyng .le.</span><br>
+      <span class="gloss">Sometimes to speak of the opposite, you do not necessarily need a separate opposite word; just adding “not” is enough.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Example</span>
+      <span class="roman">Shii.huan .de faanmiall sh henn; shuo-ching.deal jiow shuo bu shii.huan.</span><br>
+      <span class="gloss">The opposite of like is hate, but more lightly one can just say “don’t like.”</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Example</span>
+      <span class="roman">Ting.de-chu yih.sy .lai jiaw ting.de-doong, ting.bu-chu yih.sy .lai jiaw ting.bu-doong.</span><br>
+      <span class="gloss">To hear and get the meaning is to understand; not to hear the meaning is not to understand.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Application</span>
+      <span class="roman">Yaw.sh woo sheu .nii chou-ian, woo jiow shuo 'Jell kee.yii chou-ian'; yaw.sh woo bu ranq .nii chou .ne, woo jiow shuo 'Bukee.yii chou-ian!'</span><br>
+      <span class="gloss">If I allow you to smoke, I say “You may smoke here”; if not, I say “You may not smoke here!”</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Application</span>
+      <span class="roman">Nii keen geei .woo tzuoh jey-jiann shyh .bu.keen? … Nii gaan shanq nall chiuh .bu.gaan?</span><br>
+      <span class="gloss">Are you willing to do this for me? … Do you dare go there or not?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Refinement</span>
+      <span class="roman">Hair yeou haoshie leang-fangmiann .de shyh.chyng, kann.chii.lai hao.shianq sh jenq-faan leang-miall, chyishyr buguoh sh shiangduey .de, binq bu.sh shiangfaan .de.</span><br>
+      <span class="gloss">There are many two-sided things which seem like opposites, but are really correlatives or counterparts, not true opposites.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Examples</span>
+      <span class="roman">Nan.ren .de dueymiall sh neu.ren … jell .de dueymiall sh nail, nii .de dueymiall sh woo.</span><br>
+      <span class="gloss">The counterpart of man is woman … the counterpart of here is there, and of you is I.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Closure</span>
+      <span class="roman">Yaw.sh nii shianntzay Jongwen yee buhuey shuo, yee buhuey ting, yee buhuey shiee, yee buhuey kann, nah jiow.sh nii.de Jongwen hair mei shyue.de-huey.</span><br>
+      <span class="gloss">If you still cannot speak, hear, write, or read Chinese, then you have not yet learned your Chinese.</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill orange">Knowledge graph</div>
+    <h2>Concept network for Lesson 8</h2>
+    <p>
+      Lesson 8 is not just a vocabulary list of opposites. It is a network of relations:
+      <strong>true antonym ↔ “not-X” contrast ↔ correlative counterpart ↔ practical language use</strong>.
+    </p>
+    <div class="graph-wrap">
+      <svg width="1180" height="760" viewBox="0 0 1180 760" role="img" aria-label="Knowledge graph for Lesson 8">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#90a4d4"></path>
+          </marker>
+        </defs>
+
+        <path class="edge" d="M590,110 C590,145 590,155 590,195"/>
+        <path class="edge" d="M590,110 C440,130 320,150 205,220"/>
+        <path class="edge" d="M590,110 C740,130 860,150 975,220"/>
+        <path class="edge" d="M205,270 C205,315 205,328 205,375"/>
+        <path class="edge" d="M975,270 C975,315 975,328 975,375"/>
+        <path class="edge" d="M590,250 C490,300 430,332 375,395"/>
+        <path class="edge" d="M590,250 C690,300 750,332 805,395"/>
+        <path class="edge" d="M590,250 C590,320 590,335 590,395"/>
+        <path class="edge" d="M375,445 C340,515 300,550 250,625"/>
+        <path class="edge" d="M590,445 C590,515 590,550 590,625"/>
+        <path class="edge" d="M805,445 C840,515 880,550 930,625"/>
+
+        <g class="node">
+          <rect x="420" y="45" width="340" height="70" fill="#efeaff"></rect>
+          <text x="590" y="76" text-anchor="middle" font-size="18" font-weight="800">Lesson 8 Core Question</text>
+          <text x="590" y="99" text-anchor="middle" font-size="14">What kinds of paired relations exist in Mandarin, and how are they different?</text>
+        </g>
+
+        <g class="node">
+          <rect x="460" y="195" width="260" height="54" fill="#eaf2ff"></rect>
+          <text x="590" y="228" text-anchor="middle" font-size="17" font-weight="800">Conceptual utterances</text>
+        </g>
+
+        <g class="node">
+          <rect x="55" y="220" width="300" height="52" fill="#eefaf5"></rect>
+          <text x="205" y="252" text-anchor="middle" font-size="17" font-weight="800">True opposites</text>
+        </g>
+
+        <g class="node">
+          <rect x="825" y="220" width="300" height="52" fill="#fff5e8"></rect>
+          <text x="975" y="252" text-anchor="middle" font-size="17" font-weight="800">Not-X and correlatives</text>
+        </g>
+
+        <g class="node">
+          <rect x="85" y="375" width="240" height="66" fill="#edf7ff"></rect>
+          <text x="205" y="404" text-anchor="middle" font-size="16" font-weight="800">lai/chiuh, mae/may, jen/jea</text>
+          <text x="205" y="425" text-anchor="middle" font-size="13">classic antonym pairs</text>
+        </g>
+
+        <g class="node">
+          <rect x="855" y="375" width="240" height="66" fill="#fff0f3"></rect>
+          <text x="975" y="404" text-anchor="middle" font-size="16" font-weight="800">bu shii.huan, buhao, ting.bu-doong</text>
+          <text x="975" y="425" text-anchor="middle" font-size="13">contrast by negation</text>
+        </g>
+
+        <g class="node">
+          <rect x="255" y="395" width="240" height="50" fill="#eefaf5"></rect>
+          <text x="375" y="426" text-anchor="middle" font-size="16" font-weight="800">permission / willingness / daring</text>
+        </g>
+
+        <g class="node">
+          <rect x="685" y="395" width="240" height="50" fill="#eefaf5"></rect>
+          <text x="805" y="426" text-anchor="middle" font-size="16" font-weight="800">correlative counterparts</text>
+        </g>
+
+        <g class="node">
+          <rect x="495" y="395" width="190" height="50" fill="#eaf2ff"></rect>
+          <text x="590" y="426" text-anchor="middle" font-size="16" font-weight="800">paired reasoning</text>
+        </g>
+
+        <g class="node">
+          <rect x="155" y="625" width="190" height="58" fill="#eefaf5"></rect>
+          <text x="250" y="656" text-anchor="middle" font-size="16" font-weight="800">kee.yii / bukee.yii</text>
+          <text x="250" y="676" text-anchor="middle" font-size="13">may / may not</text>
+        </g>
+
+        <g class="node">
+          <rect x="495" y="625" width="190" height="58" fill="#fff5e8"></rect>
+          <text x="590" y="656" text-anchor="middle" font-size="16" font-weight="800">keen / gaan / bukeen / bugaan</text>
+          <text x="590" y="676" text-anchor="middle" font-size="13">willing / dare / not willing / not dare</text>
+        </g>
+
+        <g class="node">
+          <rect x="835" y="625" width="190" height="58" fill="#f3f0ff"></rect>
+          <text x="930" y="656" text-anchor="middle" font-size="16" font-weight="800">dueymiall / shiangduey</text>
+          <text x="930" y="676" text-anchor="middle" font-size="13">counterpart / relative opposite</text>
+        </g>
+      </svg>
+    </div>
+    <div class="legend">
+      <span><i class="dot" style="background:#eaf2ff"></i> conceptual structure</span>
+      <span><i class="dot" style="background:#eefaf5"></i> lexical and modal pairings</span>
+      <span><i class="dot" style="background:#fff5e8"></i> negation and modality</span>
+      <span><i class="dot" style="background:#f3f0ff"></i> correlative relations</span>
+      <span><i class="dot" style="background:#fff0f3"></i> softer “not” contrasts</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill green">Core concepts</div>
+    <h2>What the lesson teaches, concept by concept</h2>
+    <div class="concept-grid">
+      <div class="concept">
+        <h3>1) Not all pairs are the same kind of pair</h3>
+        <div class="tag">jenq</div><div class="tag">faan</div><div class="tag">dueymiall</div>
+        <ul>
+          <li>The lesson begins by claiming the world has two sides, but then refines what that means.</li>
+          <li>Some pairs are true opposites; others are better understood as counterparts or correlatives.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>2) Some opposites are lexical opposites</h3>
+        <div class="tag">lai/chiuh</div><div class="tag">mae/may</div><div class="tag">jen/jea</div><div class="tag">hao/huay</div>
+        <ul>
+          <li>These are strong, clear lexical pairs.</li>
+          <li>They are useful for teaching what a prototypical antonym looks like in the lesson.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>3) Some “opposites” are really built with <span class="mono">bu</span></h3>
+        <div class="tag">bu shii.huan</div><div class="tag">buhao</div><div class="tag">ting.bu-doong</div>
+        <ul>
+          <li>The lesson explicitly says a separate opposite word is not always needed.</li>
+          <li>This is a very important beginner insight: Mandarin may soften the contrast into “not X.”</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>4) Some words have paired meanings with verbs</h3>
+        <div class="tag">haochy</div><div class="tag">nanchy</div><div class="tag">haokann</div><div class="tag">nanting</div>
+        <ul>
+          <li>The notes explain that <span class="mono">hao</span> and <span class="mono">nan</span> commonly combine with following verbs.</li>
+          <li>These combinations can mean either “good / bad in quality” or “easy / difficult to do,” depending on the word and context.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>5) Permission, prohibition, willingness, and daring are paired too</h3>
+        <div class="tag">kee.yii</div><div class="tag">bukee.yii</div><div class="tag">keen</div><div class="tag">gaan</div>
+        <ul>
+          <li>The smoking example turns abstract opposites into practical interaction.</li>
+          <li>Later examples with <span class="mono">keen</span> and <span class="mono">gaan</span> show how willingness and daring can be inferred from what someone says.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>6) Correlatives are relational, not antonymic</h3>
+        <div class="tag">man/woman</div><div class="tag">father/mother</div><div class="tag">you/I</div><div class="tag">here/there</div>
+        <ul>
+          <li>The lesson warns that some pairs only look like opposites.</li>
+          <li>They are really counterparts defined by relation, not by true contradiction.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>7) Object-subject structure appears again</h3>
+        <div class="tag">mei.yeou i-yanql mei.yeou ...</div>
+        <ul>
+          <li>The notes say <span class="mono">mei.yeou i-yanql mei.yeou ...</span> is an object-subject construction.</li>
+          <li>This shows how even a philosophical claim in the lesson is built with earlier grammar patterns.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>8) The ending turns the philosophy back on the learner</h3>
+        <div class="tag">speak/listen/write/read</div><div class="tag">learned/not yet learned</div>
+        <ul>
+          <li>The lesson ends by pairing the four language skills and saying that true mastery means all four can be done well.</li>
+          <li>This is a powerful pedagogical close because it connects the concept lesson back to the student’s own learning.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill orange">Mini-board plan</div>
+      <h2>How to lay this out for students</h2>
+      <table>
+        <thead><tr><th>Board zone</th><th>Write this</th><th>Teaching purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Left</td><td>true antonyms: <span class="mono">lai/chiuh</span>, <span class="mono">mae/may</span>, <span class="mono">jen/jea</span>, <span class="mono">hao/huay</span></td><td>Gives students a clear first category.</td></tr>
+          <tr><td>Center</td><td>not-X forms: <span class="mono">buhao</span>, <span class="mono">bu shii.huan</span>, <span class="mono">ting.bu-doong</span></td><td>Shows that negation can create the practical contrast.</td></tr>
+          <tr><td>Right</td><td>correlatives: <span class="mono">nan.ren/neu.ren</span>, <span class="mono">fuh.chin/muu.chin</span>, <span class="mono">jell/nail</span>, <span class="mono">nii/woo</span></td><td>Separates counterparts from strict opposites.</td></tr>
+          <tr><td>Bottom</td><td><span class="mono">kee.yii</span>, <span class="mono">busheu</span>, <span class="mono">keen</span>, <span class="mono">gaan</span>, <span class="mono">.me</span></td><td>Connects the conceptual lesson to real conversation.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="pill teal">High-value classroom move</div>
+      <h2>Run a pair-sorting challenge</h2>
+      <div class="callout">
+        Give students cards with pairs from Lessons 1–8 and ask them to sort them into categories.
+      </div>
+      <ol>
+        <li>True opposite</li>
+        <li>“Not-X” contrast</li>
+        <li>Correlative/counterpart</li>
+      </ol>
+      <p class="small">
+        This activity directly matches the lesson’s logic and turns abstract conceptual distinctions into an active reasoning task.
+      </p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill blue">A key structural distinction</div>
+    <h2>Antonyms vs. correlatives</h2>
+    <div class="practice">
+      <div class="concept">
+        <h3>Antonyms</h3>
+        <p><span class="mono">jen / jea</span>, <span class="mono">hao / huay</span>, <span class="mono">lai / chiuh</span></p>
+        <p class="small">These are treated as genuine opposite meanings.</p>
+      </div>
+      <div class="concept">
+        <h3>Correlatives / counterparts</h3>
+        <p><span class="mono">nan.ren / neu.ren</span>, <span class="mono">fuh.chin / muu.chin</span>, <span class="mono">nii / woo</span>, <span class="mono">jell / nail</span></p>
+        <p class="small">These are paired by relation, not by contradiction.</p>
+      </div>
+      <div class="concept">
+        <h3>Teaching point</h3>
+        <p class="small">This distinction helps students avoid flattening every pair into the same kind of semantic relation.</p>
+      </div>
+      <div class="concept">
+        <h3>Why it matters</h3>
+        <p class="small">The lesson is quietly teaching students how to think about meaning, not only how to say vocabulary items.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill green">Guided practice</div>
+    <h2>Practice tasks for a two-hour lesson</h2>
+    <div class="practice">
+      <div class="concept">
+        <h3>Task A — Sort the pairs</h3>
+        <p>Students classify cards into antonyms, not-X forms, or correlatives.</p>
+      </div>
+      <div class="concept">
+        <h3>Task B — Build softer contrasts</h3>
+        <p>Students rewrite harsh opposites into softer forms, like <span class="mono">henn</span> → <span class="mono">bu shii.huan</span>.</p>
+      </div>
+      <div class="concept">
+        <h3>Task C — Permission and refusal</h3>
+        <p>Role-play asking permission and refusing it:
+        <span class="mono">Jell kee.yii .bu.kee.yii ... ?</span></p>
+      </div>
+      <div class="concept">
+        <h3>Task D — Willing or afraid?</h3>
+        <p>Students answer questions with <span class="mono">keen</span>/<span class="mono">bukeen</span> and <span class="mono">gaan</span>/<span class="mono">bugaan</span>, then explain why.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill red">Quick understanding check</div>
+    <h2>Two multiple-choice quiz questions</h2>
+
+    <div class="quiz-q" data-answer="c">
+      <h3>1) According to Lesson 8, which of the following is the best example of a <em>correlative</em> rather than a true antonym?</h3>
+      <label><input type="radio" name="q1" value="a"><span class="mono">jen / jea</span> (true / false)</label>
+      <label><input type="radio" name="q1" value="b"><span class="mono">lai / chiuh</span> (come / go)</label>
+      <label><input type="radio" name="q1" value="c"><span class="mono">nii / woo</span> (you / I)</label>
+      <label><input type="radio" name="q1" value="d"><span class="mono">hao / huay</span> (good / bad)</label>
+      <div class="feedback ok">Correct. Lesson 8 specifically treats pairs like <span class="mono">nii / woo</span> and <span class="mono">jell / nail</span> as counterparts or correlatives, not strict antonyms.</div>
+      <div class="feedback no">Not quite. The lesson distinguishes genuine opposites from paired counterparts; <span class="mono">nii / woo</span> is presented as a correlative pair.</div>
+    </div>
+
+    <div class="quiz-q" data-answer="b">
+      <h3>2) What is one major point the lesson makes about opposites in actual language use?</h3>
+      <label><input type="radio" name="q2" value="a"> Every opposite meaning must have a completely different word.</label>
+      <label><input type="radio" name="q2" value="b"> Sometimes you do not need a separate opposite word; adding <span class="mono">bu</span> is enough.</label>
+      <label><input type="radio" name="q2" value="c"> Mandarin does not use true opposite words at all.</label>
+      <label><input type="radio" name="q2" value="d"> Only written Chinese can express opposites accurately.</label>
+      <div class="feedback ok">Correct. The lesson explicitly says that sometimes, instead of using an opposite word, it is enough to add the word <span class="mono">bu</span>.</div>
+      <div class="feedback no">Not quite. A major teaching point in Lesson 8 is that some contrasts are built simply with <span class="mono">bu</span>, not necessarily with a different lexical opposite.</div>
+    </div>
+
+    <button id="checkQuiz">Check my answers</button>
+    <button class="secondary" id="resetQuiz" style="margin-left:8px;">Reset</button>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill gold">Exit challenge</div>
+      <h2>End-of-lecture spoken challenge</h2>
+      <ol>
+        <li>Give one true antonym pair from the lesson.</li>
+        <li>Give one pair where Mandarin can use <span class="mono">bu</span> instead of a separate opposite.</li>
+        <li>Give one correlative pair and explain, in English, why it is not a strict antonym.</li>
+        <li>Use either <span class="mono">keen</span> or <span class="mono">gaan</span> in a short sentence.</li>
+        <li>Explain the lesson’s final message about learning Chinese.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <div class="pill blue">References and source use</div>
+      <h2>References for this page</h2>
+      <ul>
+        <li><strong>Primary source:</strong> scanned Lesson 8 pages from <em>Mandarin Primer: An Intensive Course in Spoken Chinese</em>.</li>
+        <li><strong>Dialogue basis:</strong> Lesson 8 “Antonyms,” including the initial claim about two-sidedness, lexical opposite pairs, negated contrasts, permission/prohibition examples, willingness and daring, correlative pairs, and the closing application to learning Chinese.</li>
+        <li><strong>Grammar basis:</strong> notes on <span class="mono">jenqfaan-tzyh</span>, <span class="mono">tianshiah</span>, object-subject constructions, <span class="mono">wuluenn</span>, <span class="mono">daw.lii</span>, <span class="mono">ming.bair</span>, lexical pairs with <span class="mono">hao</span> and <span class="mono">nan</span>, <span class="mono">deei</span>, <span class="mono">'bu'-tzell</span>, <span class="mono">.me</span>, <span class="mono">keen</span>, <span class="mono">shiangduey</span> versus <span class="mono">shiangfaan</span>, and <span class="mono">shyue-cherng.le</span>.</li>
+        <li><strong>Teaching basis:</strong> the source’s “To the Student” guidance on utterances, repetition, echoing, and grammar-through-exercises.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    This lecture page is designed for a full two-hour beginner lesson. It keeps close to the source while turning Lesson 8 into a clearer,
+    more connected, and more teachable conceptual lesson for English-speaking high-school students.
+  </footer>
+</div>
+
+<script>
+document.getElementById('checkQuiz').addEventListener('click', function(){
+  document.querySelectorAll('.quiz-q').forEach(function(q){
+    const correct = q.dataset.answer;
+    const selected = q.querySelector('input[type="radio"]:checked');
+    const ok = q.querySelector('.feedback.ok');
+    const no = q.querySelector('.feedback.no');
+    ok.style.display = 'none';
+    no.style.display = 'none';
+    if(selected && selected.value === correct){
+      ok.style.display = 'block';
+    } else {
+      no.style.display = 'block';
+    }
+  });
+});
+
+document.getElementById('resetQuiz').addEventListener('click', function(){
+  document.querySelectorAll('input[type="radio"]').forEach(function(inp){ inp.checked = false; });
+  document.querySelectorAll('.feedback').forEach(function(f){ f.style.display = 'none'; });
+});
+</script>
+</body>
+</html>

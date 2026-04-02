@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mandarin Primer — Lesson 14 Lecture Page</title>
+<style>
+  :root{
+    --bg:#f6f8fc; --ink:#1d2433; --muted:#5a6475; --card:#ffffff; --line:#d8dfeb;
+    --blue:#2f6fed; --green:#2f9e77; --purple:#7b61ff; --orange:#f08c2e; --red:#d9485f; --gold:#c99700;
+    --shadow:0 10px 30px rgba(28,35,54,.08); --radius:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--ink);
+    background:radial-gradient(circle at top right, rgba(47,111,237,.08), transparent 28%),
+               radial-gradient(circle at top left, rgba(123,97,255,.08), transparent 26%), var(--bg);
+    line-height:1.65;
+  }
+  .wrap{width:min(1180px,94vw); margin:0 auto; padding:28px 0 64px;}
+  header.hero{
+    background:linear-gradient(135deg,#17457e,#2b63cf 55%,#7b61ff); color:#fff; border-radius:28px;
+    padding:34px 34px 28px; box-shadow:var(--shadow); position:relative; overflow:hidden;
+  }
+  .eyebrow{
+    display:inline-block; padding:6px 10px; border:1px solid rgba(255,255,255,.28); border-radius:999px;
+    font-size:.83rem; letter-spacing:.02em; margin-bottom:10px; background:rgba(255,255,255,.08);
+  }
+  h1,h2,h3{line-height:1.2; margin:.2rem 0 .8rem} h1{font-size:clamp(2rem,3vw,3rem)} h2{font-size:1.55rem} h3{font-size:1.12rem}
+  p.lead{font-size:1.08rem; max-width:980px; opacity:.98} .small{font-size:.95rem; color:var(--muted)}
+  .grid{display:grid; gap:18px} .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media (max-width:900px){.g2{grid-template-columns:1fr}}
+  section{margin-top:22px}
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:var(--shadow); padding:22px;
+  }
+  .pill{
+    display:inline-block; font-size:.8rem; font-weight:800; letter-spacing:.02em; padding:5px 10px;
+    border-radius:999px; color:#fff; margin-bottom:10px;
+  }
+  .blue{background:var(--blue)} .green{background:var(--green)} .purple{background:var(--purple)}
+  .orange{background:var(--orange)} .red{background:var(--red)} .gold{background:var(--gold)}
+  .banner{border-left:6px solid var(--gold); background:#fff8db; padding:14px 16px; border-radius:14px}
+  .callout{border-left:5px solid var(--blue); background:#eef4ff; padding:14px 16px; border-radius:14px}
+  .warning{border-left:5px solid var(--red); background:#fff2f4; padding:14px 16px; border-radius:14px}
+  ul li, ol li{margin:.45rem 0}
+  .flow{display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:12px}
+  @media (max-width:1000px){.flow{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){.flow{grid-template-columns:1fr}}
+  .step{background:linear-gradient(180deg,#fff,#f8faff); border:1px solid var(--line); border-radius:18px; padding:16px; min-height:156px}
+  .num{
+    width:34px; height:34px; border-radius:50%; display:grid; place-items:center; color:#fff; font-weight:800; margin-bottom:10px;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+  }
+  .dialogue-line{padding:10px 0; border-bottom:1px dashed var(--line)}
+  .dialogue-line:last-child{border-bottom:none}
+  .speaker{display:inline-block; min-width:100px; font-weight:800; color:var(--blue)}
+  .roman{font-size:1.02rem; font-weight:650} .gloss{color:var(--muted)}
+  .concept-grid,.practice{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px}
+  @media (max-width:900px){.concept-grid,.practice{grid-template-columns:1fr}}
+  .concept{border:1px solid var(--line); border-radius:16px; padding:16px; background:#fbfcff}
+  .tag{
+    display:inline-block; padding:4px 8px; border-radius:999px; font-size:.78rem; font-weight:700; margin:2px 4px 2px 0;
+    background:#eef3ff; color:#2c4a9c;
+  }
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; background:#f5f7fb; padding:.08rem .35rem; border-radius:8px}
+  table{width:100%; border-collapse:collapse; font-size:.96rem}
+  th,td{border-bottom:1px solid var(--line); padding:12px 10px; text-align:left; vertical-align:top} th{background:#f4f7fc}
+  tr:last-child td{border-bottom:none}
+  .graph-wrap{overflow:auto; border:1px solid var(--line); border-radius:18px; background:linear-gradient(180deg,#fcfdff,#f6f9ff); padding:12px}
+  svg text{font-family:Inter,system-ui,sans-serif; fill:#1f2430}
+  .edge{stroke:#90a4d4; stroke-width:2.2; fill:none; marker-end:url(#arrow)}
+  .node rect{rx:18; ry:18; stroke:#d8dff2; stroke-width:1.4}
+  .legend{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; font-size:.9rem}
+  .legend span{display:flex; align-items:center; gap:6px; background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 10px}
+  .dot{width:12px; height:12px; border-radius:50%; display:inline-block}
+  .quiz-q{border:1px solid var(--line); border-radius:16px; padding:16px; margin-bottom:16px; background:#fbfdff}
+  .quiz-q label{display:block; padding:9px 10px; border:1px solid transparent; border-radius:12px; cursor:pointer}
+  .quiz-q label:hover{background:#f1f6ff; border-color:#dbe6ff}
+  button{
+    appearance:none; border:none; background:linear-gradient(135deg,var(--blue),var(--purple)); color:#fff; border-radius:12px;
+    padding:11px 16px; font-size:.96rem; font-weight:700; cursor:pointer; box-shadow:var(--shadow);
+  }
+  button.secondary{background:linear-gradient(135deg,var(--green),#3fb58e)}
+  .feedback{margin-top:10px; padding:12px 14px; border-radius:12px; display:none}
+  .feedback.ok{background:#edf9f3; border:1px solid #bfe7cf}
+  .feedback.no{background:#fff1f3; border:1px solid #f0c0cb}
+  footer{margin-top:28px; color:var(--muted); font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Yuen Ren Chao - Mandarin Primer: An Intensive Course in Spoken Chinese</div>
+  <h1>Mandarin Primer — Lesson 14</h1>
+  <h2 style="font-size:1.35rem;font-weight:650;opacity:.98;">Conversation with the Doctor</h2>
+  <p class="lead">
+    Lesson 14 continues the hospital storyline, but now the conversation is directly with the doctor. The lesson moves from immediate survival,
+    through crisis assessment, internal-organ status, blood transfusion, whole-body injury survey, infection risk, modern medicine, and professional modesty.
+    It is one of the richest early lessons for combining medical reasoning, anatomy, register, and cause-and-effect explanation.
+  </p>
+  <p class="small" style="color:rgba(255,255,255,.9);">
+    This page keeps the book’s original romanization system so it stays aligned with the scanned lesson.
+  </p>
+</header>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill blue">Learning goals</div>
+    <h2>What students should learn</h2>
+    <ul>
+      <li>Follow a doctor’s structured update about a seriously injured patient.</li>
+      <li>Understand language for crisis, pulse, heart strain, blood loss, transfusion, organs, infection, and early treatment.</li>
+      <li>Recognize how Mandarin expresses clinical caution, reported judgment, and probability.</li>
+      <li>Learn anatomy vocabulary across ordinary and medical registers, including the table on page 5 for internal organs.</li>
+      <li>See how modern medicine and recently discovered drugs are discussed in accessible spoken Mandarin.</li>
+      <li>Notice the role of politeness and modesty at the end of the conversation.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="pill gold">Teacher lens</div>
+    <h2>Why this lesson matters</h2>
+    <div class="banner">
+      <strong>Lesson 14 teaches explanation after danger has passed.</strong> The rescue is over, but now the speakers need a deeper account: what was dangerous, what was checked, what was treated, and why the outcome is hopeful.
+    </div>
+    <p>
+      For high-school students, this lesson is especially valuable because it shows how language can organize a complex update clearly. It is also a strong lesson for teaching how Mandarin handles technical material without losing human warmth.
+    </p>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill purple">Two-hour lecture flow</div>
+  <h2>Suggested lecture sequence</h2>
+  <div class="flow">
+    <div class="step"><div class="num">1</div><strong>Doctor visit hook</strong><br><span class="small">Begin with the greeting and the central question: is the patient out of danger now?</span></div>
+    <div class="step"><div class="num">2</div><strong>Crisis and survival</strong><br><span class="small">Teach fever, pulse, heart strain, injections, and the idea that the critical stage has passed.</span></div>
+    <div class="step"><div class="num">3</div><strong>Internal vs external status</strong><br><span class="small">Work through organs, bowels, urine, breathing, throat, thirst, and the absence of internal injury.</span></div>
+    <div class="step"><div class="num">4</div><strong>Blood and injury survey</strong><br><span class="small">Teach blood transfusion, plasma, and the doctor’s whole-body review of abrasions, burns, and spared areas.</span></div>
+    <div class="step"><div class="num">5</div><strong>Modern medicine and timing</strong><br><span class="small">Focus on infection risk, early treatment, sulfanilamide, penicillin, and how the doctor frames medical progress.</span></div>
+    <div class="step"><div class="num">6</div><strong>Professional tone + quiz</strong><br><span class="small">End with modest refusal of praise, polite thanks, and an understanding check.</span></div>
+  </div>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill green">How to teach it well</div>
+    <h2>Effective teaching moves for beginners</h2>
+    <div class="callout">
+      The source’s “To the Student” pages emphasize utterances, echoing, repetition, and grammar-through-exercises. Lesson 14 becomes especially teachable when the doctor’s update is broken into a clinical report structure instead of treated as one dense block.
+    </div>
+    <ol>
+      <li>Use a doctor’s report board with sections: crisis, organs, blood, wounds, burns, infection, prognosis.</li>
+      <li>Put the internal-organ table from the notes on the board and compare everyday words with medical terms.</li>
+      <li>Separate “what is wrong” from “what is surprisingly okay.”</li>
+      <li>Make the timing logic visible: high fever yesterday, crisis passed now, early treatment prevents infection.</li>
+      <li>Teach the ending as a cultural moment: compliments, modest denial, and polite thanks.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="pill red">Likely beginner confusions</div>
+    <h2>Where English speakers may stumble</h2>
+    <div class="warning">
+      This lesson is dense because it combines medical facts, technical vocabulary, and subtle interactional tone. Students need the big picture of the patient’s condition kept visible throughout.
+    </div>
+    <ul>
+      <li><strong><span class="mono">dawsh</span></strong> does not simply mean “upside down” here; the notes explain its discourse force as something like “contrary to what one may fear” or “I am glad to say.”</li>
+      <li><strong><span class="mono">sh de</span></strong> can correspond to English “no” in responses, depending on the logic of the question.</li>
+      <li><strong>Ordinary vs medical anatomy terms</strong> differ: for example, page 5 gives separate columns for everyday body-part words, food words, and medical terms.</li>
+      <li><strong><span class="mono">taangruohsh</span></strong> can suggest counterfactual “if,” but Chinese does not mark counterfactuality in the same formal way English does.</li>
+      <li><strong>Compliment responses</strong> differ culturally: the notes explain that direct “thank you” for praise would sound immodest here.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill blue">Dialogue walkthrough</div>
+  <h2>Lesson 14 as a structured doctor’s report</h2>
+  <p class="small">This lesson is easiest to teach as a sequence of clinical updates, each answering a different concern.</p>
+
+  <div class="dialogue-line">
+    <span class="speaker">Stage 1</span>
+    <span class="roman">A: Jintian binqren hao.deal le ma? &nbsp;&nbsp; D: Jintian dawsh keeyii bawgaw — ta hao de duo le.</span><br>
+    <span class="gloss">A: Is the patient better today? D: I am glad to report today that he is much better.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Stage 1</span>
+    <span class="roman">B: Shianntzay shinq.minq dahgay meiyeou wenntyi le ba? &nbsp;&nbsp; D: Sh de, shianntzay weishean shyrchi keeyii shuo sh yiijing guohchiuh le.</span><br>
+    <span class="gloss">B: There is probably no question about his life now, is there? D: Yes—you can say that the critical period has already passed.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Stage 2</span>
+    <span class="roman">Woo tzwotian suoo pah de jiowsh ... fa-shau fa de nemm gau, may tiaw de yow nemm kuay, bujydaw tade shintzanq chydejuh chybujuh.</span><br>
+    <span class="gloss">What I was afraid of yesterday was that the fever was so high and the pulse so fast that I did not know whether his heart could take it.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Stage 2</span>
+    <span class="roman">Suooyii geei ta daale jii-jen chyang-shin de yaw. Howlai kann tade shau jiuran mannmhalde tueyle.shiahlai le, woo jiow jydaw ta yiijing pyng-anxde jingguohle jeyg weiji le.</span><br>
+    <span class="gloss">So I gave him a few injections to strengthen the heart. Later, when I saw the fever actually subside gradually, I knew he had safely passed the crisis.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Stage 3</span>
+    <span class="roman">Woo geei ta liixwayxde shihshide char-guohle i-biann. Woo kann ta bu shianq yeou sherm ney-shang de yanqtz.</span><br>
+    <span class="gloss">I examined him carefully, inside and out. I do not think he seems to have any internal injuries.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Stage 3</span>
+    <span class="roman">Fey a, charngtz a, wey a, gan a, shenntzanq a, dou hair haohaulde.</span><br>
+    <span class="gloss">The lungs, intestines, stomach, liver, and kidneys all seem to be in good condition.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Stage 3</span>
+    <span class="roman">Dahbiann sheaubiann dou tong. Hu.shi yee heen yun de, saangtz yee bu joong. Jiowsh lao kee, lao nawj yaw he-shoei.</span><br>
+    <span class="gloss">His bowels and urine are normal. His breathing is even, and his throat is not swollen. The only thing is that he is thirsty all the time and keeps asking for water.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Stage 4</span>
+    <span class="roman">Suooyii i-ruhle yuann, woomen touri-jiann shyh jiowsh geei ta shu-sheue.</span><br>
+    <span class="gloss">So as soon as he entered the hospital, the very first thing we did was to give him a blood transfusion.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Stage 4</span>
+    <span class="roman">Buyonq jao-ren d'e, iyuann.lii tswenj jiow yeou shianncherngde sheuejiang, sweishyr keeyii na.chulai yonq.</span><br>
+    <span class="gloss">There was no need to look for a donor; the hospital already had stored plasma ready to take out and use as needed.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Stage 5</span>
+    <span class="roman">Yawsh lian ching-shang yee suann.chiilai me, tzoong yeou syhshyr-jii-chuh ne — duo de jeanjyr shuu.bu.ching le.</span><br>
+    <span class="gloss">If we count even the light injuries, there must be more than forty places—so many that one simply cannot count them exactly.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Stage 5</span>
+    <span class="roman">Tour-pyi mo-poh le, shinqkuei tour-guu mei-shyh. Yow-eeltou, yow-lean ... gen byitz, dou tsa de heen lihhay; haotzay yeanjutz mei huay.</span><br>
+    <span class="gloss">The scalp was abraded, but fortunately the skull was all right. The right ear, right side of the face, and nose were scraped badly; fortunately the eyeballs were not damaged.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Stage 5</span>
+    <span class="roman">Yowshoou de dahjyy, lian elljyy, jongjyy, dou geei huoo shau de heen lihhay ... Yowtoei de ker.shigall, yowjeau de jeauwanntz yee shau-shang de diing lihhay.</span><br>
+    <span class="gloss">The right thumb, index finger, and middle finger were burned very badly ... the right kneecap and right ankle were also burned most seriously.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Stage 6</span>
+    <span class="roman">Kueide shiannday de ishyue, jinnbuh de jemm kuay, youchyish yeoule tzueyjinn fashiann de jii-joong heen ling de yaw ...</span><br>
+    <span class="gloss">Fortunately modern medicine has advanced so quickly, especially because of several very effective drugs discovered recently ...</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Stage 6</span>
+    <span class="roman">Jyyshiu jyh de gow tzao, keeyii bau nii nenggow wanchyuan bihmean chwanraan dwu-jiunn de weishean de.</span><br>
+    <span class="gloss">So long as treatment is early enough, one can guarantee complete avoidance of the danger of infection.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Stage 7</span>
+    <span class="roman">Ah, yawsh woomen mei jao.daw Niou Dayfu, nah yee bujydaw nengbuneng yeou tzemm lianghao de jyeguoo ba?</span><br>
+    <span class="gloss">If we had not found Dr. New, I do not know whether we could have had such a good result.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Stage 7</span>
+    <span class="roman">Ae, haoshuo vx! naal lai de huah! Woomen yee buguoh jiowsh jinn woomen shyng-i de inggai jinn de tzer.renn jiowshle.</span><br>
+    <span class="gloss">Oh, please do not say that. Where do such words come from? We are only carrying out the duty our profession requires of us.</span>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill orange">Knowledge graph</div>
+  <h2>Concept network for Lesson 14</h2>
+  <p>
+    Lesson 14 is organized as a medical explanation network: <strong>danger → crisis assessment → organ check → blood support → injury survey → infection control → prognosis → modest closure</strong>.
+  </p>
+  <div class="graph-wrap">
+    <svg width="1180" height="800" viewBox="0 0 1180 800" role="img" aria-label="Knowledge graph for Lesson 14">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" fill="#90a4d4"></path>
+        </marker>
+      </defs>
+
+      <path class="edge" d="M590,110 C590,145 590,155 590,195"/>
+      <path class="edge" d="M590,110 C440,130 320,150 205,225"/>
+      <path class="edge" d="M590,110 C740,130 860,150 975,225"/>
+      <path class="edge" d="M205,275 C205,320 205,332 205,385"/>
+      <path class="edge" d="M975,275 C975,320 975,332 975,385"/>
+      <path class="edge" d="M590,250 C490,300 430,335 375,405"/>
+      <path class="edge" d="M590,250 C690,300 750,335 805,405"/>
+      <path class="edge" d="M590,250 C590,320 590,338 590,405"/>
+      <path class="edge" d="M375,455 C340,525 300,565 250,655"/>
+      <path class="edge" d="M590,455 C590,525 590,565 590,655"/>
+      <path class="edge" d="M805,455 C840,525 880,565 930,655"/>
+
+      <g class="node">
+        <rect x="395" y="45" width="390" height="70" fill="#efeaff"></rect>
+        <text x="590" y="76" text-anchor="middle" font-size="18" font-weight="800">Lesson 14 Core Question</text>
+        <text x="590" y="99" text-anchor="middle" font-size="14">How does Mandarin organize a doctor’s explanation of crisis, injury, treatment, and prognosis?</text>
+      </g>
+
+      <g class="node">
+        <rect x="460" y="195" width="260" height="54" fill="#eaf2ff"></rect>
+        <text x="590" y="228" text-anchor="middle" font-size="17" font-weight="800">Doctor-report utterances</text>
+      </g>
+
+      <g class="node">
+        <rect x="55" y="225" width="300" height="52" fill="#eefaf5"></rect>
+        <text x="205" y="257" text-anchor="middle" font-size="17" font-weight="800">Crisis and vital signs</text>
+      </g>
+
+      <g class="node">
+        <rect x="825" y="225" width="300" height="52" fill="#fff5e8"></rect>
+        <text x="975" y="257" text-anchor="middle" font-size="17" font-weight="800">Treatment and prognosis</text>
+      </g>
+
+      <g class="node">
+        <rect x="85" y="385" width="240" height="68" fill="#edf7ff"></rect>
+        <text x="205" y="414" text-anchor="middle" font-size="16" font-weight="800">fever / pulse / heart strain</text>
+        <text x="205" y="436" text-anchor="middle" font-size="13">why the case was dangerous</text>
+      </g>
+
+      <g class="node">
+        <rect x="855" y="385" width="240" height="68" fill="#fff0f3"></rect>
+        <text x="975" y="414" text-anchor="middle" font-size="16" font-weight="800">blood / drugs / infection control</text>
+        <text x="975" y="436" text-anchor="middle" font-size="13">what made survival more likely</text>
+      </g>
+
+      <g class="node">
+        <rect x="255" y="405" width="240" height="50" fill="#eefaf5"></rect>
+        <text x="375" y="436" text-anchor="middle" font-size="16" font-weight="800">internal organs and body systems</text>
+      </g>
+
+      <g class="node">
+        <rect x="685" y="405" width="240" height="50" fill="#eefaf5"></rect>
+        <text x="805" y="436" text-anchor="middle" font-size="16" font-weight="800">whole-body injury survey</text>
+      </g>
+
+      <g class="node">
+        <rect x="495" y="405" width="190" height="50" fill="#eaf2ff"></rect>
+        <text x="590" y="436" text-anchor="middle" font-size="16" font-weight="800">early treatment logic</text>
+      </g>
+
+      <g class="node">
+        <rect x="155" y="655" width="190" height="58" fill="#eefaf5"></rect>
+        <text x="250" y="686" text-anchor="middle" font-size="16" font-weight="800">fey / wey / gan / shenn</text>
+        <text x="250" y="706" text-anchor="middle" font-size="13">organ terminology table</text>
+      </g>
+
+      <g class="node">
+        <rect x="495" y="655" width="190" height="58" fill="#fff5e8"></rect>
+        <text x="590" y="686" text-anchor="middle" font-size="16" font-weight="800">shu-sheue / sheuejiang</text>
+        <text x="590" y="706" text-anchor="middle" font-size="13">transfusion and plasma</text>
+      </g>
+
+      <g class="node">
+        <rect x="835" y="655" width="190" height="58" fill="#f3f0ff"></rect>
+        <text x="930" y="686" text-anchor="middle" font-size="16" font-weight="800">compliment → denial → thanks</text>
+        <text x="930" y="706" text-anchor="middle" font-size="13">professional modesty pattern</text>
+      </g>
+    </svg>
+  </div>
+  <div class="legend">
+    <span><i class="dot" style="background:#eaf2ff"></i> report structure</span>
+    <span><i class="dot" style="background:#eefaf5"></i> assessment and anatomy</span>
+    <span><i class="dot" style="background:#fff5e8"></i> treatment and timing</span>
+    <span><i class="dot" style="background:#f3f0ff"></i> interactional culture</span>
+    <span><i class="dot" style="background:#fff0f3"></i> prognosis and safety</span>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill green">Core concepts</div>
+  <h2>What the lesson teaches, concept by concept</h2>
+  <div class="concept-grid">
+    <div class="concept">
+      <h3>1) The crisis is framed as a danger to the heart</h3>
+      <div class="tag">may</div><div class="tag">shintzanq</div><div class="tag">chydejuh</div><div class="tag">weiji</div>
+      <ul>
+        <li>The doctor explains that the central danger was not just fever in the abstract, but whether the heart could withstand the strain of high fever and rapid pulse.</li>
+        <li>This gives the lesson a clear logic of cause, risk, and intervention.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>2) Passing the crisis is described as a process</h3>
+      <div class="tag">jiuran</div><div class="tag">tueyle.shiahlai</div><div class="tag">jingguoh</div>
+      <ul>
+        <li>The doctor does not merely announce improvement; he explains the evidence that allowed him to conclude the patient had safely passed the crisis.</li>
+        <li>That makes the lesson a strong example of reasoning from observed change.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>3) Internal-organ language is layered by register</h3>
+      <div class="tag">ordinary</div><div class="tag">food term</div><div class="tag">medical term</div>
+      <ul>
+        <li>The chart on page 5 distinguishes everyday body words, food words, and medical terminology for organs such as lungs, stomach, liver, kidney, intestines, heart, and brains.</li>
+        <li>This is especially useful for showing students that vocabulary choice depends on context and register.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>4) Bodily functions are reported matter-of-factly</h3>
+      <div class="tag">dahbiann</div><div class="tag">sheaubiann</div><div class="tag">hu.shi</div>
+      <ul>
+        <li>The doctor checks bowel movement, urination, breathing, throat swelling, and thirst in a calm clinical sequence.</li>
+        <li>This helps students see how a condition report is organized around systems, not just injuries.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>5) Blood support becomes a key turning point</h3>
+      <div class="tag">shu-sheue</div><div class="tag">sheuejiang</div>
+      <ul>
+        <li>The doctor explains that blood loss made transfusion the first priority once the patient entered the hospital.</li>
+        <li>The stored plasma detail makes the scene feel concrete and modern.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>6) The whole-body injury survey is anatomically detailed</h3>
+      <div class="tag">tour-pyi</div><div class="tag">tour-guu</div><div class="tag">yeanjutz</div><div class="tag">ker.shigall</div>
+      <ul>
+        <li>The lesson names many body parts in order to explain where the injuries were serious, where they were superficial, and where damage was avoided.</li>
+        <li>This makes it one of the richest early lessons for concrete body vocabulary.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>7) Medical progress is explained through timing</h3>
+      <div class="tag">jinnbuh</div><div class="tag">fashiann</div><div class="tag">jyyshiu</div><div class="tag">bihmean</div>
+      <ul>
+        <li>The doctor argues that modern medicine and newly discovered drugs matter, but early treatment matters just as much.</li>
+        <li>The lesson repeatedly emphasizes “early enough” as the key condition for preventing infection danger.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>8) The ending teaches cultural modesty</h3>
+      <div class="tag">ae</div><div class="tag">naal lai de huah</div><div class="tag">laujiah</div><div class="tag">bukeh.chih</div>
+      <ul>
+        <li>The notes explain that one does not directly accept praise with “thank you” in this context.</li>
+        <li>Instead, the proper response is modest denial, followed by polite closure.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill orange">Mini-board plan</div>
+    <h2>How to lay this out for students</h2>
+    <table>
+      <thead><tr><th>Board zone</th><th>Write this</th><th>Teaching purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Left</td><td>crisis chain: fever + pulse → heart strain → injections → fever subsides → crisis passes</td><td>Makes the doctor’s reasoning visible.</td></tr>
+        <tr><td>Center</td><td>internal organs table + bodily function checks</td><td>Shows what “inside and out” means in practice.</td></tr>
+        <tr><td>Right</td><td>injury map of head, face, hand, knee, ankle, and spared areas</td><td>Organizes the dense body-part survey.</td></tr>
+        <tr><td>Bottom</td><td>modern medicine: transfusion, plasma, sulfanilamide, penicillin, early treatment, infection risk</td><td>Connects vocabulary to prognosis.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="pill green">High-value classroom move</div>
+    <h2>Turn the lesson into a doctor’s briefing</h2>
+    <div class="callout">
+      Put one student in the role of the doctor and give them a structured checklist to report from.
+    </div>
+    <ol>
+      <li>State whether the patient is out of danger.</li>
+      <li>Explain what was dangerous yesterday.</li>
+      <li>Report on internal organs and body systems.</li>
+      <li>Summarize major injuries.</li>
+      <li>Explain why the outcome is hopeful now.</li>
+    </ol>
+    <p class="small">This helps students hear the lesson as organized professional speech rather than as a random list of medical facts.</p>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill blue">A key structural system</div>
+  <h2>Danger, intervention, and prognosis</h2>
+  <div class="practice">
+    <div class="concept">
+      <h3>Danger</h3>
+      <p><span class="mono">fa-shau fa de nemm gau</span>, <span class="mono">may tiaw de yow nemm kuay</span></p>
+      <p class="small">The high fever and rapid pulse create the crisis.</p>
+    </div>
+    <div class="concept">
+      <h3>Intervention</h3>
+      <p><span class="mono">daale jii-jen chyang-shin de yaw</span>, <span class="mono">shu-sheue</span></p>
+      <p class="small">The doctor strengthens the heart and supports the patient with transfusion.</p>
+    </div>
+    <div class="concept">
+      <h3>Prognosis</h3>
+      <p><span class="mono">weishean shyrchi yiijing guohchiuh le</span></p>
+      <p class="small">The critical stage has passed.</p>
+    </div>
+    <div class="concept">
+      <h3>Teaching payoff</h3>
+      <p class="small">This lesson models how experts explain not just what they did, but why the situation is now safer than before.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill green">Guided practice</div>
+  <h2>Practice tasks for a two-hour lesson</h2>
+  <div class="practice">
+    <div class="concept">
+      <h3>Task A — Crisis summary</h3>
+      <p>Students explain what the doctor was most afraid of yesterday and what evidence showed the danger had passed.</p>
+    </div>
+    <div class="concept">
+      <h3>Task B — Organ table</h3>
+      <p>Students match ordinary terms, food words, and medical terms for the internal organs from the chart on page 5.</p>
+    </div>
+    <div class="concept">
+      <h3>Task C — Injury map</h3>
+      <p>Students label a body outline with abrasions, burns, spared fingers, and untouched eyes and skull.</p>
+    </div>
+    <div class="concept">
+      <h3>Task D — Modest doctor response</h3>
+      <p>Students role-play praising the doctor and answering in the culturally appropriate modest style.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill red">Quick understanding check</div>
+  <h2>Two multiple-choice quiz questions</h2>
+
+  <div class="quiz-q" data-answer="b">
+    <h3>1) According to the doctor in Lesson 14, what was the main danger yesterday?</h3>
+    <label><input type="radio" name="q1" value="a"> That the patient had too little thirst and did not want water.</label>
+    <label><input type="radio" name="q1" value="b"> That the fever was so high and the pulse so fast that the heart might not stand the strain.</label>
+    <label><input type="radio" name="q1" value="c"> That the patient might forget the doctor’s name.</label>
+    <label><input type="radio" name="q1" value="d"> That there were no nurses in the hospital.</label>
+    <div class="feedback ok">Correct. The doctor explicitly says that what he feared was whether the heart could take the strain of the high fever and rapid pulse.</div>
+    <div class="feedback no">Not quite. The lesson makes the crisis very specific: the patient’s heart might not have been able to withstand the strain.</div>
+  </div>
+
+  <div class="quiz-q" data-answer="c">
+    <h3>2) What cultural point do the notes make about responding to compliments at the end of the lesson?</h3>
+    <label><input type="radio" name="q2" value="a"> One should always answer compliments with a very direct “many thanks.”</label>
+    <label><input type="radio" name="q2" value="b"> One should ignore compliments completely and say nothing.</label>
+    <label><input type="radio" name="q2" value="c"> One typically denies or softens the praise rather than accepting it directly with “thank you.”</label>
+    <label><input type="radio" name="q2" value="d"> Only nurses may respond modestly; doctors should not.</label>
+    <div class="feedback ok">Correct. The notes explain that directly thanking someone for praise would imply immodest acceptance of one’s merits; modest denial is preferred.</div>
+    <div class="feedback no">Not quite. The ending is a cultural lesson: praise is usually softened or denied rather than accepted directly.</div>
+  </div>
+
+  <button id="checkQuiz">Check my answers</button>
+  <button class="secondary" id="resetQuiz" style="margin-left:8px;">Reset</button>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill gold">Exit challenge</div>
+    <h2>End-of-lecture spoken challenge</h2>
+    <ol>
+      <li>Say whether the patient is out of danger now and why.</li>
+      <li>Name one internal organ the doctor says seems to be in good condition.</li>
+      <li>Describe one major injury and one fortunate non-injury from the lesson.</li>
+      <li>Explain, in English, why early treatment matters so much in the doctor’s explanation.</li>
+      <li>Give the culturally appropriate type of response to the visitors’ praise of the doctor.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="pill blue">References and source use</div>
+    <h2>References for this page</h2>
+    <ul>
+      <li><strong>Primary source:</strong> scanned Lesson 14 pages from <em>Mandarin Primer: An Intensive Course in Spoken Chinese</em>.</li>
+      <li><strong>Dialogue basis:</strong> Lesson 14 “Conversation with the Doctor,” including the report that the critical stage has passed, the fever-and-pulse explanation, the internal-organ status update, the transfusion discussion, the whole-body injury survey, the modern-drug discussion, and the modest closing exchange. </li>
+      <li><strong>Notes basis:</strong> notes on <span class="mono">dawsh</span>, <span class="mono">sh de</span>, <span class="mono">suoo pah de</span>, <span class="mono">may</span>, <span class="mono">shintzanq</span>, <span class="mono">chydejuh</span>, <span class="mono">weiji</span>, <span class="mono">pyng-anxde</span>, <span class="mono">liixwayxde shihshide</span>, the internal-organ table on page 5, <span class="mono">dahbiann</span> and <span class="mono">sheaubiann</span>, <span class="mono">shu-sheue</span>, <span class="mono">sheuejiang</span>, body-part vocabulary, <span class="mono">jinnbuh</span>, <span class="mono">taangruohsh</span>, <span class="mono">naal lai de huah</span>, <span class="mono">jinn-tzer</span>, <span class="mono">laujiah</span>, and <span class="mono">bukeh.chih</span>.</li>
+      <li><strong>Exercises basis:</strong> the page 6 exercises on cause-and-effect, fever, organs, treatment, and the follow-up conversation with the patient, which informed the teaching emphasis on explanation and reporting.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  This lecture page is designed for a full two-hour beginner lesson. It keeps close to the source while turning Lesson 14 into a clearer,
+  more connected, and more teachable doctor-conversation lesson for English-speaking high-school students.
+</footer>
+</div>
+
+<script>
+document.getElementById('checkQuiz').addEventListener('click', function(){
+  document.querySelectorAll('.quiz-q').forEach(function(q){
+    const correct = q.dataset.answer;
+    const selected = q.querySelector('input[type="radio"]:checked');
+    const ok = q.querySelector('.feedback.ok');
+    const no = q.querySelector('.feedback.no');
+    ok.style.display = 'none';
+    no.style.display = 'none';
+    if(selected && selected.value === correct){ ok.style.display = 'block'; }
+    else { no.style.display = 'block'; }
+  });
+});
+document.getElementById('resetQuiz').addEventListener('click', function(){
+  document.querySelectorAll('input[type="radio"]').forEach(function(inp){ inp.checked = false; });
+  document.querySelectorAll('.feedback').forEach(function(f){ f.style.display = 'none'; });
+});
+</script>
+</body>
+</html>

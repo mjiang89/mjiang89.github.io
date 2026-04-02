@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mandarin Primer — Lesson 3 Lecture Page</title>
+<style>
+  :root{
+    --bg:#f6f8fc;
+    --ink:#1d2433;
+    --muted:#5a6475;
+    --card:#ffffff;
+    --line:#d8dfeb;
+    --blue:#2f6fed;
+    --green:#2f9e77;
+    --purple:#7b61ff;
+    --orange:#f08c2e;
+    --red:#d9485f;
+    --gold:#c99700;
+    --teal:#0f9db8;
+    --shadow:0 10px 30px rgba(28,35,54,.08);
+    --radius:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at top right, rgba(47,111,237,.08), transparent 28%),
+      radial-gradient(circle at top left, rgba(123,97,255,.08), transparent 26%),
+      var(--bg);
+    line-height:1.65;
+  }
+  .wrap{width:min(1180px,94vw); margin:0 auto; padding:28px 0 64px;}
+  header.hero{
+    background:linear-gradient(135deg,#0f4c81,#2368d9 55%,#7b61ff);
+    color:#fff;
+    border-radius:28px;
+    padding:34px 34px 28px;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+  }
+  header.hero::after{
+    content:"";
+    position:absolute; right:-45px; top:-45px;
+    width:260px; height:260px;
+    background:radial-gradient(circle, rgba(255,255,255,.18), transparent 65%);
+  }
+  .eyebrow{
+    display:inline-block;
+    padding:6px 10px;
+    border:1px solid rgba(255,255,255,.28);
+    border-radius:999px;
+    font-size:.83rem;
+    letter-spacing:.02em;
+    margin-bottom:10px;
+    background:rgba(255,255,255,.08);
+  }
+  h1,h2,h3{line-height:1.2; margin:.2rem 0 .8rem}
+  h1{font-size:clamp(2rem,3vw,3rem)}
+  h2{font-size:1.55rem}
+  h3{font-size:1.12rem}
+  p.lead{font-size:1.08rem; max-width:960px; opacity:.98}
+  .small{font-size:.95rem; color:var(--muted)}
+  .grid{display:grid; gap:18px}
+  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  @media (max-width:900px){.g2,.g3{grid-template-columns:1fr}}
+  section{margin-top:22px}
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:22px;
+  }
+  .pill{
+    display:inline-block;
+    font-size:.8rem;
+    font-weight:800;
+    letter-spacing:.02em;
+    padding:5px 10px;
+    border-radius:999px;
+    color:#fff;
+    margin-bottom:10px;
+  }
+  .blue{background:var(--blue)}
+  .green{background:var(--green)}
+  .purple{background:var(--purple)}
+  .orange{background:var(--orange)}
+  .red{background:var(--red)}
+  .gold{background:var(--gold)}
+  .teal{background:var(--teal)}
+  .banner{
+    border-left:6px solid var(--gold);
+    background:#fff8db;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  .callout{
+    border-left:5px solid var(--blue);
+    background:#eef4ff;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  .warning{
+    border-left:5px solid var(--red);
+    background:#fff2f4;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  ul li, ol li{margin:.45rem 0}
+  .flow{
+    display:grid;
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    gap:12px;
+  }
+  @media (max-width:1000px){.flow{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){.flow{grid-template-columns:1fr}}
+  .step{
+    background:linear-gradient(180deg,#fff,#f8faff);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:16px;
+    min-height:148px;
+  }
+  .num{
+    width:34px; height:34px; border-radius:50%;
+    display:grid; place-items:center;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:#fff; font-weight:800; margin-bottom:10px;
+  }
+  .dialogue-line{
+    padding:10px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .dialogue-line:last-child{border-bottom:none}
+  .speaker{
+    display:inline-block; min-width:82px; font-weight:800; color:var(--blue);
+  }
+  .roman{font-size:1.02rem; font-weight:650}
+  .gloss{color:var(--muted)}
+  .concept-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;
+  }
+  @media (max-width:900px){.concept-grid{grid-template-columns:1fr}}
+  .concept{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px;
+    background:#fbfcff;
+  }
+  .tag{
+    display:inline-block;
+    padding:4px 8px;
+    border-radius:999px;
+    font-size:.78rem;
+    font-weight:700;
+    margin:2px 4px 2px 0;
+    background:#eef3ff;
+    color:#2c4a9c;
+  }
+  .mono{
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background:#f5f7fb;
+    padding:.08rem .35rem;
+    border-radius:8px;
+  }
+  table{width:100%; border-collapse:collapse; font-size:.96rem}
+  th,td{border-bottom:1px solid var(--line); padding:12px 10px; text-align:left; vertical-align:top}
+  th{background:#f4f7fc}
+  tr:last-child td{border-bottom:none}
+  .graph-wrap{
+    overflow:auto;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:linear-gradient(180deg,#fcfdff,#f6f9ff);
+    padding:12px;
+  }
+  svg text{font-family: Inter, system-ui, sans-serif; fill:#1f2430;}
+  .edge{stroke:#90a4d4; stroke-width:2.2; fill:none; marker-end:url(#arrow);}
+  .node rect{rx:18; ry:18; stroke:#d8dff2; stroke-width:1.4;}
+  .legend{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; font-size:.9rem}
+  .legend span{
+    display:flex; align-items:center; gap:6px;
+    background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 10px;
+  }
+  .dot{width:12px; height:12px; border-radius:50%; display:inline-block}
+  .practice{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px;
+  }
+  @media (max-width:900px){.practice{grid-template-columns:1fr}}
+  details{
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:12px 14px;
+    background:#fff;
+  }
+  summary{cursor:pointer; font-weight:700}
+  .quiz-q{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px;
+    margin-bottom:16px;
+    background:#fbfdff;
+  }
+  .quiz-q label{
+    display:block;
+    padding:9px 10px;
+    border:1px solid transparent;
+    border-radius:12px;
+    cursor:pointer;
+  }
+  .quiz-q label:hover{background:#f1f6ff; border-color:#dbe6ff}
+  button{
+    appearance:none;
+    border:none;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:#fff;
+    border-radius:12px;
+    padding:11px 16px;
+    font-size:.96rem;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:var(--shadow);
+  }
+  button.secondary{background:linear-gradient(135deg,var(--green),#3fb58e)}
+  .feedback{
+    margin-top:10px; padding:12px 14px; border-radius:12px; display:none;
+  }
+  .feedback.ok{background:#edf9f3; border:1px solid #bfe7cf}
+  .feedback.no{background:#fff1f3; border:1px solid #f0c0cb}
+  footer{margin-top:28px; color:var(--muted); font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Yuen Ren Chao - Mandarin Primer: An Intensive Course in Spoken Chinese</div>
+    <h1>Mandarin Primer — Lesson 3</h1>
+    <h2 style="font-size:1.35rem; font-weight:650; opacity:.98;">Speaking Chinese</h2>
+    <p class="lead">
+      Lesson 3 shifts from naming people and objects to talking about <em>language, nationality, origin, ability, sameness, and difference</em>.
+      It is the first lesson that feels clearly abstract: students are not only identifying things in the room, but also discussing who speaks what language,
+      where people come from, and how two labels can overlap or differ.
+    </p>
+    <p class="small" style="color:rgba(255,255,255,.9);">
+      The page keeps the book’s original romanization system so it stays aligned with the scanned lesson.
+    </p>
+  </header>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill blue">Learning goals</div>
+      <h2>What students should learn</h2>
+      <ul>
+        <li>Say that someone is Chinese, American, English, or foreign: <span class="mono">Jong.gworen</span>, <span class="mono">Meei.gworen</span>, <span class="mono">Ing.gworen</span>, <span class="mono">way.gworen</span>.</li>
+        <li>Talk about language ability with <span class="mono">huey</span> “can, know how to.”</li>
+        <li>Use origin expressions like <span class="mono">tsorng Meei.gwo lai .de</span> and understand the idea “one who comes from …”</li>
+        <li>Understand that English labels like “English” and “American” do not map neatly one-to-one onto the Chinese discussion of language names.</li>
+        <li>Ask about sameness and difference with <span class="mono">iyanq</span>, <span class="mono">butorng</span>, and <span class="mono">wanchyuan</span>.</li>
+        <li>Notice how the lesson contrasts spoken language <span class="mono">Jong.gwo-huah</span> with <span class="mono">Jongwen</span>.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="pill gold">Teacher lens</div>
+      <h2>Why this lesson matters</h2>
+      <div class="banner">
+        <strong>Lesson 3 is conceptually bigger than it first appears.</strong> It teaches language as an idea: nationality, language name, origin,
+        skill, similarity, difference, and naming.
+      </div>
+      <p>
+        For English-speaking beginners, this lesson is especially valuable because it breaks the habit of assuming every English label has a neat Mandarin equivalent.
+        The dialogue itself explores that mismatch and turns it into a learning opportunity.
+      </p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill purple">Two-hour lecture flow</div>
+    <h2>Suggested lecture sequence</h2>
+    <div class="flow">
+      <div class="step"><div class="num">1</div><strong>Review and bridge</strong><br><span class="small">Briefly review Lesson 1 people and Lesson 2 objects, then announce the new leap: now we talk about languages and where people come from.</span></div>
+      <div class="step"><div class="num">2</div><strong>Cast and categories</strong><br><span class="small">Introduce country, person, and language labels together: China → Chinese person → Chinese speech.</span></div>
+      <div class="step"><div class="num">3</div><strong>Dialogue in chunks</strong><br><span class="small">Read the text in meaningful stretches: who speaks what, who comes from where, what “English” means, what “Jongwen” means.</span></div>
+      <div class="step"><div class="num">4</div><strong>Grammar from use</strong><br><span class="small">Pull out <span class="mono">huey</span>, <span class="mono">dou</span>, A-not-A questions, <span class="mono">.ma</span>, <span class="mono">jiaw</span>, and <span class="mono">.de</span> constructions.</span></div>
+      <div class="step"><div class="num">5</div><strong>Semantic contrast</strong><br><span class="small">Help students think through why “Englishmen speak English, Americans also speak English” matters in the dialogue.</span></div>
+      <div class="step"><div class="num">6</div><strong>Knowledge graph + quiz</strong><br><span class="small">Review the whole system and check whether students can connect person, country, language, and ability.</span></div>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill green">How to teach it well</div>
+      <h2>Effective teaching moves for beginners</h2>
+      <div class="callout">
+        The source pages repeatedly emphasize learning through <strong>whole utterances, echoing, repetition, and exercise-based fluency</strong>.
+        That matters even more in Lesson 3 because the content is less concrete than earlier lessons.
+      </div>
+      <ol>
+        <li>Use a visual three-column board: <strong>country</strong>, <strong>person</strong>, <strong>language</strong>.</li>
+        <li>Keep meaning visible with arrows: <span class="mono">Jong.gwo → Jong.gworen → Jong.gwo-huah</span>.</li>
+        <li>Pause often to ask: “Is this a country, a person, or a language?”</li>
+        <li>When the lesson discusses “English” and “American,” slow down and explain that the point is semantic mismatch, not trivia.</li>
+        <li>Use repeated frames, not single-word memorization: <span class="mono">Ta tsorng Ing.gwo lai, suoo.yii ta sh Ing.gworen.</span></li>
+      </ol>
+    </div>
+    <div class="card">
+      <div class="pill red">Likely beginner confusions</div>
+      <h2>Where English speakers may stumble</h2>
+      <div class="warning">
+        Students may assume this lesson is just about vocabulary. In reality, it is about how Chinese organizes categories and relations.
+      </div>
+      <ul>
+        <li><strong><span class="mono">huey</span></strong> means “can” in the sense of <em>knowing how / having the skill</em>, not general permission.</li>
+        <li><strong>A-not-A questions</strong> require answers that choose A or not-A, not simple agreement words like “right” or “wrong.”</li>
+        <li><strong><span class="mono">dou</span></strong> is not a simple noun-like “all”; it is an adverb that belongs with the following predicate.</li>
+        <li><strong><span class="mono">.de</span> constructions</strong> can mean “the person who comes from America” or “one who comes from America,” depending on context.</li>
+        <li><strong><span class="mono">Jongwen</span> vs. <span class="mono">Jong.gwo-huah</span></strong> is presented as nearly the same in this lesson, with a later inference that one is more tied to writing and the other to speech.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill blue">Dialogue walkthrough</div>
+    <h2>Lesson 3 as a conceptual conversation</h2>
+    <p class="small">This lesson is best taught as a sequence of thought moves, not as a raw block of text.</p>
+
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Woo sh Jong.gworen, woo sh ig Jong.gworen.</span><br>
+      <span class="gloss">I am Chinese, I am a Chinese person.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Woo shuo Jong.gwo-huah, nii shuo Jong.gwo-huah, ta yee shuo Jong.gwo-huah — woo.men gehgehl dou shuo Jong.gwo-huah.</span><br>
+      <span class="gloss">I speak Chinese, you speak Chinese, he also speaks Chinese — every one of us speaks Chinese.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Nii.men huey shuo Jong.gwo-huah .bu.huey .a?</span><br>
+      <span class="gloss">Can you people speak Chinese?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">B</span>
+      <span class="roman">Huey, woo.men huey.</span><br>
+      <span class="gloss">Yes, we can.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Nii sh Jong.gworen .bu.sh?</span><br>
+      <span class="gloss">Are you Chinese?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">B</span>
+      <span class="roman">Bu.sh, woo sh way.gworen.</span><br>
+      <span class="gloss">No, I am a foreigner.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Nii sh neei-gwo .de ren .ne? Nii sh tsorng naal lai .de ren .ne?</span><br>
+      <span class="gloss">What country are you from? Where do you come from?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">B</span>
+      <span class="roman">Woo sh tsorng Meei.gwo lai .de, suoo.yii woo sh Meei.gworen. Ta tsorng Ing.gwo lai, suoo.yii ta sh Ing.gworen.</span><br>
+      <span class="gloss">I come from America, so I am American. He comes from England, so he is English.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Ing.gworen shuo Ing.gwo-huah, Meei.gworen shuo Meei.gwo-huah, sh .bu.sh?</span><br>
+      <span class="gloss">Englishmen speak English-language and Americans speak American-language, right?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">B</span>
+      <span class="roman">Bu.sh tzemm shuo … Ing.gworen shuo Ing'wen, Meei.gworen yee shuo Ing'wen.</span><br>
+      <span class="gloss">That’s not how one says it … English people speak English, Americans also speak English.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Nii.men leang-gwo ren shuo-huah, sh wanchyuan iyanq .de .ma?</span><br>
+      <span class="gloss">Do the people of your two countries talk exactly alike?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">B</span>
+      <span class="roman">Bu, bu wanchyuan iyanq … jyy yeou ideal butorng .jiow.sh.le.</span><br>
+      <span class="gloss">No, not completely the same … there is only a little difference, that’s all.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">B</span>
+      <span class="roman">Sherm jiaw 'Jongwen' .a? Jongwen gen Jong.gwo-huah yeou sherm butorng .a?</span><br>
+      <span class="gloss">What is called “Chinese wen”? What difference is there between “Jongwen” and “Chinese speech”?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Mei sherm butorng … Jongwen jiow.sh Jong.gwo-huah.</span><br>
+      <span class="gloss">There is no real difference … Jongwen is simply Chinese language.</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill orange">Knowledge graph</div>
+    <h2>Concept network for Lesson 3</h2>
+    <p>
+      The heart of Lesson 3 is a relational network: <strong>country → person → language → ability → comparison → naming</strong>.
+      Students understand the lesson better when they see these as connected categories, not as separate vocabulary lists.
+    </p>
+    <div class="graph-wrap">
+      <svg width="1120" height="680" viewBox="0 0 1120 680" role="img" aria-label="Knowledge graph for Lesson 3">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#90a4d4"></path>
+          </marker>
+        </defs>
+
+        <path class="edge" d="M560,110 C560,145 560,155 560,195"/>
+        <path class="edge" d="M560,110 C425,130 320,150 220,215"/>
+        <path class="edge" d="M560,110 C695,130 800,150 900,215"/>
+        <path class="edge" d="M220,265 C220,305 220,320 220,360"/>
+        <path class="edge" d="M900,265 C900,305 900,320 900,360"/>
+        <path class="edge" d="M560,245 C475,295 425,325 380,380"/>
+        <path class="edge" d="M560,245 C645,295 695,325 740,380"/>
+        <path class="edge" d="M560,245 C560,315 560,330 560,380"/>
+        <path class="edge" d="M380,430 C345,485 310,520 270,580"/>
+        <path class="edge" d="M560,430 C560,485 560,520 560,580"/>
+        <path class="edge" d="M740,430 C775,485 810,520 850,580"/>
+
+        <g class="node">
+          <rect x="415" y="45" width="290" height="70" fill="#efeaff"></rect>
+          <text x="560" y="76" text-anchor="middle" font-size="18" font-weight="800">Lesson 3 Core Question</text>
+          <text x="560" y="99" text-anchor="middle" font-size="14">Who comes from where, who speaks what, and how are labels related?</text>
+        </g>
+
+        <g class="node">
+          <rect x="430" y="195" width="260" height="54" fill="#eaf2ff"></rect>
+          <text x="560" y="228" text-anchor="middle" font-size="17" font-weight="800">Whole language utterances</text>
+        </g>
+
+        <g class="node">
+          <rect x="90" y="215" width="260" height="52" fill="#eefaf5"></rect>
+          <text x="220" y="247" text-anchor="middle" font-size="17" font-weight="800">Country → person → language</text>
+        </g>
+
+        <g class="node">
+          <rect x="770" y="215" width="260" height="52" fill="#fff5e8"></rect>
+          <text x="900" y="247" text-anchor="middle" font-size="17" font-weight="800">Ability and comparison</text>
+        </g>
+
+        <g class="node">
+          <rect x="120" y="360" width="200" height="62" fill="#edf7ff"></rect>
+          <text x="220" y="388" text-anchor="middle" font-size="16" font-weight="800">Jong.gwo / Meei.gwo / Ing.gwo</text>
+          <text x="220" y="409" text-anchor="middle" font-size="13">countries and origins</text>
+        </g>
+
+        <g class="node">
+          <rect x="785" y="360" width="230" height="62" fill="#fff0f3"></rect>
+          <text x="900" y="388" text-anchor="middle" font-size="16" font-weight="800">huey / iyanq / butorng</text>
+          <text x="900" y="409" text-anchor="middle" font-size="13">can / same / different</text>
+        </g>
+
+        <g class="node">
+          <rect x="270" y="380" width="220" height="50" fill="#eefaf5"></rect>
+          <text x="380" y="411" text-anchor="middle" font-size="16" font-weight="800">Origin constructions</text>
+        </g>
+
+        <g class="node">
+          <rect x="630" y="380" width="220" height="50" fill="#eefaf5"></rect>
+          <text x="740" y="411" text-anchor="middle" font-size="16" font-weight="800">Naming and meaning</text>
+        </g>
+
+        <g class="node">
+          <rect x="465" y="380" width="190" height="50" fill="#eaf2ff"></rect>
+          <text x="560" y="411" text-anchor="middle" font-size="16" font-weight="800">Questions and answers</text>
+        </g>
+
+        <g class="node">
+          <rect x="180" y="580" width="180" height="58" fill="#eefaf5"></rect>
+          <text x="270" y="611" text-anchor="middle" font-size="16" font-weight="800">tsorng … lai .de</text>
+          <text x="270" y="631" text-anchor="middle" font-size="13">from … come DE</text>
+        </g>
+
+        <g class="node">
+          <rect x="470" y="580" width="180" height="58" fill="#fff5e8"></rect>
+          <text x="560" y="611" text-anchor="middle" font-size="16" font-weight="800">A-not-A / .ma / .a</text>
+          <text x="560" y="631" text-anchor="middle" font-size="13">different question types</text>
+        </g>
+
+        <g class="node">
+          <rect x="760" y="580" width="180" height="58" fill="#f3f0ff"></rect>
+          <text x="850" y="611" text-anchor="middle" font-size="16" font-weight="800">Jongwen / Jong.gwo-huah</text>
+          <text x="850" y="631" text-anchor="middle" font-size="13">label overlap and nuance</text>
+        </g>
+      </svg>
+    </div>
+    <div class="legend">
+      <span><i class="dot" style="background:#eaf2ff"></i> sentence patterns</span>
+      <span><i class="dot" style="background:#eefaf5"></i> origin and relation</span>
+      <span><i class="dot" style="background:#fff5e8"></i> ability and question logic</span>
+      <span><i class="dot" style="background:#f3f0ff"></i> naming nuance</span>
+      <span><i class="dot" style="background:#fff0f3"></i> comparison concepts</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill green">Core concepts</div>
+    <h2>What the lesson teaches, concept by concept</h2>
+    <div class="concept-grid">
+      <div class="concept">
+        <h3>1) Country, person, and language form a family of meanings</h3>
+        <div class="tag">Jong.gwo</div><div class="tag">Jong.gworen</div><div class="tag">Jong.gwo-huah</div>
+        <ul>
+          <li>The lesson builds a chain: country → person from that country → language associated with that country.</li>
+          <li>This gives students a structured way to expand meaning rather than memorize separate words.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>2) <span class="mono">huey</span> means “know how to”</h3>
+        <div class="tag">ability</div><div class="tag">skill</div>
+        <ul>
+          <li>The notes explain that <span class="mono">huey</span> means “can” in the sense of having the skill.</li>
+          <li>That makes it ideal for language ability: <span class="mono">huey shuo Jong.gwo-huah</span>.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>3) <span class="mono">dou</span> belongs with the following predicate</h3>
+        <div class="tag">dou</div><div class="tag">all</div>
+        <ul>
+          <li>The notes warn that <span class="mono">dou</span> is not really a noun-like “all.”</li>
+          <li>It is an adverb meaning something like “in all cases / uniformly,” and it belongs with the verb that follows.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>4) A-not-A questions are choice questions</h3>
+        <div class="tag">A-not-A</div><div class="tag">huey / bu.huey</div>
+        <ul>
+          <li><span class="mono">Nii.men huey shuo Jong.gwo-huah .bu.huey .a?</span></li>
+          <li>The answer should choose the predicate: <span class="mono">Huey</span> or <span class="mono">bu huey</span>, not simply “right” or “wrong.”</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>5) <span class="mono">tsorng … lai .de</span> creates origin descriptions</h3>
+        <div class="tag">from … come</div><div class="tag">.de</div>
+        <ul>
+          <li>The lesson uses <span class="mono">tsorng Meei.gwo lai .de</span> = “one who comes from America.”</li>
+          <li>This is an early example of a longer modifier packaged with <span class="mono">.de</span>.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>6) <span class="mono">jiaw</span> links naming and meaning</h3>
+        <div class="tag">call</div><div class="tag">is called</div><div class="tag">what is meant by</div>
+        <ul>
+          <li><span class="mono">Sherm jiaw Ing'wen .a?</span> asks what “English” means or what one calls “English.”</li>
+          <li>This makes the lesson more metalinguistic than Lessons 1 and 2.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>7) Same and different are scaled, not binary</h3>
+        <div class="tag">iyanq</div><div class="tag">butorng</div><div class="tag">wanchyuan</div>
+        <ul>
+          <li>The lesson does not simply say “same” or “different.”</li>
+          <li>It says “not completely the same” and “only a little different.”</li>
+          <li>This is a subtle and realistic conversational move.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>8) <span class="mono">Jongwen</span> and <span class="mono">Jong.gwo-huah</span> are treated as near-overlapping labels</h3>
+        <div class="tag">spoken</div><div class="tag">written</div><div class="tag">label nuance</div>
+        <ul>
+          <li>The dialogue first says there is no significant difference.</li>
+          <li>Then one speaker speculates that <span class="mono">Jong.gwo-huah</span> is what one speaks and <span class="mono">Jongwen</span> is what one writes.</li>
+          <li>This makes a perfect class discussion point: labels can overlap but still feel different in use.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill orange">Mini-board plan</div>
+      <h2>How to lay this out for students</h2>
+      <table>
+        <thead><tr><th>Board zone</th><th>Write this</th><th>Teaching purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Left</td><td><span class="mono">Jong.gwo / Meei.gwo / Ing.gwo</span></td><td>Keep country names visible.</td></tr>
+          <tr><td>Center</td><td><span class="mono">Jong.gworen / Meei.gworen / Ing.gworen / way.gworen</span></td><td>Show person labels derived from countries.</td></tr>
+          <tr><td>Right</td><td><span class="mono">Jong.gwo-huah / Ing'wen / Jongwen</span></td><td>Help students sort language labels from people labels.</td></tr>
+          <tr><td>Bottom</td><td><span class="mono">huey</span>, <span class="mono">tsorng … lai .de</span>, <span class="mono">iyanq</span>, <span class="mono">butorng</span></td><td>Keep the conceptual grammar visible during discussion.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="pill teal">High-value contrast</div>
+      <h2>Why the “English / American” exchange matters</h2>
+      <div class="callout">
+        A says: Englishmen speak “English-language,” Americans speak “American-language,” right?
+      </div>
+      <p>
+        B rejects that framing and says both English people and Americans speak English.
+        This is not just cultural information. It teaches students that <strong>language names and nationality labels do not always pattern symmetrically</strong>.
+      </p>
+      <p class="small">
+        That is exactly the kind of misconception beginners often have when they try to build Mandarin by direct analogy from English.
+      </p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill blue">Question system focus</div>
+    <h2>Three different question types in this lesson</h2>
+    <div class="practice">
+      <div class="concept">
+        <h3>A-not-A question</h3>
+        <p><span class="mono">Nii.men huey shuo Jong.gwo-huah .bu.huey .a?</span></p>
+        <p class="small">Best answer chooses one side: <span class="mono">Huey</span> or <span class="mono">bu huey</span>.</p>
+      </div>
+      <div class="concept">
+        <h3><span class="mono">.ma</span> question</h3>
+        <p><span class="mono">Nii.men leang-gwo ren shuo-huah, sh wanchyuan iyanq .de .ma?</span></p>
+        <p class="small">Calls for agreement or disagreement and tends to lean slightly toward a dissenting response.</p>
+      </div>
+      <div class="concept">
+        <h3>Echo / confirmation with <span class="mono">.a</span></h3>
+        <p class="small">The exercises highlight the difference between high-pitched <span class="mono">.ma</span> questions and low-pitched repeating/confirming <span class="mono">.a</span> questions.</p>
+      </div>
+      <div class="concept">
+        <h3>Teaching note</h3>
+        <p class="small">This is an excellent lesson for showing students that “question” is not one single grammatical thing. Mandarin has multiple ways to ask.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill green">Guided practice</div>
+    <h2>Practice tasks for a two-hour lesson</h2>
+    <div class="practice">
+      <div class="concept">
+        <h3>Task A — Build the chain</h3>
+        <p>Students complete sets like:</p>
+        <ul>
+          <li><span class="mono">Jong.gwo → Jong.gworen → Jong.gwo-huah</span></li>
+          <li><span class="mono">Meei.gwo → Meei.gworen → ?</span></li>
+        </ul>
+      </div>
+      <div class="concept">
+        <h3>Task B — Can / can’t</h3>
+        <p>Students ask and answer:</p>
+        <ul>
+          <li><span class="mono">Nii huey shuo Jong.gwo-huah .bu.huey?</span></li>
+          <li><span class="mono">Huey / Bu huey</span></li>
+        </ul>
+      </div>
+      <div class="concept">
+        <h3>Task C — Origin descriptions</h3>
+        <p>Turn short facts into fuller descriptions:</p>
+        <ul>
+          <li><span class="mono">Ta tsorng Ing.gwo lai.</span></li>
+          <li><span class="mono">Ta sh tsorng Ing.gwo lai .de.</span></li>
+        </ul>
+      </div>
+      <div class="concept">
+        <h3>Task D — Same or different?</h3>
+        <p>Students respond with degrees:</p>
+        <ul>
+          <li><span class="mono">iyanq</span></li>
+          <li><span class="mono">bu wanchyuan iyanq</span></li>
+          <li><span class="mono">yeou ideal butorng</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill red">Quick understanding check</div>
+    <h2>Two multiple-choice quiz questions</h2>
+
+    <div class="quiz-q" data-answer="b">
+      <h3>1) In this lesson, what is the best meaning of <span class="mono">huey</span> in <span class="mono">Nii.men huey shuo Jong.gwo-huah .bu.huey?</span>?</h3>
+      <label><input type="radio" name="q1" value="a"> “may” in the sense of permission</label>
+      <label><input type="radio" name="q1" value="b"> “can / know how to” in the sense of having the skill</label>
+      <label><input type="radio" name="q1" value="c"> “must” in the sense of obligation</label>
+      <label><input type="radio" name="q1" value="d"> “want to” in the sense of desire</label>
+      <div class="feedback ok">Correct. The notes explain that <span class="mono">huey</span> here means “can” in the sense of knowing how or having the skill to do something.</div>
+      <div class="feedback no">Not quite. In this lesson, <span class="mono">huey</span> is about ability or skill, especially language ability, not permission or obligation.</div>
+    </div>
+
+    <div class="quiz-q" data-answer="c">
+      <h3>2) Why is the exchange about Englishmen and Americans important?</h3>
+      <label><input type="radio" name="q2" value="a"> Because it proves every nationality has a completely separate language name in the lesson.</label>
+      <label><input type="radio" name="q2" value="b"> Because it shows that Mandarin never uses country-based language names.</label>
+      <label><input type="radio" name="q2" value="c"> Because it teaches that nationality labels and language labels do not always line up in a one-to-one way.</label>
+      <label><input type="radio" name="q2" value="d"> Because it means Americans and English people speak exactly the same way in all respects.</label>
+      <div class="feedback ok">Correct. The lesson uses that exchange to show that labels do not always line up symmetrically. That is an important beginner insight about meaning.</div>
+      <div class="feedback no">Not quite. The key point is not that labels are random, but that nationality and language names do not always map one-to-one.</div>
+    </div>
+
+    <button id="checkQuiz">Check my answers</button>
+    <button class="secondary" id="resetQuiz" style="margin-left:8px;">Reset</button>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill gold">Exit challenge</div>
+      <h2>End-of-lecture spoken challenge</h2>
+      <ol>
+        <li>Say what country you come from in the lesson’s style.</li>
+        <li>Say whether you can speak Chinese.</li>
+        <li>Name one country, one people-label, and one language-label.</li>
+        <li>Use either <span class="mono">iyanq</span> or <span class="mono">butorng</span> in a sentence.</li>
+        <li>Explain, in English, the difference between <span class="mono">Jongwen</span> and <span class="mono">Jong.gwo-huah</span> as the lesson presents it.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <div class="pill blue">References and source use</div>
+      <h2>References for this page</h2>
+      <ul>
+        <li><strong>Primary source:</strong> scanned Lesson 3 pages from <em>Mandarin Primer: An Intensive Course in Spoken Chinese</em>.</li>
+        <li><strong>Dialogue basis:</strong> Lesson 3 “Speaking Chinese,” including nationality, language ability, origin, sameness/difference, and the discussion of <span class="mono">Jongwen</span>.</li>
+        <li><strong>Grammar basis:</strong> notes on <span class="mono">Jong.gwo-huah</span>, reduplicated auxiliary nouns, <span class="mono">dou</span>, <span class="mono">huey</span>, A-not-A answers, <span class="mono">way.gwo</span>, <span class="mono">.de</span> constructions, <span class="mono">jiaw</span>, <span class="mono">iyanq</span>, <span class="mono">.ma</span>, <span class="mono">butorng</span>, <span class="mono">yow … yow …</span>, and the exercise note about high-pitched <span class="mono">.ma</span> versus low-pitched <span class="mono">.a</span>.</li>
+        <li><strong>Teaching basis:</strong> the source’s “To the Student” guidance on utterances, repetition, echoing, and learning grammar through exercises.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    This lecture page is designed for a full two-hour beginner lesson. It keeps close to the source material while turning the lesson into a clearer, more connected, and more teachable structure for English-speaking high-school students.
+  </footer>
+</div>
+
+<script>
+document.getElementById('checkQuiz').addEventListener('click', function(){
+  document.querySelectorAll('.quiz-q').forEach(function(q){
+    const correct = q.dataset.answer;
+    const selected = q.querySelector('input[type="radio"]:checked');
+    const ok = q.querySelector('.feedback.ok');
+    const no = q.querySelector('.feedback.no');
+    ok.style.display = 'none';
+    no.style.display = 'none';
+    if(selected && selected.value === correct){
+      ok.style.display = 'block';
+    } else {
+      no.style.display = 'block';
+    }
+  });
+});
+
+document.getElementById('resetQuiz').addEventListener('click', function(){
+  document.querySelectorAll('input[type="radio"]').forEach(function(inp){ inp.checked = false; });
+  document.querySelectorAll('.feedback').forEach(function(f){ f.style.display = 'none'; });
+});
+</script>
+</body>
+</html>

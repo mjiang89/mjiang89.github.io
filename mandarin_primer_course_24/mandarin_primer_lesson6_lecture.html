@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mandarin Primer — Lesson 6 Lecture Page</title>
+<style>
+  :root{
+    --bg:#f6f8fc;
+    --ink:#1d2433;
+    --muted:#5a6475;
+    --card:#ffffff;
+    --line:#d8dfeb;
+    --blue:#2f6fed;
+    --green:#2f9e77;
+    --purple:#7b61ff;
+    --orange:#f08c2e;
+    --red:#d9485f;
+    --gold:#c99700;
+    --teal:#0f9db8;
+    --shadow:0 10px 30px rgba(28,35,54,.08);
+    --radius:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at top right, rgba(47,111,237,.08), transparent 28%),
+      radial-gradient(circle at top left, rgba(123,97,255,.08), transparent 26%),
+      var(--bg);
+    line-height:1.65;
+  }
+  .wrap{width:min(1180px,94vw); margin:0 auto; padding:28px 0 64px;}
+  header.hero{
+    background:linear-gradient(135deg,#173d7a,#245ec5 55%,#7356ff);
+    color:#fff;
+    border-radius:28px;
+    padding:34px 34px 28px;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+  }
+  header.hero::after{
+    content:"";
+    position:absolute; right:-45px; top:-45px;
+    width:260px; height:260px;
+    background:radial-gradient(circle, rgba(255,255,255,.18), transparent 65%);
+  }
+  .eyebrow{
+    display:inline-block;
+    padding:6px 10px;
+    border:1px solid rgba(255,255,255,.28);
+    border-radius:999px;
+    font-size:.83rem;
+    letter-spacing:.02em;
+    margin-bottom:10px;
+    background:rgba(255,255,255,.08);
+  }
+  h1,h2,h3{line-height:1.2; margin:.2rem 0 .8rem}
+  h1{font-size:clamp(2rem,3vw,3rem)}
+  h2{font-size:1.55rem}
+  h3{font-size:1.12rem}
+  p.lead{font-size:1.08rem; max-width:980px; opacity:.98}
+  .small{font-size:.95rem; color:var(--muted)}
+  .grid{display:grid; gap:18px}
+  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media (max-width:900px){.g2{grid-template-columns:1fr}}
+  section{margin-top:22px}
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:22px;
+  }
+  .pill{
+    display:inline-block;
+    font-size:.8rem;
+    font-weight:800;
+    letter-spacing:.02em;
+    padding:5px 10px;
+    border-radius:999px;
+    color:#fff;
+    margin-bottom:10px;
+  }
+  .blue{background:var(--blue)}
+  .green{background:var(--green)}
+  .purple{background:var(--purple)}
+  .orange{background:var(--orange)}
+  .red{background:var(--red)}
+  .gold{background:var(--gold)}
+  .teal{background:var(--teal)}
+  .banner{
+    border-left:6px solid var(--gold);
+    background:#fff8db;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  .callout{
+    border-left:5px solid var(--blue);
+    background:#eef4ff;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  .warning{
+    border-left:5px solid var(--red);
+    background:#fff2f4;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  ul li, ol li{margin:.45rem 0}
+  .flow{
+    display:grid;
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    gap:12px;
+  }
+  @media (max-width:1000px){.flow{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){.flow{grid-template-columns:1fr}}
+  .step{
+    background:linear-gradient(180deg,#fff,#f8faff);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:16px;
+    min-height:154px;
+  }
+  .num{
+    width:34px; height:34px; border-radius:50%;
+    display:grid; place-items:center;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:#fff; font-weight:800; margin-bottom:10px;
+  }
+  .dialogue-line{
+    padding:10px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .dialogue-line:last-child{border-bottom:none}
+  .speaker{
+    display:inline-block; min-width:82px; font-weight:800; color:var(--blue);
+  }
+  .roman{font-size:1.02rem; font-weight:650}
+  .gloss{color:var(--muted)}
+  .concept-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;
+  }
+  @media (max-width:900px){.concept-grid{grid-template-columns:1fr}}
+  .concept{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px;
+    background:#fbfcff;
+  }
+  .tag{
+    display:inline-block;
+    padding:4px 8px;
+    border-radius:999px;
+    font-size:.78rem;
+    font-weight:700;
+    margin:2px 4px 2px 0;
+    background:#eef3ff;
+    color:#2c4a9c;
+  }
+  .mono{
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background:#f5f7fb;
+    padding:.08rem .35rem;
+    border-radius:8px;
+  }
+  table{width:100%; border-collapse:collapse; font-size:.96rem}
+  th,td{border-bottom:1px solid var(--line); padding:12px 10px; text-align:left; vertical-align:top}
+  th{background:#f4f7fc}
+  tr:last-child td{border-bottom:none}
+  .graph-wrap{
+    overflow:auto;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:linear-gradient(180deg,#fcfdff,#f6f9ff);
+    padding:12px;
+  }
+  svg text{font-family: Inter, system-ui, sans-serif; fill:#1f2430;}
+  .edge{stroke:#90a4d4; stroke-width:2.2; fill:none; marker-end:url(#arrow);}
+  .node rect{rx:18; ry:18; stroke:#d8dff2; stroke-width:1.4;}
+  .legend{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; font-size:.9rem}
+  .legend span{
+    display:flex; align-items:center; gap:6px;
+    background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 10px;
+  }
+  .dot{width:12px; height:12px; border-radius:50%; display:inline-block}
+  .practice{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px;
+  }
+  @media (max-width:900px){.practice{grid-template-columns:1fr}}
+  details{
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:12px 14px;
+    background:#fff;
+  }
+  summary{cursor:pointer; font-weight:700}
+  .quiz-q{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px;
+    margin-bottom:16px;
+    background:#fbfdff;
+  }
+  .quiz-q label{
+    display:block;
+    padding:9px 10px;
+    border:1px solid transparent;
+    border-radius:12px;
+    cursor:pointer;
+  }
+  .quiz-q label:hover{background:#f1f6ff; border-color:#dbe6ff}
+  button{
+    appearance:none;
+    border:none;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:#fff;
+    border-radius:12px;
+    padding:11px 16px;
+    font-size:.96rem;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:var(--shadow);
+  }
+  button.secondary{background:linear-gradient(135deg,var(--green),#3fb58e)}
+  .feedback{
+    margin-top:10px; padding:12px 14px; border-radius:12px; display:none;
+  }
+  .feedback.ok{background:#edf9f3; border:1px solid #bfe7cf}
+  .feedback.no{background:#fff1f3; border:1px solid #f0c0cb}
+  footer{margin-top:28px; color:var(--muted); font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Yuen Ren Chao - Mandarin Primer: An Intensive Course in Spoken Chinese</div>
+    <h1>Mandarin Primer — Lesson 6</h1>
+    <h2 style="font-size:1.35rem; font-weight:650; opacity:.98;">A Smoke Ring</h2>
+    <p class="lead">
+      Lesson 6 is the first strongly narrative and imaginative lesson in the sequence. Instead of staying in the concrete classroom or a daily social scene,
+      it moves into fatigue, rest, a cigarette, a smoke ring, a dream-like transformation, flying over the sea, falling lower and lower, mistaken perception,
+      and waking up. This gives students early access to storytelling Mandarin: sequence, aspect, direction, result, surprise, and unreal-looking experience.
+    </p>
+    <p class="small" style="color:rgba(255,255,255,.9);">
+      This page keeps the book’s original romanization system so it stays aligned with the scanned lesson.
+    </p>
+  </header>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill blue">Learning goals</div>
+      <h2>What students should learn</h2>
+      <ul>
+        <li>Follow and retell a longer narrative sequence with clear stages: finishing work, resting, seeing a smoke ring, entering a dream, flying, falling, and waking.</li>
+        <li>Understand directional complements like <span class="mono">chii.lai</span>, <span class="mono">shiah.chiuh</span>, <span class="mono">daw ... chiuh</span>, and how they shape movement meaning.</li>
+        <li>Recognize narrative aspect and completion patterns such as <span class="mono">tzuoh-wan.le</span>, <span class="mono">chy.bu-wan</span>, and past action with quantified objects.</li>
+        <li>Use comparison and degree structures like <span class="mono">yueh ... yueh ...</span>.</li>
+        <li>Understand how Mandarin expresses seeming, mistaken perception, and surprise with forms like <span class="mono">hao.shianq</span>, <span class="mono">yiiwei</span>, <span class="mono">jyuej</span>, and <span class="mono">sheir jy.daw</span>.</li>
+        <li>See how a story can teach grammar through vivid movement and consequence.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="pill gold">Teacher lens</div>
+      <h2>Why this lesson matters</h2>
+      <div class="banner">
+        <strong>Lesson 6 teaches Mandarin as narrative motion.</strong> The learner is no longer just identifying things or describing locations, but tracking events unfolding over time.
+      </div>
+      <p>
+        For high-school students, this lesson is especially engaging because it has fantasy, risk, surprise, and a twist ending. It also helps them understand
+        that grammar is not separate from story: completion, direction, result, and mistaken interpretation are exactly what make the story work.
+      </p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill purple">Two-hour lecture flow</div>
+    <h2>Suggested lecture sequence</h2>
+    <div class="flow">
+      <div class="step"><div class="num">1</div><strong>Story hook</strong><br><span class="small">Start with the image of a smoke ring and ask what strange things might happen in a dream.</span></div>
+      <div class="step"><div class="num">2</div><strong>Narrative map</strong><br><span class="small">Break the lesson into scenes: fatigue → rest → smoke ring → dream entry → flight → fall → tree → waking.</span></div>
+      <div class="step"><div class="num">3</div><strong>Movement grammar</strong><br><span class="small">Teach the directional complements with arrows and motion diagrams before returning to the story.</span></div>
+      <div class="step"><div class="num">4</div><strong>Perception and mistake</strong><br><span class="small">Focus on seeming, feeling, thinking wrongly, and discovering the truth.</span></div>
+      <div class="step"><div class="num">5</div><strong>Result and consequence</strong><br><span class="small">Highlight completion, inability, falling, crashing, and opening the eyes again.</span></div>
+      <div class="step"><div class="num">6</div><strong>Retell + quiz</strong><br><span class="small">End with students retelling the story in stages and checking two key grammar concepts.</span></div>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill green">How to teach it well</div>
+      <h2>Effective teaching moves for beginners</h2>
+      <div class="callout">
+        The source pages still emphasize whole utterances, echoing, repetition, and learning grammar through exercises. Lesson 6 benefits from an especially strong storyboarding approach.
+      </div>
+      <ol>
+        <li>Teach the lesson as a sequence of pictures or frames, not as one long paragraph.</li>
+        <li>Use arrows, rising/falling lines, and scene cards to track direction and aspect.</li>
+        <li>Keep students anchored in English meaning before asking them to repeat Mandarin chunks.</li>
+        <li>Pause at every “change of reality” moment: smoke ring, entering, flying, falling, waking.</li>
+        <li>Have students separate “what seemed true” from “what was actually true” in the story.</li>
+      </ol>
+    </div>
+    <div class="card">
+      <div class="pill red">Likely beginner confusions</div>
+      <h2>Where English speakers may stumble</h2>
+      <div class="warning">
+        Because the story is imaginative, students may overlook the fact that it is also packed with precise grammar patterns. Slow down enough that the story remains enjoyable but the structure stays visible.
+      </div>
+      <ul>
+        <li><strong>Directional complements</strong> are not optional decoration. They are the engine of the story’s motion.</li>
+        <li><strong><span class="mono">hao.shianq</span></strong> and <span class="mono">.shyh.de</span> signal seeming, not certainty.</li>
+        <li><strong><span class="mono">yiiwei</span></strong> means taking something to be true, often wrongly.</li>
+        <li><strong><span class="mono">yueh ... yueh ...</span></strong> is a pattern, not just two repeated words.</li>
+        <li><strong>Pretransitives like <span class="mono">bae</span></strong> break up object-plus-complement meanings in a way that differs from English.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill blue">Dialogue walkthrough</div>
+    <h2>Lesson 6 as a dream narrative</h2>
+    <p class="small">This lesson is easiest to teach when broken into scenes with clear turning points.</p>
+
+    <div class="dialogue-line">
+      <span class="speaker">Scene 1</span>
+      <span class="roman">Tzwo.tian woo tzuoh-wan.le i-jiann yawjiin .de shyh.chyng, kee.sh tzuoh .de heen ley, tzuoh .de ley-jyi.le.</span><br>
+      <span class="gloss">Yesterday I finished an important matter, but I was very tired from working, extremely tired.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 1</span>
+      <span class="roman">Hwei.lai .le lian woanfann yee bu sheang chy, i-woan fann dou chy.bu-wan.</span><br>
+      <span class="gloss">After coming back I did not even want supper, and could not even finish one bowl of rice.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 1</span>
+      <span class="roman">Woo jiow tzuoh .tzay ig dahyiitz .shanq shie.x, chou.x ian .sherm.de.</span><br>
+      <span class="gloss">So I sat on a big sofa to rest a bit and smoke a little and so on.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 2</span>
+      <span class="roman">Gang chou-wan.le i-gel shiang'ian, kann.jiann ig ianchiual.lii hao.shianq yeou g shanshoei-huall .shyh.de.</span><br>
+      <span class="gloss">Just after finishing a cigarette, I saw that inside a smoke ring there seemed to be something like a landscape painting.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 2</span>
+      <span class="roman">Jeyg ianchiual tzoong bu sann.kai. Woo chuei.x .ta, yee lao chuei.bu-sann.</span><br>
+      <span class="gloss">The smoke ring simply would not dissolve. I blew at it, but still could not blow it apart.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 3</span>
+      <span class="roman">Hao.shianq woo tzyhjii ren yee tzoou .daw ianchiual.lii .chiuh .le.</span><br>
+      <span class="gloss">It seemed that I myself had also walked into the smoke ring.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 3</span>
+      <span class="roman">Syhmiann i-kann, yee kann.bu-jiann woo u.lii .de dong.shi .le.</span><br>
+      <span class="gloss">Looking all around, I could no longer see the things in my room.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 4</span>
+      <span class="roman">Jiow jyuej woo tzay ig dah-hae .shanq.tou lao .tzay.nall fei .shyh.de.</span><br>
+      <span class="gloss">I simply felt as if I were over a great sea, always flying there.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 4</span>
+      <span class="roman">Kann.x dii.shiah, hao.shianq yeou i-tzuoh .v.x .de heen haokann .de haedao.</span><br>
+      <span class="gloss">Looking below, it seemed there were one beautiful island after another.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 5</span>
+      <span class="roman">Woo lao sheang fei, lao fei.bu-chiilai, jey.hwei kee jen fei.chii.lai .le.</span><br>
+      <span class="gloss">I had always wanted to fly and could never fly up; this time I really flew up.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 5</span>
+      <span class="roman">Fei .de yow gau yow kuay, fei .de jen haowal! Jen yeou yih.sy!</span><br>
+      <span class="gloss">I flew both high and fast; flying was really fun and really interesting.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 6</span>
+      <span class="roman">Kee.sh bye diaw.le.shiah.chiuh … bu.sh diaw .tzay haedao.shanq shuai.syy, jiow.sh huey diaw .de hae-shoei .lii ian.syy .ne.</span><br>
+      <span class="gloss">But don’t fall down … either I would fall on an island and smash to death, or I would fall into the sea and drown.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 6</span>
+      <span class="roman">Deeng .woo fei-shiah.chiuh .i.deal kann.x .ba.</span><br>
+      <span class="gloss">Let me fly down a little and take a look.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 7</span>
+      <span class="roman">Woo i wann-shiah fei, jiow ijyr lao wann-shiah fei, tzay sheang fei.chii.lai yow fei.bu-chiilai .le.</span><br>
+      <span class="gloss">Once I started flying downward, I just kept going downward, and when I wanted to fly up again I could not fly up anymore.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 7</span>
+      <span class="roman">Woo yueh diaw yueh di … ijyr di .daw kann.de-jiann dii.shiah hao.shianq yeou sheuduo ren .tzay.nall tzoou-dawl.</span><br>
+      <span class="gloss">I fell lower and lower … so low that I could see what seemed like many people walking below.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 8</span>
+      <span class="roman">Woo .tsair kann.chu.lai gangtsair woo yiiwei sh ren .de, bush jen.de ren, sh sheuduo dah-shuh.</span><br>
+      <span class="gloss">Only then did I see that what I had taken for people were not real people, but many big trees.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 8</span>
+      <span class="roman">Hualhalha! i-sheng, woo.de shentz diaw .de i-ke dah-shuh .de dieengl.shanq.</span><br>
+      <span class="gloss">Crash! I fell onto the top of a big tree.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 9</span>
+      <span class="roman">Jeng.kai.le yean.jing i-kann, … Sheir j(yd)aw gangtsair sh shuey-jaur.le, tz-h-uoh.le ig menq!</span><br>
+      <span class="gloss">I opened my eyes and looked … who would have known, I had fallen asleep and had had a dream!</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill orange">Knowledge graph</div>
+    <h2>Concept network for Lesson 6</h2>
+    <p>
+      Lesson 6 is built around a story engine: <strong>state → perception → seeming → motion → danger → reinterpretation → awakening</strong>.
+      The grammar is tightly connected to this narrative arc.
+    </p>
+    <div class="graph-wrap">
+      <svg width="1180" height="740" viewBox="0 0 1180 740" role="img" aria-label="Knowledge graph for Lesson 6">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#90a4d4"></path>
+          </marker>
+        </defs>
+
+        <path class="edge" d="M590,110 C590,145 590,155 590,195"/>
+        <path class="edge" d="M590,110 C440,130 320,150 205,220"/>
+        <path class="edge" d="M590,110 C740,130 860,150 975,220"/>
+        <path class="edge" d="M205,270 C205,315 205,328 205,375"/>
+        <path class="edge" d="M975,270 C975,315 975,328 975,375"/>
+        <path class="edge" d="M590,250 C490,300 430,332 375,395"/>
+        <path class="edge" d="M590,250 C690,300 750,332 805,395"/>
+        <path class="edge" d="M590,250 C590,320 590,335 590,395"/>
+        <path class="edge" d="M375,445 C340,515 300,550 250,620"/>
+        <path class="edge" d="M590,445 C590,515 590,550 590,620"/>
+        <path class="edge" d="M805,445 C840,515 880,550 930,620"/>
+
+        <g class="node">
+          <rect x="420" y="45" width="340" height="70" fill="#efeaff"></rect>
+          <text x="590" y="76" text-anchor="middle" font-size="18" font-weight="800">Lesson 6 Core Question</text>
+          <text x="590" y="99" text-anchor="middle" font-size="14">How does Mandarin tell a dream-like story of movement, mistaken perception, and waking?</text>
+        </g>
+
+        <g class="node">
+          <rect x="460" y="195" width="260" height="54" fill="#eaf2ff"></rect>
+          <text x="590" y="228" text-anchor="middle" font-size="17" font-weight="800">Narrative utterances</text>
+        </g>
+
+        <g class="node">
+          <rect x="55" y="220" width="300" height="52" fill="#eefaf5"></rect>
+          <text x="205" y="252" text-anchor="middle" font-size="17" font-weight="800">State, perception, and seeming</text>
+        </g>
+
+        <g class="node">
+          <rect x="825" y="220" width="300" height="52" fill="#fff5e8"></rect>
+          <text x="975" y="252" text-anchor="middle" font-size="17" font-weight="800">Direction, falling, and consequence</text>
+        </g>
+
+        <g class="node">
+          <rect x="85" y="375" width="240" height="66" fill="#edf7ff"></rect>
+          <text x="205" y="404" text-anchor="middle" font-size="16" font-weight="800">hao.shianq / .shyh.de / jyuej / yiiwei</text>
+          <text x="205" y="425" text-anchor="middle" font-size="13">seems, feels, wrongly thinks</text>
+        </g>
+
+        <g class="node">
+          <rect x="855" y="375" width="240" height="66" fill="#fff0f3"></rect>
+          <text x="975" y="404" text-anchor="middle" font-size="16" font-weight="800">chii.lai / shiah.chiuh / diaw / daw</text>
+          <text x="975" y="425" text-anchor="middle" font-size="13">up, down, fall, reach</text>
+        </g>
+
+        <g class="node">
+          <rect x="255" y="395" width="240" height="50" fill="#eefaf5"></rect>
+          <text x="375" y="426" text-anchor="middle" font-size="16" font-weight="800">completion and result</text>
+        </g>
+
+        <g class="node">
+          <rect x="685" y="395" width="240" height="50" fill="#eefaf5"></rect>
+          <text x="805" y="426" text-anchor="middle" font-size="16" font-weight="800">danger and alternative outcomes</text>
+        </g>
+
+        <g class="node">
+          <rect x="495" y="395" width="190" height="50" fill="#eaf2ff"></rect>
+          <text x="590" y="426" text-anchor="middle" font-size="16" font-weight="800">story sequencing</text>
+        </g>
+
+        <g class="node">
+          <rect x="155" y="620" width="190" height="58" fill="#eefaf5"></rect>
+          <text x="250" y="651" text-anchor="middle" font-size="16" font-weight="800">tzuoh-wan.le / chy.bu-wan</text>
+          <text x="250" y="671" text-anchor="middle" font-size="13">done / unable to finish</text>
+        </g>
+
+        <g class="node">
+          <rect x="495" y="620" width="190" height="58" fill="#fff5e8"></rect>
+          <text x="590" y="651" text-anchor="middle" font-size="16" font-weight="800">yueh ... yueh ...</text>
+          <text x="590" y="671" text-anchor="middle" font-size="13">lower and lower</text>
+        </g>
+
+        <g class="node">
+          <rect x="835" y="620" width="190" height="58" fill="#f3f0ff"></rect>
+          <text x="930" y="651" text-anchor="middle" font-size="16" font-weight="800">bae + object + complement</text>
+          <text x="930" y="671" text-anchor="middle" font-size="13">have the eyes put out, etc.</text>
+        </g>
+      </svg>
+    </div>
+    <div class="legend">
+      <span><i class="dot" style="background:#eaf2ff"></i> story structure</span>
+      <span><i class="dot" style="background:#eefaf5"></i> seeming and perception</span>
+      <span><i class="dot" style="background:#fff5e8"></i> motion and degree</span>
+      <span><i class="dot" style="background:#f3f0ff"></i> object-result structure</span>
+      <span><i class="dot" style="background:#fff0f3"></i> falling and outcome</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill green">Core concepts</div>
+    <h2>What the lesson teaches, concept by concept</h2>
+    <div class="concept-grid">
+      <div class="concept">
+        <h3>1) Narrative completion is built into the verb</h3>
+        <div class="tag">tzuoh-wan.le</div><div class="tag">finish doing</div>
+        <ul>
+          <li>The notes explain <span class="mono">tzuoh-wan</span> as “do to a finish.”</li>
+          <li>Lesson 6 begins with completed work and inability to finish food, immediately setting up contrast between finishing and not finishing.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>2) Past action with quantified objects follows a pattern</h3>
+        <div class="tag">verb + .le</div><div class="tag">one bowl</div><div class="tag">two things</div>
+        <ul>
+          <li>The notes state that when a past action verb has an object containing a quantity word, the verb takes <span class="mono">.le</span>.</li>
+          <li>This is a subtle but important pattern for storytelling.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>3) Seeming can be marked several ways</h3>
+        <div class="tag">hao.shianq</div><div class="tag">.shyh.de</div><div class="tag">jyuej</div>
+        <ul>
+          <li>The lesson uses both <span class="mono">hao.shianq</span> and <span class="mono">.shyh.de</span> for “it seems as if.”</li>
+          <li><span class="mono">jyuej</span> adds “I felt that.”</li>
+          <li>This lets students distinguish visible fact from dreamlike impression.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>4) Directional complements are the engine of the story</h3>
+        <div class="tag">chii.lai</div><div class="tag">shiah.chiuh</div><div class="tag">chiuh</div><div class="tag">daw</div>
+        <ul>
+          <li>The notes explain that motion verbs like <span class="mono">lai</span> and <span class="mono">chiuh</span> can attach after another verb to show direction.</li>
+          <li>In this story, flying up, flying down, walking into, and falling onto all depend on these forms.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>5) “The more … the more …” is a real pattern</h3>
+        <div class="tag">yueh ... yueh ...</div>
+        <ul>
+          <li><span class="mono">Woo yueh diaw yueh di</span> = the more I fell, the lower I got.</li>
+          <li>This is a memorable pattern because the story gives it a vivid physical meaning.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>6) Mistaken perception is explicit</h3>
+        <div class="tag">yiiwei</div><div class="tag">kann.chu.lai</div>
+        <ul>
+          <li><span class="mono">yiiwei</span> means taking something to be the case, often wrongly.</li>
+          <li>The story later corrects the mistake with <span class="mono">kann.chu.lai</span>: what seemed like people are actually trees.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>7) Alternatives and consequence are tightly linked</h3>
+        <div class="tag">buran</div><div class="tag">bu.sh A jiow.sh B</div>
+        <ul>
+          <li>The story imagines two possible bad outcomes: fall on an island and die, or fall into the sea and drown.</li>
+          <li>This gives beginners an early example of alternative consequence logic.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>8) Pretransitives break up object-plus-result meaning</h3>
+        <div class="tag">bae</div><div class="tag">object + complement</div>
+        <ul>
+          <li>The notes explain that instead of tightly keeping object and complement together, Chinese often uses <span class="mono">bae</span> plus the object before the result phrase.</li>
+          <li>This is an important bridge toward later Mandarin structures.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill orange">Mini-board plan</div>
+      <h2>How to lay this out for students</h2>
+      <table>
+        <thead><tr><th>Board zone</th><th>Write this</th><th>Teaching purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Left</td><td>scene timeline: tired → smoke ring → fly → fall → wake</td><td>Keeps the narrative sequence stable.</td></tr>
+          <tr><td>Center</td><td><span class="mono">hao.shianq / jyuej / yiiwei / sheir jy.daw</span></td><td>Tracks seeming, feeling, surprise, and correction.</td></tr>
+          <tr><td>Right</td><td>up/down arrow map with <span class="mono">chii.lai</span>, <span class="mono">shiah.chiuh</span>, <span class="mono">diaw</span>, <span class="mono">daw</span></td><td>Makes directional grammar visible.</td></tr>
+          <tr><td>Bottom</td><td><span class="mono">yueh ... yueh ...</span>, <span class="mono">buran</span>, <span class="mono">bu.sh A jiow.sh B</span></td><td>Shows how consequence and degree patterns drive the story.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="pill teal">High-value classroom move</div>
+      <h2>Storyboard the dream</h2>
+      <div class="callout">
+        This lesson works especially well as an eight-panel storyboard.
+      </div>
+      <ol>
+        <li>Panel 1: finished work, very tired, can’t finish supper.</li>
+        <li>Panel 2: smoke ring with a tiny landscape inside.</li>
+        <li>Panel 3: enters the smoke ring; room disappears.</li>
+        <li>Panel 4: flying over sea and islands.</li>
+        <li>Panel 5: joy of flying high and fast.</li>
+        <li>Panel 6: fear of falling; tries to fly down a little.</li>
+        <li>Panel 7: falls lower and lower, mistakes trees for people.</li>
+        <li>Panel 8: crash, opens eyes, realizes it was a dream.</li>
+      </ol>
+      <p class="small">Students can retell one panel each, which keeps the lesson rich but manageable.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill blue">A key structural contrast</div>
+    <h2>Seeming, feeling, and wrongly thinking</h2>
+    <div class="practice">
+      <div class="concept">
+        <h3>It seems as if …</h3>
+        <p><span class="mono">hao.shianq ... .shyh.de</span></p>
+        <p class="small">This marks appearance or seeming, not firm fact.</p>
+      </div>
+      <div class="concept">
+        <h3>I felt that …</h3>
+        <p><span class="mono">jyuej ...</span></p>
+        <p class="small">This adds personal inner perception.</p>
+      </div>
+      <div class="concept">
+        <h3>I took it to be …</h3>
+        <p><span class="mono">yiiwei ...</span></p>
+        <p class="small">This often introduces a wrong interpretation.</p>
+      </div>
+      <div class="concept">
+        <h3>Then I finally saw …</h3>
+        <p><span class="mono">kann.chu.lai</span></p>
+        <p class="small">This gives the correction or discovery.</p>
+      </div>
+    </div>
+    <p class="small" style="margin-top:12px;">
+      These are ideal for teaching students how a story can move from uncertainty to realization.
+    </p>
+  </section>
+
+  <section class="card">
+    <div class="pill green">Guided practice</div>
+    <h2>Practice tasks for a two-hour lesson</h2>
+    <div class="practice">
+      <div class="concept">
+        <h3>Task A — Scene retelling</h3>
+        <p>Students retell one stage of the story with picture prompts.</p>
+      </div>
+      <div class="concept">
+        <h3>Task B — Direction arrows</h3>
+        <p>Students match arrow diagrams to phrases like:</p>
+        <ul>
+          <li><span class="mono">fei.chii.lai</span></li>
+          <li><span class="mono">fei-shiah.chiuh</span></li>
+          <li><span class="mono">diaw .de shuh.shanq</span></li>
+        </ul>
+      </div>
+      <div class="concept">
+        <h3>Task C — Seeming vs. reality</h3>
+        <p>Students sort statements into:</p>
+        <ul>
+          <li>what seemed true</li>
+          <li>what was actually true</li>
+        </ul>
+      </div>
+      <div class="concept">
+        <h3>Task D — Consequence chain</h3>
+        <p>Students complete patterns like:</p>
+        <ul>
+          <li><span class="mono">Buran ...</span></li>
+          <li><span class="mono">Bu.sh A jiow.sh B.</span></li>
+          <li><span class="mono">Yueh ... yueh ...</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill red">Quick understanding check</div>
+    <h2>Two multiple-choice quiz questions</h2>
+
+    <div class="quiz-q" data-answer="c">
+      <h3>1) Why are directional complements so important in Lesson 6?</h3>
+      <label><input type="radio" name="q1" value="a"> Because they are only decorative words added for style.</label>
+      <label><input type="radio" name="q1" value="b"> Because they only matter in written Chinese, not in storytelling.</label>
+      <label><input type="radio" name="q1" value="c"> Because they carry the motion of the story: entering, flying up, flying down, falling, and reaching.</label>
+      <label><input type="radio" name="q1" value="d"> Because they replace all ordinary verbs in the lesson.</label>
+      <div class="feedback ok">Correct. Lesson 6 depends on movement, and the directional complements are what make that movement precise and vivid.</div>
+      <div class="feedback no">Not quite. In this lesson the directional complements are central because they drive the story’s motion and change of scene.</div>
+    </div>
+
+    <div class="quiz-q" data-answer="b">
+      <h3>2) What is the best explanation of <span class="mono">yiiwei</span> in this lesson?</h3>
+      <label><input type="radio" name="q2" value="a"> It means “to remember exactly.”</label>
+      <label><input type="radio" name="q2" value="b"> It means “to take something to be the case,” often wrongly.</label>
+      <label><input type="radio" name="q2" value="c"> It means “to decide to do something.”</label>
+      <label><input type="radio" name="q2" value="d"> It means “to hear clearly.”</label>
+      <div class="feedback ok">Correct. The notes gloss <span class="mono">yiiwei</span> as taking something to be true, and the story uses it for mistaken perception.</div>
+      <div class="feedback no">Not quite. In Lesson 6, <span class="mono">yiiwei</span> is about taking something to be true, especially when that interpretation later turns out to be wrong.</div>
+    </div>
+
+    <button id="checkQuiz">Check my answers</button>
+    <button class="secondary" id="resetQuiz" style="margin-left:8px;">Reset</button>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill gold">Exit challenge</div>
+      <h2>End-of-lecture spoken challenge</h2>
+      <ol>
+        <li>Say what happened first, second, and last in the story.</li>
+        <li>Use one sentence with <span class="mono">hao.shianq</span> and one with <span class="mono">yiiwei</span>.</li>
+        <li>Use one upward and one downward directional complement correctly.</li>
+        <li>Explain, in English, what the narrator mistook for people.</li>
+        <li>State the twist ending in one short sentence.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <div class="pill blue">References and source use</div>
+      <h2>References for this page</h2>
+      <ul>
+        <li><strong>Primary source:</strong> scanned Lesson 6 pages from <em>Mandarin Primer: An Intensive Course in Spoken Chinese</em>.</li>
+        <li><strong>Dialogue basis:</strong> Lesson 6 “A Smoke Ring,” including fatigue, resting, smoking, the strange smoke ring, dream flight, falling, mistaken people/trees, and waking up.</li>
+        <li><strong>Grammar basis:</strong> notes on day forms, finished action, past verbs with quantified objects, complements of extremity, cigarettes and measure words, seeming expressions, directional complements, <span class="mono">yueh ... yueh ...</span>, <span class="mono">yiiwei</span>, pretransitives with <span class="mono">bae</span>, and expressions like <span class="mono">sheir jy.daw</span> and <span class="mono">tzuoh-menq</span>.</li>
+        <li><strong>Teaching basis:</strong> the source’s “To the Student” guidance on utterances, repetition, echoing, and learning grammar through exercises.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    This lecture page is designed for a full two-hour beginner lesson. It keeps close to the source while turning Lesson 6 into a clearer,
+    more connected, and more teachable narrative experience for English-speaking high-school students.
+  </footer>
+</div>
+
+<script>
+document.getElementById('checkQuiz').addEventListener('click', function(){
+  document.querySelectorAll('.quiz-q').forEach(function(q){
+    const correct = q.dataset.answer;
+    const selected = q.querySelector('input[type="radio"]:checked');
+    const ok = q.querySelector('.feedback.ok');
+    const no = q.querySelector('.feedback.no');
+    ok.style.display = 'none';
+    no.style.display = 'none';
+    if(selected && selected.value === correct){
+      ok.style.display = 'block';
+    } else {
+      no.style.display = 'block';
+    }
+  });
+});
+
+document.getElementById('resetQuiz').addEventListener('click', function(){
+  document.querySelectorAll('input[type="radio"]').forEach(function(inp){ inp.checked = false; });
+  document.querySelectorAll('.feedback').forEach(function(f){ f.style.display = 'none'; });
+});
+</script>
+</body>
+</html>

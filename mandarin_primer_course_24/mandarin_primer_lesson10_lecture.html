@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mandarin Primer — Lesson 10 Lecture Page</title>
+<style>
+  :root{
+    --bg:#f6f8fc;
+    --ink:#1d2433;
+    --muted:#5a6475;
+    --card:#ffffff;
+    --line:#d8dfeb;
+    --blue:#2f6fed;
+    --green:#2f9e77;
+    --purple:#7b61ff;
+    --orange:#f08c2e;
+    --red:#d9485f;
+    --gold:#c99700;
+    --teal:#0f9db8;
+    --shadow:0 10px 30px rgba(28,35,54,.08);
+    --radius:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at top right, rgba(47,111,237,.08), transparent 28%),
+      radial-gradient(circle at top left, rgba(123,97,255,.08), transparent 26%),
+      var(--bg);
+    line-height:1.65;
+  }
+  .wrap{width:min(1180px,94vw); margin:0 auto; padding:28px 0 64px;}
+  header.hero{
+    background:linear-gradient(135deg,#17457e,#2b63cf 55%,#7b61ff);
+    color:#fff;
+    border-radius:28px;
+    padding:34px 34px 28px;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+  }
+  header.hero::after{
+    content:"";
+    position:absolute; right:-45px; top:-45px;
+    width:260px; height:260px;
+    background:radial-gradient(circle, rgba(255,255,255,.18), transparent 65%);
+  }
+  .eyebrow{
+    display:inline-block;
+    padding:6px 10px;
+    border:1px solid rgba(255,255,255,.28);
+    border-radius:999px;
+    font-size:.83rem;
+    letter-spacing:.02em;
+    margin-bottom:10px;
+    background:rgba(255,255,255,.08);
+  }
+  h1,h2,h3{line-height:1.2; margin:.2rem 0 .8rem}
+  h1{font-size:clamp(2rem,3vw,3rem)}
+  h2{font-size:1.55rem}
+  h3{font-size:1.12rem}
+  p.lead{font-size:1.08rem; max-width:980px; opacity:.98}
+  .small{font-size:.95rem; color:var(--muted)}
+  .grid{display:grid; gap:18px}
+  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media (max-width:900px){.g2{grid-template-columns:1fr}}
+  section{margin-top:22px}
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:22px;
+  }
+  .pill{
+    display:inline-block;
+    font-size:.8rem;
+    font-weight:800;
+    letter-spacing:.02em;
+    padding:5px 10px;
+    border-radius:999px;
+    color:#fff;
+    margin-bottom:10px;
+  }
+  .blue{background:var(--blue)}
+  .green{background:var(--green)}
+  .purple{background:var(--purple)}
+  .orange{background:var(--orange)}
+  .red{background:var(--red)}
+  .gold{background:var(--gold)}
+  .teal{background:var(--teal)}
+  .banner{
+    border-left:6px solid var(--gold);
+    background:#fff8db;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  .callout{
+    border-left:5px solid var(--blue);
+    background:#eef4ff;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  .warning{
+    border-left:5px solid var(--red);
+    background:#fff2f4;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  ul li, ol li{margin:.45rem 0}
+  .flow{
+    display:grid;
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    gap:12px;
+  }
+  @media (max-width:1000px){.flow{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){.flow{grid-template-columns:1fr}}
+  .step{
+    background:linear-gradient(180deg,#fff,#f8faff);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:16px;
+    min-height:156px;
+  }
+  .num{
+    width:34px; height:34px; border-radius:50%;
+    display:grid; place-items:center;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:#fff; font-weight:800; margin-bottom:10px;
+  }
+  .dialogue-line{
+    padding:10px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .dialogue-line:last-child{border-bottom:none}
+  .speaker{
+    display:inline-block; min-width:92px; font-weight:800; color:var(--blue);
+  }
+  .roman{font-size:1.02rem; font-weight:650}
+  .gloss{color:var(--muted)}
+  .concept-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;
+  }
+  @media (max-width:900px){.concept-grid{grid-template-columns:1fr}}
+  .concept{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px;
+    background:#fbfcff;
+  }
+  .tag{
+    display:inline-block;
+    padding:4px 8px;
+    border-radius:999px;
+    font-size:.78rem;
+    font-weight:700;
+    margin:2px 4px 2px 0;
+    background:#eef3ff;
+    color:#2c4a9c;
+  }
+  .mono{
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background:#f5f7fb;
+    padding:.08rem .35rem;
+    border-radius:8px;
+  }
+  table{width:100%; border-collapse:collapse; font-size:.96rem}
+  th,td{border-bottom:1px solid var(--line); padding:12px 10px; text-align:left; vertical-align:top}
+  th{background:#f4f7fc}
+  tr:last-child td{border-bottom:none}
+  .graph-wrap{
+    overflow:auto;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:linear-gradient(180deg,#fcfdff,#f6f9ff);
+    padding:12px;
+  }
+  svg text{font-family: Inter, system-ui, sans-serif; fill:#1f2430;}
+  .edge{stroke:#90a4d4; stroke-width:2.2; fill:none; marker-end:url(#arrow);}
+  .node rect{rx:18; ry:18; stroke:#d8dff2; stroke-width:1.4;}
+  .legend{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; font-size:.9rem}
+  .legend span{
+    display:flex; align-items:center; gap:6px;
+    background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 10px;
+  }
+  .dot{width:12px; height:12px; border-radius:50%; display:inline-block}
+  .practice{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px;
+  }
+  @media (max-width:900px){.practice{grid-template-columns:1fr}}
+  details{
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:12px 14px;
+    background:#fff;
+  }
+  summary{cursor:pointer; font-weight:700}
+  .quiz-q{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px;
+    margin-bottom:16px;
+    background:#fbfdff;
+  }
+  .quiz-q label{
+    display:block;
+    padding:9px 10px;
+    border:1px solid transparent;
+    border-radius:12px;
+    cursor:pointer;
+  }
+  .quiz-q label:hover{background:#f1f6ff; border-color:#dbe6ff}
+  button{
+    appearance:none;
+    border:none;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:#fff;
+    border-radius:12px;
+    padding:11px 16px;
+    font-size:.96rem;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:var(--shadow);
+  }
+  button.secondary{background:linear-gradient(135deg,var(--green),#3fb58e)}
+  .feedback{
+    margin-top:10px; padding:12px 14px; border-radius:12px; display:none;
+  }
+  .feedback.ok{background:#edf9f3; border:1px solid #bfe7cf}
+  .feedback.no{background:#fff1f3; border:1px solid #f0c0cb}
+  footer{margin-top:28px; color:var(--muted); font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Yuen Ren Chao - Mandarin Primer: An Intensive Course in Spoken Chinese</div>
+    <h1>Mandarin Primer — Lesson 10</h1>
+    <h2 style="font-size:1.35rem; font-weight:650; opacity:.98;">The Tailless Rat</h2>
+    <p class="lead">
+      Lesson 10 is a lively fable about indecision. A rat cannot make up his mind about anything, keeps talking himself out of every decision,
+      and only becomes decisive after disaster literally cuts off his tail. The lesson is ideal for teaching narrative sequencing, weather expressions,
+      hesitation, consequence, passives, and the many uses of <em>.le</em> in story progression.
+    </p>
+    <p class="small" style="color:rgba(255,255,255,.9);">
+      This page keeps the book’s original romanization system so it stays aligned with the scanned lesson.
+    </p>
+  </header>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill blue">Learning goals</div>
+      <h2>What students should learn</h2>
+      <ul>
+        <li>Follow and retell a longer fable with repeated indecision, a storm, collapse, injury, and transformation.</li>
+        <li>Recognize patterns for hesitation, uncertainty, and failure to decide, especially <span class="mono">daa.bu-dinq jwu.yih</span>.</li>
+        <li>Understand impersonal weather expressions such as <span class="mono">shiah-yeu le</span> and how they differ from English subject-based weather sentences.</li>
+        <li>Use and understand narrative sequencing with <span class="mono">gang</span>, <span class="mono">jiow</span>, <span class="mono">huran</span>, <span class="mono">tsorng tsyy yiihow</span>, and repeated <span class="mono">.le</span>.</li>
+        <li>Notice result and consequence patterns such as <span class="mono">yah-jaur</span>, <span class="mono">duann le</span>, and transformation with <span class="mono">biann-cherngle</span>.</li>
+        <li>See how one story can teach grammar of weather, commands, passives, complements, and new situations all at once.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="pill gold">Teacher lens</div>
+      <h2>Why this lesson matters</h2>
+      <div class="banner">
+        <strong>Lesson 10 teaches consequence through narrative.</strong> The rat’s indecision is funny at first, then dangerous, and finally transformative.
+      </div>
+      <p>
+        This makes the lesson highly teachable for high-school students: it has clear scenes, repeated comic structure, strong visual imagery, and a memorable moral shift.
+        It also gives a natural context for teaching one of the book’s most important grammar topics: the many functions of <span class="mono">.le</span>.
+      </p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill purple">Two-hour lecture flow</div>
+    <h2>Suggested lecture sequence</h2>
+    <div class="flow">
+      <div class="step"><div class="num">1</div><strong>Hook: indecision</strong><br><span class="small">Ask students whether they know someone who can never decide anything. Connect that personality trait to the rat before reading.</span></div>
+      <div class="step"><div class="num">2</div><strong>Storyboard the fable</strong><br><span class="small">Break the lesson into scenes: everyday indecision, weather example, stroll example, children example, midnight storm, refusal to leave, collapse, tailless transformation.</span></div>
+      <div class="step"><div class="num">3</div><strong>Weather and impersonal forms</strong><br><span class="small">Teach <span class="mono">shiah-yeu</span>, <span class="mono">gua-feng</span>, <span class="mono">tian lianq</span> as weather-event expressions rather than English-style subject clauses.</span></div>
+      <div class="step"><div class="num">4</div><strong>Narrative .le</strong><br><span class="small">Use the notes’ summary of <span class="mono">.le</span> to show new situation, completed action, command in response to a new situation, and consequential shift.</span></div>
+      <div class="step"><div class="num">5</div><strong>Result and passive meaning</strong><br><span class="small">Highlight how the tail is left inside, crushed, cut off, and how the rat becomes changed.</span></div>
+      <div class="step"><div class="num">6</div><strong>Retell + quiz</strong><br><span class="small">End with students retelling the rat’s indecision cycle and testing two key grammar/story concepts.</span></div>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill green">How to teach it well</div>
+      <h2>Effective teaching moves for beginners</h2>
+      <div class="callout">
+        The source pages still emphasize utterances, echoing, repetition, and grammar-through-exercises. Lesson 10 becomes especially effective when students hear the same indecisive pattern repeated across several situations before the storm scene changes the stakes.
+      </div>
+      <ol>
+        <li>Teach the rat first as a personality type: always uncertain, always revising, always delaying.</li>
+        <li>Use a repeated sentence frame board for “maybe yes / maybe no / let’s wait / why hurry?”</li>
+        <li>Then switch to a high-energy storm scene so students feel the shift from comedy to danger.</li>
+        <li>Use arrows and icons to track body vs. tail when the house collapses.</li>
+        <li>Make the ending explicit: loss leads to change, and the tail becomes the story’s moral turning point.</li>
+      </ol>
+    </div>
+    <div class="card">
+      <div class="pill red">Likely beginner confusions</div>
+      <h2>Where English speakers may stumble</h2>
+      <div class="warning">
+        Students may focus only on the funny story and miss the amount of grammar packed into it. The storm scene especially needs slow, visible unpacking.
+      </div>
+      <ul>
+        <li><strong>Impersonal weather expressions</strong> like <span class="mono">shiah-yeu le</span> do not need an English-style dummy subject.</li>
+        <li><strong><span class="mono">derle ba</span></strong> is idiomatic and means something like “let’s call it a day / forget it / I’m going to change my mind.”</li>
+        <li><strong><span class="mono">.le</span></strong> is not just one meaning; the notes summarize several distinct functions in this lesson.</li>
+        <li><strong>Passive meaning</strong> can appear with no overt marker, though <span class="mono">bey</span> and <span class="mono">geei</span> can make it more explicit.</li>
+        <li><strong>Result complements</strong> like <span class="mono">yah-jaur</span> express actually reaching the result, not merely trying.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill blue">Dialogue walkthrough</div>
+    <h2>Lesson 10 as a fable in scenes</h2>
+    <p class="small">This lesson is best taught as repeated indecision followed by one irreversible consequence.</p>
+
+    <div class="dialogue-line">
+      <span class="speaker">Scene 1</span>
+      <span class="roman">Tsorngchyan yeou g hawtz, ta sherm shyhchyng dou daa.bu-dinq jwu.yih.</span><br>
+      <span class="gloss">Once upon a time there was a rat who could never make up his mind about anything.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 1</span>
+      <span class="roman">Sweibiann nii wenn ta sherm huah, ta tsornglai meiyeou idinq de huah hweidar nii de.</span><br>
+      <span class="gloss">No matter what you asked him, he never gave a definite answer.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 2</span>
+      <span class="roman">Jintian tian.chih butsuoh, keesh yee sheu butzeem hao ... woo yee bujydaw jey-tzoong tial dawdii suann hao suann huay le.</span><br>
+      <span class="gloss">The weather is not bad, but perhaps not very good either ... I really do not know whether this kind of day counts as good or bad after all.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 3</span>
+      <span class="roman">Woo shiahwuu mei gong.ful, shanqwuu dawsh yeou konq — eh bush vx, woo sh yaw shuo shanq.bann.tian mang, shiah.bann.tian mei shell ...</span><br>
+      <span class="gloss">I have no time in the afternoon, though I do in the morning — no, no, what I mean is I’m busy in the morning and free in the afternoon ...</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 3</span>
+      <span class="roman">Tzarmen diing hao hairsh deeng chy-guohle wuufann tzay daa-dinq jwu.yih ba ... herbih lihkeh jiow jyuedinq ne? Gannma tzemm jau-jyi a?</span><br>
+      <span class="gloss">We had better wait until after lunch before deciding ... why decide immediately? Why such a hurry?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 4</span>
+      <span class="roman">Woo sheang woo yeou chig erltz bag neu.erl ... meijoel sh bag erltz chig neu.erl ba? ... woo tsai woo jyhshao yeou ellshyr.laig sheauharl ne.</span><br>
+      <span class="gloss">I think I have seven sons and eight daughters ... or maybe eight sons and seven daughters? ... anyway I suppose I have at least twenty-odd children.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 5</span>
+      <span class="roman">Yeou i-tian bannyeh, dah-feng dah-yeu; bae jey-wey Lao Shuu Shg. juh de ney-suool poh-farngtz dou kuay chuei-ta le.</span><br>
+      <span class="gloss">One midnight there was great wind and great rain; the dilapidated house Mr. Rat lived in was on the point of being blown down.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 5</span>
+      <span class="roman">Kuay.deal pao ba, bye shuey de nall l'a! Shiing le, hei, chiilai l'a!</span><br>
+      <span class="gloss">Hurry up and run! Don’t lie there sleeping! Wake up, hey, get up!</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 6</span>
+      <span class="roman">Jey.hoel tian hair mei lianq, gannma tzemm tzao jiow chiilai a? ... butsuoh, dyichiueh sh shiah-yeu ne.</span><br>
+      <span class="gloss">It is not even light yet; why get up so early? ... yes, it really is raining.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 6</span>
+      <span class="roman">Jeh farngtz hair haoliaulde me! Ta binq mei dao a! Woo tzayjell daile tzemm jeou, jeh farngtz tsornglai yee mei dao.guoh ia.</span><br>
+      <span class="gloss">This house is perfectly fine! It has not collapsed. I have been here so long and it has never collapsed before.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 7</span>
+      <span class="roman">Feng yueh gua yueh lih.hay, yeu yueh shiah yueh dah.</span><br>
+      <span class="gloss">The wind blew harder and harder, and the rain fell heavier and heavier.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 7</span>
+      <span class="roman">Farngtz buhuey dao ... keesh ta sheangle sheang yow shuo, "Aiia, jeh farngtz yau de tzemm lih.hay, meijoel jen huey dao ha? Derle ba, woo yee tzoou le."</span><br>
+      <span class="gloss">The house would not collapse ... but after thinking again he said, “Oh dear, this house is shaking so badly, maybe it really will collapse. Forget it, I’m going too.”</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 8</span>
+      <span class="roman">Gang tzoou-chule menkooul, ta yow shuo, "Tzemm dah de yeu! Hairsh bye tzoou derle."</span><br>
+      <span class="gloss">Just as he walked out the doorway, he said again, “Such heavy rain! I’d better not go after all.”</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 8</span>
+      <span class="roman">Huah hair mei shuo-wan, hurande konglonglong! i-sheng, i-dah-suoo farngtz jeenggehlde ta le.</span><br>
+      <span class="gloss">Before he finished speaking, suddenly — crash! — the whole big house collapsed.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 9</span>
+      <span class="roman">Ta gang i tzoou-chule dahmen, nah farngtz jiow ta.shiahlai le. Shinq.kuei ta shentz yiijinq dawle waytou, suooyii dawdii mei yah-jaur.</span><br>
+      <span class="gloss">He had just gone out the front door when the house collapsed. Luckily his body had already reached outside, so he was not crushed after all.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 9</span>
+      <span class="roman">Keesh ta jann de menkooul de shyrhowl bae i-tyau yii.ba geei lah de utz liitou le ... suooyii bey i-gen dao.shiahlai de dah-juhtz geei tzar-duann le.</span><br>
+      <span class="gloss">But while standing in the doorway he had left his tail inside the room, so it was cut off by a pillar that had fallen down.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">Scene 10</span>
+      <span class="roman">Tsorng tsyy yiihow, ta jiow biann-cherngle i-jy wuwoei-shuu le ... bu tzay shianq yiichyan nemm mei jwu.yih le.</span><br>
+      <span class="gloss">From that time on he became a tailless rat and was no longer as indecisive as before.</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill orange">Knowledge graph</div>
+    <h2>Concept network for Lesson 10</h2>
+    <p>
+      Lesson 10 is driven by a tight network: <strong>indecision → hesitation → delay → danger → collapse → result → transformation</strong>.
+      The narrative and the grammar reinforce each other at every stage.
+    </p>
+    <div class="graph-wrap">
+      <svg width="1180" height="760" viewBox="0 0 1180 760" role="img" aria-label="Knowledge graph for Lesson 10">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#90a4d4"></path>
+          </marker>
+        </defs>
+
+        <path class="edge" d="M590,110 C590,145 590,155 590,195"/>
+        <path class="edge" d="M590,110 C440,130 320,150 205,220"/>
+        <path class="edge" d="M590,110 C740,130 860,150 975,220"/>
+        <path class="edge" d="M205,270 C205,315 205,328 205,375"/>
+        <path class="edge" d="M975,270 C975,315 975,328 975,375"/>
+        <path class="edge" d="M590,250 C490,300 430,332 375,395"/>
+        <path class="edge" d="M590,250 C690,300 750,332 805,395"/>
+        <path class="edge" d="M590,250 C590,320 590,335 590,395"/>
+        <path class="edge" d="M375,445 C340,515 300,550 250,625"/>
+        <path class="edge" d="M590,445 C590,515 590,550 590,625"/>
+        <path class="edge" d="M805,445 C840,515 880,550 930,625"/>
+
+        <g class="node">
+          <rect x="415" y="45" width="350" height="70" fill="#efeaff"></rect>
+          <text x="590" y="76" text-anchor="middle" font-size="18" font-weight="800">Lesson 10 Core Question</text>
+          <text x="590" y="99" text-anchor="middle" font-size="14">How does Mandarin tell a fable of indecision, danger, and irreversible consequence?</text>
+        </g>
+
+        <g class="node">
+          <rect x="460" y="195" width="260" height="54" fill="#eaf2ff"></rect>
+          <text x="590" y="228" text-anchor="middle" font-size="17" font-weight="800">Narrative utterances</text>
+        </g>
+
+        <g class="node">
+          <rect x="55" y="220" width="300" height="52" fill="#eefaf5"></rect>
+          <text x="205" y="252" text-anchor="middle" font-size="17" font-weight="800">Indecision and hesitation</text>
+        </g>
+
+        <g class="node">
+          <rect x="825" y="220" width="300" height="52" fill="#fff5e8"></rect>
+          <text x="975" y="252" text-anchor="middle" font-size="17" font-weight="800">Weather, collapse, and result</text>
+        </g>
+
+        <g class="node">
+          <rect x="85" y="375" width="240" height="66" fill="#edf7ff"></rect>
+          <text x="205" y="404" text-anchor="middle" font-size="16" font-weight="800">maybe / wait / why hurry?</text>
+          <text x="205" y="425" text-anchor="middle" font-size="13">delay as a personality pattern</text>
+        </g>
+
+        <g class="node">
+          <rect x="855" y="375" width="240" height="66" fill="#fff0f3"></rect>
+          <text x="975" y="404" text-anchor="middle" font-size="16" font-weight="800">storm / collapse / tail cut off</text>
+          <text x="975" y="425" text-anchor="middle" font-size="13">danger and physical consequence</text>
+        </g>
+
+        <g class="node">
+          <rect x="255" y="395" width="240" height="50" fill="#eefaf5"></rect>
+          <text x="375" y="426" text-anchor="middle" font-size="16" font-weight="800">daa.bu-dinq jwu.yih</text>
+        </g>
+
+        <g class="node">
+          <rect x="685" y="395" width="240" height="50" fill="#eefaf5"></rect>
+          <text x="805" y="426" text-anchor="middle" font-size="16" font-weight="800">result, passive, and change</text>
+        </g>
+
+        <g class="node">
+          <rect x="495" y="395" width="190" height="50" fill="#eaf2ff"></rect>
+          <text x="590" y="426" text-anchor="middle" font-size="16" font-weight="800">uses of .le</text>
+        </g>
+
+        <g class="node">
+          <rect x="155" y="625" width="190" height="58" fill="#eefaf5"></rect>
+          <text x="250" y="656" text-anchor="middle" font-size="16" font-weight="800">shiah-yeu, gua-feng</text>
+          <text x="250" y="676" text-anchor="middle" font-size="13">impersonal V-O weather forms</text>
+        </g>
+
+        <g class="node">
+          <rect x="495" y="625" width="190" height="58" fill="#fff5e8"></rect>
+          <text x="590" y="656" text-anchor="middle" font-size="16" font-weight="800">derle ba, haotzay</text>
+          <text x="590" y="676" text-anchor="middle" font-size="13">idiomatic response to new situations</text>
+        </g>
+
+        <g class="node">
+          <rect x="835" y="625" width="190" height="58" fill="#f3f0ff"></rect>
+          <text x="930" y="656" text-anchor="middle" font-size="16" font-weight="800">bey / geei / yah-jaur</text>
+          <text x="930" y="676" text-anchor="middle" font-size="13">passive and result realization</text>
+        </g>
+      </svg>
+    </div>
+    <div class="legend">
+      <span><i class="dot" style="background:#eaf2ff"></i> narrative structure</span>
+      <span><i class="dot" style="background:#eefaf5"></i> indecision and response</span>
+      <span><i class="dot" style="background:#fff5e8"></i> weather and .le</span>
+      <span><i class="dot" style="background:#f3f0ff"></i> passive/result patterns</span>
+      <span><i class="dot" style="background:#fff0f3"></i> collapse and consequence</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill green">Core concepts</div>
+    <h2>What the lesson teaches, concept by concept</h2>
+    <div class="concept-grid">
+      <div class="concept">
+        <h3>1) Indecision is built as a repeated discourse pattern</h3>
+        <div class="tag">daa.bu-dinq jwu.yih</div><div class="tag">sweibiann</div><div class="tag">meiyeou idinq</div>
+        <ul>
+          <li>The rat does not merely hesitate once. The entire lesson is built on repeated wavering.</li>
+          <li>This repetition is what makes the story funny before it becomes dangerous.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>2) Weather can be expressed impersonally</h3>
+        <div class="tag">shiah-yeu</div><div class="tag">gua-feng</div><div class="tag">tian lianq</div>
+        <ul>
+          <li>The notes explain that Chinese weather remarks may have no subject at all.</li>
+          <li>Forms like <span class="mono">shiah-yeu le</span> and <span class="mono">gua-feng le</span> are verb-object expressions meaning “it is raining” and “the wind is blowing.”</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>3) “Had better” is not a literal modal translation</h3>
+        <div class="tag">diing hao</div><div class="tag">diing hao hairsh</div>
+        <ul>
+          <li>The notes say the usual spoken expression for “had better” is <span class="mono">diing hao</span> or <span class="mono">diing hao hairsh</span>.</li>
+          <li>This is a useful translation warning for English-speaking learners.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>4) Result complements matter</h3>
+        <div class="tag">yah-jaur</div><div class="tag">shuey-jaur</div>
+        <ul>
+          <li>The notes explain <span class="mono">-jaur</span> as indicating that the action actually reaches the result.</li>
+          <li>This matters in the contrast between almost being crushed and not actually being crushed.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>5) Passive meaning can be explicit or implicit</h3>
+        <div class="tag">bey</div><div class="tag">geei</div>
+        <ul>
+          <li>The tail-cutting part of the story is a great place to teach passive interpretation.</li>
+          <li>The notes explain that passive meaning may appear without a marker, but <span class="mono">bey</span> and <span class="mono">geei</span> can make the agent more explicit.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>6) The story is also a lesson on <span class="mono">.le</span></h3>
+        <div class="tag">new situation</div><div class="tag">completed action</div><div class="tag">command</div>
+        <ul>
+          <li>The notes give a full summary of the different uses of <span class="mono">.le</span> in the lesson.</li>
+          <li>That makes Lesson 10 one of the best early places to teach <span class="mono">.le</span> systematically.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>7) One event can create a lasting new identity</h3>
+        <div class="tag">biann-cherngle</div><div class="tag">wuwoei-shuu</div>
+        <ul>
+          <li>The rat does not simply lose a tail. He becomes a new kind of rat: a tailless rat.</li>
+          <li>The story uses physical transformation to mark character change as well.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>8) Consequence reshapes character</h3>
+        <div class="tag">bu tzay</div><div class="tag">yiichyan</div>
+        <ul>
+          <li>The ending is explicitly moral: after losing the tail, he is no longer as indecisive as before.</li>
+          <li>This gives the fable a clear teaching payoff for discussion.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill orange">Mini-board plan</div>
+      <h2>How to lay this out for students</h2>
+      <table>
+        <thead><tr><th>Board zone</th><th>Write this</th><th>Teaching purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Left</td><td>story timeline: indecision → storm → collapse → tailless → decisive</td><td>Keeps the narrative arc visible.</td></tr>
+          <tr><td>Center</td><td><span class="mono">daa.bu-dinq jwu.yih</span>, <span class="mono">meijoel</span>, <span class="mono">dawdii</span>, <span class="mono">derle ba</span></td><td>Shows uncertainty language clearly.</td></tr>
+          <tr><td>Right</td><td>weather forms + <span class="mono">.le</span> uses</td><td>Connects story events to grammar.</td></tr>
+          <tr><td>Bottom</td><td>body outside / tail inside / pillar falls</td><td>Makes the final consequence easy to visualize.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="pill teal">High-value classroom move</div>
+      <h2>Use a cause-and-effect storyboard</h2>
+      <div class="callout">
+        Put the rat’s decisions on one side and the consequences on the other.
+      </div>
+      <ol>
+        <li>He delays.</li>
+        <li>Friends warn him.</li>
+        <li>He doubts the danger.</li>
+        <li>He changes his mind again.</li>
+        <li>The house collapses.</li>
+        <li>The body escapes but the tail does not.</li>
+        <li>He changes as a person afterward.</li>
+      </ol>
+      <p class="small">This helps students see the lesson as a logic chain, not just a funny episode.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill blue">A key structural focus</div>
+    <h2>The many uses of <span class="mono">.le</span> in Lesson 10</h2>
+    <div class="callout">
+      The notes on the last page summarize several distinct uses of <span class="mono">.le</span>, and this lesson is an ideal place to teach them together.
+    </div>
+    <div class="practice">
+      <div class="concept">
+        <h3>New situation</h3>
+        <p><span class="mono">Tzau le, shiah-yeu le!</span></p>
+        <p class="small">A new situation is noticed: now it is raining.</p>
+      </div>
+      <div class="concept">
+        <h3>Command in response</h3>
+        <p><span class="mono">Shiing le, hei!</span></p>
+        <p class="small">The new situation prompts an urgent command.</p>
+      </div>
+      <div class="concept">
+        <h3>Completed action in narration</h3>
+        <p><span class="mono">Tamen dou shiah-shiing le.</span></p>
+        <p class="small">This moves the plot forward.</p>
+      </div>
+      <div class="concept">
+        <h3>Transformation / resulting state</h3>
+        <p><span class="mono">Ta biann-cherngle i-jy wuwoei-shuu le.</span></p>
+        <p class="small">The completed change also creates a new state.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill green">Guided practice</div>
+    <h2>Practice tasks for a two-hour lesson</h2>
+    <div class="practice">
+      <div class="concept">
+        <h3>Task A — Indecision chain</h3>
+        <p>Students list three moments where the rat changes his mind again.</p>
+      </div>
+      <div class="concept">
+        <h3>Task B — Weather retell</h3>
+        <p>Students describe the storm using <span class="mono">dah-feng dah-yeu</span>, <span class="mono">shiah-yeu</span>, and <span class="mono">tian lianq</span>.</p>
+      </div>
+      <div class="concept">
+        <h3>Task C — What did <span class="mono">.le</span> do here?</h3>
+        <p>Students label whether a sentence’s <span class="mono">.le</span> signals new situation, completed action, command-response, or transformed state.</p>
+      </div>
+      <div class="concept">
+        <h3>Task D — Moral retelling</h3>
+        <p>Students explain in English or simple Mandarin how losing the tail changed the rat’s character.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill red">Quick understanding check</div>
+    <h2>Two multiple-choice quiz questions</h2>
+
+    <div class="quiz-q" data-answer="c">
+      <h3>1) According to the notes, what is special about expressions like <span class="mono">shiah-yeu le</span> in this lesson?</h3>
+      <label><input type="radio" name="q1" value="a"> They always require a hidden first-person subject.</label>
+      <label><input type="radio" name="q1" value="b"> They are idioms that cannot be analyzed grammatically.</label>
+      <label><input type="radio" name="q1" value="c"> They are impersonal verb-object constructions that may have no subject at all.</label>
+      <label><input type="radio" name="q1" value="d"> They are only used in poetry, not ordinary speech.</label>
+      <div class="feedback ok">Correct. The notes explicitly explain that Chinese weather expressions like <span class="mono">shiah-yeu le</span> can be verb-object sentences with no subject at all.</div>
+      <div class="feedback no">Not quite. Lesson 10 specifically highlights impersonal V-O constructions for weather and similar phenomena.</div>
+    </div>
+
+    <div class="quiz-q" data-answer="b">
+      <h3>2) What is the best explanation of why the rat survives but loses his tail?</h3>
+      <label><input type="radio" name="q2" value="a"> Because the storm stops just before the house collapses.</label>
+      <label><input type="radio" name="q2" value="b"> Because his body has already reached outside, but his tail is still left inside when the pillar falls.</label>
+      <label><input type="radio" name="q2" value="c"> Because his friends carry him out completely.</label>
+      <label><input type="radio" name="q2" value="d"> Because rats in the story cannot actually be injured.</label>
+      <div class="feedback ok">Correct. The story is very precise: his body reaches outside, so he is not crushed, but his tail remains inside and gets cut off by the fallen pillar.</div>
+      <div class="feedback no">Not quite. The lesson’s ending depends on the split between body outside and tail inside at the instant the house collapses.</div>
+    </div>
+
+    <button id="checkQuiz">Check my answers</button>
+    <button class="secondary" id="resetQuiz" style="margin-left:8px;">Reset</button>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill gold">Exit challenge</div>
+      <h2>End-of-lecture spoken challenge</h2>
+      <ol>
+        <li>Say what kind of rat this was at the beginning of the story.</li>
+        <li>Describe one example of his indecision.</li>
+        <li>Describe what happened in the storm.</li>
+        <li>Explain, in English, one use of <span class="mono">.le</span> from the lesson.</li>
+        <li>State the moral ending in one sentence.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <div class="pill blue">References and source use</div>
+      <h2>References for this page</h2>
+      <ul>
+        <li><strong>Primary source:</strong> scanned Lesson 10 pages from <em>Mandarin Primer: An Intensive Course in Spoken Chinese</em>.</li>
+        <li><strong>Dialogue basis:</strong> Lesson 10 “The Tailless Rat,” including the rat’s indecisiveness, the weather and walking examples, the children example, the midnight storm, the collapse, the tail being cut off, and the final change in character.</li>
+        <li><strong>Grammar basis:</strong> notes on <span class="mono">wu</span>, <span class="mono">woei</span>, <span class="mono">jwu.yih</span>, <span class="mono">tsornglai</span>, <span class="mono">butzeemme</span>, hesitation <span class="mono">ss</span>, impersonal V-O constructions, <span class="mono">diing hao</span>, <span class="mono">maashanq</span>, <span class="mono">haootzay</span>, <span class="mono">yah-jaur</span>, passive marking with <span class="mono">bey</span> and <span class="mono">geei</span>, <span class="mono">tsorng tsyy yiihow</span>, and the summary of the uses of <span class="mono">.le</span>.</li>
+        <li><strong>Teaching basis:</strong> the source’s “To the Student” guidance on utterances, repetition, echoing, and grammar-through-exercises.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    This lecture page is designed for a full two-hour beginner lesson. It keeps close to the source while turning Lesson 10 into a clearer,
+    more connected, and more teachable fable about indecision, consequence, and change for English-speaking high-school students.
+  </footer>
+</div>
+
+<script>
+document.getElementById('checkQuiz').addEventListener('click', function(){
+  document.querySelectorAll('.quiz-q').forEach(function(q){
+    const correct = q.dataset.answer;
+    const selected = q.querySelector('input[type="radio"]:checked');
+    const ok = q.querySelector('.feedback.ok');
+    const no = q.querySelector('.feedback.no');
+    ok.style.display = 'none';
+    no.style.display = 'none';
+    if(selected && selected.value === correct){
+      ok.style.display = 'block';
+    } else {
+      no.style.display = 'block';
+    }
+  });
+});
+
+document.getElementById('resetQuiz').addEventListener('click', function(){
+  document.querySelectorAll('input[type="radio"]').forEach(function(inp){ inp.checked = false; });
+  document.querySelectorAll('.feedback').forEach(function(f){ f.style.display = 'none'; });
+});
+</script>
+</body>
+</html>

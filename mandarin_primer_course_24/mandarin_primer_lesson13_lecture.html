@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mandarin Primer — Lesson 13 Lecture Page</title>
+<style>
+:root{--bg:#f6f8fc;--ink:#1d2433;--muted:#5a6475;--card:#fff;--line:#d8dfeb;--blue:#2f6fed;--green:#2f9e77;--purple:#7b61ff;--orange:#f08c2e;--red:#d9485f;--gold:#c99700;--shadow:0 10px 30px rgba(28,35,54,.08);--radius:18px}
+*{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:radial-gradient(circle at top right,rgba(47,111,237,.08),transparent 28%),radial-gradient(circle at top left,rgba(123,97,255,.08),transparent 26%),var(--bg);line-height:1.65}
+.wrap{width:min(1180px,94vw);margin:0 auto;padding:28px 0 64px} header.hero{background:linear-gradient(135deg,#17457e,#2b63cf 55%,#7b61ff);color:#fff;border-radius:28px;padding:34px 34px 28px;box-shadow:var(--shadow)}
+.eyebrow{display:inline-block;padding:6px 10px;border:1px solid rgba(255,255,255,.28);border-radius:999px;font-size:.83rem;margin-bottom:10px;background:rgba(255,255,255,.08)}
+h1,h2,h3{line-height:1.2;margin:.2rem 0 .8rem} h1{font-size:clamp(2rem,3vw,3rem)} h2{font-size:1.55rem} h3{font-size:1.12rem}
+p.lead{font-size:1.08rem;max-width:980px;opacity:.98} .small{font-size:.95rem;color:var(--muted)}
+.grid{display:grid;gap:18px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}@media (max-width:900px){.g2{grid-template-columns:1fr}}
+section{margin-top:22px}.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+.pill{display:inline-block;font-size:.8rem;font-weight:800;padding:5px 10px;border-radius:999px;color:#fff;margin-bottom:10px}.blue{background:var(--blue)}.green{background:var(--green)}.purple{background:var(--purple)}.orange{background:var(--orange)}.red{background:var(--red)}.gold{background:var(--gold)}
+.banner{border-left:6px solid var(--gold);background:#fff8db;padding:14px 16px;border-radius:14px}.callout{border-left:5px solid var(--blue);background:#eef4ff;padding:14px 16px;border-radius:14px}.warning{border-left:5px solid var(--red);background:#fff2f4;padding:14px 16px;border-radius:14px}
+.flow{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}@media (max-width:1000px){.flow{grid-template-columns:repeat(2,1fr)}}@media (max-width:640px){.flow{grid-template-columns:1fr}}
+.step{background:linear-gradient(180deg,#fff,#f8faff);border:1px solid var(--line);border-radius:18px;padding:16px;min-height:156px}.num{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;font-weight:800;margin-bottom:10px}
+.dialogue-line{padding:10px 0;border-bottom:1px dashed var(--line)}.dialogue-line:last-child{border-bottom:none}.speaker{display:inline-block;min-width:100px;font-weight:800;color:var(--blue)}.roman{font-size:1.02rem;font-weight:650}.gloss{color:var(--muted)}
+.concept-grid,.practice{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}@media (max-width:900px){.concept-grid,.practice{grid-template-columns:1fr}}
+.concept{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fbfcff}.tag{display:inline-block;padding:4px 8px;border-radius:999px;font-size:.78rem;font-weight:700;margin:2px 4px 2px 0;background:#eef3ff;color:#2c4a9c}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#f5f7fb;padding:.08rem .35rem;border-radius:8px}
+table{width:100%;border-collapse:collapse;font-size:.96rem}th,td{border-bottom:1px solid var(--line);padding:12px 10px;text-align:left;vertical-align:top}th{background:#f4f7fc}tr:last-child td{border-bottom:none}
+.graph-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,#fcfdff,#f6f9ff);padding:12px} svg text{font-family:Inter,system-ui,sans-serif;fill:#1f2430}.edge{stroke:#90a4d4;stroke-width:2.2;fill:none;marker-end:url(#arrow)}.node rect{rx:18;ry:18;stroke:#d8dff2;stroke-width:1.4}
+.legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;font-size:.9rem}.legend span{display:flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 10px}.dot{width:12px;height:12px;border-radius:50%;display:inline-block}
+.quiz-q{border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:16px;background:#fbfdff}.quiz-q label{display:block;padding:9px 10px;border:1px solid transparent;border-radius:12px;cursor:pointer}.quiz-q label:hover{background:#f1f6ff;border-color:#dbe6ff}
+button{appearance:none;border:none;background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;border-radius:12px;padding:11px 16px;font-size:.96rem;font-weight:700;cursor:pointer;box-shadow:var(--shadow)}button.secondary{background:linear-gradient(135deg,var(--green),#3fb58e)}
+.feedback{margin-top:10px;padding:12px 14px;border-radius:12px;display:none}.feedback.ok{background:#edf9f3;border:1px solid #bfe7cf}.feedback.no{background:#fff1f3;border:1px solid #f0c0cb}
+footer{margin-top:28px;color:var(--muted);font-size:.92rem}
+</style></head><body><div class="wrap">
+<header class="hero">
+<div class="eyebrow">Yuen Ren Chao - Mandarin Primer: An Intensive Course in Spoken Chinese</div>
+<h1>Mandarin Primer — Lesson 13</h1>
+<h2 style="font-size:1.35rem;font-weight:650;opacity:.98;">Inquiring After a Sick Man</h2>
+<p class="lead">Lesson 13 moves the crash story into a hospital setting. The focus is now on fever, temperature, mental clarity, injuries, treatment, and bedside etiquette. It is a strong lesson for teaching how Mandarin handles condition updates, reported speech, diagnosis, and care.</p>
+<p class="small" style="color:rgba(255,255,255,.9);">This page keeps the book’s original romanization system so it stays aligned with the scanned lesson.</p>
+</header>
+
+<section class="grid g2">
+<div class="card"><div class="pill blue">Learning goals</div><h2>What students should learn</h2>
+<ul>
+<li>Follow a hospital conversation about the condition of an injured patient.</li>
+<li>Understand how Mandarin asks about improvement, fever, temperature, consciousness, pain, injuries, treatment, and hospital procedure.</li>
+<li>Recognize temperature language in both Centigrade and Fahrenheit, including the conversion example in the notes.</li>
+<li>Notice subject-predicate relations such as <span class="mono">ta sh 38.5°</span>.</li>
+<li>Learn medical and hospital vocabulary such as <span class="mono">kanhuh</span>, <span class="mono">binq-ren</span>, <span class="mono">jie-guu</span>, <span class="mono">kai-dau</span>, <span class="mono">way-shang</span>, <span class="mono">ney-shang</span>, <span class="mono">maafei-jen</span>, and <span class="mono">jiowshang-che</span>.</li>
+</ul></div>
+<div class="card"><div class="pill gold">Teacher lens</div><h2>Why this lesson matters</h2>
+<div class="banner"><strong>Lesson 13 teaches explanation under care.</strong> The speakers report what nurses and doctors said, interpret symptoms, and try to understand risk.</div>
+<p>For high-school students, this lesson is valuable because it connects language to a real human situation: worry, relief, careful questioning, and professional medical judgment. It also introduces scientific and numerical expressions in a meaningful context.</p></div>
+</section>
+
+<section class="card"><div class="pill purple">Two-hour lecture flow</div><h2>Suggested lecture sequence</h2>
+<div class="flow">
+<div class="step"><div class="num">1</div><strong>Hospital hook</strong><br><span class="small">Begin with quiet voices, patients sleeping, and asking whether someone is better today.</span></div>
+<div class="step"><div class="num">2</div><strong>Condition update</strong><br><span class="small">Teach fever, temperature change, and relative improvement.</span></div>
+<div class="step"><div class="num">3</div><strong>Temperature reasoning</strong><br><span class="small">Use the source’s conversion example and explain Centigrade vs Fahrenheit.</span></div>
+<div class="step"><div class="num">4</div><strong>Mental clarity</strong><br><span class="small">Focus on muddled mind, delirious speech, and not knowing where one is.</span></div>
+<div class="step"><div class="num">5</div><strong>Diagnosis and treatment</strong><br><span class="small">Teach external/internal injuries, broken bones, muscles, anesthetic, iodine, first aid, ambulance.</span></div>
+<div class="step"><div class="num">6</div><strong>Doctor + quiz</strong><br><span class="small">Finish with the famous surgeon, polite waiting, and a final check for understanding.</span></div>
+</div></section>
+
+<section class="grid g2">
+<div class="card"><div class="pill green">How to teach it well</div><h2>Effective teaching moves for beginners</h2>
+<div class="callout">The source emphasizes utterances, echoing, repetition, and grammar-through-exercises. Lesson 13 becomes especially teachable when the medical information is organized visually rather than presented as one long explanation.</div>
+<ol>
+<li>Use a patient-status board with four columns: fever, mind, injuries, treatment.</li>
+<li>Keep the hospital social setting visible: visitors, nurse, doctor, patient, room, ward.</li>
+<li>Teach the temperature part slowly with a number line and conversion steps.</li>
+<li>Differentiate clearly between external injuries, internal injuries, broken bones, and muscle injury.</li>
+<li>Turn the conversation into a sequence of “questions families ask at hospitals.”</li>
+</ol></div>
+<div class="card"><div class="pill red">Likely beginner confusions</div><h2>Where English speakers may stumble</h2>
+<div class="warning">Students can lose the thread if the teacher does not keep the overall condition of the patient visible.</div>
+<ul>
+<li><strong>Centigrade vs Fahrenheit</strong> may feel mathematically dense.</li>
+<li><strong><span class="mono">rehduh</span> vs <span class="mono">uenduh</span></strong> are not the same.</li>
+<li><strong>Subject-predicate relations</strong> such as <span class="mono">ta sh 38.5°</span> do not map directly onto ordinary English subject structure.</li>
+<li><strong><span class="mono">ren</span></strong> in <span class="mono">ta ren hair chingchuu ha?</span> refers to the state of mind.</li>
+<li><strong>Medical verbs</strong> need contextual explanation, not dictionary-style memorization.</li>
+</ul></div>
+</section>
+
+<section class="card"><div class="pill blue">Dialogue walkthrough</div><h2>Lesson 13 as a medical update conversation</h2>
+<p class="small">This lesson is easiest to teach as a series of hospital questions and answers.</p>
+
+<div class="dialogue-line"><span class="speaker">Scene 1</span><span class="roman">Kanhuh: Uai, dueybujuh, chiing niimen sheng'in sheau ideal!</span><br><span class="gloss">Nurse: Excuse me, please keep your voices a little lower.</span></div>
+<div class="dialogue-line"><span class="speaker">Scene 1</span><span class="roman">Jell tzarm buneng tzemm dahsheng shuo-huah, hweitour bae binq-ren geei naw-shiing le.</span><br><span class="gloss">We cannot talk so loudly here, otherwise we might wake the patient.</span></div>
+<div class="dialogue-line"><span class="speaker">Scene 2</span><span class="roman">Ta jintian haodeal le ma? Hair fa-shau bu fa le? Hair yeou shau meiyou?</span><br><span class="gloss">Is he better today? Is he still running a fever? Does he still have a fever?</span></div>
+<div class="dialogue-line"><span class="speaker">Scene 2</span><span class="roman">Jintian bii tzwotian hao de duo le ... keesh jintian tsorng tzaochin chii rehduh jiow jiannjialde di.shiah.lai le.</span><br><span class="gloss">He is much better today than yesterday ... and since this morning his temperature has gradually come down.</span></div>
+<div class="dialogue-line"><span class="speaker">Scene 2</span><span class="roman">Tzwotian tzuey gau gau daw syhshyri-duh-san ne, jintian shanqwuu ba-shyr sanshyr-fen de shyrhowl jianq daw sanshyr-ba-duh-bann le.</span><br><span class="gloss">Yesterday the highest temperature was 41.3°C, but today at 8:30 a.m. it had dropped to 38.5°C.</span></div>
+<div class="dialogue-line"><span class="speaker">Scene 3</span><span class="roman">Woo tsornglai yee yonq.bu.guann Shehshyh de rehduhbeau de.</span><br><span class="gloss">I can never get used to the Centigrade thermometer.</span></div>
+<div class="dialogue-line"><span class="speaker">Scene 3</span><span class="roman">Shehshyh de sanshyr-chi-duh sh deengyu Hwashyh de jeoushyr-ba-duh-liow ... shianntzay ta sh sanshyr-ba-duh-wuu ... sh Hwashyh ibae-ling-i-duh yow shyr-fenn jy san.</span><br><span class="gloss">37°C equals 98.6°F ... now he is 38.5°C ... that is 101.3°F.</span></div>
+<div class="dialogue-line"><span class="speaker">Scene 4</span><span class="roman">Ta ren hair chingchuu ha?</span><br><span class="gloss">Is his mind still clear?</span></div>
+<div class="dialogue-line"><span class="speaker">Scene 4</span><span class="roman">Tzwotian fa-shau fa de lihhay de shyrhowl ren jiow yeoudeal hwu.twu, jinq shuo hwu-huah, lian tzyhgeel ren tzay naal yee bujydaw, ren yee budah rennde.</span><br><span class="gloss">Yesterday, when the fever was severe, his mind was confused and he talked deliriously, not knowing where he was or recognizing people well.</span></div>
+<div class="dialogue-line"><span class="speaker">Scene 5</span><span class="roman">Yong buyong jie-guu huohjee kai-dau shermde?</span><br><span class="gloss">Is it necessary to set the bone or perform an operation or something?</span></div>
+<div class="dialogue-line"><span class="speaker">Scene 5</span><span class="roman">Keeyii buyong jie-guu, yee buyong yong sherm bye-joong de shooushuh.</span><br><span class="gloss">There is no need to set any bones, and there is no need for another operation.</span></div>
+<div class="dialogue-line"><span class="speaker">Scene 5</span><span class="roman">Yeou sh yeou jii-chuh shau-shangle de dihfangl, gen haojii-chuh way-shang.</span><br><span class="gloss">He does have several burned places and quite a few external injuries.</span></div>
+<div class="dialogue-line"><span class="speaker">Scene 5</span><span class="roman">Ta chii-tourl pah dahtoei de gwutou sher le, howlai char.chulai binq mei sher. Jianbaangl nail dahgay yee jyy yeou jinrow showle deal shang.</span><br><span class="gloss">At first they feared the thigh bone had broken, but later found it had not; the shoulder probably had only muscle injury.</span></div>
+<div class="dialogue-line"><span class="speaker">Scene 6</span><span class="roman">Jiow guangsh way-shang yee idinq terng de yawminq lo.</span><br><span class="gloss">Even the external injuries alone must hurt terribly.</span></div>
+<div class="dialogue-line"><span class="speaker">Scene 6</span><span class="roman">Woomen geei ta nonq.shanq chwan lai de shyrhowl, ta hair tzaynall shyy-jinn fuhj shoei.</span><br><span class="gloss">When we got him up into the boat, he was still swimming hard.</span></div>
+<div class="dialogue-line"><span class="speaker">Scene 6</span><span class="roman">Woomen geeile ta deal borlandih he ... shanqle dah-chwan yiihow, ta jiow iun.guohchiuh le.</span><br><span class="gloss">We gave him some brandy ... after getting on the big ship, he fainted.</span></div>
+<div class="dialogue-line"><span class="speaker">Scene 7</span><span class="roman">Jyy hao shian geei ta daa deal jyy-tonq de maafei-jen a, shanq deal shiau-dwu de deanjeou a ... jiow-jyi de bannfaa.</span><br><span class="gloss">The only thing to do was to give some morphine by injection, apply iodine, and carry out first-aid measures.</span></div>
+<div class="dialogue-line"><span class="speaker">Scene 7</span><span class="roman">Gaan chwan i kawle ann jiow daa-diannhuah jiawle i-lianq jiowshang-che bae ta sonq.jinn jeyg iyuann li lai le.</span><br><span class="gloss">As soon as the ship docked, they telephoned for an ambulance and sent him into this hospital.</span></div>
+<div class="dialogue-line"><span class="speaker">Scene 8</span><span class="roman">Neyg jiowsh Niou Dayfu; ta sh jell tzuey chuming de wayke-i.sheng le.</span><br><span class="gloss">That is Dr. New; he is the most famous surgeon around here.</span></div>
+<div class="dialogue-line"><span class="speaker">Scene 8</span><span class="roman">Ta budann beenshyh hao, shyuewenn hao, ren yee feicharng her.chih, ideal jiahtz yee meiyeou.</span><br><span class="gloss">He is not only skilled and learned, but also charming and without pretension.</span></div>
+<div class="dialogue-line"><span class="speaker">Scene 8</span><span class="roman">Chiing niimen ell-wey tzay deeng.deengl, ah! Deeng woo bae binqshyh shian shyr.dou-vx-hao! Ihoel jiow der!</span><br><span class="gloss">Please wait another moment, gentlemen. Let me tidy up the room first. It will be ready in a minute.</span></div>
+</section>
+
+<section class="card"><div class="pill orange">Knowledge graph</div><h2>Concept network for Lesson 13</h2>
+<p>Lesson 13 is built around a care-and-diagnosis network: <strong>visit → ask → measure → interpret → diagnose → treat → transfer → wait</strong>.</p>
+<div class="graph-wrap">
+<svg width="1180" height="780" viewBox="0 0 1180 780" role="img" aria-label="Knowledge graph for Lesson 13">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#90a4d4"></path></marker></defs>
+<path class="edge" d="M590,110 C590,145 590,155 590,195"/><path class="edge" d="M590,110 C440,130 320,150 205,220"/><path class="edge" d="M590,110 C740,130 860,150 975,220"/>
+<path class="edge" d="M205,270 C205,315 205,328 205,375"/><path class="edge" d="M975,270 C975,315 975,328 975,375"/>
+<path class="edge" d="M590,250 C490,300 430,332 375,395"/><path class="edge" d="M590,250 C690,300 750,332 805,395"/><path class="edge" d="M590,250 C590,320 590,335 590,395"/>
+<path class="edge" d="M375,445 C340,515 300,550 250,635"/><path class="edge" d="M590,445 C590,515 590,550 590,635"/><path class="edge" d="M805,445 C840,515 880,550 930,635"/>
+<g class="node"><rect x="405" y="45" width="370" height="70" fill="#efeaff"></rect><text x="590" y="76" text-anchor="middle" font-size="18" font-weight="800">Lesson 13 Core Question</text><text x="590" y="99" text-anchor="middle" font-size="14">How does Mandarin describe a patient’s condition, treatment, and recovery in a hospital conversation?</text></g>
+<g class="node"><rect x="460" y="195" width="260" height="54" fill="#eaf2ff"></rect><text x="590" y="228" text-anchor="middle" font-size="17" font-weight="800">Hospital-update utterances</text></g>
+<g class="node"><rect x="55" y="220" width="300" height="52" fill="#eefaf5"></rect><text x="205" y="252" text-anchor="middle" font-size="17" font-weight="800">Symptoms and measurement</text></g>
+<g class="node"><rect x="825" y="220" width="300" height="52" fill="#fff5e8"></rect><text x="975" y="252" text-anchor="middle" font-size="17" font-weight="800">Diagnosis, treatment, and care</text></g>
+<g class="node"><rect x="85" y="375" width="240" height="66" fill="#edf7ff"></rect><text x="205" y="404" text-anchor="middle" font-size="16" font-weight="800">fever / temperature / mind clarity</text><text x="205" y="425" text-anchor="middle" font-size="13">what the visitors ask first</text></g>
+<g class="node"><rect x="855" y="375" width="240" height="66" fill="#fff0f3"></rect><text x="975" y="404" text-anchor="middle" font-size="16" font-weight="800">injury / first aid / ambulance / hospital</text><text x="975" y="425" text-anchor="middle" font-size="13">what was done medically</text></g>
+<g class="node"><rect x="255" y="395" width="240" height="50" fill="#eefaf5"></rect><text x="375" y="426" text-anchor="middle" font-size="16" font-weight="800">Centigrade ↔ Fahrenheit</text></g>
+<g class="node"><rect x="685" y="395" width="240" height="50" fill="#eefaf5"></rect><text x="805" y="426" text-anchor="middle" font-size="16" font-weight="800">doctor’s judgment and caution</text></g>
+<g class="node"><rect x="495" y="395" width="190" height="50" fill="#eaf2ff"></rect><text x="590" y="426" text-anchor="middle" font-size="16" font-weight="800">reported speech</text></g>
+<g class="node"><rect x="155" y="635" width="190" height="58" fill="#eefaf5"></rect><text x="250" y="666" text-anchor="middle" font-size="16" font-weight="800">ta sh 38.5°</text><text x="250" y="686" text-anchor="middle" font-size="13">subject-predicate topic relation</text></g>
+<g class="node"><rect x="495" y="635" width="190" height="58" fill="#fff5e8"></rect><text x="590" y="666" text-anchor="middle" font-size="16" font-weight="800">way-shang / ney-shang / show-shang</text><text x="590" y="686" text-anchor="middle" font-size="13">different injury categories</text></g>
+<g class="node"><rect x="835" y="635" width="190" height="58" fill="#f3f0ff"></rect><text x="930" y="666" text-anchor="middle" font-size="16" font-weight="800">kanhuh / huhshyh / dayfu / i.sheng</text><text x="930" y="686" text-anchor="middle" font-size="13">roles and register</text></g>
+</svg></div>
+<div class="legend">
+<span><i class="dot" style="background:#eaf2ff"></i> update structure</span>
+<span><i class="dot" style="background:#eefaf5"></i> symptoms and measurement</span>
+<span><i class="dot" style="background:#fff5e8"></i> treatment and reasoning</span>
+<span><i class="dot" style="background:#f3f0ff"></i> people and roles</span>
+<span><i class="dot" style="background:#fff0f3"></i> injury and transport</span>
+</div></section>
+
+<section class="card"><div class="pill green">Core concepts</div><h2>What the lesson teaches, concept by concept</h2>
+<div class="concept-grid">
+<div class="concept"><h3>1) Hospital etiquette shapes the conversation</h3><div class="tag">quiet voices</div><div class="tag">waiting</div><div class="tag">asking permission</div><ul><li>The lesson begins with volume control and ends with waiting politely before entering.</li><li>This shows that language learning includes social setting, not just information.</li></ul></div>
+<div class="concept"><h3>2) Improvement is described relative to yesterday</h3><div class="tag">bii tzwotian hao de duo</div><div class="tag">jiannjialde di.shiah.lai</div><ul><li>The patient is better than yesterday and the temperature has gradually come down.</li><li>This makes the lesson excellent for teaching change over time.</li></ul></div>
+<div class="concept"><h3>3) Temperature is both medical and grammatical</h3><div class="tag">rehduh</div><div class="tag">uenduh</div><div class="tag">Shehshyh</div><div class="tag">Hwashyh</div><ul><li>The notes distinguish high temperature words from general temperature words.</li><li>The conversation also makes students reason numerically.</li></ul></div>
+<div class="concept"><h3>4) Subject-predicate relations matter</h3><div class="tag">ta sh 38.5°</div><ul><li>The notes explain that the Chinese subject is the topic under discussion.</li><li>This is an important conceptual step for learners expecting English-style clause structure.</li></ul></div>
+<div class="concept"><h3>5) The lesson distinguishes kinds of injury</h3><div class="tag">shau-shangle</div><div class="tag">way-shang</div><div class="tag">ney-shang</div><div class="tag">show-shang</div><ul><li>The doctor’s report is careful: burns, external injuries, possible bone damage, muscle injury, and no internal injuries.</li><li>This shows how diagnostic language narrows possibilities.</li></ul></div>
+<div class="concept"><h3>6) Reported speech drives the medical narrative</h3><div class="tag">woo ting neyg kanhuh shuo</div><div class="tag">ta shuo</div><ul><li>The visitors rely on what the nurse and doctor said.</li><li>The lesson therefore gives repeated practice in reporting professional information indirectly.</li></ul></div>
+<div class="concept"><h3>7) Treatment is described step by step</h3><div class="tag">daa-jen</div><div class="tag">maafei</div><div class="tag">shiau-dwu</div><div class="tag">deanjeou</div><div class="tag">jiow-jyi</div><ul><li>The lesson explains what could be done on the ship before the patient reached the hospital.</li><li>This gives the conversation a strong procedural flow.</li></ul></div>
+<div class="concept"><h3>8) Professional admiration is part of the scene</h3><div class="tag">chuming</div><div class="tag">wayke-i.sheng</div><div class="tag">her.chih</div><div class="tag">jiahtz</div><ul><li>The description of Dr. New combines skill, learning, charm, and humility.</li><li>This creates a different kind of evaluation from earlier lessons.</li></ul></div>
+</div></section>
+
+<section class="grid g2">
+<div class="card"><div class="pill orange">Mini-board plan</div><h2>How to lay this out for students</h2>
+<table><thead><tr><th>Board zone</th><th>Write this</th><th>Teaching purpose</th></tr></thead><tbody>
+<tr><td>Left</td><td>hospital roles: visitor, nurse, doctor, patient</td><td>Keeps the social setting clear.</td></tr>
+<tr><td>Center</td><td>patient-status chart: fever / mind / injuries / treatment</td><td>Organizes the medical information visually.</td></tr>
+<tr><td>Right</td><td>temperature expressions + Centigrade/Fahrenheit conversion</td><td>Makes the number-heavy portion teachable.</td></tr>
+<tr><td>Bottom</td><td>rescue → ship first aid → dock → ambulance → hospital → wait to enter</td><td>Shows the full care pathway.</td></tr>
+</tbody></table></div>
+<div class="card"><div class="pill green">High-value classroom move</div><h2>Use a bedside briefing simulation</h2>
+<div class="callout">Put students into roles: family visitor, nurse, doctor, and note-taker.</div>
+<ol><li>The visitors ask about fever, pain, and mind clarity.</li><li>The nurse reports what she observed.</li><li>The doctor gives a careful diagnosis and treatment summary.</li><li>The note-taker fills in the patient-status chart in English or simple Mandarin.</li></ol>
+</div></section>
+
+<section class="card"><div class="pill red">Quick understanding check</div><h2>Two multiple-choice quiz questions</h2>
+<div class="quiz-q" data-answer="b">
+<h3>1) According to the notes, what is the best description of <span class="mono">uenduh</span> compared with <span class="mono">rehduh</span>?</h3>
+<label><input type="radio" name="q1" value="a"><span class="mono">uenduh</span> only means cold temperature, while <span class="mono">rehduh</span> means body temperature.</label>
+<label><input type="radio" name="q1" value="b"><span class="mono">uenduh</span> can mean temperature generally, while <span class="mono">rehduh</span> refers to high temperatures.</label>
+<label><input type="radio" name="q1" value="c"><span class="mono">uenduh</span> and <span class="mono">rehduh</span> are fully interchangeable.</label>
+<label><input type="radio" name="q1" value="d"><span class="mono">uenduh</span> is only for weather and never for the body.</label>
+<div class="feedback ok">Correct. The notes distinguish <span class="mono">uenduh</span> as temperature in general from <span class="mono">rehduh</span> as a word associated with high temperature.</div>
+<div class="feedback no">Not quite. Lesson 13 uses this distinction to help describe fever and ordinary body temperature more precisely.</div>
+</div>
+<div class="quiz-q" data-answer="c">
+<h3>2) Why is the example <span class="mono">ta sh 38.5°</span> important in the notes?</h3>
+<label><input type="radio" name="q2" value="a">Because it proves Chinese does not need numbers in medical talk.</label>
+<label><input type="radio" name="q2" value="b">Because it is a mistake that should be corrected into English order.</label>
+<label><input type="radio" name="q2" value="c">Because it shows a topic-comment or subject-predicate relation in which the subject is what is being talked about.</label>
+<label><input type="radio" name="q2" value="d">Because it only works in writing, never in speech.</label>
+<div class="feedback ok">Correct. The notes use this example to explain that the Chinese subject is the subject matter under discussion, not necessarily the same kind of grammatical subject English requires.</div>
+<div class="feedback no">Not quite. This note is one of the lesson’s key grammar insights.</div>
+</div>
+<button id="checkQuiz">Check my answers</button>
+<button class="secondary" id="resetQuiz" style="margin-left:8px;">Reset</button>
+</section>
+
+<section class="grid g2">
+<div class="card"><div class="pill gold">Exit challenge</div><h2>End-of-lecture spoken challenge</h2>
+<ol>
+<li>Say whether the patient is better today and give one piece of evidence.</li>
+<li>State one temperature from the lesson and what it means.</li>
+<li>Explain one injury the doctor ruled out and one injury that remained possible or real.</li>
+<li>Describe one emergency treatment step taken before arrival at the hospital.</li>
+<li>Explain, in English, why the visitors cannot enter the room immediately at the end.</li>
+</ol></div>
+<div class="card"><div class="pill blue">References and source use</div><h2>References for this page</h2>
+<ul>
+<li><strong>Primary source:</strong> scanned Lesson 13 pages from <em>Mandarin Primer: An Intensive Course in Spoken Chinese</em>.</li>
+<li><strong>Dialogue basis:</strong> Lesson 13 “Inquiring After a Sick Man,” including the nurse’s request for quiet, the patient-status questions, fever and thermometer discussion, mental confusion during high fever, diagnosis of injuries, emergency treatment aboard ship, transport to the hospital, and the polite exchange about waiting to enter.</li>
+<li><strong>Grammar and vocabulary basis:</strong> notes on <span class="mono">kanhuh</span>, <span class="mono">hweitour</span>, <span class="mono">binq-ren</span>, <span class="mono">fa-shau</span>, <span class="mono">rehduh</span>, subject-predicate relations like <span class="mono">ta sh 38.5°</span>, the Centigrade/Fahrenheit conversion explanation, <span class="mono">hwu.twu</span>, <span class="mono">hwu-huah</span>, <span class="mono">jie-guu</span>, <span class="mono">kai-dau</span>, injury vocabulary, <span class="mono">maafei</span>, <span class="mono">shiau-dwu</span>, <span class="mono">deanjeou</span>, <span class="mono">jiow-jyi</span>, <span class="mono">jiowshang-che</span>, <span class="mono">iyuann</span>, <span class="mono">wayke</span>, <span class="mono">her.chih</span>, and <span class="mono">wennx kann</span>.</li>
+</ul></div>
+</section>
+
+<footer>This lecture page is designed for a full two-hour beginner lesson. It keeps close to the source while turning Lesson 13 into a clearer, more connected, and more teachable hospital-update lesson for English-speaking high-school students.</footer>
+</div>
+<script>
+document.getElementById('checkQuiz').addEventListener('click', function(){
+  document.querySelectorAll('.quiz-q').forEach(function(q){
+    const correct = q.dataset.answer;
+    const selected = q.querySelector('input[type="radio"]:checked');
+    const ok = q.querySelector('.feedback.ok');
+    const no = q.querySelector('.feedback.no');
+    ok.style.display = 'none'; no.style.display = 'none';
+    if(selected && selected.value === correct){ ok.style.display = 'block'; }
+    else { no.style.display = 'block'; }
+  });
+});
+document.getElementById('resetQuiz').addEventListener('click', function(){
+  document.querySelectorAll('input[type="radio"]').forEach(function(inp){ inp.checked = false; });
+  document.querySelectorAll('.feedback').forEach(function(f){ f.style.display = 'none'; });
+});
+</script></body></html>

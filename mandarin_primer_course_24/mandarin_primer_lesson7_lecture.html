@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mandarin Primer — Lesson 7 Lecture Page</title>
+<style>
+  :root{
+    --bg:#f6f8fc;
+    --ink:#1d2433;
+    --muted:#5a6475;
+    --card:#ffffff;
+    --line:#d8dfeb;
+    --blue:#2f6fed;
+    --green:#2f9e77;
+    --purple:#7b61ff;
+    --orange:#f08c2e;
+    --red:#d9485f;
+    --gold:#c99700;
+    --teal:#0f9db8;
+    --shadow:0 10px 30px rgba(28,35,54,.08);
+    --radius:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at top right, rgba(47,111,237,.08), transparent 28%),
+      radial-gradient(circle at top left, rgba(123,97,255,.08), transparent 26%),
+      var(--bg);
+    line-height:1.65;
+  }
+  .wrap{width:min(1180px,94vw); margin:0 auto; padding:28px 0 64px;}
+  header.hero{
+    background:linear-gradient(135deg,#1a447f,#265fc6 55%,#7b61ff);
+    color:#fff;
+    border-radius:28px;
+    padding:34px 34px 28px;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+  }
+  header.hero::after{
+    content:"";
+    position:absolute; right:-45px; top:-45px;
+    width:260px; height:260px;
+    background:radial-gradient(circle, rgba(255,255,255,.18), transparent 65%);
+  }
+  .eyebrow{
+    display:inline-block;
+    padding:6px 10px;
+    border:1px solid rgba(255,255,255,.28);
+    border-radius:999px;
+    font-size:.83rem;
+    letter-spacing:.02em;
+    margin-bottom:10px;
+    background:rgba(255,255,255,.08);
+  }
+  h1,h2,h3{line-height:1.2; margin:.2rem 0 .8rem}
+  h1{font-size:clamp(2rem,3vw,3rem)}
+  h2{font-size:1.55rem}
+  h3{font-size:1.12rem}
+  p.lead{font-size:1.08rem; max-width:980px; opacity:.98}
+  .small{font-size:.95rem; color:var(--muted)}
+  .grid{display:grid; gap:18px}
+  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media (max-width:900px){.g2{grid-template-columns:1fr}}
+  section{margin-top:22px}
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:22px;
+  }
+  .pill{
+    display:inline-block;
+    font-size:.8rem;
+    font-weight:800;
+    letter-spacing:.02em;
+    padding:5px 10px;
+    border-radius:999px;
+    color:#fff;
+    margin-bottom:10px;
+  }
+  .blue{background:var(--blue)}
+  .green{background:var(--green)}
+  .purple{background:var(--purple)}
+  .orange{background:var(--orange)}
+  .red{background:var(--red)}
+  .gold{background:var(--gold)}
+  .teal{background:var(--teal)}
+  .banner{
+    border-left:6px solid var(--gold);
+    background:#fff8db;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  .callout{
+    border-left:5px solid var(--blue);
+    background:#eef4ff;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  .warning{
+    border-left:5px solid var(--red);
+    background:#fff2f4;
+    padding:14px 16px;
+    border-radius:14px;
+  }
+  ul li, ol li{margin:.45rem 0}
+  .flow{
+    display:grid;
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    gap:12px;
+  }
+  @media (max-width:1000px){.flow{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){.flow{grid-template-columns:1fr}}
+  .step{
+    background:linear-gradient(180deg,#fff,#f8faff);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:16px;
+    min-height:154px;
+  }
+  .num{
+    width:34px; height:34px; border-radius:50%;
+    display:grid; place-items:center;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:#fff; font-weight:800; margin-bottom:10px;
+  }
+  .dialogue-line{
+    padding:10px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .dialogue-line:last-child{border-bottom:none}
+  .speaker{
+    display:inline-block; min-width:82px; font-weight:800; color:var(--blue);
+  }
+  .roman{font-size:1.02rem; font-weight:650}
+  .gloss{color:var(--muted)}
+  .concept-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;
+  }
+  @media (max-width:900px){.concept-grid{grid-template-columns:1fr}}
+  .concept{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px;
+    background:#fbfcff;
+  }
+  .tag{
+    display:inline-block;
+    padding:4px 8px;
+    border-radius:999px;
+    font-size:.78rem;
+    font-weight:700;
+    margin:2px 4px 2px 0;
+    background:#eef3ff;
+    color:#2c4a9c;
+  }
+  .mono{
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background:#f5f7fb;
+    padding:.08rem .35rem;
+    border-radius:8px;
+  }
+  table{width:100%; border-collapse:collapse; font-size:.96rem}
+  th,td{border-bottom:1px solid var(--line); padding:12px 10px; text-align:left; vertical-align:top}
+  th{background:#f4f7fc}
+  tr:last-child td{border-bottom:none}
+  .graph-wrap{
+    overflow:auto;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:linear-gradient(180deg,#fcfdff,#f6f9ff);
+    padding:12px;
+  }
+  svg text{font-family: Inter, system-ui, sans-serif; fill:#1f2430;}
+  .edge{stroke:#90a4d4; stroke-width:2.2; fill:none; marker-end:url(#arrow);}
+  .node rect{rx:18; ry:18; stroke:#d8dff2; stroke-width:1.4;}
+  .legend{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; font-size:.9rem}
+  .legend span{
+    display:flex; align-items:center; gap:6px;
+    background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 10px;
+  }
+  .dot{width:12px; height:12px; border-radius:50%; display:inline-block}
+  .practice{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px;
+  }
+  @media (max-width:900px){.practice{grid-template-columns:1fr}}
+  details{
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:12px 14px;
+    background:#fff;
+  }
+  summary{cursor:pointer; font-weight:700}
+  .quiz-q{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px;
+    margin-bottom:16px;
+    background:#fbfdff;
+  }
+  .quiz-q label{
+    display:block;
+    padding:9px 10px;
+    border:1px solid transparent;
+    border-radius:12px;
+    cursor:pointer;
+  }
+  .quiz-q label:hover{background:#f1f6ff; border-color:#dbe6ff}
+  button{
+    appearance:none;
+    border:none;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    color:#fff;
+    border-radius:12px;
+    padding:11px 16px;
+    font-size:.96rem;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:var(--shadow);
+  }
+  button.secondary{background:linear-gradient(135deg,var(--green),#3fb58e)}
+  .feedback{
+    margin-top:10px; padding:12px 14px; border-radius:12px; display:none;
+  }
+  .feedback.ok{background:#edf9f3; border:1px solid #bfe7cf}
+  .feedback.no{background:#fff1f3; border:1px solid #f0c0cb}
+  footer{margin-top:28px; color:var(--muted); font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Yuen Ren Chao - Mandarin Primer: An Intensive Course in Spoken Chinese</div>
+    <h1>Mandarin Primer — Lesson 7</h1>
+    <h2 style="font-size:1.35rem; font-weight:650; opacity:.98;">Mr. Can’t Stop Talking</h2>
+    <p class="lead">
+      Lesson 7 is an energetic character portrait and one of the earliest lessons that teaches Mandarin through personality, evaluation, and comparison.
+      It presents a humorous man who talks constantly, and through that comic setup it introduces comparison structures, degrees of quality, habitual action,
+      interruption, amount, frequency, and condition. The lesson is excellent for helping beginners see how Mandarin expresses <em>more, less, most, as…as, not so…as, the more…the more</em>, and other relational meanings.
+    </p>
+    <p class="small" style="color:rgba(255,255,255,.9);">
+      This page keeps the book’s original romanization system so it stays aligned with the scanned lesson.
+    </p>
+  </header>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill blue">Learning goals</div>
+      <h2>What students should learn</h2>
+      <ul>
+        <li>Follow and discuss a humorous descriptive narrative about a person with a strong habit: always talking.</li>
+        <li>Use and understand comparison patterns such as <span class="mono">A bii B hao</span>, <span class="mono">A yeou B nemm hao</span>, and <span class="mono">A mei.yeou B nemm hao</span>.</li>
+        <li>Recognize superlative/intensive forms like <span class="mono">tzuey</span> and <span class="mono">diing</span>.</li>
+        <li>Understand no-matter / generality expressions such as <span class="mono">sweibiann</span> and <span class="mono">bugoan</span>.</li>
+        <li>Notice degree patterns like <span class="mono">yuh duo yuh hao</span> and <span class="mono">yueh ... yueh ...</span>.</li>
+        <li>See how Mandarin handles qualities, evaluation, gossip, interruption, and conditional impossibility in natural speech.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="pill gold">Teacher lens</div>
+      <h2>Why this lesson matters</h2>
+      <div class="banner">
+        <strong>Lesson 7 teaches relational thinking.</strong> Students compare people, speeds, quantities, qualities, and habits rather than just naming objects or telling one event.
+      </div>
+      <p>
+        That makes it ideal for high-school learners, because it connects language to a vivid social type: the person who keeps talking. The humor keeps interest high,
+        while the grammar carries serious conceptual weight.
+      </p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill purple">Two-hour lecture flow</div>
+    <h2>Suggested lecture sequence</h2>
+    <div class="flow">
+      <div class="step"><div class="num">1</div><strong>Character hook</strong><br><span class="small">Start by asking students whether they know someone who talks all the time. Build curiosity before grammar.</span></div>
+      <div class="step"><div class="num">2</div><strong>Dialogue as portrait</strong><br><span class="small">Read the lesson in chunks: nickname, constant talking, comparisons, opinions on people, eating habits, impossible solutions.</span></div>
+      <div class="step"><div class="num">3</div><strong>Comparison system</strong><br><span class="small">Pause and map superior, equal, and inferior degree clearly on the board.</span></div>
+      <div class="step"><div class="num">4</div><strong>Intensity and evaluation</strong><br><span class="small">Show how the lesson scales judgment: a little better, pretty bad, terribly bad, the fewer the better.</span></div>
+      <div class="step"><div class="num">5</div><strong>Habit and interruption</strong><br><span class="small">Focus on repeated behavior, not remembering to eat, and what happens when someone interrupts him.</span></div>
+      <div class="step"><div class="num">6</div><strong>Retell + quiz</strong><br><span class="small">Have students summarize the character and test two key relational patterns.</span></div>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill green">How to teach it well</div>
+      <h2>Effective teaching moves for beginners</h2>
+      <div class="callout">
+        The source still emphasizes whole utterances, echoing, repetition, and learning grammar through exercises. Lesson 7 works best when the grammar is constantly attached to the comic character.
+      </div>
+      <ol>
+        <li>Teach every grammar point through Mr. Can’t Stop Talking, not through abstract sentences first.</li>
+        <li>Keep a visible “comparison ladder” on the board: better, worse, as good as, not as good as, more and more.</li>
+        <li>Use performance: let one student act as the talkative man while another tries to interrupt.</li>
+        <li>Return often to the central joke so the lesson stays memorable.</li>
+        <li>Have students classify statements as about speed, quality, amount, or habit.</li>
+      </ol>
+    </div>
+    <div class="card">
+      <div class="pill red">Likely beginner confusions</div>
+      <h2>Where English speakers may stumble</h2>
+      <div class="warning">
+        Because the lesson is funny, students may miss how carefully it teaches comparison and degree. Slow down enough that “more/less/as…as” becomes visible.
+      </div>
+      <ul>
+        <li><strong>Chinese adjectives are still verbs,</strong> so comparison structures do not work like English adjective phrases.</li>
+        <li><strong><span class="mono">bii</span></strong> handles explicit comparison, while <span class="mono">.i.deal</span> can express an implicit “-er / more.”</li>
+        <li><strong><span class="mono">tzuey</span> and <span class="mono">diing</span></strong> are superlative/intensive, but often function simply as strong intensifiers.</li>
+        <li><strong><span class="mono">ren.jia</span></strong> means “people/others” here, not “a family/household.”</li>
+        <li><strong><span class="mono">chwufei</span></strong> changes meaning depending on whether the following clause is negative or positive.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill blue">Dialogue walkthrough</div>
+    <h2>Lesson 7 as a character portrait</h2>
+    <p class="small">This lesson is easiest to teach as a series of observations about one comic person.</p>
+
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Woo yeou g perng.yeou shinq Tarn, ming.tzyh jiaw Buhtyng.</span><br>
+      <span class="gloss">I have a friend whose surname is Talking and whose personal name is Can’t Stop.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">B</span>
+      <span class="roman">.He.he, 'Tarn.bu-tyng'!</span><br>
+      <span class="gloss">Ha ha, “Can’t Stop Talking”!</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Jey.wey shian.sheng tzuey ay shuo-huah …</span><br>
+      <span class="gloss">This gentleman most loves talking …</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Suoo.yii ren.jia dou goan .ta jiaw huahshyatz … yee yeou shyr.howl goan .ta jiaw Goangboh Dianntair.</span><br>
+      <span class="gloss">So people call him the Talking Machine … and sometimes even the Broadcasting Station.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Ta woan.shanq shuey-jiaw .de .shyr.howl jiow shuo menqhuah. Tzao.chin i-shiing jiow chii-tourl gen tzyhjii shuo-huah.</span><br>
+      <span class="gloss">At night when he sleeps he talks in his sleep. In the morning, as soon as he wakes up, he starts talking to himself.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Sweibiann nii gen .ta shuo sherm shyh, bugoan nii wenn .ta sherm huah, ta tzoong yeou huah gen .nii shuo .de.</span><br>
+      <span class="gloss">No matter what you talk to him about, no matter what you ask him, he always has something to say to you.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Shuo-wan.le i-jiuh, yow.sh i-jiuh … lao nemm shuo.</span><br>
+      <span class="gloss">He finishes one sentence and starts another … always talking like that.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Yaw.sh neyg bii jeyg duo, jeyg jiow bii neyg shao.</span><br>
+      <span class="gloss">If that is more than this, then this is less than that.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Huooche bii luenchwan jiow kuay .de duo. Yow yeou feiji tzoou .de bii sherm dou kuay.</span><br>
+      <span class="gloss">Trains are much faster than steamships. And there are airplanes, which go faster than everything else.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Huay-ren jiow yuh shao yuh hao. Huay-ren buyaw tay duo; hao-ren .kee.sh yuh duo yuh hao.</span><br>
+      <span class="gloss">As for bad people, the fewer the better. Bad people should not be too many; good people, however, the more the better.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">B</span>
+      <span class="roman">Nii jey-wey perng.yeou nandaw i-tian-daw-woan lao .tzay.nall shuo-huah .ma?</span><br>
+      <span class="gloss">Do you mean to say that this friend of yours talks all the time from morning to night?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Ta tsorng tzao.chin liow-dean jong chii-tourl, i-shuo jiow shuo .daw shaang.huo shyr'ell-dean …</span><br>
+      <span class="gloss">He starts at six in the morning, and once he starts, he talks until noon …</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Ta chy dong.shi .de kuay-mann wanchyuan mei.yeou idinq .de.</span><br>
+      <span class="gloss">There is absolutely nothing fixed about the speed with which he eats.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Ta itourl shuoj itourl chy, shuo .de yueh kuay jiow chy .de yueh duo.</span><br>
+      <span class="gloss">He talks and eats at the same time, and the faster he talks, the more he eats.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">B</span>
+      <span class="roman">.Ne.me mei fartz jiaw .ta shao shuo .deal .ma?</span><br>
+      <span class="gloss">Then is there no way to make him talk less?</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Nii yueh daa .ta.de chah, ta jiow yueh shuo.bu-tyng — chwufei nii jen wuu.juh .ta.de tzoei.</span><br>
+      <span class="gloss">The more you interrupt him, the less he can stop — unless you literally cover his mouth.</span>
+    </div>
+    <div class="dialogue-line">
+      <span class="speaker">A</span>
+      <span class="roman">Chwufei shi-tian chu.le tay.yang, yee buhuey yeou g shuo-wan.le .de ryhtz .de.</span><br>
+      <span class="gloss">Unless the sun rises in the western sky, there will never be a day when he finishes talking.</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill orange">Knowledge graph</div>
+    <h2>Concept network for Lesson 7</h2>
+    <p>
+      Lesson 7 forms a network around one character: <strong>habit → evaluation → comparison → degree → interruption → impossibility</strong>.
+      The humor depends on how these structures build on one another.
+    </p>
+    <div class="graph-wrap">
+      <svg width="1180" height="740" viewBox="0 0 1180 740" role="img" aria-label="Knowledge graph for Lesson 7">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#90a4d4"></path>
+          </marker>
+        </defs>
+
+        <path class="edge" d="M590,110 C590,145 590,155 590,195"/>
+        <path class="edge" d="M590,110 C440,130 320,150 205,220"/>
+        <path class="edge" d="M590,110 C740,130 860,150 975,220"/>
+        <path class="edge" d="M205,270 C205,315 205,328 205,375"/>
+        <path class="edge" d="M975,270 C975,315 975,328 975,375"/>
+        <path class="edge" d="M590,250 C490,300 430,332 375,395"/>
+        <path class="edge" d="M590,250 C690,300 750,332 805,395"/>
+        <path class="edge" d="M590,250 C590,320 590,335 590,395"/>
+        <path class="edge" d="M375,445 C340,515 300,550 250,620"/>
+        <path class="edge" d="M590,445 C590,515 590,550 590,620"/>
+        <path class="edge" d="M805,445 C840,515 880,550 930,620"/>
+
+        <g class="node">
+          <rect x="410" y="45" width="360" height="70" fill="#efeaff"></rect>
+          <text x="590" y="76" text-anchor="middle" font-size="18" font-weight="800">Lesson 7 Core Question</text>
+          <text x="590" y="99" text-anchor="middle" font-size="14">How does Mandarin describe a person through habit, comparison, degree, and comic exaggeration?</text>
+        </g>
+
+        <g class="node">
+          <rect x="460" y="195" width="260" height="54" fill="#eaf2ff"></rect>
+          <text x="590" y="228" text-anchor="middle" font-size="17" font-weight="800">Character portrait utterances</text>
+        </g>
+
+        <g class="node">
+          <rect x="55" y="220" width="300" height="52" fill="#eefaf5"></rect>
+          <text x="205" y="252" text-anchor="middle" font-size="17" font-weight="800">Habit, evaluation, and naming</text>
+        </g>
+
+        <g class="node">
+          <rect x="825" y="220" width="300" height="52" fill="#fff5e8"></rect>
+          <text x="975" y="252" text-anchor="middle" font-size="17" font-weight="800">Comparison, degree, and outcome</text>
+        </g>
+
+        <g class="node">
+          <rect x="85" y="375" width="240" height="66" fill="#edf7ff"></rect>
+          <text x="205" y="404" text-anchor="middle" font-size="16" font-weight="800">tzuey / diing / huayshyatz</text>
+          <text x="205" y="425" text-anchor="middle" font-size="13">most, topmost, nicknames</text>
+        </g>
+
+        <g class="node">
+          <rect x="855" y="375" width="240" height="66" fill="#fff0f3"></rect>
+          <text x="975" y="404" text-anchor="middle" font-size="16" font-weight="800">bii / yeou / mei.yeou / yuh</text>
+          <text x="975" y="425" text-anchor="middle" font-size="13">better, equal, inferior, more-more</text>
+        </g>
+
+        <g class="node">
+          <rect x="255" y="395" width="240" height="50" fill="#eefaf5"></rect>
+          <text x="375" y="426" text-anchor="middle" font-size="16" font-weight="800">no matter what / always</text>
+        </g>
+
+        <g class="node">
+          <rect x="685" y="395" width="240" height="50" fill="#eefaf5"></rect>
+          <text x="805" y="426" text-anchor="middle" font-size="16" font-weight="800">interruptions and impossibility</text>
+        </g>
+
+        <g class="node">
+          <rect x="495" y="395" width="190" height="50" fill="#eaf2ff"></rect>
+          <text x="590" y="426" text-anchor="middle" font-size="16" font-weight="800">social judgment</text>
+        </g>
+
+        <g class="node">
+          <rect x="155" y="620" width="190" height="58" fill="#eefaf5"></rect>
+          <text x="250" y="651" text-anchor="middle" font-size="16" font-weight="800">sweibiann / bugoan</text>
+          <text x="250" y="671" text-anchor="middle" font-size="13">whatever / no matter</text>
+        </g>
+
+        <g class="node">
+          <rect x="495" y="620" width="190" height="58" fill="#fff5e8"></rect>
+          <text x="590" y="651" text-anchor="middle" font-size="16" font-weight="800">A bii B hao</text>
+          <text x="590" y="671" text-anchor="middle" font-size="13">explicit comparison system</text>
+        </g>
+
+        <g class="node">
+          <rect x="835" y="620" width="190" height="58" fill="#f3f0ff"></rect>
+          <text x="930" y="651" text-anchor="middle" font-size="16" font-weight="800">chwufei ...</text>
+          <text x="930" y="671" text-anchor="middle" font-size="13">unless / only if logic</text>
+        </g>
+      </svg>
+    </div>
+    <div class="legend">
+      <span><i class="dot" style="background:#eaf2ff"></i> portrait structure</span>
+      <span><i class="dot" style="background:#eefaf5"></i> habit and generality</span>
+      <span><i class="dot" style="background:#fff5e8"></i> comparison and degree</span>
+      <span><i class="dot" style="background:#f3f0ff"></i> condition and impossibility</span>
+      <span><i class="dot" style="background:#fff0f3"></i> ranking relations</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill green">Core concepts</div>
+    <h2>What the lesson teaches, concept by concept</h2>
+    <div class="concept-grid">
+      <div class="concept">
+        <h3>1) A person can be introduced through object-subject structure</h3>
+        <div class="tag">yeou + object</div><div class="tag">object-subject</div>
+        <ul>
+          <li>The notes explain that after <span class="mono">yeou</span>, an object can also serve as subject to the following predicate.</li>
+          <li><span class="mono">Woo yeou g perng.yeou shinq Tarn</span> works like “I have a friend, and this friend has the surname Tarn.”</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>2) Superlative words often work as strong intensifiers</h3>
+        <div class="tag">tzuey</div><div class="tag">diing</div>
+        <ul>
+          <li><span class="mono">tzuey ay</span> and <span class="mono">diing shii.huan</span> both mark a highest degree.</li>
+          <li>The notes explain that these are often used not only strictly as superlatives but also as strong intensifiers.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>3) Comparison has a system, not just one word</h3>
+        <div class="tag">bii</div><div class="tag">yeou</div><div class="tag">mei.yeou</div><div class="tag">iyanq</div>
+        <ul>
+          <li>Superior: <span class="mono">A bii B hao</span></li>
+          <li>Equal: <span class="mono">A yeou B (nemm) hao</span> or <span class="mono">A gen B iyanq hao</span></li>
+          <li>Inferior: <span class="mono">A mei.yeou B (nemm) hao</span></li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>4) Implicit comparison can use <span class="mono">.i.deal</span></h3>
+        <div class="tag">better</div><div class="tag">worse</div>
+        <ul>
+          <li>The notes explain that <span class="mono">.i.deal</span> or <span class="mono">.deal</span> can mean “a little more / -er.”</li>
+          <li>This is useful because English often forces a comparison marker where Chinese can be lighter.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>5) No-matter expressions widen the statement</h3>
+        <div class="tag">sweibiann</div><div class="tag">bugoan</div>
+        <ul>
+          <li>These forms mean “as you please / no matter …”</li>
+          <li>They help the lesson describe Mr. Can’t Stop Talking as someone who always has something to say, regardless of topic or question.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>6) The lesson teaches gradients of evaluation</h3>
+        <div class="tag">budah hao</div><div class="tag">jeanjyr heen huay</div><div class="tag">huay-jyi.le</div>
+        <ul>
+          <li>The character describes people with increasingly strong judgments.</li>
+          <li>This is perfect for showing that evaluation is not simply binary but scaled.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>7) The more…the more can express moral preference too</h3>
+        <div class="tag">yuh duo yuh hao</div><div class="tag">yuh shao yuh hao</div>
+        <ul>
+          <li>The lesson applies degree not only to speed or quantity, but to good and bad people.</li>
+          <li>That gives students a wider sense of how productive the structure is.</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>8) Conditional impossibility closes the joke</h3>
+        <div class="tag">chwufei</div><div class="tag">shi-tian chu.le tay.yang</div>
+        <ul>
+          <li>The notes explain that <span class="mono">chwufei</span> plus a negative clause means “unless.”</li>
+          <li>The impossible image “the sun rises in the western sky” makes the closing line memorable and strong.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill orange">Mini-board plan</div>
+      <h2>How to lay this out for students</h2>
+      <table>
+        <thead><tr><th>Board zone</th><th>Write this</th><th>Teaching purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Left</td><td>nickname list: <span class="mono">Buhtyng</span>, <span class="mono">huahshyatz</span>, <span class="mono">Goangboh Dianntair</span></td><td>Keeps the comic portrait vivid.</td></tr>
+          <tr><td>Center</td><td>comparison chart: superior / equal / inferior</td><td>Makes the grammar system explicit and reusable.</td></tr>
+          <tr><td>Right</td><td><span class="mono">yuh duo yuh hao</span>, <span class="mono">yueh ... yueh ...</span>, <span class="mono">buderleau</span>, <span class="mono">jyi.le</span></td><td>Shows how intensity and degree scale up.</td></tr>
+          <tr><td>Bottom</td><td><span class="mono">sweibiann</span>, <span class="mono">bugoan</span>, <span class="mono">nandaw</span>, <span class="mono">chwufei</span></td><td>Tracks the lesson’s discourse logic.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="pill teal">High-value classroom move</div>
+      <h2>Turn the lesson into a mock character interview</h2>
+      <div class="callout">
+        One student plays Mr. Can’t Stop Talking. Another student tries to interview him while a third keeps interrupting.
+      </div>
+      <ol>
+        <li>The “talking” student must keep answering everything.</li>
+        <li>The class describes him with comparison and evaluation language.</li>
+        <li>Another student tries to stop him, but the class adds <span class="mono">yueh daa .ta.de chah, ta jiow yueh shuo.bu-tyng</span>.</li>
+      </ol>
+      <p class="small">This turns the grammar into a performance and makes the comparison system much more memorable.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill blue">A key structural system</div>
+    <h2>Explicit comparison in Lesson 7</h2>
+    <div class="practice">
+      <div class="concept">
+        <h3>Superior</h3>
+        <p><span class="mono">A bii B hao</span></p>
+        <p class="small">A is better than B.</p>
+      </div>
+      <div class="concept">
+        <h3>Equal</h3>
+        <p><span class="mono">A yeou B (nemm) hao</span><br><span class="mono">A gen B iyanq hao</span></p>
+        <p class="small">A is as good as B.</p>
+      </div>
+      <div class="concept">
+        <h3>Inferior</h3>
+        <p><span class="mono">A mei.yeou B (nemm) hao</span></p>
+        <p class="small">A is not as good as B.</p>
+      </div>
+      <div class="concept">
+        <h3>Teaching point</h3>
+        <p class="small">This system is one of the most important grammatical takeaways in the lesson, and it should be revisited with many examples.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill green">Guided practice</div>
+    <h2>Practice tasks for a two-hour lesson</h2>
+    <div class="practice">
+      <div class="concept">
+        <h3>Task A — Character summary</h3>
+        <p>Students describe Mr. Can’t Stop Talking in 3–4 short statements.</p>
+      </div>
+      <div class="concept">
+        <h3>Task B — Comparison ladder</h3>
+        <p>Students compare trains, steamships, cars, and airplanes using the lesson’s patterns.</p>
+      </div>
+      <div class="concept">
+        <h3>Task C — Better or worse?</h3>
+        <p>Students transform one comparison into equal and inferior forms.</p>
+      </div>
+      <div class="concept">
+        <h3>Task D — Interrupt the talker</h3>
+        <p>Students role-play interrupting and then describe what happens using <span class="mono">yueh ... yueh ...</span> and <span class="mono">chwufei</span>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="pill red">Quick understanding check</div>
+    <h2>Two multiple-choice quiz questions</h2>
+
+    <div class="quiz-q" data-answer="c">
+      <h3>1) According to the notes, which pattern expresses that A is <em>not as good as</em> B?</h3>
+      <label><input type="radio" name="q1" value="a"><span class="mono">A bii B hao</span></label>
+      <label><input type="radio" name="q1" value="b"><span class="mono">A gen B iyanq hao</span></label>
+      <label><input type="radio" name="q1" value="c"><span class="mono">A mei.yeou B (nemm) hao</span></label>
+      <label><input type="radio" name="q1" value="d"><span class="mono">A tzuey hao</span></label>
+      <div class="feedback ok">Correct. The notes explicitly give <span class="mono">A mei.yeou B (nemm) hao</span> as the inferior comparison pattern: A is not so good as B.</div>
+      <div class="feedback no">Not quite. Lesson 7 lays out a full comparison system, and the inferior pattern is <span class="mono">A mei.yeou B (nemm) hao</span>.</div>
+    </div>
+
+    <div class="quiz-q" data-answer="b">
+      <h3>2) Why is the line about the sun rising in the western sky important?</h3>
+      <label><input type="radio" name="q2" value="a"> Because it proves the speaker believes impossible things literally happen every day.</label>
+      <label><input type="radio" name="q2" value="b"> Because it is a figure for impossibility, used to say he will never finish talking unless the impossible happens.</label>
+      <label><input type="radio" name="q2" value="c"> Because it introduces a geography lesson about east and west.</label>
+      <label><input type="radio" name="q2" value="d"> Because it means the speaker has stopped joking and become serious.</label>
+      <div class="feedback ok">Correct. The notes explain this as a common figure for an impossibility, which makes the comic ending stronger.</div>
+      <div class="feedback no">Not quite. In Lesson 7, this image is used as an impossibility expression to emphasize that he will never stop talking on his own.</div>
+    </div>
+
+    <button id="checkQuiz">Check my answers</button>
+    <button class="secondary" id="resetQuiz" style="margin-left:8px;">Reset</button>
+  </section>
+
+  <section class="grid g2">
+    <div class="card">
+      <div class="pill gold">Exit challenge</div>
+      <h2>End-of-lecture spoken challenge</h2>
+      <ol>
+        <li>Say who Mr. Can’t Stop Talking is and why people call him that.</li>
+        <li>Use one superior comparison and one inferior comparison.</li>
+        <li>Say one sentence with <span class="mono">sweibiann</span> or <span class="mono">bugoan</span>.</li>
+        <li>Explain, in English, why interrupting him does not help.</li>
+        <li>State the lesson’s comic ending in one sentence.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <div class="pill blue">References and source use</div>
+      <h2>References for this page</h2>
+      <ul>
+        <li><strong>Primary source:</strong> scanned Lesson 7 pages from <em>Mandarin Primer: An Intensive Course in Spoken Chinese</em>.</li>
+        <li><strong>Dialogue basis:</strong> Lesson 7 “Mr. Can’t Stop Talking,” including the comic portrait, comparisons of speed and people, eating habits, interruption, and the impossibility ending.</li>
+        <li><strong>Grammar basis:</strong> notes on object-subject constructions, superlative/intensive forms, <span class="mono">ren.jia</span>, pretransitive <span class="mono">goan</span>, adjectives as predicates, explicit comparison patterns, implicit <span class="mono">.i.deal</span>, <span class="mono">buderleau</span>, <span class="mono">yuh</span>, <span class="mono">nandaw</span>, <span class="mono">chah.buduo</span>, reduplicated adjective/adverb style, interruption expressions, and <span class="mono">chwufei</span> logic.</li>
+        <li><strong>Teaching basis:</strong> the source’s “To the Student” guidance on utterances, repetition, echoing, and learning grammar through exercises.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    This lecture page is designed for a full two-hour beginner lesson. It keeps close to the source while turning Lesson 7 into a clearer,
+    more connected, and more teachable social-character lesson for English-speaking high-school students.
+  </footer>
+</div>
+
+<script>
+document.getElementById('checkQuiz').addEventListener('click', function(){
+  document.querySelectorAll('.quiz-q').forEach(function(q){
+    const correct = q.dataset.answer;
+    const selected = q.querySelector('input[type="radio"]:checked');
+    const ok = q.querySelector('.feedback.ok');
+    const no = q.querySelector('.feedback.no');
+    ok.style.display = 'none';
+    no.style.display = 'none';
+    if(selected && selected.value === correct){
+      ok.style.display = 'block';
+    } else {
+      no.style.display = 'block';
+    }
+  });
+});
+
+document.getElementById('resetQuiz').addEventListener('click', function(){
+  document.querySelectorAll('input[type="radio"]').forEach(function(inp){ inp.checked = false; });
+  document.querySelectorAll('.feedback').forEach(function(f){ f.style.display = 'none'; });
+});
+</script>
+</body>
+</html>

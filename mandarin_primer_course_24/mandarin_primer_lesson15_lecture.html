@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mandarin Primer — Lesson 15 Lecture Page</title>
+<style>
+  :root{
+    --bg:#f6f8fc; --ink:#1d2433; --muted:#5a6475; --card:#ffffff; --line:#d8dfeb;
+    --blue:#2f6fed; --green:#2f9e77; --purple:#7b61ff; --orange:#f08c2e; --red:#d9485f; --gold:#c99700;
+    --shadow:0 10px 30px rgba(28,35,54,.08); --radius:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--ink);
+    background:radial-gradient(circle at top right, rgba(47,111,237,.08), transparent 28%),
+               radial-gradient(circle at top left, rgba(123,97,255,.08), transparent 26%), var(--bg);
+    line-height:1.65;
+  }
+  .wrap{width:min(1180px,94vw); margin:0 auto; padding:28px 0 64px;}
+  header.hero{
+    background:linear-gradient(135deg,#17457e,#2b63cf 55%,#7b61ff); color:#fff; border-radius:28px;
+    padding:34px 34px 28px; box-shadow:var(--shadow); overflow:hidden;
+  }
+  .eyebrow{
+    display:inline-block; padding:6px 10px; border:1px solid rgba(255,255,255,.28); border-radius:999px;
+    font-size:.83rem; margin-bottom:10px; background:rgba(255,255,255,.08);
+  }
+  h1,h2,h3{line-height:1.2; margin:.2rem 0 .8rem} h1{font-size:clamp(2rem,3vw,3rem)} h2{font-size:1.55rem} h3{font-size:1.12rem}
+  p.lead{font-size:1.08rem; max-width:980px; opacity:.98} .small{font-size:.95rem; color:var(--muted)}
+  .grid{display:grid; gap:18px} .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media (max-width:900px){.g2{grid-template-columns:1fr}}
+  section{margin-top:22px}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px}
+  .pill{display:inline-block; font-size:.8rem; font-weight:800; padding:5px 10px; border-radius:999px; color:#fff; margin-bottom:10px}
+  .blue{background:var(--blue)} .green{background:var(--green)} .purple{background:var(--purple)} .orange{background:var(--orange)} .red{background:var(--red)} .gold{background:var(--gold)}
+  .banner{border-left:6px solid var(--gold); background:#fff8db; padding:14px 16px; border-radius:14px}
+  .callout{border-left:5px solid var(--blue); background:#eef4ff; padding:14px 16px; border-radius:14px}
+  .warning{border-left:5px solid var(--red); background:#fff2f4; padding:14px 16px; border-radius:14px}
+  ul li, ol li{margin:.45rem 0}
+  .flow{display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:12px}
+  @media (max-width:1000px){.flow{grid-template-columns:repeat(2,1fr)}} @media (max-width:640px){.flow{grid-template-columns:1fr}}
+  .step{background:linear-gradient(180deg,#fff,#f8faff); border:1px solid var(--line); border-radius:18px; padding:16px; min-height:156px}
+  .num{width:34px; height:34px; border-radius:50%; display:grid; place-items:center; color:#fff; font-weight:800; margin-bottom:10px; background:linear-gradient(135deg,var(--blue),var(--purple))}
+  .dialogue-line{padding:10px 0; border-bottom:1px dashed var(--line)} .dialogue-line:last-child{border-bottom:none}
+  .speaker{display:inline-block; min-width:100px; font-weight:800; color:var(--blue)}
+  .roman{font-size:1.02rem; font-weight:650} .gloss{color:var(--muted)}
+  .concept-grid,.practice{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px}
+  @media (max-width:900px){.concept-grid,.practice{grid-template-columns:1fr}}
+  .concept{border:1px solid var(--line); border-radius:16px; padding:16px; background:#fbfcff}
+  .tag{display:inline-block; padding:4px 8px; border-radius:999px; font-size:.78rem; font-weight:700; margin:2px 4px 2px 0; background:#eef3ff; color:#2c4a9c}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; background:#f5f7fb; padding:.08rem .35rem; border-radius:8px}
+  table{width:100%; border-collapse:collapse; font-size:.96rem}
+  th,td{border-bottom:1px solid var(--line); padding:12px 10px; text-align:left; vertical-align:top} th{background:#f4f7fc}
+  tr:last-child td{border-bottom:none}
+  .graph-wrap{overflow:auto; border:1px solid var(--line); border-radius:18px; background:linear-gradient(180deg,#fcfdff,#f6f9ff); padding:12px}
+  svg text{font-family:Inter,system-ui,sans-serif; fill:#1f2430}
+  .edge{stroke:#90a4d4; stroke-width:2.2; fill:none; marker-end:url(#arrow)}
+  .node rect{rx:18; ry:18; stroke:#d8dff2; stroke-width:1.4}
+  .legend{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; font-size:.9rem}
+  .legend span{display:flex; align-items:center; gap:6px; background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 10px}
+  .dot{width:12px; height:12px; border-radius:50%; display:inline-block}
+  .quiz-q{border:1px solid var(--line); border-radius:16px; padding:16px; margin-bottom:16px; background:#fbfdff}
+  .quiz-q label{display:block; padding:9px 10px; border:1px solid transparent; border-radius:12px; cursor:pointer}
+  .quiz-q label:hover{background:#f1f6ff; border-color:#dbe6ff}
+  button{appearance:none; border:none; background:linear-gradient(135deg,var(--blue),var(--purple)); color:#fff; border-radius:12px; padding:11px 16px; font-size:.96rem; font-weight:700; cursor:pointer; box-shadow:var(--shadow)}
+  button.secondary{background:linear-gradient(135deg,var(--green),#3fb58e)}
+  .feedback{margin-top:10px; padding:12px 14px; border-radius:12px; display:none}
+  .feedback.ok{background:#edf9f3; border:1px solid #bfe7cf}
+  .feedback.no{background:#fff1f3; border:1px solid #f0c0cb}
+  footer{margin-top:28px; color:var(--muted); font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Yuen Ren Chao - Mandarin Primer: An Intensive Course in Spoken Chinese</div>
+  <h1>Mandarin Primer — Lesson 15</h1>
+  <h2 style="font-size:1.35rem;font-weight:650;opacity:.98;">World Geography</h2>
+  <p class="lead">
+    Lesson 15 shifts from the hospital storyline to the classroom. The setting is a geography review before a lecture on China.
+    The lesson moves through continents, hemispheres, canals, oceans, countries, capitals, false starts, self-correction, and classroom humor.
+    It is especially strong for teaching structured knowledge talk, recall under pressure, and how Mandarin handles correction and clarification in real time.
+  </p>
+  <p class="small" style="color:rgba(255,255,255,.9);">This page keeps the book’s original romanization system so it stays aligned with the scanned lesson.</p>
+</header>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill blue">Learning goals</div>
+    <h2>What students should learn</h2>
+    <ul>
+      <li>Follow a classroom discussion about world geography and basic political geography.</li>
+      <li>Understand vocabulary for continents, hemispheres, oceans, canals, countries, capitals, and political systems.</li>
+      <li>Recognize how speakers hesitate, self-correct, challenge errors, and recover from confusion.</li>
+      <li>Notice location expressions such as <span class="mono">tzay ... de nanbial</span>, <span class="mono">yii-nan</span>, <span class="mono">dong bannchyou</span>, and <span class="mono">shi bannchyou</span>.</li>
+      <li>Learn how the teacher’s more formal classroom register differs from ordinary conversation.</li>
+      <li>Use the lesson’s patterns to explain where continents, oceans, countries, and capitals are located.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="pill gold">Teacher lens</div>
+    <h2>Why this lesson matters</h2>
+    <div class="banner"><strong>Lesson 15 teaches knowledge as dialogue.</strong> Students are not just naming places. They are recalling, correcting, questioning, and refining what counts as a good answer.</div>
+    <p>
+      For high-school students, this is powerful because it feels like an actual classroom: someone answers partly right, someone mixes up Austria and Australia, someone jokes about Moxico, and the class responds.
+      It is also an excellent bridge from everyday talk to academic talk.
+    </p>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill purple">Two-hour lecture flow</div>
+  <h2>Suggested lecture sequence</h2>
+  <div class="flow">
+    <div class="step"><div class="num">1</div><strong>Classroom hook</strong><br><span class="small">Start with the teacher’s plan: before talking about China, let us review world geography first.</span></div>
+    <div class="step"><div class="num">2</div><strong>Continents and hemispheres</strong><br><span class="small">Teach Eastern vs Western Hemisphere, continent names, and basic relative location.</span></div>
+    <div class="step"><div class="num">3</div><strong>Oceans and canals</strong><br><span class="small">Map the Suez Canal, Mediterranean, Red Sea, Pacific, Atlantic, Indian, Arctic, and Antarctic.</span></div>
+    <div class="step"><div class="num">4</div><strong>Classroom error correction</strong><br><span class="small">Highlight how the lesson handles confusion about Antarctica, Switzerland/Sweden, and Austria/Australia.</span></div>
+    <div class="step"><div class="num">5</div><strong>Countries and capitals</strong><br><span class="small">Work through large countries, then capitals, with deliberate attention to self-correction and humorous mistakes.</span></div>
+    <div class="step"><div class="num">6</div><strong>Map + quiz</strong><br><span class="small">Finish with a knowledge graph, oral map activity, and two comprehension checks.</span></div>
+  </div>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill green">How to teach it well</div>
+    <h2>Effective teaching moves for beginners</h2>
+    <div class="callout">
+      The source’s “To the Student” pages emphasize utterances, repetition, echoing, and grammar-through-exercises. Lesson 15 becomes especially effective when students can see the map while hearing the classroom exchange.
+    </div>
+    <ol>
+      <li>Project or draw a world map and label it as the class speaks.</li>
+      <li>Separate the lesson into three knowledge zones: continents, oceans, and countries/capitals.</li>
+      <li>Keep the humorous mistakes in the lesson because they make memory stronger.</li>
+      <li>Teach location phrases as reusable frames, not isolated words.</li>
+      <li>Use role-play: teacher, Chyan, Lii, Wang, and whole class.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="pill red">Likely beginner confusions</div>
+    <h2>Where English speakers may stumble</h2>
+    <div class="warning">
+      Students may think this is just a vocabulary lesson. In fact, it is also a lesson in classroom discourse, formal register, and spatial relations.
+    </div>
+    <ul>
+      <li><strong><span class="mono">me</span>, <span class="mono">ne</span>, and <span class="mono">a</span></strong> can all mark pauses, but the notes distinguish their discourse functions.</li>
+      <li><strong><span class="mono">tzay Yahjou de nanbial</span> versus <span class="mono">Yahjou yii-nan</span></strong> are not exactly the same in meaning.</li>
+      <li><strong><span class="mono">bey</span></strong> in this lesson can mean “recite by heart,” not only “be by” or a passive marker.</li>
+      <li><strong>Similar-sounding country names</strong> create the humor: Switzerland/Sweden, Austria/Australia, Moscow/Moxico, New York/Washington.</li>
+      <li><strong>The teacher’s register</strong> is a bit more formal, using forms like <span class="mono">woomen</span> in the sense of <span class="mono">tzarmen</span> and fewer -l forms.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill blue">Dialogue walkthrough</div>
+  <h2>Lesson 15 as a classroom review</h2>
+  <p class="small">This lesson works best when grouped as geography recall, correction, and recitation.</p>
+
+  <div class="dialogue-line">
+    <span class="speaker">Opening</span>
+    <span class="roman">Jintian jeang Jonggwo dihlii. Dannsh tzay meiyeou jeang jintian de gongkeh yiichyan ne, woomen inggai shian baa shanq-tsyh suoo jeang de shyhjieh dihlii uenlii i-biann.</span><br>
+    <span class="gloss">Today we will talk about the geography of China. But before that, we ought first to review the world geography from last time.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Continents</span>
+    <span class="roman">Dong Bannchyou tzuey dah de dahluh dangran jiowsh Yahjou le. Gen Yahjou Shi-buh lhianj de jiowsh Oujou. Tzay Oujou de Nanbial ... jiowsh Feijou.</span><br>
+    <span class="gloss">The largest continent in the Eastern Hemisphere is Asia. On the west of Asia is Europe. South of Europe is Africa.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Canal logic</span>
+    <span class="roman">Beenlai Ou-, Yah-, Fei- san-jou doush lhianj de. Howlai kaile i-tyau Suyishyh Yunnher, bae Horng Hae gen Dihjong Hae daa-tong le, suooyii Feijou gen Yahjou jiow fen.kai le.</span><br>
+    <span class="gloss">Originally Europe, Asia, and Africa were connected. Later the Suez Canal was opened and the Red Sea connected to the Mediterranean, so Africa and Asia are now separated.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Hemispheres</span>
+    <span class="roman">Dong Bannchyou me hair yeou Awjou, Shi Bannchyou yeou Beei Meeijou gen Nan Meeijou leang-piann dahluh, dangjong yeou i-tyau Banamaa Yunnher.</span><br>
+    <span class="gloss">There is also Australia in the Eastern Hemisphere, and North and South America in the Western Hemisphere, with the Panama Canal between them.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Antarctica question</span>
+    <span class="roman">Nanjyi Jou sh tzay Dong Bannchyou hairsh tzay Shi Bannchyou a? &nbsp;&nbsp; Jihran jiaw Nanjyi Jou, nah jiow wusuoowey dong-shi lo.</span><br>
+    <span class="gloss">Is Antarctica in the Eastern or Western Hemisphere? Since it is the South Pole continent, there is no point in talking about east or west.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Oceans</span>
+    <span class="roman">Tzuey dah de me — dangran jiowsh Taypyng Yang lo ... chyitsyh sh Dahshi Yang ... chyitsyh sh Yinn.duh Yang ... Hair yeou Beei Bingyang gen Nan Bingyang.</span><br>
+    <span class="gloss">The largest ocean is the Pacific, then the Atlantic, then the Indian, and then the Arctic and Antarctic oceans.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Country recall</span>
+    <span class="roman">Jonggwo tzay Yahshihyah lo. Hair yeou Yinn.duh, gen Eh.gwo ... Oujou chwule Eh.gwo jy way, chyiyu de gwojia doush tiing sheau d'e!</span><br>
+    <span class="gloss">China is in Asia. There is also India and Russia ... outside Russia, the other countries in Europe are rather small.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Teacher correction</span>
+    <span class="roman">Rueyshyh sh Yihdahlih beeibial de neyg gonqhergwo ... nii shin.Iii sheangj de neyg sh Rueydean, sh g jiunjuu lihshiann de gwojia.</span><br>
+    <span class="gloss">Switzerland is the republic north of Italy ... the one you had in mind was Sweden, a constitutional monarchy.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Mixed-up example</span>
+    <span class="roman">Aw.gwo sh Oujou de gwojia e ... Awjou sh Inggwo de lianbang jy i, yeou g dwulih de jenqfuu, yeesh g minjuu-gwojia.</span><br>
+    <span class="gloss">Austria is a European country ... Australia is one of the British dominions, with an independent government and also a democratic country.</span>
+  </div>
+
+  <div class="dialogue-line">
+    <span class="speaker">Capital humor</span>
+    <span class="roman">Su Eh Lianbang de shooudu tzay Mohshige — ... woo sh yaw shuo Mohsyke ... Meeigwo Neouiue — Oh, bush vx, Meeilihjian de shooudu sh Hwashenqduenn.</span><br>
+    <span class="gloss">The capital of the U.S.S.R. is at “Moxico” — ... I mean Moscow ... America at New York — Oh no, the capital of the United States is Washington.</span>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill orange">Knowledge graph</div>
+  <h2>Concept network for Lesson 15</h2>
+  <p>
+    Lesson 15 forms a network around <strong>world map → continents → oceans → canals → countries → capitals → correction → classroom reasoning</strong>.
+  </p>
+  <div class="graph-wrap">
+    <svg width="1180" height="800" viewBox="0 0 1180 800" role="img" aria-label="Knowledge graph for Lesson 15">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" fill="#90a4d4"></path>
+        </marker>
+      </defs>
+
+      <path class="edge" d="M590,110 C590,145 590,155 590,195"/>
+      <path class="edge" d="M590,110 C440,130 320,150 205,225"/>
+      <path class="edge" d="M590,110 C740,130 860,150 975,225"/>
+      <path class="edge" d="M205,275 C205,320 205,332 205,385"/>
+      <path class="edge" d="M975,275 C975,320 975,332 975,385"/>
+      <path class="edge" d="M590,250 C490,300 430,335 375,405"/>
+      <path class="edge" d="M590,250 C690,300 750,335 805,405"/>
+      <path class="edge" d="M590,250 C590,320 590,338 590,405"/>
+      <path class="edge" d="M375,455 C340,525 300,565 250,655"/>
+      <path class="edge" d="M590,455 C590,525 590,565 590,655"/>
+      <path class="edge" d="M805,455 C840,525 880,565 930,655"/>
+
+      <g class="node">
+        <rect x="405" y="45" width="370" height="70" fill="#efeaff"></rect>
+        <text x="590" y="76" text-anchor="middle" font-size="18" font-weight="800">Lesson 15 Core Question</text>
+        <text x="590" y="99" text-anchor="middle" font-size="14">How does Mandarin talk through the world map in a classroom review?</text>
+      </g>
+
+      <g class="node">
+        <rect x="460" y="195" width="260" height="54" fill="#eaf2ff"></rect>
+        <text x="590" y="228" text-anchor="middle" font-size="17" font-weight="800">Classroom geography talk</text>
+      </g>
+
+      <g class="node">
+        <rect x="55" y="225" width="300" height="52" fill="#eefaf5"></rect>
+        <text x="205" y="257" text-anchor="middle" font-size="17" font-weight="800">Continents and hemispheres</text>
+      </g>
+
+      <g class="node">
+        <rect x="825" y="225" width="300" height="52" fill="#fff5e8"></rect>
+        <text x="975" y="257" text-anchor="middle" font-size="17" font-weight="800">Countries, capitals, and corrections</text>
+      </g>
+
+      <g class="node">
+        <rect x="85" y="385" width="240" height="68" fill="#edf7ff"></rect>
+        <text x="205" y="414" text-anchor="middle" font-size="16" font-weight="800">Asia / Europe / Africa / Australia / Americas</text>
+        <text x="205" y="436" text-anchor="middle" font-size="13">world layout knowledge</text>
+      </g>
+
+      <g class="node">
+        <rect x="855" y="385" width="240" height="68" fill="#fff0f3"></rect>
+        <text x="975" y="414" text-anchor="middle" font-size="16" font-weight="800">Switzerland vs Sweden; Austria vs Australia</text>
+        <text x="975" y="436" text-anchor="middle" font-size="13">error and repair</text>
+      </g>
+
+      <g class="node">
+        <rect x="255" y="405" width="240" height="50" fill="#eefaf5"></rect>
+        <text x="375" y="436" text-anchor="middle" font-size="16" font-weight="800">Suez / Panama / Mediterranean / Red Sea</text>
+      </g>
+
+      <g class="node">
+        <rect x="685" y="405" width="240" height="50" fill="#eefaf5"></rect>
+        <text x="805" y="436" text-anchor="middle" font-size="16" font-weight="800">Pacific / Atlantic / Indian / Arctic / Antarctic</text>
+      </g>
+
+      <g class="node">
+        <rect x="495" y="405" width="190" height="50" fill="#eaf2ff"></rect>
+        <text x="590" y="436" text-anchor="middle" font-size="16" font-weight="800">teacher’s formal register</text>
+      </g>
+
+      <g class="node">
+        <rect x="155" y="655" width="190" height="58" fill="#eefaf5"></rect>
+        <text x="250" y="686" text-anchor="middle" font-size="16" font-weight="800">location expressions</text>
+        <text x="250" y="706" text-anchor="middle" font-size="13">tzay...nanbial / yii-nan</text>
+      </g>
+
+      <g class="node">
+        <rect x="495" y="655" width="190" height="58" fill="#fff5e8"></rect>
+        <text x="590" y="686" text-anchor="middle" font-size="16" font-weight="800">pause particles</text>
+        <text x="590" y="706" text-anchor="middle" font-size="13">me / ne / a</text>
+      </g>
+
+      <g class="node">
+        <rect x="835" y="655" width="190" height="58" fill="#f3f0ff"></rect>
+        <text x="930" y="686" text-anchor="middle" font-size="16" font-weight="800">capitals and self-correction</text>
+        <text x="930" y="706" text-anchor="middle" font-size="13">Moscow, Washington, etc.</text>
+      </g>
+    </svg>
+  </div>
+  <div class="legend">
+    <span><i class="dot" style="background:#eaf2ff"></i> classroom structure</span>
+    <span><i class="dot" style="background:#eefaf5"></i> world-map content</span>
+    <span><i class="dot" style="background:#fff5e8"></i> geography relations</span>
+    <span><i class="dot" style="background:#f3f0ff"></i> error correction and recall</span>
+    <span><i class="dot" style="background:#fff0f3"></i> discourse and repair</span>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill green">Core concepts</div>
+  <h2>What the lesson teaches, concept by concept</h2>
+  <div class="concept-grid">
+    <div class="concept">
+      <h3>1) Geography is taught as recitation plus correction</h3>
+      <div class="tag">teacher asks</div><div class="tag">student recalls</div><div class="tag">teacher corrects</div>
+      <ul>
+        <li>The class is not a lecture only. It is an interactive review in which students supply facts and the teacher refines them.</li>
+        <li>That makes the lesson excellent for spoken classroom practice.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>2) The lesson builds a map through relations</h3>
+      <div class="tag">east/west</div><div class="tag">north/south</div><div class="tag">between</div><div class="tag">connected/separated</div>
+      <ul>
+        <li>Students are not just asked to name places. They must relate them spatially.</li>
+        <li>This is a strong lesson for learning how Mandarin describes where things are relative to one another.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>3) Canals change geography in the story</h3>
+      <div class="tag">Suez Canal</div><div class="tag">Panama Canal</div>
+      <ul>
+        <li>The Suez Canal is used to explain the separation of Africa and Asia.</li>
+        <li>The Panama Canal links the discussion of North and South America.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>4) Pause particles have different discourse jobs</h3>
+      <div class="tag">me</div><div class="tag">ne</div><div class="tag">a / ia</div>
+      <ul>
+        <li>The notes explain that <span class="mono">me</span> buys the speaker time to think, while <span class="mono">ne</span> or <span class="mono">a</span> can give the listener time to process.</li>
+        <li>This is important because the lesson is full of hesitant recall.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>5) Formal classroom style differs from ordinary conversation</h3>
+      <div class="tag">woomen</div><div class="tag">baa</div><div class="tag">fewer -l forms</div>
+      <ul>
+        <li>The notes explicitly point out that the teacher speaks in a somewhat more formal style.</li>
+        <li>This helps students hear register as part of meaning.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>6) Similar names create memory anchors</h3>
+      <div class="tag">Rueyshyh / Rueydean</div><div class="tag">Aw.gwo / Awjou</div><div class="tag">Mohshige / Mohsyke</div>
+      <ul>
+        <li>The lesson deliberately becomes memorable through near-miss answers and corrections.</li>
+        <li>These mistakes are pedagogically useful, not just comic.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>7) Capitals are recited as linked world knowledge</h3>
+      <div class="tag">Nanjing</div><div class="tag">Moscow</div><div class="tag">Berlin</div><div class="tag">Paris</div><div class="tag">Washington</div>
+      <ul>
+        <li>The capital list turns geography into a chain of spoken associations.</li>
+        <li>It is a good place to practice rhythm and recall.</li>
+      </ul>
+    </div>
+
+    <div class="concept">
+      <h3>8) Political vocabulary enters naturally</h3>
+      <div class="tag">gonqhergwo</div><div class="tag">jiunjuu lihshiann</div><div class="tag">lianbang</div><div class="tag">minjuu-gwojia</div>
+      <ul>
+        <li>The lesson introduces terms for republic, constitutional monarchy, dominion, independent government, and democracy.</li>
+        <li>That makes it richer than a simple map lesson.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill orange">Mini-board plan</div>
+    <h2>How to lay this out for students</h2>
+    <table>
+      <thead><tr><th>Board zone</th><th>Write this</th><th>Teaching purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Left</td><td>continents + hemispheres</td><td>Keeps the world layout visible.</td></tr>
+        <tr><td>Center</td><td>oceans + canals + location phrases</td><td>Connects place names to spatial grammar.</td></tr>
+        <tr><td>Right</td><td>countries / capitals / correction pairs</td><td>Makes the lesson’s error-repair structure explicit.</td></tr>
+        <tr><td>Bottom</td><td>formal classroom register + pause particles</td><td>Shows that discourse style is part of the lesson too.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="pill green">High-value classroom move</div>
+    <h2>Run it as a live geography review</h2>
+    <div class="callout">Assign students the roles of teacher, Chyan, Lii, Wang, and class, then let them perform the lesson with a map behind them.</div>
+    <ol>
+      <li>The “teacher” points to places and asks questions.</li>
+      <li>The student speakers answer, hesitate, and self-correct.</li>
+      <li>The rest of the class reacts at the comic mistakes just like in the text.</li>
+    </ol>
+    <p class="small">This makes the lesson memorable and highlights its authentic classroom rhythm.</p>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill blue">A key structural system</div>
+  <h2>Location language in Lesson 15</h2>
+  <div class="practice">
+    <div class="concept">
+      <h3>In the south of</h3>
+      <p><span class="mono">tzay Yahjou de nanbuh</span></p>
+      <p class="small">Inside a region, specifically in its southern part.</p>
+    </div>
+    <div class="concept">
+      <h3>To the south of</h3>
+      <p><span class="mono">Yahjou yii-nan</span></p>
+      <p class="small">Outside the region, south of it.</p>
+    </div>
+    <div class="concept">
+      <h3>Between</h3>
+      <p><span class="mono">tzay Yahjou Meeijou de dangjong</span></p>
+      <p class="small">Used for oceans or canals positioned between larger regions.</p>
+    </div>
+    <div class="concept">
+      <h3>Teaching payoff</h3>
+      <p class="small">This lesson is a natural place to train students to think spatially instead of translating word by word.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill green">Guided practice</div>
+  <h2>Practice tasks for a two-hour lesson</h2>
+  <div class="practice">
+    <div class="concept">
+      <h3>Task A — Map the continents</h3>
+      <p>Students label all the continents and say whether each belongs mainly to the Eastern or Western Hemisphere as framed in the lesson.</p>
+    </div>
+    <div class="concept">
+      <h3>Task B — Ocean recitation</h3>
+      <p>Students recite the names and positions of the five oceans in order, using the lesson’s phrasing.</p>
+    </div>
+    <div class="concept">
+      <h3>Task C — Correction pairs</h3>
+      <p>Students explain the difference between Switzerland and Sweden, Austria and Australia, Moscow and “Moxico,” New York and Washington.</p>
+    </div>
+    <div class="concept">
+      <h3>Task D — Capital chain</h3>
+      <p>Students take turns giving one country and the next student gives its capital, continuing the chain around the room.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="pill red">Quick understanding check</div>
+  <h2>Two multiple-choice quiz questions</h2>
+
+  <div class="quiz-q" data-answer="c">
+    <h3>1) According to the notes, what is the main discourse difference between a pause with <span class="mono">me</span> and a pause with <span class="mono">ne</span> or <span class="mono">a</span>?</h3>
+    <label><input type="radio" name="q1" value="a"> There is no difference at all.</label>
+    <label><input type="radio" name="q1" value="b"><span class="mono">me</span> is only for very formal writing, while <span class="mono">ne</span> and <span class="mono">a</span> are for poetry.</label>
+    <label><input type="radio" name="q1" value="c"><span class="mono">me</span> gives the speaker time to think, while <span class="mono">ne</span> or <span class="mono">a</span> gives the listener time to understand.</label>
+    <label><input type="radio" name="q1" value="d"><span class="mono">me</span> always marks anger.</label>
+    <div class="feedback ok">Correct. The notes explicitly distinguish these pause particles by whose processing time they support.</div>
+    <div class="feedback no">Not quite. Lesson 15 specifically explains that <span class="mono">me</span> buys time for the speaker, while <span class="mono">ne</span> and <span class="mono">a</span> help the listener follow.</div>
+  </div>
+
+  <div class="quiz-q" data-answer="b">
+    <h3>2) Which pair best represents the lesson’s pattern of classroom correction?</h3>
+    <label><input type="radio" name="q2" value="a"> Asia / Africa</label>
+    <label><input type="radio" name="q2" value="b"> Switzerland / Sweden</label>
+    <label><input type="radio" name="q2" value="c"> Pacific / Indian</label>
+    <label><input type="radio" name="q2" value="d"> France / Paris</label>
+    <div class="feedback ok">Correct. The lesson explicitly corrects Switzerland and Sweden, and uses several other similar-sounding corrections too.</div>
+    <div class="feedback no">Not quite. One of the most memorable features of Lesson 15 is the correction of near-miss answers like Switzerland versus Sweden.</div>
+  </div>
+
+  <button id="checkQuiz">Check my answers</button>
+  <button class="secondary" id="resetQuiz" style="margin-left:8px;">Reset</button>
+</section>
+
+<section class="grid g2">
+  <div class="card">
+    <div class="pill gold">Exit challenge</div>
+    <h2>End-of-lecture spoken challenge</h2>
+    <ol>
+      <li>Name the continents discussed in the lesson.</li>
+      <li>Say where the Pacific Ocean is located relative to Asia and America.</li>
+      <li>Give one example of a country/capital pair from the lesson.</li>
+      <li>Explain, in English, one correction the teacher makes and why it matters.</li>
+      <li>Use one location frame from the lesson correctly in a new sentence.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="pill blue">References and source use</div>
+    <h2>References for this page</h2>
+    <ul>
+      <li><strong>Primary source:</strong> scanned Lesson 15 pages from <em>Mandarin Primer: An Intensive Course in Spoken Chinese</em>.</li>
+      <li><strong>Dialogue basis:</strong> Lesson 15 “World Geography,” including the classroom review of continents, hemispheres, canals, oceans, countries, capitals, and the many corrections and self-corrections in the exchange.</li>
+      <li><strong>Notes basis:</strong> notes on <span class="mono">dihlii</span>, the teacher’s formal style, <span class="mono">dahluh</span>, full continent names, <span class="mono">yunnher</span>, pause particles <span class="mono">me</span>/<span class="mono">ne</span>/<span class="mono">a</span>, <span class="mono">wusuoowey</span>, <span class="mono">bey</span>, <span class="mono">Taypyng Yang</span>, <span class="mono">Dahshi Yang</span>, location expressions with <span class="mono">de nanbial</span> and <span class="mono">yii-nan</span>, country-name variants, <span class="mono">jiunjuu lihshiann</span>, <span class="mono">dwulih</span>, <span class="mono">minjuu-gwojia</span>, <span class="mono">tong</span>, <span class="mono">jingcherng</span>, and <span class="mono">shooudu</span>.</li>
+      <li><strong>Exercises basis:</strong> the page 5–6 exercises on sequencing with <span class="mono">shian ... ranhow ... tsair</span>, on describing positions of places like the United States, Panama Canal, France, Russia, Atlantic Ocean, Africa, and Antarctica, and on translating geography questions into Chinese.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  This lecture page is designed for a full two-hour beginner lesson. It keeps close to the source while turning Lesson 15 into a clearer,
+  more connected, and more teachable world-geography classroom lesson for English-speaking high-school students.
+</footer>
+</div>
+
+<script>
+document.getElementById('checkQuiz').addEventListener('click', function(){
+  document.querySelectorAll('.quiz-q').forEach(function(q){
+    const correct = q.dataset.answer;
+    const selected = q.querySelector('input[type="radio"]:checked');
+    const ok = q.querySelector('.feedback.ok');
+    const no = q.querySelector('.feedback.no');
+    ok.style.display = 'none';
+    no.style.display = 'none';
+    if(selected && selected.value === correct){ ok.style.display = 'block'; }
+    else { no.style.display = 'block'; }
+  });
+});
+document.getElementById('resetQuiz').addEventListener('click', function(){
+  document.querySelectorAll('input[type="radio"]').forEach(function(inp){ inp.checked = false; });
+  document.querySelectorAll('.feedback').forEach(function(f){ f.style.display = 'none'; });
+});
+</script>
+</body>
+</html>
